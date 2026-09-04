@@ -18,6 +18,13 @@ dist/
 __pycache__/
 *.pyc
 
+# Image-audit regenerable scan caches & thumbnail dumps
+/_img_meta.json
+/_img_refs.json
+/_thumbs_map.json
+tools/image-audit/thumbs/
+tools/image-audit/source-thumbs/
+
 # Old website snapshots & scrape artifacts (local reference only)
 old_project_html/
 old_projects_page.html

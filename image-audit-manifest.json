@@ -1,0 +1,1564 @@
+[
+  {
+    "filename": "factory-aerial-panorama.jpg",
+    "sourcePath": "public/images/company/factory-aerial-panorama.jpg",
+    "pageUrls": [
+      "/en/",
+      "/en/about/",
+      "/en/engineering-design/",
+      "/zh/",
+      "/zh/about/",
+      "/zh/engineering-design/"
+    ],
+    "refSourceFiles": [
+      "pages/en/about/index.astro",
+      "pages/en/engineering-design/index.astro",
+      "pages/en/index.astro",
+      "pages/zh/about/index.astro",
+      "pages/zh/engineering-design/index.astro",
+      "pages/zh/index.astro"
+    ],
+    "usage": "content",
+    "imageType": "factory-aerial",
+    "width": 1920,
+    "height": 1084,
+    "kb": 331.0,
+    "status": "GOOD"
+  },
+  {
+    "filename": "factory-interior-production.jpg",
+    "sourcePath": "public/images/company/factory-interior-production.jpg",
+    "pageUrls": [
+      "/en/",
+      "/en/manufacturing-quality/",
+      "/en/steel-workshop/",
+      "/zh/",
+      "/zh/manufacturing-quality/",
+      "/zh/steel-workshop/"
+    ],
+    "refSourceFiles": [
+      "pages/en/index.astro",
+      "pages/en/manufacturing-quality/index.astro",
+      "pages/en/steel-workshop/index.astro",
+      "pages/zh/index.astro",
+      "pages/zh/manufacturing-quality/index.astro",
+      "pages/zh/steel-workshop/index.astro"
+    ],
+    "usage": "content",
+    "imageType": "factory-interior",
+    "width": 1920,
+    "height": 1440,
+    "kb": 724.6,
+    "status": "GOOD"
+  },
+  {
+    "filename": "factory-steel-beam-fabrication.jpg",
+    "sourcePath": "public/images/company/factory-steel-beam-fabrication.jpg",
+    "pageUrls": [
+      "/en/",
+      "/en/manufacturing-quality/",
+      "/en/products/custom-engineering/",
+      "/en/services/structural-steel-detailing/",
+      "/en/steel-workshop/",
+      "/zh/",
+      "/zh/manufacturing-quality/",
+      "/zh/products/custom-engineering/",
+      "/zh/services/structural-steel-detailing/",
+      "/zh/steel-workshop/"
+    ],
+    "refSourceFiles": [
+      "pages/en/index.astro",
+      "pages/en/manufacturing-quality/index.astro",
+      "pages/en/products/custom-engineering/index.astro",
+      "pages/en/services/structural-steel-detailing/index.astro",
+      "pages/en/steel-workshop/index.astro",
+      "pages/zh/index.astro",
+      "pages/zh/manufacturing-quality/index.astro",
+      "pages/zh/products/custom-engineering/index.astro",
+      "pages/zh/services/structural-steel-detailing/index.astro",
+      "pages/zh/steel-workshop/index.astro"
+    ],
+    "usage": "content",
+    "imageType": "manufacturing",
+    "width": 1138,
+    "height": 640,
+    "kb": 1145.4,
+    "status": "GOOD"
+  },
+  {
+    "filename": "factory-yard-gantry-crane.jpg",
+    "sourcePath": "public/images/company/factory-yard-gantry-crane.jpg",
+    "pageUrls": [
+      "/en/",
+      "/en/manufacturing-quality/",
+      "/en/steel-warehouse/",
+      "/zh/",
+      "/zh/manufacturing-quality/",
+      "/zh/steel-warehouse/"
+    ],
+    "refSourceFiles": [
+      "pages/en/index.astro",
+      "pages/en/manufacturing-quality/index.astro",
+      "pages/en/steel-warehouse/index.astro",
+      "pages/zh/index.astro",
+      "pages/zh/manufacturing-quality/index.astro",
+      "pages/zh/steel-warehouse/index.astro"
+    ],
+    "usage": "content",
+    "imageType": "manufacturing",
+    "width": 1920,
+    "height": 1440,
+    "kb": 397.8,
+    "status": "GOOD"
+  },
+  {
+    "filename": "brochure-envelope-system-detail.jpg",
+    "sourcePath": "public/images/components/brochure-envelope-system-detail.jpg",
+    "pageUrls": [
+      "/en/components/roof-wall-cladding-systems/",
+      "/zh/components/roof-wall-cladding-systems/"
+    ],
+    "refSourceFiles": [
+      "pages/en/components/roof-wall-cladding-systems/index.astro",
+      "pages/zh/components/roof-wall-cladding-systems/index.astro"
+    ],
+    "usage": "content",
+    "imageType": "other",
+    "width": 1200,
+    "height": 696,
+    "kb": 102.5,
+    "status": "ACCEPTABLE"
+  },
+  {
+    "filename": "brochure-envelope-system-overview.jpg",
+    "sourcePath": "public/images/components/brochure-envelope-system-overview.jpg",
+    "pageUrls": [
+      "/en/components/roof-wall-cladding-systems/",
+      "/zh/components/roof-wall-cladding-systems/"
+    ],
+    "refSourceFiles": [
+      "pages/en/components/roof-wall-cladding-systems/index.astro",
+      "pages/zh/components/roof-wall-cladding-systems/index.astro"
+    ],
+    "usage": "content",
+    "imageType": "other",
+    "width": 1200,
+    "height": 696,
+    "kb": 110.4,
+    "status": "ACCEPTABLE"
+  },
+  {
+    "filename": "complex-steel-truss-fabrication.jpg",
+    "sourcePath": "public/images/components/complex-steel-truss-fabrication.jpg",
+    "pageUrls": [
+      "/en/components/fabricated-steel-beams-columns/",
+      "/en/services/structural-steel-detailing/",
+      "/zh/components/fabricated-steel-beams-columns/",
+      "/zh/services/structural-steel-detailing/"
+    ],
+    "refSourceFiles": [
+      "pages/en/components/fabricated-steel-beams-columns/index.astro",
+      "pages/en/services/structural-steel-detailing/index.astro",
+      "pages/zh/components/fabricated-steel-beams-columns/index.astro",
+      "pages/zh/services/structural-steel-detailing/index.astro"
+    ],
+    "usage": "content",
+    "imageType": "finished-component",
+    "width": 1600,
+    "height": 1200,
+    "kb": 424.2,
+    "status": "REPLACED-REAL"
+  },
+  {
+    "filename": "finished-coated-components.jpg",
+    "sourcePath": "public/images/components/finished-coated-components.jpg",
+    "pageUrls": [
+      "/en/",
+      "/en/components/roof-wall-cladding-systems/",
+      "/en/manufacturing-quality/",
+      "/zh/",
+      "/zh/components/roof-wall-cladding-systems/",
+      "/zh/manufacturing-quality/"
+    ],
+    "refSourceFiles": [
+      "pages/en/components/roof-wall-cladding-systems/index.astro",
+      "pages/en/index.astro",
+      "pages/en/manufacturing-quality/index.astro",
+      "pages/zh/components/roof-wall-cladding-systems/index.astro",
+      "pages/zh/index.astro",
+      "pages/zh/manufacturing-quality/index.astro"
+    ],
+    "usage": "content",
+    "imageType": "finished-component",
+    "width": 1600,
+    "height": 2133,
+    "kb": 722.6,
+    "status": "REPLACED-REAL"
+  },
+  {
+    "filename": "finished-steel-beams-columns.jpg",
+    "sourcePath": "public/images/components/finished-steel-beams-columns.jpg",
+    "pageUrls": [
+      "/en/components/fabricated-steel-beams-columns/",
+      "/en/components/roof-wall-cladding-systems/",
+      "/en/manufacturing-quality/",
+      "/en/services/structural-steel-detailing/",
+      "/zh/components/fabricated-steel-beams-columns/",
+      "/zh/components/roof-wall-cladding-systems/",
+      "/zh/manufacturing-quality/",
+      "/zh/services/structural-steel-detailing/"
+    ],
+    "refSourceFiles": [
+      "pages/en/components/fabricated-steel-beams-columns/index.astro",
+      "pages/en/components/roof-wall-cladding-systems/index.astro",
+      "pages/en/manufacturing-quality/index.astro",
+      "pages/en/services/structural-steel-detailing/index.astro",
+      "pages/zh/components/fabricated-steel-beams-columns/index.astro",
+      "pages/zh/components/roof-wall-cladding-systems/index.astro",
+      "pages/zh/manufacturing-quality/index.astro",
+      "pages/zh/services/structural-steel-detailing/index.astro"
+    ],
+    "usage": "content",
+    "imageType": "finished-component",
+    "width": 1600,
+    "height": 2133,
+    "kb": 656.6,
+    "status": "REPLACED-REAL"
+  },
+  {
+    "filename": "finished-steel-members-stacked.jpg",
+    "sourcePath": "public/images/components/finished-steel-members-stacked.jpg",
+    "pageUrls": [
+      "/en/components/fabricated-steel-beams-columns/",
+      "/en/components/roof-wall-cladding-systems/",
+      "/zh/components/fabricated-steel-beams-columns/",
+      "/zh/components/roof-wall-cladding-systems/"
+    ],
+    "refSourceFiles": [
+      "pages/en/components/fabricated-steel-beams-columns/index.astro",
+      "pages/en/components/roof-wall-cladding-systems/index.astro",
+      "pages/zh/components/fabricated-steel-beams-columns/index.astro",
+      "pages/zh/components/roof-wall-cladding-systems/index.astro"
+    ],
+    "usage": "content",
+    "imageType": "finished-component",
+    "width": 1600,
+    "height": 1200,
+    "kb": 353.3,
+    "status": "REPLACED-REAL"
+  },
+  {
+    "filename": "container-loading.jpg",
+    "sourcePath": "public/images/container-loading.jpg",
+    "pageUrls": [
+      "/en/",
+      "/en/components/roof-wall-cladding-systems/",
+      "/en/manufacturing-quality/",
+      "/en/products/custom-engineering/",
+      "/en/steel-warehouse/",
+      "/zh/",
+      "/zh/components/roof-wall-cladding-systems/",
+      "/zh/manufacturing-quality/",
+      "/zh/products/custom-engineering/",
+      "/zh/steel-warehouse/"
+    ],
+    "refSourceFiles": [
+      "pages/en/components/roof-wall-cladding-systems/index.astro",
+      "pages/en/index.astro",
+      "pages/en/manufacturing-quality/index.astro",
+      "pages/en/products/custom-engineering/index.astro",
+      "pages/en/steel-warehouse/index.astro",
+      "pages/zh/components/roof-wall-cladding-systems/index.astro",
+      "pages/zh/index.astro",
+      "pages/zh/manufacturing-quality/index.astro",
+      "pages/zh/products/custom-engineering/index.astro",
+      "pages/zh/steel-warehouse/index.astro"
+    ],
+    "usage": "content",
+    "imageType": "container-loading",
+    "width": 1600,
+    "height": 1200,
+    "kb": 211.5,
+    "status": "GOOD"
+  },
+  {
+    "filename": "container-loading-256_web.jpg",
+    "sourcePath": "public/images/export/container-loading-256_web.jpg",
+    "pageUrls": [
+      "/en/export-delivery/",
+      "/zh/export-delivery/"
+    ],
+    "refSourceFiles": [
+      "pages/en/export-delivery/index.astro",
+      "pages/zh/export-delivery/index.astro"
+    ],
+    "usage": "content",
+    "imageType": "container-loading",
+    "width": 2048,
+    "height": 1536,
+    "kb": 750.2,
+    "status": "GOOD"
+  },
+  {
+    "filename": "container-loading-310_web.jpg",
+    "sourcePath": "public/images/export/container-loading-310_web.jpg",
+    "pageUrls": [
+      "/en/export-delivery/",
+      "/zh/export-delivery/"
+    ],
+    "refSourceFiles": [
+      "pages/en/export-delivery/index.astro",
+      "pages/zh/export-delivery/index.astro"
+    ],
+    "usage": "content",
+    "imageType": "container-loading",
+    "width": 1400,
+    "height": 1866,
+    "kb": 596.8,
+    "status": "GOOD"
+  },
+  {
+    "filename": "heavy-member-prep-308_web.jpg",
+    "sourcePath": "public/images/export/heavy-member-prep-308_web.jpg",
+    "pageUrls": [
+      "/en/export-delivery/",
+      "/zh/export-delivery/"
+    ],
+    "refSourceFiles": [
+      "pages/en/export-delivery/index.astro",
+      "pages/zh/export-delivery/index.astro"
+    ],
+    "usage": "content",
+    "imageType": "export-loading",
+    "width": 2048,
+    "height": 1536,
+    "kb": 482.4,
+    "status": "GOOD"
+  },
+  {
+    "filename": "loading-truck_web.jpg",
+    "sourcePath": "public/images/export/loading-truck_web.jpg",
+    "pageUrls": [
+      "/en/export-delivery/",
+      "/zh/export-delivery/"
+    ],
+    "refSourceFiles": [
+      "pages/en/export-delivery/index.astro",
+      "pages/zh/export-delivery/index.astro"
+    ],
+    "usage": "content",
+    "imageType": "export-loading",
+    "width": 2048,
+    "height": 1542,
+    "kb": 456.3,
+    "status": "GOOD"
+  },
+  {
+    "filename": "logo-ai-replica-clean.png",
+    "sourcePath": "public/images/logo-ai-replica-clean.png",
+    "pageUrls": [
+      "/components/Footer"
+    ],
+    "refSourceFiles": [
+      "components/Footer.astro"
+    ],
+    "usage": "content",
+    "imageType": "official-logo",
+    "width": 1200,
+    "height": 245,
+    "kb": 396.9,
+    "status": "GOOD"
+  },
+  {
+    "filename": "logo-horizontal-transparent-hd.png",
+    "sourcePath": "public/images/logo-horizontal-transparent-hd.png",
+    "pageUrls": [
+      "/components/Header",
+      "/data/seo-structure.ts"
+    ],
+    "refSourceFiles": [
+      "components/Header.astro",
+      "data/seo-structure.ts"
+    ],
+    "usage": "content",
+    "imageType": "official-logo",
+    "width": 516,
+    "height": 112,
+    "kb": 56.2,
+    "status": "GOOD"
+  },
+  {
+    "filename": "assembly-welding-9821.jpg",
+    "sourcePath": "public/images/manufacturing/real/assembly-welding-9821.jpg",
+    "pageUrls": [
+      "/en/",
+      "/en/about/",
+      "/en/components/",
+      "/en/manufacturing-quality/",
+      "/zh/",
+      "/zh/about/",
+      "/zh/components/",
+      "/zh/manufacturing-quality/"
+    ],
+    "refSourceFiles": [
+      "pages/en/about/index.astro",
+      "pages/en/components/index.astro",
+      "pages/en/index.astro",
+      "pages/en/manufacturing-quality/index.astro",
+      "pages/zh/about/index.astro",
+      "pages/zh/components/index.astro",
+      "pages/zh/index.astro",
+      "pages/zh/manufacturing-quality/index.astro"
+    ],
+    "usage": "content",
+    "imageType": "manufacturing",
+    "width": 1920,
+    "height": 1440,
+    "kb": 595.7,
+    "status": "GOOD"
+  },
+  {
+    "filename": "cutting-prep-9809.jpg",
+    "sourcePath": "public/images/manufacturing/real/cutting-prep-9809.jpg",
+    "pageUrls": [
+      "/en/",
+      "/en/about/",
+      "/en/manufacturing-quality/",
+      "/zh/",
+      "/zh/about/",
+      "/zh/manufacturing-quality/"
+    ],
+    "refSourceFiles": [
+      "pages/en/about/index.astro",
+      "pages/en/index.astro",
+      "pages/en/manufacturing-quality/index.astro",
+      "pages/zh/about/index.astro",
+      "pages/zh/index.astro",
+      "pages/zh/manufacturing-quality/index.astro"
+    ],
+    "usage": "content",
+    "imageType": "manufacturing",
+    "width": 1920,
+    "height": 1440,
+    "kb": 514.7,
+    "status": "GOOD"
+  },
+  {
+    "filename": "factory-aerial-panorama.jpg",
+    "sourcePath": "public/images/manufacturing/real/factory-aerial-panorama.jpg",
+    "pageUrls": [
+      "/en/",
+      "/en/about/",
+      "/en/engineering-design/",
+      "/zh/",
+      "/zh/about/",
+      "/zh/engineering-design/"
+    ],
+    "refSourceFiles": [
+      "pages/en/about/index.astro",
+      "pages/en/engineering-design/index.astro",
+      "pages/en/index.astro",
+      "pages/zh/about/index.astro",
+      "pages/zh/engineering-design/index.astro",
+      "pages/zh/index.astro"
+    ],
+    "usage": "content",
+    "imageType": "factory-aerial",
+    "width": 1920,
+    "height": 1084,
+    "kb": 331.0,
+    "status": "GOOD"
+  },
+  {
+    "filename": "factory-overview-9819.jpg",
+    "sourcePath": "public/images/manufacturing/real/factory-overview-9819.jpg",
+    "pageUrls": [
+      "/en/about/",
+      "/en/contact/",
+      "/en/manufacturing-quality/",
+      "/zh/about/",
+      "/zh/contact/",
+      "/zh/manufacturing-quality/"
+    ],
+    "refSourceFiles": [
+      "pages/en/about/index.astro",
+      "pages/en/contact/index.astro",
+      "pages/en/manufacturing-quality/index.astro",
+      "pages/zh/about/index.astro",
+      "pages/zh/contact/index.astro",
+      "pages/zh/manufacturing-quality/index.astro"
+    ],
+    "usage": "content",
+    "imageType": "factory-interior",
+    "width": 1920,
+    "height": 1440,
+    "kb": 724.6,
+    "status": "GOOD"
+  },
+  {
+    "filename": "steel-welding-assembly-9822.jpg",
+    "sourcePath": "public/images/manufacturing/real/steel-welding-assembly-9822.jpg",
+    "pageUrls": [
+      "/en/products/custom-engineering/",
+      "/en/services/structural-steel-detailing/",
+      "/zh/products/custom-engineering/",
+      "/zh/services/structural-steel-detailing/"
+    ],
+    "refSourceFiles": [
+      "pages/en/products/custom-engineering/index.astro",
+      "pages/en/services/structural-steel-detailing/index.astro",
+      "pages/zh/products/custom-engineering/index.astro",
+      "pages/zh/services/structural-steel-detailing/index.astro"
+    ],
+    "usage": "content",
+    "imageType": "manufacturing",
+    "width": 1600,
+    "height": 1200,
+    "kb": 443.1,
+    "status": "REPLACED-REAL"
+  },
+  {
+    "filename": "welding-9820.jpg",
+    "sourcePath": "public/images/manufacturing/real/welding-9820.jpg",
+    "pageUrls": [
+      "/en/about/",
+      "/en/manufacturing-quality/",
+      "/zh/about/",
+      "/zh/manufacturing-quality/"
+    ],
+    "refSourceFiles": [
+      "pages/en/about/index.astro",
+      "pages/en/manufacturing-quality/index.astro",
+      "pages/zh/about/index.astro",
+      "pages/zh/manufacturing-quality/index.astro"
+    ],
+    "usage": "content",
+    "imageType": "manufacturing",
+    "width": 1920,
+    "height": 1440,
+    "kb": 464.8,
+    "status": "GOOD"
+  },
+  {
+    "filename": "workshop-overview-wide-9815.jpg",
+    "sourcePath": "public/images/manufacturing/real/workshop-overview-wide-9815.jpg",
+    "pageUrls": [
+      "/en/products/custom-engineering/",
+      "/en/steel-warehouse/",
+      "/en/steel-workshop/",
+      "/zh/products/custom-engineering/",
+      "/zh/steel-warehouse/",
+      "/zh/steel-workshop/"
+    ],
+    "refSourceFiles": [
+      "pages/en/products/custom-engineering/index.astro",
+      "pages/en/steel-warehouse/index.astro",
+      "pages/en/steel-workshop/index.astro",
+      "pages/zh/products/custom-engineering/index.astro",
+      "pages/zh/steel-warehouse/index.astro",
+      "pages/zh/steel-workshop/index.astro"
+    ],
+    "usage": "content",
+    "imageType": "factory-interior",
+    "width": 1600,
+    "height": 1200,
+    "kb": 440.4,
+    "status": "REPLACED-REAL"
+  },
+  {
+    "filename": "og-default.jpg",
+    "sourcePath": "public/images/og-default.jpg",
+    "pageUrls": [
+      "/components/SEOHead"
+    ],
+    "refSourceFiles": [
+      "components/SEOHead.astro"
+    ],
+    "usage": "content",
+    "imageType": "factory-aerial",
+    "width": 1200,
+    "height": 630,
+    "kb": 160.0,
+    "status": "GOOD"
+  },
+  {
+    "filename": "01-industrial.jpg",
+    "sourcePath": "public/images/products/01-industrial.jpg",
+    "pageUrls": [
+      "/en/components/fabricated-steel-beams-columns/",
+      "/en/components/roof-wall-cladding-systems/",
+      "/en/engineering-design/",
+      "/en/products/",
+      "/en/steel-workshop/",
+      "/zh/components/fabricated-steel-beams-columns/",
+      "/zh/components/roof-wall-cladding-systems/",
+      "/zh/engineering-design/",
+      "/zh/products/",
+      "/zh/steel-workshop/"
+    ],
+    "refSourceFiles": [
+      "pages/en/components/fabricated-steel-beams-columns/index.astro",
+      "pages/en/components/roof-wall-cladding-systems/index.astro",
+      "pages/en/engineering-design/index.astro",
+      "pages/en/products/index.astro",
+      "pages/en/steel-workshop/index.astro",
+      "pages/zh/components/fabricated-steel-beams-columns/index.astro",
+      "pages/zh/components/roof-wall-cladding-systems/index.astro",
+      "pages/zh/engineering-design/index.astro",
+      "pages/zh/products/index.astro",
+      "pages/zh/steel-workshop/index.astro"
+    ],
+    "usage": "content",
+    "imageType": "other",
+    "width": 2048,
+    "height": 2048,
+    "kb": 1226.7,
+    "status": "VISUAL-REVIEW"
+  },
+  {
+    "filename": "02-mining-energy.jpg",
+    "sourcePath": "public/images/products/02-mining-energy.jpg",
+    "pageUrls": [
+      "/en/products/",
+      "/zh/products/"
+    ],
+    "refSourceFiles": [
+      "pages/en/products/index.astro",
+      "pages/zh/products/index.astro"
+    ],
+    "usage": "content",
+    "imageType": "other",
+    "width": 2048,
+    "height": 2048,
+    "kb": 1668.1,
+    "status": "VISUAL-REVIEW"
+  },
+  {
+    "filename": "03-commercial-public.jpg",
+    "sourcePath": "public/images/products/03-commercial-public.jpg",
+    "pageUrls": [
+      "/en/components/fabricated-steel-beams-columns/",
+      "/en/products/",
+      "/zh/components/fabricated-steel-beams-columns/",
+      "/zh/products/"
+    ],
+    "refSourceFiles": [
+      "pages/en/components/fabricated-steel-beams-columns/index.astro",
+      "pages/en/products/index.astro",
+      "pages/zh/components/fabricated-steel-beams-columns/index.astro",
+      "pages/zh/products/index.astro"
+    ],
+    "usage": "content",
+    "imageType": "other",
+    "width": 2048,
+    "height": 2048,
+    "kb": 1750.8,
+    "status": "VISUAL-REVIEW"
+  },
+  {
+    "filename": "04-warehouse-logistics.jpg",
+    "sourcePath": "public/images/products/04-warehouse-logistics.jpg",
+    "pageUrls": [
+      "/en/components/fabricated-steel-beams-columns/",
+      "/en/components/roof-wall-cladding-systems/",
+      "/en/products/",
+      "/en/steel-warehouse/",
+      "/zh/components/fabricated-steel-beams-columns/",
+      "/zh/components/roof-wall-cladding-systems/",
+      "/zh/products/",
+      "/zh/steel-warehouse/"
+    ],
+    "refSourceFiles": [
+      "pages/en/components/fabricated-steel-beams-columns/index.astro",
+      "pages/en/components/roof-wall-cladding-systems/index.astro",
+      "pages/en/products/index.astro",
+      "pages/en/steel-warehouse/index.astro",
+      "pages/zh/components/fabricated-steel-beams-columns/index.astro",
+      "pages/zh/components/roof-wall-cladding-systems/index.astro",
+      "pages/zh/products/index.astro",
+      "pages/zh/steel-warehouse/index.astro"
+    ],
+    "usage": "content",
+    "imageType": "other",
+    "width": 1600,
+    "height": 1200,
+    "kb": 233.0,
+    "status": "VISUAL-REVIEW"
+  },
+  {
+    "filename": "05-agriculture-special.jpg",
+    "sourcePath": "public/images/products/05-agriculture-special.jpg",
+    "pageUrls": [
+      "/en/products/",
+      "/zh/products/"
+    ],
+    "refSourceFiles": [
+      "pages/en/products/index.astro",
+      "pages/zh/products/index.astro"
+    ],
+    "usage": "content",
+    "imageType": "other",
+    "width": 2048,
+    "height": 2048,
+    "kb": 1388.5,
+    "status": "VISUAL-REVIEW"
+  },
+  {
+    "filename": "06-custom-engineering.jpg",
+    "sourcePath": "public/images/products/06-custom-engineering.jpg",
+    "pageUrls": [
+      "/en/products/",
+      "/en/steel-warehouse/",
+      "/en/steel-workshop/",
+      "/zh/products/",
+      "/zh/steel-warehouse/",
+      "/zh/steel-workshop/"
+    ],
+    "refSourceFiles": [
+      "pages/en/products/index.astro",
+      "pages/en/steel-warehouse/index.astro",
+      "pages/en/steel-workshop/index.astro",
+      "pages/zh/products/index.astro",
+      "pages/zh/steel-warehouse/index.astro",
+      "pages/zh/steel-workshop/index.astro"
+    ],
+    "usage": "content",
+    "imageType": "other",
+    "width": 2048,
+    "height": 2048,
+    "kb": 1413.9,
+    "status": "VISUAL-REVIEW"
+  },
+  {
+    "filename": "cnooc-pr6-pipe-rack-frame-aerial-rendering.jpg",
+    "sourcePath": "public/images/projects/cnooc-pr6-pipe-rack-frame-aerial-rendering.jpg",
+    "pageUrls": [
+      "/data/projects-data.ts"
+    ],
+    "refSourceFiles": [
+      "data/projects-data.ts"
+    ],
+    "usage": "content",
+    "imageType": "project-rendering",
+    "width": 970,
+    "height": 540,
+    "kb": 154.6,
+    "status": "GOOD"
+  },
+  {
+    "filename": "cnooc-pr6-pipe-rack-frame-construction-site-1.jpg",
+    "sourcePath": "public/images/projects/cnooc-pr6-pipe-rack-frame-construction-site-1.jpg",
+    "pageUrls": [
+      "/data/projects-data.ts"
+    ],
+    "refSourceFiles": [
+      "data/projects-data.ts"
+    ],
+    "usage": "content",
+    "imageType": "project-site",
+    "width": 550,
+    "height": 460,
+    "kb": 116.1,
+    "status": "GOOD"
+  },
+  {
+    "filename": "cnooc-pr6-pipe-rack-frame-construction-site-2.jpg",
+    "sourcePath": "public/images/projects/cnooc-pr6-pipe-rack-frame-construction-site-2.jpg",
+    "pageUrls": [
+      "/data/projects-data.ts"
+    ],
+    "refSourceFiles": [
+      "data/projects-data.ts"
+    ],
+    "usage": "content",
+    "imageType": "project-site",
+    "width": 550,
+    "height": 460,
+    "kb": 111.8,
+    "status": "GOOD"
+  },
+  {
+    "filename": "cnooc-pr6-pipe-rack-frame-detail-view.jpg",
+    "sourcePath": "public/images/projects/cnooc-pr6-pipe-rack-frame-detail-view.jpg",
+    "pageUrls": [
+      "/data/projects-data.ts"
+    ],
+    "refSourceFiles": [
+      "data/projects-data.ts"
+    ],
+    "usage": "content",
+    "imageType": "component",
+    "width": 820,
+    "height": 460,
+    "kb": 150.2,
+    "status": "GOOD"
+  },
+  {
+    "filename": "cnpc-sixth-construction-cracking-furnace-aerial-view.jpg",
+    "sourcePath": "public/images/projects/cnpc-sixth-construction-cracking-furnace-aerial-view.jpg",
+    "pageUrls": [
+      "/data/projects-data.ts"
+    ],
+    "refSourceFiles": [
+      "data/projects-data.ts"
+    ],
+    "usage": "content",
+    "imageType": "project-site",
+    "width": 820,
+    "height": 540,
+    "kb": 138.0,
+    "status": "GOOD"
+  },
+  {
+    "filename": "cnpc-sixth-construction-cracking-furnace-construction-site.jpg",
+    "sourcePath": "public/images/projects/cnpc-sixth-construction-cracking-furnace-construction-site.jpg",
+    "pageUrls": [
+      "/data/projects-data.ts"
+    ],
+    "refSourceFiles": [
+      "data/projects-data.ts"
+    ],
+    "usage": "content",
+    "imageType": "project-site",
+    "width": 640,
+    "height": 460,
+    "kb": 126.2,
+    "status": "GOOD"
+  },
+  {
+    "filename": "cnpc-sixth-construction-cracking-furnace-equipment-detail.jpg",
+    "sourcePath": "public/images/projects/cnpc-sixth-construction-cracking-furnace-equipment-detail.jpg",
+    "pageUrls": [
+      "/data/projects-data.ts"
+    ],
+    "refSourceFiles": [
+      "data/projects-data.ts"
+    ],
+    "usage": "content",
+    "imageType": "component",
+    "width": 640,
+    "height": 460,
+    "kb": 108.4,
+    "status": "GOOD"
+  },
+  {
+    "filename": "cnpc-sixth-construction-cracking-furnace-installation-view.jpg",
+    "sourcePath": "public/images/projects/cnpc-sixth-construction-cracking-furnace-installation-view.jpg",
+    "pageUrls": [
+      "/data/projects-data.ts"
+    ],
+    "refSourceFiles": [
+      "data/projects-data.ts"
+    ],
+    "usage": "content",
+    "imageType": "installation",
+    "width": 640,
+    "height": 460,
+    "kb": 97.7,
+    "status": "GOOD"
+  },
+  {
+    "filename": "cnpc-sixth-construction-liquid-furnace-aerial-view.jpg",
+    "sourcePath": "public/images/projects/cnpc-sixth-construction-liquid-furnace-aerial-view.jpg",
+    "pageUrls": [
+      "/data/projects-data.ts"
+    ],
+    "refSourceFiles": [
+      "data/projects-data.ts"
+    ],
+    "usage": "content",
+    "imageType": "project-site",
+    "width": 820,
+    "height": 540,
+    "kb": 193.9,
+    "status": "GOOD"
+  },
+  {
+    "filename": "cnpc-sixth-construction-liquid-furnace-construction-site.jpg",
+    "sourcePath": "public/images/projects/cnpc-sixth-construction-liquid-furnace-construction-site.jpg",
+    "pageUrls": [
+      "/data/projects-data.ts"
+    ],
+    "refSourceFiles": [
+      "data/projects-data.ts"
+    ],
+    "usage": "content",
+    "imageType": "project-site",
+    "width": 640,
+    "height": 460,
+    "kb": 86.1,
+    "status": "GOOD"
+  },
+  {
+    "filename": "cnpc-sixth-construction-liquid-furnace-equipment-detail.jpg",
+    "sourcePath": "public/images/projects/cnpc-sixth-construction-liquid-furnace-equipment-detail.jpg",
+    "pageUrls": [
+      "/data/projects-data.ts"
+    ],
+    "refSourceFiles": [
+      "data/projects-data.ts"
+    ],
+    "usage": "content",
+    "imageType": "component",
+    "width": 640,
+    "height": 460,
+    "kb": 119.5,
+    "status": "GOOD"
+  },
+  {
+    "filename": "cnpc-sixth-construction-liquid-furnace-installation-view.jpg",
+    "sourcePath": "public/images/projects/cnpc-sixth-construction-liquid-furnace-installation-view.jpg",
+    "pageUrls": [
+      "/data/projects-data.ts"
+    ],
+    "refSourceFiles": [
+      "data/projects-data.ts"
+    ],
+    "usage": "content",
+    "imageType": "installation",
+    "width": 640,
+    "height": 460,
+    "kb": 134.6,
+    "status": "GOOD"
+  },
+  {
+    "filename": "futian-bonded-zone-customs-aerial-rendering.jpg",
+    "sourcePath": "public/images/projects/futian-bonded-zone-customs-aerial-rendering.jpg",
+    "pageUrls": [
+      "/data/projects-data.ts"
+    ],
+    "refSourceFiles": [
+      "data/projects-data.ts"
+    ],
+    "usage": "content",
+    "imageType": "project-rendering",
+    "width": 820,
+    "height": 540,
+    "kb": 72.1,
+    "status": "GOOD"
+  },
+  {
+    "filename": "futian-bonded-zone-customs-construction-site.jpg",
+    "sourcePath": "public/images/projects/futian-bonded-zone-customs-construction-site.jpg",
+    "pageUrls": [
+      "/data/projects-data.ts"
+    ],
+    "refSourceFiles": [
+      "data/projects-data.ts"
+    ],
+    "usage": "content",
+    "imageType": "project-site",
+    "width": 640,
+    "height": 460,
+    "kb": 65.5,
+    "status": "GOOD"
+  },
+  {
+    "filename": "futian-bonded-zone-customs-interior-view.jpg",
+    "sourcePath": "public/images/projects/futian-bonded-zone-customs-interior-view.jpg",
+    "pageUrls": [
+      "/data/projects-data.ts"
+    ],
+    "refSourceFiles": [
+      "data/projects-data.ts"
+    ],
+    "usage": "content",
+    "imageType": "project-site",
+    "width": 640,
+    "height": 460,
+    "kb": 61.3,
+    "status": "GOOD"
+  },
+  {
+    "filename": "futian-bonded-zone-customs-street-view.jpg",
+    "sourcePath": "public/images/projects/futian-bonded-zone-customs-street-view.jpg",
+    "pageUrls": [
+      "/data/projects-data.ts"
+    ],
+    "refSourceFiles": [
+      "data/projects-data.ts"
+    ],
+    "usage": "content",
+    "imageType": "project-site",
+    "width": 640,
+    "height": 460,
+    "kb": 82.8,
+    "status": "GOOD"
+  },
+  {
+    "filename": "guangdong-yixian-biotech-manufacturing-aerial-rendering.jpg",
+    "sourcePath": "public/images/projects/guangdong-yixian-biotech-manufacturing-aerial-rendering.jpg",
+    "pageUrls": [
+      "/data/projects-data.ts"
+    ],
+    "refSourceFiles": [
+      "data/projects-data.ts"
+    ],
+    "usage": "content",
+    "imageType": "project-rendering",
+    "width": 970,
+    "height": 540,
+    "kb": 148.2,
+    "status": "GOOD"
+  },
+  {
+    "filename": "guangdong-yixian-biotech-manufacturing-construction-site-1.jpg",
+    "sourcePath": "public/images/projects/guangdong-yixian-biotech-manufacturing-construction-site-1.jpg",
+    "pageUrls": [
+      "/data/projects-data.ts"
+    ],
+    "refSourceFiles": [
+      "data/projects-data.ts"
+    ],
+    "usage": "content",
+    "imageType": "project-site",
+    "width": 550,
+    "height": 460,
+    "kb": 83.4,
+    "status": "GOOD"
+  },
+  {
+    "filename": "guangdong-yixian-biotech-manufacturing-construction-site-2.jpg",
+    "sourcePath": "public/images/projects/guangdong-yixian-biotech-manufacturing-construction-site-2.jpg",
+    "pageUrls": [
+      "/data/projects-data.ts"
+    ],
+    "refSourceFiles": [
+      "data/projects-data.ts"
+    ],
+    "usage": "content",
+    "imageType": "project-site",
+    "width": 550,
+    "height": 460,
+    "kb": 74.7,
+    "status": "GOOD"
+  },
+  {
+    "filename": "guangdong-yixian-biotech-manufacturing-detail-view.jpg",
+    "sourcePath": "public/images/projects/guangdong-yixian-biotech-manufacturing-detail-view.jpg",
+    "pageUrls": [
+      "/data/projects-data.ts"
+    ],
+    "refSourceFiles": [
+      "data/projects-data.ts"
+    ],
+    "usage": "content",
+    "imageType": "component",
+    "width": 820,
+    "height": 460,
+    "kb": 124.1,
+    "status": "GOOD"
+  },
+  {
+    "filename": "guangzhou-gongkong-high-end-equipment-base-aerial-rendering.jpg",
+    "sourcePath": "public/images/projects/guangzhou-gongkong-high-end-equipment-base-aerial-rendering.jpg",
+    "pageUrls": [
+      "/data/projects-data.ts"
+    ],
+    "refSourceFiles": [
+      "data/projects-data.ts"
+    ],
+    "usage": "content",
+    "imageType": "project-rendering",
+    "width": 970,
+    "height": 540,
+    "kb": 128.3,
+    "status": "GOOD"
+  },
+  {
+    "filename": "guangzhou-gongkong-high-end-equipment-base-construction-site-1.jpg",
+    "sourcePath": "public/images/projects/guangzhou-gongkong-high-end-equipment-base-construction-site-1.jpg",
+    "pageUrls": [
+      "/data/projects-data.ts"
+    ],
+    "refSourceFiles": [
+      "data/projects-data.ts"
+    ],
+    "usage": "content",
+    "imageType": "project-site",
+    "width": 550,
+    "height": 460,
+    "kb": 95.0,
+    "status": "GOOD"
+  },
+  {
+    "filename": "guangzhou-gongkong-high-end-equipment-base-construction-site-2.jpg",
+    "sourcePath": "public/images/projects/guangzhou-gongkong-high-end-equipment-base-construction-site-2.jpg",
+    "pageUrls": [
+      "/data/projects-data.ts"
+    ],
+    "refSourceFiles": [
+      "data/projects-data.ts"
+    ],
+    "usage": "content",
+    "imageType": "project-site",
+    "width": 550,
+    "height": 460,
+    "kb": 85.1,
+    "status": "GOOD"
+  },
+  {
+    "filename": "guangzhou-gongkong-high-end-equipment-base-detail-view.jpg",
+    "sourcePath": "public/images/projects/guangzhou-gongkong-high-end-equipment-base-detail-view.jpg",
+    "pageUrls": [
+      "/data/projects-data.ts"
+    ],
+    "refSourceFiles": [
+      "data/projects-data.ts"
+    ],
+    "usage": "content",
+    "imageType": "component",
+    "width": 820,
+    "height": 460,
+    "kb": 101.0,
+    "status": "GOOD"
+  },
+  {
+    "filename": "huarun-center-commercial-residential-aerial-rendering.jpg",
+    "sourcePath": "public/images/projects/huarun-center-commercial-residential-aerial-rendering.jpg",
+    "pageUrls": [
+      "/data/projects-data.ts"
+    ],
+    "refSourceFiles": [
+      "data/projects-data.ts"
+    ],
+    "usage": "content",
+    "imageType": "project-rendering",
+    "width": 720,
+    "height": 540,
+    "kb": 120.6,
+    "status": "GOOD"
+  },
+  {
+    "filename": "huarun-center-commercial-residential-completed-building.jpg",
+    "sourcePath": "public/images/projects/huarun-center-commercial-residential-completed-building.jpg",
+    "pageUrls": [
+      "/data/projects-data.ts"
+    ],
+    "refSourceFiles": [
+      "data/projects-data.ts"
+    ],
+    "usage": "content",
+    "imageType": "project-site",
+    "width": 500,
+    "height": 460,
+    "kb": 58.7,
+    "status": "GOOD"
+  },
+  {
+    "filename": "huarun-center-commercial-residential-construction-panorama.jpg",
+    "sourcePath": "public/images/projects/huarun-center-commercial-residential-construction-panorama.jpg",
+    "pageUrls": [
+      "/data/projects-data.ts"
+    ],
+    "refSourceFiles": [
+      "data/projects-data.ts"
+    ],
+    "usage": "content",
+    "imageType": "project-site",
+    "width": 450,
+    "height": 460,
+    "kb": 85.8,
+    "status": "GOOD"
+  },
+  {
+    "filename": "huarun-center-commercial-residential-construction-site.jpg",
+    "sourcePath": "public/images/projects/huarun-center-commercial-residential-construction-site.jpg",
+    "pageUrls": [
+      "/data/projects-data.ts"
+    ],
+    "refSourceFiles": [
+      "data/projects-data.ts"
+    ],
+    "usage": "content",
+    "imageType": "project-site",
+    "width": 450,
+    "height": 400,
+    "kb": 73.4,
+    "status": "GOOD"
+  },
+  {
+    "filename": "huarun-center-commercial-residential-steel-structure-detail.jpg",
+    "sourcePath": "public/images/projects/huarun-center-commercial-residential-steel-structure-detail.jpg",
+    "pageUrls": [
+      "/data/projects-data.ts"
+    ],
+    "refSourceFiles": [
+      "data/projects-data.ts"
+    ],
+    "usage": "content",
+    "imageType": "component",
+    "width": 450,
+    "height": 460,
+    "kb": 98.0,
+    "status": "GOOD"
+  },
+  {
+    "filename": "huarun-center-commercial-residential-structure-analysis.jpg",
+    "sourcePath": "public/images/projects/huarun-center-commercial-residential-structure-analysis.jpg",
+    "pageUrls": [
+      "/data/projects-data.ts"
+    ],
+    "refSourceFiles": [
+      "data/projects-data.ts"
+    ],
+    "usage": "content",
+    "imageType": "project-rendering",
+    "width": 520,
+    "height": 460,
+    "kb": 60.7,
+    "status": "GOOD"
+  },
+  {
+    "filename": "luohu-mixc-commercial-skybridge-aerial-rendering.jpg",
+    "sourcePath": "public/images/projects/luohu-mixc-commercial-skybridge-aerial-rendering.jpg",
+    "pageUrls": [
+      "/data/projects-data.ts"
+    ],
+    "refSourceFiles": [
+      "data/projects-data.ts"
+    ],
+    "usage": "content",
+    "imageType": "project-rendering",
+    "width": 820,
+    "height": 540,
+    "kb": 113.0,
+    "status": "GOOD"
+  },
+  {
+    "filename": "luohu-mixc-commercial-skybridge-completed-view.jpg",
+    "sourcePath": "public/images/projects/luohu-mixc-commercial-skybridge-completed-view.jpg",
+    "pageUrls": [
+      "/data/projects-data.ts"
+    ],
+    "refSourceFiles": [
+      "data/projects-data.ts"
+    ],
+    "usage": "content",
+    "imageType": "project-site",
+    "width": 640,
+    "height": 460,
+    "kb": 96.7,
+    "status": "GOOD"
+  },
+  {
+    "filename": "luohu-mixc-commercial-skybridge-construction-site.jpg",
+    "sourcePath": "public/images/projects/luohu-mixc-commercial-skybridge-construction-site.jpg",
+    "pageUrls": [
+      "/data/projects-data.ts"
+    ],
+    "refSourceFiles": [
+      "data/projects-data.ts"
+    ],
+    "usage": "content",
+    "imageType": "project-site",
+    "width": 640,
+    "height": 460,
+    "kb": 91.8,
+    "status": "GOOD"
+  },
+  {
+    "filename": "luohu-mixc-commercial-skybridge-street-view.jpg",
+    "sourcePath": "public/images/projects/luohu-mixc-commercial-skybridge-street-view.jpg",
+    "pageUrls": [
+      "/data/projects-data.ts"
+    ],
+    "refSourceFiles": [
+      "data/projects-data.ts"
+    ],
+    "usage": "content",
+    "imageType": "project-site",
+    "width": 640,
+    "height": 460,
+    "kb": 113.3,
+    "status": "GOOD"
+  },
+  {
+    "filename": "shanghai-baoye-xiegang-aviation-manufacturing-aerial-rendering.jpg",
+    "sourcePath": "public/images/projects/shanghai-baoye-xiegang-aviation-manufacturing-aerial-rendering.jpg",
+    "pageUrls": [
+      "/data/projects-data.ts"
+    ],
+    "refSourceFiles": [
+      "data/projects-data.ts"
+    ],
+    "usage": "content",
+    "imageType": "project-rendering",
+    "width": 970,
+    "height": 540,
+    "kb": 134.3,
+    "status": "GOOD"
+  },
+  {
+    "filename": "shanghai-baoye-xiegang-aviation-manufacturing-building-rendering.jpg",
+    "sourcePath": "public/images/projects/shanghai-baoye-xiegang-aviation-manufacturing-building-rendering.jpg",
+    "pageUrls": [
+      "/data/projects-data.ts"
+    ],
+    "refSourceFiles": [
+      "data/projects-data.ts"
+    ],
+    "usage": "content",
+    "imageType": "project-rendering",
+    "width": 500,
+    "height": 240,
+    "kb": 22.3,
+    "status": "GOOD"
+  },
+  {
+    "filename": "shanghai-baoye-xiegang-aviation-manufacturing-construction-site-1.jpg",
+    "sourcePath": "public/images/projects/shanghai-baoye-xiegang-aviation-manufacturing-construction-site-1.jpg",
+    "pageUrls": [
+      "/data/projects-data.ts"
+    ],
+    "refSourceFiles": [
+      "data/projects-data.ts"
+    ],
+    "usage": "content",
+    "imageType": "project-site",
+    "width": 550,
+    "height": 460,
+    "kb": 123.7,
+    "status": "GOOD"
+  },
+  {
+    "filename": "shanghai-baoye-xiegang-aviation-manufacturing-construction-site-2.jpg",
+    "sourcePath": "public/images/projects/shanghai-baoye-xiegang-aviation-manufacturing-construction-site-2.jpg",
+    "pageUrls": [
+      "/data/projects-data.ts"
+    ],
+    "refSourceFiles": [
+      "data/projects-data.ts"
+    ],
+    "usage": "content",
+    "imageType": "project-site",
+    "width": 550,
+    "height": 460,
+    "kb": 111.5,
+    "status": "GOOD"
+  },
+  {
+    "filename": "shanghai-baoye-xiegang-aviation-manufacturing-detail-view.jpg",
+    "sourcePath": "public/images/projects/shanghai-baoye-xiegang-aviation-manufacturing-detail-view.jpg",
+    "pageUrls": [
+      "/data/projects-data.ts"
+    ],
+    "refSourceFiles": [
+      "data/projects-data.ts"
+    ],
+    "usage": "content",
+    "imageType": "component",
+    "width": 820,
+    "height": 460,
+    "kb": 162.6,
+    "status": "GOOD"
+  },
+  {
+    "filename": "shantou-luxshare-precision-electronics-aerial-rendering.jpg",
+    "sourcePath": "public/images/projects/shantou-luxshare-precision-electronics-aerial-rendering.jpg",
+    "pageUrls": [
+      "/data/projects-data.ts"
+    ],
+    "refSourceFiles": [
+      "data/projects-data.ts"
+    ],
+    "usage": "content",
+    "imageType": "project-rendering",
+    "width": 820,
+    "height": 540,
+    "kb": 219.2,
+    "status": "GOOD"
+  },
+  {
+    "filename": "shantou-luxshare-precision-electronics-construction-aerial.jpg",
+    "sourcePath": "public/images/projects/shantou-luxshare-precision-electronics-construction-aerial.jpg",
+    "pageUrls": [
+      "/data/projects-data.ts"
+    ],
+    "refSourceFiles": [
+      "data/projects-data.ts"
+    ],
+    "usage": "content",
+    "imageType": "project-site",
+    "width": 550,
+    "height": 460,
+    "kb": 125.8,
+    "status": "GOOD"
+  },
+  {
+    "filename": "shantou-luxshare-precision-electronics-project-panorama.jpg",
+    "sourcePath": "public/images/projects/shantou-luxshare-precision-electronics-project-panorama.jpg",
+    "pageUrls": [
+      "/data/projects-data.ts"
+    ],
+    "refSourceFiles": [
+      "data/projects-data.ts"
+    ],
+    "usage": "content",
+    "imageType": "project-site",
+    "width": 670,
+    "height": 460,
+    "kb": 117.9,
+    "status": "GOOD"
+  },
+  {
+    "filename": "shantou-luxshare-precision-electronics-street-view.jpg",
+    "sourcePath": "public/images/projects/shantou-luxshare-precision-electronics-street-view.jpg",
+    "pageUrls": [
+      "/data/projects-data.ts"
+    ],
+    "refSourceFiles": [
+      "data/projects-data.ts"
+    ],
+    "usage": "content",
+    "imageType": "project-site",
+    "width": 700,
+    "height": 460,
+    "kb": 121.2,
+    "status": "GOOD"
+  },
+  {
+    "filename": "shenzhen-international-zhanjiang-logistics-port-aerial-rendering.jpg",
+    "sourcePath": "public/images/projects/shenzhen-international-zhanjiang-logistics-port-aerial-rendering.jpg",
+    "pageUrls": [
+      "/data/projects-data.ts"
+    ],
+    "refSourceFiles": [
+      "data/projects-data.ts"
+    ],
+    "usage": "content",
+    "imageType": "project-rendering",
+    "width": 970,
+    "height": 540,
+    "kb": 193.6,
+    "status": "GOOD"
+  },
+  {
+    "filename": "shenzhen-international-zhanjiang-logistics-port-construction-site-1.jpg",
+    "sourcePath": "public/images/projects/shenzhen-international-zhanjiang-logistics-port-construction-site-1.jpg",
+    "pageUrls": [
+      "/data/projects-data.ts"
+    ],
+    "refSourceFiles": [
+      "data/projects-data.ts"
+    ],
+    "usage": "content",
+    "imageType": "project-site",
+    "width": 550,
+    "height": 460,
+    "kb": 81.0,
+    "status": "GOOD"
+  },
+  {
+    "filename": "shenzhen-international-zhanjiang-logistics-port-construction-site-2.jpg",
+    "sourcePath": "public/images/projects/shenzhen-international-zhanjiang-logistics-port-construction-site-2.jpg",
+    "pageUrls": [
+      "/data/projects-data.ts"
+    ],
+    "refSourceFiles": [
+      "data/projects-data.ts"
+    ],
+    "usage": "content",
+    "imageType": "project-site",
+    "width": 550,
+    "height": 460,
+    "kb": 100.1,
+    "status": "GOOD"
+  },
+  {
+    "filename": "shenzhen-international-zhanjiang-logistics-port-structure-analysis-2.jpg",
+    "sourcePath": "public/images/projects/shenzhen-international-zhanjiang-logistics-port-structure-analysis-2.jpg",
+    "pageUrls": [
+      "/data/projects-data.ts"
+    ],
+    "refSourceFiles": [
+      "data/projects-data.ts"
+    ],
+    "usage": "content",
+    "imageType": "project-rendering",
+    "width": 820,
+    "height": 460,
+    "kb": 126.0,
+    "status": "GOOD"
+  },
+  {
+    "filename": "shenzhen-international-zhanjiang-logistics-port.jpg",
+    "sourcePath": "public/images/projects/shenzhen-international-zhanjiang-logistics-port.jpg",
+    "pageUrls": [
+      "/data/projects-data.ts"
+    ],
+    "refSourceFiles": [
+      "data/projects-data.ts"
+    ],
+    "usage": "content",
+    "imageType": "project-rendering",
+    "width": 2508,
+    "height": 1672,
+    "kb": 880.6,
+    "status": "GOOD"
+  },
+  {
+    "filename": "shenzhen-qianhai-dreamfactory-aerial-rendering.jpg",
+    "sourcePath": "public/images/projects/shenzhen-qianhai-dreamfactory-aerial-rendering.jpg",
+    "pageUrls": [
+      "/data/projects-data.ts"
+    ],
+    "refSourceFiles": [
+      "data/projects-data.ts"
+    ],
+    "usage": "content",
+    "imageType": "project-rendering",
+    "width": 970,
+    "height": 540,
+    "kb": 124.7,
+    "status": "GOOD"
+  },
+  {
+    "filename": "shenzhen-qianhai-dreamfactory-construction-site-1.jpg",
+    "sourcePath": "public/images/projects/shenzhen-qianhai-dreamfactory-construction-site-1.jpg",
+    "pageUrls": [
+      "/data/projects-data.ts"
+    ],
+    "refSourceFiles": [
+      "data/projects-data.ts"
+    ],
+    "usage": "content",
+    "imageType": "project-site",
+    "width": 550,
+    "height": 460,
+    "kb": 95.6,
+    "status": "GOOD"
+  },
+  {
+    "filename": "shenzhen-qianhai-dreamfactory-construction-site-2.jpg",
+    "sourcePath": "public/images/projects/shenzhen-qianhai-dreamfactory-construction-site-2.jpg",
+    "pageUrls": [
+      "/data/projects-data.ts"
+    ],
+    "refSourceFiles": [
+      "data/projects-data.ts"
+    ],
+    "usage": "content",
+    "imageType": "project-site",
+    "width": 550,
+    "height": 460,
+    "kb": 61.0,
+    "status": "GOOD"
+  },
+  {
+    "filename": "shenzhen-qianhai-dreamfactory-detail-view.jpg",
+    "sourcePath": "public/images/projects/shenzhen-qianhai-dreamfactory-detail-view.jpg",
+    "pageUrls": [
+      "/data/projects-data.ts"
+    ],
+    "refSourceFiles": [
+      "data/projects-data.ts"
+    ],
+    "usage": "content",
+    "imageType": "component",
+    "width": 820,
+    "height": 460,
+    "kb": 113.3,
+    "status": "GOOD"
+  }
+]
