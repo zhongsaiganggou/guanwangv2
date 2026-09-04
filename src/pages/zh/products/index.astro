@@ -1,0 +1,165 @@
+---
+// ZhongSai V2 - Chinese Products Hub
+import BaseLayout from '../../../layouts/BaseLayout.astro';
+import QuoteForm from '../../../components/QuoteForm.astro';
+import FAQ from '../../../components/FAQ.astro';
+import '../../../styles/hub.css';
+
+const lang = 'zh';
+const title = '钢结构产品｜工业厂房、仓库、矿业与定制钢结构｜中赛钢构';
+const description = '中赛钢构提供工业厂房、仓库物流、矿业能源、商业公共、农业特种及定制工程钢结构产品，按建筑用途选择方案，支持按图加工与出口交付。';
+
+const products = [
+  {
+    num: '01',
+    title: '工业厂房与车间',
+    desc: '大跨度钢结构厂房、生产车间、装配车间，支持行车、设备布局与通风照明需求。',
+    img: '/images/products/01-industrial.jpg',
+    href: '/zh/steel-workshop/'
+  },
+  {
+    num: '02',
+    title: '仓库与物流建筑',
+    desc: '钢结构仓库、物流中心、配送中心，支持大空间存储、货架布局、装卸平台与保温需求。',
+    img: '/images/products/04-warehouse-logistics.jpg',
+    href: '/zh/steel-warehouse/'
+  },
+  {
+    num: '03',
+    title: '矿业与能源设施',
+    desc: '矿业厂房、设备支撑结构、输送系统支撑、工业平台等重型钢结构，按设备荷载与使用环境设计。',
+    img: '/images/products/02-mining-energy.jpg',
+    href: '/zh/steel-mining-factory/'
+  },
+  {
+    num: '04',
+    title: '商业与公共建筑',
+    desc: '商业展厅、体育设施、办公建筑、公共设施等大跨度钢结构，支持建筑外观与公共空间需求。',
+    img: '/images/products/03-commercial-public.jpg',
+    href: '/zh/steel-supermarket-mall/'
+  },
+  {
+    num: '05',
+    title: '农业与特种结构',
+    desc: '农业仓储、畜牧棚舍、加工车间及特种大跨度钢结构，考虑通风、防潮与使用环境。',
+    img: '/images/products/05-agriculture-special.jpg',
+    href: '/zh/steel-livestock-barn/'
+  },
+  {
+    num: '06',
+    title: '定制工程',
+    desc: '异形结构、复杂节点、设备平台、特殊用途钢结构，根据项目图纸与技术要求定制加工。',
+    img: '/images/products/06-custom-engineering.jpg',
+    href: '#quote'
+  }
+];
+
+const faqItems = [
+  {
+    question: '有图纸可以直接报价吗？',
+    answer: '可以。请提供结构图纸、深化图或BOQ材料清单，我们将根据图纸进行工程量核算并提供报价。图纸越完整，报价越精准。'
+  },
+  {
+    question: '没有完整图纸怎么办？',
+    answer: '如果暂无完整图纸，可以提供项目用途、基本尺寸（长宽高）、所在国家和使用需求，根据项目用途和基本参数进行初步需求评估，并进一步确认方案与报价所需资料。'
+  },
+  {
+    question: '可以只采购钢结构构件吗？',
+    answer: '可以。中赛钢构既提供完整建筑的钢结构材料包，也可根据需求单独供应钢梁、钢柱、桁架、檩条、围护系统等构件，按图纸加工并编号包装。'
+  }
+];
+---
+
+<BaseLayout title={title} description={description} lang={lang}>
+  <!-- Hero -->
+  <section class="hub-hero">
+    <div class="hub-hero-bg" style="background-image: url('/images/products/03-commercial-public.jpg')"></div>
+    <div class="hub-hero-overlay"></div>
+    <div class="container hub-hero-content">
+      <div class="hub-breadcrumb">
+        <a href="/zh/">首页</a><span>/</span><span>产品</span>
+      </div>
+      <p class="eyebrow">PRODUCTS · 建筑用途分类</p>
+      <h1>按建筑用途选择<br>钢结构产品</h1>
+      <p class="lead">工业厂房、仓库物流、矿业能源、商业公共、农业特种及定制工程项目——按用途快速找到对应的钢结构方案。</p>
+    </div>
+  </section>
+
+  <!-- 六大产品分类 -->
+  <section class="section" style="padding: 70px 0;">
+    <div class="container">
+      <div class="section-heading reveal" style="margin-bottom: 40px;">
+        <div>
+          <p class="section-index">01 / 产品分类</p>
+          <h2>六大建筑用途分类</h2>
+        </div>
+        <div>
+          <p>从工业生产到特种工程，按项目用途选择对应的钢结构产品类型。每个分类均可根据项目图纸定制加工。</p>
+        </div>
+      </div>
+      <div class="product-grid">
+        {products.map((product, i) => (
+          <a href={product.href} class={`product-card reveal reveal-delay-${(i % 3) + 1}`}>
+            <div class="product-card-img">
+              <img src={product.img} alt={product.title} loading="lazy">
+              <span class="product-card-num">{product.num}</span>
+            </div>
+            <div class="product-card-body">
+              <h3>{product.title}</h3>
+              <p>{product.desc}</p>
+              <span class="product-card-cta">查看详情 →</span>
+            </div>
+          </a>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- 双路径入口 -->
+  <section class="dual-path-section">
+    <div class="container">
+      <div class="section-heading reveal" style="color: white; text-align: center; display: block; margin-bottom: 8px;">
+        <p class="section-index" style="color: #f59e0b;">02 / 如何开始</p>
+        <h2 style="color: white; margin-bottom: 10px;">两种方式，快速获取方案</h2>
+        <p style="color: rgba(255,255,255,0.65); max-width: 600px; margin: 0 auto;">无论您是否已有完整图纸，都可以找到对应的入口开始项目沟通。</p>
+      </div>
+      <div class="dual-path-grid">
+        <div class="dual-path-card reveal reveal-delay-1">
+          <div class="path-icon">📐</div>
+          <h3>已有图纸 / BOQ</h3>
+          <p>如果您已有结构图纸、深化图或材料清单（BOQ），可以直接上传，我们将根据图纸进行工程量核算与报价。</p>
+          <a href="#quote" class="btn btn-primary">上传图纸获取报价 →</a>
+        </div>
+        <div class="dual-path-card reveal reveal-delay-2">
+          <div class="path-icon">🏗️</div>
+          <h3>暂无完整图纸</h3>
+          <p>如果图纸尚未完成，可以提供项目用途、基本尺寸和所在国家，我们将根据项目类型提供初步方案与参考建议。</p>
+          <a href="#quote" class="btn btn-secondary">提交项目需求 →</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section class="faq-section">
+    <div class="container">
+      <div class="section-heading reveal">
+        <p class="section-index">03 / 常见问题</p>
+        <h2>采购前常见问题</h2>
+      </div>
+      <FAQ items={faqItems} idPrefix="products-zh" lang={lang} />
+    </div>
+  </section>
+
+  <!-- Quote CTA -->
+  <section class="quote-cta-section" id="quote">
+    <div class="container">
+      <div class="quote-cta-header reveal">
+        <p class="section-index" style="color: #f59e0b;">04 / 获取报价</p>
+        <h2>把你的项目参数交给工程师</h2>
+        <p>填写项目信息，中赛钢构工程团队将根据您的需求提供方案与报价。</p>
+      </div>
+      <QuoteForm lang={lang} />
+    </div>
+  </section>
+</BaseLayout>

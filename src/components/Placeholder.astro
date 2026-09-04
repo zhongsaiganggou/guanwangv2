@@ -1,0 +1,113 @@
+---
+// Placeholder.astro - 未迁移页面占位组件
+import BaseLayout from '../layouts/BaseLayout.astro';
+
+interface Props {
+  lang: 'zh' | 'en';
+  title: string;
+  description?: string;
+}
+
+const { lang, title, description } = Astro.props;
+
+const texts = lang === 'zh' ? {
+  migrating: '页面正在迁移',
+  message: '该页面正在从旧站迁移到新的V2架构。',
+  eta: '预计很快上线',
+  backHome: '返回首页',
+  contact: '联系我们',
+} : {
+  migrating: 'Page Migration in Progress',
+  message: 'This page is being migrated from the legacy site to the new V2 architecture.',
+  eta: 'Coming soon',
+  backHome: 'Back to Home',
+  contact: 'Contact Us',
+};
+---
+
+<BaseLayout lang={lang} title={title} description={description || texts.message} noindex={true}>
+  <main>
+    <section class="placeholder-section">
+      <div class="container">
+        <div class="placeholder-content">
+          <div class="placeholder-icon">
+            <svg width="64" height="64" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+              <path d="M12 2L2 7l10 5 10-5-10-5z"/>
+              <path d="M2 17l10 5 10-5"/>
+              <path d="M2 12l10 5 10-5"/>
+            </svg>
+          </div>
+          <h1>{texts.migrating}</h1>
+          <p class="placeholder-title">{title}</p>
+          <p class="placeholder-message">{texts.message}</p>
+          <p class="placeholder-eta">{texts.eta}</p>
+          <div class="placeholder-actions">
+            <a href={`/${lang}/`} class="btn btn-primary">{texts.backHome}</a>
+            <a href={`/${lang}/contact/`} class="btn btn-secondary">{texts.contact}</a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+</BaseLayout>
+
+<style>
+  .placeholder-section {
+    min-height: 70vh;
+    display: flex;
+    align-items: center;
+    padding: 80px 0;
+    background: var(--color-gray-50);
+  }
+  .placeholder-content {
+    text-align: center;
+    max-width: 600px;
+    margin: 0 auto;
+  }
+  .placeholder-icon {
+    color: var(--color-primary);
+    margin-bottom: 24px;
+    opacity: 0.6;
+  }
+  .placeholder-content h1 {
+    font-size: 2rem;
+    font-weight: 700;
+    color: var(--color-dark);
+    margin-bottom: 12px;
+  }
+  .placeholder-title {
+    font-size: 1.25rem;
+    color: var(--color-primary);
+    font-weight: 600;
+    margin-bottom: 16px;
+  }
+  .placeholder-message {
+    font-size: 1rem;
+    color: var(--color-gray-600);
+    line-height: 1.7;
+    margin-bottom: 8px;
+  }
+  .placeholder-eta {
+    font-size: 0.875rem;
+    color: var(--color-gray-500);
+    margin-bottom: 32px;
+  }
+  .placeholder-actions {
+    display: flex;
+    gap: 16px;
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+  @media (max-width: 768px) {
+    .placeholder-section {
+      padding: 60px 0;
+      min-height: 60vh;
+    }
+    .placeholder-content h1 {
+      font-size: 1.5rem;
+    }
+    .placeholder-title {
+      font-size: 1.1rem;
+    }
+  }
+</style>

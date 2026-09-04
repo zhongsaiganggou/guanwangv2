@@ -1,0 +1,382 @@
+---
+import BaseLayout from '../../../layouts/BaseLayout.astro';
+import QuoteForm from '../../../components/QuoteForm.astro';
+import '../../../styles/detail.css';
+
+const title = '钢结构仓库与物流建筑 | 中赛钢构';
+const description = '中赛钢构提供钢结构仓库与物流建筑解决方案，覆盖设计深化、制造加工、构件供应、包装装柜与出口交付，支持货架布局、净高规划、装卸通道与围护系统配置。';
+const lang = 'zh';
+const canonical = 'https://zhongsai-steelstructure.com/zh/steel-warehouse/';
+---
+
+<BaseLayout title={title} description={description} lang={lang}>
+  <!-- Hero -->
+  <section class="detail-hero">
+    <div class="detail-hero-bg" style="background-image: url('/images/products/04-warehouse-logistics.jpg');"></div>
+    <div class="detail-hero-overlay"></div>
+    <div class="detail-hero-content">
+      <span class="eyebrow">钢结构仓库 · 物流建筑</span>
+      <h1>钢结构仓库与物流建筑</h1>
+      <p class="lead">中赛钢构为仓储、物流与配送类项目提供钢结构仓库解决方案，从设计深化到制造出口，支持货架布局、净高规划、装卸通道与围护系统配置，帮助客户把仓储需求转化为可交付的钢结构建筑。</p>
+      <div class="detail-hero-actions">
+        <a href="#quote" class="btn btn-primary">获取项目报价</a>
+        <a href="/zh/products/" class="btn btn-outline">查看全部产品</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Breadcrumb -->
+  <nav class="detail-breadcrumb">
+    <div class="container">
+      <a href="/zh/">首页</a>
+      <span class="sep">/</span>
+      <a href="/zh/products/">产品</a>
+      <span class="sep">/</span>
+      <span class="current">钢结构仓库</span>
+    </div>
+  </nav>
+
+  <!-- 01 Warehouse Project Requirements -->
+  <section class="detail-section">
+    <div class="container">
+      <div class="section-heading reveal">
+        <p class="section-index">01 / 仓库项目需求</p>
+        <h2>钢结构仓库项目需要确认哪些信息</h2>
+        <p>钢结构仓库的结构配置取决于仓储用途、货架系统和物流作业方式。在方案阶段，以下信息直接影响柱网、净高、装卸区和围护系统的设计。</p>
+      </div>
+      <div class="requirement-grid">
+        <div class="requirement-card reveal reveal-delay-1">
+          <div class="req-icon">📦</div>
+          <h3>仓储用途</h3>
+          <p>普通仓储、物流配送、冷链存储还是特殊用途，不同存储方式对空间和围护有不同要求。</p>
+        </div>
+        <div class="requirement-card reveal reveal-delay-2">
+          <div class="req-icon">🗄️</div>
+          <h3>货架系统</h3>
+          <p>货架类型、尺寸、排列方式和通道宽度，影响柱网布局和净空高度设计。</p>
+        </div>
+        <div class="requirement-card reveal reveal-delay-3">
+          <div class="req-icon">📏</div>
+          <h3>净高要求</h3>
+          <p>所需存储净高、货架高度和堆垛设备运行空间，决定建筑檐口高度和结构配置。</p>
+        </div>
+        <div class="requirement-card reveal reveal-delay-1">
+          <div class="req-icon">🚚</div>
+          <h3>装卸通道</h3>
+          <p>车辆类型、装卸方式、月台数量和转弯半径需求，影响建筑布局和门洞设置。</p>
+        </div>
+        <div class="requirement-card reveal reveal-delay-2">
+          <div class="req-icon">🚪</div>
+          <h3>门洞要求</h3>
+          <p>卷帘门、提升门、人员通道的数量和尺寸，以及装卸平台配置，按作业需求确定。</p>
+        </div>
+        <div class="requirement-card reveal reveal-delay-3">
+          <div class="req-icon">🧱</div>
+          <h3>围护与保温</h3>
+          <p>屋面墙面材料、保温隔热、防水等级和通风要求，根据存储环境和项目要求确定。</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 02 Storage & Space Planning -->
+  <section class="detail-section alt">
+    <div class="container">
+      <div class="section-heading reveal">
+        <p class="section-index">02 / 仓储与空间规划</p>
+        <h2>围绕仓储效率的空间与柱网规划</h2>
+        <p>钢结构仓库的核心是仓储效率和空间利用率。结构规划需要配合货架布置、货物存储和物流通道，而不是单纯追求大跨度。</p>
+      </div>
+      <div class="image-text-block">
+        <div class="itb-image">
+          <img src="/images/company/factory-yard-gantry-crane.jpg" alt="中赛钢构钢结构仓库仓储空间" loading="lazy">
+        </div>
+        <div class="itb-content">
+          <h3>柱网与货架布局协调</h3>
+          <p>柱网间距根据货架尺寸、通道宽度和物料搬运方式确定，在结构经济性和仓储空间利用率之间取得平衡。</p>
+          <ul>
+            <li>柱网间距配合货架排列与作业通道</li>
+            <li>净空高度满足货架存储与堆垛设备运行</li>
+            <li>货物进出流线与存储区域合理分区</li>
+            <li>屋面墙面系统与结构框架协调设计</li>
+            <li>具体跨度、高度和柱网根据项目图纸与要求确定</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 03 Loading & Access Planning -->
+  <section class="detail-section">
+    <div class="container">
+      <div class="section-heading reveal">
+        <p class="section-index">03 / 装卸与通行</p>
+        <h2>装卸区与车辆通行规划</h2>
+        <p>仓库的装卸效率直接影响运营成本。门洞、装卸区和车辆通道需要根据作业方式和车辆类型合理规划。</p>
+      </div>
+      <div class="feature-grid">
+        <div class="feature-card reveal reveal-delay-1">
+          <div class="feature-img" style="background-image: url('/images/container-loading.jpg');"></div>
+          <div class="feature-body">
+            <h3>装卸区与月台</h3>
+            <p>装卸平台数量、尺寸和高度根据车辆类型和作业量确定，门洞尺寸和开启方式按使用需求配置。</p>
+          </div>
+        </div>
+        <div class="feature-card reveal reveal-delay-2">
+          <div class="feature-img" style="background-image: url('/images/manufacturing/factory-production-workshop-overview.jpg');"></div>
+          <div class="feature-body">
+            <h3>车辆通行与货物流线</h3>
+            <p>场地内车辆通行路线、转弯半径和装卸作业区根据物流作业方式规划，货物进出流线与存储区域协调。</p>
+          </div>
+        </div>
+      </div>
+      <p style="margin-top: 20px; font-size: 14px; color: #64748b;">* 具体门洞尺寸、装卸平台规格和转弯半径要求根据项目使用需求和当地规范确定。</p>
+    </div>
+  </section>
+
+  <!-- 04 Roof & Wall Envelope -->
+  <section class="detail-section alt">
+    <div class="container">
+      <div class="section-heading reveal">
+        <p class="section-index">04 / 屋面墙面围护</p>
+        <h2>屋面与墙面围护系统</h2>
+        <p>仓库的围护系统直接影响存储环境和运营成本。中赛钢构可根据项目要求提供屋面板、墙面板及配套围护材料，与钢结构主体协调供应。</p>
+      </div>
+      <div class="image-text-block reverse">
+        <div class="itb-image">
+          <img src="/images/products/06-custom-engineering.jpg" alt="钢结构仓库屋面墙面围护系统" loading="lazy">
+        </div>
+        <div class="itb-content">
+          <h3>围护配置按仓储环境确定</h3>
+          <p>屋面墙面材料、保温隔热、防水等级和通风配置，根据存储用途、当地气候和项目技术要求确定。</p>
+          <ul>
+            <li>屋面板与墙面板系统可随主体结构一并供应</li>
+            <li>保温隔热层按存储环境和项目要求配置</li>
+            <li>屋面防水与排水构造按项目技术要求设计</li>
+            <li>自然通风与采光开口按仓储需求布置</li>
+          </ul>
+          <div style="margin-top: 20px;">
+            <a href="/zh/components/roof-wall-cladding-systems/" class="btn btn-outline">查看围护系统</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 05 Fabrication & Export Supply -->
+  <section class="detail-section">
+    <div class="container">
+      <div class="section-heading reveal">
+        <p class="section-index">05 / 制造与出口供应</p>
+        <h2>从图纸到出口交付的制造供应</h2>
+        <p>中赛钢构拥有自有生产基地，按项目图纸组织钢结构仓库构件制造，覆盖切割、组立、焊接、表面处理和质量检验等关键环节。</p>
+      </div>
+      <div class="process-flow">
+        <div class="process-step reveal reveal-delay-1">
+          <div class="step-num">01</div>
+          <h4>图纸确认</h4>
+          <p>项目图纸、BOQ与技术要求确认</p>
+        </div>
+        <div class="process-step reveal reveal-delay-2">
+          <div class="step-num">02</div>
+          <h4>设计深化</h4>
+          <p>深化设计与构件加工图编制</p>
+        </div>
+        <div class="process-step reveal reveal-delay-3">
+          <div class="step-num">03</div>
+          <h4>制造加工</h4>
+          <p>按图纸组织仓库钢结构构件制造</p>
+        </div>
+        <div class="process-step reveal reveal-delay-4">
+          <div class="step-num">04</div>
+          <h4>构件标识</h4>
+          <p>可根据深化图进行构件标识与编号</p>
+        </div>
+        <div class="process-step reveal reveal-delay-1">
+          <div class="step-num">05</div>
+          <h4>包装装柜</h4>
+          <p>按构件类型和装柜要求组织包装</p>
+        </div>
+        <div class="process-step reveal reveal-delay-2">
+          <div class="step-num">06</div>
+          <h4>出口单证</h4>
+          <p>出口单证支持与物流协调</p>
+        </div>
+        <div class="process-step reveal reveal-delay-3">
+          <div class="step-num">07</div>
+          <h4>海运交付</h4>
+          <p>集装箱装柜与海运出口安排</p>
+        </div>
+        <div class="process-step reveal reveal-delay-4">
+          <div class="step-num">08</div>
+          <h4>技术指导</h4>
+          <p>海外安装技术指导（当地施工由客户团队完成）</p>
+        </div>
+      </div>
+      <div style="margin-top: 28px; display: flex; gap: 16px; flex-wrap: wrap;">
+        <a href="/zh/manufacturing-quality/" class="btn btn-outline">查看制造能力</a>
+        <a href="/zh/components/" class="btn btn-outline">查看构件与材料</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- GEO Service Boundary -->
+  <section class="detail-section dark">
+    <div class="container">
+      <div class="section-heading reveal" style="text-align: center;">
+        <p class="section-index" style="justify-content: center;">服务边界</p>
+        <h2 style="color: #fff;">中赛钢构提供什么，不提供什么</h2>
+        <p style="margin: 0 auto;">明确服务范围，避免项目预期偏差。</p>
+      </div>
+      <div class="geo-boundary">
+        <div class="geo-box include">
+          <h4>中赛钢构提供</h4>
+          <ul>
+            <li>设计深化与加工图支持</li>
+            <li>钢结构仓库构件制造加工</li>
+            <li>钢梁、钢柱、檩条等构件供应</li>
+            <li>屋面墙面围护系统协调供应</li>
+            <li>构件标识、包装与集装箱装柜</li>
+            <li>出口单证支持与物流协调</li>
+            <li>海外安装技术指导</li>
+          </ul>
+        </div>
+        <div class="geo-box exclude">
+          <h4>中赛钢构不直接承担</h4>
+          <ul>
+            <li>项目所在国当地施工</li>
+            <li>当地基础施工</li>
+            <li>当地总包/EPC工程</li>
+            <li>当地装修与机电工程</li>
+            <li>作为报关行直接办理清关</li>
+            <li>作为货运代理提供运输服务</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 06 What We Need for Quotation -->
+  <section class="detail-section alt" id="quote-info">
+    <div class="container">
+      <div class="section-heading reveal">
+        <p class="section-index">06 / 报价资料</p>
+        <h2>获取仓库报价需要提供什么资料</h2>
+        <p>提供越完整的项目信息，报价越准确。仓储用途、货架布局和装卸需求直接影响结构配置和价格。</p>
+      </div>
+      <div class="quote-info-grid">
+        <div class="quote-info-card drawing">
+          <h4>📋 已有图纸 / BOQ</h4>
+          <ul>
+            <li>项目所在国家</li>
+            <li>建筑图纸 / 结构图纸</li>
+            <li>工程量清单（BOQ）</li>
+            <li>项目技术规格书</li>
+            <li>货架 / 装卸特殊要求</li>
+          </ul>
+        </div>
+        <div class="quote-info-card no-drawing">
+          <h4>📝 暂无完整图纸</h4>
+          <ul>
+            <li>项目所在国家</li>
+            <li>仓库用途（普通仓储 / 物流 / 冷链）</li>
+            <li>长度 / 宽度 / 高度（参考尺寸）</li>
+            <li>货架类型与净高要求</li>
+            <li>装卸方式与门洞需求</li>
+            <li>保温 / 通风特殊要求</li>
+          </ul>
+        </div>
+      </div>
+      <p class="quote-note">* 初步方案与报价需基于项目用途和基本参数进行需求评估，最终方案与价格以图纸和技术要求确认为准。</p>
+    </div>
+  </section>
+
+  <!-- 07 FAQ -->
+  <section class="detail-section">
+    <div class="container">
+      <div class="section-heading reveal" style="text-align: center;">
+        <p class="section-index" style="justify-content: center;">07 / 常见问题</p>
+        <h2>钢结构仓库项目常见问题</h2>
+      </div>
+      <div class="detail-faq">
+        <div class="faq-item">
+          <button class="faq-question" aria-expanded="false">
+            <span>钢结构仓库报价需要提供哪些参数？</span>
+            <span class="faq-icon">+</span>
+          </button>
+          <div class="faq-answer">
+            <div class="faq-answer-inner">
+              需要提供项目所在国家、仓库用途、参考尺寸（长宽高）、货架类型与净高要求、装卸方式与门洞需求，以及保温通风等特殊要求。有完整图纸和BOQ时报价更准确。
+            </div>
+          </div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-question" aria-expanded="false">
+            <span>可以根据货架和净高要求规划仓库方案吗？</span>
+            <span class="faq-icon">+</span>
+          </button>
+          <div class="faq-answer">
+            <div class="faq-answer-inner">
+              可以。中赛钢构可根据货架类型、尺寸、排列方式和所需净高，结合柱网布局和结构经济性进行方案规划。具体配置需结合项目图纸和当地设计要求确定。
+            </div>
+          </div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-question" aria-expanded="false">
+            <span>屋面和墙面围护系统可以随钢结构一并供应吗？</span>
+            <span class="faq-icon">+</span>
+          </button>
+          <div class="faq-answer">
+            <div class="faq-answer-inner">
+              可以。中赛钢构可根据项目要求同时供应屋面板、墙面板、保温层及配套围护材料，与钢结构主体协调设计和供应。具体围护配置按项目技术要求确定。
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 08 Quote CTA + QuoteForm -->
+  <section class="detail-section dark" id="quote">
+    <div class="container">
+      <div class="section-heading reveal" style="text-align: center;">
+        <p class="section-index" style="justify-content: center; color: #f59e0b;">08 / 获取报价</p>
+        <h2 style="color: #fff;">提交钢结构仓库项目需求</h2>
+        <p style="margin: 0 auto; color: rgba(255,255,255,0.75);">有图纸可直接上传，暂无完整图纸也可提交项目基本需求。</p>
+      </div>
+      <QuoteForm lang="zh" />
+    </div>
+  </section>
+</BaseLayout>
+
+<script>
+  // FAQ toggle
+  document.querySelectorAll('.faq-question').forEach(btn => {
+    btn.addEventListener('click', () => {
+      const item = btn.closest('.faq-item');
+      const isOpen = item.classList.contains('open');
+      item.classList.toggle('open');
+      btn.setAttribute('aria-expanded', !isOpen);
+    });
+  });
+
+  // Scroll reveal
+  const revealElements = document.querySelectorAll('.reveal');
+  if ('IntersectionObserver' in window) {
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.style.opacity = '1';
+          entry.target.style.transform = 'translateY(0)';
+          observer.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.1 });
+    revealElements.forEach(el => {
+      el.style.opacity = '0';
+      el.style.transform = 'translateY(24px)';
+      el.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+      observer.observe(el);
+    });
+  }
+</script>

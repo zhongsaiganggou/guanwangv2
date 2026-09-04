@@ -1,0 +1,409 @@
+---
+// ZhongSai V2 - English Homepage
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import QuoteForm from '../../components/QuoteForm.astro';
+import '../../styles/home.css';
+
+const lang = 'en';
+const title = 'ZhongSai Steel Structure | Design, Detailing, Fabrication & Global Export Delivery';
+const description = 'ZhongSai Steel Structure is a China-based steel structure manufacturer and export supplier. We provide structural design, detailing, factory fabrication, packing, container loading, export logistics and overseas installation technical guidance. 100,000 m² production base, 100,000 tonnes annual capacity.';
+---
+
+<BaseLayout title={title} description={description} lang={lang}>
+  <!-- Hero -->
+  <section class="hero-home">
+    <div class="hero-home-bg" style="background-image: url('/images/company/factory-aerial-panorama.jpg')"></div>
+    <div class="hero-home-overlay"></div>
+    <div class="container hero-home-content">
+      <div class="hero-home-copy">
+        <p class="eyebrow hero-fade">Made in China · Delivered Worldwide</p>
+        <h1 class="hero-fade hero-fade-delay-1">From Drawings to<br><em>Construction Site</em></h1>
+        <p class="lead hero-fade hero-fade-delay-2">From structural design and shop detailing to factory fabrication, export packing and overseas installation guidance — one team connects the critical stages. You handle local construction; we coordinate steel structure material supply according to confirmed project scope and delivery requirements.</p>
+        <div class="hero-home-actions hero-fade hero-fade-delay-3">
+          <a href="#quote" class="btn btn-primary">Submit Project Requirements <span style="margin-left:6px">↗</span></a>
+          <a href="#cases" class="btn btn-secondary">View Global Projects</a>
+        </div>
+      </div>
+      <div class="hero-home-stats hero-fade hero-fade-delay-2">
+        <div class="hero-stat">
+          <b>15<sup>+ yrs</sup></b>
+          <span>Steel structure & overseas project experience</span>
+        </div>
+        <div class="hero-stat">
+          <b>100K<sup>m²</sup></b>
+          <span>Production base area</span>
+        </div>
+        <div class="hero-stat">
+          <b>100K<sup>tons</sup></b>
+          <span>Annual production capacity</span>
+        </div>
+        <div class="hero-stat">
+          <b>300<sup>+</sup></b>
+          <span>Frontline production workers</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Hero Industry Bar -->
+    <div class="hero-industry-bar">
+      <div class="container hero-industry-bar-inner">
+        <span class="bar-label">Export Manufacturing Capability</span>
+        <div class="bar-items">
+          <span class="bar-item">Custom Fabrication</span>
+          <span class="bar-item">Cutting & Welding</span>
+          <span class="bar-item">Surface & QC</span>
+          <span class="bar-item">Packing & Loading</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Trust Bar -->
+  <div class="trust-bar">
+    <div class="container trust-bar-inner">
+      <span>ISO 9001</span>
+      <span>GB / ASTM / EN</span>
+      <span>Malaysia CIDB</span>
+      <span>Component Marking & Packing Lists</span>
+      <span>Overseas Installation Guidance</span>
+    </div>
+  </div>
+
+  <!-- Customer Entry -->
+  <section class="section">
+    <div class="container">
+      <div class="section-heading reveal">
+        <div>
+          <p class="section-index">Find Your Entry Point</p>
+          <h2>Different Roles,<br>Different Project Starting Points.</h2>
+        </div>
+        <div>
+          <p>Whether you are an engineering company with drawings or a project owner with only site dimensions, you can find the right entry point here.</p>
+        </div>
+      </div>
+      <div class="customer-entry">
+        <a href="#quote" class="customer-card reveal reveal-delay-1">
+          <div class="customer-card-icon">O</div>
+          <h3>I am a Project Owner / Investor</h3>
+          <p>Planning to build a factory, warehouse or industrial facility, needing a complete steel structure solution from design to export.</p>
+          <ul>
+            <li>Only have site and dimensions, need preliminary design</li>
+            <li>Need complete material package and export delivery</li>
+            <li>Need installation guidance and technical support</li>
+          </ul>
+          <span class="card-link">Get Project Solution →</span>
+        </a>
+        <a href="#quote" class="customer-card reveal reveal-delay-2">
+          <div class="customer-card-icon">E</div>
+          <h3>I am an Engineering Company / Local Contractor</h3>
+          <p>Already have drawings and BOQ, needing a reliable steel structure fabrication factory and export supplier.</p>
+          <ul>
+            <li>Fabrication from drawings, need detailing support</li>
+            <li>Need component marking, packing and container management</li>
+            <li>Need coordinated fabrication, delivery planning and quality management</li>
+          </ul>
+          <span class="card-link">Upload Drawings for Quote →</span>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- 01 Service Scope -->
+  <section class="section" style="background: var(--color-gray-100)">
+    <div class="container">
+      <div class="section-heading reveal">
+        <div>
+          <p class="section-index">01 / Service Scope</p>
+          <h2>Complexity Stays in the Factory,<br>Certainty Goes to the Client.</h2>
+        </div>
+        <div>
+          <p>We focus on engineered delivery of steel structure materials. Clear boundaries make responsibilities, costs and schedules easier to control.</p>
+        </div>
+      </div>
+      <div class="scope-grid">
+        <article class="scope-card scope-deliver reveal reveal-delay-1">
+          <div class="scope-card-head">
+            <i>Do</i>
+            <small>WHAT WE DELIVER</small>
+          </div>
+          <h3>Material Delivery from Design to Container</h3>
+          <ol>
+            <li><b>01</b><span><strong>Engineering Design & Detailing</strong>Develop manufacturable solutions based on loads, spans, usage and local codes.</span></li>
+            <li><b>02</b><span><strong>Factory Fabrication & QC</strong>Cutting, assembly, welding, shot blasting, coating — manufacturing and inspection organized according to project requirements.</span></li>
+            <li><b>03</b><span><strong>Packing, Container Loading & Export</strong>Component marking, packing lists and loading plans delivered together.</span></li>
+            <li><b>04</b><span><strong>Overseas Installation Technical Guidance</strong>Provide installation drawings, video resources, and can send engineers for on-site guidance.</span></li>
+          </ol>
+        </article>
+        <article class="scope-card scope-boundary reveal reveal-delay-2">
+          <div class="scope-card-head">
+            <i>Bound</i>
+            <small>SCOPE BOUNDARY</small>
+          </div>
+          <h3>On-Site Works Performed by Client's Local Team</h3>
+          <p>We do not undertake local civil works, finishing or general contracting. The client arranges a local construction team; we provide executable technical documents and guidance.</p>
+          <ul>
+            <li>No on-site construction or erection</li>
+            <li>No foundation or concrete works</li>
+            <li>No interior/exterior finishing or MEP</li>
+            <li>No EPC turnkey general contracting</li>
+          </ul>
+          <b class="scope-note">Clear Division · Controlled Risk · Transparent Cost</b>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- 02 Five Entry Points -->
+  <section class="section" style="background: var(--color-dark); color: white">
+    <div class="container">
+      <div class="section-heading reveal" style="color: white">
+        <div>
+          <p class="section-index" style="color: var(--color-secondary)">02 / Find What You Need</p>
+          <h2 style="color: white">Four Entry Points,<br>Find What You Need Fast.</h2>
+        </div>
+        <div>
+          <p style="color: rgba(255,255,255,0.7)">From building application to export delivery, each stage has its own professional entry point.</p>
+        </div>
+      </div>
+      <div class="quick-entry-grid">
+        <a href="#" class="quick-entry-card reveal reveal-delay-1">
+          <h4>By Building Application</h4>
+          <p>Factory, warehouse, mining, commercial, agriculture</p>
+        </a>
+        <a href="#" class="quick-entry-card reveal reveal-delay-2">
+          <h4>By Component Supply</h4>
+          <p>Columns, beams, trusses, purlins, cladding</p>
+        </a>
+        <a href="#quote" class="quick-entry-card reveal reveal-delay-3">
+          <h4>Have Drawings / BOQ</h4>
+          <p>Upload drawings for project quotation</p>
+        </a>
+        <a href="#quote" class="quick-entry-card reveal reveal-delay-4">
+          <h4>No Complete Drawings Yet</h4>
+          <p>Submit project use and basic requirements</p>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- 03 Core Capabilities -->
+  <section class="section">
+    <div class="container">
+      <div class="section-heading reveal">
+        <div>
+          <p class="section-index">03 / Core Capabilities</p>
+          <h2>Fabrication, Components, Envelope<br>Three Core Capabilities.</h2>
+        </div>
+        <div>
+          <p>From factory fabrication to custom components from drawings, to complete building envelope systems — ZhongSai provides one-stop steel structure material supply for overseas projects.</p>
+        </div>
+      </div>
+      <div class="capability-grid">
+        <div class="capability-card reveal reveal-delay-1">
+          <div class="capability-img">
+            <img src="/images/manufacturing/cnc-laser-cutting-machine.webp" alt="CNC laser cutting machine for steel plate cutting" loading="lazy">
+          </div>
+          <div class="capability-body">
+            <span class="capability-num">01</span>
+            <h3>Fabrication & Quality Control</h3>
+            <p>From material inspection, CNC cutting, assembly and welding to surface treatment and quality inspection — covering key steel fabrication stages.</p>
+            <a href="#quote" class="capability-cta">Explore Manufacturing →</a>
+          </div>
+        </div>
+        <div class="capability-card reveal reveal-delay-2">
+          <div class="capability-img">
+            <img src="/images/manufacturing/h-beam-assembly-machine.webp" alt="H-beam assembly machine for steel component fabrication" loading="lazy">
+          </div>
+          <div class="capability-body">
+            <span class="capability-num">02</span>
+            <h3>Custom Fabricated Steel Components</h3>
+            <p>Steel columns, beams, crane beams, box sections and trusses fabricated from your drawings and BOQ — component marking can be organized based on drawings and project requirements.</p>
+            <a href="#quote" class="capability-cta">View Components →</a>
+          </div>
+        </div>
+        <div class="capability-card reveal reveal-delay-3">
+          <div class="capability-img">
+            <img src="/images/components/cladding-system-panels-purlins.jpg" alt="Steel cladding system with roof panels, wall panels, purlins and sandwich panels" loading="lazy">
+          </div>
+          <div class="capability-body">
+            <span class="capability-num">03</span>
+            <h3>Roof & Wall Cladding Systems</h3>
+            <p>Purlins, roof panels, wall panels, sandwich panels, floor decks and trims — a complete building envelope supply package.</p>
+            <a href="#quote" class="capability-cta">Explore Cladding →</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 04 Manufacturing Evidence -->
+  <section class="section" style="background: var(--color-gray-100)">
+    <div class="container">
+      <div class="section-heading reveal">
+        <div>
+          <p class="section-index">04 / Manufacturing Capability</p>
+          <h2>Real Factory · Real Manufacturing</h2>
+        </div>
+        <div>
+          <p>100,000 m² production base with cutting, assembly, welding, surface treatment, quality inspection and packing capabilities. Component marking and packing can be coordinated according to confirmed drawings and project requirements to support container loading and on-site installation.</p>
+        </div>
+      </div>
+      <div class="factory-grid reveal">
+        <figure class="factory-item large">
+          <img src="/images/company/factory-aerial-panorama.jpg" alt="Aerial view of ZhongSai production base with gantry cranes, main workshop and finished component yard" loading="lazy">
+          <figcaption>Production Base Aerial · Gantry Cranes & Finished Yard</figcaption>
+        </figure>
+        <figure class="factory-item">
+          <img src="/images/company/factory-interior-production.jpg" alt="ZhongSai production workshop interior with overhead cranes, steel beam production line and fabricated components" loading="lazy">
+          <figcaption>Production Workshop · Overhead Cranes & Component Line</figcaption>
+        </figure>
+        <figure class="factory-item">
+          <img src="/images/company/factory-steel-beam-fabrication.jpg" alt="Fabricated steel beams with connection plates and bolt holes neatly stacked in the workshop" loading="lazy">
+          <figcaption>Fabricated Beams · Connection Plates & Bolt Holes</figcaption>
+        </figure>
+        <figure class="factory-item">
+          <img src="/images/company/factory-yard-gantry-crane.jpg" alt="ZhongSai outdoor yard with gantry crane lifting finished steel components, components marked and ready for container loading" loading="lazy">
+          <figcaption>Outdoor Yard · Component Marking & Ready for Loading</figcaption>
+        </figure>
+        <figure class="factory-item">
+          <img src="/images/container-loading.jpg" alt="Steel structure components being loaded into containers for export, workers loading marked components in sequence" loading="lazy">
+          <figcaption>Packing & Loading · Sequential Container Loading</figcaption>
+        </figure>
+      </div>
+    </div>
+  </section>
+
+  <!-- 06 Process -->
+  <section class="section">
+    <div class="container">
+      <div class="section-heading reveal" style="text-align: center; display: block; margin-bottom: 48px">
+        <p class="section-index">05 / Project Process</p>
+        <h2 style="margin-bottom: 12px">Every Step Has a Clear Deliverable.</h2>
+        <p style="max-width: 600px; margin: 0 auto; color: var(--color-gray-600)">From requirement input to installation guidance, the process is transparent with confirmable milestones.</p>
+      </div>
+      <div class="process-steps reveal">
+        <div class="process-step">
+          <div class="process-step-num">01</div>
+          <strong>Requirements</strong>
+          <span>Usage, dimensions, country, loads, drawings</span>
+        </div>
+        <div class="process-step">
+          <div class="process-step-num">02</div>
+          <strong>Preliminary Scheme</strong>
+          <span>Structural recommendations & budget range</span>
+        </div>
+        <div class="process-step">
+          <div class="process-step-num">03</div>
+          <strong>Structural Design</strong>
+          <span>Calculation report & design drawings</span>
+        </div>
+        <div class="process-step">
+          <div class="process-step-num">04</div>
+          <strong>Detailing Confirmation</strong>
+          <span>Shop drawings, BOM & schedule</span>
+        </div>
+        <div class="process-step">
+          <div class="process-step-num">05</div>
+          <strong>Production & QC</strong>
+          <span>Fabrication, inspection & progress tracking</span>
+        </div>
+        <div class="process-step">
+          <div class="process-step-num">06</div>
+          <strong>Packing & Export</strong>
+          <span>Marking, loading, docs & shipping</span>
+        </div>
+        <div class="process-step">
+          <div class="process-step-num">07</div>
+          <strong>Installation Guidance</strong>
+          <span>Erection drawings, videos & engineer support</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 07 Cases Entry -->
+  <section class="section" id="cases" style="background: var(--color-dark); color: white">
+    <div class="container">
+      <div class="section-heading reveal" style="color: white">
+        <div>
+          <p class="section-index" style="color: var(--color-secondary)">06 / Global Projects</p>
+          <h2 style="color: white">Overseas Projects & Export Delivery</h2>
+        </div>
+        <div>
+          <p style="color: rgba(255,255,255,0.7)">Explore ZhongSai project, manufacturing and export delivery references.</p>
+        </div>
+      </div>
+      <div class="cases-grid">
+        <a href="#" class="case-card reveal reveal-delay-1">
+          <img src="/images/company/factory-interior-production.jpg" alt="Overseas industrial steel structure project designed, fabricated and exported by ZhongSai" loading="lazy">
+          <div class="case-overlay">
+            <small>Industrial Engineering</small>
+            <b>Large-Scale Overseas Industrial Projects</b>
+            <em>Design & Detailing / Component Fabrication / Export Delivery</em>
+          </div>
+        </a>
+        <a href="#" class="case-card reveal reveal-delay-2">
+          <img src="/images/container-loading.jpg" alt="Steel structure components being loaded into containers for export, loaded in sequence by marking number" loading="lazy">
+          <div class="case-overlay">
+            <small>Delivery Updates</small>
+            <b>Component Marking & Container Management</b>
+            <em>Making on-site erection more efficient</em>
+          </div>
+        </a>
+        <div class="case-stat reveal reveal-delay-3">
+          <b>15<sup>+ yrs</sup></b>
+          <p>Steel structure industry & overseas project experience</p>
+          <a href="#">View Project Archive →</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 08 Quote Section -->
+  <section class="quote-section" id="quote">
+    <div class="quote-section-bg" style="background-image: url('/images/company/factory-yard-gantry-crane.jpg')"></div>
+    <div class="quote-section-overlay"></div>
+    <div class="container quote-section-inner">
+      <div class="quote-copy reveal">
+        <p class="section-index">07 / Project Inquiry</p>
+        <h2>Send Your Project Parameters<br>to Our Engineers.</h2>
+        <p>Provide a few key details and we will contact you promptly with next-step recommendations. If you have drawings, you can upload them directly or send via email.</p>
+        <div class="quote-direct">
+          <a href="https://wa.me/8613192007378" target="_blank" rel="noopener">
+            <div>
+              <small>WHATSAPP</small>
+              <b>+86 131 9200 7378</b>
+            </div>
+          </a>
+          <a href="mailto:zhongsaiganggou@gmail.com">
+            <div>
+              <small>EMAIL</small>
+              <b>zhongsaiganggou@gmail.com</b>
+            </div>
+          </a>
+        </div>
+      </div>
+      <div class="quote-form-card reveal reveal-delay-2">
+        <h3>Project Inquiry</h3>
+        <p class="form-subtitle">Fill in the information below and we will contact you shortly</p>
+        <QuoteForm lang={lang} embed={true} />
+      </div>
+    </div>
+  </section>
+
+  <!-- Scroll Reveal Script -->
+  <script>
+    (function() {
+      if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('is-visible');
+            observer.unobserve(entry.target);
+          }
+        });
+      }, { threshold: 0.1, rootMargin: '0px 0px -50px 0px' });
+      document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+    })();
+  </script>
+</BaseLayout>

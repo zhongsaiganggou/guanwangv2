@@ -1,0 +1,128 @@
+---
+// ZhongSai V2 - English Projects Hub (12 Domestic Projects)
+import BaseLayout from '../../../layouts/BaseLayout.astro';
+import ProjectCard from '../../../components/ProjectCard.astro';
+import QuoteForm from '../../../components/QuoteForm.astro';
+import { projects } from '../../../data/projects-data';
+
+const lang = 'en';
+const title = 'Steel Structure Projects | ZhongSai Manufacturing References';
+const description = 'Explore ZhongSai Steel Structure manufacturing references across logistics, industrial manufacturing, commercial, public and energy-related steel structure projects.';
+---
+
+<BaseLayout title={title} description={description} lang={lang}>
+  <section class="projects-hero">
+    <div class="container">
+      <div class="hub-breadcrumb">
+        <a href="/en/">Home</a><span>/</span><span>Projects</span>
+      </div>
+      <p class="eyebrow">PROJECT REFERENCES</p>
+      <h1>Steel Structure Manufacturing Project References</h1>
+      <p class="projects-subtitle">
+        A selection of domestic steel structure projects involving ZhongSai manufacturing participation across logistics, industrial manufacturing, commercial, public and energy-related applications.
+      </p>
+    </div>
+  </section>
+
+  <section class="projects-grid-section">
+    <div class="container">
+      <div class="projects-grid">
+        {projects.map(project => (
+          <ProjectCard project={project} lang={lang} />
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <section class="projects-disclaimer">
+    <div class="container">
+      <p>Project information shown on this website is based on available project records. Specific scope and technical details may vary by project.</p>
+    </div>
+  </section>
+
+  <section class="projects-quote" id="quote-form">
+    <div class="container">
+      <div class="quote-intro">
+        <p class="eyebrow">PROJECT QUOTE</p>
+        <h2>Have a Similar Project?</h2>
+        <p>Send drawings or project requirements. Based on similar project experience, we can provide manufacturing and supply solutions for your project.</p>
+      </div>
+      <QuoteForm lang={lang} />
+    </div>
+  </section>
+</BaseLayout>
+
+<style>
+.projects-hero {
+  padding: 56px 0 40px;
+  background: linear-gradient(135deg, #0a3d62 0%, #0d4f7a 100%);
+  color: #fff;
+}
+.projects-hero h1 {
+  font-size: 2.2rem;
+  margin: 12px 0 16px;
+  color: #fff;
+  max-width: 800px;
+}
+.projects-subtitle {
+  font-size: 1.05rem;
+  color: rgba(255,255,255,0.85);
+  max-width: 700px;
+  line-height: 1.7;
+}
+.projects-grid-section {
+  padding: 56px 0;
+  background: #f8f9fa;
+}
+.projects-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 28px;
+}
+.projects-disclaimer {
+  padding: 24px 0;
+  background: #fff;
+  border-top: 1px solid rgba(0,0,0,0.06);
+}
+.projects-disclaimer p {
+  color: #888;
+  font-size: 0.88rem;
+  text-align: center;
+  margin: 0;
+}
+.projects-quote {
+  padding: 56px 0;
+  background: #f8f9fa;
+}
+.quote-intro {
+  text-align: center;
+  margin-bottom: 32px;
+}
+.quote-intro h2 {
+  font-size: 1.8rem;
+  color: #0a3d62;
+  margin: 8px 0 12px;
+}
+.quote-intro p {
+  color: #555;
+  max-width: 600px;
+  margin: 0 auto;
+}
+@media (max-width: 1024px) {
+  .projects-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+@media (max-width: 640px) {
+  .projects-hero h1 {
+    font-size: 1.6rem;
+  }
+  .projects-grid {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+  .quote-intro h2 {
+    font-size: 1.4rem;
+  }
+}
+</style>

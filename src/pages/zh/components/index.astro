@@ -1,0 +1,151 @@
+---
+// ZhongSai V2 - Chinese Components Hub
+import BaseLayout from '../../../layouts/BaseLayout.astro';
+import QuoteForm from '../../../components/QuoteForm.astro';
+import '../../../styles/hub.css';
+
+const lang = 'zh';
+const title = '钢结构构件与围护系统｜钢梁钢柱、桁架、檩条｜中赛钢构';
+const description = '中赛钢构提供按图纸定制的钢结构构件与围护系统，包括钢梁、钢柱、桁架、吊车梁、C/Z檩条、屋面板、墙面板、夹芯板，支持构件编号、包装与出口交付。';
+
+const primaryMembers = [
+  { title: '钢梁 / Steel Beams', desc: 'H型钢梁、组合梁、吊车梁，按图纸加工，翼缘腹板焊接，端部节点板预制。', href: '/zh/components/fabricated-steel-beams-columns/' },
+  { title: '钢柱 / Steel Columns', desc: 'H型钢柱、箱型柱、格构柱，按荷载与高度设计，底板与加劲肋预制。', href: '/zh/components/fabricated-steel-beams-columns/' },
+  { title: '钢桁架 / Steel Trusses', desc: '屋架桁架、托架、支撑桁架，按跨度与荷载设计，节点焊接或螺栓连接。', href: '#' },
+  { title: '吊车梁 / Crane Beams', desc: '桥式吊车梁、悬挂吊车梁，按吊车吨位与工作制设计，按吊车系统及结构要求进行构件加工。', href: '#' },
+  { title: '箱型构件 / Box Sections', desc: '箱型柱、箱型梁、异形截面构件，用于大跨度与重载结构，按项目图纸与焊接要求加工。', href: '/zh/components/fabricated-steel-beams-columns/' },
+  { title: '平台与支撑 / Platforms & Bracing', desc: '操作平台、设备平台、柱间支撑、屋面支撑，按设备布置与抗震要求设计。', href: '#' }
+];
+
+const secondaryMembers = [
+  { title: 'C型檩条 / C Purlins', desc: '冷弯C型钢檩条，用于屋面与墙面次结构，按间距与荷载选型，带连接孔。' },
+  { title: 'Z型檩条 / Z Purlins', desc: '冷弯Z型钢檩条，搭接式连接，适用于大间距屋面，抗弯性能优于C型。' },
+  { title: '支撑系统 / Bracing', desc: '柱间支撑、屋面水平支撑、垂直支撑，采用角钢或圆钢，保证结构整体稳定。' },
+  { title: '连接件 / Connection Components', desc: '节点板、加劲肋、连接板、螺栓，按深化图预制，确保现场安装精度。' }
+];
+
+const claddingSystems = [
+  { title: '屋面板 / Roof Panels', desc: '彩钢压型屋面板、角驰板、直立锁边板，多种板型与厚度，防水抗风。', href: '/zh/components/roof-wall-cladding-systems/' },
+  { title: '墙面板 / Wall Panels', desc: '彩钢压型墙面板、横挂板、竖挂板，多种版型与颜色，建筑外观协调。', href: '/zh/components/roof-wall-cladding-systems/' },
+  { title: '夹芯板 / Sandwich Panels', desc: 'EPS/PU/PIR夹芯板，保温隔热，用于有温控要求的厂房与仓库。', href: '/zh/components/roof-wall-cladding-systems/' },
+  { title: '围护配件 / Cladding Accessories', desc: '天沟、收边、泛水、采光板、通风器，完整围护系统配套供应。', href: '/zh/components/roof-wall-cladding-systems/' }
+];
+---
+
+<BaseLayout title={title} description={description} lang={lang}>
+  <!-- Hero -->
+  <section class="hub-hero">
+    <div class="hub-hero-bg" style="background-image: url('/images/manufacturing/h-beam-assembly-machine.webp')"></div>
+    <div class="hub-hero-overlay"></div>
+    <div class="container hub-hero-content">
+      <div class="hub-breadcrumb">
+        <a href="/zh/">首页</a><span>/</span><span>构件与材料</span>
+      </div>
+      <p class="eyebrow">COMPONENTS · 按图纸定制</p>
+      <h1>按图纸定制的<br>钢结构构件与围护系统</h1>
+      <p class="lead">钢梁、钢柱、桁架、檩条及屋面墙面围护系统——支持按图加工、构件编号、包装与出口交付。</p>
+    </div>
+  </section>
+
+  <!-- 主结构构件 -->
+  <section class="component-section">
+    <div class="container">
+      <div class="component-section-header reveal">
+        <p class="section-index">01 / 主结构构件</p>
+        <h2>Primary Structural Members</h2>
+        <p>建筑主体受力构件，包括梁、柱、桁架、吊车梁等，按结构图纸与荷载要求定制加工，可根据深化图进行构件标识与包装。</p>
+      </div>
+      <div class="component-item-grid">
+        {primaryMembers.map((item, i) => (
+          <a href={item.href} class={`component-item reveal reveal-delay-${(i % 3) + 1}`} style="text-decoration: none; color: inherit;">
+            <h4>{item.title}</h4>
+            <p>{item.desc}</p>
+          </a>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- 次结构构件 -->
+  <section class="component-section">
+    <div class="container">
+      <div class="component-section-header reveal">
+        <p class="section-index">02 / 次结构构件</p>
+        <h2>Secondary Structural Members</h2>
+        <p>屋面与墙面次结构、支撑系统及连接件，配合主结构形成完整受力体系，按深化图预制，确保现场安装精度。</p>
+      </div>
+      <div class="component-item-grid">
+        {secondaryMembers.map((item, i) => (
+          <div class={`component-item reveal reveal-delay-${(i % 3) + 1}`}>
+            <h4>{item.title}</h4>
+            <p>{item.desc}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- 围护系统 -->
+  <section class="component-section">
+    <div class="container">
+      <div class="component-section-header reveal">
+        <p class="section-index">03 / 围护系统</p>
+        <h2>Roof & Wall Cladding Systems</h2>
+        <p>屋面与墙面围护系统，包括压型板、夹芯板及配套配件，可与主体钢结构配套供应，形成完整建筑围护体系。</p>
+      </div>
+      <div class="component-item-grid">
+        {claddingSystems.map((item, i) => (
+          <a href={item.href} class={`component-item reveal reveal-delay-${(i % 3) + 1}`} style="text-decoration: none; color: inherit;">
+            <h4>{item.title}</h4>
+            <p>{item.desc}</p>
+          </a>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- 从图纸到加工 -->
+  <section class="dual-path-section">
+    <div class="container">
+      <div class="section-heading reveal" style="color: white; text-align: center; display: block; margin-bottom: 8px;">
+        <p class="section-index" style="color: #f59e0b;">04 / 加工流程</p>
+        <h2 style="color: white; margin-bottom: 10px;">从图纸到加工交付</h2>
+        <p style="color: rgba(255,255,255,0.65); max-width: 700px; margin: 0 auto;">您提供图纸，我们完成深化、加工、编号、包装与出口交付——制造、标识和包装按项目要求组织。</p>
+      </div>
+      <div class="dual-path-grid" style="grid-template-columns: repeat(4, 1fr); gap: 18px;">
+        <div class="dual-path-card reveal reveal-delay-1" style="padding: 24px 20px;">
+          <div class="path-icon" style="width: 40px; height: 40px; font-size: 18px; margin-bottom: 12px;">📋</div>
+          <h3 style="font-size: 16px; margin-bottom: 6px;">图纸深化</h3>
+          <p style="font-size: 13px; margin-bottom: 0;">结构图纸转化为加工详图与构件清单</p>
+        </div>
+        <div class="dual-path-card reveal reveal-delay-2" style="padding: 24px 20px;">
+          <div class="path-icon" style="width: 40px; height: 40px; font-size: 18px; margin-bottom: 12px;">⚙️</div>
+          <h3 style="font-size: 16px; margin-bottom: 6px;">工厂加工</h3>
+          <p style="font-size: 13px; margin-bottom: 0;">切割、组立、焊接、钻孔、表面处理</p>
+        </div>
+        <div class="dual-path-card reveal reveal-delay-3" style="padding: 24px 20px;">
+          <div class="path-icon" style="width: 40px; height: 40px; font-size: 18px; margin-bottom: 12px;">🏷️</div>
+          <h3 style="font-size: 16px; margin-bottom: 6px;">构件编号</h3>
+          <p style="font-size: 13px; margin-bottom: 0;">可根据深化图进行构件标识与包装，附装箱清单</p>
+        </div>
+        <div class="dual-path-card reveal reveal-delay-4" style="padding: 24px 20px;">
+          <div class="path-icon" style="width: 40px; height: 40px; font-size: 18px; margin-bottom: 12px;">🚢</div>
+          <h3 style="font-size: 16px; margin-bottom: 6px;">包装出口</h3>
+          <p style="font-size: 13px; margin-bottom: 0;">按编号顺序包装装柜，出口单证支持</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Quote CTA -->
+  <section class="quote-cta-section" id="quote">
+    <div class="container">
+      <div class="quote-cta-header reveal">
+        <p class="section-index" style="color: #f59e0b;">05 / 获取报价</p>
+        <h2>提交图纸，获取构件报价</h2>
+        <p>上传结构图纸或BOQ清单，中赛钢构将根据您的需求提供构件加工与围护系统报价。</p>
+      </div>
+      <QuoteForm lang={lang} />
+    </div>
+  </section>
+</BaseLayout>

@@ -1,0 +1,420 @@
+---
+import BaseLayout from '../../../../layouts/BaseLayout.astro';
+import QuoteForm from '../../../../components/QuoteForm.astro';
+import '../../../../styles/detail.css';
+
+const title = '海外项目钢结构按图加工与定制制造 | 中赛钢构';
+const description = '中赛钢构为海外项目提供钢结构按图加工与定制制造服务，根据项目图纸、深化图和BOQ进行钢梁、钢柱、桁架及定制构件加工，支持包装装柜与出口交付。';
+const lang = 'zh';
+const canonical = 'https://zhongsai-steelstructure.com/zh/products/custom-engineering/';
+---
+
+<BaseLayout title={title} description={description} lang={lang}>
+  <!-- Hero -->
+  <section class="detail-hero">
+    <div class="detail-hero-bg" style="background-image: url('/images/company/factory-steel-beam-fabrication.jpg');"></div>
+    <div class="detail-hero-overlay"></div>
+    <div class="detail-hero-content">
+      <span class="eyebrow">按图加工 · 定制制造</span>
+      <h1>海外项目钢结构按图加工与定制制造</h1>
+      <p class="lead">中赛钢构是中国钢结构制造与出口供应商，根据项目图纸、深化图和技术要求进行钢构件加工与供应，从图纸审核到包装装柜出口，为海外工程公司和采购方提供按图定制的钢结构制造服务。</p>
+      <div class="detail-hero-actions">
+        <a href="#quote" class="btn btn-primary">提交图纸获取评估</a>
+        <a href="/zh/manufacturing-quality/" class="btn btn-outline">查看制造能力</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Breadcrumb -->
+  <nav class="detail-breadcrumb">
+    <div class="container">
+      <a href="/zh/">首页</a>
+      <span class="sep">/</span>
+      <a href="/zh/products/">产品</a>
+      <span class="sep">/</span>
+      <span class="current">定制工程与按图加工</span>
+    </div>
+  </nav>
+
+  <!-- 01 Custom Fabrication to Project Drawings -->
+  <section class="detail-section">
+    <div class="container">
+      <div class="section-heading reveal">
+        <p class="section-index">01 / 按图加工</p>
+        <h2>根据项目图纸进行钢结构定制加工</h2>
+        <p>中赛钢构根据客户提供的结构图纸、深化图、技术规格书和工程量清单（BOQ），组织钢构件的定制加工与供应。具体材料、尺寸、焊接要求和表面处理按项目图纸与技术要求确定。</p>
+      </div>
+      <div class="image-text-block">
+        <div class="itb-image">
+          <img src="/images/manufacturing/factory-cnc-cutting-welding.jpg" alt="中赛钢构钢结构按图加工制造现场" loading="lazy">
+        </div>
+        <div class="itb-content">
+          <h3>从图纸到构件的定制制造</h3>
+          <p>中赛钢构拥有自有生产基地，可根据项目图纸进行钢梁、钢柱、桁架、支撑及定制钢构件的加工制造。</p>
+          <ul>
+            <li>根据结构图纸和深化图组织加工</li>
+            <li>按项目技术规格书控制制造要求</li>
+            <li>可配合BOQ进行构件清单核对与报价</li>
+            <li>具体材料牌号、焊接工艺和检验要求按项目约定执行</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 02 What We Can Fabricate -->
+  <section class="detail-section alt">
+    <div class="container">
+      <div class="section-heading reveal">
+        <p class="section-index">02 / 可加工构件</p>
+        <h2>中赛钢构可以加工哪些钢结构构件</h2>
+        <p>根据项目图纸和技术要求，中赛钢构可加工以下类型钢结构构件。具体加工范围和技术要求按项目图纸确认。</p>
+      </div>
+      <div class="requirement-grid">
+        <div class="requirement-card reveal reveal-delay-1">
+          <div class="req-icon">📐</div>
+          <h3>钢梁</h3>
+          <p>H型钢、箱型梁、组合梁等，按图纸尺寸和焊接要求加工。</p>
+        </div>
+        <div class="requirement-card reveal reveal-delay-2">
+          <div class="req-icon">🏛️</div>
+          <h3>钢柱</h3>
+          <p>H型钢柱、箱型柱、格构柱等，按项目结构图纸加工。</p>
+        </div>
+        <div class="requirement-card reveal reveal-delay-3">
+          <div class="req-icon">🔗</div>
+          <h3>钢桁架</h3>
+          <p>管桁架、H型钢桁架等，按节点图和焊接要求加工。</p>
+        </div>
+        <div class="requirement-card reveal reveal-delay-1">
+          <div class="req-icon">🧱</div>
+          <h3>支撑与连接</h3>
+          <p>柱间支撑、屋面支撑、节点板、连接板等配套构件。</p>
+        </div>
+        <div class="requirement-card reveal reveal-delay-2">
+          <div class="req-icon">🏗️</div>
+          <h3>平台与定制构件</h3>
+          <p>设备平台、操作平台、楼梯及定制异形钢构件。</p>
+        </div>
+        <div class="requirement-card reveal reveal-delay-3">
+          <div class="req-icon">📦</div>
+          <h3>次结构构件</h3>
+          <p>檩条、拉条、隅撑等次结构构件，可随主体结构一并供应。</p>
+        </div>
+      </div>
+      <div style="margin-top: 24px;">
+        <a href="/zh/components/" class="btn btn-outline">查看构件与材料</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- 03 From Drawings to Fabrication -->
+  <section class="detail-section">
+    <div class="container">
+      <div class="section-heading reveal">
+        <p class="section-index">03 / 加工流程</p>
+        <h2>从图纸到出口交付的加工流程</h2>
+        <p>以下为按图加工的简要流程。详细制造过程、质量控制和8步制造流程请查看制造能力页面。</p>
+      </div>
+      <div class="process-flow">
+        <div class="process-step reveal reveal-delay-1">
+          <div class="step-num">01</div>
+          <h4>项目资料提交</h4>
+          <p>图纸、BOQ、技术规格书与项目国家</p>
+        </div>
+        <div class="process-step reveal reveal-delay-2">
+          <div class="step-num">02</div>
+          <h4>图纸审核</h4>
+          <p>结构图纸与加工可行性审核</p>
+        </div>
+        <div class="process-step reveal reveal-delay-3">
+          <div class="step-num">03</div>
+          <h4>深化协调</h4>
+          <p>深化图与加工图协调确认</p>
+        </div>
+        <div class="process-step reveal reveal-delay-4">
+          <div class="step-num">04</div>
+          <h4>材料准备</h4>
+          <p>按项目要求组织钢材与配套材料</p>
+        </div>
+        <div class="process-step reveal reveal-delay-1">
+          <div class="step-num">05</div>
+          <h4>制造加工</h4>
+          <p>切割、组立、焊接、矫正、钻孔</p>
+        </div>
+        <div class="process-step reveal reveal-delay-2">
+          <div class="step-num">06</div>
+          <h4>表面处理</h4>
+          <p>按项目要求安排抛丸与涂层</p>
+        </div>
+        <div class="process-step reveal reveal-delay-3">
+          <div class="step-num">07</div>
+          <h4>标识包装</h4>
+          <p>构件标识、编号与包装装柜</p>
+        </div>
+        <div class="process-step reveal reveal-delay-4">
+          <div class="step-num">08</div>
+          <h4>出口交付</h4>
+          <p>出口单证支持与物流协调</p>
+        </div>
+      </div>
+      <div style="margin-top: 24px;">
+        <a href="/zh/manufacturing-quality/" class="btn btn-outline">查看详细8步制造流程</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- 04 Drawing & BOQ Requirements -->
+  <section class="detail-section alt">
+    <div class="container">
+      <div class="section-heading reveal">
+        <p class="section-index">04 / 图纸与BOQ要求</p>
+        <h2>获取按图加工报价需要提供什么资料</h2>
+        <p>提供越完整的图纸和技术资料，评估和报价越准确。资料不完整时可先提交现有资料，中赛钢构将进一步确认制造与报价所需信息。</p>
+      </div>
+      <div class="quote-info-grid">
+        <div class="quote-info-card drawing">
+          <h4>📋 已有完整图纸</h4>
+          <ul>
+            <li>结构图纸（建筑/结构）</li>
+            <li>深化图 / Shop Drawings（如有）</li>
+            <li>工程量清单（BOQ）</li>
+            <li>项目技术规格书</li>
+            <li>项目所在国家</li>
+            <li>表面处理与特殊要求</li>
+          </ul>
+        </div>
+        <div class="quote-info-card no-drawing">
+          <h4>📝 资料不完整</h4>
+          <ul>
+            <li>项目所在国家</li>
+            <li>现有图纸或草图</li>
+            <li>构件类型与大致数量</li>
+            <li>项目用途与基本尺寸</li>
+            <li>已知技术要求</li>
+            <li>可先提交现有资料进行初步评估</li>
+          </ul>
+        </div>
+      </div>
+      <p class="quote-note">* 客户可先提交PDF图纸、BOQ或现有项目资料进行初步审核。最终加工范围和报价确认前，可能还需要补充相关图纸、技术规格或项目要求。</p>
+    </div>
+  </section>
+
+  <!-- 05 Fabrication for Export Projects -->
+  <section class="detail-section">
+    <div class="container">
+      <div class="section-heading reveal">
+        <p class="section-index">05 / 出口项目加工</p>
+        <h2>面向海外出口项目的钢结构加工</h2>
+        <p>中赛钢构为海外工程公司、承包商和采购方提供按图加工的钢结构构件，支持出口包装、装柜和交付准备。</p>
+      </div>
+      <div class="feature-grid">
+        <div class="feature-card reveal reveal-delay-1">
+          <div class="feature-img" style="background-image: url('/images/container-loading.jpg');"></div>
+          <div class="feature-body">
+            <h3>包装与装柜</h3>
+            <p>构件可根据深化图和项目要求进行标识与编号，按构件类型、装柜顺序和出口运输要求组织包装，支持集装箱装柜。</p>
+          </div>
+        </div>
+        <div class="feature-card reveal reveal-delay-2">
+          <div class="feature-img" style="background-image: url('/images/manufacturing/factory-production-workshop-overview.jpg');"></div>
+          <div class="feature-body">
+            <h3>出口单证与物流协调</h3>
+            <p>提供出口单证支持和物流协调服务。中赛钢构不作为报关行或货运代理，当地施工和安装由客户或当地施工团队完成。</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 06 Why Work With ZhongSai -->
+  <section class="detail-section dark">
+    <div class="container">
+      <div class="section-heading reveal" style="text-align: center;">
+        <p class="section-index" style="justify-content: center;">06 / 为什么选择中赛</p>
+        <h2 style="color: #fff;">中赛钢构按图加工的核心能力</h2>
+        <p style="margin: 0 auto;">中赛钢构的制造与出口能力包括：</p>
+      </div>
+      <div class="requirement-grid" style="grid-template-columns: repeat(3, 1fr);">
+        <div class="requirement-card reveal reveal-delay-1" style="background: rgba(255,255,255,0.08); border-color: rgba(255,255,255,0.15);">
+          <div class="req-icon" style="background: rgba(245,158,11,0.2);">📅</div>
+          <h3 style="color: #fff;">15年+出口经验</h3>
+          <p style="color: rgba(255,255,255,0.7);">钢结构行业与海外项目经验</p>
+        </div>
+        <div class="requirement-card reveal reveal-delay-2" style="background: rgba(255,255,255,0.08); border-color: rgba(255,255,255,0.15);">
+          <div class="req-icon" style="background: rgba(245,158,11,0.2);">🏭</div>
+          <h3 style="color: #fff;">10万㎡生产基地</h3>
+          <p style="color: rgba(255,255,255,0.7);">自有工厂，覆盖关键制造环节</p>
+        </div>
+        <div class="requirement-card reveal reveal-delay-3" style="background: rgba(255,255,255,0.08); border-color: rgba(255,255,255,0.15);">
+          <div class="req-icon" style="background: rgba(245,158,11,0.2);">⚙️</div>
+          <h3 style="color: #fff;">10万吨年产能</h3>
+          <p style="color: rgba(255,255,255,0.7);">钢结构构件年生产能力</p>
+        </div>
+        <div class="requirement-card reveal reveal-delay-1" style="background: rgba(255,255,255,0.08); border-color: rgba(255,255,255,0.15);">
+          <div class="req-icon" style="background: rgba(245,158,11,0.2);">👷</div>
+          <h3 style="color: #fff;">300+一线工人</h3>
+          <p style="color: rgba(255,255,255,0.7);">制造、焊接、装配与包装团队</p>
+        </div>
+        <div class="requirement-card reveal reveal-delay-2" style="background: rgba(255,255,255,0.08); border-color: rgba(255,255,255,0.15);">
+          <div class="req-icon" style="background: rgba(245,158,11,0.2);">✅</div>
+          <h3 style="color: #fff;">ISO 9001</h3>
+          <p style="color: rgba(255,255,255,0.7);">中赛钢构执行ISO 9001质量管理体系要求</p>
+        </div>
+        <div class="requirement-card reveal reveal-delay-3" style="background: rgba(255,255,255,0.08); border-color: rgba(255,255,255,0.15);">
+          <div class="req-icon" style="background: rgba(245,158,11,0.2);">🌍</div>
+          <h3 style="color: #fff;">出口交付能力</h3>
+          <p style="color: rgba(255,255,255,0.7);">包装装柜、出口单证支持与物流协调</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 07 Related Capabilities -->
+  <section class="detail-section">
+    <div class="container">
+      <div class="section-heading reveal">
+        <p class="section-index">07 / 相关能力</p>
+        <h2>相关能力与页面</h2>
+      </div>
+      <div class="related-links">
+        <a href="/zh/components/" class="related-link-card reveal reveal-delay-1">
+          <div class="rl-icon">🧱</div>
+          <h4>构件与材料</h4>
+          <p>钢梁、钢柱、桁架、檩条及围护系统</p>
+          <span class="rl-arrow">查看详情 →</span>
+        </a>
+        <a href="/zh/manufacturing-quality/" class="related-link-card reveal reveal-delay-2">
+          <div class="rl-icon">🏭</div>
+          <h4>制造与质量控制</h4>
+          <p>8步制造流程、质量控制与包装出口</p>
+          <span class="rl-arrow">查看详情 →</span>
+        </a>
+        <a href="/zh/components/fabricated-steel-beams-columns/" class="related-link-card reveal reveal-delay-3">
+          <div class="rl-icon">📐</div>
+          <h4>钢梁钢柱</h4>
+          <p>按图定制的钢梁钢柱构件</p>
+          <span class="rl-arrow">查看详情 →</span>
+        </a>
+        <a href="/zh/components/roof-wall-cladding-systems/" class="related-link-card reveal reveal-delay-1">
+          <div class="rl-icon">🏠</div>
+          <h4>屋面墙面围护系统</h4>
+          <p>屋面板、墙面板及配套围护材料</p>
+          <span class="rl-arrow">查看详情 →</span>
+        </a>
+        <a href="/zh/steel-workshop/" class="related-link-card reveal reveal-delay-2">
+          <div class="rl-icon">🏗️</div>
+          <h4>工业厂房与车间</h4>
+          <p>钢结构工业厂房解决方案</p>
+          <span class="rl-arrow">查看详情 →</span>
+        </a>
+        <a href="/zh/steel-warehouse/" class="related-link-card reveal reveal-delay-3">
+          <div class="rl-icon">📦</div>
+          <h4>钢结构仓库</h4>
+          <p>钢结构仓库与物流建筑解决方案</p>
+          <span class="rl-arrow">查看详情 →</span>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- 08 FAQ -->
+  <section class="detail-section alt">
+    <div class="container">
+      <div class="section-heading reveal" style="text-align: center;">
+        <p class="section-index" style="justify-content: center;">08 / 常见问题</p>
+        <h2>按图加工常见问题</h2>
+      </div>
+      <div class="detail-faq">
+        <div class="faq-item">
+          <button class="faq-question" aria-expanded="false">
+            <span>中赛钢构可以根据客户提供的图纸加工钢结构吗？</span>
+            <span class="faq-icon">+</span>
+          </button>
+          <div class="faq-answer">
+            <div class="faq-answer-inner">
+              可以。中赛钢构根据客户提供的结构图纸、深化图和技术规格书组织钢构件加工。具体材料、尺寸、焊接要求和表面处理按项目图纸与技术要求确定。图纸审核通过后可安排制造。
+            </div>
+          </div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-question" aria-expanded="false">
+            <span>获取按图加工报价需要提供哪些图纸？</span>
+            <span class="faq-icon">+</span>
+          </button>
+          <div class="faq-answer">
+            <div class="faq-answer-inner">
+              理想情况下需要提供结构图纸、深化图（Shop Drawings）、工程量清单（BOQ）、项目技术规格书和项目所在国家。资料不完整时可先提交现有资料，中赛钢构将进一步确认制造与报价所需信息。客户可先提交PDF图纸、BOQ或现有项目资料进行初步审核，最终加工范围和报价确认前可能还需要补充相关图纸、技术规格或项目要求。
+            </div>
+          </div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-question" aria-expanded="false">
+            <span>可以只采购加工好的钢结构构件吗？</span>
+            <span class="faq-icon">+</span>
+          </button>
+          <div class="faq-answer">
+            <div class="faq-answer-inner">
+              可以。中赛钢构可根据项目图纸单独供应钢梁、钢柱、桁架、支撑及定制钢构件，也可同时供应屋面墙面围护系统。具体供应范围按项目需求确定。中赛钢构提供制造、出口供应和海外安装技术指导，当地施工由客户或当地施工团队完成。
+            </div>
+          </div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-question" aria-expanded="false">
+            <span>加工好的钢构件可以包装并准备出口吗？</span>
+            <span class="faq-icon">+</span>
+          </button>
+          <div class="faq-answer">
+            <div class="faq-answer-inner">
+              可以。构件可根据深化图和项目要求进行标识与编号，按构件类型、装柜顺序和出口运输要求组织包装，支持集装箱装柜。中赛钢构提供出口单证支持和物流协调，但不作为报关行或货运代理。
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 09 Quote CTA + QuoteForm -->
+  <section class="detail-section dark" id="quote">
+    <div class="container">
+      <div class="section-heading reveal" style="text-align: center;">
+        <p class="section-index" style="justify-content: center; color: #f59e0b;">09 / 获取报价</p>
+        <h2 style="color: #fff;">有图纸或BOQ？提交项目资料获取评估</h2>
+        <p style="margin: 0 auto; color: rgba(255,255,255,0.75);">提交项目图纸、BOQ和技术要求，中赛钢构将进行初步评估并确认报价所需信息。</p>
+      </div>
+      <QuoteForm lang="zh" />
+    </div>
+  </section>
+</BaseLayout>
+
+<script>
+  // FAQ toggle
+  document.querySelectorAll('.faq-question').forEach(btn => {
+    btn.addEventListener('click', () => {
+      const item = btn.closest('.faq-item');
+      const isOpen = item.classList.contains('open');
+      item.classList.toggle('open');
+      btn.setAttribute('aria-expanded', !isOpen);
+    });
+  });
+
+  // Scroll reveal
+  const revealElements = document.querySelectorAll('.reveal');
+  if ('IntersectionObserver' in window) {
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.style.opacity = '1';
+          entry.target.style.transform = 'translateY(0)';
+          observer.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.1 });
+    revealElements.forEach(el => {
+      el.style.opacity = '0';
+      el.style.transform = 'translateY(24px)';
+      el.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+      observer.observe(el);
+    });
+  }
+</script>

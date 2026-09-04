@@ -1,0 +1,264 @@
+---
+// ZhongSai V2 - English Manufacturing & Quality Page
+import BaseLayout from '../../../layouts/BaseLayout.astro';
+import QuoteForm from '../../../components/QuoteForm.astro';
+import '../../../styles/hub.css';
+import '../../../styles/manufacturing.css';
+
+const lang = 'en';
+const title = 'Steel Structure Manufacturing & Quality Control | ZhongSai';
+const description = 'ZhongSai steel structure manufacturing process: raw material inspection, CNC cutting, assembly & welding, straightening & drilling, custom component fabrication, surface treatment, quality control, marking & packing. Custom fabrication and export delivery.';
+
+const eightSteps = [
+  {
+    num: '01',
+    title: 'Raw Material Inspection',
+    desc: 'Steel and supporting materials are checked and prepared according to project specifications and requirements.',
+    img: '/images/company/factory-yard-gantry-crane.jpg'
+  },
+  {
+    num: '02',
+    title: 'CNC Cutting',
+    desc: 'CNC cutting equipment is used to cut steel plates according to shop drawings, with dimensional accuracy and cut surface quality controlled.',
+    img: '/images/manufacturing/cnc-laser-cutting-machine.webp'
+  },
+  {
+    num: '03',
+    title: 'Assembly & Welding',
+    desc: 'H-beam assembly and welding are organized according to project drawings and welding process requirements, with welding distortion controlled.',
+    img: '/images/manufacturing/h-beam-assembly-machine.webp'
+  },
+  {
+    num: '04',
+    title: 'Straightening & Drilling',
+    desc: 'Post-weld straightening and drilling are performed, with hole position accuracy and member straightness controlled according to shop drawings.',
+    img: '/images/manufacturing/steel-straightening-machine.webp'
+  },
+  {
+    num: '05',
+    title: 'Custom Component Fabrication',
+    desc: 'Box sections, trusses, gusset plates and other custom components are fabricated, with detailing and manufacturing organized to project drawings.',
+    img: '/images/company/factory-steel-beam-fabrication.jpg'
+  },
+  {
+    num: '06',
+    title: 'Surface Treatment',
+    desc: 'Surface cleaning, shot blasting and coating may be arranged where required by the project, with specific treatment methods and specifications per project technical requirements.',
+    img: '/images/manufacturing/shot-blasting-machine.webp'
+  },
+  {
+    num: '07',
+    title: 'Quality Control',
+    desc: 'In-process and final inspection are organized according to project drawings, shop drawings and project technical specifications, with inspection and documentation organized according to project requirements.',
+    img: '/images/company/factory-interior-production.jpg'
+  },
+  {
+    num: '08',
+    title: 'Marking & Packing',
+    desc: 'Component marking and numbering may be arranged based on shop drawings and project requirements, with packing organized by component type, container loading sequence and export transport requirements.',
+    img: '/images/container-loading.jpg'
+  }
+];
+
+const evidenceImages = [
+  '/images/manufacturing/real/factory-overview-9819.jpg',
+  '/images/manufacturing/real/cutting-prep-9809.jpg',
+  '/images/manufacturing/real/welding-9820.jpg',
+  '/images/manufacturing/real/assembly-welding-9821.jpg'
+];
+---
+
+<BaseLayout title={title} description={description} lang={lang}>
+  <!-- Hero -->
+  <section class="hub-hero">
+    <div class="hub-hero-bg" style="background-image: url('/images/manufacturing/real/factory-overview-9819.jpg')"></div>
+    <div class="hub-hero-overlay"></div>
+    <div class="container hub-hero-content">
+      <div class="hub-breadcrumb">
+        <a href="/en/">Home</a><span>/</span><span>Manufacturing</span>
+      </div>
+      <p class="eyebrow">MANUFACTURING · From Drawings to Delivery</p>
+      <h1>Steel Structure Manufacturing<br>& Quality Control</h1>
+      <p class="lead">ZhongSai transforms project drawings into export-ready steel structure components — an 8-step manufacturing process from raw material inspection to marking and packing.</p>
+    </div>
+  </section>
+
+  <!-- 01 Manufacturing Overview -->
+  <section class="section" style="padding: 70px 0;">
+    <div class="container">
+      <div class="section-heading reveal">
+        <div>
+          <p class="section-index">01 / Overview</p>
+          <h2>From Drawings to Export-Ready Components</h2>
+        </div>
+        <div>
+          <p>ZhongSai provides steel structure fabrication services, covering design detailing, material preparation, cutting, assembly & welding, straightening & drilling, custom component fabrication, surface treatment, quality control, component marking and packing & container loading.</p>
+          <p style="margin-top: 12px;">Fabrication and inspection are conducted according to project drawings, shop drawings, project technical specifications and applicable project requirements. Specific materials, welding, surface treatment and inspection parameters are determined per project requirements.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 02 Eight-Step Manufacturing Process -->
+  <section class="manufacturing-process-section">
+    <div class="container">
+      <div class="section-heading reveal" style="margin-bottom: 40px;">
+        <div>
+          <p class="section-index">02 / Process</p>
+          <h2>Eight-Step Manufacturing Process</h2>
+        </div>
+        <div>
+          <p>From raw material inspection to marking and packing, each step is organized according to project drawings and technical requirements.</p>
+        </div>
+      </div>
+      <div class="process-grid">
+        {eightSteps.map((step, i) => (
+          <div class={`process-card reveal reveal-delay-${(i % 4) + 1}`}>
+            <div class="process-card-img">
+              <img src={step.img} alt={step.num === "07" ? "ZhongSai manufacturing facility" : step.title} loading="lazy">
+              <span class="process-card-num">{step.num}</span>
+            </div>
+            <div class="process-card-body">
+              <h3>{step.title}</h3>
+              
+              <p>{step.desc}</p>
+            </div>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- 03 Manufacturing Evidence -->
+  <section class="section" style="padding: 70px 0; background: #f8fafc;">
+    <div class="container">
+      <div class="section-heading reveal" style="margin-bottom: 36px;">
+        <div>
+          <p class="section-index">03 / Facility</p>
+          <h2>Real Manufacturing Facility</h2>
+        </div>
+        <div>
+          <p>ZhongSai production base covers cutting, assembly & welding, surface treatment, quality control and packing & container loading.</p>
+        </div>
+      </div>
+      <div class="evidence-grid">
+        {evidenceImages.map((img, i) => (
+          <div class={`evidence-item reveal reveal-delay-${(i % 4) + 1}`}>
+            <img src={img} alt="ZhongSai manufacturing facility" loading="lazy">
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- 04 Quality & Project Requirements -->
+  <section class="section" style="padding: 70px 0;">
+    <div class="container">
+      <div class="section-heading reveal">
+        <div>
+          <p class="section-index">04 / Quality</p>
+          <h2>Quality & Project Requirements</h2>
+        </div>
+        <div>
+          <p>Fabrication and inspection are conducted according to project drawings, shop drawings, project technical specifications and applicable project requirements. ZhongSai follows ISO 9001 quality management system requirements.</p>
+          <p style="margin-top: 12px;">Specific welding procedures, inspection ratios, testing methods and acceptance criteria are per project technical requirements and contract terms.</p>
+        </div>
+      </div>
+      <div class="quality-grid">
+        <div class="quality-item reveal reveal-delay-1">
+          <h4>Drawings & Detailing</h4>
+          <p>Fabrication organized to project and shop drawings, with key dimensions and connections verified against drawings.</p>
+        </div>
+        <div class="quality-item reveal reveal-delay-2">
+          <h4>In-Process Inspection</h4>
+          <p>Dimensional, welding and visual inspection and records organized during fabrication per project requirements.</p>
+        </div>
+        <div class="quality-item reveal reveal-delay-3">
+          <h4>Final Inspection</h4>
+          <p>Final inspection is organized according to project technical requirements before packing and dispatch where applicable.</p>
+        </div>
+        <div class="quality-item reveal reveal-delay-4">
+          <h4>ISO 9001</h4>
+          <p>ZhongSai follows ISO 9001 quality management system requirements.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 05 Marking, Packing & Export Preparation -->
+  <section class="dual-path-section">
+    <div class="container">
+      <div class="section-heading reveal" style="color: white; text-align: center; display: block; margin-bottom: 36px;">
+        <p class="section-index" style="color: #f59e0b;">05 / Export Preparation</p>
+        <h2 style="color: white; margin-bottom: 10px;">Marking, Packing & Export Preparation</h2>
+        <p style="color: rgba(255,255,255,0.65); max-width: 700px; margin: 0 auto;">Component marking and numbering may be arranged based on shop drawings and project requirements, with packing organized by component type, container loading sequence and export transport requirements, supporting container loading and export documentation preparation.</p>
+      </div>
+      <div class="dual-path-grid" style="grid-template-columns: repeat(3, 1fr); gap: 20px;">
+        <div class="dual-path-card reveal reveal-delay-1" style="padding: 28px 24px;">
+          <div class="path-icon" style="width: 44px; height: 44px; font-size: 20px; margin-bottom: 14px;">🏷️</div>
+          <h3 style="font-size: 18px; margin-bottom: 8px;">Component Marking</h3>
+          <p style="font-size: 14px; margin-bottom: 0;">Component marking available based on shop drawings and project requirements, facilitating site erection identification and verification.</p>
+        </div>
+        <div class="dual-path-card reveal reveal-delay-2" style="padding: 28px 24px;">
+          <div class="path-icon" style="width: 44px; height: 44px; font-size: 20px; margin-bottom: 14px;">📦</div>
+          <h3 style="font-size: 18px; margin-bottom: 8px;">Packing Organization</h3>
+          <p style="font-size: 14px; margin-bottom: 0;">Packing organized by component type, container loading sequence and export transport requirements, with packing lists included.</p>
+        </div>
+        <div class="dual-path-card reveal reveal-delay-3" style="padding: 28px 24px;">
+          <div class="path-icon" style="width: 44px; height: 44px; font-size: 20px; margin-bottom: 14px;">🚢</div>
+          <h3 style="font-size: 18px; margin-bottom: 8px;">Export Preparation</h3>
+          <p style="font-size: 14px; margin-bottom: 0;">Container loading support, export documentation support and logistics coordination, coordinated with project delivery schedule.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 06 Related Capabilities -->
+  <section class="section" style="padding: 70px 0;">
+    <div class="container">
+      <div class="section-heading reveal" style="margin-bottom: 36px;">
+        <div>
+          <p class="section-index">06 / Related</p>
+          <h2>Related Capabilities & Products</h2>
+        </div>
+        <div>
+          <p>Explore ZhongSai component supply, cladding systems and product categories.</p>
+        </div>
+      </div>
+      <div class="related-grid">
+        <a href="/en/components/" class="related-card reveal reveal-delay-1">
+          <h4>Components & Materials</h4>
+          <p>Steel beams, columns, trusses, purlins and cladding systems, custom fabricated to drawings.</p>
+          <span class="related-cta">View Components →</span>
+        </a>
+        <a href="/en/components/fabricated-steel-beams-columns/" class="related-card reveal reveal-delay-2">
+          <h4>Steel Beams & Columns</h4>
+          <p>H-beams, columns and box sections, fabricated to project drawings and load requirements.</p>
+          <span class="related-cta">View Details →</span>
+        </a>
+        <a href="/en/components/roof-wall-cladding-systems/" class="related-card reveal reveal-delay-3">
+          <h4>Cladding Systems</h4>
+          <p>Roof panels, wall panels, sandwich panels and accessories, supplied with steel structure package.</p>
+          <span class="related-cta">View Details →</span>
+        </a>
+        <a href="/en/products/" class="related-card reveal reveal-delay-4">
+          <h4>Product Categories</h4>
+          <p>Industrial workshops, warehouses, mining, commercial, agriculture and custom engineering steel structures.</p>
+          <span class="related-cta">View Products →</span>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- 07 Quote CTA -->
+  <section class="quote-cta-section" id="quote">
+    <div class="container">
+      <div class="quote-cta-header reveal">
+        <p class="section-index" style="color: #f59e0b;">07 / Get a Quote</p>
+        <h2>Submit Drawings for Manufacturing Quotation</h2>
+        <p>Upload structural drawings or BOQ lists. ZhongSai will provide a fabrication and export delivery quotation based on your project requirements.</p>
+      </div>
+      <QuoteForm lang={lang} />
+    </div>
+  </section>
+</BaseLayout>

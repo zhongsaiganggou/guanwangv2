@@ -1,0 +1,165 @@
+---
+// ZhongSai V2 - English Products Hub
+import BaseLayout from '../../../layouts/BaseLayout.astro';
+import QuoteForm from '../../../components/QuoteForm.astro';
+import FAQ from '../../../components/FAQ.astro';
+import '../../../styles/hub.css';
+
+const lang = 'en';
+const title = 'Steel Structure Products | Workshops, Warehouses & Industrial Buildings | ZhongSai';
+const description = 'ZhongSai Steel Structure provides steel structure products for industrial workshops, warehouses, mining, commercial, agriculture and custom engineering projects. Choose by building application.';
+
+const products = [
+  {
+    num: '01',
+    title: 'Industrial Workshop',
+    desc: 'Long-span steel structure factories, production and assembly workshops, supporting crane, equipment layout and ventilation requirements.',
+    img: '/images/products/01-industrial.jpg',
+    href: '/en/steel-workshop/'
+  },
+  {
+    num: '02',
+    title: 'Warehouse & Logistics',
+    desc: 'Steel warehouses, logistics and distribution centers, supporting large storage space, racking layout, loading docks and insulation needs.',
+    img: '/images/products/04-warehouse-logistics.jpg',
+    href: '/en/steel-warehouse/'
+  },
+  {
+    num: '03',
+    title: 'Mining & Energy',
+    desc: 'Mining buildings, equipment support structures, conveyor supports and industrial platforms — heavy steel structures designed for equipment loads and service environments.',
+    img: '/images/products/02-mining-energy.jpg',
+    href: '/en/steel-mining-factory/'
+  },
+  {
+    num: '04',
+    title: 'Commercial & Public',
+    desc: 'Commercial exhibition halls, sports facilities, office buildings and public structures — long-span steel structures supporting architectural and public space needs.',
+    img: '/images/products/03-commercial-public.jpg',
+    href: '/en/steel-supermarket-mall/'
+  },
+  {
+    num: '05',
+    title: 'Agriculture & Special',
+    desc: 'Agricultural storage, livestock buildings, processing workshops and special long-span steel structures, considering ventilation, moisture and service environment.',
+    img: '/images/products/05-agriculture-special.jpg',
+    href: '/en/steel-livestock-barn/'
+  },
+  {
+    num: '06',
+    title: 'Custom Engineering',
+    desc: 'Irregular structures, complex connections, equipment platforms and special-purpose steel structures — custom fabricated to project drawings and technical requirements.',
+    img: '/images/products/06-custom-engineering.jpg',
+    href: '#quote'
+  }
+];
+
+const faqItems = [
+  {
+    question: 'Can you quote directly from our drawings?',
+    answer: 'Yes. Please provide structural drawings, shop drawings or a BOQ (Bill of Quantities). We will calculate the material volume and provide a quotation based on your drawings. The more complete the drawings, the more accurate the quotation.'
+  },
+  {
+    question: 'What if we do not have complete drawings yet?',
+    answer: 'If complete drawings are not yet available, you can provide the project use, basic dimensions (length, width, height), project country and functional requirements. Conduct preliminary requirement assessment based on project use and basic parameters, and further confirm the materials needed for scheme and quotation.'
+  },
+  {
+    question: 'Can we purchase only steel components?',
+    answer: 'Yes. ZhongSai provides both complete building steel packages and individual component supply — including steel beams, columns, trusses, purlins and cladding systems — fabricated to drawings, marked and packed for erection.'
+  }
+];
+---
+
+<BaseLayout title={title} description={description} lang={lang}>
+  <!-- Hero -->
+  <section class="hub-hero">
+    <div class="hub-hero-bg" style="background-image: url('/images/products/03-commercial-public.jpg')"></div>
+    <div class="hub-hero-overlay"></div>
+    <div class="container hub-hero-content">
+      <div class="hub-breadcrumb">
+        <a href="/en/">Home</a><span>/</span><span>Products</span>
+      </div>
+      <p class="eyebrow">PRODUCTS · By Building Use</p>
+      <h1>Choose Steel Structures<br>by Building Application</h1>
+      <p class="lead">Industrial workshops, warehouses, mining & energy, commercial & public, agriculture & special structures, and custom engineering — find the right steel structure solution by project use.</p>
+    </div>
+  </section>
+
+  <!-- Six Product Categories -->
+  <section class="section" style="padding: 70px 0;">
+    <div class="container">
+      <div class="section-heading reveal" style="margin-bottom: 40px;">
+        <div>
+          <p class="section-index">01 / Categories</p>
+          <h2>Six Building Application Categories</h2>
+        </div>
+        <div>
+          <p>From industrial production to special engineering, select the corresponding steel structure product type by project use. Each category can be custom fabricated to project drawings.</p>
+        </div>
+      </div>
+      <div class="product-grid">
+        {products.map((product, i) => (
+          <a href={product.href} class={`product-card reveal reveal-delay-${(i % 3) + 1}`}>
+            <div class="product-card-img">
+              <img src={product.img} alt={product.title} loading="lazy">
+              <span class="product-card-num">{product.num}</span>
+            </div>
+            <div class="product-card-body">
+              <h3>{product.title}</h3>
+              <p>{product.desc}</p>
+              <span class="product-card-cta">View Details →</span>
+            </div>
+          </a>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- Dual Path Entry -->
+  <section class="dual-path-section">
+    <div class="container">
+      <div class="section-heading reveal" style="color: white; text-align: center; display: block; margin-bottom: 8px;">
+        <p class="section-index" style="color: #f59e0b;">02 / How to Start</p>
+        <h2 style="color: white; margin-bottom: 10px;">Two Ways to Get Started</h2>
+        <p style="color: rgba(255,255,255,0.65); max-width: 600px; margin: 0 auto;">Whether you have complete drawings or not, you can find the right entry point to begin your project discussion.</p>
+      </div>
+      <div class="dual-path-grid">
+        <div class="dual-path-card reveal reveal-delay-1">
+          <div class="path-icon">📐</div>
+          <h3>Have Drawings / BOQ</h3>
+          <p>If you already have structural drawings, shop drawings or a Bill of Quantities (BOQ), upload them directly. We will calculate material volume and provide a quotation based on your drawings.</p>
+          <a href="#quote" class="btn btn-primary">Upload Drawings for Quote →</a>
+        </div>
+        <div class="dual-path-card reveal reveal-delay-2">
+          <div class="path-icon">🏗️</div>
+          <h3>No Complete Drawings Yet</h3>
+          <p>If drawings are not yet complete, provide the project use, basic dimensions and project country. We will provide a preliminary scheme and reference quotation based on the project type.</p>
+          <a href="#quote" class="btn btn-secondary">Submit Project Requirements →</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section class="faq-section">
+    <div class="container">
+      <div class="section-heading reveal">
+        <p class="section-index">03 / FAQ</p>
+        <h2>Frequently Asked Questions</h2>
+      </div>
+      <FAQ items={faqItems} idPrefix="products-en" lang={lang} />
+    </div>
+  </section>
+
+  <!-- Quote CTA -->
+  <section class="quote-cta-section" id="quote">
+    <div class="container">
+      <div class="quote-cta-header reveal">
+        <p class="section-index" style="color: #f59e0b;">04 / Get a Quote</p>
+        <h2>Send Your Project Parameters to Our Engineers</h2>
+        <p>Fill in your project information. ZhongSai engineering team will provide a scheme and quotation based on your requirements.</p>
+      </div>
+      <QuoteForm lang={lang} />
+    </div>
+  </section>
+</BaseLayout>

@@ -1,0 +1,33 @@
+---
+// Hero.astro - 统一Hero组件
+interface Props {
+  title: string;
+  subtitle?: string;
+  lang?: 'zh' | 'en';
+  primaryCta?: { label: string; href: string };
+  secondaryCta?: { label: string; href: string };
+}
+
+const { title, subtitle, lang = 'zh', primaryCta, secondaryCta } = Astro.props;
+---
+
+<section class="hero">
+  <div class="container">
+    <h1>{title}</h1>
+    {subtitle && <p>{subtitle}</p>}
+    {(primaryCta || secondaryCta) && (
+      <div class="hero-actions">
+        {primaryCta && (
+          <a href={primaryCta.href} class="btn btn-primary">
+            {primaryCta.label}
+          </a>
+        )}
+        {secondaryCta && (
+          <a href={secondaryCta.href} class="btn btn-secondary">
+            {secondaryCta.label}
+          </a>
+        )}
+      </div>
+    )}
+  </div>
+</section>

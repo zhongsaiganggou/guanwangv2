@@ -1,0 +1,15 @@
+---
+// ZhongSai V2 - English Project Detail: dongguan-huarun-center
+import BaseLayout from '../../../../layouts/BaseLayout.astro';
+import ProjectDetailLayout from '../../../../components/ProjectDetailLayout.astro';
+import { getProjectBySlug } from '../../../../data/projects-data';
+
+const lang = 'en';
+const project = getProjectBySlug('dongguan-huarun-center')!;
+const title = `${project.name.en} | ZhongSai Steel Structure Projects`;
+const description = `${project.name.en} - ${project.category.en} project in ${project.location.en}. ZhongSai Steel Structure participated in structural steel manufacturing.`;
+---
+
+<BaseLayout title={title} description={description} lang={lang}>
+  <ProjectDetailLayout project={project} lang={lang} />
+</BaseLayout>

@@ -1,0 +1,16 @@
+---
+// LanguageSwitch.astro - 语言切换组件（支持同页面中英文对应）
+interface Props {
+  lang: 'zh' | 'en';
+  currentPath: string;
+}
+
+const { lang, currentPath } = Astro.props;
+const otherLang = lang === 'zh' ? 'en' : 'zh';
+const otherLangPath = currentPath.replace(`/${lang}/`, `/${otherLang}/`);
+const label = lang === 'zh' ? 'English' : '中文';
+---
+
+<a href={otherLangPath} class="lang-switch" hreflang={otherLang} aria-label={lang === 'zh' ? 'Switch to English' : '切换到中文'}>
+  {label}
+</a>

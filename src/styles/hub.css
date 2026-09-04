@@ -1,0 +1,442 @@
+/* ============================================
+   hub.css - Products & Components Hub 页面样式
+   沿用V2首页设计体系：深蓝工业风、大图优先、简洁卡片
+   ============================================ */
+
+/* Hub Hero - 复用首页Hero风格 */
+.hub-hero {
+  position: relative;
+  min-height: 480px;
+  display: flex;
+  align-items: center;
+  overflow: hidden;
+  background: #0b1720;
+}
+
+.hub-hero-bg {
+  position: absolute;
+  inset: 0;
+  background-size: cover;
+  background-position: center;
+  transform: scale(1.05);
+}
+
+.hub-hero-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(135deg, rgba(8,15,28,0.92) 0%, rgba(15,30,55,0.85) 50%, rgba(20,40,70,0.78) 100%);
+}
+
+.hub-hero-content {
+  position: relative;
+  z-index: 2;
+  width: 100%;
+  padding: 80px 0 60px;
+}
+
+.hub-hero .eyebrow {
+  display: inline-block;
+  font-size: 13px;
+  font-weight: 600;
+  letter-spacing: 2px;
+  color: #f59e0b;
+  background: rgba(245,158,11,0.1);
+  border: 1px solid rgba(245,158,11,0.3);
+  padding: 6px 16px;
+  border-radius: 20px;
+  margin-bottom: 20px;
+}
+
+.hub-hero h1 {
+  font-size: 42px;
+  font-weight: 700;
+  color: #fff;
+  line-height: 1.25;
+  margin-bottom: 16px;
+  max-width: 700px;
+}
+
+.hub-hero .lead {
+  font-size: 17px;
+  line-height: 1.7;
+  color: rgba(255,255,255,0.75);
+  max-width: 600px;
+  margin-bottom: 28px;
+}
+
+/* Breadcrumb */
+.hub-breadcrumb {
+  font-size: 13px;
+  color: rgba(255,255,255,0.5);
+  margin-bottom: 16px;
+}
+
+.hub-breadcrumb a {
+  color: rgba(255,255,255,0.6);
+  text-decoration: none;
+}
+
+.hub-breadcrumb a:hover {
+  color: #fff;
+}
+
+.hub-breadcrumb span {
+  margin: 0 8px;
+  color: rgba(255,255,255,0.3);
+}
+
+/* Product Grid - 6大分类 */
+.product-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+}
+
+.product-card {
+  background: #fff;
+  border: 1px solid #e5e7eb;
+  border-radius: 12px;
+  overflow: hidden;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  text-decoration: none;
+  display: flex;
+  flex-direction: column;
+}
+
+.product-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 32px rgba(0,0,0,0.12);
+  text-decoration: none;
+}
+
+.product-card-img {
+  height: 200px;
+  overflow: hidden;
+  position: relative;
+}
+
+.product-card-img img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.5s ease;
+}
+
+.product-card:hover .product-card-img img {
+  transform: scale(1.06);
+}
+
+.product-card-num {
+  position: absolute;
+  top: 14px;
+  left: 14px;
+  background: rgba(0,0,0,0.6);
+  color: #fff;
+  font-size: 12px;
+  font-weight: 700;
+  padding: 4px 10px;
+  border-radius: 4px;
+  letter-spacing: 1px;
+}
+
+.product-card-body {
+  padding: 22px 20px 24px;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.product-card-body h3 {
+  font-size: 18px;
+  font-weight: 700;
+  color: #111827;
+  margin-bottom: 8px;
+}
+
+.product-card-body p {
+  font-size: 14px;
+  line-height: 1.65;
+  color: #4b5563;
+  margin-bottom: 16px;
+  flex: 1;
+}
+
+.product-card-cta {
+  display: inline-flex;
+  align-items: center;
+  font-size: 14px;
+  font-weight: 600;
+  color: #1a56db;
+  gap: 4px;
+  transition: gap 0.2s ease;
+}
+
+.product-card:hover .product-card-cta {
+  gap: 8px;
+}
+
+/* Component Sections */
+.component-section {
+  padding: 70px 0;
+}
+
+.component-section:nth-child(even) {
+  background: #f8fafc;
+}
+
+.component-section-header {
+  margin-bottom: 36px;
+}
+
+.component-section-header .section-index {
+  font-size: 13px;
+  font-weight: 700;
+  color: #1a56db;
+  letter-spacing: 1px;
+  margin-bottom: 8px;
+}
+
+.component-section-header h2 {
+  font-size: 28px;
+  font-weight: 700;
+  color: #111827;
+  margin-bottom: 10px;
+}
+
+.component-section-header p {
+  font-size: 15px;
+  color: #4b5563;
+  max-width: 600px;
+  line-height: 1.7;
+}
+
+.component-item-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 18px;
+}
+
+.component-item {
+  background: #fff;
+  border: 1px solid #e5e7eb;
+  border-radius: 10px;
+  padding: 22px 20px;
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.component-item:hover {
+  border-color: #1a56db;
+  box-shadow: 0 4px 16px rgba(26,86,219,0.1);
+}
+
+.component-item h4 {
+  font-size: 16px;
+  font-weight: 600;
+  color: #111827;
+  margin-bottom: 6px;
+}
+
+.component-item p {
+  font-size: 13px;
+  line-height: 1.6;
+  color: #6b7280;
+}
+
+/* How to Choose / Dual Path */
+.dual-path-section {
+  background: linear-gradient(135deg, #0f1f3a 0%, #162a4a 100%);
+  padding: 70px 0;
+}
+
+.dual-path-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 28px;
+  margin-top: 36px;
+}
+
+.dual-path-card {
+  background: rgba(255,255,255,0.06);
+  border: 1px solid rgba(255,255,255,0.12);
+  border-radius: 14px;
+  padding: 32px 28px;
+  transition: background 0.3s ease, transform 0.3s ease;
+}
+
+.dual-path-card:hover {
+  background: rgba(255,255,255,0.1);
+  transform: translateY(-3px);
+}
+
+.dual-path-card .path-icon {
+  width: 48px;
+  height: 48px;
+  background: rgba(245,158,11,0.15);
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 22px;
+  margin-bottom: 16px;
+}
+
+.dual-path-card h3 {
+  font-size: 20px;
+  font-weight: 700;
+  color: #fff;
+  margin-bottom: 10px;
+}
+
+.dual-path-card p {
+  font-size: 14px;
+  line-height: 1.7;
+  color: rgba(255,255,255,0.65);
+  margin-bottom: 18px;
+}
+
+.dual-path-card .btn {
+  display: inline-flex;
+  align-items: center;
+  padding: 10px 22px;
+  border-radius: 8px;
+  font-size: 14px;
+  font-weight: 600;
+  text-decoration: none;
+  transition: all 0.2s ease;
+}
+
+.dual-path-card .btn-primary {
+  background: #f59e0b;
+  color: #111827;
+}
+
+.dual-path-card .btn-primary:hover {
+  background: #fbbf24;
+}
+
+.dual-path-card .btn-secondary {
+  background: transparent;
+  color: #fff;
+  border: 1px solid rgba(255,255,255,0.3);
+}
+
+.dual-path-card .btn-secondary:hover {
+  border-color: #fff;
+  background: rgba(255,255,255,0.08);
+}
+
+/* FAQ Section */
+.faq-section {
+  padding: 70px 0;
+}
+
+.faq-section .section-heading {
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+.faq-section .section-heading h2 {
+  font-size: 28px;
+  font-weight: 700;
+  color: #111827;
+  margin-bottom: 10px;
+}
+
+.faq-section .section-heading p {
+  color: #6b7280;
+  font-size: 15px;
+}
+
+.faq-list {
+  max-width: 760px;
+  margin: 0 auto;
+}
+
+/* Quote CTA Section */
+.quote-cta-section {
+  background: linear-gradient(135deg, #0f1f3a 0%, #1a3050 100%);
+  padding: 70px 0;
+  position: relative;
+  overflow: hidden;
+}
+
+.quote-cta-section::before {
+  content: '';
+  position: absolute;
+  top: -50%;
+  right: -10%;
+  width: 500px;
+  height: 500px;
+  background: radial-gradient(circle, rgba(245,158,11,0.12) 0%, transparent 70%);
+  pointer-events: none;
+}
+
+.quote-cta-section .container {
+  position: relative;
+  z-index: 2;
+}
+
+.quote-cta-header {
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+.quote-cta-header h2 {
+  font-size: 30px;
+  font-weight: 700;
+  color: #fff;
+  margin-bottom: 12px;
+}
+
+.quote-cta-header p {
+  font-size: 16px;
+  color: rgba(255,255,255,0.7);
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+/* 响应式 */
+@media (max-width: 1024px) {
+  .product-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .component-item-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 768px) {
+  .hub-hero {
+    min-height: 400px;
+  }
+  .hub-hero h1 {
+    font-size: 30px;
+  }
+  .hub-hero .lead {
+    font-size: 15px;
+  }
+  .product-grid {
+    grid-template-columns: 1fr;
+  }
+  .product-card-img {
+    height: 180px;
+  }
+  .component-item-grid {
+    grid-template-columns: 1fr;
+  }
+  .dual-path-grid {
+    grid-template-columns: 1fr;
+  }
+  .component-section-header h2 {
+    font-size: 24px;
+  }
+}
+
+@media (max-width: 480px) {
+  .hub-hero h1 {
+    font-size: 26px;
+  }
+  .quote-cta-header h2 {
+    font-size: 24px;
+  }
+}

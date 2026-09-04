@@ -1,0 +1,425 @@
+---
+// ZhongSai V2 - Chinese Export Delivery Page
+import BaseLayout from '../../../layouts/BaseLayout.astro';
+import QuoteForm from '../../../components/QuoteForm.astro';
+import '../../../styles/hub.css';
+import '../../../styles/manufacturing.css';
+
+const lang = 'zh';
+const title = '钢结构出口交付 | 包装装柜与海外项目供应支持';
+const description = '了解中赛钢构如何为海外钢结构项目提供构件标识、包装装柜、出口单证支持、物流协调及海外安装技术指导。';
+
+const exportProcess = [
+  { num: '01', title: '确认图纸与项目范围', desc: '在制造完成前确认项目图纸、技术规范和交付要求。' },
+  { num: '02', title: '制造加工完成', desc: '钢构件按确认图纸和项目技术要求进行加工制造。' },
+  { num: '03', title: '检验与交付准备', desc: '制造与检验根据确认图纸、技术规范和项目要求组织。' },
+  { num: '04', title: '构件标识', desc: '构件标识可根据确认图纸和项目要求组织，便于安装识别。' },
+  { num: '05', title: '包装', desc: '包装方式根据构件类型、装柜要求和出口运输需求确认。' },
+  { num: '06', title: '装车 / 装柜', desc: '装车与装柜方案协调优化空间利用，保护构件运输安全。' },
+  { num: '07', title: '出口单证协调', desc: '商业单据、装箱资料和出口申报支持按项目要求协调。' },
+  { num: '08', title: '海外技术指导', desc: '提供安装图纸、视频资料和技术指导，支持客户或当地施工团队。' }
+];
+
+const loadingSteps = [
+  {
+    img: '/images/export/heavy-member-prep-308_web.jpg',
+    title: '构件准备',
+    desc: '成品构件按项目要求整理准备，确保装车前构件状态符合交付要求。'
+  },
+  {
+    img: '/images/export/loading-truck_web.jpg',
+    title: '起吊与装车',
+    desc: '重型构件使用合适设备起吊装车，包装保护到位，确保运输安全。'
+  },
+  {
+    img: '/images/export/container-loading-310_web.jpg',
+    title: '集装箱装载',
+    desc: '构件按装箱方案装入集装箱，优化空间利用，确保运输过程中构件稳定。'
+  },
+  {
+    img: '/images/export/container-loading-256_web.jpg',
+    title: '装柜完成与出口准备',
+    desc: '装柜完成后准备出口，单证和物流协调按项目要求组织。'
+  }
+];
+
+const zhongSaiSupports = [
+  '制造加工',
+  '钢构件供应',
+  '构件标识',
+  '包装',
+  '装柜',
+  '出口单证支持',
+  '物流协调',
+  '海外安装技术指导'
+];
+
+const localTeamHandles = [
+  '当地卸货',
+  '现场人工组织',
+  '当地安装',
+  '当地施工',
+  '现场安全管理',
+  '当地审批及许可（如适用）'
+];
+---
+
+<BaseLayout title={title} description={description} lang={lang}>
+  <!-- Section 01: Hero -->
+  <section class="hub-hero">
+    <div class="hub-hero-bg" style="background-image: url('/images/export/loading-truck_web.jpg')"></div>
+    <div class="hub-hero-overlay"></div>
+    <div class="container hub-hero-content">
+      <div class="hub-breadcrumb">
+        <a href="/zh/">首页</a><span>/</span><span>出口交付</span>
+      </div>
+      <p class="eyebrow">出口交付</p>
+      <h1>钢结构制造后的出口供应与交付支持</h1>
+      <p class="hub-hero-desc">中赛钢构为海外项目提供从钢构件制造完成后的构件标识、包装、装柜、出口单证协调到海外安装技术指导等供应支持。</p>
+    </div>
+  </section>
+
+  <!-- Section 02: From Fabrication to Export -->
+  <section class="hub-section">
+    <div class="container">
+      <div class="hub-section-head">
+        <p class="section-num">01</p>
+        <h2>从制造完成到出口准备</h2>
+      </div>
+      <p class="section-intro">检验、构件标识及包装根据确认图纸和项目要求组织。</p>
+      <div class="process-grid">
+        {exportProcess.map(step => (
+          <div class="process-card">
+            <div class="process-card-num">{step.num}</div>
+            <h3>{step.title}</h3>
+            <p>{step.desc}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- Section 03: Component Marking & Packing -->
+  <section class="hub-section hub-section-light">
+    <div class="container">
+      <div class="hub-section-head">
+        <p class="section-num">02</p>
+        <h2>面向出口交付的构件标识与包装</h2>
+      </div>
+      <div class="export-content-grid">
+        <div class="export-text">
+          <p>不同项目构件可能需要不同的包装方式，具体取决于构件类型、尺寸和运输要求。</p>
+          <p>构件标识可根据确认图纸组织，支持装车和项目现场协调过程中的识别。</p>
+          <p>小型配件和连接材料可能需要分组包装，确保卸货和安装过程中所有物品齐全。</p>
+          <p>包装方式根据构件类型、装柜要求和出口运输需求确认。</p>
+        </div>
+        <div class="export-image">
+          <img src="/images/export/heavy-member-prep-308_web.jpg" alt="准备出口包装和装车的钢构件" width="600" height="450" loading="lazy">
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Section 04: Loading & Container Preparation -->
+  <section class="hub-section">
+    <div class="container">
+      <div class="hub-section-head">
+        <p class="section-num">03</p>
+        <h2>装车与集装箱装载准备</h2>
+      </div>
+      <div class="loading-steps">
+        {loadingSteps.map((step, i) => (
+          <div class="loading-step">
+            <div class="loading-step-img">
+              <img src={step.img} alt={step.title} width="500" height="375" loading="lazy">
+            </div>
+            <div class="loading-step-content">
+              <span class="loading-step-num">{String(i + 1).padStart(2, '0')}</span>
+              <h3>{step.title}</h3>
+              <p>{step.desc}</p>
+            </div>
+          </div>
+        ))}
+      </div>
+      <p class="loading-note">合理的包装与装柜安排有助于提升集装箱空间利用率。具体装载能力取决于实际货物尺寸、重量和运输要求。</p>
+    </div>
+  </section>
+
+  <!-- Section 05: Export Documentation & Logistics Coordination -->
+  <section class="hub-section hub-section-light">
+    <div class="container">
+      <div class="hub-section-head">
+        <p class="section-num">04</p>
+        <h2>出口单证与物流协调</h2>
+      </div>
+      <div class="export-two-col">
+        <div class="export-col">
+          <h3>出口单证支持</h3>
+          <ul class="export-list">
+            <li>商业单据准备支持</li>
+            <li>装箱资料 / 装箱单协调</li>
+            <li>出口申报资料支持</li>
+            <li>运输相关单据协调</li>
+            <li>根据项目需要准备相应出口资料</li>
+          </ul>
+        </div>
+        <div class="export-col">
+          <h3>物流协调</h3>
+          <ul class="export-list">
+            <li>协调装车 / 装柜安排</li>
+            <li>协调运输安排</li>
+            <li>支持运输相关资料准备</li>
+            <li>根据项目需求与相关物流方进行交付协调</li>
+          </ul>
+          <p class="export-note">货运代理及清关相关安排根据项目需求与相应服务方协调。中赛的核心定位仍然是钢结构制造与出口供应商。</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Section 06: Overseas Installation Technical Guidance + Boundary -->
+  <section class="hub-section">
+    <div class="container">
+      <div class="hub-section-head">
+        <p class="section-num">05</p>
+        <h2>海外安装技术指导</h2>
+      </div>
+      <div class="guidance-content">
+        <p>对于需要安装支持的项目，中赛可根据确认的项目范围提供海外安装技术指导。</p>
+        <p>当地安装人工、施工组织及现场管理由客户或当地施工团队负责。</p>
+      </div>
+
+      <!-- Boundary Dual Column -->
+      <div class="boundary-dual">
+        <div class="boundary-col boundary-col-primary">
+          <h3>中赛负责</h3>
+          <ul>
+            {zhongSaiSupports.map(item => <li>{item}</li>)}
+          </ul>
+        </div>
+        <div class="boundary-col boundary-col-secondary">
+          <h3>客户 / 当地项目团队负责</h3>
+          <ul>
+            {localTeamHandles.map(item => <li>{item}</li>)}
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Section 07: Project Inquiry / QuoteForm -->
+  <section class="hub-section hub-section-dark" id="quote-form">
+    <div class="container">
+      <div class="hub-section-head">
+        <p class="section-num">06</p>
+        <h2>有钢结构出口项目需求？</h2>
+      </div>
+      <div class="form-intro">
+        <p>已有图纸或BOQ，可提交现有项目资料。</p>
+        <p>暂时没有图纸，可提供项目国家、建筑类型、用途及已有尺寸信息。</p>
+      </div>
+      <QuoteForm lang="zh" />
+    </div>
+  </section>
+</BaseLayout>
+
+<style>
+.section-intro {
+  max-width: 700px;
+  margin: 0 auto 32px;
+  text-align: center;
+  color: var(--text-secondary, #666);
+  font-size: 1.05rem;
+}
+.export-content-grid {
+  display: grid;
+  grid-template-columns: 1.2fr 1fr;
+  gap: 48px;
+  align-items: center;
+}
+.export-text p {
+  margin-bottom: 16px;
+  line-height: 1.7;
+  color: var(--text-secondary, #555);
+}
+.export-image img {
+  width: 100%;
+  height: auto;
+  border-radius: 12px;
+  object-fit: cover;
+}
+.loading-steps {
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+  margin-top: 32px;
+}
+.loading-step {
+  display: grid;
+  grid-template-columns: 1fr 1.2fr;
+  gap: 32px;
+  align-items: center;
+}
+.loading-step:nth-child(even) {
+  direction: rtl;
+}
+.loading-step:nth-child(even) > * {
+  direction: ltr;
+}
+.loading-step-img img {
+  width: 100%;
+  height: auto;
+  border-radius: 12px;
+  object-fit: cover;
+}
+.loading-step-content {
+  padding: 16px;
+}
+.loading-step-num {
+  display: inline-block;
+  font-size: 0.85rem;
+  font-weight: 700;
+  color: #fff;
+  background: var(--primary, #0a3d62);
+  padding: 4px 12px;
+  border-radius: 4px;
+  margin-bottom: 12px;
+}
+.loading-step-content h3 {
+  font-size: 1.3rem;
+  margin-bottom: 8px;
+  color: var(--primary, #0a3d62);
+}
+.loading-step-content p {
+  color: var(--text-secondary, #666);
+  line-height: 1.6;
+}
+.loading-note {
+  text-align: center;
+  margin-top: 32px;
+  font-style: italic;
+  color: var(--text-secondary, #666);
+  font-size: 0.9rem;
+}
+.export-two-col {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 32px;
+}
+.export-col {
+  padding: 32px;
+  background: #fff;
+  border-radius: 12px;
+  border: 1px solid rgba(0,0,0,0.06);
+}
+.export-col h3 {
+  font-size: 1.2rem;
+  margin-bottom: 16px;
+  color: var(--primary, #0a3d62);
+}
+.export-list {
+  list-style: none;
+  padding: 0;
+}
+.export-list li {
+  padding: 8px 0;
+  padding-left: 24px;
+  position: relative;
+  font-size: 0.95rem;
+  color: var(--text-secondary, #555);
+  border-bottom: 1px solid rgba(0,0,0,0.05);
+}
+.export-list li::before {
+  content: '✓';
+  position: absolute;
+  left: 0;
+  color: var(--primary, #0a3d62);
+  font-weight: 700;
+}
+.export-list li:last-child {
+  border-bottom: none;
+}
+.export-note {
+  margin-top: 16px;
+  padding: 12px 16px;
+  background: rgba(10, 61, 98, 0.05);
+  border-radius: 8px;
+  font-size: 0.85rem;
+  color: var(--text-secondary, #666);
+  line-height: 1.5;
+}
+.guidance-content {
+  max-width: 800px;
+  margin: 0 auto 32px;
+  text-align: center;
+}
+.guidance-content p {
+  margin-bottom: 12px;
+  line-height: 1.7;
+  color: var(--text-secondary, #555);
+  font-size: 1.05rem;
+}
+.boundary-dual {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 32px;
+  margin-top: 32px;
+}
+.boundary-col {
+  padding: 32px;
+  border-radius: 12px;
+}
+.boundary-col-primary {
+  background: rgba(10, 61, 98, 0.05);
+  border-left: 4px solid var(--primary, #0a3d62);
+}
+.boundary-col-secondary {
+  background: rgba(120, 120, 120, 0.05);
+  border-left: 4px solid #888;
+}
+.boundary-col h3 {
+  font-size: 1rem;
+  margin-bottom: 16px;
+  letter-spacing: 0.5px;
+}
+.boundary-col ul {
+  list-style: none;
+  padding: 0;
+}
+.boundary-col li {
+  padding: 8px 0;
+  border-bottom: 1px solid rgba(0,0,0,0.06);
+  font-size: 0.95rem;
+  color: var(--text-secondary, #555);
+}
+.boundary-col li:last-child {
+  border-bottom: none;
+}
+.form-intro {
+  max-width: 600px;
+  margin: 0 auto 24px;
+  text-align: center;
+}
+.form-intro p {
+  color: rgba(255,255,255,0.85);
+  margin-bottom: 4px;
+}
+@media (max-width: 1024px) {
+  .export-content-grid,
+  .export-two-col,
+  .boundary-dual {
+    grid-template-columns: 1fr;
+  }
+  .loading-step {
+    grid-template-columns: 1fr;
+  }
+  .loading-step:nth-child(even) {
+    direction: ltr;
+  }
+}
+@media (max-width: 768px) {
+  .loading-step-content {
+    padding: 8px;
+  }
+}
+</style>

@@ -1,0 +1,15 @@
+---
+// ZhongSai V2 - Chinese Project Detail: qianhai-dreamfactory
+import BaseLayout from '../../../../layouts/BaseLayout.astro';
+import ProjectDetailLayout from '../../../../components/ProjectDetailLayout.astro';
+import { getProjectBySlug } from '../../../../data/projects-data';
+
+const lang = 'zh';
+const project = getProjectBySlug('qianhai-dreamfactory')!;
+const title = `${project.name.zh} | 中赛钢构项目案例`;
+const description = `${project.name.zh} - ${project.category.zh}项目，位于${project.location.zh}。中赛钢构参与该项目钢结构制造。`;
+---
+
+<BaseLayout title={title} description={description} lang={lang}>
+  <ProjectDetailLayout project={project} lang={lang} />
+</BaseLayout>

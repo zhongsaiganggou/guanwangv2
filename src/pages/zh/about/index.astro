@@ -1,0 +1,370 @@
+---
+// ZhongSai V2 - Chinese About Us Page
+import BaseLayout from '../../../layouts/BaseLayout.astro';
+import QuoteForm from '../../../components/QuoteForm.astro';
+import '../../../styles/hub.css';
+import '../../../styles/manufacturing.css';
+
+const lang = 'zh';
+const title = '关于中赛钢构 | 钢结构制造与出口供应商';
+const description = '了解中赛钢构的生产基地、制造能力、出口服务与海外项目支持。提供设计深化、钢结构加工、包装装柜、出口协调及海外安装技术指导。';
+
+const coreFacts = [
+  { num: '15+年', label: '出口经验' },
+  { num: '10万㎡', label: '生产基地' },
+  { num: '10万吨', label: '年产能' },
+  { num: '300+', label: '一线工人' }
+];
+
+const services = [
+  {
+    num: '01',
+    title: '设计与深化支持',
+    desc: '根据项目需求和确认图纸，进行结构设计协调与加工图深化支持。'
+  },
+  {
+    num: '02',
+    title: '钢结构生产加工',
+    desc: '切割、组立、焊接、矫正、钻孔及异形构件加工，按项目图纸组织生产。'
+  },
+  {
+    num: '03',
+    title: '钢构件及材料供应',
+    desc: '按需供应加工钢梁、钢柱、桁架、支撑、次结构及屋面墙面围护系统。'
+  },
+  {
+    num: '04',
+    title: '包装与装柜',
+    desc: '构件标识、装箱清单和装柜方案，按构件类型和出口运输要求组织。'
+  },
+  {
+    num: '05',
+    title: '出口单证与物流协调',
+    desc: '出口单证支持与物流协调，按项目范围组织海外项目交付。'
+  },
+  {
+    num: '06',
+    title: '海外安装技术指导',
+    desc: '提供安装图纸、视频资料和技术指导，支持客户或当地施工团队进行现场安装。'
+  }
+];
+
+const supplyChain = [
+  { num: '01', title: '项目需求确认', desc: '确认项目国家、建筑用途、尺寸及已有图纸资料。' },
+  { num: '02', title: '设计/深化协调', desc: '根据确认项目范围进行结构设计与加工图深化协调。' },
+  { num: '03', title: '生产加工', desc: '按确认图纸和项目技术要求进行钢构件加工制造。' },
+  { num: '04', title: '质量检验', desc: '制造与检验按项目图纸和技术要求组织。' },
+  { num: '05', title: '构件标识与包装', desc: '构件标识与包装按确认图纸和出口要求组织。' },
+  { num: '06', title: '集装箱装柜', desc: '装柜方案协调优化空间利用，保护构件运输安全。' },
+  { num: '07', title: '出口协调', desc: '出口单证支持与物流协调，组织海外项目交付。' },
+  { num: '08', title: '海外技术指导', desc: '为客户或当地施工团队提供安装指导和技术支持。' }
+];
+
+const certifications = [
+  {
+    title: 'ISO 9001',
+    desc: '制造与项目协调执行ISO 9001质量管理体系要求。'
+  },
+  {
+    title: '马来西亚 CIDB',
+    desc: '马来西亚市场相关资质与注册，适用于马来西亚市场项目。'
+  },
+  {
+    title: 'GB / ASTM / EN',
+    desc: '项目规范可根据适用项目标准和要求进行协调。'
+  }
+];
+---
+
+<BaseLayout title={title} description={description} lang={lang}>
+  <!-- Hero -->
+  <section class="hub-hero">
+    <div class="hub-hero-bg" style="background-image: url('/images/manufacturing/real/factory-aerial-panorama.png')"></div>
+    <div class="hub-hero-overlay"></div>
+    <div class="container hub-hero-content">
+      <div class="hub-breadcrumb">
+        <a href="/zh/">首页</a><span>/</span><span>关于中赛</span>
+      </div>
+      <p class="eyebrow">关于中赛</p>
+      <h1>面向海外项目的钢结构制造与出口供应</h1>
+      <p class="hub-hero-desc">中赛钢构是中国钢结构制造与出口供应商，为海外工业厂房、仓库及工程钢结构项目提供设计深化、生产加工、包装装柜、出口协调及海外安装技术指导。</p>
+    </div>
+  </section>
+
+  <!-- Section 02: Who We Are -->
+  <section class="hub-section">
+    <div class="container">
+      <div class="hub-section-head">
+        <p class="section-num">01</p>
+        <h2>专注海外项目的钢结构制造与出口供应商</h2>
+      </div>
+      <div class="about-intro">
+        <p>中赛钢构为海外项目业主、工程公司、承包商和采购团队提供钢结构制造与出口供应服务。</p>
+        <p>我们的工作重点是将确认的项目需求和图纸转化为可出口交付的加工钢构件。</p>
+        <p>根据项目范围，中赛可提供设计深化、生产加工、构件供应、包装装柜、出口单证协调及海外安装技术指导。</p>
+        <p><strong>当地安装及施工由客户或当地施工团队负责。</strong></p>
+      </div>
+
+      <!-- Core Facts -->
+      <div class="about-facts">
+        {coreFacts.map(fact => (
+          <div class="about-fact-card">
+            <div class="about-fact-num">{fact.num}</div>
+            <div class="about-fact-label">{fact.label}</div>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- Section 03: Real Manufacturing Base -->
+  <section class="hub-section hub-section-dark">
+    <div class="container">
+      <div class="hub-section-head">
+        <p class="section-num">02</p>
+        <h2>真实工厂 · 真实制造</h2>
+      </div>
+      <div class="manufacturing-evidence">
+        <div class="evidence-main">
+          <img src="/images/manufacturing/real/factory-overview-9819.jpg" alt="中赛钢构工厂生产车间" width="800" height="600" loading="lazy">
+        </div>
+        <div class="evidence-grid">
+          <div class="evidence-item">
+            <img src="/images/manufacturing/real/cutting-prep-9809.jpg" alt="CNC切割与钢材准备" width="400" height="300" loading="lazy">
+            <span>切割加工</span>
+          </div>
+          <div class="evidence-item">
+            <img src="/images/manufacturing/real/welding-9820.jpg" alt="钢结构焊接加工" width="400" height="300" loading="lazy">
+            <span>焊接</span>
+          </div>
+          <div class="evidence-item">
+            <img src="/images/manufacturing/real/assembly-welding-9821.jpg" alt="钢构件组立加工车间" width="400" height="300" loading="lazy">
+            <span>组立加工</span>
+          </div>
+        </div>
+      </div>
+      <p class="evidence-caption">10万㎡生产基地，覆盖切割、组立、焊接、表面处理、质量检验、构件编号与包装装柜等出口交付关键环节。</p>
+    </div>
+  </section>
+
+  <!-- Section 04: What We Provide -->
+  <section class="hub-section">
+    <div class="container">
+      <div class="hub-section-head">
+        <p class="section-num">03</p>
+        <h2>中赛提供哪些支持</h2>
+      </div>
+      <div class="capability-grid">
+        {services.map(svc => (
+          <div class="capability-card">
+            <div class="capability-num">{svc.num}</div>
+            <h3>{svc.title}</h3>
+            <p>{svc.desc}</p>
+          </div>
+        ))}
+      </div>
+
+      <!-- Supply Scope Boundary -->
+      <div class="boundary-section">
+        <div class="boundary-col">
+          <h3>中赛负责</h3>
+          <ul>
+            <li>项目需求协调</li>
+            <li>设计深化支持</li>
+            <li>制造加工</li>
+            <li>钢构件及材料供应</li>
+            <li>包装装柜</li>
+            <li>出口单证支持</li>
+            <li>物流协调</li>
+            <li>海外安装技术指导</li>
+          </ul>
+        </div>
+        <div class="boundary-col">
+          <h3>客户 / 当地施工团队负责</h3>
+          <ul>
+            <li>当地施工</li>
+            <li>现场安装</li>
+            <li>现场人工组织</li>
+            <li>当地审批及许可（如适用）</li>
+          </ul>
+        </div>
+      </div>
+      <p class="boundary-note">明确的责任划分有助于从项目初期就清晰界定制造与出口范围。</p>
+    </div>
+  </section>
+
+  <!-- Section 05: Manufacturing & Export Capability -->
+  <section class="hub-section hub-section-dark">
+    <div class="container">
+      <div class="hub-section-head">
+        <p class="section-num">04</p>
+        <h2>从图纸到出口交付准备</h2>
+      </div>
+      <div class="process-grid">
+        {supplyChain.map(step => (
+          <div class="process-card">
+            <div class="process-card-num">{step.num}</div>
+            <h3>{step.title}</h3>
+            <p>{step.desc}</p>
+          </div>
+        ))}
+      </div>
+      <div class="section-cta">
+        <a href="/zh/manufacturing-quality/" class="btn btn-outline">查看详细制造流程 →</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Section 06: Certifications & Standards -->
+  <section class="hub-section">
+    <div class="container">
+      <div class="hub-section-head">
+        <p class="section-num">05</p>
+        <h2>质量与项目规范</h2>
+      </div>
+      <div class="cert-grid">
+        {certifications.map(cert => (
+          <div class="cert-card">
+            <h3>{cert.title}</h3>
+            <p>{cert.desc}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- Section 07: Project Cooperation / Quote CTA -->
+  <section class="hub-section hub-section-dark" id="quote">
+    <div class="container">
+      <div class="hub-section-head">
+        <p class="section-num">06</p>
+        <h2>已有图纸或项目需求？</h2>
+      </div>
+      <div class="quote-intro">
+        <p>已有图纸或BOQ，可提交资料进行初步项目评估。</p>
+        <p>如果暂时没有图纸，可提供项目国家、建筑类型、用途及已有尺寸信息。</p>
+      </div>
+      <QuoteForm lang="zh" />
+    </div>
+  </section>
+</BaseLayout>
+
+<style>
+.about-intro {
+  max-width: 800px;
+  margin: 0 auto 48px;
+}
+.about-intro p {
+  margin-bottom: 16px;
+  line-height: 1.7;
+  color: var(--text-secondary, #555);
+}
+.about-facts {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 24px;
+  margin-top: 32px;
+}
+.about-fact-card {
+  text-align: center;
+  padding: 32px 16px;
+  background: var(--bg-light, #f8f9fa);
+  border-radius: 8px;
+}
+.about-fact-num {
+  font-size: 2rem;
+  font-weight: 700;
+  color: var(--primary, #0a3d62);
+  margin-bottom: 8px;
+}
+.about-fact-label {
+  font-size: 0.9rem;
+  color: var(--text-secondary, #666);
+}
+.boundary-section {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 32px;
+  margin-top: 48px;
+}
+.boundary-col {
+  padding: 32px;
+  border-radius: 8px;
+}
+.boundary-col:first-child {
+  background: rgba(10, 61, 98, 0.05);
+  border-left: 4px solid var(--primary, #0a3d62);
+}
+.boundary-col:last-child {
+  background: rgba(120, 120, 120, 0.05);
+  border-left: 4px solid #888;
+}
+.boundary-col h3 {
+  margin-bottom: 16px;
+  font-size: 1.1rem;
+}
+.boundary-col ul {
+  list-style: none;
+  padding: 0;
+}
+.boundary-col li {
+  padding: 8px 0;
+  border-bottom: 1px solid rgba(0,0,0,0.06);
+  font-size: 0.95rem;
+}
+.boundary-col li:last-child {
+  border-bottom: none;
+}
+.boundary-note {
+  text-align: center;
+  margin-top: 24px;
+  font-style: italic;
+  color: var(--text-secondary, #666);
+}
+.cert-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+}
+.cert-card {
+  padding: 32px;
+  background: var(--bg-light, #f8f9fa);
+  border-radius: 8px;
+  text-align: center;
+}
+.cert-card h3 {
+  font-size: 1.3rem;
+  color: var(--primary, #0a3d62);
+  margin-bottom: 12px;
+}
+.cert-card p {
+  font-size: 0.9rem;
+  color: var(--text-secondary, #666);
+  line-height: 1.6;
+}
+.quote-intro {
+  max-width: 700px;
+  margin: 0 auto 32px;
+  text-align: center;
+}
+.quote-intro p {
+  margin-bottom: 8px;
+  color: rgba(255,255,255,0.85);
+}
+@media (max-width: 900px) {
+  .about-facts {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .boundary-section {
+    grid-template-columns: 1fr;
+  }
+  .cert-grid {
+    grid-template-columns: 1fr;
+  }
+}
+@media (max-width: 600px) {
+  .about-fact-num {
+    font-size: 1.5rem;
+  }
+}
+</style>

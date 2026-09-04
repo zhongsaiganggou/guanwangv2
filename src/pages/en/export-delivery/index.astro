@@ -1,0 +1,425 @@
+---
+// ZhongSai V2 - English Export Delivery Page
+import BaseLayout from '../../../layouts/BaseLayout.astro';
+import QuoteForm from '../../../components/QuoteForm.astro';
+import '../../../styles/hub.css';
+import '../../../styles/manufacturing.css';
+
+const lang = 'en';
+const title = 'Steel Structure Export from China | Packing, Loading & Delivery Support';
+const description = 'Learn how ZhongSai supports overseas steel structure projects with packing, component marking, container loading, export documentation support, logistics coordination and overseas installation technical guidance.';
+
+const exportProcess = [
+  { num: '01', title: 'Confirmed Drawings & Project Scope', desc: 'Project drawings, specifications and delivery requirements are confirmed before fabrication completion.' },
+  { num: '02', title: 'Fabrication Completion', desc: 'Steel components are fabricated according to confirmed drawings and project technical requirements.' },
+  { num: '03', title: 'Inspection & Preparation', desc: 'Manufacturing and inspection are organized according to confirmed drawings, specifications and project requirements.' },
+  { num: '04', title: 'Component Marking', desc: 'Component marking can be organized according to confirmed drawings and project requirements for erection identification.' },
+  { num: '05', title: 'Packing', desc: 'Packing methods are confirmed according to component type, container loading requirements and export handling needs.' },
+  { num: '06', title: 'Loading / Container Loading', desc: 'Loading and container loading plans are coordinated to optimize space utilization and protect components during transport.' },
+  { num: '07', title: 'Export Documentation Coordination', desc: 'Commercial documentation, packing information and export declaration support are coordinated according to project requirements.' },
+  { num: '08', title: 'Overseas Technical Guidance', desc: 'Installation drawings, video resources and technical guidance are provided to support the customer or local construction team.' }
+];
+
+const loadingSteps = [
+  {
+    img: '/images/export/heavy-member-prep-308_web.jpg',
+    title: 'Component Preparation',
+    desc: 'Finished members are prepared and organized for loading according to project requirements.'
+  },
+  {
+    img: '/images/export/loading-truck_web.jpg',
+    title: 'Crane Lifting & Truck Loading',
+    desc: 'Heavy components are lifted and loaded using appropriate equipment, with packing protection in place.'
+  },
+  {
+    img: '/images/export/container-loading-310_web.jpg',
+    title: 'Container Loading',
+    desc: 'Components are loaded into containers according to packing plans, optimizing space utilization and transport safety.'
+  },
+  {
+    img: '/images/export/container-loading-256_web.jpg',
+    title: 'Loaded Container & Export Preparation',
+    desc: 'Loaded containers are prepared for export, with documentation and logistics coordination organized according to project requirements.'
+  }
+];
+
+const zhongSaiSupports = [
+  'Fabrication',
+  'Component supply',
+  'Component marking',
+  'Packing',
+  'Container loading',
+  'Export documentation support',
+  'Logistics coordination',
+  'Overseas installation technical guidance'
+];
+
+const localTeamHandles = [
+  'Local unloading',
+  'Local site labor',
+  'Local erection',
+  'Local construction',
+  'Site safety management',
+  'Local permits / statutory approvals where applicable'
+];
+---
+
+<BaseLayout title={title} description={description} lang={lang}>
+  <!-- Section 01: Hero -->
+  <section class="hub-hero">
+    <div class="hub-hero-bg" style="background-image: url('/images/export/loading-truck_web.jpg')"></div>
+    <div class="hub-hero-overlay"></div>
+    <div class="container hub-hero-content">
+      <div class="hub-breadcrumb">
+        <a href="/en/">Home</a><span>/</span><span>Export Delivery</span>
+      </div>
+      <p class="eyebrow">EXPORT DELIVERY</p>
+      <h1>Steel Structure Export Supply from China</h1>
+      <p class="hub-hero-desc">ZhongSai supports overseas steel structure projects from fabrication completion through component marking, packing, loading, export documentation coordination and overseas installation technical guidance.</p>
+    </div>
+  </section>
+
+  <!-- Section 02: From Fabrication to Export -->
+  <section class="hub-section">
+    <div class="container">
+      <div class="hub-section-head">
+        <p class="section-num">01</p>
+        <h2>From Fabrication Completion to Export Preparation</h2>
+      </div>
+      <p class="section-intro">Inspection, marking and packing are organized according to confirmed drawings and project requirements.</p>
+      <div class="process-grid">
+        {exportProcess.map(step => (
+          <div class="process-card">
+            <div class="process-card-num">{step.num}</div>
+            <h3>{step.title}</h3>
+            <p>{step.desc}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- Section 03: Component Marking & Packing -->
+  <section class="hub-section hub-section-light">
+    <div class="container">
+      <div class="hub-section-head">
+        <p class="section-num">02</p>
+        <h2>Component Marking & Packing for Export</h2>
+      </div>
+      <div class="export-content-grid">
+        <div class="export-text">
+          <p>Different project components may require different packing methods depending on component type, size and transport requirements.</p>
+          <p>Component marking can be organized according to confirmed drawings, supporting identification during loading and project-site coordination.</p>
+          <p>Small accessories and connection materials may require grouped packing to ensure all items are accounted for during unloading and erection.</p>
+          <p>Packing methods are confirmed according to component type, container loading requirements and export handling needs.</p>
+        </div>
+        <div class="export-image">
+          <img src="/images/export/heavy-member-prep-308_web.jpg" alt="Steel components prepared for export packing and loading" width="600" height="450" loading="lazy">
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Section 04: Loading & Container Preparation -->
+  <section class="hub-section">
+    <div class="container">
+      <div class="hub-section-head">
+        <p class="section-num">03</p>
+        <h2>Loading & Container Preparation</h2>
+      </div>
+      <div class="loading-steps">
+        {loadingSteps.map((step, i) => (
+          <div class="loading-step">
+            <div class="loading-step-img">
+              <img src={step.img} alt={step.title} width="500" height="375" loading="lazy">
+            </div>
+            <div class="loading-step-content">
+              <span class="loading-step-num">{String(i + 1).padStart(2, '0')}</span>
+              <h3>{step.title}</h3>
+              <p>{step.desc}</p>
+            </div>
+          </div>
+        ))}
+      </div>
+      <p class="loading-note">Optimized packing and container loading can help improve container space utilization. Specific loading capacity depends on actual cargo dimensions, weight and transport requirements.</p>
+    </div>
+  </section>
+
+  <!-- Section 05: Export Documentation & Logistics Coordination -->
+  <section class="hub-section hub-section-light">
+    <div class="container">
+      <div class="hub-section-head">
+        <p class="section-num">04</p>
+        <h2>Export Documentation & Logistics Coordination</h2>
+      </div>
+      <div class="export-two-col">
+        <div class="export-col">
+          <h3>Export Documentation Support</h3>
+          <ul class="export-list">
+            <li>Commercial documentation preparation support</li>
+            <li>Packing information / packing list coordination</li>
+            <li>Export declaration documentation support</li>
+            <li>Shipping-related document coordination</li>
+            <li>Project-specific export document preparation where applicable</li>
+          </ul>
+        </div>
+        <div class="export-col">
+          <h3>Logistics Coordination</h3>
+          <ul class="export-list">
+            <li>Coordinate loading / container loading schedule</li>
+            <li>Coordinate transport arrangements</li>
+            <li>Support shipping document preparation</li>
+            <li>Communicate project delivery requirements with relevant logistics parties</li>
+          </ul>
+          <p class="export-note">Freight forwarding and customs-clearance arrangements are coordinated with relevant service providers according to project requirements. ZhongSai's core role remains steel structure manufacturing and export supply.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Section 06: Overseas Installation Technical Guidance + Boundary -->
+  <section class="hub-section">
+    <div class="container">
+      <div class="hub-section-head">
+        <p class="section-num">05</p>
+        <h2>Overseas Installation Technical Guidance</h2>
+      </div>
+      <div class="guidance-content">
+        <p>For projects requiring installation support, ZhongSai may provide overseas technical guidance according to the confirmed project scope.</p>
+        <p>Local erection labor, construction organization and local site management are handled by the customer or local construction team.</p>
+      </div>
+
+      <!-- Boundary Dual Column -->
+      <div class="boundary-dual">
+        <div class="boundary-col boundary-col-primary">
+          <h3>ZHONGSAI SUPPORTS</h3>
+          <ul>
+            {zhongSaiSupports.map(item => <li>{item}</li>)}
+          </ul>
+        </div>
+        <div class="boundary-col boundary-col-secondary">
+          <h3>LOCAL PROJECT TEAM HANDLES</h3>
+          <ul>
+            {localTeamHandles.map(item => <li>{item}</li>)}
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Section 07: Project Inquiry / QuoteForm -->
+  <section class="hub-section hub-section-dark" id="quote-form">
+    <div class="container">
+      <div class="hub-section-head">
+        <p class="section-num">06</p>
+        <h2>Planning a Steel Structure Project for Export?</h2>
+      </div>
+      <div class="form-intro">
+        <p>If you already have drawings or a BOQ, send the available project documents.</p>
+        <p>If drawings are not yet available, provide the project country, building type, intended use and available dimensions.</p>
+      </div>
+      <QuoteForm lang="en" />
+    </div>
+  </section>
+</BaseLayout>
+
+<style>
+.section-intro {
+  max-width: 700px;
+  margin: 0 auto 32px;
+  text-align: center;
+  color: var(--text-secondary, #666);
+  font-size: 1.05rem;
+}
+.export-content-grid {
+  display: grid;
+  grid-template-columns: 1.2fr 1fr;
+  gap: 48px;
+  align-items: center;
+}
+.export-text p {
+  margin-bottom: 16px;
+  line-height: 1.7;
+  color: var(--text-secondary, #555);
+}
+.export-image img {
+  width: 100%;
+  height: auto;
+  border-radius: 12px;
+  object-fit: cover;
+}
+.loading-steps {
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+  margin-top: 32px;
+}
+.loading-step {
+  display: grid;
+  grid-template-columns: 1fr 1.2fr;
+  gap: 32px;
+  align-items: center;
+}
+.loading-step:nth-child(even) {
+  direction: rtl;
+}
+.loading-step:nth-child(even) > * {
+  direction: ltr;
+}
+.loading-step-img img {
+  width: 100%;
+  height: auto;
+  border-radius: 12px;
+  object-fit: cover;
+}
+.loading-step-content {
+  padding: 16px;
+}
+.loading-step-num {
+  display: inline-block;
+  font-size: 0.85rem;
+  font-weight: 700;
+  color: #fff;
+  background: var(--primary, #0a3d62);
+  padding: 4px 12px;
+  border-radius: 4px;
+  margin-bottom: 12px;
+}
+.loading-step-content h3 {
+  font-size: 1.3rem;
+  margin-bottom: 8px;
+  color: var(--primary, #0a3d62);
+}
+.loading-step-content p {
+  color: var(--text-secondary, #666);
+  line-height: 1.6;
+}
+.loading-note {
+  text-align: center;
+  margin-top: 32px;
+  font-style: italic;
+  color: var(--text-secondary, #666);
+  font-size: 0.9rem;
+}
+.export-two-col {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 32px;
+}
+.export-col {
+  padding: 32px;
+  background: #fff;
+  border-radius: 12px;
+  border: 1px solid rgba(0,0,0,0.06);
+}
+.export-col h3 {
+  font-size: 1.2rem;
+  margin-bottom: 16px;
+  color: var(--primary, #0a3d62);
+}
+.export-list {
+  list-style: none;
+  padding: 0;
+}
+.export-list li {
+  padding: 8px 0;
+  padding-left: 24px;
+  position: relative;
+  font-size: 0.95rem;
+  color: var(--text-secondary, #555);
+  border-bottom: 1px solid rgba(0,0,0,0.05);
+}
+.export-list li::before {
+  content: '✓';
+  position: absolute;
+  left: 0;
+  color: var(--primary, #0a3d62);
+  font-weight: 700;
+}
+.export-list li:last-child {
+  border-bottom: none;
+}
+.export-note {
+  margin-top: 16px;
+  padding: 12px 16px;
+  background: rgba(10, 61, 98, 0.05);
+  border-radius: 8px;
+  font-size: 0.85rem;
+  color: var(--text-secondary, #666);
+  line-height: 1.5;
+}
+.guidance-content {
+  max-width: 800px;
+  margin: 0 auto 32px;
+  text-align: center;
+}
+.guidance-content p {
+  margin-bottom: 12px;
+  line-height: 1.7;
+  color: var(--text-secondary, #555);
+  font-size: 1.05rem;
+}
+.boundary-dual {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 32px;
+  margin-top: 32px;
+}
+.boundary-col {
+  padding: 32px;
+  border-radius: 12px;
+}
+.boundary-col-primary {
+  background: rgba(10, 61, 98, 0.05);
+  border-left: 4px solid var(--primary, #0a3d62);
+}
+.boundary-col-secondary {
+  background: rgba(120, 120, 120, 0.05);
+  border-left: 4px solid #888;
+}
+.boundary-col h3 {
+  font-size: 1rem;
+  margin-bottom: 16px;
+  letter-spacing: 0.5px;
+}
+.boundary-col ul {
+  list-style: none;
+  padding: 0;
+}
+.boundary-col li {
+  padding: 8px 0;
+  border-bottom: 1px solid rgba(0,0,0,0.06);
+  font-size: 0.95rem;
+  color: var(--text-secondary, #555);
+}
+.boundary-col li:last-child {
+  border-bottom: none;
+}
+.form-intro {
+  max-width: 600px;
+  margin: 0 auto 24px;
+  text-align: center;
+}
+.form-intro p {
+  color: rgba(255,255,255,0.85);
+  margin-bottom: 4px;
+}
+@media (max-width: 1024px) {
+  .export-content-grid,
+  .export-two-col,
+  .boundary-dual {
+    grid-template-columns: 1fr;
+  }
+  .loading-step {
+    grid-template-columns: 1fr;
+  }
+  .loading-step:nth-child(even) {
+    direction: ltr;
+  }
+}
+@media (max-width: 768px) {
+  .loading-step-content {
+    padding: 8px;
+  }
+}
+</style>

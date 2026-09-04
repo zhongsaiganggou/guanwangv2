@@ -1,0 +1,410 @@
+---
+import BaseLayout from '../../../../layouts/BaseLayout.astro';
+import QuoteForm from '../../../../components/QuoteForm.astro';
+import '../../../../styles/detail.css';
+
+const title = '钢结构深化设计与加工图服务 | 中赛钢构';
+const description = '中赛钢构提供钢结构深化设计与加工图服务，包括加工图、制造图纸和图纸审核协调，基于项目图纸和技术要求为钢结构制造和出口项目提供支持。';
+const lang = 'zh';
+const canonical = 'https://zhongsai-steelstructure.com/zh/services/structural-steel-detailing/';
+---
+
+<BaseLayout title={title} description={description} lang={lang}>
+  <!-- Hero -->
+  <section class="detail-hero">
+    <div class="detail-hero-bg" style="background-image: url('/images/company/factory-steel-beam-fabrication.jpg');"></div>
+    <div class="detail-hero-overlay"></div>
+    <div class="detail-hero-content">
+      <span class="eyebrow">深化设计 · 加工图 · 制造</span>
+      <h1>钢结构深化设计与加工图服务</h1>
+      <p class="lead">中赛钢构基于项目图纸和技术要求，为钢结构制造和出口项目提供深化设计与加工图服务。我们通过加工图、制造图纸、构件详图、连接节点详图和构件编号信息，将结构设计与制造加工紧密连接。</p>
+      <div class="detail-hero-actions">
+        <a href="#quote" class="btn btn-primary">提交图纸进行审核</a>
+        <a href="/zh/products/custom-engineering/" class="btn btn-outline">查看定制加工</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Breadcrumb -->
+  <nav class="detail-breadcrumb">
+    <div class="container">
+      <a href="/zh/">首页</a>
+      <span class="sep">/</span>
+      <a href="/zh/services/">服务</a>
+      <span class="sep">/</span>
+      <span class="current">钢结构深化设计</span>
+    </div>
+  </nav>
+
+  <!-- 01 什么是钢结构深化设计 -->
+  <section class="detail-section">
+    <div class="container">
+      <div class="section-heading reveal">
+        <p class="section-index">01 / 什么是深化设计</p>
+        <h2>什么是钢结构深化设计？</h2>
+        <p>钢结构深化设计将结构设计与制造加工连接起来。它将已确认的结构设计信息和项目要求转化为详细的加工图纸，制造团队可以依据这些图纸进行钢构件的制造、编号和包装，为运输和安装做好准备。</p>
+      </div>
+      <div class="image-text-block">
+        <div class="itb-image">
+          <img src="/images/components/steel-members-beams-columns.jpg" alt="钢梁钢柱钢结构深化设计" loading="lazy">
+        </div>
+        <div class="itb-content">
+          <h3>深化设计输出内容</h3>
+          <p>深化设计工作开发制造和项目协调所需的信息。</p>
+          <ul>
+            <li>构件详图，包含尺寸和几何信息</li>
+            <li>连接节点详图和制造信息</li>
+            <li>构件编号信息，用于构件识别</li>
+            <li>需要时提供装配和安装参考信息</li>
+            <li>与制造和包装要求的协调</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 02 加工图 -->
+  <section class="detail-section alt">
+    <div class="container">
+      <div class="section-heading reveal">
+        <p class="section-index">02 / 加工图</p>
+        <h2>钢结构制造加工图</h2>
+        <p>加工图提供钢结构制造所需的详细信息。中赛钢构基于项目图纸和技术规格，为梁、柱、桁架、支撑、连接节点、平台和定制钢构件提供加工图准备和协调支持。</p>
+      </div>
+      <div class="requirement-grid">
+        <div class="requirement-card reveal reveal-delay-1">
+          <h3>梁与柱</h3>
+          <p>基于项目尺寸，为加工梁、柱和主要结构构件提供加工图协调。</p>
+        </div>
+        <div class="requirement-card reveal reveal-delay-2">
+          <h3>桁架与支撑</h3>
+          <p>为桁架构件、支撑系统和次要结构构件提供深化设计支持。</p>
+        </div>
+        <div class="requirement-card reveal reveal-delay-3">
+          <h3>连接节点</h3>
+          <p>基于项目结构要求和制造规格，进行连接节点详图协调。</p>
+        </div>
+        <div class="requirement-card reveal reveal-delay-4">
+          <h3>平台与定制构件</h3>
+          <p>为设备平台、定制钢构件和复杂加工构件提供加工图支持。</p>
+        </div>
+      </div>
+      <div class="image-text-block" style="margin-top: 48px;">
+        <div class="itb-image">
+          <img src="/images/manufacturing/factory-cnc-cutting-welding.jpg" alt="加工图支持数控切割和焊接制造" loading="lazy">
+        </div>
+        <div class="itb-content">
+          <h3>加工图如何支持制造</h3>
+          <p>加工图将项目设计转化为可制造的信息，支持生产基地的切割、组立、焊接、表面处理和质量控制。</p>
+          <ul>
+            <li>制造尺寸和构件几何信息</li>
+            <li>按项目要求的连接和焊接信息</li>
+            <li>用于包装和安装的编号与识别</li>
+            <li>与制造和出口准备的协调</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 03 制造图纸 -->
+  <section class="detail-section">
+    <div class="container">
+      <div class="section-heading reveal">
+        <p class="section-index">03 / 制造图纸</p>
+        <h2>钢结构项目制造图纸</h2>
+        <p>制造图纸提供制造所需的详细尺寸、构件几何、连接节点和制造信息。所有图纸内容基于项目图纸、技术规格和已确认的项目信息进行开发。</p>
+      </div>
+      <div class="image-text-block">
+        <div class="itb-content">
+          <h3>制造图纸信息</h3>
+          <p>制造图纸按支持制造、编号、包装和出口准备的方式组织。</p>
+          <ul>
+            <li>按项目图纸的构件尺寸和几何信息</li>
+            <li>连接节点详图和制造要求</li>
+            <li>用于构件识别的编号参考</li>
+            <li>指定时的表面处理和涂层信息</li>
+            <li>与包装和装柜的协调</li>
+          </ul>
+        </div>
+        <div class="itb-image">
+          <img src="/images/components/steel-members-complex-fabricated-components.jpg" alt="复杂钢构件制造图纸" loading="lazy">
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 04 图纸审核与协调 -->
+  <section class="detail-section alt">
+    <div class="container">
+      <div class="section-heading reveal">
+        <p class="section-index">04 / 图纸审核</p>
+        <h2>图纸审核与协调</h2>
+        <p>中赛钢构可以审核现有项目图纸，识别缺失的制造信息，协调深化设计要求，并确认制造开始前可能需要补充的其他信息。</p>
+      </div>
+      <div class="requirement-grid">
+        <div class="requirement-card reveal reveal-delay-1">
+          <h3>现有图纸审核</h3>
+          <p>审核结构图、相关建筑图和现有加工图，评估制造准备情况。</p>
+        </div>
+        <div class="requirement-card reveal reveal-delay-2">
+          <h3>缺失信息识别</h3>
+          <p>识别可能需要确认的制造信息，如连接节点、尺寸或材料规格。</p>
+        </div>
+        <div class="requirement-card reveal reveal-delay-3">
+          <h3>深化设计协调</h3>
+          <p>与项目团队协调深化设计要求，确认制造图纸完成前所需的信息。</p>
+        </div>
+        <div class="requirement-card reveal reveal-delay-4">
+          <h3>制造准备确认</h3>
+          <p>审核现有图纸信息是否足以支持制造、编号、包装和出口准备，并识别可能仍需确认的信息。</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 05 从深化设计到制造 -->
+  <section class="detail-section">
+    <div class="container">
+      <div class="section-heading reveal">
+        <p class="section-index">05 / 深化到制造</p>
+        <h2>从深化设计到制造与出口</h2>
+        <p>中赛钢构将深化设计与制造和出口准备连接起来。图纸信息确认后，制造可以通过生产、编号、包装和装柜进行，为海外交付做好准备。</p>
+      </div>
+      <div class="process-flow">
+        <div class="process-step reveal">
+          <div class="step-num">1</div>
+          <h4>项目图纸</h4>
+          <p>提交现有的结构图、规格和项目要求。</p>
+        </div>
+        <div class="process-step reveal reveal-delay-1">
+          <div class="step-num">2</div>
+          <h4>图纸审核</h4>
+          <p>审核现有信息，确认深化设计要求。</p>
+        </div>
+        <div class="process-step reveal reveal-delay-2">
+          <div class="step-num">3</div>
+          <h4>深化设计协调</h4>
+          <p>基于项目要求开发加工图和制造图纸信息。</p>
+        </div>
+        <div class="process-step reveal reveal-delay-3">
+          <div class="step-num">4</div>
+          <h4>制造加工</h4>
+          <p>制造加工根据确认图纸和项目要求组织。</p>
+        </div>
+        <div class="process-step reveal reveal-delay-4">
+          <div class="step-num">5</div>
+          <h4>编号与包装</h4>
+          <p>构件标识与包装根据确认图纸和项目要求进行组织。</p>
+        </div>
+        <div class="process-step reveal reveal-delay-5">
+          <div class="step-num">6</div>
+          <h4>出口准备</h4>
+          <p>协调装柜和出口单证支持。</p>
+        </div>
+      </div>
+      <div class="related-links" style="margin-top: 48px;">
+        <h3>相关能力</h3>
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 16px; margin-top: 24px;">
+          <a href="/zh/products/custom-engineering/" class="related-link-card reveal reveal-delay-1">
+            <h4>定制工程与加工</h4>
+            <p>基于项目图纸和BOQ的钢结构加工</p>
+            <span class="rl-arrow">查看详情 →</span>
+          </a>
+          <a href="/zh/manufacturing-quality/" class="related-link-card reveal reveal-delay-2">
+            <h4>制造与质量控制</h4>
+            <p>8步制造流程和质量控制</p>
+            <span class="rl-arrow">查看详情 →</span>
+          </a>
+          <a href="/zh/components/" class="related-link-card reveal reveal-delay-3">
+            <h4>构件与材料</h4>
+            <p>钢梁、钢柱、桁架、檩条和围护系统</p>
+            <span class="rl-arrow">查看详情 →</span>
+          </a>
+          <a href="/zh/components/fabricated-steel-beams-columns/" class="related-link-card reveal reveal-delay-4">
+            <h4>钢梁与钢柱</h4>
+            <p>按项目图纸定制加工的钢梁与钢柱</p>
+            <span class="rl-arrow">查看详情 →</span>
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 06 需要什么资料 -->
+  <section class="detail-section alt">
+    <div class="container">
+      <div class="section-heading reveal">
+        <p class="section-index">06 / 所需资料</p>
+        <h2>需要提供哪些项目资料？</h2>
+        <p>请提交目前已有的项目文件。中赛钢构可以审核现有信息，并确认深化设计和制造可能需要补充的其他数据。缺少某一项资料不影响初步审核。</p>
+      </div>
+      <div class="requirement-grid">
+        <div class="requirement-card reveal reveal-delay-1">
+          <h3>结构图纸</h3>
+          <p>现有结构图、总体布置图及构件明细表（如有）。</p>
+        </div>
+        <div class="requirement-card reveal reveal-delay-2">
+          <h3>建筑图纸</h3>
+          <p>相关协调用的建筑图，如建筑围护和开洞信息。</p>
+        </div>
+        <div class="requirement-card reveal reveal-delay-3">
+          <h3>项目技术规格</h3>
+          <p>技术规格、材料要求、连接要求和表面处理规格。</p>
+        </div>
+        <div class="requirement-card reveal reveal-delay-4">
+          <h3>BOQ与现有图纸</h3>
+          <p>工程量清单（如有）、现有加工图（如有）和项目所在国家信息。</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 07 中赛可以提供的支持 -->
+  <section class="detail-section">
+    <div class="container">
+      <div class="section-heading reveal">
+        <p class="section-index">07 / 中赛支持</p>
+        <h2>中赛钢构可以提供的支持</h2>
+        <p>中赛钢构为钢结构制造和出口项目提供深化设计支持和协调。深化设计工作基于现有项目图纸、技术要求和约定的项目范围进行开发。</p>
+      </div>
+      <div class="requirement-grid">
+        <div class="requirement-card reveal reveal-delay-1">
+          <h3>图纸审核</h3>
+          <p>审核现有项目图纸，评估制造信息准备情况。</p>
+        </div>
+        <div class="requirement-card reveal reveal-delay-2">
+          <h3>深化设计协调</h3>
+          <p>协调深化设计要求，确认制造所需信息。</p>
+        </div>
+        <div class="requirement-card reveal reveal-delay-3">
+          <h3>加工图支持</h3>
+          <p>基于项目图纸和技术要求的加工图准备和支持。</p>
+        </div>
+        <div class="requirement-card reveal reveal-delay-4">
+          <h3>制造图纸支持</h3>
+          <p>用于制造、编号和包装的制造图纸准备和支持。</p>
+        </div>
+        <div class="requirement-card reveal reveal-delay-5">
+          <h3>构件编号</h3>
+          <p>用于构件识别、包装和安装参考的编号信息协调。</p>
+        </div>
+        <div class="requirement-card reveal reveal-delay-6">
+          <h3>出口制造支持</h3>
+          <p>与制造、包装、装柜和出口导向项目要求的协调。</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 08 服务边界 -->
+  <section class="detail-section alt">
+    <div class="container">
+      <div class="section-heading reveal">
+        <p class="section-index">08 / 服务边界</p>
+        <h2>服务范围与边界</h2>
+        <p>中赛钢构的深化设计工作基于现有项目图纸、技术要求和约定的项目范围进行开发。结构设计责任、当地审批和施工审批以项目合同和当地项目要求为准。中赛钢构提供制造、出口供应和海外安装技术指导；当地安装和施工由客户或当地项目团队完成。</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- 09 FAQ -->
+  <section class="detail-section">
+    <div class="container">
+      <div class="section-heading reveal">
+        <p class="section-index">09 / 常见问题</p>
+        <h2>常见问题</h2>
+      </div>
+      <div class="faq-list">
+        <div class="faq-item">
+          <button class="faq-question" aria-expanded="false" aria-controls="faq-detailing-zh-01">
+            <span>结构设计和钢结构深化设计有什么区别？</span>
+            <span class="faq-icon">+</span>
+          </button>
+          <div class="faq-answer" id="faq-detailing-zh-01" hidden>
+            <div class="faq-answer-inner">
+              <p>结构设计确定建筑或结构的结构体系、构件尺寸、荷载和设计标准。钢结构深化设计将已确认的结构设计信息转化为详细的制造加工图纸，包括构件详图、连接节点详图、尺寸和编号信息，制造团队可以依据这些图纸进行钢构件的制造和准备。</p>
+            </div>
+          </div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-question" aria-expanded="false" aria-controls="faq-detailing-zh-02">
+            <span>可以提交现有的PDF或CAD图纸进行审核吗？</span>
+            <span class="faq-icon">+</span>
+          </button>
+          <div class="faq-answer" id="faq-detailing-zh-02" hidden>
+            <div class="faq-answer-inner">
+              <p>可以。您可以提交现有的PDF图纸、CAD文件、结构图、技术规格和现有加工图进行初步审核。中赛钢构可以评估现有信息，并确认深化设计和制造可能需要补充的其他数据。</p>
+            </div>
+          </div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-question" aria-expanded="false" aria-controls="faq-detailing-zh-03">
+            <span>加工图可以与中赛的制造进行协调吗？</span>
+            <span class="faq-icon">+</span>
+          </button>
+          <div class="faq-answer" id="faq-detailing-zh-03" hidden>
+            <div class="faq-answer-inner">
+              <p>可以。中赛钢构可以将加工图信息与自身的制造、生产、编号和包装要求进行协调。这有助于协调制造加工、构件识别和海外项目的出口准备。</p>
+            </div>
+          </div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-question" aria-expanded="false" aria-controls="faq-detailing-zh-04">
+            <span>制造图纸完成前需要哪些信息？</span>
+            <span class="faq-icon">+</span>
+          </button>
+          <div class="faq-answer" id="faq-detailing-zh-04" hidden>
+            <div class="faq-answer-inner">
+              <p>制造图纸基于确认的结构图、项目技术规格、连接要求、材料要求和约定的项目范围完成。如果某些信息尚未提供，中赛钢构可以审核现有文件，并识别制造图纸完成前可能需要补充的其他信息。</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 10 Quote CTA + QuoteForm -->
+  <section class="detail-section dark" id="quote">
+    <div class="container">
+      <div class="section-heading reveal" style="text-align: center;">
+        <p class="section-index" style="justify-content: center; color: #f59e0b;">10 / 获取报价</p>
+        <h2 style="color: #fff;">已有结构图纸？提交项目资料进行审核</h2>
+        <p style="margin: 0 auto; color: rgba(255,255,255,0.75);">提交项目图纸、技术规格和技术要求。中赛钢构将进行初步审核，并确认深化设计和制造所需信息。</p>
+      </div>
+      <QuoteForm lang="zh" />
+    </div>
+  </section>
+</BaseLayout>
+
+<script>
+  // FAQ toggle
+  document.querySelectorAll('.faq-question').forEach(btn => {
+    btn.addEventListener('click', () => {
+      const item = btn.closest('.faq-item');
+      const isOpen = item.classList.contains('open');
+      item.classList.toggle('open');
+      btn.setAttribute('aria-expanded', !isOpen);
+    });
+  });
+
+  // Scroll reveal
+  const revealElements = document.querySelectorAll('.reveal');
+  if ('IntersectionObserver' in window) {
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.style.opacity = '1';
+          entry.target.style.transform = 'translateY(0)';
+          observer.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.1 });
+    revealElements.forEach(el => {
+      el.style.opacity = '0';
+      el.style.transform = 'translateY(24px)';
+      el.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+      observer.observe(el);
+    });
+  }
+</script>

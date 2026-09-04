@@ -1,0 +1,409 @@
+---
+// ZhongSai V2 - Chinese Homepage
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import QuoteForm from '../../components/QuoteForm.astro';
+import '../../styles/home.css';
+
+const lang = 'zh';
+const title = '中赛钢构｜钢结构设计、深化、制造与全球出口交付';
+const description = '中赛钢构是钢结构出口制造商，提供结构设计、深化出图、工厂制造、包装装柜、出口运输与海外安装技术指导。10万㎡生产基地，10万吨年产能。';
+---
+
+<BaseLayout title={title} description={description} lang={lang}>
+  <!-- Hero -->
+  <section class="hero-home">
+    <div class="hero-home-bg" style="background-image: url('/images/company/factory-aerial-panorama.jpg')"></div>
+    <div class="hero-home-overlay"></div>
+    <div class="container hero-home-content">
+      <div class="hero-home-copy">
+        <p class="eyebrow hero-fade">中国制造 · 全球交付</p>
+        <h1 class="hero-fade hero-fade-delay-1">让钢结构项目<br><em>从图纸走向现场</em></h1>
+        <p class="lead hero-fade hero-fade-delay-2">从结构设计、深化出图、工厂制造到出口装柜与海外安装指导，由一支团队贯通关键环节。您负责当地施工，我们把钢结构材料按计划送达。</p>
+        <div class="hero-home-actions hero-fade hero-fade-delay-3">
+          <a href="#quote" class="btn btn-primary">提交项目需求 <span style="margin-left:6px">↗</span></a>
+          <a href="#cases" class="btn btn-secondary">查看全球案例</a>
+        </div>
+      </div>
+      <div class="hero-home-stats hero-fade hero-fade-delay-2">
+        <div class="hero-stat">
+          <b>15<sup>年+</sup></b>
+          <span>钢结构行业与海外项目经验</span>
+        </div>
+        <div class="hero-stat">
+          <b>10<sup>万㎡</sup></b>
+          <span>生产基地面积</span>
+        </div>
+        <div class="hero-stat">
+          <b>10<sup>万吨</sup></b>
+          <span>年产能</span>
+        </div>
+        <div class="hero-stat">
+          <b>300<sup>+</sup></b>
+          <span>一线生产工人</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Hero 工业信息条 -->
+    <div class="hero-industry-bar">
+      <div class="container hero-industry-bar-inner">
+        <span class="bar-label">出口制造能力</span>
+        <div class="bar-items">
+          <span class="bar-item">按图定制加工</span>
+          <span class="bar-item">切割组立焊接</span>
+          <span class="bar-item">表面处理质检</span>
+          <span class="bar-item">包装装柜出口</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Trust Bar -->
+  <div class="trust-bar">
+    <div class="container trust-bar-inner">
+      <span>ISO 9001</span>
+      <span>GB / ASTM / EN</span>
+      <span>马来西亚 CIDB</span>
+      <span>构件编号与装箱清单</span>
+      <span>海外安装技术指导</span>
+    </div>
+  </div>
+
+  <!-- Customer Entry -->
+  <section class="section">
+    <div class="container">
+      <div class="section-heading reveal">
+        <div>
+          <p class="section-index">找到你的入口</p>
+          <h2>不同角色，<br>不同的项目起点。</h2>
+        </div>
+        <div>
+          <p>不管您是有图纸的工程公司，还是只有地皮尺寸的业主，都能从这里找到对应入口。</p>
+        </div>
+      </div>
+      <div class="customer-entry">
+        <a href="#quote" class="customer-card reveal reveal-delay-1">
+          <div class="customer-card-icon">业</div>
+          <h3>我是项目业主 / 投资方</h3>
+          <p>计划建设厂房、仓库或工业设施，需要从设计到出口的完整钢结构方案。</p>
+          <ul>
+            <li>只有地皮和尺寸，需要初步设计方案</li>
+            <li>需要完整材料包和出口交付</li>
+            <li>需要安装指导和技术支持</li>
+          </ul>
+          <span class="card-link">获取项目方案 →</span>
+        </a>
+        <a href="#quote" class="customer-card reveal reveal-delay-2">
+          <div class="customer-card-icon">工</div>
+          <h3>我是工程公司 / 当地总包</h3>
+          <p>已有图纸和BOQ，需要可靠的钢结构加工厂和出口供应商。</p>
+          <ul>
+            <li>按图纸加工，需要深化设计支持</li>
+            <li>需要构件编号、装箱和装柜管理</li>
+            <li>需要稳定交期和质量控制</li>
+          </ul>
+          <span class="card-link">上传图纸获取报价 →</span>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- 01 Service Scope -->
+  <section class="section" style="background: var(--color-gray-100)">
+    <div class="container">
+      <div class="section-heading reveal">
+        <div>
+          <p class="section-index">01 / 服务边界</p>
+          <h2>把复杂留在工厂，<br>把确定性交给客户。</h2>
+        </div>
+        <div>
+          <p>我们专注钢结构材料的工程化交付。明确边界，让职责、成本和进度都更容易控制。</p>
+        </div>
+      </div>
+      <div class="scope-grid">
+        <article class="scope-card scope-deliver reveal reveal-delay-1">
+          <div class="scope-card-head">
+            <i>做</i>
+            <small>WHAT WE DELIVER</small>
+          </div>
+          <h3>从设计到装柜的材料交付</h3>
+          <ol>
+            <li><b>01</b><span><strong>工程设计与深化</strong>根据荷载、跨度、用途与当地规范形成可制造方案。</span></li>
+            <li><b>02</b><span><strong>工厂制造与质检</strong>下料、组立、焊接、抛丸、涂装，制造与检验按项目要求组织。</span></li>
+            <li><b>03</b><span><strong>打包、装柜与出口</strong>构件编号、装箱清单和装柜方案同步交付。</span></li>
+            <li><b>04</b><span><strong>海外安装技术指导</strong>提供安装图、视频资料，可派工程师现场指导。</span></li>
+          </ol>
+        </article>
+        <article class="scope-card scope-boundary reveal reveal-delay-2">
+          <div class="scope-card-head">
+            <i>界</i>
+            <small>SCOPE BOUNDARY</small>
+          </div>
+          <h3>现场工程由客户当地完成</h3>
+          <p>我们不承接当地土建、装修与施工总包；客户配置当地施工队，我们提供可执行的技术文件和指导。</p>
+          <ul>
+            <li>不承接现场施工安装</li>
+            <li>不承接地基及混凝土基础</li>
+            <li>不承接室内外装修与机电</li>
+            <li>不提供 EPC 交钥匙总包</li>
+          </ul>
+          <b class="scope-note">清晰分工 · 风险可控 · 成本透明</b>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- 02 Five Entry Points -->
+  <section class="section" style="background: var(--color-dark); color: white">
+    <div class="container">
+      <div class="section-heading reveal" style="color: white">
+        <div>
+          <p class="section-index" style="color: var(--color-secondary)">02 / 快速找到你需要的</p>
+          <h2 style="color: white">四个入口，<br>快速找到你需要的。</h2>
+        </div>
+        <div>
+          <p style="color: rgba(255,255,255,0.7)">按建筑用途、构件供应或图纸状态，快速进入对应专业入口。</p>
+        </div>
+      </div>
+      <div class="quick-entry-grid">
+        <a href="#" class="quick-entry-card reveal reveal-delay-1">
+          <h4>按建筑用途找方案</h4>
+          <p>厂房、仓库、矿业、商业、农业等按用途分类</p>
+        </a>
+        <a href="#" class="quick-entry-card reveal reveal-delay-2">
+          <h4>按构件找供应</h4>
+          <p>钢柱、钢梁、桁架、檩条、围护系统等</p>
+        </a>
+        <a href="#quote" class="quick-entry-card reveal reveal-delay-3">
+          <h4>已有图纸 / BOQ</h4>
+          <p>上传图纸，获取项目报价</p>
+        </a>
+        <a href="#quote" class="quick-entry-card reveal reveal-delay-4">
+          <h4>暂无完整图纸</h4>
+          <p>提交项目用途与基本需求</p>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- 03 Core Capabilities -->
+  <section class="section">
+    <div class="container">
+      <div class="section-heading reveal">
+        <div>
+          <p class="section-index">03 / 核心业务能力</p>
+          <h2>制造、构件、围护<br>三项核心能力。</h2>
+        </div>
+        <div>
+          <p>从工厂制造到按图定制构件，再到完整围护系统配套——中赛钢构为海外项目提供一站式钢结构材料供应。</p>
+        </div>
+      </div>
+      <div class="capability-grid">
+        <div class="capability-card reveal reveal-delay-1">
+          <div class="capability-img">
+            <img src="/images/manufacturing/cnc-laser-cutting-machine.webp" alt="数控激光切割机进行钢板切割下料" loading="lazy">
+          </div>
+          <div class="capability-body">
+            <span class="capability-num">01</span>
+            <h3>制造加工与质量控制</h3>
+            <p>从原材料核验、CNC切割、组立焊接到表面处理与质量检验，覆盖钢结构制造关键环节。</p>
+            <a href="#quote" class="capability-cta">了解制造能力 →</a>
+          </div>
+        </div>
+        <div class="capability-card reveal reveal-delay-2">
+          <div class="capability-img">
+            <img src="/images/manufacturing/h-beam-assembly-machine.webp" alt="H型钢组立机进行钢构件组装焊接" loading="lazy">
+          </div>
+          <div class="capability-body">
+            <span class="capability-num">02</span>
+            <h3>按图定制钢构件</h3>
+            <p>根据结构图纸和BOQ加工钢柱、钢梁、吊车梁、箱型构件及桁架，构件标识可根据图纸和项目要求组织。</p>
+            <a href="#quote" class="capability-cta">查看构件供应 →</a>
+          </div>
+        </div>
+        <div class="capability-card reveal reveal-delay-3">
+          <div class="capability-img">
+            <img src="/images/components/cladding-system-panels-purlins.jpg" alt="钢结构围护系统屋面板墙面板檩条夹芯板" loading="lazy">
+          </div>
+          <div class="capability-body">
+            <span class="capability-num">03</span>
+            <h3>屋面与墙面围护系统</h3>
+            <p>提供檩条、屋面板、墙面板、夹芯板、楼承板及收边配件，完整围护系统配套供应。</p>
+            <a href="#quote" class="capability-cta">了解围护系统 →</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 04 Manufacturing Evidence -->
+  <section class="section" style="background: var(--color-gray-100)">
+    <div class="container">
+      <div class="section-heading reveal">
+        <div>
+          <p class="section-index">04 / 制造能力</p>
+          <h2>真实工厂 · 真实制造</h2>
+        </div>
+        <div>
+          <p>10万㎡生产基地，具备切割、组立、焊接、表面处理、质量检验与包装能力。构件标识与包装可根据确认图纸和项目要求协调，配合出口装柜与现场安装。</p>
+        </div>
+      </div>
+      <div class="factory-grid reveal">
+        <figure class="factory-item large">
+          <img src="/images/company/factory-aerial-panorama.jpg" alt="中赛钢构生产基地航拍，龙门吊、主厂房和成品构件堆场" loading="lazy">
+          <figcaption>生产基地航拍 · 龙门吊与成品堆场</figcaption>
+        </figure>
+        <figure class="factory-item">
+          <img src="/images/company/factory-interior-production.jpg" alt="中赛钢构生产车间内部，行车、钢梁生产线和已加工钢构件" loading="lazy">
+          <figcaption>生产车间 · 行车与构件生产线</figcaption>
+        </figure>
+        <figure class="factory-item">
+          <img src="/images/company/factory-steel-beam-fabrication.jpg" alt="中赛钢构已加工完成的钢梁，带节点板和螺栓孔，整齐堆放在车间" loading="lazy">
+          <figcaption>已加工钢梁 · 节点板与螺栓孔</figcaption>
+        </figure>
+        <figure class="factory-item">
+          <img src="/images/company/factory-yard-gantry-crane.jpg" alt="中赛钢构室外货场，龙门吊正在吊运成品钢构件，构件已编号待装柜" loading="lazy">
+          <figcaption>室外货场 · 构件编号与待装柜</figcaption>
+        </figure>
+        <figure class="factory-item">
+          <img src="/images/container-loading.jpg" alt="钢结构构件装柜出口，工人正在将编号构件装入集装箱" loading="lazy">
+          <figcaption>包装装柜 · 按编号顺序装箱</figcaption>
+        </figure>
+      </div>
+    </div>
+  </section>
+
+  <!-- 06 Process -->
+  <section class="section">
+    <div class="container">
+      <div class="section-heading reveal" style="text-align: center; display: block; margin-bottom: 48px">
+        <p class="section-index">05 / 合作流程</p>
+        <h2 style="margin-bottom: 12px">每一步，都有明确产出。</h2>
+        <p style="max-width: 600px; margin: 0 auto; color: var(--color-gray-600)">从需求输入到安装指导，流程透明，关键节点可确认。</p>
+      </div>
+      <div class="process-steps reveal">
+        <div class="process-step">
+          <div class="process-step-num">01</div>
+          <strong>需求参数</strong>
+          <span>用途、尺寸、国家、荷载、图纸</span>
+        </div>
+        <div class="process-step">
+          <div class="process-step-num">02</div>
+          <strong>初步方案</strong>
+          <span>结构建议与预算范围</span>
+        </div>
+        <div class="process-step">
+          <div class="process-step-num">03</div>
+          <strong>结构设计</strong>
+          <span>计算书与设计图纸</span>
+        </div>
+        <div class="process-step">
+          <div class="process-step-num">04</div>
+          <strong>深化确认</strong>
+          <span>施工图、清单与计划</span>
+        </div>
+        <div class="process-step">
+          <div class="process-step-num">05</div>
+          <strong>生产质检</strong>
+          <span>制造、检验与进度追踪</span>
+        </div>
+        <div class="process-step">
+          <div class="process-step-num">06</div>
+          <strong>包装出口</strong>
+          <span>编号、装柜、单证与海运</span>
+        </div>
+        <div class="process-step">
+          <div class="process-step-num">07</div>
+          <strong>安装指导</strong>
+          <span>安装图、视频与工程师支持</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 07 Cases Entry -->
+  <section class="section" id="cases" style="background: var(--color-dark); color: white">
+    <div class="container">
+      <div class="section-heading reveal" style="color: white">
+        <div>
+          <p class="section-index" style="color: var(--color-secondary)">06 / 全球项目</p>
+          <h2 style="color: white">海外项目与出口交付</h2>
+        </div>
+        <div>
+          <p style="color: rgba(255,255,255,0.7)">查看中赛钢构的项目、制造与出口交付资料。</p>
+        </div>
+      </div>
+      <div class="cases-grid">
+        <a href="#" class="case-card reveal reveal-delay-1">
+          <img src="/images/company/factory-interior-production.jpg" alt="海外工业钢结构项目，中赛钢构设计制造并出口交付" loading="lazy">
+          <div class="case-overlay">
+            <small>工业工程</small>
+            <b>海外大型工业项目</b>
+            <em>设计深化 / 构件制造 / 出口交付</em>
+          </div>
+        </a>
+        <a href="#" class="case-card reveal reveal-delay-2">
+          <img src="/images/container-loading.jpg" alt="钢结构构件装柜出口，按编号顺序装入集装箱" loading="lazy">
+          <div class="case-overlay">
+            <small>交付动态</small>
+            <b>构件编号与装柜管理</b>
+            <em>让现场安装更高效</em>
+          </div>
+        </a>
+        <div class="case-stat reveal reveal-delay-3">
+          <b>15<sup>年+</sup></b>
+          <p>钢结构行业与海外项目经验</p>
+          <a href="#">查看项目档案 →</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 08 Quote Section -->
+  <section class="quote-section" id="quote">
+    <div class="quote-section-bg" style="background-image: url('/images/company/factory-yard-gantry-crane.jpg')"></div>
+    <div class="quote-section-overlay"></div>
+    <div class="container quote-section-inner">
+      <div class="quote-copy reveal">
+        <p class="section-index">07 / 项目询价</p>
+        <h2>把你的项目参数<br>交给工程师。</h2>
+        <p>提供几个关键数据，我们会尽快联系您，并给出下一步建议。有图纸可以直接上传或通过邮件发送。</p>
+        <div class="quote-direct">
+          <a href="https://wa.me/8613192007378" target="_blank" rel="noopener">
+            <div>
+              <small>WHATSAPP</small>
+              <b>+86 131 9200 7378</b>
+            </div>
+          </a>
+          <a href="mailto:zhongsaiganggou@gmail.com">
+            <div>
+              <small>EMAIL</small>
+              <b>zhongsaiganggou@gmail.com</b>
+            </div>
+          </a>
+        </div>
+      </div>
+      <div class="quote-form-card reveal reveal-delay-2">
+        <h3>项目询价</h3>
+        <p class="form-subtitle">填写以下信息，我们会尽快与您联系</p>
+        <QuoteForm lang={lang} embed={true} />
+      </div>
+    </div>
+  </section>
+
+  <!-- Scroll Reveal Script -->
+  <script>
+    (function() {
+      if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('is-visible');
+            observer.unobserve(entry.target);
+          }
+        });
+      }, { threshold: 0.1, rootMargin: '0px 0px -50px 0px' });
+      document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+    })();
+  </script>
+</BaseLayout>

@@ -1,0 +1,151 @@
+---
+// ZhongSai V2 - English Components Hub
+import BaseLayout from '../../../layouts/BaseLayout.astro';
+import QuoteForm from '../../../components/QuoteForm.astro';
+import '../../../styles/hub.css';
+
+const lang = 'en';
+const title = 'Steel Components & Cladding Systems | Beams, Columns, Trusses & Purlins | ZhongSai';
+const description = 'ZhongSai Steel Structure provides custom fabricated steel components and cladding systems to drawings — including beams, columns, trusses, crane beams, C/Z purlins, roof and wall panels, sandwich panels, with component marking, packing and export delivery.';
+
+const primaryMembers = [
+  { title: 'Steel Beams', desc: 'H-beams, built-up beams and crane beams, fabricated to drawings with welded flanges and webs, pre-fabricated end connection plates.', href: '/en/components/fabricated-steel-beams-columns/' },
+  { title: 'Steel Columns', desc: 'H-columns, box columns and lattice columns, designed for load and height, with pre-fabricated base plates and stiffeners.', href: '/en/components/fabricated-steel-beams-columns/' },
+  { title: 'Steel Trusses', desc: 'Roof trusses, transfer trusses and bracing trusses, designed for span and load, with welded or bolted connections.', href: '#' },
+  { title: 'Crane Beams', desc: 'Overhead crane beams and under-hung crane beams, designed for crane tonnage and duty class, fabricated to crane system and structural requirements.', href: '#' },
+  { title: 'Box Sections', desc: 'Box columns, box beams and irregular sections for long-span and heavy-load structures, with fabricated to project drawings and welding requirements.', href: '/en/components/fabricated-steel-beams-columns/' },
+  { title: 'Platforms & Bracing', desc: 'Working platforms, equipment platforms, column bracing and roof bracing, designed for equipment layout and seismic requirements.', href: '#' }
+];
+
+const secondaryMembers = [
+  { title: 'C Purlins', desc: 'Cold-formed C-section purlins for roof and wall secondary structures, selected by spacing and load, with pre-punched connection holes.' },
+  { title: 'Z Purlins', desc: 'Cold-formed Z-section purlins with lapped connections, suitable for wide-spacing roofs with better bending performance than C-type.' },
+  { title: 'Bracing System', desc: 'Column bracing, roof horizontal bracing and vertical bracing using angle steel or round bars, ensuring overall structural stability.' },
+  { title: 'Connection Components', desc: 'Gusset plates, stiffeners, connection plates and bolts, pre-fabricated to shop drawings for accurate site erection.' }
+];
+
+const claddingSystems = [
+  { title: 'Roof Panels', desc: 'Color-coated profiled roof panels, standing seam panels in various profiles and thicknesses, waterproof and wind-resistant.', href: '/en/components/roof-wall-cladding-systems/' },
+  { title: 'Wall Panels', desc: 'Color-coated profiled wall panels, horizontal and vertical siding, various profiles and colors for coordinated building appearance.', href: '/en/components/roof-wall-cladding-systems/' },
+  { title: 'Sandwich Panels', desc: 'EPS / PU / PIR sandwich panels for thermal insulation, suitable for factories and warehouses with temperature control requirements.', href: '/en/components/roof-wall-cladding-systems/' },
+  { title: 'Cladding Accessories', desc: 'Gutters, trims, flashings, skylights and ventilators — a complete cladding accessory package.', href: '/en/components/roof-wall-cladding-systems/' }
+];
+---
+
+<BaseLayout title={title} description={description} lang={lang}>
+  <!-- Hero -->
+  <section class="hub-hero">
+    <div class="hub-hero-bg" style="background-image: url('/images/manufacturing/h-beam-assembly-machine.webp')"></div>
+    <div class="hub-hero-overlay"></div>
+    <div class="container hub-hero-content">
+      <div class="hub-breadcrumb">
+        <a href="/en/">Home</a><span>/</span><span>Components & Materials</span>
+      </div>
+      <p class="eyebrow">COMPONENTS · Custom to Drawings</p>
+      <h1>Custom Steel Components &<br>Cladding Systems to Drawings</h1>
+      <p class="lead">Steel beams, columns, trusses, purlins and roof & wall cladding systems — custom fabricated, component marked, packed and delivered for export.</p>
+    </div>
+  </section>
+
+  <!-- Primary Structural Members -->
+  <section class="component-section">
+    <div class="container">
+      <div class="component-section-header reveal">
+        <p class="section-index">01 / Primary Members</p>
+        <h2>Primary Structural Members</h2>
+        <p>Main load-bearing building components including beams, columns, trusses and crane beams — custom fabricated to structural drawings and load requirements, component marking and packing available based on shop drawings.</p>
+      </div>
+      <div class="component-item-grid">
+        {primaryMembers.map((item, i) => (
+          <a href={item.href} class={`component-item reveal reveal-delay-${(i % 3) + 1}`} style="text-decoration: none; color: inherit;">
+            <h4>{item.title}</h4>
+            <p>{item.desc}</p>
+          </a>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- Secondary Structural Members -->
+  <section class="component-section">
+    <div class="container">
+      <div class="component-section-header reveal">
+        <p class="section-index">02 / Secondary Members</p>
+        <h2>Secondary Structural Members</h2>
+        <p>Roof and wall secondary structures, bracing systems and connection components — working with primary members to form a complete load-bearing system, pre-fabricated to shop drawings for accurate site erection.</p>
+      </div>
+      <div class="component-item-grid">
+        {secondaryMembers.map((item, i) => (
+          <div class={`component-item reveal reveal-delay-${(i % 3) + 1}`}>
+            <h4>{item.title}</h4>
+            <p>{item.desc}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- Cladding Systems -->
+  <section class="component-section">
+    <div class="container">
+      <div class="component-section-header reveal">
+        <p class="section-index">03 / Cladding Systems</p>
+        <h2>Roof & Wall Cladding Systems</h2>
+        <p>Roof and wall cladding systems including profiled panels, sandwich panels and accessories — can be supplied together with primary steel structure to form a complete building envelope package.</p>
+      </div>
+      <div class="component-item-grid">
+        {claddingSystems.map((item, i) => (
+          <a href={item.href} class={`component-item reveal reveal-delay-${(i % 3) + 1}`} style="text-decoration: none; color: inherit;">
+            <h4>{item.title}</h4>
+            <p>{item.desc}</p>
+          </a>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- From Drawings to Fabrication -->
+  <section class="dual-path-section">
+    <div class="container">
+      <div class="section-heading reveal" style="color: white; text-align: center; display: block; margin-bottom: 8px;">
+        <p class="section-index" style="color: #f59e0b;">04 / Process</p>
+        <h2 style="color: white; margin-bottom: 10px;">From Drawings to Delivery</h2>
+        <p style="color: rgba(255,255,255,0.65); max-width: 700px; margin: 0 auto;">You provide the drawings — we complete detailing, fabrication, marking, packing and export delivery. Fabrication, marking and packing organized to project requirements.</p>
+      </div>
+      <div class="dual-path-grid" style="grid-template-columns: repeat(4, 1fr); gap: 18px;">
+        <div class="dual-path-card reveal reveal-delay-1" style="padding: 24px 20px;">
+          <div class="path-icon" style="width: 40px; height: 40px; font-size: 18px; margin-bottom: 12px;">📋</div>
+          <h3 style="font-size: 16px; margin-bottom: 6px;">Detailing</h3>
+          <p style="font-size: 13px; margin-bottom: 0;">Structural drawings converted to shop drawings and component lists</p>
+        </div>
+        <div class="dual-path-card reveal reveal-delay-2" style="padding: 24px 20px;">
+          <div class="path-icon" style="width: 40px; height: 40px; font-size: 18px; margin-bottom: 12px;">⚙️</div>
+          <h3 style="font-size: 16px; margin-bottom: 6px;">Fabrication</h3>
+          <p style="font-size: 13px; margin-bottom: 0;">Cutting, assembly, welding, drilling and surface treatment</p>
+        </div>
+        <div class="dual-path-card reveal reveal-delay-3" style="padding: 24px 20px;">
+          <div class="path-icon" style="width: 40px; height: 40px; font-size: 18px; margin-bottom: 12px;">🏷️</div>
+          <h3 style="font-size: 16px; margin-bottom: 6px;">Marking</h3>
+          <p style="font-size: 13px; margin-bottom: 0;">Component marking and packing available based on shop drawings, with packing lists</p>
+        </div>
+        <div class="dual-path-card reveal reveal-delay-4" style="padding: 24px 20px;">
+          <div class="path-icon" style="width: 40px; height: 40px; font-size: 18px; margin-bottom: 12px;">🚢</div>
+          <h3 style="font-size: 16px; margin-bottom: 6px;">Packing & Export</h3>
+          <p style="font-size: 13px; margin-bottom: 0;">Packed and loaded in marking order, export documentation support</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Quote CTA -->
+  <section class="quote-cta-section" id="quote">
+    <div class="container">
+      <div class="quote-cta-header reveal">
+        <p class="section-index" style="color: #f59e0b;">05 / Get a Quote</p>
+        <h2>Submit Drawings for Component Quotation</h2>
+        <p>Upload structural drawings or BOQ lists. ZhongSai will provide a quotation for component fabrication and cladding systems based on your requirements.</p>
+      </div>
+      <QuoteForm lang={lang} />
+    </div>
+  </section>
+</BaseLayout>

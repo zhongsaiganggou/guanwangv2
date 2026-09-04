@@ -1,0 +1,436 @@
+---
+import BaseLayout from '../../../layouts/BaseLayout.astro';
+import QuoteForm from '../../../components/QuoteForm.astro';
+import '../../../styles/detail.css';
+
+const title = 'Steel Building Design Services | Engineering for Fabrication | ZhongSai';
+const description = 'ZhongSai Steel Structure provides steel building design and engineering coordination for fabrication and export projects, connecting structural design with detailing, fabrication and export supply.';
+const lang = 'en';
+const canonical = 'https://zhongsai-steelstructure.com/en/engineering-design/';
+---
+
+<BaseLayout title={title} description={description} lang={lang}>
+  <!-- Hero -->
+  <section class="detail-hero">
+    <div class="detail-hero-bg" style="background-image: url('/images/company/factory-aerial-panorama.jpg');"></div>
+    <div class="detail-hero-overlay"></div>
+    <div class="detail-hero-content">
+      <span class="eyebrow">Engineering Design · Structural Planning · Fabrication</span>
+      <h1>Steel Building Design Services for Fabrication & Export Projects</h1>
+      <p class="lead">ZhongSai provides steel building design and engineering coordination for fabrication and export-oriented projects based on building use, project dimensions, site information and agreed technical requirements. We connect structural design with detailing, fabrication and export supply, helping align engineering decisions to support efficient manufacturing and overseas delivery.</p>
+      <div class="detail-hero-actions">
+        <a href="#quote" class="btn btn-primary">Submit Project Requirements</a>
+        <a href="/en/services/structural-steel-detailing/" class="btn btn-outline">View Detailing Services</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Breadcrumb -->
+  <nav class="detail-breadcrumb">
+    <div class="container">
+      <a href="/en/">Home</a>
+      <span class="sep">/</span>
+      <span class="current">Engineering Design</span>
+    </div>
+  </nav>
+
+  <!-- 01 From Project Requirements to Structural Scheme -->
+  <section class="detail-section">
+    <div class="container">
+      <div class="section-heading reveal">
+        <p class="section-index">01 / Project Requirements</p>
+        <h2>From Project Requirements to Structural Scheme</h2>
+        <p>Every steel building project begins with a clear understanding of how the building will be used and what conditions it must satisfy. ZhongSai reviews project requirements to develop a structural scheme that supports the building's function and connects efficiently with fabrication.</p>
+      </div>
+      <div class="requirement-grid">
+        <div class="requirement-card reveal reveal-delay-1">
+          <h3>Building Use</h3>
+          <p>What will the building be used for? Industrial production, warehousing, commercial, agricultural or special-purpose structures each require different structural approaches.</p>
+        </div>
+        <div class="requirement-card reveal reveal-delay-2">
+          <h3>Project Location</h3>
+          <p>Where is the project located? Site conditions, local climate and applicable project requirements inform structural planning decisions.</p>
+        </div>
+        <div class="requirement-card reveal reveal-delay-3">
+          <h3>Project Dimensions</h3>
+          <p>What are the required length, width and height? Dimensions influence structural configuration, column arrangement and clear space planning.</p>
+        </div>
+        <div class="requirement-card reveal reveal-delay-4">
+          <h3>Equipment & Crane Requirements</h3>
+          <p>Are there equipment layout or crane requirements? These influence structural configuration, loading considerations and column arrangement where applicable.</p>
+        </div>
+        <div class="requirement-card reveal reveal-delay-5">
+          <h3>Roof, Wall & Opening Requirements</h3>
+          <p>Are there special roof, wall, door or opening requirements? These are coordinated with the structural scheme and building envelope planning.</p>
+        </div>
+        <div class="requirement-card reveal reveal-delay-6">
+          <h3>Project Specifications</h3>
+          <p>Applicable project specifications, technical requirements and agreed standards guide the structural scheme development and fabrication coordination.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 02 Structural Planning -->
+  <section class="detail-section alt">
+    <div class="container">
+      <div class="section-heading reveal">
+        <p class="section-index">02 / Structural Planning</p>
+        <h2>Structural Planning for Steel Buildings</h2>
+        <p>Structural planning translates project requirements into a buildable steel building configuration. ZhongSai coordinates building layout, structural system and functional requirements to support efficient fabrication and clear usable space.</p>
+      </div>
+      <div class="image-text-block">
+        <div class="itb-image">
+          <img src="/images/products/01-industrial.jpg" alt="Steel building structural planning for industrial projects" loading="lazy">
+        </div>
+        <div class="itb-content">
+          <h3>Structural Configuration Considerations</h3>
+          <p>Structural planning is developed based on project requirements and applicable technical specifications.</p>
+          <ul>
+            <li>Building layout and column arrangement based on functional requirements</li>
+            <li>Clear working space and production flow coordination</li>
+            <li>Roof configuration and drainage coordination</li>
+            <li>Door, window and opening coordination with structural layout</li>
+            <li>Equipment and crane requirements coordinated where applicable</li>
+            <li>Future expansion considerations where relevant to project scope</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 03 Design Inputs -->
+  <section class="detail-section">
+    <div class="container">
+      <div class="section-heading reveal">
+        <p class="section-index">03 / Design Inputs</p>
+        <h2>What Information Is Needed to Start?</h2>
+        <p>You can submit the project information currently available. ZhongSai will review the existing information and confirm what additional data may be required for engineering design, detailing and quotation. Not all information is required to begin an initial review.</p>
+      </div>
+      <div class="requirement-grid">
+        <div class="requirement-card reveal reveal-delay-1">
+          <h3>Project Country</h3>
+          <p>Project location and applicable project requirements.</p>
+        </div>
+        <div class="requirement-card reveal reveal-delay-2">
+          <h3>Building Use</h3>
+          <p>Intended use of the steel building structure.</p>
+        </div>
+        <div class="requirement-card reveal reveal-delay-3">
+          <h3>Length / Width / Height</h3>
+          <p>Basic project dimensions where available.</p>
+        </div>
+        <div class="requirement-card reveal reveal-delay-4">
+          <h3>Architectural Drawings</h3>
+          <p>Architectural drawings if available for coordination.</p>
+        </div>
+        <div class="requirement-card reveal reveal-delay-5">
+          <h3>Structural Requirements</h3>
+          <p>Structural requirements and technical specifications.</p>
+        </div>
+        <div class="requirement-card reveal reveal-delay-6">
+          <h3>Equipment & Crane Layout</h3>
+          <p>Equipment layout and crane requirements where relevant.</p>
+        </div>
+        <div class="requirement-card reveal reveal-delay-1">
+          <h3>Door / Opening Requirements</h3>
+          <p>Door, window and opening requirements.</p>
+        </div>
+        <div class="requirement-card reveal reveal-delay-2">
+          <h3>Roof / Wall Requirements</h3>
+          <p>Roof and wall system requirements where specified.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 04 Design for Fabrication -->
+  <section class="detail-section alt">
+    <div class="container">
+      <div class="section-heading reveal">
+        <p class="section-index">04 / Design for Fabrication</p>
+        <h2>Engineering Design Coordinated with Fabrication</h2>
+        <p>A key advantage of working with ZhongSai is that engineering design is coordinated with detailing and fabrication requirements from the beginning. This helps structural decisions support efficient manufacturing, clear component identification and straightforward export preparation.</p>
+      </div>
+      <div class="process-flow">
+        <div class="process-step reveal">
+          <div class="step-num">1</div>
+          <h4>Structural Design</h4>
+          <p>Develop structural scheme based on project requirements.</p>
+        </div>
+        <div class="process-step reveal reveal-delay-1">
+          <div class="step-num">2</div>
+          <h4>Detailing Coordination</h4>
+          <p>Coordinate design with shop drawing and fabrication requirements.</p>
+        </div>
+        <div class="process-step reveal reveal-delay-2">
+          <div class="step-num">3</div>
+          <h4>Shop Drawings</h4>
+          <p>Develop fabrication-ready drawing information.</p>
+        </div>
+        <div class="process-step reveal reveal-delay-3">
+          <div class="step-num">4</div>
+          <h4>Fabrication</h4>
+          <p>Fabrication is organized based on confirmed drawings and project requirements.</p>
+        </div>
+      </div>
+      <div class="related-links" style="margin-top: 48px;">
+        <h3>Related Services & Capabilities</h3>
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 16px; margin-top: 24px;">
+          <a href="/en/services/structural-steel-detailing/" class="related-link-card reveal reveal-delay-1">
+            <h4>Structural Steel Detailing</h4>
+            <p>Shop drawings, fabrication drawings and drawing review</p>
+            <span class="rl-arrow">View Details →</span>
+          </a>
+          <a href="/en/products/custom-engineering/" class="related-link-card reveal reveal-delay-2">
+            <h4>Custom Engineering & Fabrication</h4>
+            <p>Structural steel fabrication from project drawings and BOQ</p>
+            <span class="rl-arrow">View Details →</span>
+          </a>
+          <a href="/en/manufacturing-quality/" class="related-link-card reveal reveal-delay-3">
+            <h4>Manufacturing & Quality Control</h4>
+            <p>8-step manufacturing process and quality control</p>
+            <span class="rl-arrow">View Details →</span>
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 05 Design Support by Building Type -->
+  <section class="detail-section">
+    <div class="container">
+      <div class="section-heading reveal">
+        <p class="section-index">05 / Building Types</p>
+        <h2>Design Support by Building Type</h2>
+        <p>Different building types have different structural and functional requirements. ZhongSai coordinates engineering design based on the specific use case, helping coordinate the structural scheme to support the building's intended function and fabrication efficiency.</p>
+      </div>
+      <div class="requirement-grid">
+        <div class="requirement-card reveal reveal-delay-1">
+          <h3>Industrial Workshop</h3>
+          <p>Production space, equipment layout, crane requirements, ventilation and clear working space coordination.</p>
+          <a href="/en/steel-workshop/" style="color: #1e40af; font-weight: 600; font-size: 14px;">View Workshop →</a>
+        </div>
+        <div class="requirement-card reveal reveal-delay-2">
+          <h3>Warehouse & Logistics</h3>
+          <p>Storage layout, racking coordination, clear height, loading access and material flow planning.</p>
+          <a href="/en/steel-warehouse/" style="color: #1e40af; font-weight: 600; font-size: 14px;">View Warehouse →</a>
+        </div>
+        <div class="requirement-card reveal reveal-delay-3">
+          <h3>Commercial / Public</h3>
+          <p>Open space planning, architectural coordination, public circulation and façade coordination.</p>
+        </div>
+        <div class="requirement-card reveal reveal-delay-4">
+          <h3>Agriculture / Special</h3>
+          <p>Special-use building requirements, ventilation, moisture environment and large open space coordination.</p>
+        </div>
+        <div class="requirement-card reveal reveal-delay-5">
+          <h3>Custom Engineering</h3>
+          <p>Complex structural configurations, custom components, equipment platforms and special fabrication requirements.</p>
+          <a href="/en/products/custom-engineering/" style="color: #1e40af; font-weight: 600; font-size: 14px;">View Custom Engineering →</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 06 What ZhongSai Can Support -->
+  <section class="detail-section alt">
+    <div class="container">
+      <div class="section-heading reveal">
+        <p class="section-index">06 / ZhongSai Support</p>
+        <h2>What ZhongSai Can Support</h2>
+        <p>ZhongSai provides engineering design coordination and fabrication-oriented support for steel building projects. Design work is developed based on the agreed project scope, available project information and applicable technical requirements.</p>
+      </div>
+      <div class="requirement-grid">
+        <div class="requirement-card reveal reveal-delay-1">
+          <h3>Preliminary Structural Planning</h3>
+          <p>Initial structural scheme development based on project requirements and building use.</p>
+        </div>
+        <div class="requirement-card reveal reveal-delay-2">
+          <h3>Steel Building Design Coordination</h3>
+          <p>Engineering design coordination for fabrication and export-oriented steel building projects.</p>
+        </div>
+        <div class="requirement-card reveal reveal-delay-3">
+          <h3>Structural Drawing Development/Support</h3>
+          <p>Structural drawing development and support based on project requirements and agreed scope.</p>
+        </div>
+        <div class="requirement-card reveal reveal-delay-4">
+          <h3>Design-to-Detailing Coordination</h3>
+          <p>Coordination between engineering design and steel detailing for fabrication readiness.</p>
+        </div>
+        <div class="requirement-card reveal reveal-delay-5">
+          <h3>Fabrication-Oriented Engineering</h3>
+          <p>Engineering decisions coordinated with manufacturing, marking, packing and export requirements.</p>
+        </div>
+        <div class="requirement-card reveal reveal-delay-6">
+          <h3>Roof / Wall System Coordination</h3>
+          <p>Coordination with roof and wall cladding systems as part of the structural scheme.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 07 Design Responsibility & Local Requirements -->
+  <section class="detail-section">
+    <div class="container">
+      <div class="section-heading reveal">
+        <p class="section-index">07 / Design Responsibility</p>
+        <h2>Design Responsibility & Local Requirements</h2>
+        <p>ZhongSai's engineering work is developed according to the agreed project scope, available project information and applicable technical requirements. Local engineering review, statutory approval and construction approval are handled according to the requirements of the project location and contract scope. ZhongSai provides manufacturing, export supply and overseas installation technical guidance; local erection and construction are carried out by the customer's or local project team.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- 08 From Design to Export Supply -->
+  <section class="detail-section alt">
+    <div class="container">
+      <div class="section-heading reveal">
+        <p class="section-index">08 / Design to Export</p>
+        <h2>From Design to Export Supply</h2>
+        <p>ZhongSai connects engineering design with fabrication and export preparation, providing a coordinated path from project requirements to overseas delivery.</p>
+      </div>
+      <div class="process-flow">
+        <div class="process-step reveal">
+          <div class="step-num">1</div>
+          <h4>Project Requirements</h4>
+          <p>Submit building use, dimensions and project information.</p>
+        </div>
+        <div class="process-step reveal reveal-delay-1">
+          <div class="step-num">2</div>
+          <h4>Engineering Design</h4>
+          <p>Develop structural scheme and design coordination.</p>
+        </div>
+        <div class="process-step reveal reveal-delay-2">
+          <div class="step-num">3</div>
+          <h4>Detailing</h4>
+          <p>Coordinate shop drawings and fabrication drawings.</p>
+        </div>
+        <div class="process-step reveal reveal-delay-3">
+          <div class="step-num">4</div>
+          <h4>Drawing Confirmation</h4>
+          <p>Confirm fabrication-ready drawing information.</p>
+        </div>
+        <div class="process-step reveal reveal-delay-4">
+          <div class="step-num">5</div>
+          <h4>Fabrication</h4>
+          <p>Fabrication is organized based on confirmed drawings and project requirements.</p>
+        </div>
+        <div class="process-step reveal reveal-delay-5">
+          <div class="step-num">6</div>
+          <h4>Marking & Packing</h4>
+          <p>Component marking and packing are organized according to confirmed drawings and project requirements.</p>
+        </div>
+        <div class="process-step reveal reveal-delay-6">
+          <div class="step-num">7</div>
+          <h4>Container Loading</h4>
+          <p>Coordinate container loading for overseas delivery.</p>
+        </div>
+        <div class="process-step reveal reveal-delay-7">
+          <div class="step-num">8</div>
+          <h4>Export Preparation</h4>
+          <p>Export documentation support and logistics coordination.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 09 FAQ -->
+  <section class="detail-section">
+    <div class="container">
+      <div class="section-heading reveal">
+        <p class="section-index">09 / FAQ</p>
+        <h2>Frequently Asked Questions</h2>
+      </div>
+      <div class="faq-list">
+        <div class="faq-item">
+          <button class="faq-question" aria-expanded="false" aria-controls="faq-engdesign-en-01">
+            <span>Can ZhongSai start a steel building design without complete drawings?</span>
+            <span class="faq-icon">+</span>
+          </button>
+          <div class="faq-answer" id="faq-engdesign-en-01" hidden>
+            <div class="faq-answer-inner">
+              <p>Yes. You can submit the project information currently available, such as building use, basic dimensions, project country and any existing drawings or specifications. ZhongSai can review the available information and confirm what additional data may be required for engineering design, detailing and quotation.</p>
+            </div>
+          </div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-question" aria-expanded="false" aria-controls="faq-engdesign-en-02">
+            <span>What information is needed to start?</span>
+            <span class="faq-icon">+</span>
+          </button>
+          <div class="faq-answer" id="faq-engdesign-en-02" hidden>
+            <div class="faq-answer-inner">
+              <p>Helpful information includes project country, building use, length/width/height, architectural drawings if available, structural requirements, equipment layout, crane requirements, door/opening requirements and roof/wall requirements. Not all information is required to begin an initial review.</p>
+            </div>
+          </div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-question" aria-expanded="false" aria-controls="faq-engdesign-en-03">
+            <span>What is the difference between engineering design and steel detailing?</span>
+            <span class="faq-icon">+</span>
+          </button>
+          <div class="faq-answer" id="faq-engdesign-en-03" hidden>
+            <div class="faq-answer-inner">
+              <p>Engineering design determines the structural system, building configuration, column arrangement, dimensions and functional requirements for a steel building. Steel detailing translates the confirmed structural design information into detailed shop drawings, fabrication drawings, member details, connection details and marking information that the fabrication team can use to manufacture steel components.</p>
+            </div>
+          </div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-question" aria-expanded="false" aria-controls="faq-engdesign-en-04">
+            <span>Can design be coordinated directly with ZhongSai fabrication?</span>
+            <span class="faq-icon">+</span>
+          </button>
+          <div class="faq-answer" id="faq-engdesign-en-04" hidden>
+            <div class="faq-answer-inner">
+              <p>Yes. A key advantage of working with ZhongSai is that engineering design is coordinated with detailing and fabrication requirements from the beginning. This helps structural decisions support efficient manufacturing, clear component identification, packing and export preparation.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 10 Quote CTA + QuoteForm -->
+  <section class="detail-section dark" id="quote">
+    <div class="container">
+      <div class="section-heading reveal" style="text-align: center;">
+        <p class="section-index" style="justify-content: center; color: #f59e0b;">10 / Get Quotation</p>
+        <h2 style="color: #fff;">Planning a Steel Building Project? Submit Your Requirements</h2>
+        <p style="margin: 0 auto; color: rgba(255,255,255,0.75);">Submit your project requirements, building use, dimensions and any available drawings. ZhongSai will conduct an initial review and confirm what is needed for engineering design, detailing and fabrication.</p>
+      </div>
+      <QuoteForm lang="en" />
+    </div>
+  </section>
+</BaseLayout>
+
+<script>
+  // FAQ toggle
+  document.querySelectorAll('.faq-question').forEach(btn => {
+    btn.addEventListener('click', () => {
+      const item = btn.closest('.faq-item');
+      const isOpen = item.classList.contains('open');
+      item.classList.toggle('open');
+      btn.setAttribute('aria-expanded', !isOpen);
+    });
+  });
+
+  // Scroll reveal
+  const revealElements = document.querySelectorAll('.reveal');
+  if ('IntersectionObserver' in window) {
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.style.opacity = '1';
+          entry.target.style.transform = 'translateY(0)';
+          observer.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.1 });
+    revealElements.forEach(el => {
+      el.style.opacity = '0';
+      el.style.transform = 'translateY(24px)';
+      el.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+      observer.observe(el);
+    });
+  }
+</script>

@@ -1,0 +1,156 @@
+---
+// Footer.astro - 统一Footer组件（全站只维护一份）
+interface Props {
+  lang: 'zh' | 'en';
+}
+
+const { lang } = Astro.props;
+
+const socialLinks = [
+  { name: 'Facebook', href: 'https://www.facebook.com/ZhongSaiSteelStructure/reels/', icon: 'M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z' },
+  { name: 'Instagram', href: 'https://www.instagram.com/zhongsaisteel/reels/', icon: 'M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z M17.5 6.5h.01 M3 7a4 4 0 0 1 4-4h10a4 4 0 0 1 4 4v10a4 4 0 0 1-4 4H7a4 4 0 0 1-4-4z' },
+  { name: 'TikTok', href: 'https://www.tiktok.com/@zhongsai_steelstructure', icon: 'M9 12a4 4 0 1 0 4 4V4a5 5 0 0 0 5 5' },
+  { name: 'YouTube', href: 'https://www.youtube.com/@ZhongSaiSteel', icon: 'M22.54 6.42a2.78 2.78 0 0 0-1.94-2C18.88 4 12 4 12 4s-6.88 0-8.6.46a2.78 2.78 0 0 0-1.94 2A29 29 0 0 0 1 11.75a29 29 0 0 0 .46 5.33A2.78 2.78 0 0 0 3.4 19c1.72.46 8.6.46 8.6.46s6.88 0 8.6-.46a2.78 2.78 0 0 0 1.94-2 29 29 0 0 0 .46-5.25 29 29 0 0 0-.46-5.33z M9.75 15.02l5.75-3.27-5.75-3.27z' },
+];
+
+const footerCols = lang === 'zh' ? [
+  {
+    title: '产品',
+    links: [
+      { label: '工业厂房与车间', href: '/zh/steel-workshop/' },
+      { label: '钢结构仓库', href: '/zh/steel-warehouse/' },
+      { label: '矿业与能源设施', href: '/zh/steel-mining-factory/' },
+      { label: '商业与公共建筑', href: '/zh/steel-supermarket-mall/' },
+    ]
+  },
+  {
+    title: '服务',
+    links: [
+      { label: '钢结构设计深化', href: '/zh/engineering-design/' },
+      { label: '制造与质量控制', href: '/zh/manufacturing-quality/' },
+      { label: '出口交付', href: '/zh/export-delivery/' },
+      { label: '构件与材料', href: '/zh/components/' },
+    ]
+  },
+  {
+    title: '公司',
+    links: [
+      { label: '关于中赛', href: '/zh/about/' },
+      { label: '项目案例', href: '/zh/projects/' },
+      { label: '联系我们', href: '/zh/contact/' },
+      { label: '常见问题', href: '/zh/faq/' },
+    ]
+  },
+] : [
+  {
+    title: 'Products',
+    links: [
+      { label: 'Factory & Workshop', href: '/en/steel-workshop/' },
+      { label: 'Steel Warehouse', href: '/en/steel-warehouse/' },
+      { label: 'Mining & Energy', href: '/en/steel-mining-factory/' },
+      { label: 'Commercial & Public', href: '/en/steel-supermarket-mall/' },
+    ]
+  },
+  {
+    title: 'Services',
+    links: [
+      { label: 'Engineering Design', href: '/en/engineering-design/' },
+      { label: 'Manufacturing & Quality', href: '/en/manufacturing-quality/' },
+      { label: 'Export Delivery', href: '/en/export-delivery/' },
+      { label: 'Components', href: '/en/components/' },
+    ]
+  },
+  {
+    title: 'Company',
+    links: [
+      { label: 'About Us', href: '/en/about/' },
+      { label: 'Projects', href: '/en/projects/' },
+      { label: 'Contact', href: '/en/contact/' },
+      { label: 'FAQ', href: '/en/faq/' },
+    ]
+  },
+];
+---
+
+<footer class="site-footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <img src="/images/logo-ai-replica-clean.png" alt="ZhongSai Steel Structure Logo" class="footer-logo-img" width="1200" height="245">
+        <p>
+          {lang === 'zh' 
+            ? '中国钢结构设计、深化、制造与出口供应商，服务全球工业厂房、仓库、矿业及商业建筑项目。'
+            : 'China-based steel structure design, detailing, fabrication and export supplier serving global industrial, warehouse, mining and commercial building projects.'}
+        </p>
+        <div class="footer-social">
+          {socialLinks.map(social => (
+            <a href={social.href} target="_blank" rel="noopener noreferrer" aria-label={social.name} class="footer-social-link">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" width="20" height="20">
+                <path d={social.icon} />
+              </svg>
+            </a>
+          ))}
+        </div>
+      </div>
+      {footerCols.map(col => (
+        <div class="footer-col">
+          <h4>{col.title}</h4>
+          <ul>
+            {col.links.map(link => (
+              <li><a href={link.href}>{link.label}</a></li>
+            ))}
+          </ul>
+        </div>
+      ))}
+    </div>
+    <div class="footer-bottom">
+      <p>&copy; {new Date().getFullYear()} ZhongSai Steel Structure. {lang === 'zh' ? '保留所有权利。' : 'All rights reserved.'}</p>
+      <p>
+        <a href={`/${lang}/privacy/`} style="color: rgba(255,255,255,0.7);">{lang === 'zh' ? '隐私政策' : 'Privacy Policy'}</a>
+        {' | '}
+        <a href={`/${lang}/terms/`} style="color: rgba(255,255,255,0.7);">{lang === 'zh' ? '使用条款' : 'Terms of Use'}</a>
+      </p>
+    </div>
+  </div>
+</footer>
+
+<style>
+.footer-social {
+  display: flex;
+  gap: 8px;
+  margin-top: 20px;
+}
+.footer-social-link {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  border-radius: 8px;
+  color: rgba(255,255,255,0.7);
+  background: rgba(255,255,255,0.06);
+  transition: color 0.2s, background 0.2s;
+  text-decoration: none;
+}
+.footer-social-link:hover {
+  color: #ffffff;
+  background: rgba(255,255,255,0.12);
+}
+.footer-social-link svg {
+  display: block;
+}
+.footer-social-link:focus-visible {
+  outline: 2px solid rgba(255,255,255,0.5);
+  outline-offset: 2px;
+}
+@media (max-width: 768px) {
+  .footer-social {
+    gap: 10px;
+    margin-top: 16px;
+  }
+  .footer-social-link {
+    width: 42px;
+    height: 42px;
+  }
+}
+</style>

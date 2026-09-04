@@ -1,0 +1,272 @@
+---
+// ZhongSai V2 - Chinese Manufacturing & Quality Page
+import BaseLayout from '../../../layouts/BaseLayout.astro';
+import QuoteForm from '../../../components/QuoteForm.astro';
+import '../../../styles/hub.css';
+import '../../../styles/manufacturing.css';
+
+const lang = 'zh';
+const title = '钢结构制造与质量控制｜中赛钢构';
+const description = '中赛钢构钢结构制造流程：原材料核验、CNC切割、组立焊接、矫正钻孔、异形构件加工、表面处理、质量检验、编号包装，支持按图加工与出口交付。';
+
+const eightSteps = [
+  {
+    num: '01',
+    title: '原材料核验',
+    titleEn: 'Raw Material Inspection',
+    desc: '钢材及配套材料按项目规格与要求进行检查与准备。',
+    img: '/images/company/factory-yard-gantry-crane.jpg'
+  },
+  {
+    num: '02',
+    title: 'CNC切割',
+    titleEn: 'CNC Cutting',
+    desc: '使用数控切割设备按深化图进行钢板切割，控制尺寸精度与切割面质量。',
+    img: '/images/manufacturing/cnc-laser-cutting-machine.webp'
+  },
+  {
+    num: '03',
+    title: '组立焊接',
+    titleEn: 'Assembly & Welding',
+    desc: 'H型钢组立与焊接，按项目图纸与焊接工艺要求组织施工，控制焊接变形。',
+    img: '/images/manufacturing/h-beam-assembly-machine.webp'
+  },
+  {
+    num: '04',
+    title: '矫正钻孔',
+    titleEn: 'Straightening & Drilling',
+    desc: '焊接后构件矫正与钻孔加工，按深化图控制孔位精度与构件平直度。',
+    img: '/images/manufacturing/steel-straightening-machine.webp'
+  },
+  {
+    num: '05',
+    title: '异形构件加工',
+    titleEn: 'Custom Component Fabrication',
+    desc: '箱型构件、桁架、节点板等异形构件加工，按项目图纸组织深化与制造。',
+    img: '/images/company/factory-steel-beam-fabrication.jpg'
+  },
+  {
+    num: '06',
+    title: '表面处理',
+    titleEn: 'Surface Treatment',
+    desc: '可根据项目要求安排表面清理、抛丸及涂层处理，具体处理方式和规格以项目技术要求为准。',
+    img: '/images/manufacturing/shot-blasting-machine.webp'
+  },
+  {
+    num: '07',
+    title: '质量检验',
+    titleEn: 'Quality Control',
+    desc: '制造过程与成品检验，按项目图纸、深化图及项目技术规范组织检查与记录。',
+    img: '/images/company/factory-interior-production.jpg'
+  },
+  {
+    num: '08',
+    title: '编号包装',
+    titleEn: 'Marking & Packing',
+    desc: '可根据深化图和项目要求进行构件标识与编号，按构件类型、装柜顺序及出口运输要求组织包装。',
+    img: '/images/container-loading.jpg'
+  }
+];
+
+const evidenceImages = [
+  '/images/manufacturing/real/factory-overview-9819.jpg',
+  '/images/manufacturing/real/cutting-prep-9809.jpg',
+  '/images/manufacturing/real/welding-9820.jpg',
+  '/images/manufacturing/real/assembly-welding-9821.jpg'
+];
+---
+
+<BaseLayout title={title} description={description} lang={lang}>
+  <!-- Hero -->
+  <section class="hub-hero">
+    <div class="hub-hero-bg" style="background-image: url('/images/manufacturing/real/factory-overview-9819.jpg')"></div>
+    <div class="hub-hero-overlay"></div>
+    <div class="container hub-hero-content">
+      <div class="hub-breadcrumb">
+        <a href="/zh/">首页</a><span>/</span><span>制造能力</span>
+      </div>
+      <p class="eyebrow">MANUFACTURING · 从图纸到交付</p>
+      <h1>钢结构制造与<br>质量控制</h1>
+      <p class="lead">中赛钢构把项目图纸转化为可出口交付的钢结构构件——8步制造流程，覆盖原材料核验到编号包装。</p>
+    </div>
+  </section>
+
+  <!-- 01 制造能力概览 -->
+  <section class="section" style="padding: 70px 0;">
+    <div class="container">
+      <div class="section-heading reveal">
+        <div>
+          <p class="section-index">01 / 制造能力概览</p>
+          <h2>从图纸到可出口交付的构件</h2>
+        </div>
+        <div>
+          <p>中赛钢构提供钢结构制造加工服务，覆盖设计深化、材料准备、切割、组立焊接、矫正钻孔、异形构件加工、表面处理、质量检验、构件编号与包装装柜等关键环节。</p>
+          <p style="margin-top: 12px;">制造与检验根据项目图纸、深化图、项目技术规范及适用项目要求进行。具体材料、焊接、表面处理和检验参数按项目要求确定。</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 02 8步制造流程 -->
+  <section class="manufacturing-process-section">
+    <div class="container">
+      <div class="section-heading reveal" style="margin-bottom: 40px;">
+        <div>
+          <p class="section-index">02 / 制造流程</p>
+          <h2>8步制造流程</h2>
+        </div>
+        <div>
+          <p>从原材料核验到编号包装，每一步按项目图纸与技术要求组织实施。</p>
+        </div>
+      </div>
+      <div class="process-grid">
+        {eightSteps.map((step, i) => (
+          <div class={`process-card reveal reveal-delay-${(i % 4) + 1}`}>
+            <div class="process-card-img">
+              <img src={step.img} alt={step.num === "07" ? "中赛钢构制造现场" : step.title} loading="lazy">
+              <span class="process-card-num">{step.num}</span>
+            </div>
+            <div class="process-card-body">
+              <h3>{step.title}</h3>
+              <p class="process-card-en">{step.titleEn}</p>
+              <p>{step.desc}</p>
+            </div>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- 03 真实制造现场 -->
+  <section class="section" style="padding: 70px 0; background: #f8fafc;">
+    <div class="container">
+      <div class="section-heading reveal" style="margin-bottom: 36px;">
+        <div>
+          <p class="section-index">03 / 制造现场</p>
+          <h2>真实制造现场</h2>
+        </div>
+        <div>
+          <p>中赛钢构生产基地，覆盖切割、组立焊接、表面处理、质量检验与包装装柜等环节。</p>
+        </div>
+      </div>
+      <div class="evidence-grid">
+        {evidenceImages.map((img, i) => (
+          <div class={`evidence-item reveal reveal-delay-${(i % 4) + 1}`}>
+            <img src={img} alt="中赛钢构制造现场" loading="lazy">
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- 04 质量与项目要求 -->
+  <section class="section" style="padding: 70px 0;">
+    <div class="container">
+      <div class="section-heading reveal">
+        <div>
+          <p class="section-index">04 / 质量控制</p>
+          <h2>质量与项目要求</h2>
+        </div>
+        <div>
+          <p>制造与检验根据项目图纸、深化图、项目技术规范及适用项目要求进行。中赛钢构执行ISO 9001质量管理体系要求。</p>
+          <p style="margin-top: 12px;">具体焊接工艺、检验比例、检测方法及验收标准按项目技术要求与合同约定执行。</p>
+        </div>
+      </div>
+      <div class="quality-grid">
+        <div class="quality-item reveal reveal-delay-1">
+          <h4>图纸与深化</h4>
+          <p>按项目图纸与深化图组织制造，关键尺寸与节点按图核对。</p>
+        </div>
+        <div class="quality-item reveal reveal-delay-2">
+          <h4>过程检验</h4>
+          <p>制造过程中按项目要求进行尺寸、焊接与外观检查与记录。</p>
+        </div>
+        <div class="quality-item reveal reveal-delay-3">
+          <h4>成品检验</h4>
+          <p>成品检验根据项目技术要求组织，具体检查项目和验收要求以项目要求为准。</p>
+        </div>
+        <div class="quality-item reveal reveal-delay-4">
+          <h4>ISO 9001</h4>
+          <p>中赛钢构执行ISO 9001质量管理体系要求。</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 05 编号包装与出口准备 -->
+  <section class="dual-path-section">
+    <div class="container">
+      <div class="section-heading reveal" style="color: white; text-align: center; display: block; margin-bottom: 36px;">
+        <p class="section-index" style="color: #f59e0b;">05 / 出口准备</p>
+        <h2 style="color: white; margin-bottom: 10px;">编号、包装与出口准备</h2>
+        <p style="color: rgba(255,255,255,0.65); max-width: 700px; margin: 0 auto;">可根据深化图和项目要求进行构件标识与编号，按构件类型、装柜顺序及出口运输要求组织包装，支持集装箱装柜与出口单证准备。</p>
+      </div>
+      <div class="dual-path-grid" style="grid-template-columns: repeat(3, 1fr); gap: 20px;">
+        <div class="dual-path-card reveal reveal-delay-1" style="padding: 28px 24px;">
+          <div class="path-icon" style="width: 44px; height: 44px; font-size: 20px; margin-bottom: 14px;">🏷️</div>
+          <h3 style="font-size: 18px; margin-bottom: 8px;">构件编号</h3>
+          <p style="font-size: 14px; margin-bottom: 0;">可根据深化图和项目要求进行构件标识，便于现场安装识别与核对。</p>
+        </div>
+        <div class="dual-path-card reveal reveal-delay-2" style="padding: 28px 24px;">
+          <div class="path-icon" style="width: 44px; height: 44px; font-size: 20px; margin-bottom: 14px;">📦</div>
+          <h3 style="font-size: 18px; margin-bottom: 8px;">包装组织</h3>
+          <p style="font-size: 14px; margin-bottom: 0;">按构件类型、装柜顺序及出口运输要求组织包装，附装箱清单。</p>
+        </div>
+        <div class="dual-path-card reveal reveal-delay-3" style="padding: 28px 24px;">
+          <div class="path-icon" style="width: 44px; height: 44px; font-size: 20px; margin-bottom: 14px;">🚢</div>
+          <h3 style="font-size: 18px; margin-bottom: 8px;">出口准备</h3>
+          <p style="font-size: 14px; margin-bottom: 0;">支持集装箱装柜、出口单证支持与物流协调，配合项目交付安排。</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 06 相关能力 -->
+  <section class="section" style="padding: 70px 0;">
+    <div class="container">
+      <div class="section-heading reveal" style="margin-bottom: 36px;">
+        <div>
+          <p class="section-index">06 / 相关能力</p>
+          <h2>相关能力与产品</h2>
+        </div>
+        <div>
+          <p>了解中赛钢构的构件供应、围护系统及产品分类。</p>
+        </div>
+      </div>
+      <div class="related-grid">
+        <a href="/zh/components/" class="related-card reveal reveal-delay-1">
+          <h4>构件与材料</h4>
+          <p>钢梁、钢柱、桁架、檩条及围护系统，按图纸定制加工。</p>
+          <span class="related-cta">查看构件 →</span>
+        </a>
+        <a href="/zh/components/fabricated-steel-beams-columns/" class="related-card reveal reveal-delay-2">
+          <h4>钢梁钢柱</h4>
+          <p>H型钢梁、钢柱、箱型构件，按项目图纸与荷载要求加工。</p>
+          <span class="related-cta">查看详情 →</span>
+        </a>
+        <a href="/zh/components/roof-wall-cladding-systems/" class="related-card reveal reveal-delay-3">
+          <h4>围护系统</h4>
+          <p>屋面板、墙面板、夹芯板及配套配件，可与钢结构配套供应。</p>
+          <span class="related-cta">查看详情 →</span>
+        </a>
+        <a href="/zh/products/" class="related-card reveal reveal-delay-4">
+          <h4>产品分类</h4>
+          <p>工业厂房、仓库、矿业、商业、农业及定制工程钢结构产品。</p>
+          <span class="related-cta">查看产品 →</span>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- 07 Quote CTA -->
+  <section class="quote-cta-section" id="quote">
+    <div class="container">
+      <div class="quote-cta-header reveal">
+        <p class="section-index" style="color: #f59e0b;">07 / 获取报价</p>
+        <h2>提交图纸，获取制造报价</h2>
+        <p>上传结构图纸或BOQ清单，中赛钢构将根据您的项目需求提供制造加工与出口交付报价。</p>
+      </div>
+      <QuoteForm lang={lang} />
+    </div>
+  </section>
+</BaseLayout>

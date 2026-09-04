@@ -1,0 +1,42 @@
+---
+// DesktopNav.astro - 桌面端导航组件
+interface Props {
+  lang: 'zh' | 'en';
+  currentPath: string;
+}
+
+const { lang, currentPath } = Astro.props;
+
+const navItems = lang === 'zh' ? [
+  { label: '首页', href: '/zh/' },
+  { label: '产品', href: '/zh/products/' },
+  { label: '解决方案', href: '/zh/solutions/' },
+  { label: '构件与材料', href: '/zh/components/' },
+  { label: '项目案例', href: '/zh/projects/' },
+  { label: '制造能力', href: '/zh/manufacturing-quality/' },
+  { label: '关于中赛', href: '/zh/about/' },
+] : [
+  { label: 'Home', href: '/en/' },
+  { label: 'Products', href: '/en/products/' },
+  { label: 'Solutions', href: '/en/solutions/' },
+  { label: 'Components', href: '/en/components/' },
+  { label: 'Projects', href: '/en/projects/' },
+  { label: 'Manufacturing', href: '/en/manufacturing-quality/' },
+  { label: 'About', href: '/en/about/' },
+];
+
+function isActive(href: string, currentPath: string): boolean {
+  if (href.endsWith('/')) {
+    return currentPath === href || currentPath.startsWith(href) && href !== `/${lang}/`;
+  }
+  return currentPath === href || currentPath.startsWith(href + '/');
+}
+---
+
+<nav class="desktop-nav" aria-label={lang === 'zh' ? '主导航' : 'Main navigation'}>
+  {navItems.map(item => (
+    <a href={item.href} class:list={{ active: isActive(item.href, currentPath) }}>
+      {item.label}
+    </a>
+  ))}
+</nav>

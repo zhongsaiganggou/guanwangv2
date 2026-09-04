@@ -1,0 +1,39 @@
+# Dependencies
+node_modules/
+
+# Build output
+dist/
+.astro/
+
+# Cloudflare Wrangler
+.wrangler/
+
+# Environment variables & secrets
+.env
+.env.*
+!.env.example
+
+# Python one-off helper scripts (not required for Astro build)
+*.py
+__pycache__/
+*.pyc
+
+# Old website snapshots & scrape artifacts (local reference only)
+old_project_html/
+old_projects_page.html
+project_images_map.json
+
+# OS files
+Thumbs.db
+.DS_Store
+Desktop.ini
+
+# Editor
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# Logs
+*.log
+npm-debug.log*

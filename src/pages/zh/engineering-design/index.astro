@@ -1,0 +1,436 @@
+---
+import BaseLayout from '../../../layouts/BaseLayout.astro';
+import QuoteForm from '../../../components/QuoteForm.astro';
+import '../../../styles/detail.css';
+
+const title = '钢结构建筑设计与制造衔接服务 | 中赛钢构';
+const description = '中赛钢构提供钢结构建筑设计与工程协调服务，将结构设计与深化设计、制造加工和出口供应紧密连接，为海外钢结构项目提供高效的设计到制造衔接。';
+const lang = 'zh';
+const canonical = 'https://zhongsai-steelstructure.com/zh/engineering-design/';
+---
+
+<BaseLayout title={title} description={description} lang={lang}>
+  <!-- Hero -->
+  <section class="detail-hero">
+    <div class="detail-hero-bg" style="background-image: url('/images/company/factory-aerial-panorama.jpg');"></div>
+    <div class="detail-hero-overlay"></div>
+    <div class="detail-hero-content">
+      <span class="eyebrow">工程设计 · 结构规划 · 制造衔接</span>
+      <h1>钢结构建筑设计与制造衔接服务</h1>
+      <p class="lead">中赛钢构基于建筑用途、项目尺寸、场地信息和约定的技术要求，为制造和出口导向的钢结构项目提供建筑设计与工程协调服务。我们将结构设计与深化设计、制造加工和出口供应紧密连接，有助于工程决策支持高效制造和海外交付。</p>
+      <div class="detail-hero-actions">
+        <a href="#quote" class="btn btn-primary">提交项目需求</a>
+        <a href="/zh/services/structural-steel-detailing/" class="btn btn-outline">查看深化设计服务</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Breadcrumb -->
+  <nav class="detail-breadcrumb">
+    <div class="container">
+      <a href="/zh/">首页</a>
+      <span class="sep">/</span>
+      <span class="current">工程设计</span>
+    </div>
+  </nav>
+
+  <!-- 01 从项目需求到结构方案 -->
+  <section class="detail-section">
+    <div class="container">
+      <div class="section-heading reveal">
+        <p class="section-index">01 / 项目需求</p>
+        <h2>从项目需求到结构方案</h2>
+        <p>每个钢结构项目都始于对建筑用途和必须满足条件的清晰理解。中赛钢构审核项目需求，开发支持建筑功能并与制造高效衔接的结构方案。</p>
+      </div>
+      <div class="requirement-grid">
+        <div class="requirement-card reveal reveal-delay-1">
+          <h3>建筑用途</h3>
+          <p>建筑将用于什么？工业生产、仓储物流、商业、农业或特种用途结构各有不同的结构方案。</p>
+        </div>
+        <div class="requirement-card reveal reveal-delay-2">
+          <h3>项目所在地</h3>
+          <p>项目位于哪里？场地条件、当地气候和适用项目要求影响结构规划决策。</p>
+        </div>
+        <div class="requirement-card reveal reveal-delay-3">
+          <h3>项目尺寸</h3>
+          <p>所需的长度、宽度和高度是多少？尺寸影响结构配置、柱网布置和净空规划。</p>
+        </div>
+        <div class="requirement-card reveal reveal-delay-4">
+          <h3>设备与行车需求</h3>
+          <p>是否有设备布置或行车需求？这些影响结构配置、荷载考虑和柱网布置（如适用）。</p>
+        </div>
+        <div class="requirement-card reveal reveal-delay-5">
+          <h3>屋面、墙面与开洞需求</h3>
+          <p>是否有特殊的屋面、墙面、门或开洞需求？这些与结构方案和建筑围护规划协调。</p>
+        </div>
+        <div class="requirement-card reveal reveal-delay-6">
+          <h3>项目技术规格</h3>
+          <p>适用的项目技术规格、技术要求和约定标准指导结构方案开发和制造协调。</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 02 结构规划 -->
+  <section class="detail-section alt">
+    <div class="container">
+      <div class="section-heading reveal">
+        <p class="section-index">02 / 结构规划</p>
+        <h2>钢结构建筑结构规划</h2>
+        <p>结构规划将项目需求转化为可建造的钢结构建筑配置。中赛钢构协调建筑布局、结构体系和功能要求，支持高效制造和清晰的可用空间。</p>
+      </div>
+      <div class="image-text-block">
+        <div class="itb-image">
+          <img src="/images/products/01-industrial.jpg" alt="钢结构工业项目结构规划" loading="lazy">
+        </div>
+        <div class="itb-content">
+          <h3>结构配置考虑因素</h3>
+          <p>结构规划基于项目要求和适用技术规格进行开发。</p>
+          <ul>
+            <li>基于功能要求的建筑布局和柱网布置</li>
+            <li>清晰的工作空间和生产动线协调</li>
+            <li>屋面配置和排水协调</li>
+            <li>门、窗和开洞与结构布局的协调</li>
+            <li>设备和行车需求协调（如适用）</li>
+            <li>未来扩建考虑（与项目范围相关时）</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 03 设计输入资料 -->
+  <section class="detail-section">
+    <div class="container">
+      <div class="section-heading reveal">
+        <p class="section-index">03 / 设计输入</p>
+        <h2>开始需要提供哪些资料？</h2>
+        <p>您可以提交目前已有的项目信息。中赛钢构将审核现有信息，并确认工程设计、深化设计和报价可能需要补充的其他数据。并非所有资料都需要在初步审核前全部提供。</p>
+      </div>
+      <div class="requirement-grid">
+        <div class="requirement-card reveal reveal-delay-1">
+          <h3>项目所在国家</h3>
+          <p>项目位置和适用项目要求。</p>
+        </div>
+        <div class="requirement-card reveal reveal-delay-2">
+          <h3>建筑用途</h3>
+          <p>钢结构建筑的预期用途。</p>
+        </div>
+        <div class="requirement-card reveal reveal-delay-3">
+          <h3>长度 / 宽度 / 高度</h3>
+          <p>基本项目尺寸（如有）。</p>
+        </div>
+        <div class="requirement-card reveal reveal-delay-4">
+          <h3>建筑图纸</h3>
+          <p>建筑图纸（如有，用于协调）。</p>
+        </div>
+        <div class="requirement-card reveal reveal-delay-5">
+          <h3>结构要求</h3>
+          <p>结构要求和技术规格。</p>
+        </div>
+        <div class="requirement-card reveal reveal-delay-6">
+          <h3>设备与行车布置</h3>
+          <p>设备布置和行车需求（如相关）。</p>
+        </div>
+        <div class="requirement-card reveal reveal-delay-1">
+          <h3>门 / 开洞需求</h3>
+          <p>门、窗和开洞要求。</p>
+        </div>
+        <div class="requirement-card reveal reveal-delay-2">
+          <h3>屋面 / 墙面需求</h3>
+          <p>屋面和墙面系统要求（如指定）。</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 04 面向制造的设计 -->
+  <section class="detail-section alt">
+    <div class="container">
+      <div class="section-heading reveal">
+        <p class="section-index">04 / 面向制造的设计</p>
+        <h2>与制造协调的工程设计</h2>
+        <p>与中赛钢构合作的一个关键优势是，工程设计从一开始就与深化设计和制造要求协调。这有助于结构决策支持高效制造、清晰的构件识别和直接的出口准备。</p>
+      </div>
+      <div class="process-flow">
+        <div class="process-step reveal">
+          <div class="step-num">1</div>
+          <h4>结构设计</h4>
+          <p>基于项目要求开发结构方案。</p>
+        </div>
+        <div class="process-step reveal reveal-delay-1">
+          <div class="step-num">2</div>
+          <h4>深化设计协调</h4>
+          <p>协调设计与加工图和制造要求。</p>
+        </div>
+        <div class="process-step reveal reveal-delay-2">
+          <div class="step-num">3</div>
+          <h4>加工图</h4>
+          <p>开发可制造的图纸信息。</p>
+        </div>
+        <div class="process-step reveal reveal-delay-3">
+          <div class="step-num">4</div>
+          <h4>制造加工</h4>
+          <p>制造加工根据确认图纸和项目要求组织。</p>
+        </div>
+      </div>
+      <div class="related-links" style="margin-top: 48px;">
+        <h3>相关服务与能力</h3>
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 16px; margin-top: 24px;">
+          <a href="/zh/services/structural-steel-detailing/" class="related-link-card reveal reveal-delay-1">
+            <h4>钢结构深化设计</h4>
+            <p>加工图、制造图纸和图纸审核</p>
+            <span class="rl-arrow">查看详情 →</span>
+          </a>
+          <a href="/zh/products/custom-engineering/" class="related-link-card reveal reveal-delay-2">
+            <h4>定制工程与加工</h4>
+            <p>基于项目图纸和BOQ的钢结构加工</p>
+            <span class="rl-arrow">查看详情 →</span>
+          </a>
+          <a href="/zh/manufacturing-quality/" class="related-link-card reveal reveal-delay-3">
+            <h4>制造与质量控制</h4>
+            <p>8步制造流程和质量控制</p>
+            <span class="rl-arrow">查看详情 →</span>
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 05 按建筑类型的设计支持 -->
+  <section class="detail-section">
+    <div class="container">
+      <div class="section-heading reveal">
+        <p class="section-index">05 / 建筑类型</p>
+        <h2>按建筑类型的设计支持</h2>
+        <p>不同建筑类型有不同的结构和功能要求。中赛钢构根据具体用途协调工程设计，有助于结构方案支持建筑的预期功能和制造效率。</p>
+      </div>
+      <div class="requirement-grid">
+        <div class="requirement-card reveal reveal-delay-1">
+          <h3>工业厂房</h3>
+          <p>生产空间、设备布置、行车需求、通风和清晰工作空间协调。</p>
+          <a href="/zh/steel-workshop/" style="color: #1e40af; font-weight: 600; font-size: 14px;">查看厂房 →</a>
+        </div>
+        <div class="requirement-card reveal reveal-delay-2">
+          <h3>仓库与物流</h3>
+          <p>仓储布局、货架协调、净高、装卸通道和物流动线规划。</p>
+          <a href="/zh/steel-warehouse/" style="color: #1e40af; font-weight: 600; font-size: 14px;">查看仓库 →</a>
+        </div>
+        <div class="requirement-card reveal reveal-delay-3">
+          <h3>商业 / 公共建筑</h3>
+          <p>开放空间规划、建筑协调、公共动线和立面协调。</p>
+        </div>
+        <div class="requirement-card reveal reveal-delay-4">
+          <h3>农业 / 特种建筑</h3>
+          <p>特种用途建筑要求、通风、潮湿环境和大开放空间协调。</p>
+        </div>
+        <div class="requirement-card reveal reveal-delay-5">
+          <h3>定制工程</h3>
+          <p>复杂结构配置、定制构件、设备平台和特殊制造要求。</p>
+          <a href="/zh/products/custom-engineering/" style="color: #1e40af; font-weight: 600; font-size: 14px;">查看定制工程 →</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 06 中赛可以提供的支持 -->
+  <section class="detail-section alt">
+    <div class="container">
+      <div class="section-heading reveal">
+        <p class="section-index">06 / 中赛支持</p>
+        <h2>中赛钢构可以提供的支持</h2>
+        <p>中赛钢构为钢结构建筑项目提供工程设计协调和面向制造的支持。设计工作基于约定的项目范围、现有项目信息和适用技术要求进行开发。</p>
+      </div>
+      <div class="requirement-grid">
+        <div class="requirement-card reveal reveal-delay-1">
+          <h3>初步结构规划</h3>
+          <p>基于项目要求和建筑用途的初始结构方案开发。</p>
+        </div>
+        <div class="requirement-card reveal reveal-delay-2">
+          <h3>钢结构建筑设计协调</h3>
+          <p>为制造和出口导向的钢结构建筑项目提供工程设计协调。</p>
+        </div>
+        <div class="requirement-card reveal reveal-delay-3">
+          <h3>结构图纸开发/支持</h3>
+          <p>基于项目要求和约定范围的结构图纸开发和支持。</p>
+        </div>
+        <div class="requirement-card reveal reveal-delay-4">
+          <h3>设计到深化设计协调</h3>
+          <p>工程设计与钢结构深化设计之间的协调，有助于制造准备。</p>
+        </div>
+        <div class="requirement-card reveal reveal-delay-5">
+          <h3>面向制造的工程协调</h3>
+          <p>工程决策与制造、编号、包装和出口要求协调。</p>
+        </div>
+        <div class="requirement-card reveal reveal-delay-6">
+          <h3>屋面 / 墙面系统协调</h3>
+          <p>作为结构方案的一部分，与屋面和墙面围护系统协调。</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 07 设计责任与当地要求 -->
+  <section class="detail-section">
+    <div class="container">
+      <div class="section-heading reveal">
+        <p class="section-index">07 / 设计责任</p>
+        <h2>设计责任与当地要求</h2>
+        <p>中赛钢构的工程工作根据约定的项目范围、现有项目信息和适用技术要求进行开发。当地工程审核、法定审批和施工审批根据项目所在地要求和合同范围处理。中赛钢构提供制造、出口供应和海外安装技术指导；当地安装和施工由客户或当地项目团队完成。</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- 08 从设计到出口供应 -->
+  <section class="detail-section alt">
+    <div class="container">
+      <div class="section-heading reveal">
+        <p class="section-index">08 / 设计到出口</p>
+        <h2>从设计到出口供应</h2>
+        <p>中赛钢构将工程设计与制造和出口准备连接起来，提供从项目需求到海外交付的协调路径。</p>
+      </div>
+      <div class="process-flow">
+        <div class="process-step reveal">
+          <div class="step-num">1</div>
+          <h4>项目需求</h4>
+          <p>提交建筑用途、尺寸和项目信息。</p>
+        </div>
+        <div class="process-step reveal reveal-delay-1">
+          <div class="step-num">2</div>
+          <h4>工程设计</h4>
+          <p>开发结构方案和设计协调。</p>
+        </div>
+        <div class="process-step reveal reveal-delay-2">
+          <div class="step-num">3</div>
+          <h4>深化设计</h4>
+          <p>协调加工图和制造图纸。</p>
+        </div>
+        <div class="process-step reveal reveal-delay-3">
+          <div class="step-num">4</div>
+          <h4>图纸确认</h4>
+          <p>确认可制造的图纸信息。</p>
+        </div>
+        <div class="process-step reveal reveal-delay-4">
+          <div class="step-num">5</div>
+          <h4>制造加工</h4>
+          <p>制造加工根据确认图纸和项目要求组织。</p>
+        </div>
+        <div class="process-step reveal reveal-delay-5">
+          <div class="step-num">6</div>
+          <h4>编号与包装</h4>
+          <p>构件标识与包装根据确认图纸和项目要求进行组织。</p>
+        </div>
+        <div class="process-step reveal reveal-delay-6">
+          <div class="step-num">7</div>
+          <h4>装柜</h4>
+          <p>协调装柜以便海外交付。</p>
+        </div>
+        <div class="process-step reveal reveal-delay-7">
+          <div class="step-num">8</div>
+          <h4>出口准备</h4>
+          <p>出口单证支持和物流协调。</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 09 FAQ -->
+  <section class="detail-section">
+    <div class="container">
+      <div class="section-heading reveal">
+        <p class="section-index">09 / 常见问题</p>
+        <h2>常见问题</h2>
+      </div>
+      <div class="faq-list">
+        <div class="faq-item">
+          <button class="faq-question" aria-expanded="false" aria-controls="faq-engdesign-zh-01">
+            <span>中赛可以在没有完整图纸的情况下开始钢结构建筑设计吗？</span>
+            <span class="faq-icon">+</span>
+          </button>
+          <div class="faq-answer" id="faq-engdesign-zh-01" hidden>
+            <div class="faq-answer-inner">
+              <p>可以。您可以提交目前已有的项目信息，如建筑用途、基本尺寸、项目所在国家和任何现有图纸或规格。中赛钢构可以审核现有信息，并确认工程设计、深化设计和报价可能需要补充的其他数据。</p>
+            </div>
+          </div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-question" aria-expanded="false" aria-controls="faq-engdesign-zh-02">
+            <span>开始需要提供哪些资料？</span>
+            <span class="faq-icon">+</span>
+          </button>
+          <div class="faq-answer" id="faq-engdesign-zh-02" hidden>
+            <div class="faq-answer-inner">
+              <p>有帮助的信息包括项目所在国家、建筑用途、长度/宽度/高度、建筑图纸（如有）、结构要求、设备布置、行车需求、门/开洞需求和屋面/墙面需求。并非所有资料都需要在初步审核前全部提供。</p>
+            </div>
+          </div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-question" aria-expanded="false" aria-controls="faq-engdesign-zh-03">
+            <span>工程设计和钢结构深化设计有什么区别？</span>
+            <span class="faq-icon">+</span>
+          </button>
+          <div class="faq-answer" id="faq-engdesign-zh-03" hidden>
+            <div class="faq-answer-inner">
+              <p>工程设计确定钢结构建筑的结构体系、建筑配置、柱网布置、尺寸和功能要求。钢结构深化设计将已确认的结构设计信息转化为详细的加工图、制造图纸、构件详图、连接节点详图和编号信息，制造团队可以依据这些图纸进行钢构件的制造。</p>
+            </div>
+          </div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-question" aria-expanded="false" aria-controls="faq-engdesign-zh-04">
+            <span>设计可以与中赛的制造直接协调吗？</span>
+            <span class="faq-icon">+</span>
+          </button>
+          <div class="faq-answer" id="faq-engdesign-zh-04" hidden>
+            <div class="faq-answer-inner">
+              <p>可以。与中赛钢构合作的一个关键优势是，工程设计从一开始就与深化设计和制造要求协调。这有助于结构决策支持高效制造、清晰的构件识别、包装和出口准备。</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 10 Quote CTA + QuoteForm -->
+  <section class="detail-section dark" id="quote">
+    <div class="container">
+      <div class="section-heading reveal" style="text-align: center;">
+        <p class="section-index" style="justify-content: center; color: #f59e0b;">10 / 获取报价</p>
+        <h2 style="color: #fff;">正在规划钢结构项目？提交您的项目需求</h2>
+        <p style="margin: 0 auto; color: rgba(255,255,255,0.75);">提交您的项目需求、建筑用途、尺寸和任何可用图纸。中赛钢构将进行初步审核，并确认工程设计、深化设计和制造所需信息。</p>
+      </div>
+      <QuoteForm lang="zh" />
+    </div>
+  </section>
+</BaseLayout>
+
+<script>
+  // FAQ toggle
+  document.querySelectorAll('.faq-question').forEach(btn => {
+    btn.addEventListener('click', () => {
+      const item = btn.closest('.faq-item');
+      const isOpen = item.classList.contains('open');
+      item.classList.toggle('open');
+      btn.setAttribute('aria-expanded', !isOpen);
+    });
+  });
+
+  // Scroll reveal
+  const revealElements = document.querySelectorAll('.reveal');
+  if ('IntersectionObserver' in window) {
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.style.opacity = '1';
+          entry.target.style.transform = 'translateY(0)';
+          observer.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.1 });
+    revealElements.forEach(el => {
+      el.style.opacity = '0';
+      el.style.transform = 'translateY(24px)';
+      el.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+      observer.observe(el);
+    });
+  }
+</script>

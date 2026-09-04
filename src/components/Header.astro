@@ -1,0 +1,39 @@
+---
+// Header.astro - 统一Header组件（全站只维护一份）
+import DesktopNav from './DesktopNav.astro';
+import MobileNav from './MobileNav.astro';
+import LanguageSwitch from './LanguageSwitch.astro';
+
+interface Props {
+  lang: 'zh' | 'en';
+  currentPath: string;
+}
+
+const { lang, currentPath } = Astro.props;
+---
+
+<header class="site-header" data-header>
+  <div class="container">
+    <div class="header-inner">
+      <a href={`/${lang}/`} class="brand" aria-label="ZhongSai Steel Structure">
+        <img src="/images/logo-horizontal-transparent-hd.png" alt="ZhongSai Steel Structure Logo" class="brand-logo-img" width="516" height="112">
+      </a>
+
+      <DesktopNav lang={lang} currentPath={currentPath} />
+
+      <div class="header-actions">
+        <LanguageSwitch lang={lang} currentPath={currentPath} />
+        <a href={`/${lang}/contact/#quote-form`} class="btn btn-primary btn-small">
+          {lang === 'zh' ? '获取报价' : 'Get a Quote'}
+        </a>
+        <button class="mobile-menu-toggle" id="mobile-menu-toggle" aria-label={lang === 'zh' ? '打开菜单' : 'Open menu'} aria-expanded="false" aria-controls="mobile-nav">
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+      </div>
+    </div>
+  </div>
+</header>
+
+<MobileNav lang={lang} currentPath={currentPath} />

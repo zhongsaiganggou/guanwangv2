@@ -1,0 +1,859 @@
+---
+// QuoteForm.astro - 统一询价表单组件（双路径：有图纸/无图纸，前端验证，不连接CRM）
+interface Props {
+  lang?: 'zh' | 'en';
+  id?: string;
+  embed?: boolean;
+}
+
+const { lang = 'zh', id = 'quote-form', embed = false } = Astro.props;
+
+const texts = lang === 'zh' ? {
+  title: '获取项目方案与报价',
+  subtitle: '已有图纸可直接上传；暂无完整图纸，也可以提交项目基本需求。',
+  tabDrawings: '已有图纸 / BOQ',
+  tabNoDrawings: '暂无完整图纸',
+  name: '姓名 / 称呼',
+  email: '邮箱（可选）',
+  phone: 'WhatsApp / 电话',
+  phoneCode: '国家区号',
+  wechat: '微信',
+  wechatPlaceholder: '微信号',
+  country: '项目所在国家',
+  drawingUpload: '上传图纸 / BOQ',
+  drawingHint: '支持 PDF、DWG、DXF、JPG、PNG、XLS、XLSX，可多选',
+  buildingType: '项目类型',
+  buildingTypeOptions: ['请选择', '工业厂房与车间', '仓库与物流', '矿业与能源设施', '商业与公共建筑', '农业与特种设施', '定制钢结构工程', '其他'],
+  length: '长度 (m)',
+  width: '宽度 (m)',
+  height: '高度 (m)',
+  intendedUse: '项目用途',
+  intendedUsePlaceholder: '例如：生产车间、仓储、办公等',
+  crane: '是否需要行车 / 吊车',
+  craneOptions: ['请选择', '是 (Yes)', '否 (No)', '不确定 (Not Sure)'],
+  message: '项目说明 / 特殊要求',
+  messagePlaceholder: '请描述您的项目需求、特殊要求或问题',
+  submitDrawings: '提交图纸，获取报价',
+  submitNoDrawings: '提交项目需求',
+  submitting: '提交中...',
+  successPreview: '测试环境：表单验证成功，当前不会真实发送。',
+  requiredName: '请输入姓名',
+  requiredEmail: '请输入有效邮箱',
+  requiredPhone: '请输入WhatsApp或电话',
+  requiredCountry: '请输入项目所在国家',
+  requiredBuildingType: '请选择项目类型',
+  requiredIntendedUse: '请输入项目用途',
+  requiredWeChat: '请输入微信号',
+  requiredPhoneCode: '请选择国家区号',
+  privacyNote: '提交即表示您同意我们的隐私政策，我们不会分享您的信息。',
+} : {
+  title: 'Get Project Solution & Quote',
+  subtitle: 'Upload drawings if you have them; or submit basic project requirements if not.',
+  tabDrawings: 'Have Drawings / BOQ',
+  tabNoDrawings: 'No Complete Drawings Yet',
+  name: 'Name',
+  email: 'Email (Optional)',
+  phone: 'WhatsApp / Phone',
+  phoneCode: 'Country / Calling Code',
+  wechat: 'WeChat ID',
+  wechatPlaceholder: 'WeChat ID',
+  country: 'Project Country',
+  drawingUpload: 'Upload Drawings / BOQ',
+  drawingHint: 'PDF, DWG, DXF, JPG, PNG, XLS, XLSX — multiple files allowed',
+  buildingType: 'Project Type',
+  buildingTypeOptions: ['Please select', 'Industrial Factory & Workshop', 'Warehouse & Logistics', 'Mining & Energy', 'Commercial & Public', 'Agriculture & Special', 'Custom Steel Structure', 'Other'],
+  length: 'Length (m)',
+  width: 'Width (m)',
+  height: 'Height (m)',
+  intendedUse: 'Intended Use',
+  intendedUsePlaceholder: 'e.g. production, warehousing, office',
+  crane: 'Crane Requirement',
+  craneOptions: ['Please select', 'Yes', 'No', 'Not Sure'],
+  message: 'Project Description / Special Requirements',
+  messagePlaceholder: 'Describe your project needs, special requirements or questions',
+  submitDrawings: 'Submit Drawings for Quote',
+  submitNoDrawings: 'Submit Project Requirements',
+  submitting: 'Submitting...',
+  successPreview: 'Preview mode: Form validation successful. No inquiry was sent.',
+  requiredName: 'Please enter your name',
+  requiredEmail: 'Please enter a valid email',
+  requiredPhone: 'Please enter WhatsApp or phone number',
+  requiredCountry: 'Please enter the project country',
+  requiredBuildingType: 'Please select project type',
+  requiredIntendedUse: 'Please enter intended use',
+  requiredWeChat: 'Please enter WeChat ID',
+  requiredPhoneCode: 'Please select country / calling code',
+  privacyNote: 'By submitting, you agree to our privacy policy. We will not share your information.',
+};
+
+const phoneCodes = [
+  { code: '', name: lang === 'zh' ? '请选择国家区号' : 'Select country code' },
+  { code: '+86', name: 'China +86' },
+  { code: '+1', name: 'USA/Canada +1' },
+  { code: '+44', name: 'UK +44' },
+  { code: '+61', name: 'Australia +61' },
+  { code: '+65', name: 'Singapore +65' },
+  { code: '+60', name: 'Malaysia +60' },
+  { code: '+62', name: 'Indonesia +62' },
+  { code: '+66', name: 'Thailand +66' },
+  { code: '+84', name: 'Vietnam +84' },
+  { code: '+91', name: 'India +91' },
+  { code: '+971', name: 'UAE +971' },
+  { code: '+966', name: 'Saudi Arabia +966' },
+  { code: '+234', name: 'Nigeria +234' },
+  { code: '+254', name: 'Kenya +254' },
+  { code: '+52', name: 'Mexico +52' },
+  { code: '+55', name: 'Brazil +55' },
+  { code: '+49', name: 'Germany +49' },
+  { code: '+33', name: 'France +33' },
+  { code: '+81', name: 'Japan +81' },
+  { code: '+82', name: 'South Korea +82' },
+  { code: '+7', name: 'Russia +7' },
+  { code: '+27', name: 'South Africa +27' },
+  { code: '+20', name: 'Egypt +20' },
+  { code: '+90', name: 'Turkey +90' },
+  { code: '+92', name: 'Pakistan +92' },
+  { code: '+63', name: 'Philippines +63' },
+  { code: '+855', name: 'Cambodia +855' },
+  { code: '+95', name: 'Myanmar +95' },
+  { code: '+other', name: 'Other' },
+];
+---
+
+{embed ? (
+  <div class="quote-form-wrapper" id={id}>
+    <h3>{texts.title}</h3>
+    <p class="form-subtitle">{texts.subtitle}</p>
+    <form class="quote-form quote-form-v2" id={`${id}-form`} novalidate data-lang={lang}>
+      <div class="form-success" id={`${id}-success`} role="alert"></div>
+
+      <!-- 路径切换按钮 -->
+      <div class="form-path-switch" role="tablist">
+        <button type="button" class="form-path-btn active" data-path="drawings" role="tab" aria-selected="true">
+          <span class="path-icon">📋</span>
+          <span class="path-text">{texts.tabDrawings}</span>
+        </button>
+        <button type="button" class="form-path-btn" data-path="nodrawings" role="tab" aria-selected="false">
+          <span class="path-icon">📐</span>
+          <span class="path-text">{texts.tabNoDrawings}</span>
+        </button>
+      </div>
+
+      <!-- 通用字段：姓名 + 邮箱 -->
+      <div class="form-grid form-grid-2">
+        <div class="form-field">
+          <label for={`${id}-name`}>{texts.name} <span class="req">*</span></label>
+          <input type="text" id={`${id}-name`} name="name" required autocomplete="name" />
+          <span class="field-error" data-error-for="name"></span>
+        </div>
+        <div class="form-field">
+          <label for={`${id}-email`}>{texts.email}</label>
+          <input type="email" id={`${id}-email`} name="email" autocomplete="email" />
+          <span class="field-error" data-error-for="email"></span>
+        </div>
+      </div>
+
+      <!-- 通用字段：国家区号 + WhatsApp/电话 + 微信 -->
+      <div class="form-grid form-grid-3">
+        <div class="form-field">
+          <label for={`${id}-phone-code`}>{texts.phoneCode} <span class="req">*</span></label>
+          <select id={`${id}-phone-code`} name="phone_code" required>
+            {phoneCodes.map(c => <option value={c.code}>{c.name}</option>)}
+          </select>
+          <span class="field-error" data-error-for="phone_code"></span>
+        </div>
+        <div class="form-field">
+          <label for={`${id}-phone`}>{texts.phone} <span class="req">*</span></label>
+          <input type="tel" id={`${id}-phone`} name="phone" required autocomplete="tel" />
+          <span class="field-error" data-error-for="phone"></span>
+        </div>
+        <div class="form-field">
+          <label for={`${id}-wechat`}>{texts.wechat} <span class="req">*</span></label>
+          <input type="text" id={`${id}-wechat`} name="wechat" required placeholder={texts.wechatPlaceholder} />
+          <span class="field-error" data-error-for="wechat"></span>
+        </div>
+      </div>
+
+      <!-- 通用字段：项目所在国家 -->
+      <div class="form-field">
+        <label for={`${id}-country`}>{texts.country} <span class="req">*</span></label>
+        <input type="text" id={`${id}-country`} name="country" required />
+        <span class="field-error" data-error-for="country"></span>
+      </div>
+
+      <!-- 路径A：有图纸 -->
+      <div class="form-path-panel active" data-panel="drawings">
+        <div class="form-field form-upload">
+          <label for={`${id}-drawing`}>{texts.drawingUpload}</label>
+          <div class="upload-area">
+            <input type="file" id={`${id}-drawing`} name="drawings" accept=".pdf,.dwg,.dxf,.jpg,.jpeg,.png,.xls,.xlsx" multiple />
+            <div class="upload-placeholder">
+              <span class="upload-icon">📁</span>
+              <span class="upload-text">{lang === 'zh' ? '点击或拖拽文件到此处' : 'Click or drag files here'}</span>
+            </div>
+          </div>
+          <small class="form-hint">{texts.drawingHint}</small>
+        </div>
+      </div>
+
+      <!-- 路径B：无图纸 -->
+      <div class="form-path-panel" data-panel="nodrawings">
+        <div class="form-field">
+          <label for={`${id}-building-type`}>{texts.buildingType} <span class="req">*</span></label>
+          <select id={`${id}-building-type`} name="projectType" required>
+            {texts.buildingTypeOptions.map((opt, i) => <option value={i === 0 ? '' : opt}>{opt}</option>)}
+          </select>
+          <span class="field-error" data-error-for="projectType"></span>
+        </div>
+        <div class="form-grid form-grid-3">
+          <div class="form-field">
+            <label for={`${id}-length`}>{texts.length}</label>
+            <input type="number" id={`${id}-length`} name="length" min="0" step="0.1" />
+          </div>
+          <div class="form-field">
+            <label for={`${id}-width`}>{texts.width}</label>
+            <input type="number" id={`${id}-width`} name="width" min="0" step="0.1" />
+          </div>
+          <div class="form-field">
+            <label for={`${id}-height`}>{texts.height}</label>
+            <input type="number" id={`${id}-height`} name="height" min="0" step="0.1" />
+          </div>
+        </div>
+        <div class="form-grid form-grid-2">
+          <div class="form-field">
+            <label for={`${id}-intended-use`}>{texts.intendedUse} <span class="req">*</span></label>
+            <input type="text" id={`${id}-intended-use`} name="intendedUse" required placeholder={texts.intendedUsePlaceholder} />
+            <span class="field-error" data-error-for="intendedUse"></span>
+          </div>
+          <div class="form-field">
+            <label for={`${id}-crane`}>{texts.crane}</label>
+            <select id={`${id}-crane`} name="hasCrane">
+              {texts.craneOptions.map((opt, i) => <option value={i === 0 ? '' : opt}>{opt}</option>)}
+            </select>
+          </div>
+        </div>
+      </div>
+
+      <!-- 通用：项目说明 -->
+      <div class="form-field">
+        <label for={`${id}-message`}>{texts.message}</label>
+        <textarea id={`${id}-message`} name="message" rows="4" placeholder={texts.messagePlaceholder}></textarea>
+      </div>
+
+      <!-- UTM隐藏字段 -->
+      <input type="hidden" name="utm_source" />
+      <input type="hidden" name="utm_medium" />
+      <input type="hidden" name="utm_campaign" />
+      <input type="hidden" name="utm_content" />
+      <input type="hidden" name="utm_term" />
+      <input type="hidden" name="landing_page" />
+      <input type="hidden" name="gclid" />
+      <input type="hidden" name="gbraid" />
+      <input type="hidden" name="wbraid" />
+      <input type="hidden" name="fbclid" />
+
+      <button type="submit" class="btn btn-primary btn-submit-full" data-submit-text={texts.submitDrawings} data-submit-text-nodrawings={texts.submitNoDrawings}>
+        {texts.submitDrawings}
+      </button>
+      <p class="form-privacy">{texts.privacyNote}</p>
+    </form>
+  </div>
+) : (
+<section class="quote-form-section" id={id}>
+  <div class="container">
+    <form class="quote-form quote-form-v2" id={`${id}-form`} novalidate data-lang={lang}>
+      <h2>{texts.title}</h2>
+      <p class="form-subtitle">{texts.subtitle}</p>
+
+      <div class="form-success" id={`${id}-success`} role="alert"></div>
+
+      <div class="form-path-switch" role="tablist">
+        <button type="button" class="form-path-btn active" data-path="drawings" role="tab" aria-selected="true">
+          <span class="path-icon">📋</span>
+          <span class="path-text">{texts.tabDrawings}</span>
+        </button>
+        <button type="button" class="form-path-btn" data-path="nodrawings" role="tab" aria-selected="false">
+          <span class="path-icon">📐</span>
+          <span class="path-text">{texts.tabNoDrawings}</span>
+        </button>
+      </div>
+
+      <div class="form-grid form-grid-2">
+        <div class="form-field">
+          <label for={`${id}-name`}>{texts.name} <span class="req">*</span></label>
+          <input type="text" id={`${id}-name`} name="name" required autocomplete="name" />
+          <span class="field-error" data-error-for="name"></span>
+        </div>
+        <div class="form-field">
+          <label for={`${id}-email`}>{texts.email}</label>
+          <input type="email" id={`${id}-email`} name="email" autocomplete="email" />
+          <span class="field-error" data-error-for="email"></span>
+        </div>
+      </div>
+
+      <div class="form-grid form-grid-3">
+        <div class="form-field">
+          <label for={`${id}-phone-code`}>{texts.phoneCode} <span class="req">*</span></label>
+          <select id={`${id}-phone-code`} name="phone_code" required>
+            {phoneCodes.map(c => <option value={c.code}>{c.name}</option>)}
+          </select>
+          <span class="field-error" data-error-for="phone_code"></span>
+        </div>
+        <div class="form-field">
+          <label for={`${id}-phone`}>{texts.phone} <span class="req">*</span></label>
+          <input type="tel" id={`${id}-phone`} name="phone" required autocomplete="tel" />
+          <span class="field-error" data-error-for="phone"></span>
+        </div>
+        <div class="form-field">
+          <label for={`${id}-wechat`}>{texts.wechat} <span class="req">*</span></label>
+          <input type="text" id={`${id}-wechat`} name="wechat" required placeholder={texts.wechatPlaceholder} />
+          <span class="field-error" data-error-for="wechat"></span>
+        </div>
+      </div>
+
+      <div class="form-field">
+        <label for={`${id}-country`}>{texts.country} <span class="req">*</span></label>
+        <input type="text" id={`${id}-country`} name="country" required />
+        <span class="field-error" data-error-for="country"></span>
+      </div>
+
+      <div class="form-path-panel active" data-panel="drawings">
+        <div class="form-field form-upload">
+          <label for={`${id}-drawing`}>{texts.drawingUpload}</label>
+          <div class="upload-area">
+            <input type="file" id={`${id}-drawing`} name="drawings" accept=".pdf,.dwg,.dxf,.jpg,.jpeg,.png,.xls,.xlsx" multiple />
+            <div class="upload-placeholder">
+              <span class="upload-icon">📁</span>
+              <span class="upload-text">{lang === 'zh' ? '点击或拖拽文件到此处' : 'Click or drag files here'}</span>
+            </div>
+          </div>
+          <small class="form-hint">{texts.drawingHint}</small>
+        </div>
+      </div>
+
+      <div class="form-path-panel" data-panel="nodrawings">
+        <div class="form-field">
+          <label for={`${id}-building-type`}>{texts.buildingType} <span class="req">*</span></label>
+          <select id={`${id}-building-type`} name="projectType" required>
+            {texts.buildingTypeOptions.map((opt, i) => <option value={i === 0 ? '' : opt}>{opt}</option>)}
+          </select>
+          <span class="field-error" data-error-for="projectType"></span>
+        </div>
+        <div class="form-grid form-grid-3">
+          <div class="form-field">
+            <label for={`${id}-length`}>{texts.length}</label>
+            <input type="number" id={`${id}-length`} name="length" min="0" step="0.1" />
+          </div>
+          <div class="form-field">
+            <label for={`${id}-width`}>{texts.width}</label>
+            <input type="number" id={`${id}-width`} name="width" min="0" step="0.1" />
+          </div>
+          <div class="form-field">
+            <label for={`${id}-height`}>{texts.height}</label>
+            <input type="number" id={`${id}-height`} name="height" min="0" step="0.1" />
+          </div>
+        </div>
+        <div class="form-grid form-grid-2">
+          <div class="form-field">
+            <label for={`${id}-intended-use`}>{texts.intendedUse} <span class="req">*</span></label>
+            <input type="text" id={`${id}-intended-use`} name="intendedUse" required placeholder={texts.intendedUsePlaceholder} />
+            <span class="field-error" data-error-for="intendedUse"></span>
+          </div>
+          <div class="form-field">
+            <label for={`${id}-crane`}>{texts.crane}</label>
+            <select id={`${id}-crane`} name="hasCrane">
+              {texts.craneOptions.map((opt, i) => <option value={i === 0 ? '' : opt}>{opt}</option>)}
+            </select>
+          </div>
+        </div>
+      </div>
+
+      <div class="form-field">
+        <label for={`${id}-message`}>{texts.message}</label>
+        <textarea id={`${id}-message`} name="message" rows="4" placeholder={texts.messagePlaceholder}></textarea>
+      </div>
+
+      <input type="hidden" name="utm_source" />
+      <input type="hidden" name="utm_medium" />
+      <input type="hidden" name="utm_campaign" />
+      <input type="hidden" name="utm_content" />
+      <input type="hidden" name="utm_term" />
+      <input type="hidden" name="landing_page" />
+      <input type="hidden" name="gclid" />
+      <input type="hidden" name="gbraid" />
+      <input type="hidden" name="wbraid" />
+      <input type="hidden" name="fbclid" />
+
+      <button type="submit" class="btn btn-primary btn-submit-full" data-submit-text={texts.submitDrawings} data-submit-text-nodrawings={texts.submitNoDrawings}>
+        {texts.submitDrawings}
+      </button>
+      <p class="form-privacy">{texts.privacyNote}</p>
+    </form>
+  </div>
+</section>
+)}
+
+<script>
+  // QuoteForm V2 - 双路径切换、前端验证、UTM自动填充
+  document.addEventListener('DOMContentLoaded', function() {
+    const forms = document.querySelectorAll('.quote-form-v2');
+    if (!forms.length) return;
+
+    // UTM参数自动填充
+    const urlParams = new URLSearchParams(window.location.search);
+    const utmFields = ['utm_source', 'utm_medium', 'utm_campaign', 'utm_content', 'utm_term', 'gclid', 'gbraid', 'wbraid', 'fbclid'];
+
+    forms.forEach(form => {
+      // 填充UTM
+      utmFields.forEach(field => {
+        const value = urlParams.get(field);
+        if (value) {
+          const hidden = form.querySelector(`input[name="${field}"]`);
+          if (hidden) hidden.value = value;
+        }
+      });
+      // 填充landing_page
+      const landingInput = form.querySelector('input[name="landing_page"]');
+      if (landingInput) landingInput.value = window.location.pathname;
+
+      // 路径切换
+      const pathBtns = form.querySelectorAll('.form-path-btn');
+      const panels = form.querySelectorAll('.form-path-panel');
+      const submitBtn = form.querySelector('.btn-submit-full');
+
+      pathBtns.forEach(btn => {
+        btn.addEventListener('click', function() {
+          const path = this.dataset.path;
+          pathBtns.forEach(b => {
+            b.classList.toggle('active', b === this);
+            b.setAttribute('aria-selected', b === this ? 'true' : 'false');
+          });
+          panels.forEach(p => {
+            p.classList.toggle('active', p.dataset.panel === path);
+          });
+          // 更新提交按钮文字
+          if (submitBtn) {
+            submitBtn.textContent = path === 'drawings'
+              ? submitBtn.dataset.submitText
+              : submitBtn.dataset.submitTextNodrawings;
+          }
+          // 清除错误
+          form.querySelectorAll('.field-error').forEach(e => e.textContent = '');
+          form.querySelectorAll('.form-field.error').forEach(f => f.classList.remove('error'));
+        });
+      });
+
+      // 文件上传区域交互
+      const uploadArea = form.querySelector('.upload-area');
+      const fileInput = form.querySelector('input[type="file"]');
+      if (uploadArea && fileInput) {
+        uploadArea.addEventListener('click', () => fileInput.click());
+        uploadArea.addEventListener('dragover', (e) => {
+          e.preventDefault();
+          uploadArea.classList.add('dragover');
+        });
+        uploadArea.addEventListener('dragleave', () => uploadArea.classList.remove('dragover'));
+        uploadArea.addEventListener('drop', (e) => {
+          e.preventDefault();
+          uploadArea.classList.remove('dragover');
+          if (e.dataTransfer.files.length) {
+            fileInput.files = e.dataTransfer.files;
+            updateUploadText();
+          }
+        });
+        fileInput.addEventListener('change', updateUploadText);
+
+        function updateUploadText() {
+          const placeholder = uploadArea.querySelector('.upload-text');
+          if (placeholder && fileInput.files.length) {
+            const names = Array.from(fileInput.files).map(f => f.name).join(', ');
+            placeholder.textContent = names.length > 60 ? names.substring(0, 60) + '...' : names;
+          }
+        }
+      }
+
+      // 表单验证和提交
+      form.addEventListener('submit', function(e) {
+        e.preventDefault();
+        let isValid = true;
+        const activePath = form.querySelector('.form-path-panel.active').dataset.panel;
+
+        // 清除之前的错误
+        form.querySelectorAll('.field-error').forEach(e => e.textContent = '');
+        form.querySelectorAll('.form-field').forEach(f => f.classList.remove('error'));
+
+        // 验证通用必填字段
+        const requiredFields = [
+          { name: 'name', msg: form.dataset.lang === 'zh' ? '请输入姓名' : 'Please enter your name' },
+          { name: 'phone_code', msg: form.dataset.lang === 'zh' ? '请选择国家区号' : 'Please select country / calling code' },
+          { name: 'phone', msg: form.dataset.lang === 'zh' ? '请输入WhatsApp或电话' : 'Please enter WhatsApp or phone' },
+          { name: 'wechat', msg: form.dataset.lang === 'zh' ? '请输入微信号' : 'Please enter WeChat ID' },
+          { name: 'country', msg: form.dataset.lang === 'zh' ? '请输入项目所在国家' : 'Please enter the project country' },
+        ];
+
+        requiredFields.forEach(field => {
+          const input = form.querySelector(`[name="${field.name}"]`);
+          if (!input) return;
+          let valid = input.value.trim() !== '';
+          if (!valid) {
+            isValid = false;
+            const errorEl = form.querySelector(`[data-error-for="${field.name}"]`);
+            if (errorEl) errorEl.textContent = field.msg;
+            input.closest('.form-field')?.classList.add('error');
+          }
+        });
+
+        // Email为可选，但如果填写了则验证格式
+        const emailInput = form.querySelector('[name="email"]');
+        if (emailInput && emailInput.value.trim() !== '') {
+          const emailValid = /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(emailInput.value);
+          if (!emailValid) {
+            isValid = false;
+            const errorEl = form.querySelector('[data-error-for="email"]');
+            if (errorEl) errorEl.textContent = form.dataset.lang === 'zh' ? '请输入有效邮箱' : 'Please enter a valid email';
+            emailInput.closest('.form-field')?.classList.add('error');
+          }
+        }
+
+        // 验证无图纸路径的额外必填
+        if (activePath === 'nodrawings') {
+          const buildingType = form.querySelector('[name="projectType"]');
+          if (buildingType && !buildingType.value) {
+            isValid = false;
+            const errorEl = form.querySelector('[data-error-for="projectType"]');
+            if (errorEl) errorEl.textContent = form.dataset.lang === 'zh' ? '请选择项目类型' : 'Please select project type';
+            buildingType.closest('.form-field')?.classList.add('error');
+          }
+          const intendedUse = form.querySelector('[name="intendedUse"]');
+          if (intendedUse && !intendedUse.value.trim()) {
+            isValid = false;
+            const errorEl = form.querySelector('[data-error-for="intendedUse"]');
+            if (errorEl) errorEl.textContent = form.dataset.lang === 'zh' ? '请输入项目用途' : 'Please enter intended use';
+            intendedUse.closest('.form-field')?.classList.add('error');
+          }
+        }
+
+        if (!isValid) {
+          // 滚动到第一个错误
+          const firstError = form.querySelector('.form-field.error');
+          if (firstError) firstError.scrollIntoView({ behavior: 'smooth', block: 'center' });
+          return;
+        }
+
+        // 验证成功 - Preview环境提示
+        const successEl = form.querySelector('.form-success');
+        if (successEl) {
+          successEl.textContent = form.dataset.lang === 'zh'
+            ? '测试环境：表单验证成功，当前不会真实发送。'
+            : 'Preview mode: Form validation successful. No inquiry was sent.';
+          successEl.classList.add('show');
+          successEl.scrollIntoView({ behavior: 'smooth', block: 'center' });
+        }
+        form.reset();
+        // 重置路径切换
+        pathBtns.forEach((b, i) => {
+          b.classList.toggle('active', i === 0);
+          b.setAttribute('aria-selected', i === 0 ? 'true' : 'false');
+        });
+        panels.forEach((p, i) => p.classList.toggle('active', i === 0));
+        if (submitBtn) submitBtn.textContent = submitBtn.dataset.submitText;
+        if (uploadArea) {
+          const placeholder = uploadArea.querySelector('.upload-text');
+          if (placeholder) placeholder.textContent = form.dataset.lang === 'zh' ? '点击或拖拽文件到此处' : 'Click or drag files here';
+        }
+      });
+    });
+  });
+</script>
+
+<style>
+  /* QuoteForm V2 样式 */
+  .quote-form-v2 {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+  }
+
+  .quote-form-v2 h2,
+  .quote-form-v2 h3 {
+    margin-bottom: 4px;
+  }
+
+  .quote-form-v2 .form-subtitle {
+    color: var(--color-gray-500);
+    font-size: 0.9rem;
+    margin-bottom: 8px;
+  }
+
+  /* 路径切换按钮 - 明显的大按钮 */
+  .form-path-switch {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 12px;
+    margin: 8px 0 16px;
+  }
+
+  .form-path-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    padding: 16px 20px;
+    background: var(--color-gray-100);
+    border: 2px solid var(--color-gray-200);
+    border-radius: 10px;
+    font-size: 0.95rem;
+    font-weight: 600;
+    color: var(--color-gray-600);
+    cursor: pointer;
+    transition: all 0.25s ease;
+  }
+
+  .form-path-btn:hover {
+    border-color: var(--color-primary);
+    background: var(--color-white);
+    color: var(--color-primary);
+  }
+
+  .form-path-btn.active {
+    background: var(--color-primary);
+    border-color: var(--color-primary);
+    color: var(--color-white);
+    box-shadow: 0 4px 14px rgba(26, 86, 219, 0.25);
+  }
+
+  .form-path-btn .path-icon {
+    font-size: 1.2rem;
+  }
+
+  .form-path-btn .path-text {
+    line-height: 1.3;
+  }
+
+  /* 表单网格 */
+  .form-grid {
+    display: grid;
+    gap: 16px;
+  }
+
+  .form-grid-2 {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .form-grid-3 {
+    grid-template-columns: 1fr 1fr 1fr;
+  }
+
+  /* 表单字段 */
+  .form-field {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+  }
+
+  .form-field label {
+    font-size: 0.875rem;
+    font-weight: 600;
+    color: var(--color-gray-700);
+  }
+
+  .form-field .req {
+    color: #dc2626;
+  }
+
+  .form-field input,
+  .form-field select,
+  .form-field textarea {
+    width: 100%;
+    padding: 12px 14px;
+    border: 1.5px solid var(--color-gray-300);
+    border-radius: 8px;
+    font-size: 0.95rem;
+    font-family: inherit;
+    color: var(--color-gray-900);
+    background: var(--color-white);
+    transition: border-color 0.2s, box-shadow 0.2s;
+    min-height: 46px;
+  }
+
+  .form-field input:focus,
+  .form-field select:focus,
+  .form-field textarea:focus {
+    outline: none;
+    border-color: var(--color-primary);
+    box-shadow: 0 0 0 3px rgba(26, 86, 219, 0.1);
+  }
+
+  .form-field textarea {
+    min-height: 100px;
+    resize: vertical;
+  }
+
+  .form-field.error input,
+  .form-field.error select,
+  .form-field.error textarea {
+    border-color: #dc2626;
+  }
+
+  .field-error {
+    font-size: 0.8rem;
+    color: #dc2626;
+    min-height: 1em;
+  }
+
+  .form-hint {
+    font-size: 0.8rem;
+    color: var(--color-gray-500);
+  }
+
+  /* 文件上传区域 */
+  .form-upload .upload-area {
+    position: relative;
+    border: 2px dashed var(--color-gray-300);
+    border-radius: 10px;
+    padding: 28px 20px;
+    text-align: center;
+    cursor: pointer;
+    transition: all 0.2s;
+    background: var(--color-gray-50);
+    min-height: 100px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .form-upload .upload-area:hover,
+  .form-upload .upload-area.dragover {
+    border-color: var(--color-primary);
+    background: rgba(26, 86, 219, 0.03);
+  }
+
+  .form-upload .upload-area input[type="file"] {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    cursor: pointer;
+  }
+
+  .form-upload .upload-placeholder {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 8px;
+    pointer-events: none;
+  }
+
+  .form-upload .upload-icon {
+    font-size: 2rem;
+  }
+
+  .form-upload .upload-text {
+    font-size: 0.9rem;
+    color: var(--color-gray-500);
+    max-width: 100%;
+    word-break: break-all;
+  }
+
+  /* 路径面板 */
+  .form-path-panel {
+    display: none;
+    flex-direction: column;
+    gap: 16px;
+  }
+
+  .form-path-panel.active {
+    display: flex;
+    animation: panelFadeIn 0.3s ease;
+  }
+
+  @keyframes panelFadeIn {
+    from { opacity: 0; transform: translateY(8px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+
+  /* 提交按钮 */
+  .btn-submit-full {
+    width: 100%;
+    padding: 16px 24px;
+    font-size: 1rem;
+    font-weight: 600;
+    border-radius: 10px;
+    margin-top: 8px;
+    min-height: 52px;
+  }
+
+  .form-privacy {
+    font-size: 0.8rem;
+    color: var(--color-gray-500);
+    text-align: center;
+  }
+
+  /* 成功提示 */
+  .form-success {
+    display: none;
+    padding: 14px 18px;
+    background: #dcfce7;
+    border: 1px solid #86efac;
+    border-radius: 8px;
+    color: #166534;
+    font-size: 0.9rem;
+    font-weight: 500;
+  }
+
+  .form-success.show {
+    display: block;
+    animation: panelFadeIn 0.3s ease;
+  }
+
+  /* 移动端响应式 */
+  @media (max-width: 768px) {
+    .form-grid-2,
+    .form-grid-3 {
+      grid-template-columns: 1fr;
+    }
+
+    .form-path-switch {
+      grid-template-columns: 1fr;
+    }
+
+    .form-path-btn {
+      padding: 14px 16px;
+      font-size: 0.9rem;
+    }
+
+    .form-field input,
+    .form-field select,
+    .form-field textarea {
+      min-height: 48px;
+      font-size: 1rem;
+    }
+
+    .btn-submit-full {
+      min-height: 54px;
+      font-size: 1.05rem;
+    }
+  }
+
+  @media (max-width: 375px) {
+    .quote-form-v2 {
+      gap: 14px;
+    }
+
+    .form-path-btn {
+      padding: 12px 14px;
+      font-size: 0.85rem;
+    }
+
+    .form-path-btn .path-icon {
+      font-size: 1.1rem;
+    }
+
+    .form-upload .upload-area {
+      padding: 20px 16px;
+      min-height: 90px;
+    }
+  }
+</style>

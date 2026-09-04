@@ -1,0 +1,128 @@
+---
+// ZhongSai V2 - Chinese Projects Hub (12 Domestic Projects)
+import BaseLayout from '../../../layouts/BaseLayout.astro';
+import ProjectCard from '../../../components/ProjectCard.astro';
+import QuoteForm from '../../../components/QuoteForm.astro';
+import { projects } from '../../../data/projects-data';
+
+const lang = 'zh';
+const title = '钢结构项目案例 | 中赛钢构制造合作项目';
+const description = '查看中赛钢构参与的物流仓储、工业制造、商业公共、石化能源等钢结构制造合作项目。';
+---
+
+<BaseLayout title={title} description={description} lang={lang}>
+  <section class="projects-hero">
+    <div class="container">
+      <div class="hub-breadcrumb">
+        <a href="/zh/">首页</a><span>/</span><span>项目案例</span>
+      </div>
+      <p class="eyebrow">项目案例</p>
+      <h1>钢结构制造合作项目案例</h1>
+      <p class="projects-subtitle">
+        展示中赛钢构参与的物流仓储、工业制造、商业公共及石化能源等钢结构制造合作项目。
+      </p>
+    </div>
+  </section>
+
+  <section class="projects-grid-section">
+    <div class="container">
+      <div class="projects-grid">
+        {projects.map(project => (
+          <ProjectCard project={project} lang={lang} />
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <section class="projects-disclaimer">
+    <div class="container">
+      <p>网站展示的项目资料依据现有项目记录整理，具体合作范围及技术信息以项目实际资料为准。</p>
+    </div>
+  </section>
+
+  <section class="projects-quote" id="quote-form">
+    <div class="container">
+      <div class="quote-intro">
+        <p class="eyebrow">项目报价</p>
+        <h2>有类似项目需求？</h2>
+        <p>提交图纸或项目资料，我们将基于类似项目经验，为您的项目提供制造与供应方案。</p>
+      </div>
+      <QuoteForm lang={lang} />
+    </div>
+  </section>
+</BaseLayout>
+
+<style>
+.projects-hero {
+  padding: 56px 0 40px;
+  background: linear-gradient(135deg, #0a3d62 0%, #0d4f7a 100%);
+  color: #fff;
+}
+.projects-hero h1 {
+  font-size: 2.2rem;
+  margin: 12px 0 16px;
+  color: #fff;
+  max-width: 800px;
+}
+.projects-subtitle {
+  font-size: 1.05rem;
+  color: rgba(255,255,255,0.85);
+  max-width: 700px;
+  line-height: 1.7;
+}
+.projects-grid-section {
+  padding: 56px 0;
+  background: #f8f9fa;
+}
+.projects-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 28px;
+}
+.projects-disclaimer {
+  padding: 24px 0;
+  background: #fff;
+  border-top: 1px solid rgba(0,0,0,0.06);
+}
+.projects-disclaimer p {
+  color: #888;
+  font-size: 0.88rem;
+  text-align: center;
+  margin: 0;
+}
+.projects-quote {
+  padding: 56px 0;
+  background: #f8f9fa;
+}
+.quote-intro {
+  text-align: center;
+  margin-bottom: 32px;
+}
+.quote-intro h2 {
+  font-size: 1.8rem;
+  color: #0a3d62;
+  margin: 8px 0 12px;
+}
+.quote-intro p {
+  color: #555;
+  max-width: 600px;
+  margin: 0 auto;
+}
+@media (max-width: 1024px) {
+  .projects-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+@media (max-width: 640px) {
+  .projects-hero h1 {
+    font-size: 1.6rem;
+  }
+  .projects-grid {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+  .quote-intro h2 {
+    font-size: 1.4rem;
+  }
+}
+</style>

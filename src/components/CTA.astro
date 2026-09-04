@@ -1,0 +1,31 @@
+---
+// CTA.astro - 统一CTA号召性用语组件
+interface Props {
+  title: string;
+  description?: string;
+  lang?: 'zh' | 'en';
+  primaryCta?: { label: string; href: string };
+  secondaryCta?: { label: string; href: string };
+}
+
+const { title, description, lang = 'zh', primaryCta, secondaryCta } = Astro.props;
+---
+
+<section class="cta-section">
+  <div class="container">
+    <h2>{title}</h2>
+    {description && <p>{description}</p>}
+    <div class="cta-actions">
+      {primaryCta && (
+        <a href={primaryCta.href} class="btn btn-primary">
+          {primaryCta.label}
+        </a>
+      )}
+      {secondaryCta && (
+        <a href={secondaryCta.href} class="btn btn-secondary">
+          {secondaryCta.label}
+        </a>
+      )}
+    </div>
+  </div>
+</section>

@@ -1,0 +1,370 @@
+---
+// ZhongSai V2 - English About Us Page
+import BaseLayout from '../../../layouts/BaseLayout.astro';
+import QuoteForm from '../../../components/QuoteForm.astro';
+import '../../../styles/hub.css';
+import '../../../styles/manufacturing.css';
+
+const lang = 'en';
+const title = 'About ZhongSai Steel Structure | Steel Structure Manufacturing & Export';
+const description = 'Learn about ZhongSai Steel Structure, a China-based steel structure manufacturer and export supplier providing detailing, fabrication, packing, export coordination and overseas installation technical guidance.';
+
+const coreFacts = [
+  { num: '15+', label: 'Years Export Experience' },
+  { num: '100,000 m²', label: 'Production Base' },
+  { num: '100,000 Tonnes', label: 'Annual Capacity' },
+  { num: '300+', label: 'Frontline Workers' }
+];
+
+const services = [
+  {
+    num: '01',
+    title: 'Design & Detailing Support',
+    desc: 'Structural design coordination and shop drawing preparation based on project requirements and confirmed drawings.'
+  },
+  {
+    num: '02',
+    title: 'Steel Fabrication',
+    desc: 'Cutting, assembly, welding, straightening, drilling and custom component fabrication organized according to project drawings.'
+  },
+  {
+    num: '03',
+    title: 'Structural Steel Components',
+    desc: 'Supply of fabricated steel beams, columns, trusses, bracing, secondary members and cladding systems as required.'
+  },
+  {
+    num: '04',
+    title: 'Packing & Container Loading',
+    desc: 'Component marking, packing lists and container loading plans coordinated according to component type and export requirements.'
+  },
+  {
+    num: '05',
+    title: 'Export Documentation & Logistics',
+    desc: 'Export documentation support and logistics coordination for overseas project delivery, organized according to project scope.'
+  },
+  {
+    num: '06',
+    title: 'Overseas Installation Guidance',
+    desc: 'Installation drawings, video resources and technical guidance to support the customer or local construction team during erection.'
+  }
+];
+
+const supplyChain = [
+  { num: '01', title: 'Project Requirements', desc: 'Project country, building use, dimensions and available drawings are reviewed.' },
+  { num: '02', title: 'Design / Detailing Coordination', desc: 'Structural design and shop drawing coordination based on confirmed project scope.' },
+  { num: '03', title: 'Fabrication', desc: 'Steel components fabricated according to confirmed drawings and project specifications.' },
+  { num: '04', title: 'Inspection', desc: 'Manufacturing and inspection organized according to project drawings and technical requirements.' },
+  { num: '05', title: 'Component Marking & Packing', desc: 'Component marking and packing organized according to confirmed drawings and export requirements.' },
+  { num: '06', title: 'Container Loading', desc: 'Container loading plans coordinated to optimize space utilization and protect components during transport.' },
+  { num: '07', title: 'Export Coordination', desc: 'Export documentation support and logistics coordination for overseas project delivery.' },
+  { num: '08', title: 'Overseas Technical Guidance', desc: 'Installation guidance and technical support provided to the customer or local construction team.' }
+];
+
+const certifications = [
+  {
+    title: 'ISO 9001',
+    desc: 'Quality management system requirements followed in manufacturing and project coordination.'
+  },
+  {
+    title: 'Malaysia CIDB',
+    desc: 'Malaysia market-related qualification and registration for projects in the Malaysian market.'
+  },
+  {
+    title: 'GB / ASTM / EN',
+    desc: 'Project specifications can be coordinated according to applicable project standards and requirements.'
+  }
+];
+---
+
+<BaseLayout title={title} description={description} lang={lang}>
+  <!-- Hero -->
+  <section class="hub-hero">
+    <div class="hub-hero-bg" style="background-image: url('/images/manufacturing/real/factory-aerial-panorama.png')"></div>
+    <div class="hub-hero-overlay"></div>
+    <div class="container hub-hero-content">
+      <div class="hub-breadcrumb">
+        <a href="/en/">Home</a><span>/</span><span>About ZhongSai</span>
+      </div>
+      <p class="eyebrow">ABOUT ZHONGSAI</p>
+      <h1>Steel Structure Manufacturing for Overseas Projects</h1>
+      <p class="hub-hero-desc">ZhongSai Steel Structure is a China-based steel structure manufacturer and export supplier supporting overseas factories, warehouses and engineered steel building projects from detailing and fabrication to packing, export coordination and overseas installation technical guidance.</p>
+    </div>
+  </section>
+
+  <!-- Section 02: Who We Are -->
+  <section class="hub-section">
+    <div class="container">
+      <div class="hub-section-head">
+        <p class="section-num">01</p>
+        <h2>A Steel Structure Manufacturer Built for Export Projects</h2>
+      </div>
+      <div class="about-intro">
+        <p>ZhongSai Steel Structure supports overseas project owners, engineering companies, contractors and procurement teams with structural steel manufacturing and export supply.</p>
+        <p>Our work focuses on translating confirmed project requirements and drawings into fabricated steel components prepared for export delivery.</p>
+        <p>Depending on project scope, ZhongSai may support detailing, fabrication, component supply, packing, container loading, export documentation coordination and overseas installation technical guidance.</p>
+        <p><strong>Local erection and construction are handled by the customer or local construction team.</strong></p>
+      </div>
+
+      <!-- Core Facts -->
+      <div class="about-facts">
+        {coreFacts.map(fact => (
+          <div class="about-fact-card">
+            <div class="about-fact-num">{fact.num}</div>
+            <div class="about-fact-label">{fact.label}</div>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- Section 03: Real Manufacturing Base -->
+  <section class="hub-section hub-section-dark">
+    <div class="container">
+      <div class="hub-section-head">
+        <p class="section-num">02</p>
+        <h2>Real Factory. Real Manufacturing.</h2>
+      </div>
+      <div class="manufacturing-evidence">
+        <div class="evidence-main">
+          <img src="/images/manufacturing/real/factory-overview-9819.jpg" alt="ZhongSai steel structure factory production floor" width="800" height="600" loading="lazy">
+        </div>
+        <div class="evidence-grid">
+          <div class="evidence-item">
+            <img src="/images/manufacturing/real/cutting-prep-9809.jpg" alt="CNC cutting and steel preparation" width="400" height="300" loading="lazy">
+            <span>CNC Cutting</span>
+          </div>
+          <div class="evidence-item">
+            <img src="/images/manufacturing/real/welding-9820.jpg" alt="Steel welding and fabrication" width="400" height="300" loading="lazy">
+            <span>Welding</span>
+          </div>
+          <div class="evidence-item">
+            <img src="/images/manufacturing/real/assembly-welding-9821.jpg" alt="Steel assembly and fabrication workshop" width="400" height="300" loading="lazy">
+            <span>Assembly & Fabrication</span>
+          </div>
+        </div>
+      </div>
+      <p class="evidence-caption">100,000 m² production base covering cutting, assembly, welding, surface treatment, quality inspection, component marking and packing for export delivery.</p>
+    </div>
+  </section>
+
+  <!-- Section 04: What We Provide -->
+  <section class="hub-section">
+    <div class="container">
+      <div class="hub-section-head">
+        <p class="section-num">03</p>
+        <h2>What ZhongSai Supports</h2>
+      </div>
+      <div class="capability-grid">
+        {services.map(svc => (
+          <div class="capability-card">
+            <div class="capability-num">{svc.num}</div>
+            <h3>{svc.title}</h3>
+            <p>{svc.desc}</p>
+          </div>
+        ))}
+      </div>
+
+      <!-- Supply Scope Boundary -->
+      <div class="boundary-section">
+        <div class="boundary-col">
+          <h3>ZhongSai Provides</h3>
+          <ul>
+            <li>Project requirement coordination</li>
+            <li>Design / detailing support</li>
+            <li>Fabrication</li>
+            <li>Component and material supply</li>
+            <li>Packing and container loading</li>
+            <li>Export documentation support</li>
+            <li>Logistics coordination</li>
+            <li>Overseas installation technical guidance</li>
+          </ul>
+        </div>
+        <div class="boundary-col">
+          <h3>Customer / Local Team Handles</h3>
+          <ul>
+            <li>Local construction</li>
+            <li>Local erection</li>
+            <li>Site labor</li>
+            <li>Local permits and statutory approvals where applicable</li>
+          </ul>
+        </div>
+      </div>
+      <p class="boundary-note">This division of responsibility helps keep manufacturing and export scope clear from the beginning of the project.</p>
+    </div>
+  </section>
+
+  <!-- Section 05: Manufacturing & Export Capability -->
+  <section class="hub-section hub-section-dark">
+    <div class="container">
+      <div class="hub-section-head">
+        <p class="section-num">04</p>
+        <h2>From Drawings to Export Preparation</h2>
+      </div>
+      <div class="process-grid">
+        {supplyChain.map(step => (
+          <div class="process-card">
+            <div class="process-card-num">{step.num}</div>
+            <h3>{step.title}</h3>
+            <p>{step.desc}</p>
+          </div>
+        ))}
+      </div>
+      <div class="section-cta">
+        <a href="/en/manufacturing-quality/" class="btn btn-outline">View Detailed Manufacturing Process →</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Section 06: Certifications & Standards -->
+  <section class="hub-section">
+    <div class="container">
+      <div class="hub-section-head">
+        <p class="section-num">05</p>
+        <h2>Quality & Project Standards</h2>
+      </div>
+      <div class="cert-grid">
+        {certifications.map(cert => (
+          <div class="cert-card">
+            <h3>{cert.title}</h3>
+            <p>{cert.desc}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- Section 07: Project Cooperation / Quote CTA -->
+  <section class="hub-section hub-section-dark" id="quote">
+    <div class="container">
+      <div class="hub-section-head">
+        <p class="section-num">06</p>
+        <h2>Have Drawings or a Project Requirement?</h2>
+      </div>
+      <div class="quote-intro">
+        <p>If you already have drawings or a BOQ, send them for an initial project review.</p>
+        <p>If drawings are not yet available, provide the project country, building type, intended use and available dimensions.</p>
+      </div>
+      <QuoteForm lang="en" />
+    </div>
+  </section>
+</BaseLayout>
+
+<style>
+.about-intro {
+  max-width: 800px;
+  margin: 0 auto 48px;
+}
+.about-intro p {
+  margin-bottom: 16px;
+  line-height: 1.7;
+  color: var(--text-secondary, #555);
+}
+.about-facts {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 24px;
+  margin-top: 32px;
+}
+.about-fact-card {
+  text-align: center;
+  padding: 32px 16px;
+  background: var(--bg-light, #f8f9fa);
+  border-radius: 8px;
+}
+.about-fact-num {
+  font-size: 2rem;
+  font-weight: 700;
+  color: var(--primary, #0a3d62);
+  margin-bottom: 8px;
+}
+.about-fact-label {
+  font-size: 0.9rem;
+  color: var(--text-secondary, #666);
+}
+.boundary-section {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 32px;
+  margin-top: 48px;
+}
+.boundary-col {
+  padding: 32px;
+  border-radius: 8px;
+}
+.boundary-col:first-child {
+  background: rgba(10, 61, 98, 0.05);
+  border-left: 4px solid var(--primary, #0a3d62);
+}
+.boundary-col:last-child {
+  background: rgba(120, 120, 120, 0.05);
+  border-left: 4px solid #888;
+}
+.boundary-col h3 {
+  margin-bottom: 16px;
+  font-size: 1.1rem;
+}
+.boundary-col ul {
+  list-style: none;
+  padding: 0;
+}
+.boundary-col li {
+  padding: 8px 0;
+  border-bottom: 1px solid rgba(0,0,0,0.06);
+  font-size: 0.95rem;
+}
+.boundary-col li:last-child {
+  border-bottom: none;
+}
+.boundary-note {
+  text-align: center;
+  margin-top: 24px;
+  font-style: italic;
+  color: var(--text-secondary, #666);
+}
+.cert-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+}
+.cert-card {
+  padding: 32px;
+  background: var(--bg-light, #f8f9fa);
+  border-radius: 8px;
+  text-align: center;
+}
+.cert-card h3 {
+  font-size: 1.3rem;
+  color: var(--primary, #0a3d62);
+  margin-bottom: 12px;
+}
+.cert-card p {
+  font-size: 0.9rem;
+  color: var(--text-secondary, #666);
+  line-height: 1.6;
+}
+.quote-intro {
+  max-width: 700px;
+  margin: 0 auto 32px;
+  text-align: center;
+}
+.quote-intro p {
+  margin-bottom: 8px;
+  color: rgba(255,255,255,0.85);
+}
+@media (max-width: 900px) {
+  .about-facts {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .boundary-section {
+    grid-template-columns: 1fr;
+  }
+  .cert-grid {
+    grid-template-columns: 1fr;
+  }
+}
+@media (max-width: 600px) {
+  .about-fact-num {
+    font-size: 1.5rem;
+  }
+}
+</style>

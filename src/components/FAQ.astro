@@ -1,0 +1,66 @@
+---
+// FAQ.astro - 统一FAQ组件（纯CSS+少量JS，不复制旧站JS）
+interface FAQItem {
+  question: string;
+  answer: string;
+}
+
+interface Props {
+  items: FAQItem[];
+  idPrefix?: string;
+  lang?: 'zh' | 'en';
+}
+
+const { items, idPrefix = 'faq', lang = 'zh' } = Astro.props;
+---
+
+<div class="faq-list" id={`${idPrefix}-list`}>
+  {items.map((item, index) => {
+    const itemId = `${idPrefix}-${index + 1}`;
+    const answerId = `${itemId}-answer`;
+    return (
+      <div class="faq-item" id={itemId}>
+        <button 
+          class="faq-question" 
+          id={`${itemId}-question`}
+          aria-expanded="false" 
+          aria-controls={answerId}
+          data-faq-toggle
+        >
+          <span>{item.question}</span>
+          <span class="faq-icon" aria-hidden="true">+</span>
+        </button>
+        <div class="faq-answer" id={answerId} role="region" aria-labelledby={`${itemId}-question`}>
+          <div class="faq-answer-inner">
+            {item.answer}
+          </div>
+        </div>
+      </div>
+    );
+  })}
+</div>
+
+<script>
+  // FAQ展开/收起逻辑（纯JS，无依赖，不复制旧站代码）
+  document.querySelectorAll('[data-faq-toggle]').forEach(button => {
+    button.addEventListener('click', () => {
+      const isExpanded = button.getAttribute('aria-expanded') === 'true';
+      const answerId = button.getAttribute('aria-controls');
+      const answer = answerId ? document.getElementById(answerId) : null;
+
+      if (isExpanded) {
+        // 收起
+        button.setAttribute('aria-expanded', 'false');
+        if (answer) {
+          answer.style.maxHeight = '0';
+        }
+      } else {
+        // 展开
+        button.setAttribute('aria-expanded', 'true');
+        if (answer) {
+          answer.style.maxHeight = answer.scrollHeight + 'px';
+        }
+      }
+    });
+  });
+</script>

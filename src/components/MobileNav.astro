@@ -1,0 +1,86 @@
+---
+// MobileNav.astro - 移动端导航组件（唯一一套DOM）
+interface Props {
+  lang: 'zh' | 'en';
+  currentPath: string;
+}
+
+const { lang, currentPath } = Astro.props;
+
+const navItems = lang === 'zh' ? [
+  { label: '首页', href: '/zh/' },
+  { label: '产品', href: '/zh/products/' },
+  { label: '解决方案', href: '/zh/solutions/' },
+  { label: '构件与材料', href: '/zh/components/' },
+  { label: '项目案例', href: '/zh/projects/' },
+  { label: '制造能力', href: '/zh/manufacturing-quality/' },
+  { label: '关于中赛', href: '/zh/about/' },
+  { label: '联系我们', href: '/zh/contact/' },
+] : [
+  { label: 'Home', href: '/en/' },
+  { label: 'Products', href: '/en/products/' },
+  { label: 'Solutions', href: '/en/solutions/' },
+  { label: 'Components', href: '/en/components/' },
+  { label: 'Projects', href: '/en/projects/' },
+  { label: 'Manufacturing', href: '/en/manufacturing-quality/' },
+  { label: 'About', href: '/en/about/' },
+  { label: 'Contact', href: '/en/contact/' },
+];
+
+const otherLang = lang === 'zh' ? 'en' : 'zh';
+const otherLangPath = currentPath.replace(`/${lang}/`, `/${otherLang}/`);
+---
+
+<nav class="mobile-nav" id="mobile-nav" aria-label={lang === 'zh' ? '移动端导航' : 'Mobile navigation'}>
+  {navItems.map(item => (
+    <a href={item.href} data-mobile-link>{item.label}</a>
+  ))}
+  <a href={otherLangPath} class="mobile-lang-switch">
+    {lang === 'zh' ? 'English' : '中文'}
+  </a>
+  <div class="mobile-cta">
+    <a href={`/${lang}/contact/#quote-form`} class="btn btn-primary">
+      {lang === 'zh' ? '获取报价' : 'Get a Quote'}
+    </a>
+  </div>
+</nav>
+
+<script>
+  // 移动端菜单切换逻辑（纯JS，无依赖）
+  const toggle = document.getElementById('mobile-menu-toggle');
+  const mobileNav = document.getElementById('mobile-nav');
+  const body = document.body;
+
+  function closeMenu() {
+    if (toggle) toggle.setAttribute('aria-expanded', 'false');
+    if (mobileNav) mobileNav.classList.remove('is-open');
+    body.classList.remove('menu-open');
+  }
+
+  function openMenu() {
+    if (toggle) toggle.setAttribute('aria-expanded', 'true');
+    if (mobileNav) mobileNav.classList.add('is-open');
+    body.classList.add('menu-open');
+  }
+
+  if (toggle && mobileNav) {
+    toggle.addEventListener('click', () => {
+      const isOpen = toggle.getAttribute('aria-expanded') === 'true';
+      if (isOpen) {
+        closeMenu();
+      } else {
+        openMenu();
+      }
+    });
+
+    // 点击导航链接后关闭菜单
+    mobileNav.querySelectorAll('a').forEach(link => {
+      link.addEventListener('click', closeMenu);
+    });
+
+    // ESC键关闭菜单
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape') closeMenu();
+    });
+  }
+</script>
