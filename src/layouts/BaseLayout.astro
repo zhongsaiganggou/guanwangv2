@@ -3,6 +3,7 @@
 import SEOHead from '../components/SEOHead.astro';
 import Header from '../components/Header.astro';
 import Footer from '../components/Footer.astro';
+import { buildOrganizationJsonLd, buildBreadcrumbJsonLd } from '../data/seo-structure';
 import '../styles/global.css';
 
 interface Props {
@@ -14,12 +15,19 @@ interface Props {
 
 const { title, description, lang, noindex = false } = Astro.props;
 const currentPath = Astro.url.pathname;
+
+// 首页输出 Organization（每页至多 1 个）；正式内容页输出 BreadcrumbList；占位页不输出
+const isHome = currentPath === `/${lang}/` || currentPath === `/${lang}`;
+const orgLd = isHome && !noindex ? buildOrganizationJsonLd() : null;
+const crumbLd = !isHome && !noindex ? buildBreadcrumbJsonLd(currentPath) : null;
 ---
 
 <!DOCTYPE html>
 <html lang={lang === 'zh' ? 'zh-CN' : 'en'}>
 <head>
   <SEOHead title={title} description={description} lang={lang} noindex={noindex} />
+  {orgLd && <script type="application/ld+json" set:html={JSON.stringify(orgLd)} />}
+  {crumbLd && <script type="application/ld+json" set:html={JSON.stringify(crumbLd)} />}
 </head>
 <body>
   <Header lang={lang} currentPath={currentPath} />

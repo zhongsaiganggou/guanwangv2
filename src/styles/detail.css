@@ -114,6 +114,10 @@
   font-weight: 500;
 }
 
+.detail-breadcrumb .crumb-parent {
+  color: #64748b;
+}
+
 /* ---------- Section Common ---------- */
 .detail-section {
   padding: 72px 32px;
