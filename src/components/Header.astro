@@ -38,3 +38,26 @@ const { lang, currentPath, singleLanguage = false } = Astro.props;
 </header>
 
 <MobileNav lang={lang} currentPath={currentPath} singleLanguage={singleLanguage} />
+
+<script>
+  // Sticky header scroll state: add .scrolled when page scrolled
+  const header = document.querySelector('.site-header');
+  if (header) {
+    let ticking = false;
+    const updateHeader = () => {
+      if (window.scrollY > 10) {
+        header.classList.add('scrolled');
+      } else {
+        header.classList.remove('scrolled');
+      }
+      ticking = false;
+    };
+    window.addEventListener('scroll', () => {
+      if (!ticking) {
+        window.requestAnimationFrame(updateHeader);
+        ticking = true;
+      }
+    }, { passive: true });
+    updateHeader();
+  }
+</script>

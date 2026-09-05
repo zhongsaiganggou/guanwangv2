@@ -20,6 +20,7 @@
   --font-sans: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
   --max-width: 1200px;
   --header-height: 72px;
+  --header-height-scrolled: 56px;
 }
 
 * {
@@ -31,8 +32,13 @@
 html {
   scroll-behavior: smooth;
   /* sticky header offset for in-page / cross-page anchors */
-  scroll-padding-top: calc(var(--header-height) + 12px);
+  scroll-padding-top: calc(var(--header-height-scrolled) + 36px);
   overflow-x: hidden;
+}
+
+/* Ensure anchor targets clear the fixed header */
+[id] {
+  scroll-margin-top: calc(var(--header-height-scrolled) + 12px);
 }
 
 body {
@@ -65,12 +71,47 @@ img {
 
 /* Header */
 .site-header {
-  position: sticky;
+  position: fixed;
   top: 0;
-  z-index: 100;
+  left: 0;
+  width: 100%;
+  z-index: 1000;
   background: var(--color-white);
   border-bottom: 1px solid var(--color-gray-100);
   box-shadow: 0 1px 3px rgba(0,0,0,0.05);
+  transition: height 0.25s ease, box-shadow 0.25s ease;
+}
+
+.site-header.scrolled {
+  box-shadow: 0 2px 12px rgba(0,0,0,0.1);
+  border-bottom-color: var(--color-gray-200);
+}
+
+.site-header.scrolled .header-inner {
+  height: var(--header-height-scrolled);
+}
+
+.site-header.scrolled .brand-logo-img {
+  width: 180px;
+  max-height: 32px;
+}
+
+@media (max-width: 768px) {
+  .site-header.scrolled .brand-logo-img {
+    width: 150px;
+    max-height: 28px;
+  }
+}
+
+@media (max-width: 375px) {
+  .site-header.scrolled .brand-logo-img {
+    width: 130px;
+    max-height: 26px;
+  }
+}
+
+main {
+  padding-top: var(--header-height);
 }
 
 .header-inner {
@@ -78,6 +119,7 @@ img {
   align-items: center;
   justify-content: space-between;
   height: var(--header-height);
+  transition: height 0.25s ease;
 }
 
 .brand {
@@ -112,6 +154,7 @@ img {
   max-height: 40px;
   object-fit: contain;
   display: block;
+  transition: width 0.25s ease, max-height 0.25s ease;
 }
 
 @media (max-width: 768px) {
@@ -277,8 +320,13 @@ img {
   padding: 24px;
   overflow-y: auto;
   transform: translateX(100%);
-  transition: transform 0.3s ease;
+  transition: transform 0.3s ease, top 0.25s ease;
   z-index: 99;
+}
+
+/* Sync mobile nav top with scrolled header height */
+.site-header.scrolled ~ .mobile-nav {
+  top: var(--header-height-scrolled);
 }
 
 .mobile-nav.is-open {
