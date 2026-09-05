@@ -1,0 +1,168 @@
+# ============================================================
+# ZhongSai V2 - Production 301 Redirect DRAFT v2 (Post-Triage)
+# V2-08A Migration Gap Triage & Legacy Preservation Plan
+# STATUS: DRAFT - DO NOT ACTIVATE
+# SEO VALUE CLASSIFICATION: PROVISIONAL (no GSC data)
+# ============================================================
+
+# --- CONFIRMED SAFE 301s (KEEP = no rule needed) ---
+
+# 301_ONE_TO_ONE (path changed, same intent, V2 target confirmed indexable)
+/  https://zhongsai-steelstructure.com/en/  301
+/about/  https://zhongsai-steelstructure.com/en/about/  301
+/contact/  https://zhongsai-steelstructure.com/en/contact/  301
+/en/projects/cnooc-pr6-pipe-rack-frame/  https://zhongsai-steelstructure.com/en/projects/cnooc-pr6-pipe-rack/  301
+/en/projects/cnpc-sixth-construction-cracking-furnace/  https://zhongsai-steelstructure.com/en/projects/cnpc-cracking-furnace/  301
+/en/projects/cnpc-sixth-construction-liquid-furnace/  https://zhongsai-steelstructure.com/en/projects/cnpc-liquid-furnace/  301
+/en/projects/guangdong-yixian-biotech-manufacturing/  https://zhongsai-steelstructure.com/en/projects/yixian-biotech-manufacturing/  301
+/en/projects/guangzhou-gongkong-high-end-equipment-base/  https://zhongsai-steelstructure.com/en/projects/guangzhou-high-end-equipment-base/  301
+/en/projects/huarun-center-commercial-residential/  https://zhongsai-steelstructure.com/en/projects/dongguan-huarun-center/  301
+/en/projects/luohu-mixc-commercial-skybridge/  https://zhongsai-steelstructure.com/en/projects/luohu-mixc-skybridge/  301
+/en/projects/shanghai-baoye-xiegang-aviation-manufacturing/  https://zhongsai-steelstructure.com/en/projects/xiegang-aviation-manufacturing/  301
+/en/projects/shantou-luxshare-precision-electronics/  https://zhongsai-steelstructure.com/en/projects/shantou-luxshare-electronics-center/  301
+/en/projects/shenzhen-international-zhanjiang-logistics-port/  https://zhongsai-steelstructure.com/en/projects/zhanjiang-logistics-port/  301
+/en/projects/shenzhen-qianhai-dreamfactory/  https://zhongsai-steelstructure.com/en/projects/qianhai-dreamfactory/  301
+/en/shipments/  https://zhongsai-steelstructure.com/en/export-delivery/  301
+/landing/  https://zhongsai-steelstructure.com/en/  301
+/privacy/  https://zhongsai-steelstructure.com/en/privacy/  301
+/products/  https://zhongsai-steelstructure.com/en/products/  301
+/projects/  https://zhongsai-steelstructure.com/en/projects/  301
+/shipments/  https://zhongsai-steelstructure.com/en/export-delivery/  301
+/terms/  https://zhongsai-steelstructure.com/en/terms/  301
+/zh/projects/cnooc-pr6-pipe-rack-frame/  https://zhongsai-steelstructure.com/zh/projects/cnooc-pr6-pipe-rack/  301
+/zh/projects/cnpc-sixth-construction-cracking-furnace/  https://zhongsai-steelstructure.com/zh/projects/cnpc-cracking-furnace/  301
+/zh/projects/cnpc-sixth-construction-liquid-furnace/  https://zhongsai-steelstructure.com/zh/projects/cnpc-liquid-furnace/  301
+/zh/projects/guangdong-yixian-biotech-manufacturing/  https://zhongsai-steelstructure.com/zh/projects/yixian-biotech-manufacturing/  301
+/zh/projects/guangzhou-gongkong-high-end-equipment-base/  https://zhongsai-steelstructure.com/zh/projects/guangzhou-high-end-equipment-base/  301
+/zh/projects/huarun-center-commercial-residential/  https://zhongsai-steelstructure.com/zh/projects/dongguan-huarun-center/  301
+/zh/projects/luohu-mixc-commercial-skybridge/  https://zhongsai-steelstructure.com/zh/projects/luohu-mixc-skybridge/  301
+/zh/projects/shanghai-baoye-xiegang-aviation-manufacturing/  https://zhongsai-steelstructure.com/zh/projects/xiegang-aviation-manufacturing/  301
+/zh/projects/shantou-luxshare-precision-electronics/  https://zhongsai-steelstructure.com/zh/projects/shantou-luxshare-electronics-center/  301
+/zh/projects/shenzhen-international-zhanjiang-logistics-port/  https://zhongsai-steelstructure.com/zh/projects/zhanjiang-logistics-port/  301
+/zh/projects/shenzhen-qianhai-dreamfactory/  https://zhongsai-steelstructure.com/zh/projects/qianhai-dreamfactory/  301
+/zh/shipments/  https://zhongsai-steelstructure.com/zh/export-delivery/  301
+
+# SAFE_MERGE (thin pages merged into stronger V2 hub, intent equivalent)
+/en/products/agriculture-special/  https://zhongsai-steelstructure.com/en/products/  301
+/en/products/commercial-public/  https://zhongsai-steelstructure.com/en/products/  301
+/en/products/industrial/  https://zhongsai-steelstructure.com/en/products/  301
+/en/products/mining-energy/  https://zhongsai-steelstructure.com/en/products/  301
+/en/products/residential-light/  https://zhongsai-steelstructure.com/en/products/  301
+/en/solutions/    301
+/en/steel-building-solutions/agriculture/  https://zhongsai-steelstructure.com/en/products/  301
+/en/steel-building-solutions/commercial/  https://zhongsai-steelstructure.com/en/products/  301
+/en/steel-building-solutions/energy/  https://zhongsai-steelstructure.com/en/products/  301
+/en/steel-building-solutions/logistics/  https://zhongsai-steelstructure.com/en/steel-warehouse/  301
+/en/steel-building-solutions/manufacturing/  https://zhongsai-steelstructure.com/en/steel-workshop/  301
+/en/steel-building-solutions/mining/  https://zhongsai-steelstructure.com/en/products/  301
+/en/steel-building-solutions/public/  https://zhongsai-steelstructure.com/en/products/  301
+/en/steel-warehouse-logistics/  https://zhongsai-steelstructure.com/en/steel-warehouse/  301
+/en/steel-workshop-processing/  https://zhongsai-steelstructure.com/en/steel-workshop/  301
+/solutions/    301
+/zh/products/agriculture-special/  https://zhongsai-steelstructure.com/zh/products/  301
+/zh/products/commercial-public/  https://zhongsai-steelstructure.com/zh/products/  301
+/zh/products/industrial/  https://zhongsai-steelstructure.com/zh/products/  301
+/zh/products/mining-energy/  https://zhongsai-steelstructure.com/zh/products/  301
+/zh/products/residential-light/  https://zhongsai-steelstructure.com/zh/products/  301
+/zh/solutions/    301
+/zh/steel-building-solutions/agriculture/  https://zhongsai-steelstructure.com/zh/products/  301
+/zh/steel-building-solutions/commercial/  https://zhongsai-steelstructure.com/zh/products/  301
+/zh/steel-building-solutions/energy/  https://zhongsai-steelstructure.com/zh/products/  301
+/zh/steel-building-solutions/logistics/  https://zhongsai-steelstructure.com/zh/steel-warehouse/  301
+/zh/steel-building-solutions/manufacturing/  https://zhongsai-steelstructure.com/zh/steel-workshop/  301
+/zh/steel-building-solutions/mining/  https://zhongsai-steelstructure.com/zh/products/  301
+/zh/steel-building-solutions/public/  https://zhongsai-steelstructure.com/zh/products/  301
+/zh/steel-warehouse-logistics/  https://zhongsai-steelstructure.com/zh/steel-warehouse/  301
+/zh/steel-workshop-processing/  https://zhongsai-steelstructure.com/zh/steel-workshop/  301
+
+# --- BLOCKED: DO NOT GENERATE 301 RULES ---
+
+# P0_CUTOVER (legacy preserve at cutover, keep URL returning 200)
+# P0 LEGACY_PRESERVE: /en/blog/how-to-import-steel-structure-from-china-complete-guide  (EN) - Blog cluster: Import from China | PRIMARY URL for cluster: legacy preserve at cu
+# P0 LEGACY_PRESERVE: /en/blog/how-to-import-steel-structure-from-china-to-africa  (EN) - Blog cluster: Import from China | PRIMARY URL for cluster: legacy preserve at cu
+# P0 LEGACY_PRESERVE: /en/blog/shipping-cost-steel-structure-from-china  (EN) - Blog cluster: Shipping & Container | PRIMARY URL for cluster: legacy preserve at
+# P0 LEGACY_PRESERVE: /en/blog/steel-structure-container-loading-guide  (EN) - Blog cluster: Shipping & Container | PRIMARY URL for cluster: legacy preserve at
+# P0 LEGACY_PRESERVE: /en/blog/steel-warehouse-cost-complete-guide  (EN) - Blog cluster: Warehouse Cost | PRIMARY URL for cluster: legacy preserve at cutov
+# P0 LEGACY_PRESERVE: /en/steel-mining-factory  (EN) - Mining factory: V2 page exists but NOINDEX. Old page has real content. Legacy pr
+# P0 LEGACY_PRESERVE: /zh/steel-mining-factory  (ZH) - Mining factory: V2 page exists but NOINDEX. Old page has real content. Legacy pr
+
+# P1_30_DAYS (rebuild post-launch, legacy preserve or safe merge)
+# P1: /blog/gangjiegou-cangku-zaojia-duoshaoqian  (SAFE_MERGE) - Blog cluster: Warehouse Cost | Secondary/cannibalization URL
+# P1: /blog/gangjiegou-chukou-feizhou-quanliucheng  (SAFE_MERGE) - Blog cluster: Import from China | Secondary/cannibalization 
+# P1: /blog/how-much-does-steel-structure-warehouse-cost  (SAFE_MERGE) - Blog cluster: Warehouse Cost | Secondary/cannibalization URL
+# P1: /blog/how-to-import-steel-structure-from-china-to-africa  (SAFE_MERGE) - Blog cluster: Import from China | Secondary/cannibalization 
+# P1: /blog/top-10-steel-structure-manufacturers-in-china  (P1_30_DAYS) - Blog cluster: Supplier & Manufacturer | High intent but like
+# P1: /en/blog/steel-structure-supplier-indonesia-guide  (P1_30_DAYS) - Blog cluster: Supplier & Manufacturer | High intent but like
+# P1: /en/blog/steel-structure-supplier-malaysia-guide  (P1_30_DAYS) - Blog cluster: Supplier & Manufacturer | High intent but like
+# P1: /en/blog/steel-structure-supplier-mexico-guide  (P1_30_DAYS) - Blog cluster: Supplier & Manufacturer | High intent but like
+# P1: /en/blog/steel-structure-supplier-philippines-guide  (P1_30_DAYS) - Blog cluster: Supplier & Manufacturer | High intent but like
+# P1: /en/blog/steel-structure-supplier-saudi-arabia-guide  (P1_30_DAYS) - Blog cluster: Supplier & Manufacturer | High intent but like
+# P1: /en/blog/steel-structure-supplier-thailand-guide  (P1_30_DAYS) - Blog cluster: Supplier & Manufacturer | High intent but like
+# P1: /en/blog/steel-structure-supplier-uae-dubai-guide  (P1_30_DAYS) - Blog cluster: Supplier & Manufacturer | High intent but like
+# P1: /en/blog/steel-warehouse-supplier-nigeria-guide  (P1_30_DAYS) - Blog cluster: Supplier & Manufacturer | High intent but like
+# P1: /en/blog/top-10-steel-structure-manufacturers-in-china  (P1_30_DAYS) - Blog cluster: Supplier & Manufacturer | High intent but like
+# P1: /en/components/steel-purlins  (P1_30_DAYS) - MERGE REVOKED: Components Hub does not sufficiently cover st
+# P1: /en/components/steel-trusses  (P1_30_DAYS) - MERGE REVOKED: Components Hub does not sufficiently cover st
+# P1: /en/solutions  (SAFE_MERGE) - Solutions hub: V2 solutions is NOINDEX. Merge to /products/ 
+# P1: /en/steel-car-4s-dealership  (LEGACY_PRESERVE) - Application (steel-car-4s-dealership): distinct commercial i
+# P1: /en/steel-exhibition-hall  (LEGACY_PRESERVE) - Application (steel-exhibition-hall): distinct commercial int
+# P1: /en/steel-hangar  (LEGACY_PRESERVE) - Application (steel-hangar): distinct commercial intent, no V
+# P1: /en/steel-hospital-building  (LEGACY_PRESERVE) - Application (steel-hospital-building): distinct commercial i
+# P1: /en/steel-hotel-restaurant  (LEGACY_PRESERVE) - Application (steel-hotel-restaurant): distinct commercial in
+# P1: /en/steel-mining-factory  (LEGACY_PRESERVE) - Mining factory: V2 page exists but NOINDEX. Old page has rea
+# P1: /en/steel-office-building  (LEGACY_PRESERVE) - Application (steel-office-building): distinct commercial int
+# P1: /en/steel-school-building  (LEGACY_PRESERVE) - Application (steel-school-building): distinct commercial int
+# P1: /en/steel-sports-arena  (LEGACY_PRESERVE) - Application (steel-sports-arena): distinct commercial intent
+# P1: /en/steel-supermarket-mall  (LEGACY_PRESERVE) - Supermarket/mall: V2 page exists but NOINDEX. Commercial int
+# P1: /faq  (P1_30_DAYS) - Unclassified MIGRATE_CONTENT: default P1, review manually.
+# P1: /solutions  (SAFE_MERGE) - Solutions hub: V2 solutions is NOINDEX. Merge to /products/ 
+# P1: /zh/blog/gangjiegou-cangku-zaojia-duoshaoqian  (SAFE_MERGE) - Blog cluster: Warehouse Cost | Secondary/cannibalization URL
+
+# PROJECT_REVIEW (overseas projects NOT verified, do NOT create V2 pages)
+# PROJECT_REVIEW: /en/projects/brazil-chinese-supermarket  - Overseas project (brazil-chinese-supermarket): NOT verified 
+# PROJECT_REVIEW: /en/projects/dubai-industrial-warehouse  - Overseas project (dubai-industrial-warehouse): NOT verified 
+# PROJECT_REVIEW: /en/projects/ethiopia-textile-factory  - Overseas project (ethiopia-textile-factory): NOT verified as
+# PROJECT_REVIEW: /en/projects/indonesia-mining-steel-structure  - Overseas project (indonesia-mining-steel-structure): NOT ver
+# PROJECT_REVIEW: /en/projects/kenya-dairy-farm-complex  - Overseas project (kenya-dairy-farm-complex): NOT verified as
+# PROJECT_REVIEW: /en/projects/malaysia-commercial-complex  - Overseas project (malaysia-commercial-complex): NOT verified
+# PROJECT_REVIEW: /en/projects/mexico-appliance-factory  - Overseas project (mexico-appliance-factory): NOT verified as
+# PROJECT_REVIEW: /en/projects/oman-oil-equipment-workshop  - Overseas project (oman-oil-equipment-workshop): NOT verified
+# PROJECT_REVIEW: /en/projects/peru-mining-workshop  - Overseas project (peru-mining-workshop): NOT verified as Zho
+# PROJECT_REVIEW: /en/projects/philippines-food-processing-plant  - Overseas project (philippines-food-processing-plant): NOT ve
+# PROJECT_REVIEW: /en/projects/south-africa-auto-parts-factory  - Overseas project (south-africa-auto-parts-factory): NOT veri
+# PROJECT_REVIEW: /en/projects/tanzania-grain-storage-warehouse  - Overseas project (tanzania-grain-storage-warehouse): NOT ver
+# PROJECT_REVIEW: /en/projects/vietnam-ecommerce-logistics-center  - Overseas project (vietnam-ecommerce-logistics-center): NOT v
+# PROJECT_REVIEW: /zh/projects/brazil-chinese-supermarket  - Overseas project (brazil-chinese-supermarket): NOT verified 
+# PROJECT_REVIEW: /zh/projects/dubai-industrial-warehouse  - Overseas project (dubai-industrial-warehouse): NOT verified 
+# PROJECT_REVIEW: /zh/projects/ethiopia-textile-factory  - Overseas project (ethiopia-textile-factory): NOT verified as
+# PROJECT_REVIEW: /zh/projects/indonesia-mining-steel-structure  - Overseas project (indonesia-mining-steel-structure): NOT ver
+# PROJECT_REVIEW: /zh/projects/kenya-dairy-farm-complex  - Overseas project (kenya-dairy-farm-complex): NOT verified as
+# PROJECT_REVIEW: /zh/projects/malaysia-commercial-complex  - Overseas project (malaysia-commercial-complex): NOT verified
+# PROJECT_REVIEW: /zh/projects/mexico-appliance-factory  - Overseas project (mexico-appliance-factory): NOT verified as
+
+# DROP_CANDIDATE (low value, review before 410)
+# DROP_CANDIDATE: /blog  - Blog cluster: Other Blog | Low intent/other: drop candidate,
+# DROP_CANDIDATE: /blog/zhongguo-gangjiegou-changjia-paiming  - Blog cluster: Other Blog | Low intent/other: drop candidate,
+# DROP_CANDIDATE: /en/blog  - Blog cluster: Other Blog | Low intent/other: drop candidate,
+# DROP_CANDIDATE: /en/blog/how-much-does-steel-structure-warehouse-cost  - 
+# DROP_CANDIDATE: /en/blog/how-to-buy-steel-buildings-from-china  - Blog cluster: Other Blog | Low intent/other: drop candidate,
+# DROP_CANDIDATE: /en/blog/how-to-choose-steel-structure-manufacturer-china  - Blog cluster: Other Blog | Low intent/other: drop candidate,
+# DROP_CANDIDATE: /en/blog/steel-structure-cost-per-square-meter  - Blog cluster: Other Blog | Low intent/other: drop candidate,
+# DROP_CANDIDATE: /en/blog/steel-structure-design-standards-guide  - Blog cluster: Other Blog | Low intent/other: drop candidate,
+# DROP_CANDIDATE: /en/blog/steel-workshop-cost-factory-building-price  - 
+# DROP_CANDIDATE: /en/countries  - Country page (hub): likely template with country name swap. 
+# DROP_CANDIDATE: /en/countries/indonesia  - Country page (indonesia): likely template with country name 
+# DROP_CANDIDATE: /en/countries/kenya  - Country page (kenya): likely template with country name swap
+# DROP_CANDIDATE: /en/countries/nigeria  - Country page (nigeria): likely template with country name sw
+# DROP_CANDIDATE: /en/countries/saudi-arabia  - Country page (saudi-arabia): likely template with country na
+# DROP_CANDIDATE: /en/countries/vietnam  - Country page (vietnam): likely template with country name sw
+# DROP_CANDIDATE: /en/projects/kenya-dairy-farm  - 
+# DROP_CANDIDATE: /en/projects/nigeria-logistics-warehouse  - 
+# DROP_CANDIDATE: /en/projects/saudi-arabia-manufacturing-factory  - 
+# DROP_CANDIDATE: /zh/blog  - Blog cluster: Other Blog | Low intent/other: drop candidate,
+# DROP_CANDIDATE: /zh/blog/gangjiegou-cangku-zaojia-2026  - 
+
+# --- ROOT CUTOVER (activate at domain switch) ---
+# /  /en/  301
+
+# --- END DRAFT v2 ---
