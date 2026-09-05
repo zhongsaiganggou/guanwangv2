@@ -1,0 +1,336 @@
+---
+// ZhongSai V2 - Steel Purlins Component Page (EN) with C/Z purlin sections
+import BaseLayout from '../../../../layouts/BaseLayout.astro';
+import QuoteForm from '../../../../components/QuoteForm.astro';
+import FAQ from '../../../../components/FAQ.astro';
+import '../../../../styles/hub.css';
+
+const lang = 'en';
+const title = 'Steel Purlins | C Purlins & Z Purlins Cold-Formed for Roof and Wall | ZhongSai';
+const description = 'ZhongSai Steel Structure supplies cold-formed C purlins and Z purlins for roof and wall secondary structures. Pre-punched connection holes, galvanized or color-coated, packed for export.';
+
+const faqItems = [
+  {
+    question: 'What is the difference between C purlins and Z purlins?',
+    answer: 'C purlins have a C-shaped cross-section and are typically used with simple lap connections at supports, suitable for moderate spans and spacing. Z purlins have a Z-shaped cross-section with overlapping flanges that allow continuous lapped connections at supports, providing better continuous beam bending performance and higher load capacity for wide-spacing roofs. Z purlins are generally preferred for larger spans and heavier loads.'
+  },
+  {
+    question: 'How are steel purlins sized and spaced?',
+    answer: 'Purlin size and spacing are determined by: roof slope, snow/wind loads, purlin span (distance between primary frames), cladding type and thickness, and applicable design codes. Common sizes range from C100 to C300 and Z140 to Z300, with typical spacing of 1.0m to 1.5m. The exact sizing should be specified in the structural design drawings.'
+  },
+  {
+    question: 'What surface treatments are available for purlins?',
+    answer: 'Common surface treatments include: hot-dip galvanized (for corrosion resistance in exposed or humid environments), pre-painted / color-coated (for visible applications and additional corrosion protection), and bare / mill finish (for interior or protected applications). The treatment is specified based on project environment, coating system and architectural requirements.'
+  },
+  {
+    question: 'Can purlins be supplied with pre-punched holes?',
+    answer: 'Yes. ZhongSai supplies purlins with pre-punched connection holes based on shop drawings, including holes for purlin-to-rafter connections, sag rod connections, and lap splice connections. Pre-punched purlins reduce on-site drilling work and improve erection accuracy. Please provide the purlin layout and connection details for hole positioning.'
+  }
+];
+---
+
+<BaseLayout title={title} description={description} lang={lang}>
+  <!-- Hero -->
+  <section class="hub-hero">
+    <div class="hub-hero-bg" style="background-image: url('/images/components/steel-purlins-hero.jpg')"></div>
+    <div class="hub-hero-overlay"></div>
+    <div class="container hub-hero-content">
+      <div class="hub-breadcrumb">
+        <a href="/en/">Home</a><span>/</span><a href="/en/components/">Components</a><span>/</span><span>Steel Purlins</span>
+      </div>
+      <p class="eyebrow">COMPONENTS · Steel Purlins</p>
+      <h1>C Purlins & Z Purlins<br>Cold-Formed to Project Specs</h1>
+      <p class="lead">Cold-formed C and Z steel purlins for roof and wall secondary structures — pre-punched connection holes, galvanized or color-coated, member marked and packed for export. <strong>Select the purlin type below for details.</strong> For other steel components, see <a href="/en/components/" style="color:rgba(255,255,255,0.92);text-decoration:underline;">all Components</a>.</p>
+    </div>
+  </section>
+
+  <!-- Quick nav to C/Z sections -->
+  <section class="section" style="padding: 40px 0;">
+    <div class="container">
+      <div class="purlin-quick-nav reveal">
+        <a href="#c-purlins" class="purlin-nav-card">
+          <span class="purlin-nav-label">C SECTION</span>
+          <h3>C Purlins</h3>
+          <p>C-shaped cold-formed purlins for roof and wall secondary structures</p>
+          <span class="purlin-nav-cta">View C Purlins ↓</span>
+        </a>
+        <a href="#z-purlins" class="purlin-nav-card">
+          <span class="purlin-nav-label">Z SECTION</span>
+          <h3>Z Purlins</h3>
+          <p>Z-shaped cold-formed purlins with lapped continuous connections</p>
+          <span class="purlin-nav-cta">View Z Purlins ↓</span>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- C Purlins Section -->
+  <section class="section purlin-detail-section" id="c-purlins" style="padding: 60px 0; background: var(--color-gray-50);">
+    <div class="container">
+      <div class="purlin-detail reveal">
+        <div class="purlin-detail-text">
+          <p class="section-index">01 / C Purlins</p>
+          <h2>C Purlins</h2>
+          <p class="purlin-lead">C-shaped cold-formed steel purlins are widely used as secondary structural members for roof and wall systems. With a simple C cross-section, they are easy to install and suitable for moderate spans and typical building loads.</p>
+          <div class="purlin-spec-grid">
+            <div class="purlin-spec">
+              <h4>Typical Applications</h4>
+              <ul>
+                <li>Industrial workshop roofs</li>
+                <li>Warehouse roof and wall</li>
+                <li>Agricultural building roofs</li>
+                <li>Moderate-span commercial roofs</li>
+              </ul>
+            </div>
+            <div class="purlin-spec">
+              <h4>Key Features</h4>
+              <ul>
+                <li>Cold-formed from galvanized or pre-painted steel coil</li>
+                <li>Simple support lap connections</li>
+                <li>Pre-punched connection holes available</li>
+                <li>Lightweight, high strength-to-weight ratio</li>
+                <li>Common sizes: C100 – C300</li>
+              </ul>
+            </div>
+            <div class="purlin-spec">
+              <h4>Supply Options</h4>
+              <ul>
+                <li>Hot-dip galvanized finish</li>
+                <li>Pre-painted / color-coated</li>
+                <li>Custom length to project drawings</li>
+                <li>Pre-punched per shop drawings</li>
+                <li>Member marking and packing for export</li>
+              </ul>
+            </div>
+          </div>
+          <a href="#quote" class="btn btn-primary" style="margin-top: 20px;">Request C Purlin Quotation →</a>
+        </div>
+        <div class="purlin-detail-visual">
+          <div class="purlin-visual-box">
+            <span class="purlin-visual-label">C Purlin Profile</span>
+            <div class="purlin-c-shape">
+              <div class="c-flange c-top"></div>
+              <div class="c-web"></div>
+              <div class="c-flange c-bottom"></div>
+            </div>
+            <p class="purlin-visual-note">C-shaped cross-section with simple lap connections at supports</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Z Purlins Section -->
+  <section class="section purlin-detail-section" id="z-purlins" style="padding: 60px 0;">
+    <div class="container">
+      <div class="purlin-detail reveal">
+        <div class="purlin-detail-text">
+          <p class="section-index">02 / Z Purlins</p>
+          <h2>Z Purlins</h2>
+          <p class="purlin-lead">Z-shaped cold-formed steel purlins feature overlapping flanges that enable continuous lapped connections at supports, providing better continuous beam bending performance than C purlins. They are preferred for wider purlin spacing, larger spans and heavier roof loads.</p>
+          <div class="purlin-spec-grid">
+            <div class="purlin-spec">
+              <h4>Typical Applications</h4>
+              <ul>
+                <li>Large-span industrial roofs</li>
+                <li>Logistics warehouse roofs</li>
+                <li>Wide-spacing roof systems</li>
+                <li>Heavy snow / wind load regions</li>
+                <li>Aircraft hangars and large facilities</li>
+              </ul>
+            </div>
+            <div class="purlin-spec">
+              <h4>Key Features</h4>
+              <ul>
+                <li>Z-shaped cross-section with overlapping flanges</li>
+                <li>Continuous lapped connections at supports</li>
+                <li>Better continuous beam bending performance</li>
+                <li>Higher load capacity for wide spacing</li>
+                <li>Common sizes: Z140 – Z300</li>
+              </ul>
+            </div>
+            <div class="purlin-spec">
+              <h4>Supply Options</h4>
+              <ul>
+                <li>Hot-dip galvanized finish</li>
+                <li>Pre-painted / color-coated</li>
+                <li>Custom length to project drawings</li>
+                <li>Pre-punched lap and connection holes</li>
+                <li>Member marking and packing for export</li>
+              </ul>
+            </div>
+          </div>
+          <a href="#quote" class="btn btn-primary" style="margin-top: 20px;">Request Z Purlin Quotation →</a>
+        </div>
+        <div class="purlin-detail-visual">
+          <div class="purlin-visual-box">
+            <span class="purlin-visual-label">Z Purlin Profile</span>
+            <div class="purlin-z-shape">
+              <div class="z-flange z-top"></div>
+              <div class="z-web"></div>
+              <div class="z-flange z-bottom"></div>
+            </div>
+            <p class="purlin-visual-note">Z-shaped cross-section with overlapping flanges for continuous lap connections</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- C vs Z Comparison -->
+  <section class="section" style="padding: 50px 0; background: var(--color-gray-50);">
+    <div class="container">
+      <div class="section-heading reveal" style="margin-bottom: 28px;">
+        <p class="section-index">03 / Comparison</p>
+        <h2>C Purlins vs Z Purlins — How to Choose</h2>
+      </div>
+      <div class="comparison-table reveal">
+        <table>
+          <thead>
+            <tr>
+              <th>Factor</th>
+              <th>C Purlins</th>
+              <th>Z Purlins</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><strong>Connection type</strong></td>
+              <td>Simple lap at supports</td>
+              <td>Continuous overlapping lap</td>
+            </tr>
+            <tr>
+              <td><strong>Bending performance</strong></td>
+              <td>Simply-supported behavior</td>
+              <td>Continuous beam behavior (higher capacity)</td>
+            </tr>
+            <tr>
+              <td><strong>Typical spacing</strong></td>
+              <td>1.0m – 1.2m</td>
+              <td>1.2m – 1.5m+</td>
+            </tr>
+            <tr>
+              <td><strong>Best for</strong></td>
+              <td>Moderate spans, standard loads</td>
+              <td>Wide spacing, large spans, heavy loads</td>
+            </tr>
+            <tr>
+              <td><strong>Installation</strong></td>
+              <td>Simpler, easier to handle</td>
+              <td>Slightly more complex lap alignment</td>
+            </tr>
+            <tr>
+              <td><strong>Common sizes</strong></td>
+              <td>C100 – C300</td>
+              <td>Z140 – Z300</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </section>
+
+  <!-- Related -->
+  <section class="section" style="padding: 50px 0;">
+    <div class="container">
+      <div class="section-heading reveal" style="margin-bottom: 28px;">
+        <p class="section-index">04 / Related</p>
+        <h2>Related Steel Components</h2>
+      </div>
+      <div class="related-grid">
+        <a href="/en/components/fabricated-steel-beams-columns/" class="related-card">
+          <h4>Beams & Columns</h4>
+          <p>Primary structural members fabricated to drawings.</p>
+          <span>View →</span>
+        </a>
+        <a href="/en/components/steel-trusses/" class="related-card">
+          <h4>Steel Trusses</h4>
+          <p>Roof trusses, pipe trusses and transfer trusses.</p>
+          <span>View →</span>
+        </a>
+        <a href="/en/components/roof-wall-cladding-systems/" class="related-card">
+          <h4>Cladding Systems</h4>
+          <p>Roof panels, wall panels, sandwich panels.</p>
+          <span>View →</span>
+        </a>
+        <a href="/en/products/custom-engineering/" class="related-card">
+          <h4>Custom Engineering</h4>
+          <p>Complex and special-purpose steel structures.</p>
+          <span>View →</span>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section class="faq-section">
+    <div class="container">
+      <div class="section-heading reveal">
+        <p class="section-index">05 / Questions</p>
+        <h2>Frequently Asked Questions</h2>
+      </div>
+      <FAQ items={faqItems} idPrefix="purlins-en" lang={lang} />
+    </div>
+  </section>
+
+  <!-- Quote -->
+  <section class="quote-cta-section" id="quote">
+    <div class="container">
+      <div class="quote-cta-header reveal">
+        <p class="section-index" style="color: #f59e0b;">06 / Get a Quote</p>
+        <h2>Request Purlin Quotation</h2>
+        <p>Provide your purlin specifications, sizes, quantities and project details. ZhongSai will provide a quotation for C/Z purlin supply.</p>
+      </div>
+      <QuoteForm lang={lang} />
+    </div>
+  </section>
+</BaseLayout>
+
+<style>
+  .purlin-quick-nav { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; }
+  .purlin-nav-card { background: white; padding: 28px; border-radius: 12px; border: 2px solid var(--color-gray-200); text-decoration: none; color: inherit; transition: all 0.2s; }
+  .purlin-nav-card:hover { border-color: var(--color-primary); transform: translateY(-2px); box-shadow: 0 6px 20px rgba(0,0,0,0.08); }
+  .purlin-nav-label { font-size: 0.75rem; font-weight: 700; color: var(--color-primary); letter-spacing: 1.5px; }
+  .purlin-nav-card h3 { margin: 8px 0; font-size: 1.4rem; }
+  .purlin-nav-card p { color: var(--color-gray-600); font-size: 0.95rem; margin-bottom: 12px; }
+  .purlin-nav-cta { color: var(--color-primary); font-weight: 600; font-size: 0.9rem; }
+  .purlin-detail { display: grid; grid-template-columns: 1.4fr 1fr; gap: 40px; align-items: start; }
+  .purlin-detail-text h2 { margin-bottom: 14px; }
+  .purlin-lead { font-size: 1.05rem; line-height: 1.8; color: var(--color-gray-700); margin-bottom: 24px; }
+  .purlin-spec-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; margin-bottom: 8px; }
+  .purlin-spec { background: white; padding: 18px; border-radius: 8px; border: 1px solid var(--color-gray-200); }
+  .purlin-spec h4 { font-size: 0.95rem; margin-bottom: 8px; color: var(--color-primary); }
+  .purlin-spec ul { list-style: none; padding: 0; margin: 0; }
+  .purlin-spec li { font-size: 0.85rem; color: var(--color-gray-600); padding: 3px 0; }
+  .purlin-detail-visual { position: sticky; top: 100px; }
+  .purlin-visual-box { background: white; padding: 32px; border-radius: 12px; border: 1px solid var(--color-gray-200); text-align: center; }
+  .purlin-visual-label { display: inline-block; background: var(--color-primary-light); color: var(--color-primary); padding: 4px 14px; border-radius: 20px; font-size: 0.8rem; font-weight: 600; margin-bottom: 24px; }
+  .purlin-c-shape, .purlin-z-shape { width: 120px; height: 160px; margin: 0 auto 20px; position: relative; }
+  .c-web { position: absolute; left: 50%; transform: translateX(-50%); width: 14px; height: 160px; background: var(--color-primary); }
+  .c-flange { position: absolute; width: 70px; height: 14px; background: var(--color-primary); }
+  .c-top { top: 0; left: 50%; transform: translateX(-50%); }
+  .c-bottom { bottom: 0; left: 50%; transform: translateX(-50%); }
+  .z-web { position: absolute; left: 50%; transform: translateX(-50%) rotate(0deg); width: 14px; height: 160px; background: var(--color-primary); }
+  .z-flange { position: absolute; width: 70px; height: 14px; background: var(--color-primary); }
+  .z-top { top: 0; right: 0; }
+  .z-bottom { bottom: 0; left: 0; }
+  .purlin-visual-note { font-size: 0.85rem; color: var(--color-gray-500); line-height: 1.5; }
+  .comparison-table { overflow-x: auto; }
+  .comparison-table table { width: 100%; border-collapse: collapse; background: white; border-radius: 10px; overflow: hidden; }
+  .comparison-table th { background: var(--color-primary); color: white; padding: 14px 18px; text-align: left; font-size: 0.95rem; }
+  .comparison-table td { padding: 12px 18px; border-bottom: 1px solid var(--color-gray-100); font-size: 0.9rem; color: var(--color-gray-700); }
+  .comparison-table tr:last-child td { border-bottom: none; }
+  .related-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 16px; }
+  .related-card { background: white; padding: 20px; border-radius: 10px; text-decoration: none; color: inherit; border: 1px solid var(--color-gray-200); transition: transform 0.2s; }
+  .related-card:hover { transform: translateY(-2px); box-shadow: 0 4px 16px rgba(0,0,0,0.08); }
+  .related-card h4 { margin-bottom: 6px; font-size: 1rem; }
+  .related-card p { font-size: 0.85rem; color: var(--color-gray-600); margin-bottom: 8px; }
+  .related-card span { color: var(--color-primary); font-weight: 600; font-size: 0.85rem; }
+  @media (max-width: 900px) {
+    .purlin-quick-nav { grid-template-columns: 1fr; }
+    .purlin-detail { grid-template-columns: 1fr; }
+    .purlin-spec-grid { grid-template-columns: 1fr; }
+    .purlin-detail-visual { position: static; }
+    .related-grid { grid-template-columns: repeat(2, 1fr); }
+  }
+</style>

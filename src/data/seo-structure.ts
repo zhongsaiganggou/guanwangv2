@@ -206,6 +206,8 @@ const SITEMAP_SECTIONS = [
   'components',
   'components/fabricated-steel-beams-columns',
   'components/roof-wall-cladding-systems',
+  'components/steel-trusses',
+  'components/steel-purlins',
   'manufacturing-quality',
   'steel-workshop',
   'steel-warehouse',

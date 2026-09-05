@@ -1,34 +1,121 @@
 ---
-// ZhongSai V2 - English Components Hub
+// ZhongSai V2 - English Components Hub (Rebuilt: all cards have clear action)
 import BaseLayout from '../../../layouts/BaseLayout.astro';
 import QuoteForm from '../../../components/QuoteForm.astro';
 import '../../../styles/hub.css';
 
 const lang = 'en';
-const title = 'Steel Components & Cladding Systems | Beams, Columns, Trusses & Purlins | ZhongSai';
-const description = 'ZhongSai Steel Structure provides custom fabricated steel components and cladding systems to drawings — including beams, columns, trusses, crane beams, C/Z purlins, roof and wall panels, sandwich panels, with component marking, packing and export delivery.';
+const title = 'Steel Components & Cladding Systems | Beams, Columns, Trusses, Purlins | ZhongSai';
+const description = 'ZhongSai Steel Structure provides custom fabricated steel components and cladding systems to drawings — beams, columns, trusses, crane beams, C/Z purlins, roof and wall panels, sandwich panels, with component marking, packing and export delivery.';
 
+// Primary Structural Members - all cards have clear action
 const primaryMembers = [
-  { title: 'Steel Beams', desc: 'H-beams, built-up beams and crane beams, fabricated to drawings with welded flanges and webs, pre-fabricated end connection plates.', href: '/en/components/fabricated-steel-beams-columns/', actionType: 'detail' },
-  { title: 'Steel Columns', desc: 'H-columns, box columns and lattice columns, designed for load and height, with pre-fabricated base plates and stiffeners.', href: '/en/components/fabricated-steel-beams-columns/', actionType: 'detail' },
-  { title: 'Steel Trusses', desc: 'Roof trusses, transfer trusses and bracing trusses, designed for span and load, with welded or bolted connections.', href: '#quote', actionType: 'quote' },
-  { title: 'Crane Beams', desc: 'Overhead crane beams and under-hung crane beams, designed for crane tonnage and duty class, fabricated to crane system and structural requirements.', href: '#quote', actionType: 'quote' },
-  { title: 'Box Sections', desc: 'Box columns, box beams and irregular sections for long-span and heavy-load structures, with fabricated to project drawings and welding requirements.', href: '/en/components/fabricated-steel-beams-columns/', actionType: 'detail' },
-  { title: 'Platforms & Bracing', desc: 'Working platforms, equipment platforms, column bracing and roof bracing, designed for equipment layout and seismic requirements.', href: '#quote', actionType: 'quote' }
+  {
+    title: 'Steel Beams',
+    desc: 'H-beams, built-up beams and welded beams, fabricated to drawings with pre-fabricated end connection plates.',
+    href: '/en/components/fabricated-steel-beams-columns/#steel-beams',
+    actionType: 'anchor',
+    cta: 'View Steel Beams →'
+  },
+  {
+    title: 'Steel Columns',
+    desc: 'H-columns, box columns and lattice columns, designed for load and height, with pre-fabricated base plates and stiffeners.',
+    href: '/en/components/fabricated-steel-beams-columns/#steel-columns',
+    actionType: 'anchor',
+    cta: 'View Steel Columns →'
+  },
+  {
+    title: 'Box Sections',
+    desc: 'Box columns and box beams for long-span and heavy-load structures, fabricated to project drawings with full penetration welding.',
+    href: '/en/components/fabricated-steel-beams-columns/#box-sections',
+    actionType: 'anchor',
+    cta: 'View Box Sections →'
+  },
+  {
+    title: 'Crane Beams',
+    desc: 'Overhead crane beams and under-hung crane beams, designed for crane tonnage and duty class, fabricated to crane system requirements.',
+    href: '/en/components/fabricated-steel-beams-columns/#crane-beams',
+    actionType: 'anchor',
+    cta: 'View Crane Beams →'
+  },
+  {
+    title: 'Steel Trusses',
+    desc: 'Roof trusses, transfer trusses and pipe trusses, designed for span and load, with welded or bolted connections. Custom fabricated to drawings.',
+    href: '/en/components/steel-trusses/',
+    actionType: 'detail',
+    cta: 'View Steel Trusses →'
+  },
+  {
+    title: 'Platforms & Bracing',
+    desc: 'Working platforms, equipment platforms, column bracing and roof bracing — custom fabricated to equipment layout and structural stability requirements.',
+    href: '#quote',
+    actionType: 'quote',
+    cta: 'Send Platform & Bracing Drawings →'
+  }
 ];
 
+// Secondary Structural Members - all cards have clear action
 const secondaryMembers = [
-  { title: 'C Purlins', desc: 'Cold-formed C-section purlins for roof and wall secondary structures, selected by spacing and load, with pre-punched connection holes.' },
-  { title: 'Z Purlins', desc: 'Cold-formed Z-section purlins with lapped connections, suitable for wide-spacing roofs with better bending performance than C-type.' },
-  { title: 'Bracing System', desc: 'Column bracing, roof horizontal bracing and vertical bracing using angle steel or round bars, ensuring overall structural stability.' },
-  { title: 'Connection Components', desc: 'Gusset plates, stiffeners, connection plates and bolts, pre-fabricated to shop drawings for accurate site erection.' }
+  {
+    title: 'C Purlins',
+    desc: 'Cold-formed C-section purlins for roof and wall secondary structures, selected by spacing and load, with pre-punched connection holes.',
+    href: '/en/components/steel-purlins/#c-purlins',
+    actionType: 'anchor',
+    cta: 'View C Purlins →'
+  },
+  {
+    title: 'Z Purlins',
+    desc: 'Cold-formed Z-section purlins with lapped connections, suitable for wide-spacing roofs with better continuous bending performance.',
+    href: '/en/components/steel-purlins/#z-purlins',
+    actionType: 'anchor',
+    cta: 'View Z Purlins →'
+  },
+  {
+    title: 'Bracing System',
+    desc: 'Column bracing, roof horizontal bracing and vertical bracing using angle steel or round bars, ensuring overall structural stability.',
+    href: '#quote',
+    actionType: 'quote',
+    cta: 'Send Bracing Requirements →'
+  },
+  {
+    title: 'Connection Components',
+    desc: 'Gusset plates, stiffeners, connection plates and high-strength bolts, pre-fabricated to shop drawings for accurate site erection.',
+    href: '#quote',
+    actionType: 'quote',
+    cta: 'Send Connection Details →'
+  }
 ];
 
+// Cladding Systems - all cards have unique anchor targets
 const claddingSystems = [
-  { title: 'Roof Panels', desc: 'Color-coated profiled roof panels, standing seam panels in various profiles and thicknesses, waterproof and wind-resistant.', href: '/en/components/roof-wall-cladding-systems/' },
-  { title: 'Wall Panels', desc: 'Color-coated profiled wall panels, horizontal and vertical siding, various profiles and colors for coordinated building appearance.', href: '/en/components/roof-wall-cladding-systems/' },
-  { title: 'Sandwich Panels', desc: 'EPS / PU / PIR sandwich panels for thermal insulation, suitable for factories and warehouses with temperature control requirements.', href: '/en/components/roof-wall-cladding-systems/' },
-  { title: 'Cladding Accessories', desc: 'Gutters, trims, flashings, skylights and ventilators — a complete cladding accessory package.', href: '/en/components/roof-wall-cladding-systems/' }
+  {
+    title: 'Roof Panels',
+    desc: 'Color-coated profiled roof panels, standing seam panels in various profiles and thicknesses, waterproof and wind-resistant.',
+    href: '/en/components/roof-wall-cladding-systems/#roof-panels',
+    actionType: 'anchor',
+    cta: 'View Roof Panels →'
+  },
+  {
+    title: 'Wall Panels',
+    desc: 'Color-coated profiled wall panels, horizontal and vertical siding, various profiles and colors for coordinated building appearance.',
+    href: '/en/components/roof-wall-cladding-systems/#wall-panels',
+    actionType: 'anchor',
+    cta: 'View Wall Panels →'
+  },
+  {
+    title: 'Sandwich Panels',
+    desc: 'EPS / PU / PIR sandwich panels for thermal insulation, suitable for factories and warehouses with temperature control requirements.',
+    href: '/en/components/roof-wall-cladding-systems/#sandwich-panels',
+    actionType: 'anchor',
+    cta: 'View Sandwich Panels →'
+  },
+  {
+    title: 'Cladding Accessories',
+    desc: 'Gutters, trims, flashings, skylights and ventilators — a complete cladding accessory package coordinated with panel system.',
+    href: '/en/components/roof-wall-cladding-systems/#cladding-accessories',
+    actionType: 'anchor',
+    cta: 'View Accessories →'
+  }
 ];
 ---
 
@@ -39,11 +126,11 @@ const claddingSystems = [
     <div class="hub-hero-overlay"></div>
     <div class="container hub-hero-content">
       <div class="hub-breadcrumb">
-        <a href="/en/">Home</a><span>/</span><span>Components & Materials</span>
+        <a href="/en/">Home</a><span>/</span><span>Components</span>
       </div>
-      <p class="eyebrow">COMPONENTS · Custom to Drawings</p>
+      <p class="eyebrow">COMPONENTS · By Steel Member Type</p>
       <h1>Custom Steel Components &<br>Cladding Systems to Drawings</h1>
-      <p class="lead">Steel beams, columns, trusses, purlins and roof & wall cladding systems — custom fabricated, component marked, packed and delivered for export. <strong>Components are organized by steel member type.</strong> For complete building solutions, see <a href="/en/products/" style="color:rgba(255,255,255,0.92);text-decoration:underline;">Products</a>.</p>
+      <p class="lead">Steel beams, columns, trusses, purlins and roof & wall cladding systems — custom fabricated, component marked, packed and delivered for export. <strong>Components are organized by steel member type.</strong> For complete building solutions by application, see <a href="/en/products/" style="color:rgba(255,255,255,0.92);text-decoration:underline;">Products</a>.</p>
     </div>
   </section>
 
@@ -53,41 +140,35 @@ const claddingSystems = [
       <div class="component-section-header reveal">
         <p class="section-index">01 / Primary Members</p>
         <h2>Primary Structural Members</h2>
-        <p>Main load-bearing building components including beams, columns, trusses and crane beams — custom fabricated to structural drawings and load requirements, component marking and packing available based on shop drawings.</p>
+        <p>Main load-bearing building components including beams, columns, trusses and crane beams — custom fabricated to structural drawings and load requirements.</p>
       </div>
       <div class="component-item-grid">
         {primaryMembers.map((item, i) => (
-          item.actionType === 'quote' ? (
-            <div class={`component-item component-item-quote reveal reveal-delay-${(i % 3) + 1}`}>
-              <h4>{item.title}</h4>
-              <p>{item.desc}</p>
-              <span class="component-item-cta">Send Drawings for Fabrication →</span>
-            </div>
-          ) : (
-            <a href={item.href} class={`component-item reveal reveal-delay-${(i % 3) + 1}`} style="text-decoration: none; color: inherit;">
-              <h4>{item.title}</h4>
-              <p>{item.desc}</p>
-            </a>
-          )
+          <a href={item.href} class={`component-item component-item-clickable reveal reveal-delay-${(i % 3) + 1}`}>
+            <h4>{item.title}</h4>
+            <p>{item.desc}</p>
+            <span class="component-item-cta">{item.cta}</span>
+          </a>
         ))}
       </div>
     </div>
   </section>
 
   <!-- Secondary Structural Members -->
-  <section class="component-section">
+  <section class="component-section" style="background: var(--color-gray-50);">
     <div class="container">
       <div class="component-section-header reveal">
         <p class="section-index">02 / Secondary Members</p>
         <h2>Secondary Structural Members</h2>
-        <p>Roof and wall secondary structures, bracing systems and connection components — working with primary members to form a complete load-bearing system, pre-fabricated to shop drawings for accurate site erection.</p>
+        <p>Roof and wall secondary structures, bracing systems and connection components — working with primary members to form a complete load-bearing system.</p>
       </div>
       <div class="component-item-grid">
         {secondaryMembers.map((item, i) => (
-          <div class={`component-item reveal reveal-delay-${(i % 3) + 1}`}>
+          <a href={item.href} class={`component-item component-item-clickable reveal reveal-delay-${(i % 3) + 1}`}>
             <h4>{item.title}</h4>
             <p>{item.desc}</p>
-          </div>
+            <span class="component-item-cta">{item.cta}</span>
+          </a>
         ))}
       </div>
     </div>
@@ -99,13 +180,14 @@ const claddingSystems = [
       <div class="component-section-header reveal">
         <p class="section-index">03 / Cladding Systems</p>
         <h2>Roof & Wall Cladding Systems</h2>
-        <p>Roof and wall cladding systems including profiled panels, sandwich panels and accessories — can be supplied together with primary steel structure to form a complete building envelope package.</p>
+        <p>Roof and wall cladding systems including profiled panels, sandwich panels and accessories — supplied together with primary steel structure to form a complete building envelope package.</p>
       </div>
       <div class="component-item-grid">
         {claddingSystems.map((item, i) => (
-          <a href={item.href} class={`component-item reveal reveal-delay-${(i % 3) + 1}`} style="text-decoration: none; color: inherit;">
+          <a href={item.href} class={`component-item component-item-clickable reveal reveal-delay-${(i % 3) + 1}`}>
             <h4>{item.title}</h4>
             <p>{item.desc}</p>
+            <span class="component-item-cta">{item.cta}</span>
           </a>
         ))}
       </div>
@@ -118,7 +200,7 @@ const claddingSystems = [
       <div class="section-heading reveal" style="color: white; text-align: center; display: block; margin-bottom: 8px;">
         <p class="section-index" style="color: #f59e0b;">04 / Process</p>
         <h2 style="color: white; margin-bottom: 10px;">From Drawings to Delivery</h2>
-        <p style="color: rgba(255,255,255,0.65); max-width: 700px; margin: 0 auto;">You provide the drawings — we complete detailing, fabrication, marking, packing and export delivery. Fabrication, marking and packing organized to project requirements.</p>
+        <p style="color: rgba(255,255,255,0.65); max-width: 700px; margin: 0 auto;">You provide the drawings — we complete fabrication, marking, packing and export delivery.</p>
       </div>
       <div class="dual-path-grid" style="grid-template-columns: repeat(4, 1fr); gap: 18px;">
         <div class="dual-path-card reveal reveal-delay-1" style="padding: 24px 20px;">
@@ -134,7 +216,7 @@ const claddingSystems = [
         <div class="dual-path-card reveal reveal-delay-3" style="padding: 24px 20px;">
           <div class="path-icon" style="width: 40px; height: 40px; font-size: 15px; font-weight: 700; color:#fff; margin-bottom: 12px;">03</div>
           <h3 style="font-size: 16px; margin-bottom: 6px;">Marking</h3>
-          <p style="font-size: 13px; margin-bottom: 0;">Component marking and packing available based on shop drawings, with packing lists</p>
+          <p style="font-size: 13px; margin-bottom: 0;">Component marking and packing lists based on shop drawings</p>
         </div>
         <div class="dual-path-card reveal reveal-delay-4" style="padding: 24px 20px;">
           <div class="path-icon" style="width: 40px; height: 40px; font-size: 15px; font-weight: 700; color:#fff; margin-bottom: 12px;">04</div>
@@ -157,3 +239,24 @@ const claddingSystems = [
     </div>
   </section>
 </BaseLayout>
+
+<style>
+  .component-item-clickable {
+    cursor: pointer;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+    text-decoration: none;
+    color: inherit;
+    display: block;
+  }
+  .component-item-clickable:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 24px rgba(0,0,0,0.1);
+  }
+  .component-item-cta {
+    display: inline-block;
+    margin-top: 12px;
+    color: var(--color-primary);
+    font-weight: 600;
+    font-size: 0.9rem;
+  }
+</style>

@@ -1,0 +1,280 @@
+---
+// ZhongSai V2 - Steel Purlins Component Page (ZH) with C/Z purlin sections
+import BaseLayout from '../../../../layouts/BaseLayout.astro';
+import QuoteForm from '../../../../components/QuoteForm.astro';
+import FAQ from '../../../../components/FAQ.astro';
+import '../../../../styles/hub.css';
+
+const lang = 'zh';
+const title = '钢檩条｜C型钢檩条与Z型钢檩条冷弯成型｜中赛钢构';
+const description = '中赛钢构供应冷弯C型钢檩条与Z型钢檩条，用于屋面墙面次结构。预制连接孔，镀锌或彩涂，构件编号包装出口。';
+
+const faqItems = [
+  { question: 'C型钢檩条和Z型钢檩条有什么区别？', answer: 'C型钢檩条截面为C形，支座处采用简单搭接，适用于中等跨度与常规荷载。Z型钢檩条截面为Z形，翼缘可重叠实现连续搭接连接，具有更好的连续梁抗弯性能，适用于大间距屋面、大跨度与较重荷载。Z型钢檩条通常更适合大跨度和重载场景。' },
+  { question: '钢檩条的规格和间距如何确定？', answer: '檩条规格与间距由以下因素确定：屋面坡度、雪载/风载、檩条跨度（主刚架间距）、围护板类型与厚度、适用设计规范。常见规格C100-C300、Z140-Z300，典型间距1.0m-1.5m。具体规格应由结构设计图纸指定。' },
+  { question: '檩条有哪些表面处理方式？', answer: '常见表面处理包括：热镀锌（适用于外露或潮湿环境的防腐）、预涂/彩涂（适用于可见部位及附加防腐）、裸材/原色（适用于室内或有保护的环境）。处理方式根据项目环境、涂装体系与建筑要求确定。' },
+  { question: '檩条可以预制连接孔吗？', answer: '可以。中赛根据加工图提供预制连接孔的檩条，包括檩条与刚架连接孔、拉杆连接孔、搭接连接孔。预制孔可减少现场钻孔工作量，提高安装精度。请提供檩条布置图与连接详图以确定孔位。' }
+];
+---
+
+<BaseLayout title={title} description={description} lang={lang}>
+  <section class="hub-hero">
+    <div class="hub-hero-bg" style="background-image: url('/images/components/steel-purlins-hero.jpg')"></div>
+    <div class="hub-hero-overlay"></div>
+    <div class="container hub-hero-content">
+      <div class="hub-breadcrumb">
+        <a href="/zh/">首页</a><span>/</span><a href="/zh/components/">构件</a><span>/</span><span>钢檩条</span>
+      </div>
+      <p class="eyebrow">构件 · 钢檩条</p>
+      <h1>C型钢与Z型钢檩条<br>按项目规格冷弯成型</h1>
+      <p class="lead">冷弯C型钢与Z型钢檩条，用于屋面墙面次结构——预制连接孔，镀锌或彩涂，构件编号包装出口。<strong>请选择下方檩条类型查看详情。</strong>查看其它钢构件，请前往 <a href="/zh/components/" style="color:rgba(255,255,255,0.92);text-decoration:underline;">全部构件</a>。</p>
+    </div>
+  </section>
+
+  <section class="section" style="padding: 40px 0;">
+    <div class="container">
+      <div class="purlin-quick-nav reveal">
+        <a href="#c-purlins" class="purlin-nav-card">
+          <span class="purlin-nav-label">C 型截面</span>
+          <h3>C型钢檩条</h3>
+          <p>C形冷弯檩条，用于屋面墙面次结构</p>
+          <span class="purlin-nav-cta">查看C型钢檩条 ↓</span>
+        </a>
+        <a href="#z-purlins" class="purlin-nav-card">
+          <span class="purlin-nav-label">Z 型截面</span>
+          <h3>Z型钢檩条</h3>
+          <p>Z形冷弯檩条，搭接连续连接</p>
+          <span class="purlin-nav-cta">查看Z型钢檩条 ↓</span>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <section class="section purlin-detail-section" id="c-purlins" style="padding: 60px 0; background: var(--color-gray-50);">
+    <div class="container">
+      <div class="purlin-detail reveal">
+        <div class="purlin-detail-text">
+          <p class="section-index">01 / C型钢檩条</p>
+          <h2>C型钢檩条</h2>
+          <p class="purlin-lead">C形冷弯钢檩条广泛用作屋面与墙面系统的次结构构件。截面简单，安装方便，适用于中等跨度与常规建筑荷载。</p>
+          <div class="purlin-spec-grid">
+            <div class="purlin-spec">
+              <h4>典型应用</h4>
+              <ul>
+                <li>工业厂房屋面</li>
+                <li>仓库屋面与墙面</li>
+                <li>农业建筑屋面</li>
+                <li>中等跨度商业屋面</li>
+              </ul>
+            </div>
+            <div class="purlin-spec">
+              <h4>主要特点</h4>
+              <ul>
+                <li>镀锌或彩涂钢卷冷弯成型</li>
+                <li>支座简单搭接连接</li>
+                <li>可预制连接孔</li>
+                <li>轻质高强</li>
+                <li>常见规格：C100-C300</li>
+              </ul>
+            </div>
+            <div class="purlin-spec">
+              <h4>供应选项</h4>
+              <ul>
+                <li>热镀锌表面</li>
+                <li>预涂/彩涂</li>
+                <li>按图纸定尺长度</li>
+                <li>按加工图预制孔</li>
+                <li>构件编号包装出口</li>
+              </ul>
+            </div>
+          </div>
+          <a href="#quote" class="btn btn-primary" style="margin-top: 20px;">获取C型钢檩条报价 →</a>
+        </div>
+        <div class="purlin-detail-visual">
+          <div class="purlin-visual-box">
+            <span class="purlin-visual-label">C型檩条截面</span>
+            <div class="purlin-c-shape">
+              <div class="c-flange c-top"></div>
+              <div class="c-web"></div>
+              <div class="c-flange c-bottom"></div>
+            </div>
+            <p class="purlin-visual-note">C形截面，支座处简单搭接连接</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section purlin-detail-section" id="z-purlins" style="padding: 60px 0;">
+    <div class="container">
+      <div class="purlin-detail reveal">
+        <div class="purlin-detail-text">
+          <p class="section-index">02 / Z型钢檩条</p>
+          <h2>Z型钢檩条</h2>
+          <p class="purlin-lead">Z形冷弯钢檩条翼缘可重叠，实现支座处连续搭接连接，具有比C型钢更好的连续梁抗弯性能。适用于大间距檩条、大跨度与较重屋面荷载。</p>
+          <div class="purlin-spec-grid">
+            <div class="purlin-spec">
+              <h4>典型应用</h4>
+              <ul>
+                <li>大跨度工业屋面</li>
+                <li>物流仓库屋面</li>
+                <li>大间距屋面系统</li>
+                <li>大雪载/大风载地区</li>
+                <li>飞机库与大型设施</li>
+              </ul>
+            </div>
+            <div class="purlin-spec">
+              <h4>主要特点</h4>
+              <ul>
+                <li>Z形截面，翼缘可重叠</li>
+                <li>支座连续搭接连接</li>
+                <li>更好的连续梁抗弯性能</li>
+                <li>大间距下更高承载能力</li>
+                <li>常见规格：Z140-Z300</li>
+              </ul>
+            </div>
+            <div class="purlin-spec">
+              <h4>供应选项</h4>
+              <ul>
+                <li>热镀锌表面</li>
+                <li>预涂/彩涂</li>
+                <li>按图纸定尺长度</li>
+                <li>预制搭接与连接孔</li>
+                <li>构件编号包装出口</li>
+              </ul>
+            </div>
+          </div>
+          <a href="#quote" class="btn btn-primary" style="margin-top: 20px;">获取Z型钢檩条报价 →</a>
+        </div>
+        <div class="purlin-detail-visual">
+          <div class="purlin-visual-box">
+            <span class="purlin-visual-label">Z型檩条截面</span>
+            <div class="purlin-z-shape">
+              <div class="z-flange z-top"></div>
+              <div class="z-web"></div>
+              <div class="z-flange z-bottom"></div>
+            </div>
+            <p class="purlin-visual-note">Z形截面，翼缘重叠实现连续搭接连接</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" style="padding: 50px 0; background: var(--color-gray-50);">
+    <div class="container">
+      <div class="section-heading reveal" style="margin-bottom: 28px;">
+        <p class="section-index">03 / 对比</p>
+        <h2>C型钢与Z型钢檩条——如何选择</h2>
+      </div>
+      <div class="comparison-table reveal">
+        <table>
+          <thead>
+            <tr><th>对比因素</th><th>C型钢檩条</th><th>Z型钢檩条</th></tr>
+          </thead>
+          <tbody>
+            <tr><td><strong>连接方式</strong></td><td>支座简单搭接</td><td>连续重叠搭接</td></tr>
+            <tr><td><strong>抗弯性能</strong></td><td>简支梁受力</td><td>连续梁受力（承载更高）</td></tr>
+            <tr><td><strong>典型间距</strong></td><td>1.0m-1.2m</td><td>1.2m-1.5m+</td></tr>
+            <tr><td><strong>适用场景</strong></td><td>中等跨度、常规荷载</td><td>大间距、大跨度、重载</td></tr>
+            <tr><td><strong>安装难度</strong></td><td>简单，易操作</td><td>搭接对齐稍复杂</td></tr>
+            <tr><td><strong>常见规格</strong></td><td>C100-C300</td><td>Z140-Z300</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" style="padding: 50px 0;">
+    <div class="container">
+      <div class="section-heading reveal" style="margin-bottom: 28px;">
+        <p class="section-index">04 / 相关</p>
+        <h2>相关钢构件</h2>
+      </div>
+      <div class="related-grid">
+        <a href="/zh/components/fabricated-steel-beams-columns/" class="related-card">
+          <h4>钢梁与钢柱</h4><p>主要受力构件按图纸加工。</p><span>查看 →</span>
+        </a>
+        <a href="/zh/components/steel-trusses/" class="related-card">
+          <h4>钢桁架</h4><p>屋架桁架、管桁架、转换桁架。</p><span>查看 →</span>
+        </a>
+        <a href="/zh/components/roof-wall-cladding-systems/" class="related-card">
+          <h4>围护系统</h4><p>屋面板、墙面板、夹芯板。</p><span>查看 →</span>
+        </a>
+        <a href="/zh/products/custom-engineering/" class="related-card">
+          <h4>定制工程</h4><p>复杂与特殊用途钢结构。</p><span>查看 →</span>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <section class="faq-section">
+    <div class="container">
+      <div class="section-heading reveal">
+        <p class="section-index">05 / 常见问题</p>
+        <h2>常见问题解答</h2>
+      </div>
+      <FAQ items={faqItems} idPrefix="purlins-zh" lang={lang} />
+    </div>
+  </section>
+
+  <section class="quote-cta-section" id="quote">
+    <div class="container">
+      <div class="quote-cta-header reveal">
+        <p class="section-index" style="color: #f59e0b;">06 / 获取报价</p>
+        <h2>获取檩条报价</h2>
+        <p>提供檩条规格、尺寸、数量与项目详情，中赛将提供C/Z型钢檩条供应报价。</p>
+      </div>
+      <QuoteForm lang={lang} />
+    </div>
+  </section>
+</BaseLayout>
+
+<style>
+  .purlin-quick-nav { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; }
+  .purlin-nav-card { background: white; padding: 28px; border-radius: 12px; border: 2px solid var(--color-gray-200); text-decoration: none; color: inherit; transition: all 0.2s; }
+  .purlin-nav-card:hover { border-color: var(--color-primary); transform: translateY(-2px); box-shadow: 0 6px 20px rgba(0,0,0,0.08); }
+  .purlin-nav-label { font-size: 0.75rem; font-weight: 700; color: var(--color-primary); letter-spacing: 1.5px; }
+  .purlin-nav-card h3 { margin: 8px 0; font-size: 1.4rem; }
+  .purlin-nav-card p { color: var(--color-gray-600); font-size: 0.95rem; margin-bottom: 12px; }
+  .purlin-nav-cta { color: var(--color-primary); font-weight: 600; font-size: 0.9rem; }
+  .purlin-detail { display: grid; grid-template-columns: 1.4fr 1fr; gap: 40px; align-items: start; }
+  .purlin-detail-text h2 { margin-bottom: 14px; }
+  .purlin-lead { font-size: 1.05rem; line-height: 1.8; color: var(--color-gray-700); margin-bottom: 24px; }
+  .purlin-spec-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; margin-bottom: 8px; }
+  .purlin-spec { background: white; padding: 18px; border-radius: 8px; border: 1px solid var(--color-gray-200); }
+  .purlin-spec h4 { font-size: 0.95rem; margin-bottom: 8px; color: var(--color-primary); }
+  .purlin-spec ul { list-style: none; padding: 0; margin: 0; }
+  .purlin-spec li { font-size: 0.85rem; color: var(--color-gray-600); padding: 3px 0; }
+  .purlin-detail-visual { position: sticky; top: 100px; }
+  .purlin-visual-box { background: white; padding: 32px; border-radius: 12px; border: 1px solid var(--color-gray-200); text-align: center; }
+  .purlin-visual-label { display: inline-block; background: var(--color-primary-light); color: var(--color-primary); padding: 4px 14px; border-radius: 20px; font-size: 0.8rem; font-weight: 600; margin-bottom: 24px; }
+  .purlin-c-shape, .purlin-z-shape { width: 120px; height: 160px; margin: 0 auto 20px; position: relative; }
+  .c-web { position: absolute; left: 50%; transform: translateX(-50%); width: 14px; height: 160px; background: var(--color-primary); }
+  .c-flange { position: absolute; width: 70px; height: 14px; background: var(--color-primary); }
+  .c-top { top: 0; left: 50%; transform: translateX(-50%); }
+  .c-bottom { bottom: 0; left: 50%; transform: translateX(-50%); }
+  .z-web { position: absolute; left: 50%; transform: translateX(-50%); width: 14px; height: 160px; background: var(--color-primary); }
+  .z-flange { position: absolute; width: 70px; height: 14px; background: var(--color-primary); }
+  .z-top { top: 0; right: 0; }
+  .z-bottom { bottom: 0; left: 0; }
+  .purlin-visual-note { font-size: 0.85rem; color: var(--color-gray-500); line-height: 1.5; }
+  .comparison-table { overflow-x: auto; }
+  .comparison-table table { width: 100%; border-collapse: collapse; background: white; border-radius: 10px; overflow: hidden; }
+  .comparison-table th { background: var(--color-primary); color: white; padding: 14px 18px; text-align: left; font-size: 0.95rem; }
+  .comparison-table td { padding: 12px 18px; border-bottom: 1px solid var(--color-gray-100); font-size: 0.9rem; color: var(--color-gray-700); }
+  .comparison-table tr:last-child td { border-bottom: none; }
+  .related-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 16px; }
+  .related-card { background: white; padding: 20px; border-radius: 10px; text-decoration: none; color: inherit; border: 1px solid var(--color-gray-200); transition: transform 0.2s; }
+  .related-card:hover { transform: translateY(-2px); box-shadow: 0 4px 16px rgba(0,0,0,0.08); }
+  .related-card h4 { margin-bottom: 6px; font-size: 1rem; }
+  .related-card p { font-size: 0.85rem; color: var(--color-gray-600); margin-bottom: 8px; }
+  .related-card span { color: var(--color-primary); font-weight: 600; font-size: 0.85rem; }
+  @media (max-width: 900px) {
+    .purlin-quick-nav { grid-template-columns: 1fr; }
+    .purlin-detail { grid-template-columns: 1fr; }
+    .purlin-spec-grid { grid-template-columns: 1fr; }
+    .purlin-detail-visual { position: static; }
+    .related-grid { grid-template-columns: repeat(2, 1fr); }
+  }
+</style>

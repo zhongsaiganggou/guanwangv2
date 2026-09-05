@@ -1,0 +1,253 @@
+---
+// ZhongSai V2 - Steel Trusses Component Page (EN)
+import BaseLayout from '../../../../layouts/BaseLayout.astro';
+import QuoteForm from '../../../../components/QuoteForm.astro';
+import FAQ from '../../../../components/FAQ.astro';
+import '../../../../styles/hub.css';
+
+const lang = 'en';
+const title = 'Steel Trusses | Roof Trusses, Pipe Trusses & Transfer Trusses Fabricated to Drawings | ZhongSai';
+const description = 'ZhongSai Steel Structure fabricates custom steel trusses to drawings — roof trusses, pipe trusses, transfer trusses and bracing trusses. Welded or bolted connections, member marking, packing and export delivery.';
+
+const faqItems = [
+  {
+    question: 'What are steel trusses used for?',
+    answer: 'Steel trusses are used for long-span roof structures, transfer structures, pedestrian bridges, industrial building roofs, exhibition halls, sports arenas and aircraft hangars. They efficiently carry loads over large spans with less material than solid beams.'
+  },
+  {
+    question: 'What is the difference between roof trusses and pipe trusses?',
+    answer: 'Roof trusses typically use angle steel or H-section members with welded or bolted gusset plate connections, suitable for industrial and commercial building roofs. Pipe trusses use circular or rectangular hollow sections with direct welded connections (CHS/RHS), offering cleaner aesthetics and better aerodynamic performance, commonly used in large public buildings, stadiums and transportation hubs.'
+  },
+  {
+    question: 'What drawings are required for steel truss fabrication?',
+    answer: 'For accurate truss fabrication, please provide: structural truss layout drawings, member section sizes, connection details (welded or bolted), node/gusset plate details, loading specifications, coating requirements, and any project-specific fabrication standards. The more complete the drawings, the more accurate the fabrication and quotation.'
+  },
+  {
+    question: 'Can ZhongSai supply trusses without complete fabrication drawings?',
+    answer: 'If complete shop drawings are not yet available, you can provide the structural design drawings, span, loading requirements and building use. ZhongSai can coordinate detailing support to develop fabrication drawings based on confirmed structural design, then proceed to fabrication. Local on-site erection is typically handled by the client or their local construction team.'
+  }
+];
+---
+
+<BaseLayout title={title} description={description} lang={lang}>
+  <!-- Hero -->
+  <section class="hub-hero">
+    <div class="hub-hero-bg" style="background-image: url('/images/components/steel-truss-hero.jpg')"></div>
+    <div class="hub-hero-overlay"></div>
+    <div class="container hub-hero-content">
+      <div class="hub-breadcrumb">
+        <a href="/en/">Home</a><span>/</span><a href="/en/components/">Components</a><span>/</span><span>Steel Trusses</span>
+      </div>
+      <p class="eyebrow">COMPONENTS · Steel Trusses</p>
+      <h1>Custom Steel Trusses<br>Fabricated to Drawings</h1>
+      <p class="lead">Roof trusses, pipe trusses, transfer trusses and bracing trusses — custom fabricated to your structural drawings, with welded or bolted connections, member marking, packing and export delivery. <strong>Trusses are fabricated to confirmed drawings.</strong> For other steel components, see <a href="/en/components/" style="color:rgba(255,255,255,0.92);text-decoration:underline;">all Components</a>.</p>
+    </div>
+  </section>
+
+  <!-- Answer-first intro (AEO) -->
+  <section class="section" style="padding: 60px 0;">
+    <div class="container">
+      <div class="answer-first reveal">
+        <p class="section-index">01 / Overview</p>
+        <h2>What are steel trusses?</h2>
+        <p class="answer-lead">Steel trusses are triangulated structural frameworks made of steel members connected at nodes, designed to efficiently carry loads over long spans. ZhongSai fabricates custom steel trusses to confirmed structural drawings — including roof trusses, pipe trusses, transfer trusses and bracing trusses — with member marking, packing and export coordination.</p>
+        <div class="answer-grid">
+          <div class="answer-item">
+            <h4>Typical Applications</h4>
+            <ul>
+              <li>Industrial building roofs</li>
+              <li>Warehouse and logistics roofs</li>
+              <li>Exhibition halls and sports arenas</li>
+              <li>Aircraft hangars</li>
+              <li>Pedestrian bridges</li>
+              <li>Transfer structures</li>
+            </ul>
+          </div>
+          <div class="answer-item">
+            <h4>Common Configurations</h4>
+            <ul>
+              <li>Pratt truss, Warren truss, Howe truss</li>
+              <li>Pipe truss (CHS / RHS direct welding)</li>
+              <li>Angle steel truss with gusset plates</li>
+              <li>H-section built-up truss</li>
+              <li>Bolted or welded connections</li>
+            </ul>
+          </div>
+          <div class="answer-item">
+            <h4>Fabrication Considerations</h4>
+            <ul>
+              <li>Member cutting and precision fitting</li>
+              <li>Node plate fabrication and drilling</li>
+              <li>Welding per project specifications</li>
+              <li>Surface treatment and coating</li>
+              <li>Member marking for site erection</li>
+              <li>Packing and container loading</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Truss Types -->
+  <section class="section" style="padding: 60px 0; background: var(--color-gray-50);">
+    <div class="container">
+      <div class="section-heading reveal" style="margin-bottom: 36px;">
+        <div>
+          <p class="section-index">02 / Truss Types</p>
+          <h2>Common Steel Truss Types</h2>
+        </div>
+        <div>
+          <p>ZhongSai fabricates various truss configurations to project drawings. The truss type is determined by span, loading, architectural requirements and connection method specified in the structural design.</p>
+        </div>
+      </div>
+      <div class="truss-type-grid">
+        <div class="truss-type-card reveal">
+          <h3>Roof Trusses</h3>
+          <p>Angle steel or H-section roof trusses with gusset plate connections, commonly used in industrial workshops, warehouses and agricultural buildings. Configured to roof slope, span and loading requirements.</p>
+          <span class="truss-tag">Industrial · Warehouse · Agriculture</span>
+        </div>
+        <div class="truss-type-card reveal reveal-delay-2">
+          <h3>Pipe Trusses</h3>
+          <p>Circular hollow section (CHS) or rectangular hollow section (RHS) trusses with direct welded node connections. Clean aesthetics, good aerodynamic performance, suitable for large public buildings, stadiums and transportation hubs.</p>
+          <span class="truss-tag">Public · Stadium · Transport</span>
+        </div>
+        <div class="truss-type-card reveal reveal-delay-3">
+          <h3>Transfer Trusses</h3>
+          <p>Heavy-duty transfer trusses designed to carry upper floor loads over large clear spans, commonly used in commercial buildings where column-free lower levels are required. Fabricated to specific loading and deflection criteria.</p>
+          <span class="truss-tag">Commercial · Mixed-use</span>
+        </div>
+        <div class="truss-type-card reveal">
+          <h3>Bracing Trusses</h3>
+          <p>Vertical and horizontal bracing trusses providing lateral stability to steel structures, resisting wind and seismic loads. Typically using angle steel or round bar members with bolted or welded connections.</p>
+          <span class="truss-tag">Structural Stability</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Drawings Required -->
+  <section class="section" style="padding: 60px 0;">
+    <div class="container">
+      <div class="drawings-required reveal">
+        <div class="dr-text">
+          <p class="section-index">03 / What We Need</p>
+          <h2>Drawings Required for Truss Fabrication</h2>
+          <p>For accurate truss fabrication and quotation, please provide the following information. The more complete the technical documentation, the more accurate the fabrication and delivery.</p>
+          <ul class="dr-list">
+            <li><strong>Structural truss layout drawings</strong> — overall dimensions, span, slope, panel points</li>
+            <li><strong>Member section schedules</strong> — chord and web member sizes, steel grades</li>
+            <li><strong>Connection details</strong> — welded or bolted, gusset plate dimensions, bolt specs</li>
+            <li><strong>Loading specifications</strong> — dead load, live load, wind, seismic if applicable</li>
+            <li><strong>Coating requirements</strong> — paint system, galvanizing, fire protection if required</li>
+            <li><strong>Fabrication standards</strong> — applicable codes and project-specific requirements</li>
+          </ul>
+        </div>
+        <div class="dr-cta">
+          <div class="dr-cta-box">
+            <h3>Have Truss Drawings?</h3>
+            <p>Upload your structural drawings for a fabrication review and quotation.</p>
+            <a href="#quote" class="btn btn-primary">Upload Truss Drawings →</a>
+          </div>
+          <div class="dr-cta-box" style="background: var(--color-gray-100);">
+            <h3>No Complete Drawings Yet?</h3>
+            <p>Provide span, loading and building use. We can coordinate detailing support based on confirmed structural design.</p>
+            <a href="#quote" class="btn btn-secondary">Submit Truss Requirements →</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Related Capabilities -->
+  <section class="section" style="padding: 50px 0; background: var(--color-gray-50);">
+    <div class="container">
+      <div class="section-heading reveal" style="margin-bottom: 28px;">
+        <p class="section-index">04 / Related</p>
+        <h2>Related Steel Components & Capabilities</h2>
+      </div>
+      <div class="related-grid">
+        <a href="/en/components/fabricated-steel-beams-columns/" class="related-card">
+          <h4>Beams & Columns</h4>
+          <p>H-beams, box columns, built-up members fabricated to drawings.</p>
+          <span>View →</span>
+        </a>
+        <a href="/en/components/steel-purlins/" class="related-card">
+          <h4>Steel Purlins</h4>
+          <p>C and Z cold-formed purlins for roof and wall secondary structures.</p>
+          <span>View →</span>
+        </a>
+        <a href="/en/components/roof-wall-cladding-systems/" class="related-card">
+          <h4>Cladding Systems</h4>
+          <p>Roof panels, wall panels, sandwich panels and accessories.</p>
+          <span>View →</span>
+        </a>
+        <a href="/en/products/custom-engineering/" class="related-card">
+          <h4>Custom Engineering</h4>
+          <p>Complex and special-purpose steel structures fabricated to project drawings.</p>
+          <span>View →</span>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ / AEO -->
+  <section class="faq-section">
+    <div class="container">
+      <div class="section-heading reveal">
+        <p class="section-index">05 / Questions</p>
+        <h2>Frequently Asked Questions</h2>
+      </div>
+      <FAQ items={faqItems} idPrefix="trusses-en" lang={lang} />
+    </div>
+  </section>
+
+  <!-- Quote CTA -->
+  <section class="quote-cta-section" id="quote">
+    <div class="container">
+      <div class="quote-cta-header reveal">
+        <p class="section-index" style="color: #f59e0b;">06 / Get a Quote</p>
+        <h2>Send Truss Drawings for Fabrication Review</h2>
+        <p>Upload your structural truss drawings or provide project requirements. ZhongSai engineering team will review and provide a fabrication quotation.</p>
+      </div>
+      <QuoteForm lang={lang} />
+    </div>
+  </section>
+</BaseLayout>
+
+<style>
+  .answer-first h2 { margin-bottom: 16px; }
+  .answer-lead { font-size: 1.1rem; line-height: 1.8; color: var(--color-gray-700); margin-bottom: 32px; max-width: 900px; }
+  .answer-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; }
+  .answer-item { background: white; padding: 24px; border-radius: 10px; border: 1px solid var(--color-gray-200); }
+  .answer-item h4 { margin-bottom: 12px; color: var(--color-primary); }
+  .answer-item ul { list-style: none; padding: 0; margin: 0; }
+  .answer-item li { padding: 5px 0; font-size: 0.9rem; color: var(--color-gray-600); border-bottom: 1px solid var(--color-gray-100); }
+  .answer-item li:last-child { border-bottom: none; }
+  .truss-type-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 24px; }
+  .truss-type-card { background: white; padding: 28px; border-radius: 12px; border: 1px solid var(--color-gray-200); }
+  .truss-type-card h3 { margin-bottom: 10px; }
+  .truss-type-card p { color: var(--color-gray-600); line-height: 1.7; margin-bottom: 14px; }
+  .truss-tag { display: inline-block; background: var(--color-primary-light); color: var(--color-primary); padding: 4px 12px; border-radius: 20px; font-size: 0.8rem; font-weight: 600; }
+  .drawings-required { display: grid; grid-template-columns: 1.3fr 1fr; gap: 40px; align-items: start; }
+  .dr-text h2 { margin-bottom: 14px; }
+  .dr-text p { color: var(--color-gray-600); line-height: 1.7; margin-bottom: 20px; }
+  .dr-list { list-style: none; padding: 0; }
+  .dr-list li { padding: 10px 0 10px 24px; position: relative; color: var(--color-gray-700); border-bottom: 1px solid var(--color-gray-100); }
+  .dr-list li::before { content: '▸'; position: absolute; left: 0; color: var(--color-primary); }
+  .dr-cta-box { background: white; padding: 24px; border-radius: 12px; margin-bottom: 16px; border: 1px solid var(--color-gray-200); }
+  .dr-cta-box h3 { margin-bottom: 8px; font-size: 1.1rem; }
+  .dr-cta-box p { color: var(--color-gray-600); font-size: 0.9rem; margin-bottom: 14px; }
+  .related-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 16px; }
+  .related-card { background: white; padding: 20px; border-radius: 10px; text-decoration: none; color: inherit; border: 1px solid var(--color-gray-200); transition: transform 0.2s; }
+  .related-card:hover { transform: translateY(-2px); box-shadow: 0 4px 16px rgba(0,0,0,0.08); }
+  .related-card h4 { margin-bottom: 6px; font-size: 1rem; }
+  .related-card p { font-size: 0.85rem; color: var(--color-gray-600); margin-bottom: 8px; }
+  .related-card span { color: var(--color-primary); font-weight: 600; font-size: 0.85rem; }
+  @media (max-width: 900px) {
+    .answer-grid { grid-template-columns: 1fr; }
+    .truss-type-grid { grid-template-columns: 1fr; }
+    .drawings-required { grid-template-columns: 1fr; }
+    .related-grid { grid-template-columns: repeat(2, 1fr); }
+  }
+</style>

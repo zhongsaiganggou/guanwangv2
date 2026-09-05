@@ -1,61 +1,115 @@
 ---
-// ZhongSai V2 - Chinese Products Hub
+// ZhongSai V2 - Chinese Products Hub (Rebuilt: 7 Application Clusters + Custom Engineering)
 import BaseLayout from '../../../layouts/BaseLayout.astro';
 import QuoteForm from '../../../components/QuoteForm.astro';
 import FAQ from '../../../components/FAQ.astro';
 import '../../../styles/hub.css';
 
 const lang = 'zh';
-const title = '钢结构产品｜工业厂房、仓库、矿业与定制钢结构｜中赛钢构';
-const description = '中赛钢构提供工业厂房、仓库物流、矿业能源、商业公共、农业特种及定制工程钢结构产品，按建筑用途选择方案，支持按图加工与出口交付。';
+const title = '钢结构解决方案｜按建筑应用分类｜工业厂房、仓库、农业、商业、交通、矿业｜中赛钢构';
+const description = '中赛钢构按建筑应用提供钢结构解决方案：工业厂房、仓储物流、农业养殖、商业公共、交通基础设施、矿业能源、特种定制结构，支持按图加工与出口交付。';
 
-const products = [
+// 7 Application Clusters (from 120 application keyword clustering)
+const applications = [
   {
     num: '01',
-    title: '工业厂房与车间',
-    desc: '大跨度钢结构厂房、生产车间、装配车间，支持行车、设备布局与通风照明需求。',
-    img: '/images/products/01-industrial.jpg',
+    title: '工业厂房与生产建筑',
+    desc: '大跨度钢结构厂房、生产车间、装配车间、冶炼钢厂、混凝土搅拌站，支持行车、设备布局、通风与重载需求。',
+    keywords: '厂房, 车间, 工厂, 工业厂房, 装配厂, 冶炼钢厂, 混凝土搅拌站',
+    img: '/images/products/app-industrial-manufacturing.jpg',
+    imgAlt: '现代大跨度工业钢结构厂房应用示意图',
+    imgType: 'ai-application-concept',
     href: '/zh/steel-workshop/',
     actionType: 'detail'
   },
   {
     num: '02',
-    title: '仓库与物流建筑',
-    desc: '钢结构仓库、物流中心、配送中心，支持大空间存储、货架布局、装卸平台与保温需求。',
-    img: '/images/products/04-warehouse-logistics.jpg',
+    title: '仓储与物流建筑',
+    desc: '钢结构仓库、配送中心、物流枢纽、装卸平台、雨棚、停车棚，支持大净空、货架布局、保温与高仓存储需求。',
+    keywords: '仓库, 仓储, 物流, 装卸平台, 月台, 停车棚, 罩蓬',
+    img: '/images/products/app-warehouse-logistics.jpg',
+    imgAlt: '现代钢结构仓库与物流建筑应用示意图',
+    imgType: 'ai-application-concept',
     href: '/zh/steel-warehouse/',
     actionType: 'detail'
   },
   {
     num: '03',
-    title: '农业与特种结构',
-    desc: '农业仓储、畜牧棚舍、加工车间及特种大跨度钢结构，考虑通风、防潮与使用环境。',
-    img: '/images/products/05-agriculture-special.jpg',
+    title: '农业与养殖建筑',
+    desc: '农业仓储建筑、畜牧棚舍、养鸡场、养牛场、养猪场、温室钢架，考虑通风、防潮、耐腐蚀与使用环境要求。',
+    keywords: '羊圈, 养鸡场, 养牛场, 养殖场, 养猪场, 农业仓储',
+    img: '/images/products/app-agriculture-livestock.jpg',
+    imgAlt: '现代农业与养殖钢结构建筑应用示意图',
+    imgType: 'ai-application-concept',
     href: '#quote',
-    actionType: 'quote'
+    actionType: 'quote',
+    quoteCta: '提交农业建筑项目需求 →'
   },
   {
     num: '04',
-    title: '定制工程',
-    desc: '异形结构、复杂节点、设备平台、特殊用途钢结构，根据项目图纸与技术要求定制加工。',
-    img: '/images/products/06-custom-engineering.jpg',
-    href: '/zh/products/custom-engineering/',
+    title: '商业与公共建筑',
+    desc: '钢结构购物中心、超市、展厅、汽车4S店、医院、学校、酒店、写字楼、博物馆、体育馆，支持大跨度、灵活布局与公共安全要求。',
+    keywords: '超市, 购物中心, 展厅, 汽车4S店, 医院, 学校, 会展中心, 写字楼, 酒店, 体育馆, 大跨度公共建筑',
+    img: '/images/products/app-commercial-public.jpg',
+    imgAlt: '现代商业与公共钢结构建筑应用示意图',
+    imgType: 'ai-application-concept',
+    href: '#quote',
+    actionType: 'quote',
+    quoteCta: '提交商业建筑项目需求 →'
+  },
+  {
+    num: '05',
+    title: '交通与基础设施钢结构',
+    desc: '钢桥梁、人行天桥、飞机库、地铁高铁钢结构、码头港口钢结构、候车亭、隔音屏、高速公路龙门架，按工程规格加工制造。',
+    keywords: '桥梁, 人行天桥, 飞机场, 飞机库, 地铁, 高铁, 隧道, 码头, 港口, 车站, 候车亭, 登船桥, 隔音屏, 高速公路路牌龙门架',
+    img: '/images/products/app-transport-infrastructure.jpg',
+    imgAlt: '钢桥梁与交通基础设施钢结构应用示意图',
+    imgType: 'ai-application-concept',
+    href: '#quote',
+    actionType: 'quote',
+    quoteCta: '提交基础设施项目需求 →'
+  },
+  {
+    num: '06',
+    title: '矿业、能源与重工业结构',
+    desc: '矿山输送结构、电厂钢架、石油管架、设备支撑平台、重工业建筑钢结构、烟囱、料仓，面向重载、振动与恶劣环境设计。',
+    keywords: '矿山输送, 电力能源, 电厂设备, 石油管架, 加油管廊, 海工平台, 设备平台, 烟囱, 支承架, 矿山设备机械构件',
+    img: '/images/products/app-mining-energy.jpg',
+    imgAlt: '矿业与重工业钢结构设施应用示意图',
+    imgType: 'ai-application-concept',
+    href: '/zh/steel-mining-factory/',
     actionType: 'detail'
+  },
+  {
+    num: '07',
+    title: '特种与定制钢结构',
+    desc: '异形与双扭曲钢结构、旋转楼梯、LED显示屏支撑钢架、雨棚结构、夹层、钢平台、幕墙支撑框架、建筑造型钢结构，按图纸定制加工。',
+    keywords: '异形结构, 双扭曲结构, 旋转楼梯, LED显示屏钢结构, 雨棚, 夹层, 钢平台, 建筑幕墙, 采光罩, 穹顶, 雕塑艺术钢结构',
+    img: '/images/products/app-special-custom.jpg',
+    imgAlt: '特种与定制钢结构（旋转楼梯、异形结构）应用示意图',
+    imgType: 'ai-application-concept',
+    href: '#quote',
+    actionType: 'quote',
+    quoteCta: '提交定制结构项目需求 →'
   }
 ];
 
 const faqItems = [
   {
-    question: '有图纸可以直接报价吗？',
-    answer: '可以。请提供结构图纸、深化图或BOQ材料清单，我们将根据图纸进行工程量核算并提供报价。图纸越完整，报价越精准。'
+    question: '钢结构报价需要提供哪些信息？',
+    answer: '为获得准确报价，请提供：项目国家、建筑类型、大致尺寸（长×宽×高）、用途、行车需求（如有）、结构图纸或BOQ材料清单（如有）。技术信息越完整，报价越精准。'
   },
   {
-    question: '没有完整图纸怎么办？',
-    answer: '如果暂无完整图纸，可以提供项目用途、基本尺寸（长宽高）、所在国家和使用需求，根据项目用途和基本参数进行初步需求评估，并进一步确认方案与报价所需资料。'
+    question: '没有完整建筑设计图纸，可以只采购钢构件吗？',
+    answer: '可以。中赛既提供完整建筑钢结构配套，也提供单独构件加工供应——包括钢梁、钢柱、桁架、檩条、围护系统、节点板等，按图纸加工、构件编号、包装装柜出口。'
   },
   {
-    question: '可以只采购钢结构构件吗？',
-    answer: '可以。中赛钢构既提供完整建筑的钢结构材料包，也可根据需求单独供应钢梁、钢柱、桁架、檩条、围护系统等构件，按图纸加工并编号包装。'
+    question: '中赛负责当地施工和安装吗？',
+    answer: '中赛是钢结构制造与出口供应商，提供设计/深化支持、加工制造、构件供应、包装装柜、出口资料协调、物流协调及海外安装技术指导。当地现场施工与安装劳务通常由客户或其当地施工团队负责。'
+  },
+  {
+    question: '钢结构项目造价受哪些因素影响？',
+    answer: '钢结构造价取决于：建筑尺寸与跨度、用钢量与截面类型、围护系统规格、涂装与表面处理要求、行车与设备荷载、项目技术规格、目的港、包装方式与运输安排。没有项目具体信息时不存在固定每平米价格。'
   }
 ];
 ---
@@ -69,35 +123,36 @@ const faqItems = [
       <div class="hub-breadcrumb">
         <a href="/zh/">首页</a><span>/</span><span>产品</span>
       </div>
-      <p class="eyebrow">PRODUCTS · 建筑用途分类</p>
-      <h1>按建筑用途选择<br>钢结构产品</h1>
-      <p class="lead">工业厂房、仓库物流、农业特种及定制工程项目——按用途快速找到对应的钢结构方案。<strong>产品按建筑用途分类。</strong>如需单独钢构件，请查看<a href="/zh/components/" style="color:rgba(255,255,255,0.92);text-decoration:underline;">构件与材料</a>。</p>
+      <p class="eyebrow">产品 · 按应用分类</p>
+      <h1>按项目应用选择<br>钢结构解决方案</h1>
+      <p class="lead">不同建筑用途对跨度、荷载、构件形式、围护系统及制造要求不同。选择项目类型，查看对应的钢结构供应方案。<strong>按钢构件类型查看，请前往 <a href="/zh/components/" style="color:rgba(255,255,255,0.92);text-decoration:underline;">构件</a> 页面。</strong></p>
     </div>
   </section>
 
-  <!-- 四大产品分类 -->
+  <!-- 7 Application Clusters -->
   <section class="section" style="padding: 70px 0;">
     <div class="container">
       <div class="section-heading reveal" style="margin-bottom: 40px;">
         <div>
-          <p class="section-index">01 / 产品分类</p>
-          <h2>四大建筑用途分类</h2>
+          <p class="section-index">01 / 应用分类</p>
+          <h2>按建筑应用的钢结构方案</h2>
         </div>
         <div>
-          <p>从工业生产到特种工程，按项目用途选择对应的钢结构产品类型。每个分类均可根据项目图纸定制加工。</p>
+          <p>从工业生产到特种工程，按项目用途选择对应的钢结构解决方案。每个应用类别均可根据项目图纸与技术要求定制加工。</p>
         </div>
       </div>
-      <div class="product-grid">
-        {products.map((product, i) => (
-          <a href={product.href} class={`product-card reveal reveal-delay-${(i % 3) + 1}`}>
+      <div class="product-grid product-grid-7">
+        {applications.map((app, i) => (
+          <a href={app.href} class={`product-card reveal reveal-delay-${(i % 3) + 1}`}>
             <div class="product-card-img">
-              <img src={product.img} alt={product.title} loading="lazy">
-              <span class="product-card-num">{product.num}</span>
+              <img src={app.img} alt={app.imgAlt} loading="lazy">
+              <span class="product-card-num">{app.num}</span>
+              <span class="product-card-badge">应用示意图</span>
             </div>
             <div class="product-card-body">
-              <h3>{product.title}</h3>
-              <p>{product.desc}</p>
-              <span class="product-card-cta">{product.actionType === 'quote' ? '提交项目需求 →' : '查看详情 →'}</span>
+              <h3>{app.title}</h3>
+              <p>{app.desc}</p>
+              <span class="product-card-cta">{app.actionType === 'quote' ? (app.quoteCta || '提交项目需求 →') : '查看详情 →'}</span>
             </div>
           </a>
         ))}
@@ -105,37 +160,61 @@ const faqItems = [
     </div>
   </section>
 
-  <!-- 双路径入口 -->
+  <!-- Custom Engineering - Independent Capability Module -->
+  <section class="section" style="padding: 60px 0; background: var(--color-gray-50);">
+    <div class="container">
+      <div class="custom-engineering-block reveal">
+        <div class="ce-text">
+          <p class="section-index" style="color: var(--color-primary);">02 / 加工能力</p>
+          <h2>定制工程与按图加工</h2>
+          <p>除标准建筑应用外，中赛根据您确认的图纸与技术要求提供定制钢结构加工——包括异形结构、复杂节点、设备平台、重型构件及特殊用途钢结构。这是加工制造能力，不属于建筑用途分类。</p>
+          <ul class="ce-features">
+            <li>按确认结构图纸与BOQ加工制造</li>
+            <li>复杂节点板、加劲板、组合截面构件</li>
+            <li>设备支撑平台与工业钢结构</li>
+            <li>构件编号、包装、装柜出口</li>
+          </ul>
+          <a href="/zh/products/custom-engineering/" class="btn btn-primary">查看定制加工能力 →</a>
+        </div>
+        <div class="ce-visual">
+          <img src="/images/products/06-custom-engineering.jpg" alt="定制钢结构加工与复杂钢构件应用示意图" loading="lazy">
+          <span class="ce-visual-badge">加工制造能力</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Dual Path Entry -->
   <section class="dual-path-section">
     <div class="container">
       <div class="section-heading reveal" style="color: white; text-align: center; display: block; margin-bottom: 8px;">
-        <p class="section-index" style="color: #f59e0b;">02 / 如何开始</p>
-        <h2 style="color: white; margin-bottom: 10px;">两种方式，快速获取方案</h2>
-        <p style="color: rgba(255,255,255,0.65); max-width: 600px; margin: 0 auto;">无论您是否已有完整图纸，都可以找到对应的入口开始项目沟通。</p>
+        <p class="section-index" style="color: #f59e0b;">03 / 如何开始</p>
+        <h2 style="color: white; margin-bottom: 10px;">两种方式开始您的项目</h2>
+        <p style="color: rgba(255,255,255,0.65); max-width: 600px; margin: 0 auto;">无论您是否已有完整图纸，都可以找到合适的入口开始项目沟通。</p>
       </div>
       <div class="dual-path-grid">
         <div class="dual-path-card reveal reveal-delay-1">
           <div class="path-icon">01</div>
           <h3>已有图纸 / BOQ</h3>
-          <p>如果您已有结构图纸、深化图或材料清单（BOQ），可以直接上传，我们将根据图纸进行工程量核算与报价。</p>
+          <p>如果您已有结构图纸、深化图或BOQ材料清单，可直接上传。我们将根据图纸核算工程量并提供报价。</p>
           <a href="#quote" class="btn btn-primary">上传图纸获取报价 →</a>
         </div>
         <div class="dual-path-card reveal reveal-delay-2">
           <div class="path-icon">02</div>
           <h3>暂无完整图纸</h3>
-          <p>如果图纸尚未完成，可以提供项目用途、基本尺寸和所在国家，我们将根据项目类型提供初步方案与参考建议。</p>
+          <p>如果图纸尚未完成，可提供项目用途、基本尺寸和项目国家。我们将根据项目类型提供初步方案与参考报价。</p>
           <a href="#quote" class="btn btn-secondary">提交项目需求 →</a>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- FAQ -->
+  <!-- FAQ / AEO -->
   <section class="faq-section">
     <div class="container">
       <div class="section-heading reveal">
-        <p class="section-index">03 / 常见问题</p>
-        <h2>采购前常见问题</h2>
+        <p class="section-index">04 / 常见问题</p>
+        <h2>常见问题解答</h2>
       </div>
       <FAQ items={faqItems} idPrefix="products-zh" lang={lang} />
     </div>
@@ -145,11 +224,90 @@ const faqItems = [
   <section class="quote-cta-section" id="quote">
     <div class="container">
       <div class="quote-cta-header reveal">
-        <p class="section-index" style="color: #f59e0b;">04 / 获取报价</p>
-        <h2>把你的项目参数交给工程师</h2>
-        <p>填写项目信息，中赛钢构工程团队将根据您的需求提供方案与报价。</p>
+        <p class="section-index" style="color: #f59e0b;">05 / 获取报价</p>
+        <h2>向工程师发送您的项目参数</h2>
+        <p>填写项目信息，中赛工程团队将根据您的需求提供方案与报价。</p>
       </div>
       <QuoteForm lang={lang} />
     </div>
   </section>
 </BaseLayout>
+
+<style>
+  .product-grid-7 {
+    grid-template-columns: repeat(3, 1fr);
+  }
+  .product-card-badge {
+    position: absolute;
+    bottom: 10px;
+    right: 10px;
+    background: rgba(0,0,0,0.6);
+    color: white;
+    font-size: 0.7rem;
+    padding: 3px 8px;
+    border-radius: 4px;
+    letter-spacing: 0.3px;
+  }
+  .custom-engineering-block {
+    display: grid;
+    grid-template-columns: 1.2fr 1fr;
+    gap: 50px;
+    align-items: center;
+  }
+  .ce-text h2 {
+    margin-bottom: 16px;
+  }
+  .ce-text p {
+    color: var(--color-gray-600);
+    line-height: 1.7;
+    margin-bottom: 20px;
+  }
+  .ce-features {
+    list-style: none;
+    padding: 0;
+    margin: 0 0 24px;
+  }
+  .ce-features li {
+    padding: 8px 0 8px 28px;
+    position: relative;
+    color: var(--color-gray-700);
+    font-size: 0.95rem;
+  }
+  .ce-features li::before {
+    content: '✓';
+    position: absolute;
+    left: 0;
+    color: var(--color-primary);
+    font-weight: 700;
+  }
+  .ce-visual {
+    position: relative;
+    border-radius: 12px;
+    overflow: hidden;
+  }
+  .ce-visual img {
+    width: 100%;
+    height: 380px;
+    object-fit: cover;
+    display: block;
+  }
+  .ce-visual-badge {
+    position: absolute;
+    top: 14px;
+    left: 14px;
+    background: rgba(26,86,219,0.9);
+    color: white;
+    font-size: 0.75rem;
+    font-weight: 600;
+    padding: 5px 12px;
+    border-radius: 6px;
+  }
+  @media (max-width: 900px) {
+    .product-grid-7 { grid-template-columns: repeat(2, 1fr); }
+    .custom-engineering-block { grid-template-columns: 1fr; gap: 30px; }
+    .ce-visual img { height: 280px; }
+  }
+  @media (max-width: 600px) {
+    .product-grid-7 { grid-template-columns: 1fr; }
+  }
+</style>

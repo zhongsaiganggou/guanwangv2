@@ -1,61 +1,122 @@
 ---
-// ZhongSai V2 - English Products Hub
+// ZhongSai V2 - English Products Hub (Rebuilt: 7 Application Clusters + Custom Engineering)
 import BaseLayout from '../../../layouts/BaseLayout.astro';
 import QuoteForm from '../../../components/QuoteForm.astro';
 import FAQ from '../../../components/FAQ.astro';
 import '../../../styles/hub.css';
 
 const lang = 'en';
-const title = 'Steel Structure Products | Workshops, Warehouses & Industrial Buildings | ZhongSai';
-const description = 'ZhongSai Steel Structure provides steel structure products for industrial workshops, warehouses, mining, commercial, agriculture and custom engineering projects. Choose by building application.';
+const title = 'Steel Structure Solutions by Application | Industrial, Warehouse, Agriculture, Commercial | ZhongSai';
+const description = 'ZhongSai Steel Structure provides fabricated steel structure solutions by building application: industrial workshops, warehouses, agriculture, commercial buildings, transportation infrastructure, mining & energy, and special custom structures.';
 
-const products = [
+// 7 Application Clusters (from 120 application keyword clustering)
+const applications = [
   {
     num: '01',
-    title: 'Industrial Workshop',
-    desc: 'Long-span steel structure factories, production and assembly workshops, supporting crane, equipment layout and ventilation requirements.',
-    img: '/images/products/01-industrial.jpg',
+    title: 'Industrial & Manufacturing Buildings',
+    titleZh: '工业厂房与生产建筑',
+    desc: 'Long-span steel structure factories, production and assembly workshops, metallurgical plants, concrete batching plants — supporting crane, equipment layout, ventilation and heavy load requirements.',
+    keywords: '厂房, 车间, 工厂, 工业厂房, 装配厂, 冶炼钢厂, 混凝土搅拌站',
+    img: '/images/products/app-industrial-manufacturing.jpg',
+    imgAlt: 'Concept visualization of a modern long-span industrial steel structure workshop',
+    imgType: 'ai-application-concept',
     href: '/en/steel-workshop/',
     actionType: 'detail'
   },
   {
     num: '02',
-    title: 'Warehouse & Logistics',
-    desc: 'Steel warehouses, logistics and distribution centers, supporting large storage space, racking layout, loading docks and insulation needs.',
-    img: '/images/products/04-warehouse-logistics.jpg',
+    title: 'Warehousing & Logistics',
+    titleZh: '仓储与物流建筑',
+    desc: 'Steel warehouses, distribution centers, logistics hubs, loading docks, canopies and parking structures — supporting large clear span, racking layout, insulation and high-bay storage needs.',
+    keywords: '仓库, 仓储, 物流, 装卸平台, 月台, 停车棚, 罩蓬',
+    img: '/images/products/app-warehouse-logistics.jpg',
+    imgAlt: 'Concept visualization of a modern steel warehouse and logistics building',
+    imgType: 'ai-application-concept',
     href: '/en/steel-warehouse/',
     actionType: 'detail'
   },
   {
     num: '03',
-    title: 'Agriculture & Special',
-    desc: 'Agricultural storage, livestock buildings, processing workshops and special long-span steel structures, considering ventilation, moisture and service environment.',
-    img: '/images/products/05-agriculture-special.jpg',
+    title: 'Agriculture & Livestock',
+    titleZh: '农业与养殖建筑',
+    desc: 'Agricultural storage buildings, livestock shelters, poultry houses, dairy farms, pig farms and greenhouse steel frames — considering ventilation, moisture control, corrosion resistance and service environment.',
+    keywords: '羊圈, 养鸡场, 养牛场, 养殖场, 养猪场, 农业仓储',
+    img: '/images/products/app-agriculture-livestock.jpg',
+    imgAlt: 'Concept visualization of a modern agricultural and livestock steel structure building',
+    imgType: 'ai-application-concept',
     href: '#quote',
-    actionType: 'quote'
+    actionType: 'quote',
+    quoteCta: 'Discuss Your Agriculture Project →'
   },
   {
     num: '04',
-    title: 'Custom Engineering',
-    desc: 'Irregular structures, complex connections, equipment platforms and special-purpose steel structures — custom fabricated to project drawings and technical requirements.',
-    img: '/images/products/06-custom-engineering.jpg',
-    href: '/en/products/custom-engineering/',
+    title: 'Commercial & Public Buildings',
+    titleZh: '商业与公共建筑',
+    desc: 'Steel structure shopping malls, supermarkets, exhibition halls, 4S dealerships, hospitals, schools, hotels, office buildings, museums and sports arenas — supporting large span, flexible layout and public safety requirements.',
+    keywords: '超市, 购物中心, 展厅, 汽车4S店, 医院, 学校, 会展中心, 写字楼, 酒店, 体育馆, 大跨度公共建筑',
+    img: '/images/products/app-commercial-public.jpg',
+    imgAlt: 'Concept visualization of a modern commercial and public steel structure building',
+    imgType: 'ai-application-concept',
+    href: '#quote',
+    actionType: 'quote',
+    quoteCta: 'Discuss Your Commercial Project →'
+  },
+  {
+    num: '05',
+    title: 'Transportation & Infrastructure',
+    titleZh: '交通与基础设施钢结构',
+    desc: 'Steel bridges, pedestrian overpasses, airport hangars, railway and metro structures, port and terminal steel structures, bus shelters, noise barriers and highway gantries — fabricated to engineering specifications.',
+    keywords: '桥梁, 人行天桥, 飞机场, 飞机库, 地铁, 高铁, 隧道, 码头, 港口, 车站, 候车亭, 登船桥, 隔音屏, 高速公路路牌龙门架',
+    img: '/images/products/app-transport-infrastructure.jpg',
+    imgAlt: 'Concept visualization of steel bridge and transportation infrastructure structure',
+    imgType: 'ai-application-concept',
+    href: '#quote',
+    actionType: 'quote',
+    quoteCta: 'Discuss Your Infrastructure Project →'
+  },
+  {
+    num: '06',
+    title: 'Mining, Energy & Heavy Industry',
+    titleZh: '矿业、能源与重工业结构',
+    desc: 'Mining conveyor structures, power plant steel frames, oil and gas pipe racks, equipment support platforms, heavy industrial building steel structures, stacks and silos — designed for heavy loads, vibration and harsh environments.',
+    keywords: '矿山输送, 电力能源, 电厂设备, 石油管架, 加油管廊, 海工平台, 设备平台, 烟囱, 支承架, 矿山设备机械构件',
+    img: '/images/products/app-mining-energy.jpg',
+    imgAlt: 'Concept visualization of mining and heavy industry steel structure facility',
+    imgType: 'ai-application-concept',
+    href: '/en/steel-mining-factory/',
     actionType: 'detail'
+  },
+  {
+    num: '07',
+    title: 'Special & Custom Steel Structures',
+    titleZh: '特种与定制钢结构',
+    desc: 'Irregular and double-twisted steel structures, spiral staircases, LED display support frames, canopy structures, mezzanine floors, steel platforms, curtain wall support frames and architectural feature steelwork — custom fabricated to drawings.',
+    keywords: '异形结构, 双扭曲结构, 旋转楼梯, LED显示屏钢结构, 雨棚, 夹层, 钢平台, 建筑幕墙, 采光罩, 穹顶, 雕塑艺术钢结构',
+    img: '/images/products/app-special-custom.jpg',
+    imgAlt: 'Concept visualization of special and custom steel structure with spiral staircase and irregular forms',
+    imgType: 'ai-application-concept',
+    href: '#quote',
+    actionType: 'quote',
+    quoteCta: 'Discuss Your Custom Structure →'
   }
 ];
 
 const faqItems = [
   {
-    question: 'Can you quote directly from our drawings?',
-    answer: 'Yes. Please provide structural drawings, shop drawings or a BOQ (Bill of Quantities). We will calculate the material volume and provide a quotation based on your drawings. The more complete the drawings, the more accurate the quotation.'
+    question: 'What information is needed for a steel structure quotation?',
+    answer: 'For an accurate quotation, please provide: project country, building type, approximate dimensions (length × width × height), intended use, crane requirements if any, and structural drawings or a BOQ if available. The more complete the technical information, the more accurate the quotation.'
   },
   {
-    question: 'What if we do not have complete drawings yet?',
-    answer: 'If complete drawings are not yet available, you can provide the project use, basic dimensions (length, width, height), project country and functional requirements. Conduct preliminary requirement assessment based on project use and basic parameters, and further confirm the materials needed for scheme and quotation.'
+    question: 'Can ZhongSai supply only steel components without complete building design?',
+    answer: 'Yes. ZhongSai supplies both complete building steel packages and individual fabricated components — including steel beams, columns, trusses, purlins, cladding systems and connection plates — fabricated to your drawings, member-marked and packed for container export.'
   },
   {
-    question: 'Can we purchase only steel components?',
-    answer: 'Yes. ZhongSai provides both complete building steel packages and individual component supply — including steel beams, columns, trusses, purlins and cladding systems — fabricated to drawings, marked and packed for erection.'
+    question: 'Does ZhongSai handle local construction and installation?',
+    answer: 'ZhongSai is a steel structure manufacturer and export supplier. We provide design/detailing support, fabrication, component supply, packing, container loading, export documentation coordination and overseas installation technical guidance. Local on-site construction and erection labor are typically handled by the client or their local construction team.'
+  },
+  {
+    question: 'What affects steel structure project cost?',
+    answer: 'Steel structure cost depends on: building size and span, steel quantity and section types, cladding system specification, coating and surface treatment requirements, crane and equipment loads, project technical specifications, destination port, packing method and shipping arrangement. There is no fixed per-square-meter price without project-specific information.'
   }
 ];
 ---
@@ -69,38 +130,63 @@ const faqItems = [
       <div class="hub-breadcrumb">
         <a href="/en/">Home</a><span>/</span><span>Products</span>
       </div>
-      <p class="eyebrow">PRODUCTS · By Building Use</p>
-      <h1>Choose Steel Structures<br>by Building Application</h1>
-      <p class="lead">Industrial workshops, warehouses, agriculture & special structures, and custom engineering — find the right steel structure solution by project use. <strong>Products are organized by building application.</strong> For individual steel components, see <a href="/en/components/" style="color:rgba(255,255,255,0.92);text-decoration:underline;">Components</a>.</p>
+      <p class="eyebrow">PRODUCTS · By Application</p>
+      <h1>Steel Structure Solutions<br>by Building Application</h1>
+      <p class="lead">Different building applications require different span, load, component form, cladding system and fabrication requirements. Select your project type to view the corresponding steel structure supply solution. <strong>For individual steel components by type, see <a href="/en/components/" style="color:rgba(255,255,255,0.92);text-decoration:underline;">Components</a>.</strong></p>
     </div>
   </section>
 
-  <!-- Four Product Categories -->
+  <!-- 7 Application Clusters -->
   <section class="section" style="padding: 70px 0;">
     <div class="container">
       <div class="section-heading reveal" style="margin-bottom: 40px;">
         <div>
-          <p class="section-index">01 / Categories</p>
-          <h2>Four Building Application Categories</h2>
+          <p class="section-index">01 / Applications</p>
+          <h2>Steel Structure Solutions by Application</h2>
         </div>
         <div>
-          <p>From industrial production to special engineering, select the corresponding steel structure product type by project use. Each category can be custom fabricated to project drawings.</p>
+          <p>From industrial production to special engineering, select the corresponding steel structure solution by project use. Each application can be custom fabricated to project drawings and technical requirements.</p>
         </div>
       </div>
-      <div class="product-grid">
-        {products.map((product, i) => (
-          <a href={product.href} class={`product-card reveal reveal-delay-${(i % 3) + 1}`}>
+      <div class="product-grid product-grid-7">
+        {applications.map((app, i) => (
+          <a href={app.href} class={`product-card reveal reveal-delay-${(i % 3) + 1}`}>
             <div class="product-card-img">
-              <img src={product.img} alt={product.title} loading="lazy">
-              <span class="product-card-num">{product.num}</span>
+              <img src={app.img} alt={app.imgAlt} loading="lazy">
+              <span class="product-card-num">{app.num}</span>
+              <span class="product-card-badge">Application Illustration</span>
             </div>
             <div class="product-card-body">
-              <h3>{product.title}</h3>
-              <p>{product.desc}</p>
-              <span class="product-card-cta">{product.actionType === 'quote' ? 'Discuss Your Project →' : 'View Details →'}</span>
+              <h3>{app.title}</h3>
+              <p>{app.desc}</p>
+              <span class="product-card-cta">{app.actionType === 'quote' ? (app.quoteCta || 'Discuss Your Project →') : 'View Details →'}</span>
             </div>
           </a>
         ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- Custom Engineering - Independent Capability Module -->
+  <section class="section" style="padding: 60px 0; background: var(--color-gray-50);">
+    <div class="container">
+      <div class="custom-engineering-block reveal">
+        <div class="ce-text">
+          <p class="section-index" style="color: var(--color-primary);">02 / Capability</p>
+          <h2>Custom Engineering & Fabrication</h2>
+          <p>Beyond standard building applications, ZhongSai provides custom steel fabrication based on your confirmed drawings and technical requirements — including irregular structures, complex connections, equipment platforms, heavy members and special-purpose steelwork. This is a fabrication capability, not a building application category.</p>
+          <ul class="ce-features">
+            <li>Fabricated to confirmed structural drawings and BOQ</li>
+            <li>Complex connection plates, stiffeners and built-up members</li>
+            <li>Equipment support platforms and industrial steel structures</li>
+            <li>Member marking, packing and container loading for export</li>
+          </ul>
+          <a href="/en/products/custom-engineering/" class="btn btn-primary">View Custom Engineering Capability →</a>
+        </div>
+        <div class="ce-visual">
+          <img src="/images/products/06-custom-engineering.jpg" alt="Concept visualization of custom steel fabrication with complex steel members" loading="lazy">
+          <span class="ce-visual-badge">Fabrication Capability</span>
+        </div>
       </div>
     </div>
   </section>
@@ -109,7 +195,7 @@ const faqItems = [
   <section class="dual-path-section">
     <div class="container">
       <div class="section-heading reveal" style="color: white; text-align: center; display: block; margin-bottom: 8px;">
-        <p class="section-index" style="color: #f59e0b;">02 / How to Start</p>
+        <p class="section-index" style="color: #f59e0b;">03 / How to Start</p>
         <h2 style="color: white; margin-bottom: 10px;">Two Ways to Get Started</h2>
         <p style="color: rgba(255,255,255,0.65); max-width: 600px; margin: 0 auto;">Whether you have complete drawings or not, you can find the right entry point to begin your project discussion.</p>
       </div>
@@ -130,11 +216,11 @@ const faqItems = [
     </div>
   </section>
 
-  <!-- FAQ -->
+  <!-- FAQ / AEO -->
   <section class="faq-section">
     <div class="container">
       <div class="section-heading reveal">
-        <p class="section-index">03 / FAQ</p>
+        <p class="section-index">04 / Questions</p>
         <h2>Frequently Asked Questions</h2>
       </div>
       <FAQ items={faqItems} idPrefix="products-en" lang={lang} />
@@ -145,7 +231,7 @@ const faqItems = [
   <section class="quote-cta-section" id="quote">
     <div class="container">
       <div class="quote-cta-header reveal">
-        <p class="section-index" style="color: #f59e0b;">04 / Get a Quote</p>
+        <p class="section-index" style="color: #f59e0b;">05 / Get a Quote</p>
         <h2>Send Your Project Parameters to Our Engineers</h2>
         <p>Fill in your project information. ZhongSai engineering team will provide a scheme and quotation based on your requirements.</p>
       </div>
@@ -153,3 +239,82 @@ const faqItems = [
     </div>
   </section>
 </BaseLayout>
+
+<style>
+  .product-grid-7 {
+    grid-template-columns: repeat(3, 1fr);
+  }
+  .product-card-badge {
+    position: absolute;
+    bottom: 10px;
+    right: 10px;
+    background: rgba(0,0,0,0.6);
+    color: white;
+    font-size: 0.7rem;
+    padding: 3px 8px;
+    border-radius: 4px;
+    letter-spacing: 0.3px;
+  }
+  .custom-engineering-block {
+    display: grid;
+    grid-template-columns: 1.2fr 1fr;
+    gap: 50px;
+    align-items: center;
+  }
+  .ce-text h2 {
+    margin-bottom: 16px;
+  }
+  .ce-text p {
+    color: var(--color-gray-600);
+    line-height: 1.7;
+    margin-bottom: 20px;
+  }
+  .ce-features {
+    list-style: none;
+    padding: 0;
+    margin: 0 0 24px;
+  }
+  .ce-features li {
+    padding: 8px 0 8px 28px;
+    position: relative;
+    color: var(--color-gray-700);
+    font-size: 0.95rem;
+  }
+  .ce-features li::before {
+    content: '✓';
+    position: absolute;
+    left: 0;
+    color: var(--color-primary);
+    font-weight: 700;
+  }
+  .ce-visual {
+    position: relative;
+    border-radius: 12px;
+    overflow: hidden;
+  }
+  .ce-visual img {
+    width: 100%;
+    height: 380px;
+    object-fit: cover;
+    display: block;
+  }
+  .ce-visual-badge {
+    position: absolute;
+    top: 14px;
+    left: 14px;
+    background: rgba(26,86,219,0.9);
+    color: white;
+    font-size: 0.75rem;
+    font-weight: 600;
+    padding: 5px 12px;
+    border-radius: 6px;
+  }
+  @media (max-width: 900px) {
+    .product-grid-7 { grid-template-columns: repeat(2, 1fr); }
+    .custom-engineering-block { grid-template-columns: 1fr; gap: 30px; }
+    .ce-visual img { height: 280px; }
+  }
+  @media (max-width: 600px) {
+    .product-grid-7 { grid-template-columns: 1fr; }
+  }
+</style>

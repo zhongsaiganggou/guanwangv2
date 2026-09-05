@@ -1,0 +1,234 @@
+---
+// ZhongSai V2 - Steel Trusses Component Page (ZH)
+import BaseLayout from '../../../../layouts/BaseLayout.astro';
+import QuoteForm from '../../../../components/QuoteForm.astro';
+import FAQ from '../../../../components/FAQ.astro';
+import '../../../../styles/hub.css';
+
+const lang = 'zh';
+const title = '钢桁架｜屋架桁架、管桁架、转换桁架按图纸定制加工｜中赛钢构';
+const description = '中赛钢构按图纸定制加工钢桁架：屋架桁架、管桁架、转换桁架、支撑桁架，焊接或螺栓连接，构件编号、包装与出口交付。';
+
+const faqItems = [
+  { question: '钢桁架适用于哪些场景？', answer: '钢桁架适用于大跨度屋面结构、转换结构、人行天桥、工业厂房屋面、展厅、体育馆、飞机库等。桁架通过三角形受力体系高效传递荷载，在大跨度情况下比实腹梁更节省材料。' },
+  { question: '屋架桁架和管桁架有什么区别？', answer: '屋架桁架通常采用角钢或H型钢，通过节点板焊接或螺栓连接，适用于工业与商业建筑屋面。管桁架采用圆管或矩形管直接焊接节点（CHS/RHS），外观简洁、抗风性能好，常用于大型公共建筑、体育馆、交通枢纽。' },
+  { question: '钢桁架加工需要提供哪些图纸？', answer: '为获得准确的桁架加工与报价，请提供：桁架布置图（跨度、坡度、节点间距）、构件截面表（弦杆与腹杆规格、钢号）、连接详图（焊接或螺栓、节点板尺寸、螺栓规格）、荷载说明（恒载、活载、风载、抗震）、涂装要求、加工标准。图纸越完整，加工与报价越精准。' },
+  { question: '没有完整加工图纸可以加工桁架吗？', answer: '如果暂无完整加工图，可提供结构设计图、跨度、荷载要求与建筑用途。中赛可根据确认的结构设计协调深化设计支持，形成加工图后再进行加工制造。当地现场安装通常由客户或其当地施工团队负责。' }
+];
+---
+
+<BaseLayout title={title} description={description} lang={lang}>
+  <section class="hub-hero">
+    <div class="hub-hero-bg" style="background-image: url('/images/components/steel-truss-hero.jpg')"></div>
+    <div class="hub-hero-overlay"></div>
+    <div class="container hub-hero-content">
+      <div class="hub-breadcrumb">
+        <a href="/zh/">首页</a><span>/</span><a href="/zh/components/">构件</a><span>/</span><span>钢桁架</span>
+      </div>
+      <p class="eyebrow">构件 · 钢桁架</p>
+      <h1>按图纸定制加工<br>钢桁架</h1>
+      <p class="lead">屋架桁架、管桁架、转换桁架与支撑桁架——按您的结构图纸定制加工，焊接或螺栓连接，构件编号、包装与出口交付。<strong>桁架按确认图纸加工。</strong>查看其它钢构件，请前往 <a href="/zh/components/" style="color:rgba(255,255,255,0.92);text-decoration:underline;">全部构件</a>。</p>
+    </div>
+  </section>
+
+  <section class="section" style="padding: 60px 0;">
+    <div class="container">
+      <div class="answer-first reveal">
+        <p class="section-index">01 / 概述</p>
+        <h2>什么是钢桁架？</h2>
+        <p class="answer-lead">钢桁架是由钢构件在节点处连接形成的三角形格构式结构体系，用于高效承受大跨度荷载。中赛按确认的结构图纸定制加工钢桁架——包括屋架桁架、管桁架、转换桁架与支撑桁架——提供构件编号、包装与出口协调。</p>
+        <div class="answer-grid">
+          <div class="answer-item">
+            <h4>典型应用</h4>
+            <ul>
+              <li>工业厂房屋面</li>
+              <li>仓库与物流屋面</li>
+              <li>展厅与体育馆</li>
+              <li>飞机库</li>
+              <li>人行天桥</li>
+              <li>转换结构</li>
+            </ul>
+          </div>
+          <div class="answer-item">
+            <h4>常见形式</h4>
+            <ul>
+              <li>普拉特桁架、华伦桁架、豪式桁架</li>
+              <li>管桁架（CHS/RHS直接焊接）</li>
+              <li>角钢桁架（节点板连接）</li>
+              <li>H型钢组合桁架</li>
+              <li>螺栓或焊接连接</li>
+            </ul>
+          </div>
+          <div class="answer-item">
+            <h4>加工要点</h4>
+            <ul>
+              <li>构件切割与精准装配</li>
+              <li>节点板加工与钻孔</li>
+              <li>按项目规格焊接</li>
+              <li>表面处理与涂装</li>
+              <li>构件编号便于现场安装</li>
+              <li>包装与装柜</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" style="padding: 60px 0; background: var(--color-gray-50);">
+    <div class="container">
+      <div class="section-heading reveal" style="margin-bottom: 36px;">
+        <div>
+          <p class="section-index">02 / 桁架类型</p>
+          <h2>常见钢桁架类型</h2>
+        </div>
+        <div>
+          <p>中赛按项目图纸加工各种桁架形式。桁架类型由跨度、荷载、建筑要求与结构设计指定的连接方式决定。</p>
+        </div>
+      </div>
+      <div class="truss-type-grid">
+        <div class="truss-type-card reveal">
+          <h3>屋架桁架</h3>
+          <p>角钢或H型钢屋架桁架，节点板连接，常用于工业厂房、仓库与农业建筑。按屋面坡度、跨度与荷载要求配置。</p>
+          <span class="truss-tag">工业 · 仓库 · 农业</span>
+        </div>
+        <div class="truss-type-card reveal reveal-delay-2">
+          <h3>管桁架</h3>
+          <p>圆管（CHS）或矩形管（RHS）桁架，直接焊接节点，外观简洁、抗风性能好，适用于大型公共建筑、体育馆与交通枢纽。</p>
+          <span class="truss-tag">公共 · 体育 · 交通</span>
+        </div>
+        <div class="truss-type-card reveal reveal-delay-3">
+          <h3>转换桁架</h3>
+          <p>重型转换桁架，用于在大净空跨度上承受上部楼层荷载，常见于需要底层无柱空间的商业建筑。按特定荷载与挠度标准加工。</p>
+          <span class="truss-tag">商业 · 综合体</span>
+        </div>
+        <div class="truss-type-card reveal">
+          <h3>支撑桁架</h3>
+          <p>垂直与水平支撑桁架，为钢结构提供侧向稳定，抵抗风载与地震作用。通常采用角钢或圆钢构件，螺栓或焊接连接。</p>
+          <span class="truss-tag">结构稳定</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" style="padding: 60px 0;">
+    <div class="container">
+      <div class="drawings-required reveal">
+        <div class="dr-text">
+          <p class="section-index">03 / 所需资料</p>
+          <h2>桁架加工所需图纸</h2>
+          <p>为获得准确的桁架加工与报价，请提供以下信息。技术资料越完整，加工与交付越精准。</p>
+          <ul class="dr-list">
+            <li><strong>桁架布置图</strong>——整体尺寸、跨度、坡度、节点间距</li>
+            <li><strong>构件截面表</strong>——弦杆与腹杆规格、钢号</li>
+            <li><strong>连接详图</strong>——焊接或螺栓、节点板尺寸、螺栓规格</li>
+            <li><strong>荷载说明</strong>——恒载、活载、风载、抗震（如适用）</li>
+            <li><strong>涂装要求</strong>——油漆体系、镀锌、防火（如需要）</li>
+            <li><strong>加工标准</strong>——适用规范与项目特定要求</li>
+          </ul>
+        </div>
+        <div class="dr-cta">
+          <div class="dr-cta-box">
+            <h3>已有桁架图纸？</h3>
+            <p>上传结构图纸，获取加工评估与报价。</p>
+            <a href="#quote" class="btn btn-primary">上传桁架图纸 →</a>
+          </div>
+          <div class="dr-cta-box" style="background: var(--color-gray-100);">
+            <h3>暂无完整图纸？</h3>
+            <p>提供跨度、荷载与建筑用途，可协调深化设计支持。</p>
+            <a href="#quote" class="btn btn-secondary">提交桁架需求 →</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" style="padding: 50px 0; background: var(--color-gray-50);">
+    <div class="container">
+      <div class="section-heading reveal" style="margin-bottom: 28px;">
+        <p class="section-index">04 / 相关</p>
+        <h2>相关钢构件与能力</h2>
+      </div>
+      <div class="related-grid">
+        <a href="/zh/components/fabricated-steel-beams-columns/" class="related-card">
+          <h4>钢梁与钢柱</h4>
+          <p>H型钢梁、箱型柱、组合截面构件按图纸加工。</p>
+          <span>查看 →</span>
+        </a>
+        <a href="/zh/components/steel-purlins/" class="related-card">
+          <h4>钢檩条</h4>
+          <p>C型与Z型冷弯檩条，用于屋面墙面次结构。</p>
+          <span>查看 →</span>
+        </a>
+        <a href="/zh/components/roof-wall-cladding-systems/" class="related-card">
+          <h4>围护系统</h4>
+          <p>屋面板、墙面板、夹芯板与围护附件。</p>
+          <span>查看 →</span>
+        </a>
+        <a href="/zh/products/custom-engineering/" class="related-card">
+          <h4>定制工程</h4>
+          <p>复杂与特殊用途钢结构按项目图纸加工。</p>
+          <span>查看 →</span>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <section class="faq-section">
+    <div class="container">
+      <div class="section-heading reveal">
+        <p class="section-index">05 / 常见问题</p>
+        <h2>常见问题解答</h2>
+      </div>
+      <FAQ items={faqItems} idPrefix="trusses-zh" lang={lang} />
+    </div>
+  </section>
+
+  <section class="quote-cta-section" id="quote">
+    <div class="container">
+      <div class="quote-cta-header reveal">
+        <p class="section-index" style="color: #f59e0b;">06 / 获取报价</p>
+        <h2>发送桁架图纸进行加工评估</h2>
+        <p>上传结构桁架图纸或提供项目需求，中赛工程团队将审核并提供加工报价。</p>
+      </div>
+      <QuoteForm lang={lang} />
+    </div>
+  </section>
+</BaseLayout>
+
+<style>
+  .answer-first h2 { margin-bottom: 16px; }
+  .answer-lead { font-size: 1.1rem; line-height: 1.8; color: var(--color-gray-700); margin-bottom: 32px; max-width: 900px; }
+  .answer-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; }
+  .answer-item { background: white; padding: 24px; border-radius: 10px; border: 1px solid var(--color-gray-200); }
+  .answer-item h4 { margin-bottom: 12px; color: var(--color-primary); }
+  .answer-item ul { list-style: none; padding: 0; margin: 0; }
+  .answer-item li { padding: 5px 0; font-size: 0.9rem; color: var(--color-gray-600); border-bottom: 1px solid var(--color-gray-100); }
+  .answer-item li:last-child { border-bottom: none; }
+  .truss-type-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 24px; }
+  .truss-type-card { background: white; padding: 28px; border-radius: 12px; border: 1px solid var(--color-gray-200); }
+  .truss-type-card h3 { margin-bottom: 10px; }
+  .truss-type-card p { color: var(--color-gray-600); line-height: 1.7; margin-bottom: 14px; }
+  .truss-tag { display: inline-block; background: var(--color-primary-light); color: var(--color-primary); padding: 4px 12px; border-radius: 20px; font-size: 0.8rem; font-weight: 600; }
+  .drawings-required { display: grid; grid-template-columns: 1.3fr 1fr; gap: 40px; align-items: start; }
+  .dr-text h2 { margin-bottom: 14px; }
+  .dr-text p { color: var(--color-gray-600); line-height: 1.7; margin-bottom: 20px; }
+  .dr-list { list-style: none; padding: 0; }
+  .dr-list li { padding: 10px 0 10px 24px; position: relative; color: var(--color-gray-700); border-bottom: 1px solid var(--color-gray-100); }
+  .dr-list li::before { content: '▸'; position: absolute; left: 0; color: var(--color-primary); }
+  .dr-cta-box { background: white; padding: 24px; border-radius: 12px; margin-bottom: 16px; border: 1px solid var(--color-gray-200); }
+  .dr-cta-box h3 { margin-bottom: 8px; font-size: 1.1rem; }
+  .dr-cta-box p { color: var(--color-gray-600); font-size: 0.9rem; margin-bottom: 14px; }
+  .related-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 16px; }
+  .related-card { background: white; padding: 20px; border-radius: 10px; text-decoration: none; color: inherit; border: 1px solid var(--color-gray-200); transition: transform 0.2s; }
+  .related-card:hover { transform: translateY(-2px); box-shadow: 0 4px 16px rgba(0,0,0,0.08); }
+  .related-card h4 { margin-bottom: 6px; font-size: 1rem; }
+  .related-card p { font-size: 0.85rem; color: var(--color-gray-600); margin-bottom: 8px; }
+  .related-card span { color: var(--color-primary); font-weight: 600; font-size: 0.85rem; }
+  @media (max-width: 900px) {
+    .answer-grid { grid-template-columns: 1fr; }
+    .truss-type-grid { grid-template-columns: 1fr; }
+    .drawings-required { grid-template-columns: 1fr; }
+    .related-grid { grid-template-columns: repeat(2, 1fr); }
+  }
+</style>

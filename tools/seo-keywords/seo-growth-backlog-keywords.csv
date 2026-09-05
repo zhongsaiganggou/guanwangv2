@@ -1,0 +1,30 @@
+keyword_cluster,intent,recommended_page,priority,reason,dependency,gsc_validation_required
+Agricultural Steel Buildings,commercial,/en/steel-agricultural-buildings/,P1,7 application terms (养殖场/养鸡场/养猪场等), strong buyer intent,Content creation,Yes
+Commercial & Public Steel Structures,commercial,/en/steel-commercial-buildings/,P1,20 application terms, broad but high volume,Content creation,Yes
+Steel Bracing & Connections,commercial,/en/components/steel-bracing-connections/,P1,4 product terms currently Quote Action only,Content creation,Yes
+Transportation Infrastructure Steel Structures,commercial,/en/steel-transportation-infrastructure/,P2,25 terms but too broad, needs GSC validation before dedicated page,GSC data + content,Yes
+Country: Malaysia Steel Structure,regional,/en/country/malaysia-steel-structure/,P2,Regional SEO, needs real Malaysia content,GSC data + country content,Yes
+Country: Indonesia Steel Structure,regional,/en/country/indonesia-steel-structure/,P2,Regional SEO, needs real Indonesia content,GSC data + country content,Yes
+Country: Nigeria Steel Structure,regional,/en/country/nigeria-steel-structure/,P2,Regional SEO, needs real Nigeria content,GSC data + country content,Yes
+Country: Saudi Arabia Steel Structure,regional,/en/country/saudi-arabia-steel-structure/,P2,Regional SEO, needs real Saudi content,GSC data + country content,Yes
+Country: Vietnam Steel Structure,regional,/en/country/vietnam-steel-structure/,P2,Regional SEO, needs real Vietnam content,GSC data + country content,Yes
+Blog: Steel Workshop Cost Guide,knowledge,/en/blog/steel-workshop-cost/,P1,Cost intent, high commercial value,Content creation,Yes
+Blog: Steel vs Concrete Comparison,knowledge,/en/blog/steel-vs-concrete-building/,P1,Comparison intent, buyer decision stage,Content creation,Yes
+Blog: Steel Structure Design Guide,knowledge,/en/blog/steel-structure-design-guide/,P1,Design intent, early buyer stage,Content creation,Yes
+Blog: Steel Structure Installation Guide,knowledge,/en/blog/steel-structure-installation-guide/,P2,Installation intent, but ZhongSai does not do local installation,Content creation with boundary,Yes
+Blog: Steel Structure Foundation Guide,knowledge,/en/blog/steel-structure-foundation/,P2,Foundation intent, technical knowledge,Content creation,Yes
+Blog: Wind Load & Steel Structure Design,knowledge,/en/blog/wind-load-steel-structure/,P2,Technical intent, engineering knowledge,Content creation,Yes
+Blog: Steel Grades & Material Standards,knowledge,/en/blog/steel-grades-material-standards/,P2,Technical intent, material knowledge,Content creation,Yes
+Blog: How to Choose Steel Structure Manufacturer,knowledge,/en/blog/how-to-choose-steel-structure-manufacturer/,P1,Selection intent, addresses recommendation/ranking keywords,Content creation,Yes
+Blog: Steel Structure Project Timeline,knowledge,/en/blog/steel-structure-project-timeline/,P2,Timeline intent, buyer planning,Content creation,Yes
+Blog: Steel Structure Quality Inspection Guide,knowledge,/en/blog/steel-structure-quality-inspection/,P2,Quality intent, supplier evaluation,Content creation,Yes
+Component: Steel Platforms,commercial,/en/components/steel-platforms/,P2,Platform terms currently Quote Action,Content creation,Yes
+Component: Steel Mezzanine Floors,commercial,/en/components/steel-mezzanine-floors/,P2,Mezzanine terms in Special cluster,Content creation,Yes
+Component: Steel Canopy & Walkway Cover,commercial,/en/components/steel-canopy-walkway/,P2,Canopy terms in Special cluster,Content creation,Yes
+Application: Steel Aircraft Hangar,commercial,/en/steel-aircraft-hangar/,P2,Specialized application, high value but low volume,Content creation,Yes
+Application: Steel Sports Arena,commercial,/en/steel-sports-arena/,P2,Sports building in Commercial cluster,Content creation,Yes
+Application: Steel Car Dealership / 4S,commercial,/en/steel-car-dealership/,P2,4S shop in Commercial cluster,Content creation,Yes
+Application: Steel Cold Storage Warehouse,commercial,/en/steel-cold-storage-warehouse/,P2,Specialized warehouse,Content creation,Yes
+Application: Steel Power Plant / Substation,commercial,/en/steel-power-plant-substation/,P2,Energy infrastructure in Mining cluster,Content creation,Yes
+Application: Steel Water Treatment Plant,commercial,/en/steel-water-treatment-plant/,P2,Infrastructure,Content creation,Yes
+Application: Steel Petrochemical Pipe Rack,commercial,/en/steel-petrochemical-pipe-rack/,P2,Heavy industry in Mining cluster,Content creation,Yes
