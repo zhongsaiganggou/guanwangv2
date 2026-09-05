@@ -7,9 +7,10 @@ import LanguageSwitch from './LanguageSwitch.astro';
 interface Props {
   lang: 'zh' | 'en';
   currentPath: string;
+  singleLanguage?: boolean;
 }
 
-const { lang, currentPath } = Astro.props;
+const { lang, currentPath, singleLanguage = false } = Astro.props;
 ---
 
 <header class="site-header" data-header>
@@ -22,7 +23,7 @@ const { lang, currentPath } = Astro.props;
       <DesktopNav lang={lang} currentPath={currentPath} />
 
       <div class="header-actions">
-        <LanguageSwitch lang={lang} currentPath={currentPath} />
+        <LanguageSwitch lang={lang} currentPath={currentPath} singleLanguage={singleLanguage} />
         <a href={`/${lang}/contact/#quote-form`} class="btn btn-primary btn-small">
           {lang === 'zh' ? '获取报价' : 'Get a Quote'}
         </a>
@@ -36,4 +37,4 @@ const { lang, currentPath } = Astro.props;
   </div>
 </header>
 
-<MobileNav lang={lang} currentPath={currentPath} />
+<MobileNav lang={lang} currentPath={currentPath} singleLanguage={singleLanguage} />

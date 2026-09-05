@@ -11,9 +11,10 @@ interface Props {
   description: string;
   lang: 'zh' | 'en';
   noindex?: boolean;
+  singleLanguage?: boolean;
 }
 
-const { title, description, lang, noindex = false } = Astro.props;
+const { title, description, lang, noindex = false, singleLanguage = false } = Astro.props;
 const currentPath = Astro.url.pathname;
 
 // 首页输出 Organization（每页至多 1 个）；正式内容页输出 BreadcrumbList；占位页不输出
@@ -25,12 +26,12 @@ const crumbLd = !isHome && !noindex ? buildBreadcrumbJsonLd(currentPath) : null;
 <!DOCTYPE html>
 <html lang={lang === 'zh' ? 'zh-CN' : 'en'}>
 <head>
-  <SEOHead title={title} description={description} lang={lang} noindex={noindex} />
+  <SEOHead title={title} description={description} lang={lang} noindex={noindex} singleLanguage={singleLanguage} />
   {orgLd && <script type="application/ld+json" set:html={JSON.stringify(orgLd)} />}
   {crumbLd && <script type="application/ld+json" set:html={JSON.stringify(crumbLd)} />}
 </head>
 <body>
-  <Header lang={lang} currentPath={currentPath} />
+  <Header lang={lang} currentPath={currentPath} singleLanguage={singleLanguage} />
   <main>
     <slot />
   </main>

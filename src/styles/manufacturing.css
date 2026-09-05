@@ -93,22 +93,35 @@
 }
 
 /* 制造现场图片网格 */
+.manufacturing-evidence {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.evidence-main {
+  overflow: hidden;
+  border-radius: 10px;
+}
+
+.evidence-main img {
+  width: 100%;
+  height: auto;
+  display: block;
+  object-fit: cover;
+}
+
 .evidence-grid {
   display: grid;
-  grid-template-columns: 2fr 1fr 1fr;
-  grid-template-rows: 1fr 1fr;
+  grid-template-columns: repeat(3, 1fr);
   gap: 16px;
-  height: 420px;
 }
 
 .evidence-item {
   overflow: hidden;
   border-radius: 10px;
   position: relative;
-}
-
-.evidence-item:first-child {
-  grid-row: span 2;
+  aspect-ratio: 4 / 3;
 }
 
 .evidence-item img {
@@ -120,6 +133,13 @@
 
 .evidence-item:hover img {
   transform: scale(1.05);
+}
+
+.evidence-caption {
+  margin-top: 20px;
+  font-size: 0.9375rem;
+  line-height: 1.7;
+  color: rgba(255, 255, 255, 0.75);
 }
 
 /* 质量控制网格 */
@@ -231,17 +251,10 @@
     height: 180px;
   }
   .evidence-grid {
-    grid-template-columns: 1fr 1fr;
-    grid-template-rows: auto;
-    height: auto;
-  }
-  .evidence-item:first-child {
-    grid-row: span 1;
-    grid-column: span 2;
-    height: 200px;
+    grid-template-columns: repeat(2, 1fr);
   }
   .evidence-item {
-    height: 160px;
+    aspect-ratio: 4 / 3;
   }
   .quality-grid {
     grid-template-columns: 1fr;
@@ -257,8 +270,5 @@
   }
   .evidence-grid {
     grid-template-columns: 1fr;
-  }
-  .evidence-item:first-child {
-    grid-column: span 1;
   }
 }

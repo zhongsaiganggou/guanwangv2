@@ -209,6 +209,7 @@ const SITEMAP_SECTIONS = [
   'manufacturing-quality',
   'steel-workshop',
   'steel-warehouse',
+  'steel-mining-factory',
   'services/structural-steel-detailing',
   'engineering-design',
   'about',
@@ -217,6 +218,15 @@ const SITEMAP_SECTIONS = [
   'privacy',
   'terms',
   'projects',
+];
+
+// 仅英文的 Legacy Blog 页面（无对应中文版本）
+const SITEMAP_EN_ONLY = [
+  'blog/how-to-import-steel-structure-from-china-complete-guide',
+  'blog/how-to-import-steel-structure-from-china-to-africa',
+  'blog/shipping-cost-steel-structure-from-china',
+  'blog/steel-structure-container-loading-guide',
+  'blog/steel-warehouse-cost-complete-guide',
 ];
 
 export function buildSitemapPaths(): string[] {
@@ -228,6 +238,9 @@ export function buildSitemapPaths(): string[] {
     for (const proj of projects) {
       urls.push(`/${lang}/projects/${proj.slug}/`);
     }
+  }
+  for (const blog of SITEMAP_EN_ONLY) {
+    urls.push(`/en/${blog}/`);
   }
   return urls;
 }

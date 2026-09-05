@@ -1,5 +1,259 @@
 ---
-import Placeholder from '../../../components/Placeholder.astro';
+import BaseLayout from '../../../layouts/BaseLayout.astro';
+import QuoteForm from '../../../components/QuoteForm.astro';
+import '../../../styles/detail.css';
+
+const title = 'Steel Structures for Mining & Heavy Industrial Projects | ZhongSai';
+const description = 'ZhongSai Steel Structure provides steel structure fabrication and component supply for mining and heavy industrial applications, including processing facilities, equipment-support structures, and industrial buildings. From drawings to fabrication, packing and export coordination.';
+const lang = 'en';
+const canonical = 'https://zhongsai-steelstructure.com/en/steel-mining-factory/';
 ---
 
-<Placeholder lang="en" title="Mining & Energy" />
+<BaseLayout title={title} description={description} lang={lang}>
+  <!-- Hero -->
+  <section class="detail-hero">
+    <div class="detail-hero-bg" style="background-image: url('/images/manufacturing/real/workshop-overview-wide-9819.jpg');"></div>
+    <div class="detail-hero-overlay"></div>
+    <div class="detail-hero-content">
+      <span class="eyebrow">Mining & Heavy Industrial · Steel Fabrication</span>
+      <h1>Steel Structures for Mining & Heavy Industrial Applications</h1>
+      <p class="lead">ZhongSai Steel Structure fabricates and supplies structural steel components for mining processing facilities, heavy industrial buildings, and equipment-support structures. From drawings review to fabrication, packing, container loading and export coordination, we deliver steel components for demanding industrial environments.</p>
+      <div class="detail-hero-actions">
+        <a href="#quote" class="btn btn-primary">Get Project Quotation</a>
+        <a href="/en/products/" class="btn btn-outline">View All Products</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Breadcrumb -->
+  <nav class="detail-breadcrumb">
+    <div class="container">
+      <a href="/en/">Home</a>
+      <span class="sep">/</span>
+      <a href="/en/products/">Products</a>
+      <span class="sep">/</span>
+      <span class="current">Mining & Heavy Industrial</span>
+    </div>
+  </nav>
+
+  <!-- 01 Application Overview -->
+  <section class="detail-section">
+    <div class="container">
+      <div class="section-heading reveal">
+        <p class="section-index">01 / Application Overview</p>
+        <h2>Steel Structure Requirements for Mining & Heavy Industrial Projects</h2>
+        <p>Mining and heavy industrial facilities require robust steel structures designed for heavy loads, equipment support, and demanding operating environments. ZhongSai fabricates structural steel components based on project drawings and technical specifications, supplying beams, columns, trusses, platforms, and supporting structures for industrial applications.</p>
+      </div>
+      <div class="requirement-grid">
+        <div class="requirement-card reveal reveal-delay-1">
+          <div class="req-icon">01</div>
+          <h3>Processing Facilities</h3>
+          <p>Steel structures for mineral processing plants, crushing and screening facilities, and industrial processing buildings, designed per project structural requirements.</p>
+        </div>
+        <div class="requirement-card reveal reveal-delay-2">
+          <div class="req-icon">02</div>
+          <h3>Equipment-Support Structures</h3>
+          <p>Steel platforms, support frames, and equipment foundations structures fabricated per equipment loading requirements and project drawings.</p>
+        </div>
+        <div class="requirement-card reveal reveal-delay-3">
+          <div class="req-icon">03</div>
+          <h3>Heavy Industrial Buildings</h3>
+          <p>Industrial workshop and warehouse structures for mining operations, maintenance facilities, and heavy equipment storage, with crane-ready configurations where required.</p>
+        </div>
+        <div class="requirement-card reveal reveal-delay-1">
+          <div class="req-icon">04</div>
+          <h3>Conveyor & Pipe Support</h3>
+          <p>Steel support structures for conveyor systems, pipe racks, and industrial material handling infrastructure, fabricated per project design specifications.</p>
+        </div>
+        <div class="requirement-card reveal reveal-delay-2">
+          <div class="req-icon">05</div>
+          <h3>Custom Fabricated Members</h3>
+          <p>Custom steel members and complex fabricated components produced per project drawings, including heavy plate fabrication and built-up sections.</p>
+        </div>
+        <div class="requirement-card reveal reveal-delay-3">
+          <div class="req-icon">06</div>
+          <h3>Export Packing & Loading</h3>
+          <p>Heavy industrial components packed and container-loaded for overseas delivery, with component marking, packing lists, and export documentation support.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 02 Technical Requirements -->
+  <section class="detail-section alt">
+    <div class="container">
+      <div class="section-heading reveal">
+        <p class="section-index">02 / Technical Requirements</p>
+        <h2>Information Needed for Mining & Industrial Steel Structure Projects</h2>
+        <p>Accurate fabrication and quotation require complete project information. The following details directly influence structural design, member sizing, fabrication requirements, and packing/loading planning.</p>
+      </div>
+      <div class="image-text-block">
+        <div class="itb-image">
+          <img src="/images/manufacturing/real/welding-9820.jpg" alt="ZhongSai heavy steel component fabrication" loading="lazy">
+        </div>
+        <div class="itb-content">
+          <h3>Project Information for Quotation and Fabrication</h3>
+          <ul>
+            <li>Project country and destination port</li>
+            <li>Structural drawings or architectural plans</li>
+            <li>Bill of Quantities (BOQ) if available</li>
+            <li>Equipment loading requirements and support points</li>
+            <li>Crane requirements (tonnage, lifting height, number of cranes)</li>
+            <li>Building dimensions: length × width × eave height</li>
+            <li>Local climate data: wind speed, snow load, seismic zone</li>
+            <li>Surface treatment and coating requirements</li>
+            <li>Material grade specifications per project design</li>
+          </ul>
+          <p style="margin-top: 16px; font-size: 0.875rem; color: #64748b;">* Specific spans, loads, member sizes, and technical specifications are determined per project drawings and agreed requirements. ZhongSai does not provide unsolicited structural design for projects without confirmed technical scope.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 03 Fabrication Capability -->
+  <section class="detail-section">
+    <div class="container">
+      <div class="section-heading reveal">
+        <p class="section-index">03 / Fabrication Capability</p>
+        <h2>Manufacturing Capability for Heavy Industrial Steel Components</h2>
+        <p>ZhongSai operates a 100,000 m² production base with 100,000 tonnes annual capacity and 300+ frontline workers. Our fabrication process covers cutting, welding, assembly, surface treatment, and quality control for structural steel components of various sizes and complexity.</p>
+      </div>
+      <div class="feature-grid">
+        <div class="feature-card reveal reveal-delay-1">
+          <div class="feature-img" style="background-image: url('/images/manufacturing/real/cutting-9809.jpg');"></div>
+          <div class="feature-body">
+            <h3>CNC Cutting & Preparation</h3>
+            <p>Steel plates and sections cut per fabrication drawings, with material traceability and identification marking throughout the production process.</p>
+          </div>
+        </div>
+        <div class="feature-card reveal reveal-delay-2">
+          <div class="feature-img" style="background-image: url('/images/manufacturing/real/welding-9820.jpg');"></div>
+          <div class="feature-body">
+            <h3>Welding & Assembly</h3>
+            <p>Heavy steel members assembled and welded per project specifications, with welding procedure qualification and in-process quality inspection.</p>
+          </div>
+        </div>
+        <div class="feature-card reveal reveal-delay-1">
+          <div class="feature-img" style="background-image: url('/images/manufacturing/real/assembly-9821.jpg');"></div>
+          <div class="feature-body">
+            <h3>Surface Treatment</h3>
+            <p>Shot blasting and coating or galvanizing applied per project requirements, with coating thickness and quality checks before packing.</p>
+          </div>
+        </div>
+        <div class="feature-card reveal reveal-delay-2">
+          <div class="feature-img" style="background-image: url('/images/company/factory-yard-gantry-crane.jpg');"></div>
+          <div class="feature-body">
+            <h3>Finished Member Check & Packing</h3>
+            <p>Finished members checked against confirmed fabrication requirements, organized, marked, and prepared for packing and container loading.</p>
+          </div>
+        </div>
+      </div>
+      <div style="margin-top: 28px; display: flex; gap: 16px; flex-wrap: wrap;">
+        <a href="/en/manufacturing-quality/" class="btn btn-outline">View Manufacturing Capability</a>
+        <a href="/en/custom-engineering/" class="btn btn-outline">View Custom Engineering</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- 04 Export Delivery -->
+  <section class="detail-section alt">
+    <div class="container">
+      <div class="section-heading reveal">
+        <p class="section-index">04 / Export Delivery</p>
+        <h2>Packing, Container Loading, and Export Coordination</h2>
+        <p>Heavy industrial steel components require careful packing and container loading planning to protect components during ocean transit and enable efficient unloading at destination. ZhongSai coordinates packing, marking, container loading, and export documentation support according to project requirements.</p>
+      </div>
+      <div class="image-text-block reverse">
+        <div class="itb-image">
+          <img src="/images/container-loading.jpg" alt="Steel structure container loading for export" loading="lazy">
+        </div>
+        <div class="itb-content">
+          <h3>Export Preparation for Heavy Industrial Components</h3>
+          <ul>
+            <li>Component marking with part numbers matching erection drawings</li>
+            <li>Individual wrapping and protection for large members</li>
+            <li>Bundle packing for sections and small components</li>
+            <li>Container loading planning with weight distribution</li>
+            <li>Wooden spacers and bracing to prevent transit damage</li>
+            <li>Packing lists matched to container numbers</li>
+            <li>Export documentation support and logistics coordination</li>
+          </ul>
+          <div style="margin-top: 20px;">
+            <a href="/en/export-delivery/" class="btn btn-outline">View Export Delivery Process</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Service Boundary -->
+  <section class="detail-section dark">
+    <div class="container">
+      <div class="section-heading reveal" style="text-align: center;">
+        <p class="section-index" style="justify-content: center;">Service Boundary</p>
+        <h2 style="color: #fff;">What ZhongSai Provides and Does Not Provide</h2>
+        <p style="margin: 0 auto;">Clear service scope for mining and heavy industrial projects.</p>
+      </div>
+      <div class="geo-boundary">
+        <div class="geo-box include">
+          <h4>ZhongSai Provides</h4>
+          <ul>
+            <li>Drawings review and fabrication drawing support</li>
+            <li>Structural steel component fabrication per project drawings</li>
+            <li>Steel beams, columns, trusses, platforms, and custom members</li>
+            <li>Surface treatment (shot blasting, painting, galvanizing per spec)</li>
+            <li>Component marking, packing, and container loading</li>
+            <li>Export documentation support and logistics coordination</li>
+            <li>Overseas installation technical guidance</li>
+          </ul>
+        </div>
+        <div class="geo-box exclude">
+          <h4>ZhongSai Does Not Directly Undertake</h4>
+          <ul>
+            <li>Local construction or erection at project site</li>
+            <li>Local foundation construction</li>
+            <li>Mining operation or mineral processing</li>
+            <li>Local general contracting / EPC</li>
+            <li>Mining equipment supply or process engineering</li>
+            <li>Customs brokerage as a licensed customs broker</li>
+            <li>Freight forwarding as a licensed freight forwarder</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Quote CTA -->
+  <section class="detail-section dark" id="quote">
+    <div class="container">
+      <div class="section-heading reveal" style="text-align: center;">
+        <p class="section-index" style="justify-content: center; color: #f59e0b;">Get Quotation</p>
+        <h2 style="color: #fff;">Submit Your Mining & Industrial Project Requirements</h2>
+        <p style="margin: 0 auto; color: rgba(255,255,255,0.75);">Upload drawings if available, or submit basic project requirements if you don't have complete drawings yet.</p>
+      </div>
+      <QuoteForm lang="en" />
+    </div>
+  </section>
+</BaseLayout>
+
+<script>
+  // Scroll reveal
+  const revealElements = document.querySelectorAll('.reveal');
+  if ('IntersectionObserver' in window) {
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.style.opacity = '1';
+          entry.target.style.transform = 'translateY(0)';
+          observer.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.1 });
+    revealElements.forEach(el => {
+      el.style.opacity = '0';
+      el.style.transform = 'translateY(24px)';
+      el.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+      observer.observe(el);
+    });
+  }
+</script>

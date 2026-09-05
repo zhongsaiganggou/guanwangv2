@@ -7,9 +7,10 @@ interface Props {
   canonical?: string;
   ogImage?: string;
   noindex?: boolean;
+  singleLanguage?: boolean;
 }
 
-const { title, description, lang, canonical, ogImage, noindex = false } = Astro.props;
+const { title, description, lang, canonical, ogImage, noindex = false, singleLanguage = false } = Astro.props;
 const siteUrl = 'https://zhongsai-steelstructure.com';
 const currentPath = Astro.url.pathname;
 const normalizedPath = currentPath.endsWith('/') ? currentPath : currentPath + '/';
@@ -45,7 +46,16 @@ const zhUrl = `${siteUrl}${lang === 'zh' ? normalizedPath : normalizedPath.repla
 <meta name="twitter:description" content={description} />
 <meta name="twitter:image" content={ogImageUrl} />
 
-<!-- Hreflang（自指 + 另一语言 + x-default 指向英文） -->
-<link rel="alternate" hreflang="en" href={enUrl} />
-<link rel="alternate" hreflang="zh-CN" href={zhUrl} />
-<link rel="alternate" hreflang="x-default" href={enUrl} />
+<!-- Hreflang（自指 + 另一语言 + x-default 指向英文；单语言页面只输出自指） -->
+{singleLanguage ? (
+  <>
+    <link rel="alternate" hreflang="en" href={canonicalUrl} />
+    <link rel="alternate" hreflang="x-default" href={canonicalUrl} />
+  </>
+) : (
+  <>
+    <link rel="alternate" hreflang="en" href={enUrl} />
+    <link rel="alternate" hreflang="zh-CN" href={zhUrl} />
+    <link rel="alternate" hreflang="x-default" href={enUrl} />
+  </>
+)}

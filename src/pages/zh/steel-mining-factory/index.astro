@@ -1,5 +1,259 @@
 ---
-import Placeholder from '../../../components/Placeholder.astro';
+import BaseLayout from '../../../layouts/BaseLayout.astro';
+import QuoteForm from '../../../components/QuoteForm.astro';
+import '../../../styles/detail.css';
+
+const title = '矿业与重型工业钢结构解决方案 | 中赛钢构';
+const description = '中赛钢构为矿业及重型工业项目提供钢结构制造与构件供应，包括加工厂房、设备支撑结构、工业建筑等。从图纸审核到制造加工、包装装柜、出口协调，为工业环境提供可靠钢构件。';
+const lang = 'zh';
+const canonical = 'https://zhongsai-steelstructure.com/zh/steel-mining-factory/';
 ---
 
-<Placeholder lang="zh" title="矿业与能源设施" />
+<BaseLayout title={title} description={description} lang={lang}>
+  <!-- Hero -->
+  <section class="detail-hero">
+    <div class="detail-hero-bg" style="background-image: url('/images/manufacturing/real/workshop-overview-wide-9819.jpg');"></div>
+    <div class="detail-hero-overlay"></div>
+    <div class="detail-hero-content">
+      <span class="eyebrow">矿业与重型工业 · 钢结构制造</span>
+      <h1>矿业与重型工业钢结构解决方案</h1>
+      <p class="lead">中赛钢构为矿业加工设施、重型工业建筑及设备支撑结构提供钢结构制造与构件供应。从图纸审核到制造加工、包装装柜、出口协调，为 demanding 工业环境提供可靠钢构件供应。</p>
+      <div class="detail-hero-actions">
+        <a href="#quote" class="btn btn-primary">获取项目报价</a>
+        <a href="/zh/products/" class="btn btn-outline">查看全部产品</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Breadcrumb -->
+  <nav class="detail-breadcrumb">
+    <div class="container">
+      <a href="/zh/">首页</a>
+      <span class="sep">/</span>
+      <a href="/zh/products/">产品</a>
+      <span class="sep">/</span>
+      <span class="current">矿业与重型工业</span>
+    </div>
+  </nav>
+
+  <!-- 01 应用概述 -->
+  <section class="detail-section">
+    <div class="container">
+      <div class="section-heading reveal">
+        <p class="section-index">01 / 应用概述</p>
+        <h2>矿业与重型工业项目的钢结构需求</h2>
+        <p>矿业及重型工业设施需要承受重载、设备支撑及苛刻运行环境的坚固钢结构。中赛钢构根据项目图纸和技术规格制造钢结构构件，供应钢梁、钢柱、桁架、平台及支撑结构，满足工业应用需求。</p>
+      </div>
+      <div class="requirement-grid">
+        <div class="requirement-card reveal reveal-delay-1">
+          <div class="req-icon">01</div>
+          <h3>加工厂房</h3>
+          <p>矿物加工厂、破碎筛分设施及工业加工建筑的钢结构，按项目结构要求设计制造。</p>
+        </div>
+        <div class="requirement-card reveal reveal-delay-2">
+          <div class="req-icon">02</div>
+          <h3>设备支撑结构</h3>
+          <p>钢平台、支撑框架及设备基础结构，按设备荷载要求和项目图纸制造加工。</p>
+        </div>
+        <div class="requirement-card reveal reveal-delay-3">
+          <div class="req-icon">03</div>
+          <h3>重型工业建筑</h3>
+          <p>矿业运营工业厂房、维修设施及重型设备仓库的钢结构，可配置行车支撑结构。</p>
+        </div>
+        <div class="requirement-card reveal reveal-delay-1">
+          <div class="req-icon">04</div>
+          <h3>输送与管廊支撑</h3>
+          <p>输送系统、管廊及工业物料搬运基础设施的钢结构支撑，按项目设计规格制造。</p>
+        </div>
+        <div class="requirement-card reveal reveal-delay-2">
+          <div class="req-icon">05</div>
+          <h3>定制加工构件</h3>
+          <p>按项目图纸生产定制钢构件及复杂加工件，包括厚板加工和组合截面构件。</p>
+        </div>
+        <div class="requirement-card reveal reveal-delay-3">
+          <div class="req-icon">06</div>
+          <h3>出口包装装柜</h3>
+          <p>重型工业构件包装装柜出口，含构件编号、装箱清单及出口资料协调支持。</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 02 技术要求 -->
+  <section class="detail-section alt">
+    <div class="container">
+      <div class="section-heading reveal">
+        <p class="section-index">02 / 技术要求</p>
+        <h2>矿业与工业钢结构项目所需信息</h2>
+        <p>准确的制造加工和报价需要完整的项目信息。以下信息直接影响结构设计、构件规格、制造要求及包装装柜方案。</p>
+      </div>
+      <div class="image-text-block">
+        <div class="itb-image">
+          <img src="/images/manufacturing/real/welding-9820.jpg" alt="中赛重型钢构件制造加工" loading="lazy">
+        </div>
+        <div class="itb-content">
+          <h3>报价与制造所需项目信息</h3>
+          <ul>
+            <li>项目国家及目的港</li>
+            <li>结构图纸或建筑方案图</li>
+            <li>工程量清单（BOQ）如有</li>
+            <li>设备荷载要求及支撑点位</li>
+            <li>行车要求（吨位、起升高度、行车数量）</li>
+            <li>建筑尺寸：长 × 宽 × 檐高</li>
+            <li>当地气候数据：风速、雪荷载、抗震设防</li>
+            <li>表面处理及涂装要求</li>
+            <li>项目设计规定的材料牌号要求</li>
+          </ul>
+          <p style="margin-top: 16px; font-size: 0.875rem; color: #64748b;">* 具体跨度、荷载、构件规格及技术参数以项目图纸和双方确认的技术要求为准。中赛钢构不提供未经确认技术范围的结构设计。</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 03 制造能力 -->
+  <section class="detail-section">
+    <div class="container">
+      <div class="section-heading reveal">
+        <p class="section-index">03 / 制造能力</p>
+        <h2>重型工业钢构件制造能力</h2>
+        <p>中赛钢构拥有100,000 m²生产基地，年产能100,000吨，一线生产工人300+。制造流程涵盖切割、焊接、组装、表面处理及质量控制，可生产各种规格和复杂度的钢结构构件。</p>
+      </div>
+      <div class="feature-grid">
+        <div class="feature-card reveal reveal-delay-1">
+          <div class="feature-img" style="background-image: url('/images/manufacturing/real/cutting-9809.jpg');"></div>
+          <div class="feature-body">
+            <h3>数控切割与备料</h3>
+            <p>钢板和型钢按加工图纸切割，全程材料可追溯，生产过程标识清晰。</p>
+          </div>
+        </div>
+        <div class="feature-card reveal reveal-delay-2">
+          <div class="feature-img" style="background-image: url('/images/manufacturing/real/welding-9820.jpg');"></div>
+          <div class="feature-body">
+            <h3>焊接与组装</h3>
+            <p>重型钢构件按项目规格组装焊接，执行焊接工艺评定及过程质量检验。</p>
+          </div>
+        </div>
+        <div class="feature-card reveal reveal-delay-1">
+          <div class="feature-img" style="background-image: url('/images/manufacturing/real/assembly-9821.jpg');"></div>
+          <div class="feature-body">
+            <h3>表面处理</h3>
+            <p>按项目要求进行抛丸除锈及涂装或热镀锌，包装前检查涂层厚度和质量。</p>
+          </div>
+        </div>
+        <div class="feature-card reveal reveal-delay-2">
+          <div class="feature-img" style="background-image: url('/images/company/factory-yard-gantry-crane.jpg');"></div>
+          <div class="feature-body">
+            <h3>成品检查与包装</h3>
+            <p>成品构件按确认加工要求检查、整理、编号，并进入包装与装柜准备环节。</p>
+          </div>
+        </div>
+      </div>
+      <div style="margin-top: 28px; display: flex; gap: 16px; flex-wrap: wrap;">
+        <a href="/zh/manufacturing-quality/" class="btn btn-outline">查看制造能力</a>
+        <a href="/zh/products/custom-engineering/" class="btn btn-outline">查看按图定制加工</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- 04 出口交付 -->
+  <section class="detail-section alt">
+    <div class="container">
+      <div class="section-heading reveal">
+        <p class="section-index">04 / 出口交付</p>
+        <h2>包装、装柜与出口协调</h2>
+        <p>重型工业钢构件需要精心的包装和装柜方案，以保护构件在海运途中不受损坏，并确保目的港高效卸货。中赛钢构根据项目需求协调包装、编号、装柜及出口资料支持。</p>
+      </div>
+      <div class="image-text-block reverse">
+        <div class="itb-image">
+          <img src="/images/container-loading.jpg" alt="钢结构出口装柜" loading="lazy">
+        </div>
+        <div class="itb-content">
+          <h3>重型工业构件出口准备</h3>
+          <ul>
+            <li>构件编号与安装图对应</li>
+            <li>大型构件单独包装防护</li>
+            <li>型钢及小型构件成捆包装</li>
+            <li>装柜方案与重量分布规划</li>
+            <li>木方垫木及加固防止运输损伤</li>
+            <li>装箱清单与柜号对应</li>
+            <li>出口资料支持与物流协调</li>
+          </ul>
+          <div style="margin-top: 20px;">
+            <a href="/zh/export-delivery/" class="btn btn-outline">查看出口交付流程</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 服务边界 -->
+  <section class="detail-section dark">
+    <div class="container">
+      <div class="section-heading reveal" style="text-align: center;">
+        <p class="section-index" style="justify-content: center;">服务边界</p>
+        <h2 style="color: #fff;">中赛钢构提供与不提供的服务</h2>
+        <p style="margin: 0 auto;">明确矿业与重型工业项目的服务范围。</p>
+      </div>
+      <div class="geo-boundary">
+        <div class="geo-box include">
+          <h4>中赛钢构提供</h4>
+          <ul>
+            <li>图纸审核与加工图支持</li>
+            <li>按项目图纸制造钢结构构件</li>
+            <li>钢梁、钢柱、桁架、平台及定制构件</li>
+            <li>表面处理（抛丸、涂装、热镀锌按规格）</li>
+            <li>构件编号、包装及装柜</li>
+            <li>出口资料支持与物流协调</li>
+            <li>海外安装技术指导</li>
+          </ul>
+        </div>
+        <div class="geo-box exclude">
+          <h4>中赛钢构不直接承接</h4>
+          <ul>
+            <li>项目当地施工或安装</li>
+            <li>当地基础施工</li>
+            <li>矿山运营或矿物加工</li>
+            <li>当地总承包 / EPC</li>
+            <li>矿山设备供应或工艺设计</li>
+            <li>作为持牌报关行提供报关服务</li>
+            <li>作为持牌货代提供货运代理服务</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 报价 CTA -->
+  <section class="detail-section dark" id="quote">
+    <div class="container">
+      <div class="section-heading reveal" style="text-align: center;">
+        <p class="section-index" style="justify-content: center; color: #f59e0b;">获取报价</p>
+        <h2 style="color: #fff;">提交您的矿业与工业项目需求</h2>
+        <p style="margin: 0 auto; color: rgba(255,255,255,0.75);">如有图纸请上传，如暂无完整图纸可提交基本项目需求。</p>
+      </div>
+      <QuoteForm lang="zh" />
+    </div>
+  </section>
+</BaseLayout>
+
+<script>
+  // Scroll reveal
+  const revealElements = document.querySelectorAll('.reveal');
+  if ('IntersectionObserver' in window) {
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.style.opacity = '1';
+          entry.target.style.transform = 'translateY(0)';
+          observer.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.1 });
+    revealElements.forEach(el => {
+      el.style.opacity = '0';
+      el.style.transform = 'translateY(24px)';
+      el.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+      observer.observe(el);
+    });
+  }
+</script>

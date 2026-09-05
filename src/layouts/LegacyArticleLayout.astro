@@ -1,0 +1,268 @@
+---
+// LegacyArticleLayout.astro - Legacy preserved article page layout
+// Used for P0 blog URLs that must keep their original path and return HTTP 200
+import BaseLayout from './BaseLayout.astro';
+import QuoteForm from '../components/QuoteForm.astro';
+
+interface Props {
+  title: string;
+  description: string;
+  category: string;
+  lang?: 'zh' | 'en';
+  relatedLinks?: { href: string; label: string; desc: string }[];
+}
+
+const {
+  title,
+  description,
+  category,
+  lang = 'en',
+  relatedLinks = [],
+} = Astro.props;
+
+const isEN = lang === 'en';
+---
+
+<BaseLayout title={title} description={description} lang={lang} singleLanguage={true}>
+  <article class="legacy-article">
+    <!-- Breadcrumb: Home > Resources (plain text, no link) > Article -->
+    <nav class="breadcrumb" aria-label="Breadcrumb">
+      <div class="container">
+        <ol>
+          <li><a href={`/${lang}/`}>{isEN ? 'Home' : '首页'}</a></li>
+          <li aria-current="page">{isEN ? 'Resources' : '资源'}</li>
+        </ol>
+      </div>
+    </nav>
+
+    <!-- Article Header -->
+    <header class="legacy-article-header">
+      <div class="container container-narrow">
+        <span class="article-category">{category}</span>
+        <h1>{title}</h1>
+        <p class="article-intro">{description}</p>
+      </div>
+    </header>
+
+    <!-- Article Body -->
+    <div class="legacy-article-body">
+      <div class="container container-narrow">
+        <slot />
+      </div>
+    </div>
+
+    <!-- Related Capabilities -->
+    {relatedLinks.length > 0 && (
+      <section class="legacy-related">
+        <div class="container container-narrow">
+          <h2>{isEN ? 'Related Capabilities' : '相关能力'}</h2>
+          <div class="related-grid">
+            {relatedLinks.map((link) => (
+              <a href={link.href} class="related-card">
+                <h3>{link.label}</h3>
+                <p>{link.desc}</p>
+              </a>
+            ))}
+          </div>
+        </div>
+      </section>
+    )}
+
+    <!-- Quote CTA -->
+    <section class="legacy-cta">
+      <div class="container container-narrow">
+        <h2>{isEN ? 'Have a Steel Structure Project?' : '有钢结构项目需求？'}</h2>
+        <p>{isEN ? 'Send your drawings, BOQ or project requirements. No drawings? Provide your country, building type, approximate size and intended use.' : '提交图纸、BOQ或项目需求。没有图纸？请提供项目国家、建筑类型、大致尺寸和用途。'}</p>
+        <QuoteForm lang={lang} />
+      </div>
+    </section>
+  </article>
+</BaseLayout>
+
+<style>
+  .legacy-article {
+    padding-bottom: 0;
+  }
+  .breadcrumb {
+    padding: 16px 0;
+    border-bottom: 1px solid var(--color-border, #e5e7eb);
+  }
+  .breadcrumb ol {
+    list-style: none;
+    display: flex;
+    gap: 8px;
+    margin: 0;
+    padding: 0;
+    font-size: 0.875rem;
+    color: var(--color-text-muted, #6b7280);
+  }
+  .breadcrumb li:not(:last-child)::after {
+    content: '/';
+    margin-left: 8px;
+  }
+  .breadcrumb a {
+    color: var(--color-primary, #1e40af);
+    text-decoration: none;
+  }
+  .breadcrumb a:hover {
+    text-decoration: underline;
+  }
+  .legacy-article-header {
+    padding: 48px 0 32px;
+  }
+  .article-category {
+    display: inline-block;
+    font-size: 0.75rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    color: var(--color-primary, #1e40af);
+    margin-bottom: 16px;
+  }
+  .legacy-article-header h1 {
+    font-size: clamp(1.75rem, 4vw, 2.5rem);
+    font-weight: 700;
+    line-height: 1.2;
+    margin: 0 0 16px;
+    color: var(--color-text, #111827);
+  }
+  .article-intro {
+    font-size: 1.125rem;
+    line-height: 1.7;
+    color: var(--color-text-muted, #4b5563);
+    margin: 0;
+    max-width: 70ch;
+  }
+  .legacy-article-body {
+    padding: 32px 0 48px;
+  }
+  .legacy-article-body :global(h2) {
+    font-size: 1.5rem;
+    font-weight: 700;
+    margin: 40px 0 16px;
+    color: var(--color-text, #111827);
+  }
+  .legacy-article-body :global(h3) {
+    font-size: 1.25rem;
+    font-weight: 600;
+    margin: 32px 0 12px;
+    color: var(--color-text, #111827);
+  }
+  .legacy-article-body :global(p) {
+    font-size: 1rem;
+    line-height: 1.8;
+    margin: 0 0 16px;
+    color: var(--color-text-body, #374151);
+  }
+  .legacy-article-body :global(ul),
+  .legacy-article-body :global(ol) {
+    margin: 0 0 16px;
+    padding-left: 24px;
+  }
+  .legacy-article-body :global(li) {
+    font-size: 1rem;
+    line-height: 1.8;
+    margin-bottom: 8px;
+    color: var(--color-text-body, #374151);
+  }
+  .legacy-article-body :global(a) {
+    color: var(--color-primary, #1e40af);
+    text-decoration: underline;
+  }
+  .legacy-article-body :global(table) {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 24px 0;
+    font-size: 0.9375rem;
+  }
+  .legacy-article-body :global(th),
+  .legacy-article-body :global(td) {
+    border: 1px solid var(--color-border, #e5e7eb);
+    padding: 12px 16px;
+    text-align: left;
+  }
+  .legacy-article-body :global(th) {
+    background: var(--color-bg-muted, #f9fafb);
+    font-weight: 600;
+  }
+  .legacy-article-body :global(blockquote) {
+    border-left: 4px solid var(--color-primary, #1e40af);
+    padding: 12px 20px;
+    margin: 24px 0;
+    background: var(--color-bg-muted, #f9fafb);
+    color: var(--color-text-body, #374151);
+  }
+  .legacy-related {
+    padding: 48px 0;
+    background: var(--color-bg-muted, #f9fafb);
+  }
+  .legacy-related h2 {
+    font-size: 1.5rem;
+    font-weight: 700;
+    margin: 0 0 24px;
+  }
+  .related-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    gap: 16px;
+  }
+  .related-card {
+    display: block;
+    padding: 20px;
+    background: #fff;
+    border: 1px solid var(--color-border, #e5e7eb);
+    border-radius: 8px;
+    text-decoration: none;
+    color: inherit;
+    transition: border-color 0.2s;
+  }
+  .related-card:hover {
+    border-color: var(--color-primary, #1e40af);
+  }
+  .related-card h3 {
+    font-size: 1rem;
+    font-weight: 600;
+    margin: 0 0 8px;
+    color: var(--color-primary, #1e40af);
+  }
+  .related-card p {
+    font-size: 0.875rem;
+    line-height: 1.6;
+    color: var(--color-text-muted, #6b7280);
+    margin: 0;
+  }
+  .legacy-cta {
+    padding: 56px 0;
+  }
+  .legacy-cta h2 {
+    font-size: 1.75rem;
+    font-weight: 700;
+    margin: 0 0 12px;
+    text-align: center;
+  }
+  .legacy-cta p {
+    font-size: 1rem;
+    line-height: 1.7;
+    color: var(--color-text-muted, #4b5563);
+    margin: 0 0 32px;
+    text-align: center;
+    max-width: 60ch;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  .container-narrow {
+    max-width: 800px;
+  }
+  @media (max-width: 768px) {
+    .legacy-article-header {
+      padding: 32px 0 24px;
+    }
+    .legacy-article-body {
+      padding: 24px 0 32px;
+    }
+    .legacy-article-body :global(h2) {
+      font-size: 1.25rem;
+      margin-top: 32px;
+    }
+  }
+</style>
