@@ -3,6 +3,7 @@
 import BaseLayout from '../../../layouts/BaseLayout.astro';
 import ProjectCard from '../../../components/ProjectCard.astro';
 import QuoteForm from '../../../components/QuoteForm.astro';
+import ExportDeliveryCTA from '../../../components/ExportDeliveryCTA.astro';
 import { projects } from '../../../data/projects-data';
 
 const lang = 'en';
@@ -42,6 +43,8 @@ const description = 'Explore ZhongSai Steel Structure manufacturing references a
 
   <section class="projects-quote">
     <div class="container">
+      <ExportDeliveryCTA lang="en" />
+
       <div class="quote-intro">
         <p class="eyebrow">PROJECT QUOTE</p>
         <h2>Have a Similar Project?</h2>

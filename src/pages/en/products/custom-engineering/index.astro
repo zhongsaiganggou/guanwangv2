@@ -1,6 +1,8 @@
 ---
 import BaseLayout from '../../../../layouts/BaseLayout.astro';
 import QuoteForm from '../../../../components/QuoteForm.astro';
+import ExportDeliveryCTA from '../../../../components/ExportDeliveryCTA.astro';
+import EngineeringServiceGuide from '../../../../components/EngineeringServiceGuide.astro';
 import '../../../../styles/detail.css';
 
 const title = 'Structural Steel Fabrication in China | Custom Fabrication | ZhongSai';
@@ -35,6 +37,8 @@ const canonical = 'https://zhongsai-steelstructure.com/en/products/custom-engine
       <span class="current">Custom Engineering & Fabrication</span>
     </div>
   </nav>
+
+  <EngineeringServiceGuide lang="en" current="custom-engineering" />
 
   <!-- 01 Custom Fabrication to Project Drawings -->
   <section class="detail-section">
@@ -375,6 +379,8 @@ const canonical = 'https://zhongsai-steelstructure.com/en/products/custom-engine
   </section>
 
   <!-- 09 Quote CTA + QuoteForm -->
+
+  <ExportDeliveryCTA lang="en" />
   <section class="detail-section dark" id="quote">
     <div class="container">
       <div class="section-heading reveal" style="text-align: center;">

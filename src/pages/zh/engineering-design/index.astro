@@ -1,6 +1,7 @@
 ---
 import BaseLayout from '../../../layouts/BaseLayout.astro';
 import QuoteForm from '../../../components/QuoteForm.astro';
+import EngineeringServiceGuide from '../../../components/EngineeringServiceGuide.astro';
 import '../../../styles/detail.css';
 
 const title = '钢结构建筑设计与制造衔接服务 | 中赛钢构';
@@ -33,6 +34,8 @@ const canonical = 'https://zhongsai-steelstructure.com/zh/engineering-design/';
       <span class="current">工程设计</span>
     </div>
   </nav>
+
+  <EngineeringServiceGuide lang="zh" current="engineering-design" />
 
   <!-- 01 从项目需求到结构方案 -->
   <section class="detail-section">

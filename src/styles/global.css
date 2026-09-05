@@ -778,3 +778,42 @@ img {
 /* ========== HOMEPAGE V2 STYLES ========== */
 
 /* Hero with background image */
+
+
+/* Export Delivery CTA Bar (V2-07D) */
+.export-cta-bar {
+  padding: 40px 0;
+  background: #f1f5f9;
+  border-top: 1px solid #e2e8f0;
+  border-bottom: 1px solid #e2e8f0;
+}
+.export-cta-content {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 32px;
+}
+.export-cta-title {
+  font-size: 20px;
+  font-weight: 700;
+  color: #0f172a;
+  margin-bottom: 6px;
+}
+.export-cta-desc {
+  font-size: 14px;
+  line-height: 1.6;
+  color: #475569;
+  max-width: 640px;
+  margin: 0;
+}
+.export-cta-btn {
+  flex-shrink: 0;
+  white-space: nowrap;
+}
+@media (max-width: 768px) {
+  .export-cta-content {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 16px;
+  }
+}

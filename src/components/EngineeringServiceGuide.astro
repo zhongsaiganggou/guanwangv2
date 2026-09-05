@@ -1,0 +1,86 @@
+---
+// Engineering Service Guide - 3-stage path selector for Engineering Design / Detailing / Custom Engineering
+const { lang, current } = Astro.props;
+const isEN = lang === 'en';
+
+const stages = isEN
+  ? [
+      {
+        num: '01',
+        title: 'Planning a New Steel Building',
+        service: 'Engineering Design',
+        desc: 'You know the project use, country and approximate size, but do not yet have complete structural drawings.',
+        cta: 'Start with Engineering Design',
+        href: '/en/engineering-design/',
+        key: 'engineering-design',
+      },
+      {
+        num: '02',
+        title: 'Have Structural Design, Need Fabrication Drawings',
+        service: 'Structural Steel Detailing',
+        desc: 'You already have structural design information and need coordinated shop drawings / fabrication drawings for manufacturing.',
+        cta: 'View Detailing Support',
+        href: '/en/services/structural-steel-detailing/',
+        key: 'detailing',
+      },
+      {
+        num: '03',
+        title: 'Drawings Ready for Fabrication',
+        service: 'Custom Engineering & Fabrication',
+        desc: 'Your drawings and technical requirements are ready for fabrication review, component manufacturing and export supply.',
+        cta: 'Send Drawings for Fabrication Review',
+        href: '/en/products/custom-engineering/',
+        key: 'custom-engineering',
+      },
+    ]
+  : [
+      {
+        num: '01',
+        title: '准备新建钢结构建筑',
+        service: '工程设计支持',
+        desc: '您已明确项目国家、用途和大致尺寸，但还没有完整结构设计图纸。',
+        cta: '从工程设计开始',
+        href: '/zh/engineering-design/',
+        key: 'engineering-design',
+      },
+      {
+        num: '02',
+        title: '已有结构设计，需要深化加工图',
+        service: '钢结构深化设计',
+        desc: '已有结构设计资料，需要进一步形成用于生产制造的深化图 / 加工图。',
+        cta: '查看深化设计支持',
+        href: '/zh/services/structural-steel-detailing/',
+        key: 'detailing',
+      },
+      {
+        num: '03',
+        title: '图纸已基本明确，准备生产加工',
+        service: '按图定制加工',
+        desc: '根据确认图纸和项目技术要求进行构件加工、制造及出口供应。',
+        cta: '发送图纸进行加工评估',
+        href: '/zh/products/custom-engineering/',
+        key: 'custom-engineering',
+      },
+    ];
+
+const guideTitle = isEN ? 'Which Engineering Support Do You Need?' : '您现在处于项目哪个阶段？';
+const currentLabel = isEN ? 'Current Stage' : '当前阶段';
+---
+
+<section class="eng-guide">
+  <div class="container">
+    <h2 class="eng-guide-title">{guideTitle}</h2>
+    <div class="eng-guide-grid">
+      {stages.map((stage) => (
+        <div class={`eng-guide-card ${stage.key === current ? 'is-current' : ''}`}>
+          <div class="eng-guide-num">{stage.num}</div>
+          {stage.key === current && <span class="eng-guide-current-tag">{currentLabel}</span>}
+          <h3 class="eng-guide-stage">{stage.title}</h3>
+          <p class="eng-guide-service">{stage.service}</p>
+          <p class="eng-guide-desc">{stage.desc}</p>
+          <a href={stage.href} class="eng-guide-cta">{stage.cta} →</a>
+        </div>
+      ))}
+    </div>
+  </div>
+</section>

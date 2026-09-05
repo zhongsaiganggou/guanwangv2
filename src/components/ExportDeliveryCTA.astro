@@ -1,0 +1,22 @@
+---
+// Export Delivery CTA bar - compact internal link to export-delivery page
+const { lang } = Astro.props;
+const isEN = lang === 'en';
+const title = isEN ? 'Export Delivery' : '出口交付';
+const desc = isEN
+  ? 'See how steel components are packed, loaded and coordinated for overseas delivery, including export documentation support and overseas installation technical guidance.'
+  : '了解钢构件包装、装柜、出口资料协调及海外交付支持，包括出口单证协调与海外安装技术指导。';
+const cta = isEN ? 'View Export Delivery \u2192' : '\u67e5\u770b\u51fa\u53e3\u4ea4\u4ed8\u6d41\u7a0b \u2192';
+const href = isEN ? '/en/export-delivery/' : '/zh/export-delivery/';
+---
+<section class="export-cta-bar">
+  <div class="container">
+    <div class="export-cta-content">
+      <div class="export-cta-text">
+        <h3 class="export-cta-title">{title}</h3>
+        <p class="export-cta-desc">{desc}</p>
+      </div>
+      <a href={href} class="btn btn-primary export-cta-btn">{cta}</a>
+    </div>
+  </div>
+</section>

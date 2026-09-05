@@ -695,3 +695,93 @@
     text-align: center;
   }
 }
+
+
+/* ============================================
+   Engineering Service Guide (V2-07D)
+   ============================================ */
+.eng-guide {
+  padding: 48px 0 28px;
+  background: #f8fafc;
+  border-bottom: 1px solid #e2e8f0;
+}
+.eng-guide-title {
+  font-size: 22px;
+  font-weight: 700;
+  color: #0f172a;
+  margin-bottom: 28px;
+  text-align: center;
+}
+.eng-guide-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+}
+.eng-guide-card {
+  background: #fff;
+  border: 1px solid #e2e8f0;
+  border-radius: 6px;
+  padding: 24px 20px;
+  position: relative;
+}
+.eng-guide-card.is-current {
+  border-color: #1a56db;
+  background: #f0f6ff;
+}
+.eng-guide-num {
+  font-size: 13px;
+  font-weight: 700;
+  color: #1a56db;
+  letter-spacing: 1px;
+  margin-bottom: 8px;
+}
+.eng-guide-current-tag {
+  position: absolute;
+  top: 16px;
+  right: 16px;
+  font-size: 11px;
+  font-weight: 600;
+  color: #1a56db;
+  background: rgba(26,86,219,0.1);
+  padding: 3px 10px;
+  border-radius: 10px;
+}
+.eng-guide-stage {
+  font-size: 16px;
+  font-weight: 700;
+  color: #0f172a;
+  margin-bottom: 4px;
+  line-height: 1.4;
+}
+.eng-guide-service {
+  font-size: 13px;
+  font-weight: 600;
+  color: #1a56db;
+  margin-bottom: 10px;
+}
+.eng-guide-desc {
+  font-size: 13px;
+  line-height: 1.6;
+  color: #475569;
+  margin-bottom: 16px;
+}
+.eng-guide-cta {
+  font-size: 13px;
+  font-weight: 600;
+  color: #1a56db;
+  text-decoration: none;
+}
+.eng-guide-cta:hover {
+  text-decoration: underline;
+}
+@media (max-width: 768px) {
+  .eng-guide-grid {
+    grid-template-columns: 1fr;
+  }
+  .eng-guide {
+    padding: 32px 0 16px;
+  }
+  .eng-guide-title {
+    font-size: 19px;
+  }
+}

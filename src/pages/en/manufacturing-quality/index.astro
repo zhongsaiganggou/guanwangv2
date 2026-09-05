@@ -2,6 +2,7 @@
 // ZhongSai V2 - English Manufacturing & Quality Page
 import BaseLayout from '../../../layouts/BaseLayout.astro';
 import QuoteForm from '../../../components/QuoteForm.astro';
+import ExportDeliveryCTA from '../../../components/ExportDeliveryCTA.astro';
 import '../../../styles/hub.css';
 import '../../../styles/manufacturing.css';
 
@@ -48,8 +49,8 @@ const eightSteps = [
   },
   {
     num: '07',
-    title: 'Quality Control & Finished Inspection',
-    desc: 'In-process and finished-member inspection are organized according to project drawings, shop drawings and project technical specifications; qualified members are sorted and stacked for the next stage.',
+    title: 'Finished Member Check & Delivery Preparation',
+    desc: 'Finished members are checked against confirmed fabrication requirements, organized and prepared for packing and delivery.',
     img: '/images/components/finished-steel-members-stacked.jpg'
   },
   {
@@ -253,6 +254,8 @@ const evidenceImages = [
   <!-- 07 Quote CTA -->
   <section class="quote-cta-section" id="quote">
     <div class="container">
+      <ExportDeliveryCTA lang="en" />
+
       <div class="quote-cta-header reveal">
         <p class="section-index" style="color: #f59e0b;">07 / Get a Quote</p>
         <h2>Submit Drawings for Manufacturing Quotation</h2>

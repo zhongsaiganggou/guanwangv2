@@ -3,6 +3,7 @@
 import BaseLayout from '../../../layouts/BaseLayout.astro';
 import ProjectCard from '../../../components/ProjectCard.astro';
 import QuoteForm from '../../../components/QuoteForm.astro';
+import ExportDeliveryCTA from '../../../components/ExportDeliveryCTA.astro';
 import { projects } from '../../../data/projects-data';
 
 const lang = 'zh';
@@ -42,6 +43,8 @@ const description = '查看中赛钢构参与的物流仓储、工业制造、�
 
   <section class="projects-quote">
     <div class="container">
+      <ExportDeliveryCTA lang="zh" />
+
       <div class="quote-intro">
         <p class="eyebrow">项目报价</p>
         <h2>有类似项目需求？</h2>
