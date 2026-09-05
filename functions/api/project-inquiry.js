@@ -344,6 +344,86 @@ export async function onRequestPost(context) {
       } catch { /* ignore */ }
     }
 
+    // WeCom (企业微信) group bot notification - don't fail lead if this fails
+    let wecomStatus = 'not_configured';
+    if (env.WECHAT_WORK_WEBHOOK_URL) {
+      wecomStatus = 'attempted';
+      try {
+        const now = new Date();
+        const timestamp = now.toLocaleString('zh-CN', { timeZone: 'Asia/Shanghai' });
+        const hasDrawingsText = hasDrawings ? '是' : '否';
+        const isTestText = isTest === 1 ? '⚠️ 测试线索' : '🔥 新线索';
+
+        const mdLines = [
+          `**${isTestText}提醒**`,
+          '',
+          `> **线索ID**: ${leadId}`,
+          `> **提交时间**: ${timestamp}`,
+          `> **语言**: ${language === 'zh' ? '中文' : 'English'}`,
+          `> **姓名**: ${sanitizeText(fields.name, 200)}`,
+          `> **国家**: ${sanitizeText(fields.project_country, 100)}`,
+          `> **电话**: ${sanitizeText(fields.calling_code, 20)} ${sanitizeText(fields.phone, 50)}`,
+          `> **微信**: ${sanitizeText(fields.wechat, 100)}`,
+        ];
+
+        if (fields.email && fields.email.trim()) {
+          mdLines.push(`> **邮箱**: ${sanitizeText(fields.email, 200)}`);
+        }
+        if (!hasDrawings) {
+          mdLines.push(`> **项目类型**: ${sanitizeText(fields.project_type, 100)}`);
+          mdLines.push(`> **用途**: ${sanitizeText(fields.intended_use, 200)}`);
+        }
+        if (dimensions) {
+          mdLines.push(`> **尺寸**: ${dimensions}`);
+        }
+        if (fields.crane_requirement && fields.crane_requirement.trim()) {
+          mdLines.push(`> **吊车**: ${sanitizeText(fields.crane_requirement, 50)}`);
+        }
+        mdLines.push(`> **有图纸**: ${hasDrawingsText}`);
+        if (savedFiles.length > 0) {
+          mdLines.push(`> **附件**: ${savedFiles.map(f => f.filename).join(', ')}`);
+        }
+        mdLines.push(`> **来源页面**: ${sanitizeText(fields.source_page, 200)}`);
+        if (fields.utm_source && fields.utm_source.trim()) {
+          mdLines.push(`> **UTM**: ${sanitizeText(fields.utm_source, 100)} / ${sanitizeText(fields.utm_medium, 100)} / ${sanitizeText(fields.utm_campaign, 100)}`);
+        }
+        if (fields.message && fields.message.trim()) {
+          const msgShort = sanitizeText(fields.message, 300);
+          mdLines.push('');
+          mdLines.push(`> **需求描述**: ${msgShort}`);
+        }
+
+        const wecomPayload = {
+          msgtype: 'markdown',
+          markdown: {
+            content: mdLines.join('\n')
+          }
+        };
+
+        const wecomResp = await fetch(env.WECHAT_WORK_WEBHOOK_URL, {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify(wecomPayload),
+        });
+
+        if (wecomResp.ok) {
+          const wecomResult = await wecomResp.json();
+          if (wecomResult.errcode === 0) {
+            wecomStatus = 'success';
+          } else {
+            wecomStatus = 'failed';
+            wecomError = `errcode=${wecomResult.errcode} errmsg=${wecomResult.errmsg}`;
+          }
+        } else {
+          wecomStatus = 'failed';
+          wecomError = `HTTP ${wecomResp.status}`;
+        }
+      } catch (wecomErr) {
+        wecomStatus = 'failed';
+        wecomError = wecomErr.message.substring(0, 200);
+      }
+    }
+
     // Success response - no PII in response
     return jsonResponse({
       success: true,
