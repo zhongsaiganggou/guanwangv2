@@ -64,6 +64,15 @@
   margin-bottom: 28px;
 }
 
+/* Hero description used by About / Export Delivery etc. — must be readable on dark hero */
+.hub-hero .hub-hero-desc {
+  font-size: 17px;
+  line-height: 1.7;
+  color: rgba(255,255,255,0.88);
+  max-width: 680px;
+  margin-bottom: 28px;
+}
+
 /* Breadcrumb */
 .hub-breadcrumb {
   font-size: 13px;

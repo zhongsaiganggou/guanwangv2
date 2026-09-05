@@ -111,7 +111,7 @@ const heroTypeLabel = project.heroImageType === 'rendering'
       <h2>{lang === 'zh' ? '相关能力' : 'Related Capabilities'}</h2>
       <div class="related-links-grid">
         {project.relatedLinks.map(link => (
-          <a href={link.href} class="related-link-card">
+          <a href={`/${lang}/${link.href}`} class="related-link-card">
             <span>{t(link.label)}</span>
             <span class="related-arrow">→</span>
           </a>

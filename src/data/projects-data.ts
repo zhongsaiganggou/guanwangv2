@@ -22,6 +22,7 @@ export interface ProjectData {
     label: { zh: string; en: string };
     value: { zh: string; en: string };
   }[];
+  // href 为语言根相对路径（不含 /en/ 或 /zh/ 前缀），由组件按当前 lang 拼接 `/${lang}/${href}`
   relatedLinks: { href: string; label: { zh: string; en: string } }[];
 }
 
@@ -53,8 +54,8 @@ export const projects: ProjectData[] = [
       { label: { zh: '用钢量', en: 'Steel Tonnage' }, value: { zh: '约3160吨', en: 'Approx. 3,160 tonnes' } },
     ],
     relatedLinks: [
-      { href: '/en/steel-warehouse/', label: { zh: '钢结构仓库', en: 'Steel Warehouse' } },
-      { href: '/en/manufacturing-quality/', label: { zh: '制造能力', en: 'Manufacturing' } },
+      { href: 'steel-warehouse/', label: { zh: '钢结构仓库', en: 'Steel Warehouse' } },
+      { href: 'manufacturing-quality/', label: { zh: '制造能力', en: 'Manufacturing' } },
     ]
   },
   {
@@ -83,8 +84,8 @@ export const projects: ProjectData[] = [
       { label: { zh: '用钢量', en: 'Steel Tonnage' }, value: { zh: '约2380吨', en: 'Approx. 2,380 tonnes' } },
     ],
     relatedLinks: [
-      { href: '/en/manufacturing-quality/', label: { zh: '制造能力', en: 'Manufacturing' } },
-      { href: '/en/components/fabricated-steel-beams-columns/', label: { zh: '钢梁钢柱', en: 'Beams & Columns' } },
+      { href: 'manufacturing-quality/', label: { zh: '制造能力', en: 'Manufacturing' } },
+      { href: 'components/fabricated-steel-beams-columns/', label: { zh: '钢梁钢柱', en: 'Beams & Columns' } },
     ]
   },
   {
@@ -112,8 +113,8 @@ export const projects: ProjectData[] = [
       { label: { zh: '用钢量', en: 'Steel Tonnage' }, value: { zh: '约8300吨', en: 'Approx. 8,300 tonnes' } },
     ],
     relatedLinks: [
-      { href: '/en/steel-workshop/', label: { zh: '工业厂房', en: 'Steel Workshop' } },
-      { href: '/en/manufacturing-quality/', label: { zh: '制造能力', en: 'Manufacturing' } },
+      { href: 'steel-workshop/', label: { zh: '工业厂房', en: 'Steel Workshop' } },
+      { href: 'manufacturing-quality/', label: { zh: '制造能力', en: 'Manufacturing' } },
     ]
   },
   {
@@ -139,8 +140,8 @@ export const projects: ProjectData[] = [
       { label: { zh: '用钢量', en: 'Steel Tonnage' }, value: { zh: '约9800吨', en: 'Approx. 9,800 tonnes' } },
     ],
     relatedLinks: [
-      { href: '/en/steel-workshop/', label: { zh: '工业厂房', en: 'Steel Workshop' } },
-      { href: '/en/products/custom-engineering/', label: { zh: '定制加工', en: 'Custom Engineering' } },
+      { href: 'steel-workshop/', label: { zh: '工业厂房', en: 'Steel Workshop' } },
+      { href: 'products/custom-engineering/', label: { zh: '定制加工', en: 'Custom Engineering' } },
     ]
   },
   {
@@ -164,8 +165,8 @@ export const projects: ProjectData[] = [
       { label: { zh: '用钢量', en: 'Steel Tonnage' }, value: { zh: '约4700吨', en: 'Approx. 4,700 tonnes' } },
     ],
     relatedLinks: [
-      { href: '/en/steel-workshop/', label: { zh: '工业厂房', en: 'Steel Workshop' } },
-      { href: '/en/manufacturing-quality/', label: { zh: '制造能力', en: 'Manufacturing' } },
+      { href: 'steel-workshop/', label: { zh: '工业厂房', en: 'Steel Workshop' } },
+      { href: 'manufacturing-quality/', label: { zh: '制造能力', en: 'Manufacturing' } },
     ]
   },
   {
@@ -192,8 +193,8 @@ export const projects: ProjectData[] = [
       { label: { zh: '用钢量', en: 'Steel Tonnage' }, value: { zh: '约2100吨', en: 'Approx. 2,100 tonnes' } },
     ],
     relatedLinks: [
-      { href: '/en/steel-warehouse/', label: { zh: '钢结构仓库', en: 'Steel Warehouse' } },
-      { href: '/en/components/', label: { zh: '构件与材料', en: 'Components' } },
+      { href: 'steel-warehouse/', label: { zh: '钢结构仓库', en: 'Steel Warehouse' } },
+      { href: 'components/', label: { zh: '构件与材料', en: 'Components' } },
     ]
   },
   {
@@ -221,8 +222,8 @@ export const projects: ProjectData[] = [
       { label: { zh: '用钢量', en: 'Steel Tonnage' }, value: { zh: '约3600吨', en: 'Approx. 3,600 tonnes' } },
     ],
     relatedLinks: [
-      { href: '/en/steel-workshop/', label: { zh: '工业厂房', en: 'Steel Workshop' } },
-      { href: '/en/manufacturing-quality/', label: { zh: '制造能力', en: 'Manufacturing' } },
+      { href: 'steel-workshop/', label: { zh: '工业厂房', en: 'Steel Workshop' } },
+      { href: 'manufacturing-quality/', label: { zh: '制造能力', en: 'Manufacturing' } },
     ]
   },
   {
@@ -250,8 +251,8 @@ export const projects: ProjectData[] = [
       { label: { zh: '用钢量', en: 'Steel Tonnage' }, value: { zh: '约6000吨', en: 'Approx. 6,000 tonnes' } },
     ],
     relatedLinks: [
-      { href: '/en/products/custom-engineering/', label: { zh: '定制加工', en: 'Custom Engineering' } },
-      { href: '/en/components/fabricated-steel-beams-columns/', label: { zh: '钢梁钢柱', en: 'Beams & Columns' } },
+      { href: 'products/custom-engineering/', label: { zh: '定制加工', en: 'Custom Engineering' } },
+      { href: 'components/fabricated-steel-beams-columns/', label: { zh: '钢梁钢柱', en: 'Beams & Columns' } },
     ]
   },
   {
@@ -279,8 +280,8 @@ export const projects: ProjectData[] = [
       { label: { zh: '用钢量', en: 'Steel Tonnage' }, value: { zh: '约4100吨', en: 'Approx. 4,100 tonnes' } },
     ],
     relatedLinks: [
-      { href: '/en/products/custom-engineering/', label: { zh: '定制加工', en: 'Custom Engineering' } },
-      { href: '/en/components/fabricated-steel-beams-columns/', label: { zh: '钢梁钢柱', en: 'Beams & Columns' } },
+      { href: 'products/custom-engineering/', label: { zh: '定制加工', en: 'Custom Engineering' } },
+      { href: 'components/fabricated-steel-beams-columns/', label: { zh: '钢梁钢柱', en: 'Beams & Columns' } },
     ]
   },
   {
@@ -304,8 +305,8 @@ export const projects: ProjectData[] = [
       { label: { zh: '用钢量', en: 'Steel Tonnage' }, value: { zh: '约9000吨', en: 'Approx. 9,000 tonnes' } },
     ],
     relatedLinks: [
-      { href: '/en/steel-workshop/', label: { zh: '工业厂房', en: 'Steel Workshop' } },
-      { href: '/en/manufacturing-quality/', label: { zh: '制造能力', en: 'Manufacturing' } },
+      { href: 'steel-workshop/', label: { zh: '工业厂房', en: 'Steel Workshop' } },
+      { href: 'manufacturing-quality/', label: { zh: '制造能力', en: 'Manufacturing' } },
     ]
   },
   {
@@ -329,8 +330,8 @@ export const projects: ProjectData[] = [
       { label: { zh: '用钢量', en: 'Steel Tonnage' }, value: { zh: '约500吨', en: 'Approx. 500 tonnes' } },
     ],
     relatedLinks: [
-      { href: '/en/products/custom-engineering/', label: { zh: '定制加工', en: 'Custom Engineering' } },
-      { href: '/en/components/fabricated-steel-beams-columns/', label: { zh: '钢梁钢柱', en: 'Beams & Columns' } },
+      { href: 'products/custom-engineering/', label: { zh: '定制加工', en: 'Custom Engineering' } },
+      { href: 'components/fabricated-steel-beams-columns/', label: { zh: '钢梁钢柱', en: 'Beams & Columns' } },
     ]
   },
   {
@@ -358,8 +359,8 @@ export const projects: ProjectData[] = [
       { label: { zh: '用钢量', en: 'Steel Tonnage' }, value: { zh: '约5000吨', en: 'Approx. 5,000 tonnes' } },
     ],
     relatedLinks: [
-      { href: '/en/products/custom-engineering/', label: { zh: '定制加工', en: 'Custom Engineering' } },
-      { href: '/en/components/fabricated-steel-beams-columns/', label: { zh: '钢梁钢柱', en: 'Beams & Columns' } },
+      { href: 'products/custom-engineering/', label: { zh: '定制加工', en: 'Custom Engineering' } },
+      { href: 'components/fabricated-steel-beams-columns/', label: { zh: '钢梁钢柱', en: 'Beams & Columns' } },
     ]
   },
 ];

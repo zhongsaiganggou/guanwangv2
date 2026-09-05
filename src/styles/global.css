@@ -30,6 +30,8 @@
 
 html {
   scroll-behavior: smooth;
+  /* sticky header offset for in-page / cross-page anchors */
+  scroll-padding-top: calc(var(--header-height) + 12px);
   overflow-x: hidden;
 }
 
