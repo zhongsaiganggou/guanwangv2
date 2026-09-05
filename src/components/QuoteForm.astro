@@ -261,6 +261,7 @@ const phoneCodes = [
       <input type="hidden" name="utm_content" />
       <input type="hidden" name="utm_term" />
       <input type="hidden" name="landing_page" />
+      <input type="hidden" name="referrer" />
       <input type="hidden" name="source_page" />
       <input type="hidden" name="language" value={lang} />
       <input type="hidden" name="active_path" value="drawings" />
@@ -402,6 +403,7 @@ const phoneCodes = [
       <input type="hidden" name="utm_content" />
       <input type="hidden" name="utm_term" />
       <input type="hidden" name="landing_page" />
+      <input type="hidden" name="referrer" />
       <input type="hidden" name="source_page" />
       <input type="hidden" name="language" value={lang} />
       <input type="hidden" name="active_path" value="drawings" />
@@ -476,6 +478,8 @@ const phoneCodes = [
       });
       const landingInput = form.querySelector('input[name="landing_page"]');
       if (landingInput) landingInput.value = storedUtm._landing || window.location.pathname;
+      const referrerInput = form.querySelector('input[name="referrer"]');
+      if (referrerInput) referrerInput.value = storedUtm._referrer || document.referrer || '';
       const sourceInput = form.querySelector('input[name="source_page"]');
       if (sourceInput) sourceInput.value = window.location.pathname;
 
@@ -620,6 +624,9 @@ const phoneCodes = [
       form.addEventListener('submit', async function(e) {
         e.preventDefault();
 
+        // Prevent duplicate submissions from rapid clicks, Enter key, or repeated callbacks.
+        if (form.dataset.submitting === 'true') return;
+
         // Clear previous messages
         if (errorEl) { errorEl.textContent = ''; errorEl.classList.remove('show'); }
         if (successEl) { successEl.textContent = ''; successEl.classList.remove('show'); }
@@ -630,7 +637,7 @@ const phoneCodes = [
         if (fileInput && fileInput.files.length) {
           for (const file of fileInput.files) {
             if (file.size > MAX_FILE_SIZE) {
-              showError(isZh ? texts.errorFileSize : 'File too large. Max 25MB per file.');
+              showError(isZh ? '文件过大，单文件最大25MB。' : 'File too large. Max 25MB per file.');
               return;
             }
           }
@@ -660,6 +667,7 @@ const phoneCodes = [
 
         // Submitting state
         const originalText = submitBtn.textContent;
+        form.dataset.submitting = 'true';
         submitBtn.disabled = true;
         submitBtn.textContent = isZh ? '提交中...' : 'Submitting...';
         submitBtn.classList.add('submitting');
@@ -680,7 +688,6 @@ const phoneCodes = [
                 lead_id: result.lead_id,
                 language: lang,
                 form_variant: activePath === 'drawings' ? 'have_drawings' : 'no_drawings',
-                project_country: form.querySelector('[name="country"]')?.value || '',
                 source_page: window.location.pathname,
                 utm_source: form.querySelector('[name="utm_source"]')?.value || '',
                 utm_medium: form.querySelector('[name="utm_medium"]')?.value || '',
@@ -691,9 +698,9 @@ const phoneCodes = [
 
             showSuccess(
               isZh ? '项目需求已提交' : 'Project inquiry received',
-              isZh
+              result.message || (isZh
                 ? '感谢您的提交。中赛钢构将根据您提供的项目资料进行审核，并通过您填写的联系方式进行后续沟通。'
-                : 'Thank you. ZhongSai will review the project information and follow up using the contact details you provided.'
+                : 'Thank you. ZhongSai will review the project information and follow up using the contact details you provided.')
             );
           } else if (result.success && result.lead_id === 'filtered') {
             // Honeypot filtered - silently show success (don't reveal it's a filter)
@@ -717,6 +724,7 @@ const phoneCodes = [
         } catch (err) {
           showError(isZh ? '网络错误，请稍后重试。' : 'Network error. Please try again.');
         } finally {
+          delete form.dataset.submitting;
           submitBtn.disabled = false;
           submitBtn.textContent = originalText;
           submitBtn.classList.remove('submitting');

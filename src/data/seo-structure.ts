@@ -184,7 +184,7 @@ export function buildOrganizationJsonLd() {
     name: 'ZhongSai Steel Structure',
     legalName: '深圳市中赛钢结构进出口有限公司',
     url: `${SITE_URL}/`,
-    logo: `${SITE_URL}/images/logo-horizontal-transparent-hd.png`,
+    logo: `${SITE_URL}/images/logo-official-transparent-cropped.png`,
     description:
       'A China-based steel structure manufacturer and export supplier providing detailing support, fabrication, structural steel component supply, packing, container loading, export coordination and overseas installation technical guidance.',
     email: 'zhongsaiganggou@gmail.com',

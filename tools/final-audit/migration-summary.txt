@@ -1,0 +1,10 @@
+old_url_count: 260
+final_action_counts: {'301_ONE_TO_ONE': 33, 'IGNORE_NON_PAGE': 2, 'DROP_CANDIDATE': 25, 'P2_GROWTH': 31, 'SAFE_MERGE': 42, 'P1_30_DAYS': 25, 'KEEP': 34, 'GONE_410_CANDIDATE': 39, 'LEGACY_PRESERVED_200': 7, 'LEGACY_PRESERVE': 20, 'UNRESOLVED': 2}
+candidate_301_rules: 75
+gone_410_candidates: 39
+redirect_loops: 0
+redirect_chains: 0
+invalid_redirect_targets: 0
+unresolved_redirect_rules: 0
+generated_legacy_projects: 27
+generated_projects_wrong_state: 0

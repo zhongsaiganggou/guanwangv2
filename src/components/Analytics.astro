@@ -10,11 +10,11 @@ const enabled = !!measurementId;
   <>
     <!-- Google tag (gtag.js) -->
     <script async src={`https://www.googletagmanager.com/gtag/js?id=${measurementId}`}></script>
-    <script is:inline>
+    <script is:inline define:vars={{ measurementId }}>
       window.dataLayer = window.dataLayer || [];
       function gtag(){dataLayer.push(arguments);}
       gtag('js', new Date());
-      gtag('config', '{measurementId}', {
+      gtag('config', measurementId, {
         anonymize_ip: true,
         send_page_view: true,
       });
@@ -40,7 +40,6 @@ const enabled = !!measurementId;
       value: 0,
       language: params.language || 'en',
       form_variant: params.form_variant || 'unknown',
-      project_country: params.project_country || '',
       source_page: params.source_page || '',
       utm_source: params.utm_source || '',
       utm_medium: params.utm_medium || '',

@@ -28,12 +28,11 @@ pages_build_output_dir = "dist"
 #   LEAD_WEBHOOK_SECRET - (optional) webhook signing secret
 # ============================================================
 
-# D1 binding template (uncomment after creating database):
-# [[d1_databases]]
-# binding = "LEADS_DB"
-# database_name = "zhongsai-leads"
-# database_id = "YOUR_D1_DATABASE_ID_HERE"
-# migrations_dir = "migrations"
+[[d1_databases]]
+binding = "LEADS_DB"
+database_name = "zhongsai-leads"
+database_id = "fadaebf1-1310-4512-9e8c-1cd415cf34eb"
+migrations_dir = "migrations"
 
 # R2 binding template (uncomment after creating bucket):
 # [[r2_buckets]]

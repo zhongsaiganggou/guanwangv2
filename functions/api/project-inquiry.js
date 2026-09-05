@@ -17,6 +17,10 @@ function jsonResponse(data, status = 200) {
     headers: {
       'Content-Type': 'application/json',
       'Cache-Control': 'no-store',
+      'X-Content-Type-Options': 'nosniff',
+      'Referrer-Policy': 'strict-origin-when-cross-origin',
+      'X-Frame-Options': 'DENY',
+      'Permissions-Policy': 'camera=(), microphone=(), geolocation=()',
     },
   });
 }
@@ -116,6 +120,15 @@ export async function onRequestPost(context) {
       }
     }
 
+    // Normalize browser field names to the API/database schema.
+    fields.project_country = fields.project_country || fields.country || '';
+    fields.calling_code = fields.calling_code || fields.phone_code || '';
+    fields.project_type = fields.project_type || fields.projectType || '';
+    fields.intended_use = fields.intended_use || fields.intendedUse || '';
+    fields.crane_requirement = fields.crane_requirement || fields.hasCrane || '';
+    fields.form_path = fields.form_path || fields.active_path || '';
+    fields.source_page = fields.source_page || fields.submission_page || '';
+
     // Honeypot check
     if (fields.website || fields.company_hp || fields.hp_field) {
       // Silently accept but mark as spam - don't reveal it's a honeypot
@@ -145,6 +158,24 @@ export async function onRequestPost(context) {
     const { errors, hasDrawings } = validateLead(fields);
     if (Object.keys(errors).length > 0) {
       return jsonResponse({ success: false, code: 'VALIDATION_ERROR', message: 'Please check required fields', errors }, 422);
+    }
+
+    // Reject invalid selected files before creating a lead. Upload itself remains optional.
+    let totalSize = 0;
+    for (const { file } of files) {
+      totalSize += file.size;
+      const ext = (file.name.split('.').pop() || '').toLowerCase();
+      const mime = file.type || '';
+      const mimeValid = ALLOWED_MIME_PREFIXES.some(prefix => mime.startsWith(prefix)) || mime === '';
+      if (!ALLOWED_EXTENSIONS.includes(ext) || !mimeValid) {
+        return jsonResponse({ success: false, code: 'INVALID_FILE', message: 'Unsupported file type' }, 400);
+      }
+      if (file.size > MAX_FILE_SIZE) {
+        return jsonResponse({ success: false, code: 'FILE_TOO_LARGE', message: 'A file exceeds the 25MB limit' }, 400);
+      }
+    }
+    if (totalSize > MAX_TOTAL_SIZE) {
+      return jsonResponse({ success: false, code: 'FILES_TOO_LARGE', message: 'Total upload size exceeds the 75MB limit' }, 400);
     }
 
     // Check D1 binding
@@ -185,7 +216,7 @@ export async function onRequestPost(context) {
         sanitizeText(fields.project_type, 100),
         sanitizeText(fields.intended_use, 500),
         sanitizeText(dimensions, 50),
-        sanitizeText(fields.hasCrane || fields.crane_requirement, 50),
+        sanitizeText(fields.crane_requirement, 50),
         sanitizeText(fields.message, 5000),
         sanitizeText(fields.utm_source, 200),
         sanitizeText(fields.utm_medium, 200),
@@ -205,46 +236,24 @@ export async function onRequestPost(context) {
 
     // Process file uploads to R2
     const savedFiles = [];
-    if (files.length > 0 && env.LEAD_FILES) {
-      let totalSize = 0;
-      for (const { file } of files) {
-        totalSize += file.size;
-      }
-      if (totalSize > MAX_TOTAL_SIZE) {
-        // Don't fail the lead, just note files were too large
-        console.log(`Files too large: ${totalSize} bytes for lead ${leadId}`);
+    let failedFiles = 0;
+    if (files.length > 0) {
+      if (!env.LEAD_FILES) {
+        failedFiles = files.length;
+        console.error(`R2 binding missing for lead ${leadId}`);
       } else {
         for (const { file } of files) {
+          const timestamp = Date.now();
+          const random = Math.random().toString(36).substring(2, 8);
+          const safeName = file.name.replace(/[^a-zA-Z0-9._-]/g, '_').substring(0, 100);
+          const fileKey = `${leadId}/${timestamp}-${random}-${safeName}`;
           try {
-            // Validate file
-            const ext = file.name.split('.').pop().toLowerCase();
-            if (!ALLOWED_EXTENSIONS.includes(ext)) continue;
-            if (file.size > MAX_FILE_SIZE) continue;
-
-            // Validate MIME type
-            const mime = file.type || '';
-            const mimeValid = ALLOWED_MIME_PREFIXES.some(prefix => mime.startsWith(prefix)) || mime === '';
-            if (!mimeValid) continue;
-
-            // Generate safe R2 key
-            const timestamp = Date.now();
-            const random = Math.random().toString(36).substring(2, 8);
-            const safeName = file.name.replace(/[^a-zA-Z0-9._-]/g, '_').substring(0, 100);
-            const fileKey = `${leadId}/${timestamp}-${random}-${safeName}`;
-
-            // Upload to R2
             const fileBuffer = await file.arrayBuffer();
             await env.LEAD_FILES.put(fileKey, fileBuffer, {
-              httpMetadata: {
-                contentType: file.type || 'application/octet-stream',
-              },
-              customMetadata: {
-                originalFilename: file.name,
-                leadId: leadId,
-              },
+              httpMetadata: { contentType: file.type || 'application/octet-stream' },
+              customMetadata: { originalFilename: file.name, leadId },
             });
 
-            // Save file metadata to D1
             const fileId = generateId();
             await env.LEADS_DB.prepare(`
               INSERT INTO lead_files (id, lead_id, file_key, original_filename, content_type, size)
@@ -253,11 +262,20 @@ export async function onRequestPost(context) {
 
             savedFiles.push({ filename: file.name, size: file.size });
           } catch (fileErr) {
+            failedFiles += 1;
             console.error('File upload error:', fileErr.message);
-            // Continue with other files
+            try { await env.LEAD_FILES.delete(fileKey); } catch { /* best-effort orphan cleanup */ }
           }
         }
       }
+    }
+
+    const submissionStatus = failedFiles > 0 ? 'file_upload_failed' : 'complete';
+    try {
+      await env.LEADS_DB.prepare('UPDATE leads SET submission_status = ? WHERE id = ?')
+        .bind(submissionStatus, leadId).run();
+    } catch (statusErr) {
+      console.error('Lead status update error:', statusErr.message);
     }
 
     // Optional webhook forwarding (don't fail lead if webhook fails)
@@ -325,11 +343,18 @@ export async function onRequestPost(context) {
       lead_id: leadId,
       language,
       files_saved: savedFiles.length,
+      files_failed: failedFiles,
+      submission_status: submissionStatus,
+      partial_success: failedFiles > 0,
       webhook_status: webhookStatus,
       test_record: isTest === 1,
-      message: language === 'zh'
-        ? '项目需求已提交。感谢您的提交。中赛钢构将根据您提供的项目资料进行审核，并通过您填写的联系方式进行后续沟通。'
-        : 'Project inquiry received. Thank you. ZhongSai will review the project information and follow up using the contact details you provided.',
+      message: failedFiles > 0
+        ? (language === 'zh'
+          ? '项目需求已收到，但附件未能完整保存。我们将通过您填写的联系方式跟进。'
+          : 'Project inquiry received, but the attachments could not be fully saved. We will follow up using your contact details.')
+        : (language === 'zh'
+          ? '项目需求已提交。感谢您的提交。中赛钢构将根据您提供的项目资料进行审核，并通过您填写的联系方式进行后续沟通。'
+          : 'Project inquiry received. Thank you. ZhongSai will review the project information and follow up using the contact details you provided.'),
     }, 201);
 
   } catch (err) {
@@ -350,6 +375,11 @@ export async function onRequestOptions(context) {
       'Access-Control-Allow-Origin': '*',
       'Access-Control-Allow-Methods': 'POST, OPTIONS',
       'Access-Control-Allow-Headers': 'Content-Type',
+      'Cache-Control': 'no-store',
+      'X-Content-Type-Options': 'nosniff',
+      'Referrer-Policy': 'strict-origin-when-cross-origin',
+      'X-Frame-Options': 'DENY',
+      'Permissions-Policy': 'camera=(), microphone=(), geolocation=()',
     },
   });
 }

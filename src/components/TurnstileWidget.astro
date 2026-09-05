@@ -10,7 +10,11 @@ const siteKey = import.meta.env.PUBLIC_TURNSTILE_SITE_KEY || '';
 
 <div class="turnstile-wrapper" id={id} data-sitekey={siteKey}>
   <!-- Turnstile widget rendered by JS below -->
-  <div class="cf-turnstile" data-sitekey={siteKey} data-theme="light"></div>
+  {siteKey ? (
+    <div class="cf-turnstile" data-sitekey={siteKey} data-theme="light"></div>
+  ) : (
+    <p class="turnstile-unavailable" role="status">Security verification is not configured.</p>
+  )}
   <noscript>
     <p class="turnstile-noscript">Please enable JavaScript to complete the security verification.</p>
   </noscript>
@@ -21,6 +25,7 @@ const siteKey = import.meta.env.PUBLIC_TURNSTILE_SITE_KEY || '';
   const TURNSTILE_SRC = 'https://challenges.cloudflare.com/turnstile/v0/api.js';
 
   function loadTurnstile() {
+    if (!document.querySelector('.cf-turnstile[data-sitekey]')) return;
     if (window.turnstile) {
       renderAll();
       return;
@@ -90,6 +95,13 @@ const siteKey = import.meta.env.PUBLIC_TURNSTILE_SITE_KEY || '';
   }
   .turnstile-noscript {
     color: #dc2626;
+    font-size: 0.875rem;
+    padding: 12px;
+    background: #fef2f2;
+    border-radius: 8px;
+  }
+  .turnstile-unavailable {
+    color: #991b1b;
     font-size: 0.875rem;
     padding: 12px;
     background: #fef2f2;

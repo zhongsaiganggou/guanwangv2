@@ -1,0 +1,22 @@
+{
+  "html_pages": 77,
+  "indexable": 69,
+  "en": 40,
+  "zh": 35,
+  "noindex": 8,
+  "broken_internal_links": 0,
+  "broken_anchors": 0,
+  "wrong_language_links": 0,
+  "canonical_errors": 0,
+  "lang_errors": 0,
+  "hreflang_errors": 0,
+  "jsonld_errors": 0,
+  "missing_images": 0,
+  "images_over_500kb": 68,
+  "images_over_1mb": 20,
+  "images_over_2mb": 0,
+  "images_missing_dimensions": 88,
+  "sitemap_urls": 69,
+  "sitemap_invalid": 0,
+  "sitemap_missing_indexable": 0
+}
