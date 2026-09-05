@@ -3,6 +3,7 @@
 import SEOHead from '../components/SEOHead.astro';
 import Header from '../components/Header.astro';
 import Footer from '../components/Footer.astro';
+import Analytics from '../components/Analytics.astro';
 import { buildOrganizationJsonLd, buildBreadcrumbJsonLd } from '../data/seo-structure';
 import '../styles/global.css';
 
@@ -27,6 +28,7 @@ const crumbLd = !isHome && !noindex ? buildBreadcrumbJsonLd(currentPath) : null;
 <html lang={lang === 'zh' ? 'zh-CN' : 'en'}>
 <head>
   <SEOHead title={title} description={description} lang={lang} noindex={noindex} singleLanguage={singleLanguage} />
+  <Analytics />
   {orgLd && <script type="application/ld+json" set:html={JSON.stringify(orgLd)} />}
   {crumbLd && <script type="application/ld+json" set:html={JSON.stringify(crumbLd)} />}
 </head>

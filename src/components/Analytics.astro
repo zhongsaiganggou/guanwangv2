@@ -1,0 +1,52 @@
+---
+// Analytics.astro - GA4 Google Analytics component
+// Measurement ID from PUBLIC_GA_MEASUREMENT_ID env var
+// Only loads if env var is set
+const measurementId = import.meta.env.PUBLIC_GA_MEASUREMENT_ID || '';
+const enabled = !!measurementId;
+---
+
+{enabled && (
+  <>
+    <!-- Google tag (gtag.js) -->
+    <script async src={`https://www.googletagmanager.com/gtag/js?id=${measurementId}`}></script>
+    <script is:inline>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', '{measurementId}', {
+        anonymize_ip: true,
+        send_page_view: true,
+      });
+    </script>
+  </>
+)}
+
+<script>
+  // GA4 generate_lead conversion helper
+  // Must ONLY be called after server returns success=true
+  window.trackLeadConversion = function(params) {
+    if (typeof gtag !== 'function') return;
+    if (!params || !params.lead_id) return;
+
+    // Prevent duplicate events for same lead
+    if (window._trackedLeadIds && window._trackedLeadIds.has(params.lead_id)) return;
+    window._trackedLeadIds = window._trackedLeadIds || new Set();
+    window._trackedLeadIds.add(params.lead_id);
+
+    // Send generate_lead event - NO PII
+    gtag('event', 'generate_lead', {
+      currency: 'USD',
+      value: 0,
+      language: params.language || 'en',
+      form_variant: params.form_variant || 'unknown',
+      project_country: params.project_country || '',
+      source_page: params.source_page || '',
+      utm_source: params.utm_source || '',
+      utm_medium: params.utm_medium || '',
+      utm_campaign: params.utm_campaign || '',
+      has_file: params.has_file === true,
+      // Explicitly NOT sending: name, phone, whatsapp, wechat, email, file names
+    });
+  };
+</script>

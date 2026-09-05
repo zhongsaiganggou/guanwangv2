@@ -1,5 +1,7 @@
 ---
-// QuoteForm.astro - 统一询价表单组件（双路径：有图纸/无图纸，前端验证，不连接CRM）
+// QuoteForm.astro - 统一询价表单组件（双路径：有图纸/无图纸，真实后端提交）
+import TurnstileWidget from './TurnstileWidget.astro';
+
 interface Props {
   lang?: 'zh' | 'en';
   id?: string;
@@ -21,7 +23,7 @@ const texts = lang === 'zh' ? {
   wechatPlaceholder: '微信号',
   country: '项目所在国家',
   drawingUpload: '上传图纸 / BOQ',
-  drawingHint: '支持 PDF、DWG、DXF、JPG、PNG、XLS、XLSX，可多选',
+  drawingHint: '支持 PDF、DWG、DXF、JPG、PNG、XLS、XLSX，单文件最大25MB',
   buildingType: '项目类型',
   buildingTypeOptions: ['请选择', '工业厂房与车间', '仓库与物流', '矿业与能源设施', '商业与公共建筑', '农业与特种设施', '定制钢结构工程', '其他'],
   length: '长度 (m)',
@@ -36,7 +38,13 @@ const texts = lang === 'zh' ? {
   submitDrawings: '提交图纸，获取报价',
   submitNoDrawings: '提交项目需求',
   submitting: '提交中...',
-  successPreview: '测试环境：表单验证成功，当前不会真实发送。',
+  successTitle: '项目需求已提交',
+  successMsg: '感谢您的提交。中赛钢构将根据您提供的项目资料进行审核，并通过您填写的联系方式进行后续沟通。',
+  errorTurnstile: '验证失败，请重新提交。',
+  errorValidation: '请检查必填字段。',
+  errorNetwork: '网络错误，请稍后重试。',
+  errorServer: '提交失败，请稍后重试。',
+  errorFileSize: '文件过大，单文件最大25MB。',
   requiredName: '请输入姓名',
   requiredEmail: '请输入有效邮箱',
   requiredPhone: '请输入WhatsApp或电话',
@@ -59,7 +67,7 @@ const texts = lang === 'zh' ? {
   wechatPlaceholder: 'WeChat ID',
   country: 'Project Country',
   drawingUpload: 'Upload Drawings / BOQ',
-  drawingHint: 'PDF, DWG, DXF, JPG, PNG, XLS, XLSX — multiple files allowed',
+  drawingHint: 'PDF, DWG, DXF, JPG, PNG, XLS, XLSX — max 25MB per file',
   buildingType: 'Project Type',
   buildingTypeOptions: ['Please select', 'Industrial Factory & Workshop', 'Warehouse & Logistics', 'Mining & Energy', 'Commercial & Public', 'Agriculture & Special', 'Custom Steel Structure', 'Other'],
   length: 'Length (m)',
@@ -74,7 +82,13 @@ const texts = lang === 'zh' ? {
   submitDrawings: 'Submit Drawings for Quote',
   submitNoDrawings: 'Submit Project Requirements',
   submitting: 'Submitting...',
-  successPreview: 'Preview mode: Form validation successful. No inquiry was sent.',
+  successTitle: 'Project inquiry received',
+  successMsg: 'Thank you. ZhongSai will review the project information and follow up using the contact details you provided.',
+  errorTurnstile: 'Verification failed. Please try again.',
+  errorValidation: 'Please check required fields.',
+  errorNetwork: 'Network error. Please try again.',
+  errorServer: 'Submission failed. Please try again.',
+  errorFileSize: 'File too large. Max 25MB per file.',
   requiredName: 'Please enter your name',
   requiredEmail: 'Please enter a valid email',
   requiredPhone: 'Please enter WhatsApp or phone number',
@@ -125,9 +139,9 @@ const phoneCodes = [
     <h3>{texts.title}</h3>
     <p class="form-subtitle">{texts.subtitle}</p>
     <form class="quote-form quote-form-v2" id={`${id}-form`} novalidate data-lang={lang}>
-      <div class="form-success" id={`${id}-success`} role="alert"></div>
+      <div class="form-success" id={`${id}-success`} role="alert" aria-live="polite"></div>
+      <div class="form-error" id={`${id}-error`} role="alert" aria-live="polite"></div>
 
-      <!-- 路径切换按钮 -->
       <div class="form-path-switch" role="tablist">
         <button type="button" class="form-path-btn active" data-path="drawings" role="tab" aria-selected="true">
           <span class="path-icon">01</span>
@@ -139,7 +153,6 @@ const phoneCodes = [
         </button>
       </div>
 
-      <!-- 通用字段：姓名 + 邮箱 -->
       <div class="form-grid form-grid-2">
         <div class="form-field">
           <label for={`${id}-name`}>{texts.name} <span class="req">*</span></label>
@@ -153,7 +166,6 @@ const phoneCodes = [
         </div>
       </div>
 
-      <!-- 通用字段：国家区号 + WhatsApp/电话 + 微信 -->
       <div class="form-grid form-grid-3">
         <div class="form-field">
           <label for={`${id}-phone-code`}>{texts.phoneCode} <span class="req">*</span></label>
@@ -174,14 +186,12 @@ const phoneCodes = [
         </div>
       </div>
 
-      <!-- 通用字段：项目所在国家 -->
       <div class="form-field">
         <label for={`${id}-country`}>{texts.country} <span class="req">*</span></label>
         <input type="text" id={`${id}-country`} name="country" required />
         <span class="field-error" data-error-for="country"></span>
       </div>
 
-      <!-- 路径A：有图纸 -->
       <div class="form-path-panel active" data-panel="drawings">
         <div class="form-field form-upload">
           <label for={`${id}-drawing`}>{texts.drawingUpload}</label>
@@ -196,7 +206,6 @@ const phoneCodes = [
         </div>
       </div>
 
-      <!-- 路径B：无图纸 -->
       <div class="form-path-panel" data-panel="nodrawings">
         <div class="form-field">
           <label for={`${id}-building-type`}>{texts.buildingType} <span class="req">*</span></label>
@@ -234,23 +243,30 @@ const phoneCodes = [
         </div>
       </div>
 
-      <!-- 通用：项目说明 -->
       <div class="form-field">
         <label for={`${id}-message`}>{texts.message}</label>
         <textarea id={`${id}-message`} name="message" rows="4" placeholder={texts.messagePlaceholder}></textarea>
       </div>
 
-      <!-- UTM隐藏字段 -->
+      <!-- Honeypot (hidden from users, bots fill it) -->
+      <div class="hp-field" aria-hidden="true" style="position:absolute;left:-9999px;opacity:0;">
+        <label for={`${id}-website`}>Website</label>
+        <input type="text" id={`${id}-website`} name="website" tabindex="-1" autocomplete="off" />
+      </div>
+
+      <!-- UTM hidden fields -->
       <input type="hidden" name="utm_source" />
       <input type="hidden" name="utm_medium" />
       <input type="hidden" name="utm_campaign" />
       <input type="hidden" name="utm_content" />
       <input type="hidden" name="utm_term" />
       <input type="hidden" name="landing_page" />
-      <input type="hidden" name="gclid" />
-      <input type="hidden" name="gbraid" />
-      <input type="hidden" name="wbraid" />
-      <input type="hidden" name="fbclid" />
+      <input type="hidden" name="source_page" />
+      <input type="hidden" name="language" value={lang} />
+      <input type="hidden" name="active_path" value="drawings" />
+
+      <!-- Turnstile -->
+      <TurnstileWidget id={`${id}-turnstile`} />
 
       <button type="submit" class="btn btn-primary btn-submit-full" data-submit-text={texts.submitDrawings} data-submit-text-nodrawings={texts.submitNoDrawings}>
         {texts.submitDrawings}
@@ -265,7 +281,8 @@ const phoneCodes = [
       <h2>{texts.title}</h2>
       <p class="form-subtitle">{texts.subtitle}</p>
 
-      <div class="form-success" id={`${id}-success`} role="alert"></div>
+      <div class="form-success" id={`${id}-success`} role="alert" aria-live="polite"></div>
+      <div class="form-error" id={`${id}-error`} role="alert" aria-live="polite"></div>
 
       <div class="form-path-switch" role="tablist">
         <button type="button" class="form-path-btn active" data-path="drawings" role="tab" aria-selected="true">
@@ -373,16 +390,23 @@ const phoneCodes = [
         <textarea id={`${id}-message`} name="message" rows="4" placeholder={texts.messagePlaceholder}></textarea>
       </div>
 
+      <!-- Honeypot -->
+      <div class="hp-field" aria-hidden="true" style="position:absolute;left:-9999px;opacity:0;">
+        <label for={`${id}-website`}>Website</label>
+        <input type="text" id={`${id}-website`} name="website" tabindex="-1" autocomplete="off" />
+      </div>
+
       <input type="hidden" name="utm_source" />
       <input type="hidden" name="utm_medium" />
       <input type="hidden" name="utm_campaign" />
       <input type="hidden" name="utm_content" />
       <input type="hidden" name="utm_term" />
       <input type="hidden" name="landing_page" />
-      <input type="hidden" name="gclid" />
-      <input type="hidden" name="gbraid" />
-      <input type="hidden" name="wbraid" />
-      <input type="hidden" name="fbclid" />
+      <input type="hidden" name="source_page" />
+      <input type="hidden" name="language" value={lang} />
+      <input type="hidden" name="active_path" value="drawings" />
+
+      <TurnstileWidget id={`${id}-turnstile`} />
 
       <button type="submit" class="btn btn-primary btn-submit-full" data-submit-text={texts.submitDrawings} data-submit-text-nodrawings={texts.submitNoDrawings}>
         {texts.submitDrawings}
@@ -394,32 +418,73 @@ const phoneCodes = [
 )}
 
 <script>
-  // QuoteForm V2 - 双路径切换、前端验证、UTM自动填充
+  // QuoteForm V2 - 双路径切换、前端验证、真实后端提交、UTM跨页面保持
+  const MAX_FILE_SIZE = 25 * 1024 * 1024;
+  const API_ENDPOINT = '/api/project-inquiry';
+
+  // UTM storage keys
+  const UTM_STORAGE_KEY = 'zs_utm_data';
+  const UTM_FIELDS = ['utm_source', 'utm_medium', 'utm_campaign', 'utm_content', 'utm_term'];
+
+  // Save UTM from URL to sessionStorage (cross-page persistence)
+  function saveUtmFromUrl() {
+    try {
+      const params = new URLSearchParams(window.location.search);
+      const utmData = {};
+      let hasUtm = false;
+      UTM_FIELDS.forEach(field => {
+        const val = params.get(field);
+        if (val) { utmData[field] = val; hasUtm = true; }
+      });
+      // Also save click IDs
+      ['gclid', 'gbraid', 'wbraid', 'fbclid'].forEach(field => {
+        const val = params.get(field);
+        if (val) { utmData[field] = val; hasUtm = true; }
+      });
+      if (hasUtm) {
+        utmData._landing = window.location.pathname;
+        utmData._referrer = document.referrer || '';
+        utmData._timestamp = Date.now();
+        sessionStorage.setItem(UTM_STORAGE_KEY, JSON.stringify(utmData));
+      }
+    } catch (e) { /* ignore */ }
+  }
+
+  function getStoredUtm() {
+    try {
+      const raw = sessionStorage.getItem(UTM_STORAGE_KEY);
+      return raw ? JSON.parse(raw) : {};
+    } catch { return {}; }
+  }
+
+  saveUtmFromUrl();
+
   document.addEventListener('DOMContentLoaded', function() {
     const forms = document.querySelectorAll('.quote-form-v2');
     if (!forms.length) return;
 
-    // UTM参数自动填充
-    const urlParams = new URLSearchParams(window.location.search);
-    const utmFields = ['utm_source', 'utm_medium', 'utm_campaign', 'utm_content', 'utm_term', 'gclid', 'gbraid', 'wbraid', 'fbclid'];
+    const storedUtm = getStoredUtm();
 
     forms.forEach(form => {
-      // 填充UTM
-      utmFields.forEach(field => {
-        const value = urlParams.get(field);
-        if (value) {
-          const hidden = form.querySelector(`input[name="${field}"]`);
-          if (hidden) hidden.value = value;
-        }
-      });
-      // 填充landing_page
-      const landingInput = form.querySelector('input[name="landing_page"]');
-      if (landingInput) landingInput.value = window.location.pathname;
+      const lang = form.dataset.lang === 'zh' ? 'zh' : 'en';
+      const isZh = lang === 'zh';
 
-      // 路径切换
+      // Fill UTM from stored data
+      UTM_FIELDS.forEach(field => {
+        const input = form.querySelector(`input[name="${field}"]`);
+        if (input && storedUtm[field]) input.value = storedUtm[field];
+      });
+      const landingInput = form.querySelector('input[name="landing_page"]');
+      if (landingInput) landingInput.value = storedUtm._landing || window.location.pathname;
+      const sourceInput = form.querySelector('input[name="source_page"]');
+      if (sourceInput) sourceInput.value = window.location.pathname;
+
+      // Path switch
       const pathBtns = form.querySelectorAll('.form-path-btn');
       const panels = form.querySelectorAll('.form-path-panel');
       const submitBtn = form.querySelector('.btn-submit-full');
+      const successEl = form.querySelector('.form-success');
+      const errorEl = form.querySelector('.form-error');
 
       pathBtns.forEach(btn => {
         btn.addEventListener('click', function() {
@@ -428,30 +493,26 @@ const phoneCodes = [
             b.classList.toggle('active', b === this);
             b.setAttribute('aria-selected', b === this ? 'true' : 'false');
           });
-          panels.forEach(p => {
-            p.classList.toggle('active', p.dataset.panel === path);
-          });
-          // 更新提交按钮文字
+          panels.forEach(p => p.classList.toggle('active', p.dataset.panel === path));
+          form.querySelector('input[name="active_path"]').value = path;
           if (submitBtn) {
             submitBtn.textContent = path === 'drawings'
               ? submitBtn.dataset.submitText
               : submitBtn.dataset.submitTextNodrawings;
           }
-          // 清除错误
+          // Clear errors
           form.querySelectorAll('.field-error').forEach(e => e.textContent = '');
           form.querySelectorAll('.form-field.error').forEach(f => f.classList.remove('error'));
+          if (errorEl) { errorEl.textContent = ''; errorEl.classList.remove('show'); }
         });
       });
 
-      // 文件上传区域交互
+      // File upload
       const uploadArea = form.querySelector('.upload-area');
       const fileInput = form.querySelector('input[type="file"]');
       if (uploadArea && fileInput) {
         uploadArea.addEventListener('click', () => fileInput.click());
-        uploadArea.addEventListener('dragover', (e) => {
-          e.preventDefault();
-          uploadArea.classList.add('dragover');
-        });
+        uploadArea.addEventListener('dragover', (e) => { e.preventDefault(); uploadArea.classList.add('dragover'); });
         uploadArea.addEventListener('dragleave', () => uploadArea.classList.remove('dragover'));
         uploadArea.addEventListener('drop', (e) => {
           e.preventDefault();
@@ -472,30 +533,26 @@ const phoneCodes = [
         }
       }
 
-      // 表单验证和提交
-      form.addEventListener('submit', function(e) {
-        e.preventDefault();
+      // Validate
+      function validate() {
         let isValid = true;
         const activePath = form.querySelector('.form-path-panel.active').dataset.panel;
 
-        // 清除之前的错误
         form.querySelectorAll('.field-error').forEach(e => e.textContent = '');
         form.querySelectorAll('.form-field').forEach(f => f.classList.remove('error'));
 
-        // 验证通用必填字段
         const requiredFields = [
-          { name: 'name', msg: form.dataset.lang === 'zh' ? '请输入姓名' : 'Please enter your name' },
-          { name: 'phone_code', msg: form.dataset.lang === 'zh' ? '请选择国家区号' : 'Please select country / calling code' },
-          { name: 'phone', msg: form.dataset.lang === 'zh' ? '请输入WhatsApp或电话' : 'Please enter WhatsApp or phone' },
-          { name: 'wechat', msg: form.dataset.lang === 'zh' ? '请输入微信号' : 'Please enter WeChat ID' },
-          { name: 'country', msg: form.dataset.lang === 'zh' ? '请输入项目所在国家' : 'Please enter the project country' },
+          { name: 'name', msg: isZh ? '请输入姓名' : 'Please enter your name' },
+          { name: 'phone_code', msg: isZh ? '请选择国家区号' : 'Please select country / calling code' },
+          { name: 'phone', msg: isZh ? '请输入WhatsApp或电话' : 'Please enter WhatsApp or phone' },
+          { name: 'wechat', msg: isZh ? '请输入微信号' : 'Please enter WeChat ID' },
+          { name: 'country', msg: isZh ? '请输入项目所在国家' : 'Please enter the project country' },
         ];
 
         requiredFields.forEach(field => {
           const input = form.querySelector(`[name="${field.name}"]`);
           if (!input) return;
-          let valid = input.value.trim() !== '';
-          if (!valid) {
+          if (!input.value.trim()) {
             isValid = false;
             const errorEl = form.querySelector(`[data-error-for="${field.name}"]`);
             if (errorEl) errorEl.textContent = field.msg;
@@ -503,63 +560,166 @@ const phoneCodes = [
           }
         });
 
-        // Email为可选，但如果填写了则验证格式
         const emailInput = form.querySelector('[name="email"]');
-        if (emailInput && emailInput.value.trim() !== '') {
-          const emailValid = /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(emailInput.value);
-          if (!emailValid) {
+        if (emailInput && emailInput.value.trim()) {
+          if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(emailInput.value)) {
             isValid = false;
             const errorEl = form.querySelector('[data-error-for="email"]');
-            if (errorEl) errorEl.textContent = form.dataset.lang === 'zh' ? '请输入有效邮箱' : 'Please enter a valid email';
+            if (errorEl) errorEl.textContent = isZh ? '请输入有效邮箱' : 'Please enter a valid email';
             emailInput.closest('.form-field')?.classList.add('error');
           }
         }
 
-        // 验证无图纸路径的额外必填
         if (activePath === 'nodrawings') {
           const buildingType = form.querySelector('[name="projectType"]');
           if (buildingType && !buildingType.value) {
             isValid = false;
             const errorEl = form.querySelector('[data-error-for="projectType"]');
-            if (errorEl) errorEl.textContent = form.dataset.lang === 'zh' ? '请选择项目类型' : 'Please select project type';
+            if (errorEl) errorEl.textContent = isZh ? '请选择项目类型' : 'Please select project type';
             buildingType.closest('.form-field')?.classList.add('error');
           }
           const intendedUse = form.querySelector('[name="intendedUse"]');
           if (intendedUse && !intendedUse.value.trim()) {
             isValid = false;
             const errorEl = form.querySelector('[data-error-for="intendedUse"]');
-            if (errorEl) errorEl.textContent = form.dataset.lang === 'zh' ? '请输入项目用途' : 'Please enter intended use';
+            if (errorEl) errorEl.textContent = isZh ? '请输入项目用途' : 'Please enter intended use';
             intendedUse.closest('.form-field')?.classList.add('error');
           }
         }
 
         if (!isValid) {
-          // 滚动到第一个错误
           const firstError = form.querySelector('.form-field.error');
           if (firstError) firstError.scrollIntoView({ behavior: 'smooth', block: 'center' });
-          return;
         }
+        return isValid;
+      }
 
-        // 验证成功 - Preview环境提示
-        const successEl = form.querySelector('.form-success');
+      // Show error
+      function showError(msg) {
+        if (errorEl) {
+          errorEl.textContent = msg;
+          errorEl.classList.add('show');
+          errorEl.scrollIntoView({ behavior: 'smooth', block: 'center' });
+        }
+      }
+
+      // Show success
+      function showSuccess(title, msg) {
         if (successEl) {
-          successEl.textContent = form.dataset.lang === 'zh'
-            ? '测试环境：表单验证成功，当前不会真实发送。'
-            : 'Preview mode: Form validation successful. No inquiry was sent.';
+          successEl.innerHTML = `<strong>${title}</strong><br>${msg}`;
           successEl.classList.add('show');
           successEl.scrollIntoView({ behavior: 'smooth', block: 'center' });
         }
-        form.reset();
-        // 重置路径切换
-        pathBtns.forEach((b, i) => {
-          b.classList.toggle('active', i === 0);
-          b.setAttribute('aria-selected', i === 0 ? 'true' : 'false');
+        // Hide form fields
+        form.querySelectorAll('.form-path-switch, .form-grid, .form-field, .form-path-panel, .turnstile-wrapper, .btn-submit-full, .form-privacy, .hp-field').forEach(el => {
+          el.style.display = 'none';
         });
-        panels.forEach((p, i) => p.classList.toggle('active', i === 0));
-        if (submitBtn) submitBtn.textContent = submitBtn.dataset.submitText;
-        if (uploadArea) {
-          const placeholder = uploadArea.querySelector('.upload-text');
-          if (placeholder) placeholder.textContent = form.dataset.lang === 'zh' ? '点击或拖拽文件到此处' : 'Click or drag files here';
+      }
+
+      // Submit
+      form.addEventListener('submit', async function(e) {
+        e.preventDefault();
+
+        // Clear previous messages
+        if (errorEl) { errorEl.textContent = ''; errorEl.classList.remove('show'); }
+        if (successEl) { successEl.textContent = ''; successEl.classList.remove('show'); }
+
+        if (!validate()) return;
+
+        // Check file sizes
+        if (fileInput && fileInput.files.length) {
+          for (const file of fileInput.files) {
+            if (file.size > MAX_FILE_SIZE) {
+              showError(isZh ? texts.errorFileSize : 'File too large. Max 25MB per file.');
+              return;
+            }
+          }
+        }
+
+        // Get Turnstile token
+        const turnstileWidget = form.querySelector('.cf-turnstile');
+        let turnstileToken = '';
+        if (turnstileWidget) {
+          turnstileToken = turnstileWidget.dataset.token || '';
+          // Also try window.turnstile.getResponse
+          if (!turnstileToken && window.turnstile && turnstileWidget.dataset.widgetId) {
+            try {
+              turnstileToken = window.turnstile.getResponse(turnstileWidget.dataset.widgetId);
+            } catch { /* ignore */ }
+          }
+        }
+        if (!turnstileToken) {
+          showError(isZh ? '请完成安全验证' : 'Please complete the security verification.');
+          return;
+        }
+
+        // Build FormData
+        const formData = new FormData(form);
+        formData.append('cf-turnstile-response', turnstileToken);
+        formData.append('referrer', document.referrer || '');
+
+        // Submitting state
+        const originalText = submitBtn.textContent;
+        submitBtn.disabled = true;
+        submitBtn.textContent = isZh ? '提交中...' : 'Submitting...';
+        submitBtn.classList.add('submitting');
+
+        try {
+          const response = await fetch(API_ENDPOINT, {
+            method: 'POST',
+            body: formData,
+          });
+
+          const result = await response.json();
+
+          if (result.success && result.lead_id && result.lead_id !== 'filtered') {
+            // Success - trigger GA4 generate_lead (NO PII)
+            const activePath = form.querySelector('input[name="active_path"]').value;
+            if (typeof window.trackLeadConversion === 'function') {
+              window.trackLeadConversion({
+                lead_id: result.lead_id,
+                language: lang,
+                form_variant: activePath === 'drawings' ? 'have_drawings' : 'no_drawings',
+                project_country: form.querySelector('[name="country"]')?.value || '',
+                source_page: window.location.pathname,
+                utm_source: form.querySelector('[name="utm_source"]')?.value || '',
+                utm_medium: form.querySelector('[name="utm_medium"]')?.value || '',
+                utm_campaign: form.querySelector('[name="utm_campaign"]')?.value || '',
+                has_file: fileInput && fileInput.files.length > 0,
+              });
+            }
+
+            showSuccess(
+              isZh ? '项目需求已提交' : 'Project inquiry received',
+              isZh
+                ? '感谢您的提交。中赛钢构将根据您提供的项目资料进行审核，并通过您填写的联系方式进行后续沟通。'
+                : 'Thank you. ZhongSai will review the project information and follow up using the contact details you provided.'
+            );
+          } else if (result.success && result.lead_id === 'filtered') {
+            // Honeypot filtered - silently show success (don't reveal it's a filter)
+            showSuccess(
+              isZh ? '项目需求已提交' : 'Project inquiry received',
+              isZh ? '感谢您的提交。' : 'Thank you.'
+            );
+          } else {
+            // Failure
+            let msg = isZh ? '提交失败，请稍后重试。' : 'Submission failed. Please try again.';
+            if (result.code === 'TURNSTILE_FAILED') msg = isZh ? '验证失败，请重新提交。' : 'Verification failed. Please try again.';
+            else if (result.code === 'VALIDATION_ERROR') msg = isZh ? '请检查必填字段。' : 'Please check required fields.';
+            else if (result.message) msg = result.message;
+            showError(msg);
+
+            // Reset Turnstile
+            if (window.turnstile && turnstileWidget?.dataset.widgetId) {
+              try { window.turnstile.reset(turnstileWidget.dataset.widgetId); } catch { /* ignore */ }
+            }
+          }
+        } catch (err) {
+          showError(isZh ? '网络错误，请稍后重试。' : 'Network error. Please try again.');
+        } finally {
+          submitBtn.disabled = false;
+          submitBtn.textContent = originalText;
+          submitBtn.classList.remove('submitting');
         }
       });
     });
@@ -567,32 +727,23 @@ const phoneCodes = [
 </script>
 
 <style>
-  /* QuoteForm V2 样式 */
   .quote-form-v2 {
     display: flex;
     flex-direction: column;
     gap: 16px;
   }
-
-  .quote-form-v2 h2,
-  .quote-form-v2 h3 {
-    margin-bottom: 4px;
-  }
-
+  .quote-form-v2 h2, .quote-form-v2 h3 { margin-bottom: 4px; }
   .quote-form-v2 .form-subtitle {
     color: var(--color-gray-500);
     font-size: 0.9rem;
     margin-bottom: 8px;
   }
-
-  /* 路径切换按钮 - 明显的大按钮 */
   .form-path-switch {
     display: grid;
     grid-template-columns: 1fr 1fr;
     gap: 12px;
     margin: 8px 0 16px;
   }
-
   .form-path-btn {
     display: flex;
     align-items: center;
@@ -608,62 +759,29 @@ const phoneCodes = [
     cursor: pointer;
     transition: all 0.25s ease;
   }
-
   .form-path-btn:hover {
     border-color: var(--color-primary);
     background: var(--color-white);
     color: var(--color-primary);
   }
-
   .form-path-btn.active {
     background: var(--color-primary);
     border-color: var(--color-primary);
     color: var(--color-white);
     box-shadow: 0 4px 14px rgba(26, 86, 219, 0.25);
   }
-
-  .form-path-btn .path-icon {
-    font-size: 1.2rem;
-  }
-
-  .form-path-btn .path-text {
-    line-height: 1.3;
-  }
-
-  /* 表单网格 */
-  .form-grid {
-    display: grid;
-    gap: 16px;
-  }
-
-  .form-grid-2 {
-    grid-template-columns: 1fr 1fr;
-  }
-
-  .form-grid-3 {
-    grid-template-columns: 1fr 1fr 1fr;
-  }
-
-  /* 表单字段 */
-  .form-field {
-    display: flex;
-    flex-direction: column;
-    gap: 6px;
-  }
-
+  .form-path-btn .path-icon { font-size: 1.2rem; }
+  .form-grid { display: grid; gap: 16px; }
+  .form-grid-2 { grid-template-columns: 1fr 1fr; }
+  .form-grid-3 { grid-template-columns: 1fr 1fr 1fr; }
+  .form-field { display: flex; flex-direction: column; gap: 6px; }
   .form-field label {
     font-size: 0.875rem;
     font-weight: 600;
     color: var(--color-gray-700);
   }
-
-  .form-field .req {
-    color: #dc2626;
-  }
-
-  .form-field input,
-  .form-field select,
-  .form-field textarea {
+  .form-field .req { color: #dc2626; }
+  .form-field input, .form-field select, .form-field textarea {
     width: 100%;
     padding: 12px 14px;
     border: 1.5px solid var(--color-gray-300);
@@ -675,38 +793,15 @@ const phoneCodes = [
     transition: border-color 0.2s, box-shadow 0.2s;
     min-height: 46px;
   }
-
-  .form-field input:focus,
-  .form-field select:focus,
-  .form-field textarea:focus {
+  .form-field input:focus, .form-field select:focus, .form-field textarea:focus {
     outline: none;
     border-color: var(--color-primary);
     box-shadow: 0 0 0 3px rgba(26, 86, 219, 0.1);
   }
-
-  .form-field textarea {
-    min-height: 100px;
-    resize: vertical;
-  }
-
-  .form-field.error input,
-  .form-field.error select,
-  .form-field.error textarea {
-    border-color: #dc2626;
-  }
-
-  .field-error {
-    font-size: 0.8rem;
-    color: #dc2626;
-    min-height: 1em;
-  }
-
-  .form-hint {
-    font-size: 0.8rem;
-    color: var(--color-gray-500);
-  }
-
-  /* 文件上传区域 */
+  .form-field textarea { min-height: 100px; resize: vertical; }
+  .form-field.error input, .form-field.error select, .form-field.error textarea { border-color: #dc2626; }
+  .field-error { font-size: 0.8rem; color: #dc2626; min-height: 1em; }
+  .form-hint { font-size: 0.8rem; color: var(--color-gray-500); }
   .form-upload .upload-area {
     position: relative;
     border: 2px dashed var(--color-gray-300);
@@ -721,139 +816,49 @@ const phoneCodes = [
     align-items: center;
     justify-content: center;
   }
-
-  .form-upload .upload-area:hover,
-  .form-upload .upload-area.dragover {
+  .form-upload .upload-area:hover, .form-upload .upload-area.dragover {
     border-color: var(--color-primary);
     background: rgba(26, 86, 219, 0.03);
   }
-
   .form-upload .upload-area input[type="file"] {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    opacity: 0;
-    cursor: pointer;
+    position: absolute; top: 0; left: 0; width: 100%; height: 100%; opacity: 0; cursor: pointer;
   }
-
   .form-upload .upload-placeholder {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 8px;
-    pointer-events: none;
+    display: flex; flex-direction: column; align-items: center; gap: 8px; pointer-events: none;
   }
-
-  .form-upload .upload-icon {
-    font-size: 2rem;
-  }
-
-  .form-upload .upload-text {
-    font-size: 0.9rem;
-    color: var(--color-gray-500);
-    max-width: 100%;
-    word-break: break-all;
-  }
-
-  /* 路径面板 */
-  .form-path-panel {
-    display: none;
-    flex-direction: column;
-    gap: 16px;
-  }
-
-  .form-path-panel.active {
-    display: flex;
-    animation: panelFadeIn 0.3s ease;
-  }
-
-  @keyframes panelFadeIn {
-    from { opacity: 0; transform: translateY(8px); }
-    to { opacity: 1; transform: translateY(0); }
-  }
-
-  /* 提交按钮 */
+  .form-upload .upload-icon { font-size: 2rem; }
+  .form-upload .upload-text { font-size: 0.9rem; color: var(--color-gray-500); max-width: 100%; word-break: break-all; }
+  .form-path-panel { display: none; flex-direction: column; gap: 16px; }
+  .form-path-panel.active { display: flex; animation: panelFadeIn 0.3s ease; }
+  @keyframes panelFadeIn { from { opacity: 0; transform: translateY(8px); } to { opacity: 1; transform: translateY(0); } }
   .btn-submit-full {
-    width: 100%;
-    padding: 16px 24px;
-    font-size: 1rem;
-    font-weight: 600;
-    border-radius: 10px;
-    margin-top: 8px;
-    min-height: 52px;
+    width: 100%; padding: 16px 24px; font-size: 1rem; font-weight: 600;
+    border-radius: 10px; margin-top: 8px; min-height: 52px;
   }
-
-  .form-privacy {
-    font-size: 0.8rem;
-    color: var(--color-gray-500);
-    text-align: center;
-  }
-
-  /* 成功提示 */
+  .btn-submit-full.submitting { opacity: 0.7; cursor: not-allowed; }
+  .btn-submit-full:disabled { opacity: 0.6; cursor: not-allowed; }
+  .form-privacy { font-size: 0.8rem; color: var(--color-gray-500); text-align: center; }
   .form-success {
-    display: none;
-    padding: 14px 18px;
-    background: #dcfce7;
-    border: 1px solid #86efac;
-    border-radius: 8px;
-    color: #166534;
-    font-size: 0.9rem;
-    font-weight: 500;
+    display: none; padding: 18px 20px; background: #dcfce7; border: 1px solid #86efac;
+    border-radius: 10px; color: #166534; font-size: 0.95rem; line-height: 1.6;
   }
-
-  .form-success.show {
-    display: block;
-    animation: panelFadeIn 0.3s ease;
+  .form-success.show { display: block; animation: panelFadeIn 0.3s ease; }
+  .form-error {
+    display: none; padding: 14px 18px; background: #fef2f2; border: 1px solid #fecaca;
+    border-radius: 8px; color: #991b1b; font-size: 0.9rem;
   }
-
-  /* 移动端响应式 */
+  .form-error.show { display: block; animation: panelFadeIn 0.3s ease; }
+  .turnstile-wrapper { margin: 8px 0; }
   @media (max-width: 768px) {
-    .form-grid-2,
-    .form-grid-3 {
-      grid-template-columns: 1fr;
-    }
-
-    .form-path-switch {
-      grid-template-columns: 1fr;
-    }
-
-    .form-path-btn {
-      padding: 14px 16px;
-      font-size: 0.9rem;
-    }
-
-    .form-field input,
-    .form-field select,
-    .form-field textarea {
-      min-height: 48px;
-      font-size: 1rem;
-    }
-
-    .btn-submit-full {
-      min-height: 54px;
-      font-size: 1.05rem;
-    }
+    .form-grid-2, .form-grid-3 { grid-template-columns: 1fr; }
+    .form-path-switch { grid-template-columns: 1fr; }
+    .form-path-btn { padding: 14px 16px; font-size: 0.9rem; }
+    .form-field input, .form-field select, .form-field textarea { min-height: 48px; font-size: 1rem; }
+    .btn-submit-full { min-height: 54px; font-size: 1.05rem; }
   }
-
   @media (max-width: 375px) {
-    .quote-form-v2 {
-      gap: 14px;
-    }
-
-    .form-path-btn {
-      padding: 12px 14px;
-      font-size: 0.85rem;
-    }
-
-    .form-path-btn .path-icon {
-      font-size: 1.1rem;
-    }
-
-    .form-upload .upload-area {
-      padding: 20px 16px;
-      min-height: 90px;
-    }
+    .quote-form-v2 { gap: 14px; }
+    .form-path-btn { padding: 12px 14px; font-size: 0.85rem; }
+    .form-upload .upload-area { padding: 20px 16px; min-height: 90px; }
   }
 </style>

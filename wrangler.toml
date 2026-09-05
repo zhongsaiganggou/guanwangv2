@@ -1,0 +1,41 @@
+name = "zhongsai-website-v2"
+compatibility_date = "2024-09-01"
+pages_build_output_dir = "dist"
+
+# ============================================================
+# Cloudflare Resource Bindings (TO BE CONFIGURED IN DASHBOARD)
+# ============================================================
+# The following bindings must be configured in Cloudflare Pages
+# dashboard under Settings > Functions > Bindings.
+# Do NOT uncomment below until resources are created and IDs are known.
+#
+# D1 Database for lead persistence:
+#   Binding name: LEADS_DB
+#   Database name: zhongsai-leads
+#   Create: wrangler d1 create zhongsai-leads
+#   Run migration: wrangler d1 execute zhongsai-leads --file=./migrations/0001_create_leads.sql
+#
+# R2 Bucket for uploaded drawing files:
+#   Binding name: LEAD_FILES
+#   Bucket name: zhongsai-lead-files
+#   Create: wrangler r2 bucket create zhongsai-lead-files
+#
+# Environment variables (set in dashboard Settings > Environment variables):
+#   TURNSTILE_SECRET_KEY  - Cloudflare Turnstile secret key
+#   PUBLIC_TURNSTILE_SITE_KEY - Cloudflare Turnstile site key (public)
+#   PUBLIC_GA_MEASUREMENT_ID - Google Analytics 4 measurement ID (public)
+#   LEAD_WEBHOOK_URL - (optional) CRM webhook URL
+#   LEAD_WEBHOOK_SECRET - (optional) webhook signing secret
+# ============================================================
+
+# D1 binding template (uncomment after creating database):
+# [[d1_databases]]
+# binding = "LEADS_DB"
+# database_name = "zhongsai-leads"
+# database_id = "YOUR_D1_DATABASE_ID_HERE"
+# migrations_dir = "migrations"
+
+# R2 binding template (uncomment after creating bucket):
+# [[r2_buckets]]
+# binding = "LEAD_FILES"
+# bucket_name = "zhongsai-lead-files"

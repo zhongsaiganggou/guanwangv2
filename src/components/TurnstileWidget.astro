@@ -1,0 +1,98 @@
+---
+// TurnstileWidget.astro - Cloudflare Turnstile client-side widget
+// Site key from PUBLIC_TURNSTILE_SITE_KEY env var
+interface Props {
+  id?: string;
+}
+const { id = 'cf-turnstile' } = Astro.props;
+const siteKey = import.meta.env.PUBLIC_TURNSTILE_SITE_KEY || '';
+---
+
+<div class="turnstile-wrapper" id={id} data-sitekey={siteKey}>
+  <!-- Turnstile widget rendered by JS below -->
+  <div class="cf-turnstile" data-sitekey={siteKey} data-theme="light"></div>
+  <noscript>
+    <p class="turnstile-noscript">Please enable JavaScript to complete the security verification.</p>
+  </noscript>
+</div>
+
+<script>
+  // Load Turnstile script once
+  const TURNSTILE_SRC = 'https://challenges.cloudflare.com/turnstile/v0/api.js';
+
+  function loadTurnstile() {
+    if (window.turnstile) {
+      renderAll();
+      return;
+    }
+    if (document.querySelector(`script[src="${TURNSTILE_SRC}"]`)) {
+      // Script already loading, wait for it
+      const check = setInterval(() => {
+        if (window.turnstile) {
+          clearInterval(check);
+          renderAll();
+        }
+      }, 100);
+      return;
+    }
+    const script = document.createElement('script');
+    script.src = TURNSTILE_SRC;
+    script.async = true;
+    script.defer = true;
+    script.onload = renderAll;
+    document.head.appendChild(script);
+  }
+
+  function renderAll() {
+    const widgets = document.querySelectorAll('.cf-turnstile:not([data-rendered])');
+    widgets.forEach(widget => {
+      const sitekey = widget.dataset.sitekey;
+      if (!sitekey) return;
+      try {
+        const id = window.turnstile.render(widget, {
+          sitekey,
+          theme: 'light',
+          callback: function(token) {
+            widget.closest('form')?.setAttribute('data-turnstile-token', token);
+            widget.setAttribute('data-token', token);
+          },
+          'error-callback': function() {
+            widget.closest('form')?.setAttribute('data-turnstile-error', 'true');
+          },
+          'expired-callback': function() {
+            widget.closest('form')?.removeAttribute('data-turnstile-token');
+            widget.removeAttribute('data-token');
+          },
+        });
+        widget.setAttribute('data-rendered', 'true');
+        widget.setAttribute('data-widget-id', id);
+      } catch (e) {
+        console.error('Turnstile render error:', e);
+      }
+    });
+  }
+
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', loadTurnstile);
+  } else {
+    loadTurnstile();
+  }
+</script>
+
+<style>
+  .turnstile-wrapper {
+    margin: 8px 0;
+  }
+  .cf-turnstile {
+    min-height: 65px;
+    display: flex;
+    align-items: center;
+  }
+  .turnstile-noscript {
+    color: #dc2626;
+    font-size: 0.875rem;
+    padding: 12px;
+    background: #fef2f2;
+    border-radius: 8px;
+  }
+</style>
