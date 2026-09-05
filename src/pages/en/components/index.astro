@@ -9,12 +9,12 @@ const title = 'Steel Components & Cladding Systems | Beams, Columns, Trusses & P
 const description = 'ZhongSai Steel Structure provides custom fabricated steel components and cladding systems to drawings — including beams, columns, trusses, crane beams, C/Z purlins, roof and wall panels, sandwich panels, with component marking, packing and export delivery.';
 
 const primaryMembers = [
-  { title: 'Steel Beams', desc: 'H-beams, built-up beams and crane beams, fabricated to drawings with welded flanges and webs, pre-fabricated end connection plates.', href: '/en/components/fabricated-steel-beams-columns/' },
-  { title: 'Steel Columns', desc: 'H-columns, box columns and lattice columns, designed for load and height, with pre-fabricated base plates and stiffeners.', href: '/en/components/fabricated-steel-beams-columns/' },
-  { title: 'Steel Trusses', desc: 'Roof trusses, transfer trusses and bracing trusses, designed for span and load, with welded or bolted connections.', href: '#' },
-  { title: 'Crane Beams', desc: 'Overhead crane beams and under-hung crane beams, designed for crane tonnage and duty class, fabricated to crane system and structural requirements.', href: '#' },
-  { title: 'Box Sections', desc: 'Box columns, box beams and irregular sections for long-span and heavy-load structures, with fabricated to project drawings and welding requirements.', href: '/en/components/fabricated-steel-beams-columns/' },
-  { title: 'Platforms & Bracing', desc: 'Working platforms, equipment platforms, column bracing and roof bracing, designed for equipment layout and seismic requirements.', href: '#' }
+  { title: 'Steel Beams', desc: 'H-beams, built-up beams and crane beams, fabricated to drawings with welded flanges and webs, pre-fabricated end connection plates.', href: '/en/components/fabricated-steel-beams-columns/', actionType: 'detail' },
+  { title: 'Steel Columns', desc: 'H-columns, box columns and lattice columns, designed for load and height, with pre-fabricated base plates and stiffeners.', href: '/en/components/fabricated-steel-beams-columns/', actionType: 'detail' },
+  { title: 'Steel Trusses', desc: 'Roof trusses, transfer trusses and bracing trusses, designed for span and load, with welded or bolted connections.', href: '#quote', actionType: 'quote' },
+  { title: 'Crane Beams', desc: 'Overhead crane beams and under-hung crane beams, designed for crane tonnage and duty class, fabricated to crane system and structural requirements.', href: '#quote', actionType: 'quote' },
+  { title: 'Box Sections', desc: 'Box columns, box beams and irregular sections for long-span and heavy-load structures, with fabricated to project drawings and welding requirements.', href: '/en/components/fabricated-steel-beams-columns/', actionType: 'detail' },
+  { title: 'Platforms & Bracing', desc: 'Working platforms, equipment platforms, column bracing and roof bracing, designed for equipment layout and seismic requirements.', href: '#quote', actionType: 'quote' }
 ];
 
 const secondaryMembers = [
@@ -57,10 +57,18 @@ const claddingSystems = [
       </div>
       <div class="component-item-grid">
         {primaryMembers.map((item, i) => (
-          <a href={item.href} class={`component-item reveal reveal-delay-${(i % 3) + 1}`} style="text-decoration: none; color: inherit;">
-            <h4>{item.title}</h4>
-            <p>{item.desc}</p>
-          </a>
+          item.actionType === 'quote' ? (
+            <div class={`component-item component-item-quote reveal reveal-delay-${(i % 3) + 1}`}>
+              <h4>{item.title}</h4>
+              <p>{item.desc}</p>
+              <span class="component-item-cta">Send Drawings for Fabrication →</span>
+            </div>
+          ) : (
+            <a href={item.href} class={`component-item reveal reveal-delay-${(i % 3) + 1}`} style="text-decoration: none; color: inherit;">
+              <h4>{item.title}</h4>
+              <p>{item.desc}</p>
+            </a>
+          )
         ))}
       </div>
     </div>

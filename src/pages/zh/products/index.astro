@@ -15,28 +15,32 @@ const products = [
     title: '工业厂房与车间',
     desc: '大跨度钢结构厂房、生产车间、装配车间，支持行车、设备布局与通风照明需求。',
     img: '/images/products/01-industrial.jpg',
-    href: '/zh/steel-workshop/'
+    href: '/zh/steel-workshop/',
+    actionType: 'detail'
   },
   {
     num: '02',
     title: '仓库与物流建筑',
     desc: '钢结构仓库、物流中心、配送中心，支持大空间存储、货架布局、装卸平台与保温需求。',
     img: '/images/products/04-warehouse-logistics.jpg',
-    href: '/zh/steel-warehouse/'
+    href: '/zh/steel-warehouse/',
+    actionType: 'detail'
   },
   {
     num: '03',
     title: '农业与特种结构',
     desc: '农业仓储、畜牧棚舍、加工车间及特种大跨度钢结构，考虑通风、防潮与使用环境。',
     img: '/images/products/05-agriculture-special.jpg',
-    href: '#quote'
+    href: '#quote',
+    actionType: 'quote'
   },
   {
     num: '04',
     title: '定制工程',
     desc: '异形结构、复杂节点、设备平台、特殊用途钢结构，根据项目图纸与技术要求定制加工。',
     img: '/images/products/06-custom-engineering.jpg',
-    href: '#quote'
+    href: '/zh/products/custom-engineering/',
+    actionType: 'detail'
   }
 ];
 
@@ -93,7 +97,7 @@ const faqItems = [
             <div class="product-card-body">
               <h3>{product.title}</h3>
               <p>{product.desc}</p>
-              <span class="product-card-cta">查看详情 →</span>
+              <span class="product-card-cta">{product.actionType === 'quote' ? '提交项目需求 →' : '查看详情 →'}</span>
             </div>
           </a>
         ))}

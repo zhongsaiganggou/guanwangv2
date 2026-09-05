@@ -251,6 +251,26 @@
   color: #6b7280;
 }
 
+.component-item-quote {
+  background: #fff;
+  border: 1px dashed #c7d2fe;
+  border-radius: 10px;
+  padding: 22px 20px;
+  transition: border-color 0.3s ease;
+}
+
+.component-item-quote:hover {
+  border-color: #1a56db;
+}
+
+.component-item-cta {
+  display: inline-block;
+  margin-top: 10px;
+  font-size: 12px;
+  font-weight: 600;
+  color: #1a56db;
+}
+
 /* How to Choose / Dual Path */
 .dual-path-section {
   background: linear-gradient(135deg, #0f1f3a 0%, #162a4a 100%);

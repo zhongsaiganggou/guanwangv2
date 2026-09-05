@@ -9,12 +9,12 @@ const title = '钢结构构件与围护系统｜钢梁钢柱、桁架、檩条�
 const description = '中赛钢构提供按图纸定制的钢结构构件与围护系统，包括钢梁、钢柱、桁架、吊车梁、C/Z檩条、屋面板、墙面板、夹芯板，支持构件编号、包装与出口交付。';
 
 const primaryMembers = [
-  { title: '钢梁 / Steel Beams', desc: 'H型钢梁、组合梁、吊车梁，按图纸加工，翼缘腹板焊接，端部节点板预制。', href: '/zh/components/fabricated-steel-beams-columns/' },
-  { title: '钢柱 / Steel Columns', desc: 'H型钢柱、箱型柱、格构柱，按荷载与高度设计，底板与加劲肋预制。', href: '/zh/components/fabricated-steel-beams-columns/' },
-  { title: '钢桁架 / Steel Trusses', desc: '屋架桁架、托架、支撑桁架，按跨度与荷载设计，节点焊接或螺栓连接。', href: '#' },
-  { title: '吊车梁 / Crane Beams', desc: '桥式吊车梁、悬挂吊车梁，按吊车吨位与工作制设计，按吊车系统及结构要求进行构件加工。', href: '#' },
-  { title: '箱型构件 / Box Sections', desc: '箱型柱、箱型梁、异形截面构件，用于大跨度与重载结构，按项目图纸与焊接要求加工。', href: '/zh/components/fabricated-steel-beams-columns/' },
-  { title: '平台与支撑 / Platforms & Bracing', desc: '操作平台、设备平台、柱间支撑、屋面支撑，按设备布置与抗震要求设计。', href: '#' }
+  { title: '钢梁 / Steel Beams', desc: 'H型钢梁、组合梁、吊车梁，按图纸加工，翼缘腹板焊接，端部节点板预制。', href: '/zh/components/fabricated-steel-beams-columns/', actionType: 'detail' },
+  { title: '钢柱 / Steel Columns', desc: 'H型钢柱、箱型柱、格构柱，按荷载与高度设计，底板与加劲肋预制。', href: '/zh/components/fabricated-steel-beams-columns/', actionType: 'detail' },
+  { title: '钢桁架 / Steel Trusses', desc: '屋架桁架、托架、支撑桁架，按跨度与荷载设计，节点焊接或螺栓连接。', href: '#quote', actionType: 'quote' },
+  { title: '吊车梁 / Crane Beams', desc: '桥式吊车梁、悬挂吊车梁，按吊车吨位与工作制设计，按吊车系统及结构要求进行构件加工。', href: '#quote', actionType: 'quote' },
+  { title: '箱型构件 / Box Sections', desc: '箱型柱、箱型梁、异形截面构件，用于大跨度与重载结构，按项目图纸与焊接要求加工。', href: '/zh/components/fabricated-steel-beams-columns/', actionType: 'detail' },
+  { title: '平台与支撑 / Platforms & Bracing', desc: '操作平台、设备平台、柱间支撑、屋面支撑，按设备布置与抗震要求设计。', href: '#quote', actionType: 'quote' }
 ];
 
 const secondaryMembers = [
@@ -57,10 +57,18 @@ const claddingSystems = [
       </div>
       <div class="component-item-grid">
         {primaryMembers.map((item, i) => (
-          <a href={item.href} class={`component-item reveal reveal-delay-${(i % 3) + 1}`} style="text-decoration: none; color: inherit;">
-            <h4>{item.title}</h4>
-            <p>{item.desc}</p>
-          </a>
+          item.actionType === 'quote' ? (
+            <div class={`component-item component-item-quote reveal reveal-delay-${(i % 3) + 1}`}>
+              <h4>{item.title}</h4>
+              <p>{item.desc}</p>
+              <span class="component-item-cta">发送图纸进行加工评估 →</span>
+            </div>
+          ) : (
+            <a href={item.href} class={`component-item reveal reveal-delay-${(i % 3) + 1}`} style="text-decoration: none; color: inherit;">
+              <h4>{item.title}</h4>
+              <p>{item.desc}</p>
+            </a>
+          )
         ))}
       </div>
     </div>

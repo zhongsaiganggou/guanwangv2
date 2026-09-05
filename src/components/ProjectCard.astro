@@ -18,7 +18,6 @@ const t = (obj: { zh: string; en: string }) => obj[lang];
   </div>
   <div class="project-card-content">
     <h3>{t(project.name)}</h3>
-    <p class="project-card-location">{t(project.location)}</p>
     <div class="project-card-params">
       {project.params.slice(0, 3).map(param => (
         <div class="project-card-param">

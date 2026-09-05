@@ -15,28 +15,32 @@ const products = [
     title: 'Industrial Workshop',
     desc: 'Long-span steel structure factories, production and assembly workshops, supporting crane, equipment layout and ventilation requirements.',
     img: '/images/products/01-industrial.jpg',
-    href: '/en/steel-workshop/'
+    href: '/en/steel-workshop/',
+    actionType: 'detail'
   },
   {
     num: '02',
     title: 'Warehouse & Logistics',
     desc: 'Steel warehouses, logistics and distribution centers, supporting large storage space, racking layout, loading docks and insulation needs.',
     img: '/images/products/04-warehouse-logistics.jpg',
-    href: '/en/steel-warehouse/'
+    href: '/en/steel-warehouse/',
+    actionType: 'detail'
   },
   {
     num: '03',
     title: 'Agriculture & Special',
     desc: 'Agricultural storage, livestock buildings, processing workshops and special long-span steel structures, considering ventilation, moisture and service environment.',
     img: '/images/products/05-agriculture-special.jpg',
-    href: '#quote'
+    href: '#quote',
+    actionType: 'quote'
   },
   {
     num: '04',
     title: 'Custom Engineering',
     desc: 'Irregular structures, complex connections, equipment platforms and special-purpose steel structures — custom fabricated to project drawings and technical requirements.',
     img: '/images/products/06-custom-engineering.jpg',
-    href: '#quote'
+    href: '/en/products/custom-engineering/',
+    actionType: 'detail'
   }
 ];
 
@@ -93,7 +97,7 @@ const faqItems = [
             <div class="product-card-body">
               <h3>{product.title}</h3>
               <p>{product.desc}</p>
-              <span class="product-card-cta">View Details →</span>
+              <span class="product-card-cta">{product.actionType === 'quote' ? 'Discuss Your Project →' : 'View Details →'}</span>
             </div>
           </a>
         ))}

@@ -22,12 +22,12 @@ const exportProcess = [
 
 const loadingSteps = [
   {
-    img: '/images/export/heavy-member-prep-308_web.jpg',
+    img: '/images/components/finished-steel-members-stacked.jpg',
     title: '构件准备',
     desc: '成品构件按项目要求整理准备，确保装车前构件状态符合交付要求。'
   },
   {
-    img: '/images/export/loading-truck_web.jpg',
+    img: '/images/export/heavy-member-prep-308_web.jpg',
     title: '起吊与装车',
     desc: '重型构件使用合适设备起吊装车，包装保护到位，确保运输安全。'
   },
@@ -90,7 +90,7 @@ const localTeamHandles = [
       <div class="process-grid">
         {exportProcess.map(step => (
           <div class="process-card">
-            <div class="process-card-num">{step.num}</div>
+            <div class="step-number">STEP {step.num}</div>
             <h3>{step.title}</h3>
             <p>{step.desc}</p>
           </div>
@@ -127,14 +127,14 @@ const localTeamHandles = [
         <p class="section-num">03</p>
         <h2>装车与集装箱装载准备</h2>
       </div>
-      <div class="loading-steps">
+      <div class="loading-steps-grid">
         {loadingSteps.map((step, i) => (
-          <div class="loading-step">
+          <div class="loading-step-card">
             <div class="loading-step-img">
               <img src={step.img} alt={step.title} width="500" height="375" loading="lazy">
             </div>
             <div class="loading-step-content">
-              <span class="loading-step-num">{String(i + 1).padStart(2, '0')}</span>
+              <span class="step-number">STEP {String(i + 1).padStart(2, '0')}</span>
               <h3>{step.title}</h3>
               <p>{step.desc}</p>
             </div>
@@ -248,51 +248,48 @@ const localTeamHandles = [
   border-radius: 12px;
   object-fit: cover;
 }
-.loading-steps {
-  display: flex;
-  flex-direction: column;
-  gap: 32px;
+.loading-steps-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 28px;
   margin-top: 32px;
 }
-.loading-step {
-  display: grid;
-  grid-template-columns: 1fr 1.2fr;
-  gap: 32px;
-  align-items: center;
-}
-.loading-step:nth-child(even) {
-  direction: rtl;
-}
-.loading-step:nth-child(even) > * {
-  direction: ltr;
+.loading-step-card {
+  background: #fff;
+  border-radius: 12px;
+  overflow: hidden;
+  border: 1px solid rgba(0,0,0,0.06);
 }
 .loading-step-img img {
   width: 100%;
-  height: auto;
-  border-radius: 12px;
+  height: 240px;
   object-fit: cover;
+  display: block;
 }
 .loading-step-content {
-  padding: 16px;
+  padding: 20px;
 }
-.loading-step-num {
+.step-number {
   display: inline-block;
-  font-size: 0.85rem;
+  font-size: 0.72rem;
   font-weight: 700;
-  color: #fff;
-  background: var(--primary, #0a3d62);
-  padding: 4px 12px;
+  letter-spacing: 0.06em;
+  color: #0a3d62;
+  background: rgba(10, 61, 98, 0.08);
+  padding: 3px 10px;
   border-radius: 4px;
-  margin-bottom: 12px;
+  margin-bottom: 10px;
 }
 .loading-step-content h3 {
-  font-size: 1.3rem;
-  margin-bottom: 8px;
-  color: var(--primary, #0a3d62);
+  font-size: 1.15rem;
+  margin-bottom: 6px;
+  color: #0a3d62;
 }
 .loading-step-content p {
-  color: var(--text-secondary, #666);
+  color: #666;
   line-height: 1.6;
+  font-size: 0.92rem;
+  margin: 0;
 }
 .loading-note {
   text-align: center;
@@ -410,16 +407,16 @@ const localTeamHandles = [
   .boundary-dual {
     grid-template-columns: 1fr;
   }
-  .loading-step {
+  .loading-steps-grid {
     grid-template-columns: 1fr;
-  }
-  .loading-step:nth-child(even) {
-    direction: ltr;
   }
 }
 @media (max-width: 768px) {
   .loading-step-content {
-    padding: 8px;
+    padding: 16px;
+  }
+  .loading-step-img img {
+    height: 200px;
   }
 }
 </style>
