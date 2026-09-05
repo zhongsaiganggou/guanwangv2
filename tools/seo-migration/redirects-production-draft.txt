@@ -1,0 +1,248 @@
+# ============================================================
+# ZhongSai Steel Structure V2 - Production 301 Redirect DRAFT
+# Generated: V2-08 Legacy URL Migration Audit
+# STATUS: DRAFT - DO NOT ACTIVATE until content gaps resolved
+# Format: old_path  new_path  301
+# ============================================================
+
+# --- Root cutover (activate at domain switch) ---
+# /  /en/  301
+
+# --- 301 ONE-TO-ONE (path changed, same intent) ---
+/  https://zhongsai-steelstructure.com/en/  301
+/about/  https://zhongsai-steelstructure.com/en/about/  301
+/contact/  https://zhongsai-steelstructure.com/en/contact/  301
+/en/projects/cnooc-pr6-pipe-rack-frame/  https://zhongsai-steelstructure.com/en/projects/cnooc-pr6-pipe-rack/  301
+/en/projects/cnpc-sixth-construction-cracking-furnace/  https://zhongsai-steelstructure.com/en/projects/cnpc-cracking-furnace/  301
+/en/projects/cnpc-sixth-construction-liquid-furnace/  https://zhongsai-steelstructure.com/en/projects/cnpc-liquid-furnace/  301
+/en/projects/guangdong-yixian-biotech-manufacturing/  https://zhongsai-steelstructure.com/en/projects/yixian-biotech-manufacturing/  301
+/en/projects/guangzhou-gongkong-high-end-equipment-base/  https://zhongsai-steelstructure.com/en/projects/guangzhou-high-end-equipment-base/  301
+/en/projects/huarun-center-commercial-residential/  https://zhongsai-steelstructure.com/en/projects/dongguan-huarun-center/  301
+/en/projects/luohu-mixc-commercial-skybridge/  https://zhongsai-steelstructure.com/en/projects/luohu-mixc-skybridge/  301
+/en/projects/shanghai-baoye-xiegang-aviation-manufacturing/  https://zhongsai-steelstructure.com/en/projects/xiegang-aviation-manufacturing/  301
+/en/projects/shantou-luxshare-precision-electronics/  https://zhongsai-steelstructure.com/en/projects/shantou-luxshare-electronics-center/  301
+/en/projects/shenzhen-international-zhanjiang-logistics-port/  https://zhongsai-steelstructure.com/en/projects/zhanjiang-logistics-port/  301
+/en/projects/shenzhen-qianhai-dreamfactory/  https://zhongsai-steelstructure.com/en/projects/qianhai-dreamfactory/  301
+/en/shipments/  https://zhongsai-steelstructure.com/en/export-delivery/  301
+/landing/  https://zhongsai-steelstructure.com/en/  301
+/privacy/  https://zhongsai-steelstructure.com/en/privacy/  301
+/products/  https://zhongsai-steelstructure.com/en/products/  301
+/projects/  https://zhongsai-steelstructure.com/en/projects/  301
+/shipments/  https://zhongsai-steelstructure.com/en/export-delivery/  301
+/terms/  https://zhongsai-steelstructure.com/en/terms/  301
+/zh/projects/cnooc-pr6-pipe-rack-frame/  https://zhongsai-steelstructure.com/zh/projects/cnooc-pr6-pipe-rack/  301
+/zh/projects/cnpc-sixth-construction-cracking-furnace/  https://zhongsai-steelstructure.com/zh/projects/cnpc-cracking-furnace/  301
+/zh/projects/cnpc-sixth-construction-liquid-furnace/  https://zhongsai-steelstructure.com/zh/projects/cnpc-liquid-furnace/  301
+/zh/projects/guangdong-yixian-biotech-manufacturing/  https://zhongsai-steelstructure.com/zh/projects/yixian-biotech-manufacturing/  301
+/zh/projects/guangzhou-gongkong-high-end-equipment-base/  https://zhongsai-steelstructure.com/zh/projects/guangzhou-high-end-equipment-base/  301
+/zh/projects/huarun-center-commercial-residential/  https://zhongsai-steelstructure.com/zh/projects/dongguan-huarun-center/  301
+/zh/projects/luohu-mixc-commercial-skybridge/  https://zhongsai-steelstructure.com/zh/projects/luohu-mixc-skybridge/  301
+/zh/projects/shanghai-baoye-xiegang-aviation-manufacturing/  https://zhongsai-steelstructure.com/zh/projects/xiegang-aviation-manufacturing/  301
+/zh/projects/shantou-luxshare-precision-electronics/  https://zhongsai-steelstructure.com/zh/projects/shantou-luxshare-electronics-center/  301
+/zh/projects/shenzhen-international-zhanjiang-logistics-port/  https://zhongsai-steelstructure.com/zh/projects/zhanjiang-logistics-port/  301
+/zh/projects/shenzhen-qianhai-dreamfactory/  https://zhongsai-steelstructure.com/zh/projects/qianhai-dreamfactory/  301
+/zh/shipments/  https://zhongsai-steelstructure.com/zh/export-delivery/  301
+
+# --- MERGE 301 (thin pages merged into stronger hub) ---
+/en/components/steel-purlins/  https://zhongsai-steelstructure.com/en/components/  301
+/en/components/steel-trusses/  https://zhongsai-steelstructure.com/en/components/  301
+/en/products/agriculture-special/  https://zhongsai-steelstructure.com/en/products/  301
+/en/products/commercial-public/  https://zhongsai-steelstructure.com/en/products/  301
+/en/products/industrial/  https://zhongsai-steelstructure.com/en/products/  301
+/en/products/mining-energy/  https://zhongsai-steelstructure.com/en/products/  301
+/en/products/residential-light/  https://zhongsai-steelstructure.com/en/products/  301
+/en/steel-building-solutions/agriculture/  https://zhongsai-steelstructure.com/en/products/  301
+/en/steel-building-solutions/commercial/  https://zhongsai-steelstructure.com/en/products/  301
+/en/steel-building-solutions/energy/  https://zhongsai-steelstructure.com/en/products/  301
+/en/steel-building-solutions/logistics/  https://zhongsai-steelstructure.com/en/steel-warehouse/  301
+/en/steel-building-solutions/manufacturing/  https://zhongsai-steelstructure.com/en/steel-workshop/  301
+/en/steel-building-solutions/mining/  https://zhongsai-steelstructure.com/en/products/  301
+/en/steel-building-solutions/public/  https://zhongsai-steelstructure.com/en/products/  301
+/en/steel-warehouse-logistics/  https://zhongsai-steelstructure.com/en/steel-warehouse/  301
+/en/steel-workshop-processing/  https://zhongsai-steelstructure.com/en/steel-workshop/  301
+/zh/components/steel-purlins/  https://zhongsai-steelstructure.com/zh/components/  301
+/zh/components/steel-trusses/  https://zhongsai-steelstructure.com/zh/components/  301
+/zh/products/agriculture-special/  https://zhongsai-steelstructure.com/zh/products/  301
+/zh/products/commercial-public/  https://zhongsai-steelstructure.com/zh/products/  301
+/zh/products/industrial/  https://zhongsai-steelstructure.com/zh/products/  301
+/zh/products/mining-energy/  https://zhongsai-steelstructure.com/zh/products/  301
+/zh/products/residential-light/  https://zhongsai-steelstructure.com/zh/products/  301
+/zh/steel-building-solutions/agriculture/  https://zhongsai-steelstructure.com/zh/products/  301
+/zh/steel-building-solutions/commercial/  https://zhongsai-steelstructure.com/zh/products/  301
+/zh/steel-building-solutions/energy/  https://zhongsai-steelstructure.com/zh/products/  301
+/zh/steel-building-solutions/logistics/  https://zhongsai-steelstructure.com/zh/steel-warehouse/  301
+/zh/steel-building-solutions/manufacturing/  https://zhongsai-steelstructure.com/zh/steel-workshop/  301
+/zh/steel-building-solutions/mining/  https://zhongsai-steelstructure.com/zh/products/  301
+/zh/steel-building-solutions/public/  https://zhongsai-steelstructure.com/zh/products/  301
+/zh/steel-warehouse-logistics/  https://zhongsai-steelstructure.com/zh/steel-warehouse/  301
+/zh/steel-workshop-processing/  https://zhongsai-steelstructure.com/zh/steel-workshop/  301
+
+# --- KEEP (no redirect needed; V2 serves at same path) ---
+# 34 URLs kept as-is (path identical)
+
+# --- BLOCKED: DO NOT REDIRECT (content gaps must be resolved first) ---
+# The following URLs have NO safe V2 target. Do NOT 301 to homepage.
+# Options: (a) migrate content to V2, (b) create new page, (c) retain old URL temporarily
+# BLOCKED [MIGRATE_CONTENT] /blog  (OTHER) - Blog hub; V2 has no blog system. High SEO traffic asset.
+# BLOCKED [MIGRATE_CONTENT] /blog/gangjiegou-anzhuang-zhinan-haiwai  (OTHER) - Blog article (gangjiegou-anzhuang-zhinan-haiwai); V2 has no blog system. Evaluat
+# BLOCKED [MIGRATE_CONTENT] /blog/gangjiegou-cangku-zaojia-duoshaoqian  (OTHER) - Blog article (gangjiegou-cangku-zaojia-duoshaoqian); V2 has no blog system. Eval
+# BLOCKED [MIGRATE_CONTENT] /blog/gangjiegou-chukou-feizhou-quanliucheng  (OTHER) - Blog article (gangjiegou-chukou-feizhou-quanliucheng); V2 has no blog system. Ev
+# BLOCKED [MIGRATE_CONTENT] /blog/gangjiegou-vs-hunningtu-chengben-duibi  (OTHER) - Blog article (gangjiegou-vs-hunningtu-chengben-duibi); V2 has no blog system. Ev
+# BLOCKED [MIGRATE_CONTENT] /blog/how-much-does-steel-structure-warehouse-cost  (OTHER) - Blog article (how-much-does-steel-structure-warehouse-cost); V2 has no blog syst
+# BLOCKED [MIGRATE_CONTENT] /blog/how-to-import-steel-structure-from-china-to-africa  (OTHER) - Blog article (how-to-import-steel-structure-from-china-to-africa); V2 has no blo
+# BLOCKED [MIGRATE_CONTENT] /blog/steel-structure-building-installation-guide-overseas  (OTHER) - Blog article (steel-structure-building-installation-guide-overseas); V2 has no b
+# BLOCKED [MIGRATE_CONTENT] /blog/steel-structure-vs-concrete-building-cost-comparison  (OTHER) - Blog article (steel-structure-vs-concrete-building-cost-comparison); V2 has no b
+# BLOCKED [MIGRATE_CONTENT] /blog/top-10-steel-structure-manufacturers-in-china  (OTHER) - Blog article (top-10-steel-structure-manufacturers-in-china); V2 has no blog sys
+# BLOCKED [MIGRATE_CONTENT] /blog/zhongguo-gangjiegou-changjia-paiming  (OTHER) - Blog article (zhongguo-gangjiegou-changjia-paiming); V2 has no blog system. Eval
+# BLOCKED [MIGRATE_CONTENT] /en/blog  (EN) - Blog hub; V2 has no blog system. High SEO traffic asset.
+# BLOCKED [MIGRATE_CONTENT] /en/blog/astm-vs-gb-steel-grades-comparison  (EN) - Blog article (astm-vs-gb-steel-grades-comparison); V2 has no blog system. Evalua
+# BLOCKED [MIGRATE_CONTENT] /en/blog/how-to-buy-steel-buildings-from-china  (EN) - Blog article (how-to-buy-steel-buildings-from-china); V2 has no blog system. Eva
+# BLOCKED [MIGRATE_CONTENT] /en/blog/how-to-choose-steel-structure-manufacturer-china  (EN) - Blog article (how-to-choose-steel-structure-manufacturer-china); V2 has no blog 
+# BLOCKED [MIGRATE_CONTENT] /en/blog/how-to-import-steel-structure-from-china-complete-guide  (EN) - Blog article (how-to-import-steel-structure-from-china-complete-guide); V2 has n
+# BLOCKED [MIGRATE_CONTENT] /en/blog/how-to-import-steel-structure-from-china-to-africa  (EN) - Blog article (how-to-import-steel-structure-from-china-to-africa); V2 has no blo
+# BLOCKED [MIGRATE_CONTENT] /en/blog/prefab-steel-building-installation-guide  (EN) - Blog article (prefab-steel-building-installation-guide); V2 has no blog system. 
+# BLOCKED [MIGRATE_CONTENT] /en/blog/prefab-steel-building-roof-systems-comparison  (EN) - Blog article (prefab-steel-building-roof-systems-comparison); V2 has no blog sys
+# BLOCKED [MIGRATE_CONTENT] /en/blog/shipping-cost-steel-structure-from-china  (EN) - Blog article (shipping-cost-steel-structure-from-china); V2 has no blog system. 
+# BLOCKED [MIGRATE_CONTENT] /en/blog/steel-structure-building-installation-guide-overseas  (EN) - Blog article (steel-structure-building-installation-guide-overseas); V2 has no b
+# BLOCKED [MIGRATE_CONTENT] /en/blog/steel-structure-container-loading-guide  (EN) - Blog article (steel-structure-container-loading-guide); V2 has no blog system. E
+# BLOCKED [MIGRATE_CONTENT] /en/blog/steel-structure-corrosion-protection-guide  (EN) - Blog article (steel-structure-corrosion-protection-guide); V2 has no blog system
+# BLOCKED [MIGRATE_CONTENT] /en/blog/steel-structure-cost-per-square-meter  (EN) - Blog article (steel-structure-cost-per-square-meter); V2 has no blog system. Eva
+# BLOCKED [MIGRATE_CONTENT] /en/blog/steel-structure-design-standards-guide  (EN) - Blog article (steel-structure-design-standards-guide); V2 has no blog system. Ev
+# BLOCKED [MIGRATE_CONTENT] /en/blog/steel-structure-foundation-design-guide  (EN) - Blog article (steel-structure-foundation-design-guide); V2 has no blog system. E
+# BLOCKED [MIGRATE_CONTENT] /en/blog/steel-structure-project-timeline-guide  (EN) - Blog article (steel-structure-project-timeline-guide); V2 has no blog system. Ev
+# BLOCKED [MIGRATE_CONTENT] /en/blog/steel-structure-supplier-indonesia-guide  (EN) - Blog article (steel-structure-supplier-indonesia-guide); V2 has no blog system. 
+# BLOCKED [MIGRATE_CONTENT] /en/blog/steel-structure-supplier-malaysia-guide  (EN) - Blog article (steel-structure-supplier-malaysia-guide); V2 has no blog system. E
+# BLOCKED [MIGRATE_CONTENT] /en/blog/steel-structure-supplier-mexico-guide  (EN) - Blog article (steel-structure-supplier-mexico-guide); V2 has no blog system. Eva
+# BLOCKED [MIGRATE_CONTENT] /en/blog/steel-structure-supplier-philippines-guide  (EN) - Blog article (steel-structure-supplier-philippines-guide); V2 has no blog system
+# BLOCKED [MIGRATE_CONTENT] /en/blog/steel-structure-supplier-saudi-arabia-guide  (EN) - Blog article (steel-structure-supplier-saudi-arabia-guide); V2 has no blog syste
+# BLOCKED [MIGRATE_CONTENT] /en/blog/steel-structure-supplier-thailand-guide  (EN) - Blog article (steel-structure-supplier-thailand-guide); V2 has no blog system. E
+# BLOCKED [MIGRATE_CONTENT] /en/blog/steel-structure-supplier-uae-dubai-guide  (EN) - Blog article (steel-structure-supplier-uae-dubai-guide); V2 has no blog system. 
+# BLOCKED [MIGRATE_CONTENT] /en/blog/steel-structure-vs-concrete-building-cost-comparison  (EN) - Blog article (steel-structure-vs-concrete-building-cost-comparison); V2 has no b
+# BLOCKED [MIGRATE_CONTENT] /en/blog/steel-structure-vs-concrete-comparison  (EN) - Blog article (steel-structure-vs-concrete-comparison); V2 has no blog system. Ev
+# BLOCKED [MIGRATE_CONTENT] /en/blog/steel-structure-wind-load-design-guide  (EN) - Blog article (steel-structure-wind-load-design-guide); V2 has no blog system. Ev
+# BLOCKED [MIGRATE_CONTENT] /en/blog/steel-warehouse-cost-complete-guide  (EN) - Blog article (steel-warehouse-cost-complete-guide); V2 has no blog system. Evalu
+# BLOCKED [MIGRATE_CONTENT] /en/blog/steel-warehouse-supplier-nigeria-guide  (EN) - Blog article (steel-warehouse-supplier-nigeria-guide); V2 has no blog system. Ev
+# BLOCKED [MIGRATE_CONTENT] /en/blog/top-10-steel-structure-manufacturers-in-china  (EN) - Blog article (top-10-steel-structure-manufacturers-in-china); V2 has no blog sys
+# BLOCKED [MIGRATE_CONTENT] /en/countries  (EN) - Country page (hub); V2 has no country pages. High localized SEO value.
+# BLOCKED [MIGRATE_CONTENT] /en/countries/indonesia  (EN) - Country page (indonesia); V2 has no country pages. High localized SEO value.
+# BLOCKED [MIGRATE_CONTENT] /en/countries/kenya  (EN) - Country page (kenya); V2 has no country pages. High localized SEO value.
+# BLOCKED [MIGRATE_CONTENT] /en/countries/nigeria  (EN) - Country page (nigeria); V2 has no country pages. High localized SEO value.
+# BLOCKED [MIGRATE_CONTENT] /en/countries/saudi-arabia  (EN) - Country page (saudi-arabia); V2 has no country pages. High localized SEO value.
+# BLOCKED [MIGRATE_CONTENT] /en/countries/vietnam  (EN) - Country page (vietnam); V2 has no country pages. High localized SEO value.
+# BLOCKED [MIGRATE_CONTENT] /en/projects/brazil-chinese-supermarket  (EN) - Overseas project (brazil-chinese-supermarket); V2 currently only has 12 domestic
+# BLOCKED [MIGRATE_CONTENT] /en/projects/dubai-industrial-warehouse  (EN) - Overseas project (dubai-industrial-warehouse); V2 currently only has 12 domestic
+# BLOCKED [MIGRATE_CONTENT] /en/projects/ethiopia-textile-factory  (EN) - Overseas project (ethiopia-textile-factory); V2 currently only has 12 domestic p
+# BLOCKED [MIGRATE_CONTENT] /en/projects/indonesia-mining-steel-structure  (EN) - Overseas project (indonesia-mining-steel-structure); V2 currently only has 12 do
+# BLOCKED [MIGRATE_CONTENT] /en/projects/kenya-dairy-farm-complex  (EN) - Overseas project (kenya-dairy-farm-complex); V2 currently only has 12 domestic p
+# BLOCKED [MIGRATE_CONTENT] /en/projects/malaysia-commercial-complex  (EN) - Overseas project (malaysia-commercial-complex); V2 currently only has 12 domesti
+# BLOCKED [MIGRATE_CONTENT] /en/projects/mexico-appliance-factory  (EN) - Overseas project (mexico-appliance-factory); V2 currently only has 12 domestic p
+# BLOCKED [MIGRATE_CONTENT] /en/projects/oman-oil-equipment-workshop  (EN) - Overseas project (oman-oil-equipment-workshop); V2 currently only has 12 domesti
+# BLOCKED [MIGRATE_CONTENT] /en/projects/peru-mining-workshop  (EN) - Overseas project (peru-mining-workshop); V2 currently only has 12 domestic proje
+# BLOCKED [MIGRATE_CONTENT] /en/projects/philippines-food-processing-plant  (EN) - Overseas project (philippines-food-processing-plant); V2 currently only has 12 d
+# BLOCKED [MIGRATE_CONTENT] /en/projects/south-africa-auto-parts-factory  (EN) - Overseas project (south-africa-auto-parts-factory); V2 currently only has 12 dom
+# BLOCKED [MIGRATE_CONTENT] /en/projects/tanzania-grain-storage-warehouse  (EN) - Overseas project (tanzania-grain-storage-warehouse); V2 currently only has 12 do
+# BLOCKED [MIGRATE_CONTENT] /en/projects/vietnam-ecommerce-logistics-center  (EN) - Overseas project (vietnam-ecommerce-logistics-center); V2 currently only has 12 
+# BLOCKED [MIGRATE_CONTENT] /en/solutions  (EN) - Solutions hub; V2 solutions is NOINDEX placeholder. Cannot redirect to placehold
+# BLOCKED [MIGRATE_CONTENT] /en/steel-car-4s-dealership  (EN) - Application page (steel-car-4s-dealership); no V2 equivalent. Evaluate migration
+# BLOCKED [MIGRATE_CONTENT] /en/steel-equipment-platform  (EN) - Application page (steel-equipment-platform); no V2 equivalent. Evaluate migratio
+# BLOCKED [MIGRATE_CONTENT] /en/steel-exhibition-hall  (EN) - Application page (steel-exhibition-hall); no V2 equivalent. Evaluate migration o
+# BLOCKED [MIGRATE_CONTENT] /en/steel-factory-crane  (EN) - Application page (steel-factory-crane); no V2 equivalent. Evaluate migration or 
+# BLOCKED [MIGRATE_CONTENT] /en/steel-hangar  (EN) - Application page (steel-hangar); no V2 equivalent. Evaluate migration or merge i
+# BLOCKED [MIGRATE_CONTENT] /en/steel-hospital-building  (EN) - Application page (steel-hospital-building); no V2 equivalent. Evaluate migration
+# BLOCKED [MIGRATE_CONTENT] /en/steel-hotel-restaurant  (EN) - Application page (steel-hotel-restaurant); no V2 equivalent. Evaluate migration 
+# BLOCKED [MIGRATE_CONTENT] /en/steel-livestock-barn  (EN) - Application page (steel-livestock-barn); no V2 equivalent. Evaluate migration or
+# BLOCKED [MIGRATE_CONTENT] /en/steel-mining-conveyor  (EN) - Application page (steel-mining-conveyor); no V2 equivalent. Evaluate migration o
+# BLOCKED [MIGRATE_CONTENT] /en/steel-mining-factory  (EN) - Application page (steel-mining-factory); V2 has only NOINDEX placeholder. Conten
+# BLOCKED [MIGRATE_CONTENT] /en/steel-office-building  (EN) - Application page (steel-office-building); no V2 equivalent. Evaluate migration o
+# BLOCKED [MIGRATE_CONTENT] /en/steel-residential-villa  (EN) - Application page (steel-residential-villa); no V2 equivalent. Evaluate migration
+# BLOCKED [MIGRATE_CONTENT] /en/steel-school-building  (EN) - Application page (steel-school-building); no V2 equivalent. Evaluate migration o
+# BLOCKED [MIGRATE_CONTENT] /en/steel-sports-arena  (EN) - Application page (steel-sports-arena); no V2 equivalent. Evaluate migration or m
+# BLOCKED [MIGRATE_CONTENT] /en/steel-supermarket-mall  (EN) - Application page (steel-supermarket-mall); V2 has only NOINDEX placeholder. Cont
+# BLOCKED [MIGRATE_CONTENT] /faq  (OTHER) - FAQ page; V2 FAQ is NOINDEX placeholder. FAQ content needs migration.
+# BLOCKED [MIGRATE_CONTENT] /solutions  (OTHER) - Solutions hub; V2 solutions is NOINDEX placeholder. Cannot redirect to placehold
+# BLOCKED [MIGRATE_CONTENT] /zh/blog  (ZH) - Blog hub; V2 has no blog system. High SEO traffic asset.
+# BLOCKED [MIGRATE_CONTENT] /zh/blog/astm-vs-gb-steel-grades-comparison  (ZH) - Blog article (astm-vs-gb-steel-grades-comparison); V2 has no blog system. Evalua
+# BLOCKED [MIGRATE_CONTENT] /zh/blog/gangjiegou-anzhuang-zhinan-haiwai  (ZH) - Blog article (gangjiegou-anzhuang-zhinan-haiwai); V2 has no blog system. Evaluat
+# BLOCKED [MIGRATE_CONTENT] /zh/blog/gangjiegou-cangku-zaojia-duoshaoqian  (ZH) - Blog article (gangjiegou-cangku-zaojia-duoshaoqian); V2 has no blog system. Eval
+# BLOCKED [MIGRATE_CONTENT] /zh/blog/gangjiegou-changfang-zaojia-zhinan  (ZH) - Blog article (gangjiegou-changfang-zaojia-zhinan); V2 has no blog system. Evalua
+# BLOCKED [MIGRATE_CONTENT] /zh/blog/gangjiegou-chukou-feizhou-quanliucheng  (ZH) - Blog article (gangjiegou-chukou-feizhou-quanliucheng); V2 has no blog system. Ev
+# BLOCKED [MIGRATE_CONTENT] /zh/blog/gangjiegou-vs-hunningtu-chengben-duibi  (ZH) - Blog article (gangjiegou-vs-hunningtu-chengben-duibi); V2 has no blog system. Ev
+# BLOCKED [MIGRATE_CONTENT] /zh/blog/how-much-does-steel-structure-warehouse-cost  (ZH) - Blog article (how-much-does-steel-structure-warehouse-cost); V2 has no blog syst
+# BLOCKED [MIGRATE_CONTENT] /zh/blog/how-to-buy-steel-buildings-from-china  (ZH) - Blog article (how-to-buy-steel-buildings-from-china); V2 has no blog system. Eva
+# BLOCKED [MIGRATE_CONTENT] /zh/blog/how-to-choose-steel-structure-manufacturer-china  (ZH) - Blog article (how-to-choose-steel-structure-manufacturer-china); V2 has no blog 
+# BLOCKED [MIGRATE_CONTENT] /zh/blog/how-to-import-steel-structure-from-china-complete-guide  (ZH) - Blog article (how-to-import-steel-structure-from-china-complete-guide); V2 has n
+# BLOCKED [MIGRATE_CONTENT] /zh/blog/shipping-cost-steel-structure-from-china  (ZH) - Blog article (shipping-cost-steel-structure-from-china); V2 has no blog system. 
+# BLOCKED [MIGRATE_CONTENT] /zh/blog/steel-structure-container-loading-guide  (ZH) - Blog article (steel-structure-container-loading-guide); V2 has no blog system. E
+# BLOCKED [MIGRATE_CONTENT] /zh/blog/steel-structure-corrosion-protection-guide  (ZH) - Blog article (steel-structure-corrosion-protection-guide); V2 has no blog system
+# BLOCKED [MIGRATE_CONTENT] /zh/blog/steel-structure-cost-per-square-meter  (ZH) - Blog article (steel-structure-cost-per-square-meter); V2 has no blog system. Eva
+# BLOCKED [MIGRATE_CONTENT] /zh/blog/steel-structure-design-standards-guide  (ZH) - Blog article (steel-structure-design-standards-guide); V2 has no blog system. Ev
+# BLOCKED [MIGRATE_CONTENT] /zh/blog/steel-structure-foundation-design-guide  (ZH) - Blog article (steel-structure-foundation-design-guide); V2 has no blog system. E
+# BLOCKED [MIGRATE_CONTENT] /zh/blog/steel-structure-project-timeline-guide  (ZH) - Blog article (steel-structure-project-timeline-guide); V2 has no blog system. Ev
+# BLOCKED [MIGRATE_CONTENT] /zh/blog/steel-structure-supplier-indonesia-guide  (ZH) - Blog article (steel-structure-supplier-indonesia-guide); V2 has no blog system. 
+# BLOCKED [MIGRATE_CONTENT] /zh/blog/steel-structure-supplier-malaysia-guide  (ZH) - Blog article (steel-structure-supplier-malaysia-guide); V2 has no blog system. E
+# BLOCKED [MIGRATE_CONTENT] /zh/blog/steel-structure-supplier-mexico-guide  (ZH) - Blog article (steel-structure-supplier-mexico-guide); V2 has no blog system. Eva
+# BLOCKED [MIGRATE_CONTENT] /zh/blog/steel-structure-supplier-philippines-guide  (ZH) - Blog article (steel-structure-supplier-philippines-guide); V2 has no blog system
+# BLOCKED [MIGRATE_CONTENT] /zh/blog/steel-structure-supplier-saudi-arabia-guide  (ZH) - Blog article (steel-structure-supplier-saudi-arabia-guide); V2 has no blog syste
+# BLOCKED [MIGRATE_CONTENT] /zh/blog/steel-structure-supplier-thailand-guide  (ZH) - Blog article (steel-structure-supplier-thailand-guide); V2 has no blog system. E
+# BLOCKED [MIGRATE_CONTENT] /zh/blog/steel-structure-supplier-uae-dubai-guide  (ZH) - Blog article (steel-structure-supplier-uae-dubai-guide); V2 has no blog system. 
+# BLOCKED [MIGRATE_CONTENT] /zh/blog/steel-structure-wind-load-design-guide  (ZH) - Blog article (steel-structure-wind-load-design-guide); V2 has no blog system. Ev
+# BLOCKED [MIGRATE_CONTENT] /zh/blog/steel-warehouse-cost-complete-guide  (ZH) - Blog article (steel-warehouse-cost-complete-guide); V2 has no blog system. Evalu
+# BLOCKED [MIGRATE_CONTENT] /zh/blog/steel-warehouse-supplier-nigeria-guide  (ZH) - Blog article (steel-warehouse-supplier-nigeria-guide); V2 has no blog system. Ev
+# BLOCKED [MIGRATE_CONTENT] /zh/blog/steel-workshop-cost-factory-building-price  (ZH) - Blog article (steel-workshop-cost-factory-building-price); V2 has no blog system
+# BLOCKED [MIGRATE_CONTENT] /zh/blog/top-10-steel-structure-manufacturers-in-china  (ZH) - Blog article (top-10-steel-structure-manufacturers-in-china); V2 has no blog sys
+# BLOCKED [MIGRATE_CONTENT] /zh/blog/zhongguo-gangjiegou-changjia-paiming  (ZH) - Blog article (zhongguo-gangjiegou-changjia-paiming); V2 has no blog system. Eval
+# BLOCKED [MIGRATE_CONTENT] /zh/countries  (ZH) - Country page (hub); V2 has no country pages. High localized SEO value.
+# BLOCKED [MIGRATE_CONTENT] /zh/countries/indonesia  (ZH) - Country page (indonesia); V2 has no country pages. High localized SEO value.
+# BLOCKED [MIGRATE_CONTENT] /zh/countries/kenya  (ZH) - Country page (kenya); V2 has no country pages. High localized SEO value.
+# BLOCKED [MIGRATE_CONTENT] /zh/countries/nigeria  (ZH) - Country page (nigeria); V2 has no country pages. High localized SEO value.
+# BLOCKED [MIGRATE_CONTENT] /zh/countries/saudi-arabia  (ZH) - Country page (saudi-arabia); V2 has no country pages. High localized SEO value.
+# BLOCKED [MIGRATE_CONTENT] /zh/countries/vietnam  (ZH) - Country page (vietnam); V2 has no country pages. High localized SEO value.
+# BLOCKED [MIGRATE_CONTENT] /zh/faq  (ZH) - FAQ page; V2 FAQ is NOINDEX placeholder. FAQ content needs migration.
+# BLOCKED [MIGRATE_CONTENT] /zh/projects/brazil-chinese-supermarket  (ZH) - Overseas project (brazil-chinese-supermarket); V2 currently only has 12 domestic
+# BLOCKED [MIGRATE_CONTENT] /zh/projects/dubai-industrial-warehouse  (ZH) - Overseas project (dubai-industrial-warehouse); V2 currently only has 12 domestic
+# BLOCKED [MIGRATE_CONTENT] /zh/projects/ethiopia-textile-factory  (ZH) - Overseas project (ethiopia-textile-factory); V2 currently only has 12 domestic p
+# BLOCKED [MIGRATE_CONTENT] /zh/projects/indonesia-mining-steel-structure  (ZH) - Overseas project (indonesia-mining-steel-structure); V2 currently only has 12 do
+# BLOCKED [MIGRATE_CONTENT] /zh/projects/kenya-dairy-farm-complex  (ZH) - Overseas project (kenya-dairy-farm-complex); V2 currently only has 12 domestic p
+# BLOCKED [MIGRATE_CONTENT] /zh/projects/malaysia-commercial-complex  (ZH) - Overseas project (malaysia-commercial-complex); V2 currently only has 12 domesti
+# BLOCKED [MIGRATE_CONTENT] /zh/projects/mexico-appliance-factory  (ZH) - Overseas project (mexico-appliance-factory); V2 currently only has 12 domestic p
+# BLOCKED [MIGRATE_CONTENT] /zh/projects/oman-oil-equipment-workshop  (ZH) - Overseas project (oman-oil-equipment-workshop); V2 currently only has 12 domesti
+# BLOCKED [MIGRATE_CONTENT] /zh/projects/peru-mining-workshop  (ZH) - Overseas project (peru-mining-workshop); V2 currently only has 12 domestic proje
+# BLOCKED [MIGRATE_CONTENT] /zh/projects/philippines-food-processing-plant  (ZH) - Overseas project (philippines-food-processing-plant); V2 currently only has 12 d
+# BLOCKED [MIGRATE_CONTENT] /zh/projects/south-africa-auto-parts-factory  (ZH) - Overseas project (south-africa-auto-parts-factory); V2 currently only has 12 dom
+# BLOCKED [MIGRATE_CONTENT] /zh/projects/tanzania-grain-storage-warehouse  (ZH) - Overseas project (tanzania-grain-storage-warehouse); V2 currently only has 12 do
+# BLOCKED [MIGRATE_CONTENT] /zh/projects/vietnam-ecommerce-logistics-center  (ZH) - Overseas project (vietnam-ecommerce-logistics-center); V2 currently only has 12 
+# BLOCKED [MIGRATE_CONTENT] /zh/projects/vietnam-logistics-center  (ZH) - Overseas project (vietnam-logistics-center); V2 currently only has 12 domestic p
+# BLOCKED [MIGRATE_CONTENT] /zh/solutions  (ZH) - Solutions hub; V2 solutions is NOINDEX placeholder. Cannot redirect to placehold
+# BLOCKED [MIGRATE_CONTENT] /zh/steel-car-4s-dealership  (ZH) - Application page (steel-car-4s-dealership); no V2 equivalent. Evaluate migration
+# BLOCKED [MIGRATE_CONTENT] /zh/steel-equipment-platform  (ZH) - Application page (steel-equipment-platform); no V2 equivalent. Evaluate migratio
+# BLOCKED [MIGRATE_CONTENT] /zh/steel-exhibition-hall  (ZH) - Application page (steel-exhibition-hall); no V2 equivalent. Evaluate migration o
+# BLOCKED [MIGRATE_CONTENT] /zh/steel-factory-crane  (ZH) - Application page (steel-factory-crane); no V2 equivalent. Evaluate migration or 
+# BLOCKED [MIGRATE_CONTENT] /zh/steel-hangar  (ZH) - Application page (steel-hangar); no V2 equivalent. Evaluate migration or merge i
+# BLOCKED [MIGRATE_CONTENT] /zh/steel-hospital-building  (ZH) - Application page (steel-hospital-building); no V2 equivalent. Evaluate migration
+# BLOCKED [MIGRATE_CONTENT] /zh/steel-hotel-restaurant  (ZH) - Application page (steel-hotel-restaurant); no V2 equivalent. Evaluate migration 
+# BLOCKED [MIGRATE_CONTENT] /zh/steel-livestock-barn  (ZH) - Application page (steel-livestock-barn); no V2 equivalent. Evaluate migration or
+# BLOCKED [MIGRATE_CONTENT] /zh/steel-mining-conveyor  (ZH) - Application page (steel-mining-conveyor); no V2 equivalent. Evaluate migration o
+# BLOCKED [MIGRATE_CONTENT] /zh/steel-mining-factory  (ZH) - Application page (steel-mining-factory); V2 has only NOINDEX placeholder. Conten
+# BLOCKED [MIGRATE_CONTENT] /zh/steel-office-building  (ZH) - Application page (steel-office-building); no V2 equivalent. Evaluate migration o
+# BLOCKED [MIGRATE_CONTENT] /zh/steel-residential-villa  (ZH) - Application page (steel-residential-villa); no V2 equivalent. Evaluate migration
+# BLOCKED [MIGRATE_CONTENT] /zh/steel-school-building  (ZH) - Application page (steel-school-building); no V2 equivalent. Evaluate migration o
+# BLOCKED [MIGRATE_CONTENT] /zh/steel-sports-arena  (ZH) - Application page (steel-sports-arena); no V2 equivalent. Evaluate migration or m
+# BLOCKED [MIGRATE_CONTENT] /zh/steel-supermarket-mall  (ZH) - Application page (steel-supermarket-mall); V2 has only NOINDEX placeholder. Cont
+# BLOCKED [RETAIN_TEMPORARILY] /en/landing  (EN) - Landing page likely for ads; retain until ad campaigns reviewed. Do not 301 to h
+# BLOCKED [RETAIN_TEMPORARILY] /zh/landing  (ZH) - Landing page likely for ads; retain until ad campaigns reviewed. Do not 301 to h
+
+# --- GONE / 410 candidates (already 404 or no value) ---
+# 410 candidate: /en/blog/how-much-does-steel-structure-warehouse-cost  (Already returns 404 on old site; no live content to migrate)
+# 410 candidate: /en/blog/steel-workshop-cost-factory-building-price  (Already returns 404 on old site; no live content to migrate)
+# 410 candidate: /en/projects/kenya-dairy-farm  (Already returns 404 on old site; no live content to migrate)
+# 410 candidate: /en/projects/nigeria-logistics-warehouse  (Already returns 404 on old site; no live content to migrate)
+# 410 candidate: /en/projects/saudi-arabia-manufacturing-factory  (Already returns 404 on old site; no live content to migrate)
+# 410 candidate: /zh/blog/gangjiegou-cangku-zaojia-2026  (Already returns 404 on old site; no live content to migrate)
+# 410 candidate: /zh/projects/china-cnooc-pipe-rack  (Already returns 404 on old site; no live content to migrate)
+# 410 candidate: /zh/projects/china-huarun-center  (Already returns 404 on old site; no live content to migrate)
+# 410 candidate: /zh/projects/china-qianhai-dreamfactory  (Already returns 404 on old site; no live content to migrate)
+# 410 candidate: /zh/projects/kenya-dairy-farm  (Already returns 404 on old site; no live content to migrate)
+# 410 candidate: /zh/projects/nigeria-logistics-warehouse  (Already returns 404 on old site; no live content to migrate)
+# 410 candidate: /zh/projects/saudi-arabia-manufacturing-factory  (Already returns 404 on old site; no live content to migrate)
+
+# --- END DRAFT ---
