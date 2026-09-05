@@ -154,7 +154,7 @@ export const projects: ProjectData[] = [
       { src: `${P}shantou-luxshare-precision-electronics-aerial-rendering.jpg`, type: 'rendering', label: { zh: '项目效果图', en: 'Project Rendering' } },
       { src: `${P}shantou-luxshare-precision-electronics-construction-aerial.jpg`, type: 'site', label: { zh: '施工航拍', en: 'Construction Aerial' } },
       { src: `${P}shantou-luxshare-precision-electronics-project-panorama.jpg`, type: 'site', label: { zh: '项目全景', en: 'Project Panorama' } },
-      { src: `${P}shantou-luxshare-precision-electronics-street-view.jpg`, type: 'site', label: { zh: '项目现场', en: 'Street View' } },
+      { src: `${P}shantou-luxshare-precision-electronics-street-view.jpg`, type: 'rendering', label: { zh: '项目效果图', en: 'Project Rendering' } },
     ],
     overview: {
       zh: '大型电子信息产业综合体项目，立讯精密（股票代码：002475）全球电子信息产业中心，涵盖研发、生产及配套设施。',
@@ -179,7 +179,7 @@ export const projects: ProjectData[] = [
       { src: `${P}futian-bonded-zone-customs-aerial-rendering.jpg`, type: 'rendering', label: { zh: '项目效果图', en: 'Project Rendering' } },
       { src: `${P}futian-bonded-zone-customs-construction-site.jpg`, type: 'site', label: { zh: '项目现场', en: 'Project Site' } },
       { src: `${P}futian-bonded-zone-customs-interior-view.jpg`, type: 'site', label: { zh: '内部视图', en: 'Interior View' } },
-      { src: `${P}futian-bonded-zone-customs-street-view.jpg`, type: 'site', label: { zh: '项目现场', en: 'Street View' } },
+      { src: `${P}futian-bonded-zone-customs-street-view.jpg`, type: 'rendering', label: { zh: '项目模型图', en: 'Project Model' } },
     ],
     overview: {
       zh: '深圳福田保税区海关监管基础设施项目，包含海关办公、监管仓库及配套设施，钢结构框架体系。',
@@ -317,7 +317,7 @@ export const projects: ProjectData[] = [
     heroImageType: 'rendering',
     galleryImages: [
       { src: `${P}luohu-mixc-commercial-skybridge-aerial-rendering.jpg`, type: 'rendering', label: { zh: '项目效果图', en: 'Project Rendering' } },
-      { src: `${P}luohu-mixc-commercial-skybridge-completed-view.jpg`, type: 'site', label: { zh: '完工实景', en: 'Completed View' } },
+      { src: `${P}luohu-mixc-commercial-skybridge-completed-view.jpg`, type: 'rendering', label: { zh: '项目效果图', en: 'Project Rendering' } },
       { src: `${P}luohu-mixc-commercial-skybridge-construction-site.jpg`, type: 'site', label: { zh: '项目现场', en: 'Construction Site' } },
       { src: `${P}luohu-mixc-commercial-skybridge-street-view.jpg`, type: 'site', label: { zh: '项目现场', en: 'Street View' } },
     ],
@@ -339,9 +339,9 @@ export const projects: ProjectData[] = [
     name: { zh: '中海油PR6管廊4-SS2框架项目', en: 'CNOOC PR6 Pipe Rack 4-SS2 Frame Project' },
     location: { zh: '广东惠州', en: 'Huizhou, Guangdong' },
     image: `${P}cnooc-pr6-pipe-rack-frame-aerial-rendering.jpg`,
-    heroImageType: 'rendering',
+    heroImageType: 'site',
     galleryImages: [
-      { src: `${P}cnooc-pr6-pipe-rack-frame-aerial-rendering.jpg`, type: 'rendering', label: { zh: '项目效果图', en: 'Project Rendering' } },
+      { src: `${P}cnooc-pr6-pipe-rack-frame-aerial-rendering.jpg`, type: 'site', label: { zh: '项目现场', en: 'Project Site' } },
       { src: `${P}cnooc-pr6-pipe-rack-frame-construction-site-1.jpg`, type: 'site', label: { zh: '项目现场', en: 'Project Site' } },
       { src: `${P}cnooc-pr6-pipe-rack-frame-construction-site-2.jpg`, type: 'site', label: { zh: '项目现场', en: 'Project Site' } },
       { src: `${P}cnooc-pr6-pipe-rack-frame-detail-view.jpg`, type: 'component', label: { zh: '钢结构细节', en: 'Steel Structure Detail' } },

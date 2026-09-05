@@ -123,11 +123,12 @@
       "pages/zh/components/roof-wall-cladding-systems/index.astro"
     ],
     "usage": "content",
-    "imageType": "other",
+    "imageType": "technical-diagram",
     "width": 1200,
     "height": 696,
     "kb": 102.5,
-    "status": "ACCEPTABLE"
+    "status": "ACCEPTABLE",
+    "notes": "Roof/wall envelope & truss-decking technical diagram; no third-party company name/logo/header/contact. Reclassified from other (not a promotional brochure screenshot)."
   },
   {
     "filename": "brochure-envelope-system-overview.jpg",
@@ -141,11 +142,12 @@
       "pages/zh/components/roof-wall-cladding-systems/index.astro"
     ],
     "usage": "content",
-    "imageType": "other",
+    "imageType": "technical-diagram",
     "width": 1200,
     "height": 696,
     "kb": 110.4,
-    "status": "ACCEPTABLE"
+    "status": "ACCEPTABLE",
+    "notes": "Roof/wall envelope & truss-decking technical diagram; no third-party company name/logo/header/contact. Reclassified from other (not a promotional brochure screenshot)."
   },
   {
     "filename": "complex-steel-truss-fabrication.jpg",
@@ -278,8 +280,9 @@
     "imageType": "container-loading",
     "width": 1600,
     "height": 1200,
-    "kb": 211.5,
-    "status": "GOOD"
+    "kb": 250.4,
+    "status": "GOOD",
+    "notes": "Third-party shipping-line wordmark 'ONE' (incl. box number line) on magenta container locally weakened/removed from this web copy via same-color inpaint (no ZhongSai logo overlay, no AI redraw); rear license plates remain blurred. Original E: source untouched."
   },
   {
     "filename": "container-loading-256_web.jpg",
@@ -350,8 +353,9 @@
     "imageType": "export-loading",
     "width": 2048,
     "height": 1542,
-    "kb": 456.3,
-    "status": "GOOD"
+    "kb": 487.0,
+    "status": "GOOD",
+    "notes": "Third-party shipping-line wordmark 'MAERSK' (partial 'ERSK') on blue container locally weakened/removed from this web copy via same-color inpaint (no logo overlay, no AI redraw); license plate remains blurred. Original source untouched."
   },
   {
     "filename": "logo-ai-replica-clean.png",
@@ -618,10 +622,7 @@
   {
     "filename": "02-mining-energy.jpg",
     "sourcePath": "public/images/products/02-mining-energy.jpg",
-    "pageUrls": [
-      "/en/products/",
-      "/zh/products/"
-    ],
+    "pageUrls": [],
     "refSourceFiles": [
       "pages/en/products/index.astro",
       "pages/zh/products/index.astro"
@@ -631,7 +632,8 @@
     "width": 2048,
     "height": 2048,
     "kb": 1668.1,
-    "status": "VISUAL-REVIEW"
+    "status": "VISUAL-REVIEW",
+    "notes": "Products concept image. Mining placeholder card/entry hidden in V2-07B; no longer referenced by any page. File intentionally kept on disk; status remains VISUAL-REVIEW per PART D (do not regenerate/replace/delete)."
   },
   {
     "filename": "03-commercial-public.jpg",
@@ -739,11 +741,12 @@
       "data/projects-data.ts"
     ],
     "usage": "content",
-    "imageType": "project-rendering",
+    "imageType": "project-site",
     "width": 970,
     "height": 540,
     "kb": 154.6,
-    "status": "GOOD"
+    "status": "GOOD",
+    "notes": "Reclassified after visual review: real on-site steel erection photo (crawler crane, scaffolding). type/label updated to site / Project Site in projects-data.ts; file unchanged."
   },
   {
     "filename": "cnooc-pr6-pipe-rack-frame-construction-site-1.jpg",
@@ -979,11 +982,12 @@
       "data/projects-data.ts"
     ],
     "usage": "content",
-    "imageType": "project-site",
+    "imageType": "project-rendering",
     "width": 640,
     "height": 460,
     "kb": 82.8,
-    "status": "GOOD"
+    "status": "GOOD",
+    "notes": "Colored Tekla/BIM structural model with axis grid, not a site photo. type=rendering, caption Project Model / 项目模型图 in projects-data.ts; file unchanged."
   },
   {
     "filename": "guangdong-yixian-biotech-manufacturing-aerial-rendering.jpg",
@@ -1235,11 +1239,12 @@
       "data/projects-data.ts"
     ],
     "usage": "content",
-    "imageType": "project-site",
+    "imageType": "project-rendering",
     "width": 640,
     "height": 460,
     "kb": 96.7,
-    "status": "GOOD"
+    "status": "GOOD",
+    "notes": "Architectural rendering (CG entourage/palms), not a completed site photo. type=rendering, caption Project Rendering / 项目效果图 in projects-data.ts; file unchanged."
   },
   {
     "filename": "luohu-mixc-commercial-skybridge-construction-site.jpg",
@@ -1411,11 +1416,12 @@
       "data/projects-data.ts"
     ],
     "usage": "content",
-    "imageType": "project-site",
+    "imageType": "project-rendering",
     "width": 700,
     "height": 460,
     "kb": 121.2,
-    "status": "GOOD"
+    "status": "GOOD",
+    "notes": "Architectural rendering with CG landscaping/people, not a street photo. type=rendering, caption Project Rendering / 项目效果图 in projects-data.ts; file unchanged."
   },
   {
     "filename": "shenzhen-international-zhanjiang-logistics-port-aerial-rendering.jpg",
