@@ -1875,3 +1875,118 @@
     height: 180px;
   }
 }
+
+/* === CRO Modules === */
+.planning-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+  margin-top: 32px;
+}
+.planning-card {
+  background: white;
+  border-radius: 12px;
+  padding: 32px;
+  text-decoration: none;
+  color: inherit;
+  border: 1px solid var(--color-gray-200);
+  transition: transform 0.2s, box-shadow 0.2s;
+  display: flex;
+  flex-direction: column;
+}
+.planning-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 32px rgba(0,0,0,0.1);
+}
+.planning-icon {
+  font-size: 32px;
+  margin-bottom: 16px;
+}
+.planning-card h3 {
+  font-size: 20px;
+  margin-bottom: 12px;
+  color: var(--color-dark);
+}
+.planning-card p {
+  color: var(--color-gray-600);
+  line-height: 1.6;
+  flex: 1;
+}
+.planning-card .card-link {
+  margin-top: 20px;
+  color: var(--color-primary);
+  font-weight: 600;
+}
+
+.next-steps {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 32px;
+  margin-top: 32px;
+}
+.next-step {
+  text-align: center;
+  padding: 32px 24px;
+  background: var(--color-gray-100);
+  border-radius: 12px;
+}
+.next-step-num {
+  width: 48px;
+  height: 48px;
+  background: var(--color-primary);
+  color: white;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 700;
+  font-size: 18px;
+  margin: 0 auto 16px;
+}
+.next-step strong {
+  display: block;
+  font-size: 18px;
+  margin-bottom: 12px;
+  color: var(--color-dark);
+}
+.next-step span {
+  color: var(--color-gray-600);
+  line-height: 1.6;
+  font-size: 15px;
+}
+
+.risk-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+  margin-top: 32px;
+}
+.risk-card {
+  background: rgba(255,255,255,0.05);
+  border: 1px solid rgba(255,255,255,0.1);
+  border-radius: 12px;
+  padding: 28px;
+}
+.risk-num {
+  font-size: 14px;
+  color: var(--color-secondary);
+  font-weight: 700;
+  margin-bottom: 12px;
+  letter-spacing: 1px;
+}
+.risk-card h3 {
+  font-size: 18px;
+  margin-bottom: 12px;
+  color: white;
+}
+.risk-card p {
+  color: rgba(255,255,255,0.7);
+  line-height: 1.6;
+  font-size: 14px;
+}
+
+@media (max-width: 768px) {
+  .planning-grid, .next-steps, .risk-grid {
+    grid-template-columns: 1fr;
+  }
+}
