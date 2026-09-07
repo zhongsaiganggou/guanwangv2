@@ -193,12 +193,16 @@ const phoneCodes = [
       </div>
 
       <div class="form-path-panel active" data-panel="drawings">
-        <div class="form-field">
-          <label>{texts.drawingUpload}</label>
-          <div class="drawing-notice" style="background: var(--color-gray-50); border: 1px solid var(--color-gray-200); border-radius: 8px; padding: 16px; color: var(--color-gray-600); font-size: 0.9rem; line-height: 1.6;">
-            {lang === 'zh' ? '📎 有图纸或BOQ？请通过 <a href="https://wa.me/8613192007378" target="_blank" rel="noopener" style="color: var(--color-primary); font-weight: 600;">WhatsApp</a> 或微信发送图纸文件给我们（支持PDF、DWG、DXF、JPG、PNG、Excel等格式）。' : '📎 Have drawings or BOQ? Please send drawing files via <a href="https://wa.me/8613192007378" target="_blank" rel="noopener" style="color: var(--color-primary); font-weight: 600;">WhatsApp</a> or WeChat (PDF, DWG, DXF, JPG, PNG, Excel, etc. supported).'}
+        <div class="form-field form-upload">
+          <label for={`${id}-drawing`}>{texts.drawingUpload}</label>
+          <div class="upload-area">
+            <input type="file" id={`${id}-drawing`} name="drawings" accept=".pdf,.dwg,.dxf,.jpg,.jpeg,.png,.xls,.xlsx" multiple />
+            <div class="upload-placeholder">
+              <svg class="upload-icon" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 16V4"/><path d="m7 9 5-5 5 5"/><path d="M5 16v3a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1v-3"/></svg>
+              <span class="upload-text">{lang === 'zh' ? '点击或拖拽文件到此处' : 'Click or drag files here'}</span>
+            </div>
           </div>
-          <input type="file" id={`${id}-drawing`} name="drawings" accept=".pdf,.dwg,.dxf,.jpg,.jpeg,.png,.xls,.xlsx" multiple style="display:none" disabled />
+          <small class="form-hint">{texts.drawingHint}</small>
         </div>
           <small class="form-hint">{texts.drawingHint}</small>
         </div>
@@ -334,12 +338,16 @@ const phoneCodes = [
       </div>
 
       <div class="form-path-panel active" data-panel="drawings">
-        <div class="form-field">
-          <label>{texts.drawingUpload}</label>
-          <div class="drawing-notice" style="background: var(--color-gray-50); border: 1px solid var(--color-gray-200); border-radius: 8px; padding: 16px; color: var(--color-gray-600); font-size: 0.9rem; line-height: 1.6;">
-            {lang === 'zh' ? '📎 有图纸或BOQ？请通过 <a href="https://wa.me/8613192007378" target="_blank" rel="noopener" style="color: var(--color-primary); font-weight: 600;">WhatsApp</a> 或微信发送图纸文件给我们（支持PDF、DWG、DXF、JPG、PNG、Excel等格式）。' : '📎 Have drawings or BOQ? Please send drawing files via <a href="https://wa.me/8613192007378" target="_blank" rel="noopener" style="color: var(--color-primary); font-weight: 600;">WhatsApp</a> or WeChat (PDF, DWG, DXF, JPG, PNG, Excel, etc. supported).'}
+        <div class="form-field form-upload">
+          <label for={`${id}-drawing`}>{texts.drawingUpload}</label>
+          <div class="upload-area">
+            <input type="file" id={`${id}-drawing`} name="drawings" accept=".pdf,.dwg,.dxf,.jpg,.jpeg,.png,.xls,.xlsx" multiple />
+            <div class="upload-placeholder">
+              <svg class="upload-icon" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 16V4"/><path d="m7 9 5-5 5 5"/><path d="M5 16v3a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1v-3"/></svg>
+              <span class="upload-text">{lang === 'zh' ? '点击或拖拽文件到此处' : 'Click or drag files here'}</span>
+            </div>
           </div>
-          <input type="file" id={`${id}-drawing`} name="drawings" accept=".pdf,.dwg,.dxf,.jpg,.jpeg,.png,.xls,.xlsx" multiple style="display:none" disabled />
+          <small class="form-hint">{texts.drawingHint}</small>
         </div>
           <small class="form-hint">{texts.drawingHint}</small>
         </div>

@@ -1,4 +1,4 @@
-name = "zhongsai-website-v2"
+﻿name = "zhongsai-website-v2"
 compatibility_date = "2024-09-01"
 pages_build_output_dir = "dist"
 
@@ -34,7 +34,7 @@ database_name = "zhongsai-leads"
 database_id = "fadaebf1-1310-4512-9e8c-1cd415cf34eb"
 migrations_dir = "migrations"
 
-# R2 binding template (uncomment after creating bucket):
-# [[r2_buckets]]
-# binding = "LEAD_FILES"
-# bucket_name = "zhongsai-lead-files"
+# R2 binding for uploaded drawing files:
+[[r2_buckets]]
+binding = "LEAD_FILES"
+bucket_name = "zhongsai-lead-files"
