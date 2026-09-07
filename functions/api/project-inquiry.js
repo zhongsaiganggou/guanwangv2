@@ -259,7 +259,7 @@ export async function onRequestPost(context) {
               VALUES (?, ?, ?, ?, ?, ?)
             `).bind(fileId, leadId, fileKey, file.name, file.type || '', file.size).run();
 
-            savedFiles.push({ filename: file.name, size: file.size, fileKey });
+            savedFiles.push({ name: file.name, size: file.size, fileKey });
           } catch (fileErr) {
             failedFiles += 1;
             console.error('File upload error:', fileErr.message);
@@ -283,9 +283,10 @@ export async function onRequestPost(context) {
       for (const f of savedFiles) {
         try {
           const downloadUrl = await env.LEAD_FILES.sign(f.fileKey, { expiresIn: 86400 });
+          console.log('R2 signed URL generated for:', f.fileKey, 'URL length:', downloadUrl?.length);
           filesWithDownloadUrls.push({ ...f, download_url: downloadUrl });
         } catch (signErr) {
-          console.error('R2 sign URL error:', signErr.message);
+          console.error('R2 sign URL error for', f.fileKey, ':', signErr.message, signErr.stack);
           filesWithDownloadUrls.push({ ...f, download_url: null });
         }
       }
