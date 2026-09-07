@@ -349,16 +349,18 @@ export async function onRequestPost(context) {
     if (env.WECHAT_WORK_WEBHOOK_URL) {
       wecomStatus = 'attempted';
       try {
-        const isTestText = isTest === 1 ? '⚠️ 测试线索' : '🔥 新线索';
+        const isTestText = isTest === 1 ? '（测试）' : '';
+        const hasDrawingsText = hasDrawings ? '有' : '无';
         const projectInfo = hasDrawings ? '有图纸/BOQ' : sanitizeText(fields.project_type, 80);
 
         const mdLines = [
-          `**${isTestText}**`,
+          `**网站新线索${isTestText}**`,
           '',
           `**姓名**: ${sanitizeText(fields.name, 100)}`,
           `**国家**: ${sanitizeText(fields.project_country, 80)}`,
           `**电话**: ${sanitizeText(fields.calling_code, 20)} ${sanitizeText(fields.phone, 50)}`,
           `**微信**: ${sanitizeText(fields.wechat, 80)}`,
+          `**有无图纸**: ${hasDrawingsText}`,
           `**项目**: ${projectInfo}`,
           `**来源**: ${sanitizeText(fields.source_page, 120)}`,
         ];
