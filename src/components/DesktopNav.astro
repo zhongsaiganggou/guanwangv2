@@ -82,10 +82,12 @@ const dropdownItems = lang === 'zh' ? {
 const simpleItems = lang === 'zh' ? [
   { label: '首页', href: '/zh/' },
   { label: '项目案例', href: '/zh/projects/' },
+  { label: '技术资源', href: '/zh/resources/' },
   { label: '关于中赛', href: '/zh/about/' },
 ] : [
   { label: 'Home', href: '/en/' },
   { label: 'Projects', href: '/en/projects/' },
+  { label: 'Resources', href: '/en/resources/' },
   { label: 'About', href: '/en/about/' },
 ];
 
@@ -252,5 +254,12 @@ function isDropdownActive(children: {href: string}[], currentPath: string): bool
 .site-header.scrolled .nav-dropdown-trigger {
   padding: 6px 10px;
   font-size: 13.5px;
+}
+
+/* Responsive: hide desktop nav below 1024px (must match global.css breakpoint) */
+@media (max-width: 1024px) {
+  .desktop-nav {
+    display: none !important;
+  }
 }
 </style>

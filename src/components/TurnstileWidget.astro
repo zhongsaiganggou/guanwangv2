@@ -1,6 +1,7 @@
 ---
 // TurnstileWidget.astro - Cloudflare Turnstile client-side widget
-// Site key from PUBLIC_TURNSTILE_SITE_KEY env var
+// Explicit render mode only (render=explicit, no data-sitekey on target to avoid auto-render)
+// Site key from PUBLIC_TURNSTILE_SITE_KEY env var, passed to client via data attribute
 interface Props {
   id?: string;
 }
@@ -9,11 +10,10 @@ const siteKey = import.meta.env.PUBLIC_TURNSTILE_SITE_KEY || '';
 ---
 
 <div class="turnstile-wrapper" id={id} data-sitekey={siteKey}>
-  <!-- Turnstile widget rendered by JS below -->
   {siteKey ? (
-    <div class="cf-turnstile" data-sitekey={siteKey} data-theme="light"></div>
+    <div class="cf-turnstile" data-turnstile-target></div>
   ) : (
-    <p class="turnstile-unavailable" role="status">Security verification is not configured.</p>
+    <p class="turnstile-unavailable" role="status">Security verification is temporarily unavailable. Please try again later.</p>
   )}
   <noscript>
     <p class="turnstile-noscript">Please enable JavaScript to complete the security verification.</p>
@@ -21,43 +21,27 @@ const siteKey = import.meta.env.PUBLIC_TURNSTILE_SITE_KEY || '';
 </div>
 
 <script>
-  // Load Turnstile script once
-  const TURNSTILE_SRC = 'https://challenges.cloudflare.com/turnstile/v0/api.js';
+  // Load Turnstile with render=explicit to prevent implicit auto-render (avoids "widget already exists")
+  const TURNSTILE_SRC = 'https://challenges.cloudflare.com/turnstile/v0/api.js?render=explicit';
 
-  function loadTurnstile() {
-    if (!document.querySelector('.cf-turnstile[data-sitekey]')) return;
-    if (window.turnstile) {
-      renderAll();
-      return;
-    }
-    if (document.querySelector(`script[src="${TURNSTILE_SRC}"]`)) {
-      // Script already loading, wait for it
-      const check = setInterval(() => {
-        if (window.turnstile) {
-          clearInterval(check);
-          renderAll();
-        }
-      }, 100);
-      return;
-    }
-    const script = document.createElement('script');
-    script.src = TURNSTILE_SRC;
-    script.async = true;
-    script.defer = true;
-    script.onload = renderAll;
-    document.head.appendChild(script);
+  function getSiteKey(widget: Element): string {
+    return widget.closest('.turnstile-wrapper')?.getAttribute('data-sitekey') || '';
   }
 
   function renderAll() {
-    const widgets = document.querySelectorAll('.cf-turnstile:not([data-rendered])');
+    const widgets = document.querySelectorAll('.cf-turnstile[data-turnstile-target]:not([data-rendered])');
     widgets.forEach(widget => {
-      const sitekey = widget.dataset.sitekey;
-      if (!sitekey) return;
+      const sitekey = getSiteKey(widget);
+      if (!sitekey) {
+        console.warn('Turnstile: no site key found for widget');
+        return;
+      }
       try {
-        const id = window.turnstile.render(widget, {
+        const widgetId = window.turnstile.render(widget, {
           sitekey,
           theme: 'light',
-          callback: function(token) {
+          size: 'flexible',
+          callback: function(token: string) {
             widget.closest('form')?.setAttribute('data-turnstile-token', token);
             widget.setAttribute('data-token', token);
           },
@@ -70,11 +54,38 @@ const siteKey = import.meta.env.PUBLIC_TURNSTILE_SITE_KEY || '';
           },
         });
         widget.setAttribute('data-rendered', 'true');
-        widget.setAttribute('data-widget-id', id);
+        widget.setAttribute('data-widget-id', String(widgetId));
       } catch (e) {
         console.error('Turnstile render error:', e);
       }
     });
+  }
+
+  function loadTurnstile() {
+    const targets = document.querySelectorAll('.cf-turnstile[data-turnstile-target]:not([data-rendered])');
+    if (targets.length === 0) return;
+
+    if (window.turnstile) {
+      renderAll();
+      return;
+    }
+
+    if (document.querySelector(`script[src="${TURNSTILE_SRC}"]`)) {
+      const check = setInterval(() => {
+        if (window.turnstile) {
+          clearInterval(check);
+          renderAll();
+        }
+      }, 100);
+      return;
+    }
+
+    const script = document.createElement('script');
+    script.src = TURNSTILE_SRC;
+    script.async = true;
+    script.defer = true;
+    script.onload = renderAll;
+    document.head.appendChild(script);
   }
 
   if (document.readyState === 'loading') {
@@ -85,26 +96,43 @@ const siteKey = import.meta.env.PUBLIC_TURNSTILE_SITE_KEY || '';
 </script>
 
 <style>
-  .turnstile-wrapper {
-    margin: 8px 0;
-  }
+.turnstile-wrapper {
+  margin: 8px 0;
+  width: 100%;
+}
+
+.cf-turnstile {
+  min-height: 65px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  max-width: 100%;
+  overflow: visible;
+}
+
+/* Ensure Turnstile iframe is responsive */
+.cf-turnstile iframe {
+  max-width: 100% !important;
+}
+
+.turnstile-noscript,
+.turnstile-unavailable {
+  color: #991b1b;
+  font-size: 0.875rem;
+  padding: 12px;
+  background: #fef2f2;
+  border-radius: 8px;
+}
+
+/* 375px mobile: ensure full visibility, no crop */
+@media (max-width: 400px) {
   .cf-turnstile {
-    min-height: 65px;
-    display: flex;
-    align-items: center;
+    min-height: 60px;
   }
-  .turnstile-noscript {
-    color: #dc2626;
-    font-size: 0.875rem;
-    padding: 12px;
-    background: #fef2f2;
-    border-radius: 8px;
+  .cf-turnstile iframe {
+    transform: scale(0.9);
+    transform-origin: center center;
   }
-  .turnstile-unavailable {
-    color: #991b1b;
-    font-size: 0.875rem;
-    padding: 12px;
-    background: #fef2f2;
-    border-radius: 8px;
-  }
+}
 </style>

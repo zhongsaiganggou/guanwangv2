@@ -1,0 +1,31 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+---
+
+<BaseLayout
+  title="页面未找到 | 中赛钢构"
+  description="您访问的页面可能已移动或地址不正确。"
+  lang="zh"
+  noindex={true}
+  singleLanguage={true}
+>
+  <section class="not-found-section">
+    <div class="container">
+      <p class="error-code">404</p>
+      <h1>页面未找到</h1>
+      <p>您访问的页面可能已移动，或地址输入不正确。</p>
+      <div class="not-found-actions">
+        <a class="btn btn-primary" href="/zh/">返回中文首页</a>
+        <a class="btn btn-outline" href="/en/">Go to English Home</a>
+      </div>
+    </div>
+  </section>
+</BaseLayout>
+
+<style>
+.not-found-section { min-height: 55vh; display: grid; place-items: center; padding: 80px 0; text-align: center; }
+.error-code { color: var(--color-primary); font-size: clamp(4rem, 12vw, 8rem); font-weight: 800; line-height: 1; }
+.not-found-section h1 { margin: 16px 0 12px; }
+.not-found-section p { color: var(--color-gray-500); }
+.not-found-actions { display: flex; flex-wrap: wrap; justify-content: center; gap: 12px; margin-top: 28px; }
+</style>

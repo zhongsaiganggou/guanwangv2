@@ -1,31 +1,53 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
+
+// Detect language from URL path
+const url = new URL(Astro.request.url);
+const path = url.pathname;
+const isZH = path.startsWith('/zh/') || path === '/zh';
+const lang = isZH ? 'zh' : 'en';
+
+const content = isZH ? {
+  title: '页面未找到 | 中赛钢构',
+  description: '您访问的页面可能已移动或地址不正确。',
+  h1: '页面未找到',
+  message: '您访问的页面可能已移动，或地址输入不正确。',
+  homeZH: '返回中文首页',
+  homeEN: 'Go to English Home',
+} : {
+  title: 'Page Not Found | ZhongSai Steel Structure',
+  description: 'The requested page could not be found.',
+  h1: 'Page Not Found',
+  message: 'The page may have moved or the address may be incorrect.',
+  homeZH: '返回中文首页',
+  homeEN: 'Go to English Home',
+};
 ---
 
 <BaseLayout
-  title="Page Not Found | ZhongSai Steel Structure"
-  description="The requested page could not be found."
-  lang="en"
+  title={content.title}
+  description={content.description}
+  lang={lang}
   noindex={true}
   singleLanguage={true}
 >
   <section class="not-found-section">
     <div class="container">
       <p class="error-code">404</p>
-      <h1>Page Not Found</h1>
-      <p>The page may have moved or the address may be incorrect.</p>
+      <h1>{content.h1}</h1>
+      <p>{content.message}</p>
       <div class="not-found-actions">
-        <a class="btn btn-primary" href="/en/">Go to English Home</a>
-        <a class="btn btn-outline" href="/zh/">返回中文首页</a>
+        <a class="btn btn-primary" href={`/${lang}/`}>{isZH ? content.homeZH : content.homeEN}</a>
+        <a class="btn btn-outline" href={isZH ? '/en/' : '/zh/'}>{isZH ? content.homeEN : content.homeZH}</a>
       </div>
     </div>
   </section>
 </BaseLayout>
 
 <style>
-  .not-found-section { min-height: 55vh; display: grid; place-items: center; padding: 80px 0; text-align: center; }
-  .error-code { color: var(--color-primary); font-size: clamp(4rem, 12vw, 8rem); font-weight: 800; line-height: 1; }
-  .not-found-section h1 { margin: 16px 0 12px; }
-  .not-found-section p { color: var(--color-gray-500); }
-  .not-found-actions { display: flex; flex-wrap: wrap; justify-content: center; gap: 12px; margin-top: 28px; }
+.not-found-section { min-height: 55vh; display: grid; place-items: center; padding: 80px 0; text-align: center; }
+.error-code { color: var(--color-primary); font-size: clamp(4rem, 12vw, 8rem); font-weight: 800; line-height: 1; }
+.not-found-section h1 { margin: 16px 0 12px; }
+.not-found-section p { color: var(--color-gray-500); }
+.not-found-actions { display: flex; flex-wrap: wrap; justify-content: center; gap: 12px; margin-top: 28px; }
 </style>

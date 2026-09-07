@@ -21,16 +21,20 @@ const {
 } = Astro.props;
 
 const isEN = lang === 'en';
+// H1 display title: remove "| ZhongSai" suffix (browser <title> keeps full brand suffix)
+const displayTitle = title.replace(/\s*\|\s*ZhongSai\s*$/i, '').trim();
+const resourcesUrl = isEN ? '/en/resources/' : '/zh/resources/';
+const resourcesLabel = isEN ? 'Resources' : '技术资源';
 ---
 
 <BaseLayout title={title} description={description} lang={lang} singleLanguage={true}>
   <article class="legacy-article">
-    <!-- Breadcrumb: Home > Resources (plain text, no link) > Article -->
+    <!-- Breadcrumb: Home > Resources > Article -->
     <nav class="breadcrumb" aria-label="Breadcrumb">
       <div class="container">
         <ol>
           <li><a href={`/${lang}/`}>{isEN ? 'Home' : '首页'}</a></li>
-          <li aria-current="page">{isEN ? 'Resources' : '资源'}</li>
+          <li><a href={resourcesUrl}>{resourcesLabel}</a></li>
         </ol>
       </div>
     </nav>
@@ -39,7 +43,7 @@ const isEN = lang === 'en';
     <header class="legacy-article-header">
       <div class="container container-narrow">
         <span class="article-category">{category}</span>
-        <h1>{title}</h1>
+        <h1>{displayTitle}</h1>
         <p class="article-intro">{description}</p>
       </div>
     </header>
