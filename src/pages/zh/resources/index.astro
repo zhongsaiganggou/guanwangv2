@@ -1,0 +1,84 @@
+---
+import BaseLayout from '../../../layouts/BaseLayout.astro';
+import QuoteForm from '../../../components/QuoteForm.astro';
+import '../../../styles/detail.css';
+
+const title = '技术资料与工程知识 | 钢结构工程指南 | 中赛钢构';
+const description = '中赛钢构技术资源中心——钢结构厂房、仓库、构件与围护系统、制造质量控制、出口交付、工程设计与深化等技术资料与工程知识汇总。';
+const lang = 'zh';
+const canonical = 'https://zhongsai-steelstructure.com/zh/resources/';
+
+const engineeringResources = [
+  { title: '工业厂房与生产建筑', href: '/zh/steel-workshop/', desc: '大跨度钢结构厂房、生产车间、装配车间的结构与制造方案' },
+  { title: '仓储与物流建筑', href: '/zh/steel-warehouse/', desc: '钢结构仓库、配送中心、物流枢纽的空间规划与围护配置' },
+  { title: '农业与养殖建筑', href: '/zh/agricultural-steel-buildings/', desc: '畜牧棚舍、养鸡场、农场仓储、温室钢架的耐腐蚀与通风方案' },
+  { title: '矿业、能源与重工业结构', href: '/zh/steel-mining-factory/', desc: '矿山输送结构、电厂钢架、设备支撑平台、重工业建筑钢结构' },
+  { title: '商业与公共建筑', href: '/zh/commercial-public-steel-buildings/', desc: '购物中心、展厅、医院、学校、体育馆等大跨度公共建筑钢结构' },
+  { title: '交通与基础设施钢结构', href: '/zh/transportation-infrastructure-steel/', desc: '钢桥梁、人行天桥、飞机库、港口码头、轨交基础设施钢结构' },
+  { title: '特种钢结构', href: '/zh/special-custom-steel-structures/', desc: '异形结构、旋转楼梯、钢平台、雨棚、幕墙支撑框架等特种钢结构' },
+  { title: '钢构件与围护系统', href: '/zh/components/', desc: '钢梁钢柱、桁架、檩条、屋面板墙面板、夹芯板等构件与围护产品' },
+  { title: '制造与质量控制', href: '/zh/manufacturing-quality/', desc: '切割、组立、焊接、矫正、钻孔、表面处理与质量检验制造流程' },
+  { title: '工程设计与深化', href: '/zh/engineering-design/', desc: '结构设计协调、深化设计、加工图纸与工程技术配合' },
+  { title: '出口交付', href: '/zh/export-delivery/', desc: '构件编号、包装、装柜、出口资料协调与物流配合' },
+  { title: '定制工程与按图加工', href: '/zh/products/custom-engineering/', desc: '非标构件、复杂节点、设备平台、重型构件按确认图纸定制加工' },
+];
+---
+
+<BaseLayout title={title} description={description} lang={lang}>
+  <!-- Hero -->
+  <section class="detail-hero">
+    <div class="detail-hero-bg" style="background-image: url('/images/manufacturing/real/workshop-overview-wide-9815.jpg');"></div>
+    <div class="detail-hero-overlay"></div>
+    <div class="detail-hero-content">
+      <span class="eyebrow">技术资料 · 工程知识</span>
+      <h1>技术资料与工程知识</h1>
+      <p class="lead">中赛钢构技术资源中心，汇总钢结构建筑应用、构件与围护系统、制造质量控制、工程设计深化、出口交付等技术资料，帮助客户快速了解钢结构项目从设计到交付的完整流程。</p>
+      <div class="detail-hero-actions">
+        <a href="#resources" class="btn btn-primary">浏览技术资料</a>
+        <a href="#quote" class="btn btn-outline">提交项目需求</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Breadcrumb -->
+  <nav class="detail-breadcrumb">
+    <div class="container">
+      <a href="/zh/">首页</a>
+      <span>/</span>
+      <span>技术资料</span>
+    </div>
+  </nav>
+
+  <!-- Engineering Resources -->
+  <section class="detail-section" id="resources">
+    <div class="container">
+      <div class="section-heading reveal">
+        <p class="section-index">01 / 工程技术资源</p>
+        <h2>钢结构应用与工程能力</h2>
+        <p>按建筑应用、构件产品、制造能力和工程服务分类，快速定位您需要的技术资料与解决方案页面。</p>
+      </div>
+      <div class="feature-grid">
+        {engineeringResources.map((res, i) => (
+          <a href={res.href} class={`feature-card reveal reveal-delay-${(i % 3) + 1}`} style="text-decoration: none; color: inherit;">
+            <div class="feature-body">
+              <h3>{res.title}</h3>
+              <p>{res.desc}</p>
+            </div>
+          </a>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- Quote -->
+  <section class="detail-section alt" id="quote">
+    <div class="container">
+      <div class="section-heading reveal">
+        <p class="section-index">02 / 开始项目</p>
+        <h2>提交您的项目信息</h2>
+        <p>如有结构图纸、深化图或BOQ材料清单，可直接上传。我们将根据图纸核算工程量并提供报价。</p>
+      </div>
+      <QuoteForm lang="zh" />
+    </div>
+  </section>
+</BaseLayout>

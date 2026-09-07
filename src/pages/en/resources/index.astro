@@ -1,0 +1,134 @@
+---
+import BaseLayout from '../../../layouts/BaseLayout.astro';
+import QuoteForm from '../../../components/QuoteForm.astro';
+import '../../../styles/detail.css';
+
+const title = 'Technical Resources | Steel Structure Engineering Guides | ZhongSai';
+const description = 'Technical resources for steel structure projects — import guides, cost factors, shipping and container loading, warehouse pricing, and engineering knowledge from a China-based steel structure manufacturer.';
+const lang = 'en';
+const canonical = 'https://zhongsai-steelstructure.com/en/resources/';
+
+const articles = [
+  {
+    title: 'How to Import Steel Structure from China — Complete Guide',
+    category: 'Import & Procurement',
+    summary: 'Step-by-step guide to importing prefabricated steel structures from China — from project requirements and drawings coordination to fabrication, packing, container loading, export documentation and overseas technical guidance.',
+    href: '/en/blog/how-to-import-steel-structure-from-china-complete-guide/',
+  },
+  {
+    title: 'How to Import Steel Structure from China to Africa',
+    category: 'Import & Procurement',
+    summary: 'Key considerations for African projects importing steel structures from China — project specification, port logistics, container planning, documentation coordination and local erection team preparation.',
+    href: '/en/blog/how-to-import-steel-structure-from-china-to-africa/',
+  },
+  {
+    title: 'Steel Structure Shipping Cost from China',
+    category: 'Logistics & Cost',
+    summary: 'Understanding the factors that affect steel structure shipping costs from China — volume, weight, container type, destination port, packing method, seasonality and total landed cost planning.',
+    href: '/en/blog/shipping-cost-steel-structure-from-china/',
+  },
+  {
+    title: 'Steel Structure Container Loading Guide',
+    category: 'Logistics & Delivery',
+    summary: 'How fabricated steel members are packed and loaded into containers — member marking, packing sequence, container space planning, loading coordination and documentation for smooth destination receiving.',
+    href: '/en/blog/steel-structure-container-loading-guide/',
+  },
+  {
+    title: 'Steel Warehouse Cost: Factors Affecting Price from China',
+    category: 'Cost & Pricing',
+    summary: 'What determines steel warehouse pricing — building dimensions, span, height, steel quantity, crane requirements, cladding, coating, project specifications, destination and shipping arrangement.',
+    href: '/en/blog/steel-warehouse-cost-complete-guide/',
+  },
+];
+
+const engineeringResources = [
+  { title: 'Steel Components & Cladding', href: '/en/components/', desc: 'Fabricated beams, columns, trusses, purlins and roof/wall cladding systems' },
+  { title: 'Manufacturing & Quality', href: '/en/manufacturing-quality/', desc: 'Cutting, welding, fabrication and quality control processes' },
+  { title: 'Structural Steel Detailing', href: '/en/services/structural-steel-detailing/', desc: 'Shop drawings, fabrication drawings and detailing support' },
+  { title: 'Engineering Design', href: '/en/engineering-design/', desc: 'Design coordination and structural engineering support' },
+  { title: 'Export Delivery', href: '/en/export-delivery/', desc: 'Packing, container loading, export documentation and logistics coordination' },
+  { title: 'Custom Engineering', href: '/en/products/custom-engineering/', desc: 'Non-standard and custom steel fabrication based on confirmed drawings' },
+];
+---
+
+<BaseLayout title={title} description={description} lang={lang}>
+  <!-- Hero -->
+  <section class="detail-hero">
+    <div class="detail-hero-bg" style="background-image: url('/images/manufacturing/real/workshop-overview-wide-9815.jpg');"></div>
+    <div class="detail-hero-overlay"></div>
+    <div class="detail-hero-content">
+      <span class="eyebrow">Technical Resources · Engineering Knowledge</span>
+      <h1>Technical Resources for Steel Structure Projects</h1>
+      <p class="lead">Practical engineering guides for importing, costing, shipping and delivering prefabricated steel structures from China. Learn what affects pricing, how container loading works, and what project information is needed to get started.</p>
+      <div class="detail-hero-actions">
+        <a href="#articles" class="btn btn-primary">Browse Technical Articles</a>
+        <a href="#quote" class="btn btn-outline">Discuss Your Project</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Breadcrumb -->
+  <nav class="detail-breadcrumb">
+    <div class="container">
+      <a href="/en/">Home</a>
+      <span>/</span>
+      <span>Technical Resources</span>
+    </div>
+  </nav>
+
+  <!-- Featured Articles -->
+  <section class="detail-section" id="articles">
+    <div class="container">
+      <div class="section-heading reveal">
+        <p class="section-index">01 / Technical Articles</p>
+        <h2>Featured Engineering Guides</h2>
+        <p>Technical articles covering the full project lifecycle — from initial planning and import procedures to cost factors, shipping logistics and container delivery.</p>
+      </div>
+      <div class="feature-grid">
+        {articles.map((article, i) => (
+          <a href={article.href} class={`feature-card reveal reveal-delay-${(i % 3) + 1}`} style="text-decoration: none; color: inherit; display: flex; flex-direction: column;">
+            <div class="feature-body" style="flex: 1; display: flex; flex-direction: column;">
+              <span style="font-size: 12px; font-weight: 600; color: #1a56db; text-transform: uppercase; letter-spacing: 0.5px; margin-bottom: 8px;">{article.category}</span>
+              <h3 style="margin-bottom: 10px;">{article.title}</h3>
+              <p style="flex: 1;">{article.summary}</p>
+              <span style="font-weight: 600; color: #1a56db; margin-top: 12px; display: inline-block;">Read Article →</span>
+            </div>
+          </a>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- Engineering Resources -->
+  <section class="detail-section alt">
+    <div class="container">
+      <div class="section-heading reveal">
+        <p class="section-index">02 / Engineering Resources</p>
+        <h2>Core Capabilities & Technical Pages</h2>
+        <p>Explore ZhongSai's core engineering and manufacturing capabilities — from component fabrication and detailing to quality control and export delivery.</p>
+      </div>
+      <div class="feature-grid">
+        {engineeringResources.map((res, i) => (
+          <a href={res.href} class={`feature-card reveal reveal-delay-${(i % 3) + 1}`} style="text-decoration: none; color: inherit;">
+            <div class="feature-body">
+              <h3>{res.title}</h3>
+              <p>{res.desc}</p>
+            </div>
+          </a>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- Quote -->
+  <section class="detail-section" id="quote">
+    <div class="container">
+      <div class="section-heading reveal">
+        <p class="section-index">03 / Get Started</p>
+        <h2>Send Your Project Information</h2>
+        <p>Have drawings or project specifications? Submit your project details and ZhongSai will review the requirements and follow up with next steps.</p>
+      </div>
+      <QuoteForm lang="en" />
+    </div>
+  </section>
+</BaseLayout>

@@ -15,19 +15,35 @@ const socialLinks = [
 
 const footerCols = lang === 'zh' ? [
   {
-    title: '产品',
+    title: '产品与应用',
     links: [
-      { label: '工业厂房与车间', href: '/zh/steel-workshop/' },
-      { label: '钢结构仓库', href: '/zh/steel-warehouse/' },
+      { label: '工业厂房与生产建筑', href: '/zh/steel-workshop/' },
+      { label: '仓储与物流建筑', href: '/zh/steel-warehouse/' },
+      { label: '农业与养殖建筑', href: '/zh/agricultural-steel-buildings/' },
+      { label: '矿业、能源与重工业结构', href: '/zh/steel-mining-factory/' },
+      { label: '钢构件与围护系统', href: '/zh/components/' },
+      { label: '特种钢结构', href: '/zh/special-custom-steel-structures/' },
     ]
   },
   {
-    title: '服务',
+    title: '服务能力',
     links: [
-      { label: '钢结构设计深化', href: '/zh/engineering-design/' },
+      { label: '钢结构设计', href: '/zh/engineering-design/' },
+      { label: '深化设计', href: '/zh/services/structural-steel-detailing/' },
       { label: '制造与质量控制', href: '/zh/manufacturing-quality/' },
+      { label: '定制工程与按图加工', href: '/zh/products/custom-engineering/' },
       { label: '出口交付', href: '/zh/export-delivery/' },
-      { label: '构件与材料', href: '/zh/components/' },
+      { label: '海外技术指导', href: '/zh/export-delivery/' },
+    ]
+  },
+  {
+    title: '技术资源',
+    links: [
+      { label: '技术资料中心', href: '/zh/resources/' },
+      { label: '钢结构厂房', href: '/zh/steel-workshop/' },
+      { label: '钢结构仓库', href: '/zh/steel-warehouse/' },
+      { label: '制造流程', href: '/zh/manufacturing-quality/' },
+      { label: '出口与装柜', href: '/zh/export-delivery/' },
     ]
   },
   {
@@ -36,31 +52,51 @@ const footerCols = lang === 'zh' ? [
       { label: '关于中赛', href: '/zh/about/' },
       { label: '项目案例', href: '/zh/projects/' },
       { label: '联系我们', href: '/zh/contact/' },
+      { label: '隐私政策', href: '/zh/privacy/' },
+      { label: '使用条款', href: '/zh/terms/' },
     ]
   },
 ] : [
   {
-    title: 'Products',
+    title: 'Products & Applications',
     links: [
-      { label: 'Factory & Workshop', href: '/en/steel-workshop/' },
-      { label: 'Steel Warehouse', href: '/en/steel-warehouse/' },
+      { label: 'Industrial & Manufacturing', href: '/en/steel-workshop/' },
+      { label: 'Warehousing & Logistics', href: '/en/steel-warehouse/' },
+      { label: 'Agriculture & Livestock', href: '/en/agricultural-steel-buildings/' },
+      { label: 'Mining, Energy & Heavy Industry', href: '/en/steel-mining-factory/' },
+      { label: 'Steel Components & Cladding', href: '/en/components/' },
+      { label: 'Special Steel Structures', href: '/en/special-custom-steel-structures/' },
     ]
   },
   {
-    title: 'Services',
+    title: 'Capabilities',
     links: [
-      { label: 'Engineering Design', href: '/en/engineering-design/' },
+      { label: 'Structural Engineering Design', href: '/en/engineering-design/' },
+      { label: 'Structural Steel Detailing', href: '/en/services/structural-steel-detailing/' },
       { label: 'Manufacturing & Quality', href: '/en/manufacturing-quality/' },
+      { label: 'Custom Engineering & Fabrication', href: '/en/products/custom-engineering/' },
       { label: 'Export Delivery', href: '/en/export-delivery/' },
-      { label: 'Components', href: '/en/components/' },
+      { label: 'Overseas Technical Guidance', href: '/en/export-delivery/' },
+    ]
+  },
+  {
+    title: 'Technical Resources',
+    links: [
+      { label: 'Technical Resources Hub', href: '/en/resources/' },
+      { label: 'Import from China Guide', href: '/en/blog/how-to-import-steel-structure-from-china-complete-guide/' },
+      { label: 'Steel Warehouse Cost', href: '/en/blog/steel-warehouse-cost-complete-guide/' },
+      { label: 'Shipping Cost Guide', href: '/en/blog/shipping-cost-steel-structure-from-china/' },
+      { label: 'Container Loading Guide', href: '/en/blog/steel-structure-container-loading-guide/' },
     ]
   },
   {
     title: 'Company',
     links: [
-      { label: 'About Us', href: '/en/about/' },
+      { label: 'About ZhongSai', href: '/en/about/' },
       { label: 'Projects', href: '/en/projects/' },
       { label: 'Contact', href: '/en/contact/' },
+      { label: 'Privacy Policy', href: '/en/privacy/' },
+      { label: 'Terms of Use', href: '/en/terms/' },
     ]
   },
 ];
@@ -99,11 +135,6 @@ const footerCols = lang === 'zh' ? [
     </div>
     <div class="footer-bottom">
       <p>&copy; {new Date().getFullYear()} ZhongSai Steel Structure. {lang === 'zh' ? '保留所有权利。' : 'All rights reserved.'}</p>
-      <p>
-        <a href={`/${lang}/privacy/`} style="color: rgba(255,255,255,0.7);">{lang === 'zh' ? '隐私政策' : 'Privacy Policy'}</a>
-        {' | '}
-        <a href={`/${lang}/terms/`} style="color: rgba(255,255,255,0.7);">{lang === 'zh' ? '使用条款' : 'Terms of Use'}</a>
-      </p>
     </div>
   </div>
 </footer>
