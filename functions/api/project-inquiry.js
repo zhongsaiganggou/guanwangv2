@@ -280,22 +280,26 @@ export async function onRequestPost(context) {
     // Generate R2 signed download URLs for saved files (24h expiry)
     const filesWithDownloadUrls = [];
     if (savedFiles.length > 0 && env.LEAD_FILES) {
-      console.log('R2 bucket available, sign method type:', typeof env.LEAD_FILES.sign);
+      console.log('R2 bucket available, generating signed URLs...');
       for (const f of savedFiles) {
         try {
-          console.log('Attempting to sign URL for:', f.fileKey);
-          const downloadUrl = await env.LEAD_FILES.sign(f.fileKey, { expiresIn: 86400 });
-          console.log('R2 sign result type:', typeof downloadUrl, 'value:', String(downloadUrl).substring(0, 100));
-          const urlString = typeof downloadUrl === 'string' ? downloadUrl : (downloadUrl?.toString?.() || downloadUrl?.url || null);
-          console.log('Final URL string:', urlString ? urlString.substring(0, 100) : 'NULL');
-          filesWithDownloadUrls.push({ ...f, download_url: urlString });
+          // R2 sign method accepts a Request object, not a string key
+          const r2Url = new URL(\https://9af6fa79254dc65458026924d8698775.r2.cloudflarestorage.com/zhongsai-lead-files/\);
+          r2Url.searchParams.set('X-Amz-Expires', '86400');
+          const signedRequest = await env.LEAD_FILES.sign(
+            new Request(r2Url, { method: 'GET' }),
+            { aws: { signQuery: true } }
+          );
+          const downloadUrl = signedRequest.url;
+          console.log('R2 signed URL generated:', downloadUrl.substring(0, 100));
+          filesWithDownloadUrls.push({ ...f, download_url: downloadUrl });
         } catch (signErr) {
           console.error('R2 sign URL error for', f.fileKey, ':', signErr.message, signErr.stack);
           filesWithDownloadUrls.push({ ...f, download_url: null });
         }
       }
     } else {
-      console.log('R2 bucket not available or no files, savedFiles.length:', savedFiles.length, 'env.LEAD_FILES:', !!env.LEAD_FILES);
+      console.log('R2 bucket not available or no files');
       filesWithDownloadUrls.push(...savedFiles.map(f => ({ ...f, download_url: null })));
     }
 
