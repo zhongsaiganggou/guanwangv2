@@ -277,29 +277,21 @@ export async function onRequestPost(context) {
       console.error('Lead status update error:', statusErr.message);
     }
 
-    // Generate R2 signed download URLs for saved files (24h expiry)
+    // Generate download URLs for saved files using /api/lead-file endpoint
     const filesWithDownloadUrls = [];
-    if (savedFiles.length > 0 && env.LEAD_FILES) {
-      console.log('R2 bucket available, generating signed URLs...');
+    if (savedFiles.length > 0) {
       for (const f of savedFiles) {
         try {
-          // R2 sign method accepts a Request object, not a string key
-          const r2Url = new URL(`https://9af6fa79254dc65458026924d8698775.r2.cloudflarestorage.com/zhongsai-lead-files/${f.fileKey}`);
-          r2Url.searchParams.set('X-Amz-Expires', '86400');
-          const signedRequest = await env.LEAD_FILES.sign(
-            new Request(r2Url, { method: 'GET' }),
-            { aws: { signQuery: true } }
-          );
-          const downloadUrl = signedRequest.url;
-          console.log('R2 signed URL generated:', downloadUrl.substring(0, 100));
+          // Use our own API endpoint for download (validates file exists in DB)
+          const downloadUrl = `https://zhongsai-steelstructure.com/api/lead-file?key=${encodeURIComponent(f.fileKey)}`;
+          console.log("Download URL generated:", downloadUrl);
           filesWithDownloadUrls.push({ ...f, download_url: downloadUrl });
-        } catch (signErr) {
-          console.error('R2 sign URL error for', f.fileKey, ':', signErr.message, signErr.stack);
+        } catch (urlErr) {
+          console.error("Download URL generation error:", urlErr.message);
           filesWithDownloadUrls.push({ ...f, download_url: null });
         }
       }
     } else {
-      console.log('R2 bucket not available or no files');
       filesWithDownloadUrls.push(...savedFiles.map(f => ({ ...f, download_url: null })));
     }
 
