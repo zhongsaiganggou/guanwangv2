@@ -120,3 +120,6 @@
 # 410_CANDIDATE /zh/projects/tanzania-grain-storage-warehouse/
 # 410_CANDIDATE /zh/projects/vietnam-ecommerce-logistics-center/
 # 410_CANDIDATE /zh/projects/vietnam-logistics-center/
+
+# Chinese cost blog duplicate — 301 to primary Chinese cost guide
+/zh/blog/steel-workshop-cost-factory-building-price/  https://zhongsai-steelstructure.com/zh/blog/gangjiegou-changfang-zaojia-zhinan/  301
