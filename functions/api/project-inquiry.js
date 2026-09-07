@@ -284,7 +284,7 @@ export async function onRequestPost(context) {
       for (const f of savedFiles) {
         try {
           // R2 sign method accepts a Request object, not a string key
-          const r2Url = new URL(\https://9af6fa79254dc65458026924d8698775.r2.cloudflarestorage.com/zhongsai-lead-files/\);
+          const r2Url = new URL(`https://9af6fa79254dc65458026924d8698775.r2.cloudflarestorage.com/zhongsai-lead-files/${f.fileKey}`);
           r2Url.searchParams.set('X-Amz-Expires', '86400');
           const signedRequest = await env.LEAD_FILES.sign(
             new Request(r2Url, { method: 'GET' }),
