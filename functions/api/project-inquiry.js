@@ -1,4 +1,4 @@
-/**
+﻿/**
  * ZhongSai V2 - Project Inquiry API
  * Cloudflare Pages Function: POST /api/project-inquiry
  *
@@ -259,7 +259,7 @@ export async function onRequestPost(context) {
               VALUES (?, ?, ?, ?, ?, ?)
             `).bind(fileId, leadId, fileKey, file.name, file.type || '', file.size).run();
 
-            savedFiles.push({ filename: file.name, size: file.size });
+            savedFiles.push({ filename: file.name, size: file.size, fileKey });
           } catch (fileErr) {
             failedFiles += 1;
             console.error('File upload error:', fileErr.message);
@@ -275,6 +275,22 @@ export async function onRequestPost(context) {
         .bind(submissionStatus, leadId).run();
     } catch (statusErr) {
       console.error('Lead status update error:', statusErr.message);
+    }
+
+    // Generate R2 signed download URLs for saved files (24h expiry)
+    const filesWithDownloadUrls = [];
+    if (savedFiles.length > 0 && env.LEAD_FILES) {
+      for (const f of savedFiles) {
+        try {
+          const downloadUrl = await env.LEAD_FILES.sign(f.fileKey, { expiresIn: 86400 });
+          filesWithDownloadUrls.push({ ...f, download_url: downloadUrl });
+        } catch (signErr) {
+          console.error('R2 sign URL error:', signErr.message);
+          filesWithDownloadUrls.push({ ...f, download_url: null });
+        }
+      }
+    } else {
+      filesWithDownloadUrls.push(...savedFiles.map(f => ({ ...f, download_url: null })));
     }
 
     // Optional webhook forwarding (don't fail lead if webhook fails)
@@ -308,7 +324,7 @@ export async function onRequestPost(context) {
           referrer: sanitizeText(fields.referrer, 500),
           source_page: sanitizeText(fields.source_page, 500),
           landing_page: sanitizeText(fields.landing_page, 500),
-          files: savedFiles,
+          files: filesWithDownloadUrls,
           files_count: savedFiles.length,
           submission_status: submissionStatus,
           test_record: isTest === 1,
