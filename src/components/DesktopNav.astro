@@ -1,5 +1,5 @@
 ---
-// DesktopNav.astro - 桌面端导航组件
+// DesktopNav.astro - 桌面端导航组件（含下拉菜单）
 interface Props {
   lang: 'zh' | 'en';
   currentPath: string;
@@ -7,19 +7,85 @@ interface Props {
 
 const { lang, currentPath } = Astro.props;
 
-const navItems = lang === 'zh' ? [
+const dropdownItems = lang === 'zh' ? {
+  products: {
+    label: '产品',
+    href: '/zh/products/',
+    children: [
+      { label: '工业厂房与生产建筑', href: '/zh/steel-workshop/' },
+      { label: '仓储与物流建筑', href: '/zh/steel-warehouse/' },
+      { label: '农业与养殖建筑', href: '/zh/agricultural-steel-buildings/' },
+      { label: '商业与公共建筑', href: '/zh/commercial-public-steel-buildings/' },
+      { label: '交通与基础设施', href: '/zh/transportation-infrastructure-steel/' },
+      { label: '矿业能源与重工业', href: '/zh/steel-mining-factory/' },
+      { label: '特种钢结构', href: '/zh/special-custom-steel-structures/' },
+    ]
+  },
+  components: {
+    label: '构件与材料',
+    href: '/zh/components/',
+    children: [
+      { label: '钢梁钢柱构件', href: '/zh/components/fabricated-steel-beams-columns/' },
+      { label: '钢桁架', href: '/zh/components/steel-trusses/' },
+      { label: '钢檩条', href: '/zh/components/steel-purlins/' },
+      { label: '屋面墙面围护系统', href: '/zh/components/roof-wall-cladding-systems/' },
+    ]
+  },
+  capabilities: {
+    label: '服务能力',
+    href: '/zh/manufacturing-quality/',
+    children: [
+      { label: '制造与质量控制', href: '/zh/manufacturing-quality/' },
+      { label: '工程设计', href: '/zh/engineering-design/' },
+      { label: '深化设计', href: '/zh/services/structural-steel-detailing/' },
+      { label: '出口交付', href: '/zh/export-delivery/' },
+      { label: '定制工程与按图加工', href: '/zh/products/custom-engineering/' },
+    ]
+  },
+} : {
+  products: {
+    label: 'Products',
+    href: '/en/products/',
+    children: [
+      { label: 'Industrial & Manufacturing', href: '/en/steel-workshop/' },
+      { label: 'Warehousing & Logistics', href: '/en/steel-warehouse/' },
+      { label: 'Agriculture & Livestock', href: '/en/agricultural-steel-buildings/' },
+      { label: 'Commercial & Public', href: '/en/commercial-public-steel-buildings/' },
+      { label: 'Transportation & Infrastructure', href: '/en/transportation-infrastructure-steel/' },
+      { label: 'Mining, Energy & Heavy Industry', href: '/en/steel-mining-factory/' },
+      { label: 'Special Steel Structures', href: '/en/special-custom-steel-structures/' },
+    ]
+  },
+  components: {
+    label: 'Components',
+    href: '/en/components/',
+    children: [
+      { label: 'Fabricated Beams & Columns', href: '/en/components/fabricated-steel-beams-columns/' },
+      { label: 'Steel Trusses', href: '/en/components/steel-trusses/' },
+      { label: 'Steel Purlins', href: '/en/components/steel-purlins/' },
+      { label: 'Roof & Wall Cladding', href: '/en/components/roof-wall-cladding-systems/' },
+    ]
+  },
+  capabilities: {
+    label: 'Capabilities',
+    href: '/en/manufacturing-quality/',
+    children: [
+      { label: 'Manufacturing & Quality', href: '/en/manufacturing-quality/' },
+      { label: 'Engineering Design', href: '/en/engineering-design/' },
+      { label: 'Structural Steel Detailing', href: '/en/services/structural-steel-detailing/' },
+      { label: 'Export Delivery', href: '/en/export-delivery/' },
+      { label: 'Custom Engineering & Fabrication', href: '/en/products/custom-engineering/' },
+    ]
+  },
+};
+
+const simpleItems = lang === 'zh' ? [
   { label: '首页', href: '/zh/' },
-  { label: '产品', href: '/zh/products/' },
-  { label: '构件与材料', href: '/zh/components/' },
   { label: '项目案例', href: '/zh/projects/' },
-  { label: '制造能力', href: '/zh/manufacturing-quality/' },
   { label: '关于中赛', href: '/zh/about/' },
 ] : [
   { label: 'Home', href: '/en/' },
-  { label: 'Products', href: '/en/products/' },
-  { label: 'Components', href: '/en/components/' },
   { label: 'Projects', href: '/en/projects/' },
-  { label: 'Manufacturing', href: '/en/manufacturing-quality/' },
   { label: 'About', href: '/en/about/' },
 ];
 
@@ -29,12 +95,162 @@ function isActive(href: string, currentPath: string): boolean {
   }
   return currentPath === href || currentPath.startsWith(href + '/');
 }
+
+function isDropdownActive(children: {href: string}[], currentPath: string): boolean {
+  return children.some(child => isActive(child.href, currentPath));
+}
 ---
 
 <nav class="desktop-nav" aria-label={lang === 'zh' ? '主导航' : 'Main navigation'}>
-  {navItems.map(item => (
+  {simpleItems.map(item => (
     <a href={item.href} class:list={{ active: isActive(item.href, currentPath) }}>
       {item.label}
     </a>
   ))}
+
+  {/* Products dropdown */}
+  <div class:list={['nav-dropdown', { active: isActive(dropdownItems.products.href, currentPath) || isDropdownActive(dropdownItems.products.children, currentPath) }]}>
+    <a href={dropdownItems.products.href} class="nav-dropdown-trigger">
+      {dropdownItems.products.label}
+      <svg class="dropdown-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="12" height="12"><polyline points="6 9 12 15 18 9"></polyline></svg>
+    </a>
+    <div class="nav-dropdown-menu">
+      {dropdownItems.products.children.map(child => (
+        <a href={child.href} class:list={{ active: isActive(child.href, currentPath) }}>
+          {child.label}
+        </a>
+      ))}
+    </div>
+  </div>
+
+  {/* Components dropdown */}
+  <div class:list={['nav-dropdown', { active: isActive(dropdownItems.components.href, currentPath) || isDropdownActive(dropdownItems.components.children, currentPath) }]}>
+    <a href={dropdownItems.components.href} class="nav-dropdown-trigger">
+      {dropdownItems.components.label}
+      <svg class="dropdown-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="12" height="12"><polyline points="6 9 12 15 18 9"></polyline></svg>
+    </a>
+    <div class="nav-dropdown-menu">
+      {dropdownItems.components.children.map(child => (
+        <a href={child.href} class:list={{ active: isActive(child.href, currentPath) }}>
+          {child.label}
+        </a>
+      ))}
+    </div>
+  </div>
+
+  {/* Capabilities dropdown */}
+  <div class:list={['nav-dropdown', { active: isActive(dropdownItems.capabilities.href, currentPath) || isDropdownActive(dropdownItems.capabilities.children, currentPath) }]}>
+    <a href={dropdownItems.capabilities.href} class="nav-dropdown-trigger">
+      {dropdownItems.capabilities.label}
+      <svg class="dropdown-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="12" height="12"><polyline points="6 9 12 15 18 9"></polyline></svg>
+    </a>
+    <div class="nav-dropdown-menu">
+      {dropdownItems.capabilities.children.map(child => (
+        <a href={child.href} class:list={{ active: isActive(child.href, currentPath) }}>
+          {child.label}
+        </a>
+      ))}
+    </div>
+  </div>
 </nav>
+
+<style>
+.desktop-nav {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.desktop-nav > a,
+.nav-dropdown-trigger {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  padding: 8px 12px;
+  font-size: 14px;
+  font-weight: 500;
+  color: #1f2937;
+  text-decoration: none;
+  border-radius: 6px;
+  transition: color 0.2s, background 0.2s;
+  white-space: nowrap;
+}
+
+.desktop-nav > a:hover,
+.nav-dropdown-trigger:hover {
+  color: #1a56db;
+  background: rgba(26, 86, 219, 0.06);
+}
+
+.desktop-nav > a.active,
+.nav-dropdown.active > .nav-dropdown-trigger {
+  color: #1a56db;
+  font-weight: 600;
+}
+
+.dropdown-arrow {
+  transition: transform 0.2s;
+  flex-shrink: 0;
+}
+
+.nav-dropdown {
+  position: relative;
+}
+
+.nav-dropdown-menu {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  min-width: 240px;
+  background: #ffffff;
+  border: 1px solid rgba(0, 0, 0, 0.08);
+  border-radius: 10px;
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.12);
+  padding: 8px;
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(8px);
+  transition: opacity 0.18s, transform 0.18s, visibility 0.18s;
+  z-index: 100;
+}
+
+.nav-dropdown:hover .nav-dropdown-menu {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+}
+
+.nav-dropdown:hover .dropdown-arrow {
+  transform: rotate(180deg);
+}
+
+.nav-dropdown-menu a {
+  display: block;
+  padding: 10px 14px;
+  font-size: 13.5px;
+  font-weight: 400;
+  color: #374151;
+  text-decoration: none;
+  border-radius: 6px;
+  transition: color 0.15s, background 0.15s;
+  line-height: 1.4;
+}
+
+.nav-dropdown-menu a:hover {
+  color: #1a56db;
+  background: rgba(26, 86, 219, 0.06);
+}
+
+.nav-dropdown-menu a.active {
+  color: #1a56db;
+  background: rgba(26, 86, 219, 0.08);
+  font-weight: 500;
+}
+
+/* Scrolled header compact */
+.site-header.scrolled .desktop-nav > a,
+.site-header.scrolled .nav-dropdown-trigger {
+  padding: 6px 10px;
+  font-size: 13.5px;
+}
+</style>
