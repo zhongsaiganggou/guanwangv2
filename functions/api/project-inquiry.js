@@ -380,8 +380,18 @@ export async function onRequestPost(context) {
           `**来源**: ${sanitizeText(fields.source_page, 120)}`,
         ];
 
-        if (savedFiles.length > 0) {
-          mdLines.push(`**附件**: ${savedFiles.length}个文件`);
+        if (filesWithDownloadUrls.length > 0) {
+          mdLines.push(`**附件**: ${filesWithDownloadUrls.length}个文件`);
+          for (const f of filesWithDownloadUrls) {
+            const fileName = f.original_filename || f.name || '未知文件';
+            const fileSize = f.size ? `(${(f.size / 1024).toFixed(1)}KB)` : '';
+            if (f.download_url) {
+              mdLines.push(`- [${fileName}${fileSize}](${f.download_url})`);
+            } else {
+              mdLines.push(`- ${fileName}${fileSize}`);
+            }
+          }
+          mdLines.push('> 国内下载慢时，建议客户通过微信/WhatsApp直接发送图纸');
         }
 
         const wecomPayload = {
