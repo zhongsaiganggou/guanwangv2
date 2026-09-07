@@ -150,7 +150,6 @@ export async function onRequestPost(context) {
         success: false,
         code: 'TURNSTILE_FAILED',
         message: fields.language === 'zh' ? '验证失败，请重新提交。' : 'Verification failed. Please try again.',
-        detail: turnstileResult.error,
       }, 400);
     }
 
