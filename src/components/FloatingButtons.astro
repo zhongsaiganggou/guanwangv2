@@ -23,11 +23,16 @@ const facebookAppUrl = 'fb://page/ZhongSaiSteelStructure';
 </div>
 
 <script>
-  // Mobile: use app protocol to open WhatsApp/Facebook directly
+  // Smart deep linking: use app protocol only in real mobile browsers
+  // WeChat/WeCom in-app browsers block custom protocols, so use web URLs there
   document.querySelectorAll('.float-btn[data-app-url]').forEach(btn => {
     btn.addEventListener('click', function(e) {
-      const isMobile = /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
-      if (isMobile) {
+      const ua = navigator.userAgent;
+      const isMobile = /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(ua);
+      const isWeChat = /MicroMessenger|wxwork/i.test(ua);
+
+      // Only use app protocol in real mobile browsers (not WeChat in-app browser)
+      if (isMobile && !isWeChat) {
         e.preventDefault();
         const appUrl = this.getAttribute('data-app-url');
         if (appUrl) {
@@ -42,6 +47,7 @@ const facebookAppUrl = 'fb://page/ZhongSaiSteelStructure';
           }, 1500);
         }
       }
+      // In WeChat/WeCom or desktop: use default web link behavior (href + target=_blank)
     });
   });
 </script>
