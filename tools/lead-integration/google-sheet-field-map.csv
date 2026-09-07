@@ -1,0 +1,33 @@
+﻿sheet_column,d1_field,field_type,required,notes
+线索ID,id,TEXT,YES,系统生成唯一ID
+提交时间,created_at,DATETIME,YES,自动记录
+语言,language,TEXT,YES,en/zh
+表单路径,form_path,TEXT,NO,提交表单的页面路径
+姓名,name,TEXT,YES,客户姓名
+项目所在国家,project_country,TEXT,YES,项目所在国家
+国家区号,calling_code,TEXT,YES,电话国家区号
+WhatsApp/电话,phone_whatsapp,TEXT,YES,WhatsApp或电话号码
+微信号,wechat,TEXT,YES,微信号
+邮箱,email,TEXT,NO,可选
+项目类型,project_type,TEXT,NO,No Drawings时必填
+项目用途,intended_use,TEXT,NO,No Drawings时必填
+项目尺寸,dimensions,TEXT,NO,可选
+是否需要吊车,crane_requirement,TEXT,NO,可选
+项目描述/特殊要求,message,TEXT,NO,客户留言
+是否上传图纸,has_drawings,INTEGER,YES,0/1
+附件文件名,original_filename,TEXT,NO,来自lead_files表
+附件地址/文件Key,file_key,TEXT,NO,来自lead_files表，R2对象key
+提交页面,source_page,TEXT,NO,提交时所在页面
+首次落地页,landing_page,TEXT,NO,首次访问页面
+来源页面Referrer,referrer,TEXT,NO,来源URL
+UTM Source,utm_source,TEXT,NO,营销归因
+UTM Medium,utm_medium,TEXT,NO,营销归因
+UTM Campaign,utm_campaign,TEXT,NO,营销归因
+UTM Content,utm_content,TEXT,NO,营销归因
+UTM Term,utm_term,TEXT,NO,营销归因
+提交状态,submission_status,TEXT,YES,received/processing/failed
+测试线索,test_record,INTEGER,YES,0/1，测试数据标记
+跟进负责人,,TEXT,NO,Sheet人工维护
+跟进状态,,TEXT,NO,Sheet人工维护
+跟进备注,,TEXT,NO,Sheet人工维护
+最后跟进时间,,DATETIME,NO,Sheet人工维护
