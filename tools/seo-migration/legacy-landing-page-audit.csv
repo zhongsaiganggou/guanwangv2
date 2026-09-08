@@ -1,0 +1,22 @@
+old_url,language,old_page_type,search_intent,current_equivalent,historical_value,action,target_url,index_strategy,notes
+/en/products/agriculture-special,en,product_category,Agriculture steel building,/en/products/agriculture-livestock/,Medium,301_TO_CURRENT_SEO_PAGE,/en/products/agriculture-livestock/,noindex,旧产品分类页，已合并到新Products架构
+/en/products/commercial-public,en,product_category,Commercial public steel building,/en/products/commercial-public/,High,KEEP_EXISTING,/en/products/commercial-public/,index,新站已重建此页面，保持200
+/en/products/custom-engineering,en,product_category,Custom steel engineering,/en/products/special-steel-structures/,Medium,301_TO_CURRENT_SEO_PAGE,/en/products/special-steel-structures/,noindex,旧定制工程页，合并到Special Steel Structures
+/en/products/industrial,en,product_category,Industrial steel structure,/en/products/industrial-manufacturing/,High,301_TO_CURRENT_SEO_PAGE,/en/products/industrial-manufacturing/,noindex,旧工业产品页，合并到新Industrial & Manufacturing
+/en/products/mining-energy,en,product_category,Mining energy heavy steel,/en/products/mining-energy-heavy-industry/,High,301_TO_CURRENT_SEO_PAGE,/en/products/mining-energy-heavy-industry/,noindex,旧矿业能源页，合并到新Mining页面
+/en/products/residential-light,en,product_category,Residential light steel,/en/products/special-steel-structures/,Low,301_TO_CURRENT_SEO_PAGE,/en/products/special-steel-structures/,noindex,旧住宅轻钢页，低搜索量，合并到Special
+/en/steel-warehouse-logistics,en,application_page,Warehouse logistics building,/en/steel-warehouse/,Medium,301_TO_CURRENT_SEO_PAGE,/en/steel-warehouse/,noindex,旧仓库物流重复页，合并到主Warehouse页面
+/en/steel-workshop-processing,en,application_page,Workshop processing plant,/en/steel-workshop/,Medium,301_TO_CURRENT_SEO_PAGE,/en/steel-workshop/,noindex,旧车间加工重复页，合并到主Workshop页面
+/zh/products/agriculture-special,zh,product_category,农业特种钢结构,/zh/products/agriculture-livestock/,Medium,301_TO_CURRENT_SEO_PAGE,/zh/products/agriculture-livestock/,noindex,旧产品分类页，已合并到新Products架构
+/zh/products/commercial-public,zh,product_category,商业公共建筑,/zh/products/commercial-public/,High,KEEP_EXISTING,/zh/products/commercial-public/,index,新站已重建此页面，保持200
+/zh/products/custom-engineering,zh,product_category,定制钢结构工程,/zh/products/special-steel-structures/,Medium,301_TO_CURRENT_SEO_PAGE,/zh/products/special-steel-structures/,noindex,旧定制工程页，合并到Special Steel Structures
+/zh/products/industrial,zh,product_category,工业建筑钢结构,/zh/products/industrial-manufacturing/,High,301_TO_CURRENT_SEO_PAGE,/zh/products/industrial-manufacturing/,noindex,旧工业产品页，合并到新Industrial & Manufacturing
+/zh/products/mining-energy,zh,product_category,矿业能源重型钢结构,/zh/products/mining-energy-heavy-industry/,High,301_TO_CURRENT_SEO_PAGE,/zh/products/mining-energy-heavy-industry/,noindex,旧矿业能源页，合并到新Mining页面
+/zh/products/residential-light,zh,product_category,住宅轻钢结构,/zh/products/special-steel-structures/,Low,301_TO_CURRENT_SEO_PAGE,/zh/products/special-steel-structures/,noindex,旧住宅轻钢页，低搜索量，合并到Special
+/zh/steel-warehouse-logistics,zh,application_page,仓库物流建筑,/zh/steel-warehouse/,Medium,301_TO_CURRENT_SEO_PAGE,/zh/steel-warehouse/,noindex,旧仓库物流重复页，合并到主Warehouse页面
+/zh/steel-workshop-processing,zh,application_page,车间加工厂,/zh/steel-workshop/,Medium,301_TO_CURRENT_SEO_PAGE,/zh/steel-workshop/,noindex,旧车间加工重复页，合并到主Workshop页面
+/en/lp/steel-workshop,en,ad_landing_page,Paid ads workshop landing,N/A,Unknown,REBUILD_AS_AD_LANDING_PAGE,N/A,noindex,未来广告Landing Page规划，默认noindex避免与SEO主页面竞争
+/en/lp/steel-warehouse,en,ad_landing_page,Paid ads warehouse landing,N/A,Unknown,REBUILD_AS_AD_LANDING_PAGE,N/A,noindex,未来广告Landing Page规划
+/en/lp/steel-structure-supplier,en,ad_landing_page,Paid ads supplier landing,N/A,Unknown,REBUILD_AS_AD_LANDING_PAGE,N/A,noindex,未来广告Landing Page规划
+/zh/lp/steel-workshop,zh,ad_landing_page,付费广告厂房落地页,N/A,Unknown,REBUILD_AS_AD_LANDING_PAGE,N/A,noindex,未来广告Landing Page规划
+/zh/lp/steel-warehouse,zh,ad_landing_page,付费广告仓库落地页,N/A,Unknown,REBUILD_AS_AD_LANDING_PAGE,N/A,noindex,未来广告Landing Page规划
