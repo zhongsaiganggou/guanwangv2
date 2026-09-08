@@ -1,0 +1,1025 @@
+---
+// Admin CMS page - standalone HTML, no layout
+---
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="robots" content="noindex, nofollow" />
+  <title>中赛钢构内容管理后台</title>
+</head>
+<body>
+<main class="admin-page">
+  <div class="admin-container">
+    <!-- 登录界面 -->
+    <div id="login-view" class="login-view">
+      <div class="login-card">
+        <h1>中赛钢构内容管理后台</h1>
+        <p class="login-subtitle">ZhongSai Steel Structure CMS</p>
+        <form id="login-form">
+          <div class="form-group">
+            <label for="password">后台密码</label>
+            <input type="password" id="password" name="password" required autocomplete="current-password" />
+          </div>
+          <button type="submit" class="btn-login">登录</button>
+          <div id="login-error" class="login-error"></div>
+        </form>
+      </div>
+    </div>
+
+    <!-- 管理界面 -->
+    <div id="admin-view" class="admin-view" style="display:none;">
+      <!-- 顶部导航 -->
+      <header class="admin-header">
+        <div class="admin-header-left">
+          <h1>内容管理后台</h1>
+          <span class="admin-user" id="admin-user"></span>
+        </div>
+        <div class="admin-header-right">
+          <button id="btn-new-article" class="btn btn-primary">+ 新建文章</button>
+          <button id="btn-logout" class="btn btn-secondary">退出登录</button>
+        </div>
+      </header>
+
+      <!-- 文章列表 -->
+      <div id="articles-view" class="articles-view">
+        <div class="articles-toolbar">
+          <select id="filter-lang">
+            <option value="all">全部语言</option>
+            <option value="en">英文 (EN)</option>
+            <option value="zh">中文 (ZH)</option>
+          </select>
+          <select id="filter-status">
+            <option value="all">全部状态</option>
+            <option value="published">已发布</option>
+            <option value="draft">草稿</option>
+          </select>
+          <input type="text" id="search-articles" placeholder="搜索文章标题..." />
+          <button id="btn-refresh" class="btn btn-secondary">刷新</button>
+        </div>
+        <div id="articles-list" class="articles-list">
+          <p class="loading">加载中...</p>
+        </div>
+      </div>
+
+      <!-- 文章编辑 -->
+      <div id="editor-view" class="editor-view" style="display:none;">
+        <div class="editor-toolbar">
+          <button id="btn-back" class="btn btn-secondary">← 返回列表</button>
+          <span id="editor-status" class="editor-status"></span>
+          <button id="btn-preview" class="btn btn-secondary">预览</button>
+          <button id="btn-save-draft" class="btn btn-secondary">保存草稿</button>
+          <button id="btn-publish" class="btn btn-primary">发布</button>
+        </div>
+        <div class="editor-layout">
+          <div class="editor-sidebar">
+            <div class="form-group">
+              <label>语言</label>
+              <select id="edit-language">
+                <option value="en">英文 (EN)</option>
+                <option value="zh">中文 (ZH)</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label>文章ID (URL slug)</label>
+              <input type="text" id="edit-id" placeholder="my-article-title" />
+              <small>发布后不可修改</small>
+            </div>
+            <div class="form-group">
+              <label>标题</label>
+              <input type="text" id="edit-title" />
+            </div>
+            <div class="form-group">
+              <label>分类</label>
+              <select id="edit-category">
+                <option value="Cost & Planning">成本与规划</option>
+                <option value="Import & Shipping">进口与运输</option>
+                <option value="Manufacturing & Quality">制造与质量</option>
+                <option value="Installation & Technical">安装与技术</option>
+                <option value="Supplier Selection">供应商选择</option>
+                <option value="Materials & Components">材料与构件</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label>状态</label>
+              <select id="edit-status">
+                <option value="draft">草稿</option>
+                <option value="published">已发布</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label>SEO Title</label>
+              <input type="text" id="edit-seo-title" placeholder="留空自动生成" />
+            </div>
+            <div class="form-group">
+              <label>Meta Description</label>
+              <textarea id="edit-meta-desc" rows="3"></textarea>
+            </div>
+            <div class="form-group">
+              <label>摘要</label>
+              <textarea id="edit-excerpt" rows="2"></textarea>
+            </div>
+            <div class="form-group">
+              <label>封面图片URL</label>
+              <input type="text" id="edit-cover" placeholder="/images/blog/xxx.jpg" />
+              <input type="file" id="upload-cover" accept="image/*" style="margin-top:8px;" />
+            </div>
+            <div class="form-group">
+              <label>发布日期</label>
+              <input type="date" id="edit-published" />
+            </div>
+            <div class="form-group">
+              <label>CTA类型</label>
+              <select id="edit-cta">
+                <option value="send-project-requirements">提交项目需求</option>
+                <option value="send-drawings">发送图纸</option>
+                <option value="discuss-project">沟通项目需求</option>
+                <option value="view-manufacturing">查看制造流程</option>
+                <option value="view-export-process">查看出口流程</option>
+                <option value="view-components">查看构件</option>
+                <option value="none">无CTA</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label><input type="checkbox" id="edit-noindex" /> 不被Google索引（测试页用）</label>
+            </div>
+          </div>
+          <div class="editor-main">
+            <div class="form-group">
+              <label>正文内容（Markdown）</label>
+              <textarea id="edit-content" class="markdown-editor" placeholder="使用Markdown格式编写文章内容..."></textarea>
+            </div>
+            <div class="editor-help">
+              <details>
+                <summary>Markdown语法帮助</summary>
+                <ul>
+                  <li><code>## 标题</code> 二级标题</li>
+                  <li><code>### 标题</code> 三级标题</li>
+                  <li><code>**粗体**</code> 粗体</li>
+                  <li><code>- 列表项</code> 无序列表</li>
+                  <li><code>1. 列表项</code> 有序列表</li>
+                  <li><code>[链接文字](URL)</code> 链接</li>
+                  <li><code>![图片描述](图片URL)</code> 图片</li>
+                  <li><code>> 引用文字</code> 引用</li>
+                </ul>
+              </details>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</main>
+
+<script>
+// CMS客户端逻辑
+const API_BASE = '/api/admin';
+let currentArticle = null;
+let isNewArticle = false;
+
+// 初始化
+document.addEventListener('DOMContentLoaded', async () => {
+  await checkSession();
+  setupEventListeners();
+});
+
+// 检查session
+async function checkSession() {
+  try {
+    const response = await fetch(`${API_BASE}/session`);
+    const data = await response.json();
+    if (data.authenticated) {
+      showAdminView();
+      loadArticles();
+    } else {
+      showLoginView();
+    }
+  } catch (e) {
+    showLoginView();
+  }
+}
+
+// 显示登录界面
+function showLoginView() {
+  document.getElementById('login-view').style.display = 'flex';
+  document.getElementById('admin-view').style.display = 'none';
+}
+
+// 显示管理界面
+function showAdminView() {
+  document.getElementById('login-view').style.display = 'none';
+  document.getElementById('admin-view').style.display = 'block';
+  document.getElementById('admin-user').textContent = '已登录';
+}
+
+// 设置事件监听
+function setupEventListeners() {
+  // 登录
+  document.getElementById('login-form').addEventListener('submit', handleLogin);
+  
+  // 退出登录
+  document.getElementById('btn-logout').addEventListener('click', handleLogout);
+  
+  // 新建文章
+  document.getElementById('btn-new-article').addEventListener('click', () => showEditor(null));
+  
+  // 返回列表
+  document.getElementById('btn-back').addEventListener('click', () => {
+    document.getElementById('editor-view').style.display = 'none';
+    document.getElementById('articles-view').style.display = 'block';
+    loadArticles();
+  });
+  
+  // 保存草稿
+  document.getElementById('btn-save-draft').addEventListener('click', () => saveArticle('draft'));
+  
+  // 发布
+  document.getElementById('btn-publish').addEventListener('click', () => saveArticle('published'));
+  
+  // 刷新
+  document.getElementById('btn-refresh').addEventListener('click', loadArticles);
+  
+  // 筛选
+  document.getElementById('filter-lang').addEventListener('change', loadArticles);
+  document.getElementById('filter-status').addEventListener('change', loadArticles);
+  document.getElementById('search-articles').addEventListener('input', filterArticles);
+  
+  // 封面上传
+  document.getElementById('upload-cover').addEventListener('change', handleImageUpload);
+}
+
+// 处理登录
+async function handleLogin(e) {
+  e.preventDefault();
+  const password = document.getElementById('password').value;
+  const errorEl = document.getElementById('login-error');
+  
+  errorEl.textContent = '';
+  
+  try {
+    const response = await fetch(`${API_BASE}/login`, {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ password }),
+    });
+    
+    const data = await response.json();
+    
+    if (response.ok) {
+      showAdminView();
+      loadArticles();
+    } else {
+      errorEl.textContent = data.error || '登录失败';
+      if (data.retryAfter) {
+        errorEl.textContent += ` (请等待${data.retryAfter}秒后重试)`;
+      }
+    }
+  } catch (e) {
+    errorEl.textContent = '网络错误，请稍后重试';
+  }
+}
+
+// 处理退出登录
+async function handleLogout() {
+  await fetch(`${API_BASE}/logout`, { method: 'POST' });
+  showLoginView();
+  document.getElementById('login-form').reset();
+}
+
+// 加载文章列表
+async function loadArticles() {
+  const listEl = document.getElementById('articles-list');
+  const lang = document.getElementById('filter-lang').value;
+  const status = document.getElementById('filter-status').value;
+  
+  listEl.innerHTML = '<p class="loading">加载中...</p>';
+  
+  try {
+    const response = await fetch(`${API_BASE}/articles?lang=${lang}`);
+    const data = await response.json();
+    
+    if (!response.ok) throw new Error(data.error);
+    
+    let articles = data.articles;
+    
+    // 状态筛选
+    if (status !== 'all') {
+      articles = articles.filter(a => a.status === status);
+    }
+    
+    // 保存到全局用于搜索
+    window._allArticles = articles;
+    
+    renderArticles(articles);
+  } catch (e) {
+    listEl.innerHTML = `<p class="error">加载失败: ${e.message}</p>`;
+  }
+}
+
+// 渲染文章列表
+function renderArticles(articles) {
+  const listEl = document.getElementById('articles-list');
+  
+  if (articles.length === 0) {
+    listEl.innerHTML = '<p class="empty">暂无文章</p>';
+    return;
+  }
+  
+  listEl.innerHTML = articles.map(article => `
+    <div class="article-card" data-id="${article.id}" data-lang="${article.language}">
+      <div class="article-card-main">
+        <h3>${escapeHtml(article.title)}</h3>
+        <p class="article-excerpt">${escapeHtml(article.excerpt || '无摘要')}</p>
+        <div class="article-meta">
+          <span class="badge badge-lang">${article.language.toUpperCase()}</span>
+          <span class="badge badge-${article.status}">${article.status === 'published' ? '已发布' : '草稿'}</span>
+          <span class="badge badge-cat">${article.category}</span>
+          ${article.publishedAt ? `<span>发布: ${article.publishedAt}</span>` : ''}
+          ${article.updatedAt ? `<span>更新: ${article.updatedAt}</span>` : ''}
+        </div>
+      </div>
+      <div class="article-card-actions">
+        <button class="btn btn-small btn-edit" data-id="${article.id}" data-lang="${article.language}">编辑</button>
+        <button class="btn btn-small btn-view" data-id="${article.id}" data-lang="${article.language}">查看</button>
+        <button class="btn btn-small btn-translate" data-id="${article.id}" data-lang="${article.language}">${article.language === 'en' ? '创建中文版' : '创建英文版'}</button>
+        <button class="btn btn-small btn-danger btn-delete" data-id="${article.id}" data-lang="${article.language}">删除</button>
+      </div>
+    </div>
+  `).join('');
+  
+  // 绑定编辑/查看/删除事件
+  listEl.querySelectorAll('.btn-edit').forEach(btn => {
+    btn.addEventListener('click', (e) => {
+      const id = e.target.dataset.id;
+      const lang = e.target.dataset.lang;
+      loadArticle(id, lang);
+    });
+  });
+  
+  listEl.querySelectorAll('.btn-view').forEach(btn => {
+    btn.addEventListener('click', (e) => {
+      const id = e.target.dataset.id;
+      const lang = e.target.dataset.lang;
+      window.open(`/${lang}/blog/${id}/`, '_blank');
+    });
+  });
+  
+  listEl.querySelectorAll('.btn-delete').forEach(btn => {
+    btn.addEventListener('click', async (e) => {
+      const id = e.target.dataset.id;
+      const lang = e.target.dataset.lang;
+      if (confirm(`确定要删除文章 "${id}" 吗？\n这可能影响Google索引，建议先设置301重定向。`)) {
+        await deleteArticle(id, lang);
+      }
+    });
+  });
+  
+  // 绑定创建对应语言版本按钮
+  listEl.querySelectorAll('.btn-translate').forEach(btn => {
+    btn.addEventListener('click', async (e) => {
+      const id = e.target.dataset.id;
+      const lang = e.target.dataset.lang;
+      const targetLang = lang === 'en' ? 'zh' : 'en';
+      const targetLangName = lang === 'en' ? '中文' : '英文';
+      if (confirm(`将基于当前文章创建${targetLangName}版本。\n内容会被复制，您可以在编辑器中翻译修改。\n\n确定继续吗？`)) {
+        await createTranslation(id, lang, targetLang);
+      }
+    });
+  });
+}
+
+// 创建对应语言版本
+async function createTranslation(id, sourceLang, targetLang) {
+  try {
+    const response = await fetch(`${API_BASE}/articles/${id}?lang=${sourceLang}`);
+    const data = await response.json();
+    if (!response.ok) throw new Error(data.error);
+    
+    document.getElementById('articles-view').style.display = 'none';
+    document.getElementById('editor-view').style.display = 'block';
+    
+    document.getElementById('edit-id').value = data.id;
+    document.getElementById('edit-id').disabled = false;
+    document.getElementById('edit-language').value = targetLang;
+    document.getElementById('edit-language').disabled = false;
+    document.getElementById('edit-title').value = data.title || '';
+    document.getElementById('edit-category').value = data.category || 'Cost & Planning';
+    document.getElementById('edit-status').value = 'draft';
+    document.getElementById('edit-seo-title').value = data.seoTitle || '';
+    document.getElementById('edit-meta-desc').value = data.metaDescription || '';
+    document.getElementById('edit-excerpt').value = data.excerpt || '';
+    document.getElementById('edit-cover').value = data.coverImage || '';
+    document.getElementById('edit-published').value = new Date().toISOString().split('T')[0];
+    document.getElementById('edit-cta').value = data.ctaType || 'send-project-requirements';
+    document.getElementById('edit-noindex').checked = false;
+    document.getElementById('edit-content').value = data.content || '';
+    
+    const langName = targetLang === 'zh' ? '中文' : '英文';
+    document.getElementById('editor-status').textContent = `新建${langName}版本 (请翻译修改后发布)`;
+    
+    isNewArticle = true;
+    currentArticle = null;
+    
+    alert(`已创建${langName}版本草稿。\n\n请翻译修改内容后点击"发布"。\n\n注意：Slug可以保持相同，系统会自动放在不同语言目录下。`);
+  } catch (e) {
+    alert(`创建翻译版本失败: ${e.message}`);
+  }
+}
+
+// 搜索筛选
+function filterArticles() {
+  const query = document.getElementById('search-articles').value.toLowerCase();
+  const articles = (window._allArticles || []).filter(a => 
+    a.title.toLowerCase().includes(query) ||
+    a.id.toLowerCase().includes(query)
+  );
+  renderArticles(articles);
+}
+
+// 加载单篇文章
+async function loadArticle(id, lang) {
+  try {
+    const response = await fetch(`${API_BASE}/articles/${id}?lang=${lang}`);
+    const data = await response.json();
+    
+    if (!response.ok) throw new Error(data.error);
+    
+    showEditor(data);
+  } catch (e) {
+    alert(`加载失败: ${e.message}`);
+  }
+}
+
+// 显示编辑器
+function showEditor(article) {
+  isNewArticle = !article;
+  currentArticle = article;
+  
+  document.getElementById('articles-view').style.display = 'none';
+  document.getElementById('editor-view').style.display = 'block';
+  
+  if (article) {
+    // 编辑现有文章
+    document.getElementById('edit-id').value = article.id;
+    document.getElementById('edit-id').disabled = true;
+    document.getElementById('edit-language').value = article.language;
+    document.getElementById('edit-language').disabled = true;
+    document.getElementById('edit-title').value = article.title || '';
+    document.getElementById('edit-category').value = article.category || 'Cost & Planning';
+    document.getElementById('edit-status').value = article.status || 'draft';
+    document.getElementById('edit-seo-title').value = article.seoTitle || '';
+    document.getElementById('edit-meta-desc').value = article.metaDescription || '';
+    document.getElementById('edit-excerpt').value = article.excerpt || '';
+    document.getElementById('edit-cover').value = article.coverImage || '';
+    document.getElementById('edit-published').value = article.publishedAt || '';
+    document.getElementById('edit-cta').value = article.ctaType || 'send-project-requirements';
+    document.getElementById('edit-noindex').checked = article.noindex || false;
+    document.getElementById('edit-content').value = article.content || '';
+    document.getElementById('editor-status').textContent = `编辑: ${article.id}`;
+  } else {
+    // 新建文章
+    document.getElementById('edit-id').value = '';
+    document.getElementById('edit-id').disabled = false;
+    document.getElementById('edit-language').value = 'en';
+    document.getElementById('edit-language').disabled = false;
+    document.getElementById('edit-title').value = '';
+    document.getElementById('edit-category').value = 'Cost & Planning';
+    document.getElementById('edit-status').value = 'draft';
+    document.getElementById('edit-seo-title').value = '';
+    document.getElementById('edit-meta-desc').value = '';
+    document.getElementById('edit-excerpt').value = '';
+    document.getElementById('edit-cover').value = '';
+    document.getElementById('edit-published').value = new Date().toISOString().split('T')[0];
+    document.getElementById('edit-cta').value = 'send-project-requirements';
+    document.getElementById('edit-noindex').checked = false;
+    document.getElementById('edit-content').value = '';
+    document.getElementById('editor-status').textContent = '新建文章';
+  }
+}
+
+// 保存文章
+async function saveArticle(status) {
+  const id = document.getElementById('edit-id').value.trim();
+  const language = document.getElementById('edit-language').value;
+  const title = document.getElementById('edit-title').value.trim();
+  const content = document.getElementById('edit-content').value;
+  
+  if (!id) {
+    alert('请填写文章ID (URL slug)');
+    return;
+  }
+  if (!title) {
+    alert('请填写标题');
+    return;
+  }
+  if (!content.trim()) {
+    alert('请填写正文内容');
+    return;
+  }
+  
+  const articleData = {
+    id,
+    language,
+    title,
+    content,
+    category: document.getElementById('edit-category').value,
+    status: status,
+    seoTitle: document.getElementById('edit-seo-title').value || undefined,
+    metaDescription: document.getElementById('edit-meta-desc').value || undefined,
+    h1: title,
+    excerpt: document.getElementById('edit-excerpt').value || undefined,
+    coverImage: document.getElementById('edit-cover').value || undefined,
+    publishedAt: document.getElementById('edit-published').value || undefined,
+    updatedAt: new Date().toISOString().split('T')[0],
+    ctaType: document.getElementById('edit-cta').value,
+    noindex: document.getElementById('edit-noindex').checked,
+    author: 'ZhongSai Steel Structure Editorial Team',
+  };
+  
+  const statusEl = document.getElementById('editor-status');
+  statusEl.textContent = '保存中...';
+  
+  try {
+    let response;
+    if (isNewArticle) {
+      response = await fetch(`${API_BASE}/articles`, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(articleData),
+      });
+    } else {
+      response = await fetch(`${API_BASE}/articles/${id}`, {
+        method: 'PUT',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(articleData),
+      });
+    }
+    
+    const data = await response.json();
+    
+    if (!response.ok) throw new Error(data.error);
+    
+    statusEl.textContent = `已保存: ${id} (${status === 'published' ? '已发布' : '草稿'})`;
+    isNewArticle = false;
+    document.getElementById('edit-id').disabled = true;
+    document.getElementById('edit-language').disabled = true;
+    
+    if (status === 'published') {
+      setTimeout(() => {
+        alert(`文章已发布！\nURL: /${language}/blog/${id}/\n\nCloudflare Pages将在2-3分钟内自动构建部署。`);
+      }, 500);
+    }
+  } catch (e) {
+    statusEl.textContent = '保存失败';
+    alert(`保存失败: ${e.message}`);
+  }
+}
+
+// 删除文章
+async function deleteArticle(id, lang) {
+  try {
+    const response = await fetch(`${API_BASE}/articles/${id}?lang=${lang}`, {
+      method: 'DELETE',
+    });
+    const data = await response.json();
+    
+    if (!response.ok) throw new Error(data.error);
+    
+    alert('文章已删除');
+    loadArticles();
+  } catch (e) {
+    alert(`删除失败: ${e.message}`);
+  }
+}
+
+// 处理图片上传
+async function handleImageUpload(e) {
+  const file = e.target.files[0];
+  if (!file) return;
+  
+  const statusEl = document.getElementById('editor-status');
+  statusEl.textContent = '上传图片中...';
+  
+  try {
+    const formData = new FormData();
+    formData.append('file', file);
+    
+    const response = await fetch(`${API_BASE}/upload`, {
+      method: 'POST',
+      body: formData,
+    });
+    
+    const data = await response.json();
+    
+    if (!response.ok) throw new Error(data.error);
+    
+    document.getElementById('edit-cover').value = data.url;
+    statusEl.textContent = `图片已上传: ${data.filename}`;
+  } catch (e) {
+    statusEl.textContent = '图片上传失败';
+    alert(`图片上传失败: ${e.message}`);
+  }
+}
+
+// HTML转义
+function escapeHtml(text) {
+  const div = document.createElement('div');
+  div.textContent = text;
+  return div.innerHTML;
+}
+
+// 切换编辑/预览标签
+function switchEditorTab(tab) {
+  const editTab = document.getElementById('tab-edit');
+  const previewTab = document.getElementById('tab-preview');
+  const editContent = document.getElementById('edit-content');
+  const previewContent = document.getElementById('preview-content');
+  
+  if (tab === 'edit') {
+    editTab.classList.add('active');
+    previewTab.classList.remove('active');
+    editContent.style.display = 'block';
+    previewContent.style.display = 'none';
+  } else {
+    editTab.classList.remove('active');
+    previewTab.classList.add('active');
+    editContent.style.display = 'none';
+    previewContent.style.display = 'block';
+    renderPreview();
+  }
+}
+
+// 简单的Markdown渲染
+function renderPreview() {
+  const content = document.getElementById('edit-content').value;
+  const previewEl = document.getElementById('preview-content');
+  
+  let html = escapeHtml(content);
+  html = html.replace(/^### (.*$)/gim, '<h3>$1</h3>');
+  html = html.replace(/^## (.*$)/gim, '<h2>$1</h2>');
+  html = html.replace(/^# (.*$)/gim, '<h1>$1</h1>');
+  html = html.replace(/\*\*(.*?)\*\*/g, '<strong>$1</strong>');
+  html = html.replace(/^- (.*$)/gim, '<li>$1</li>');
+  html = html.replace(/\n\n/g, '</p><p>');
+  html = '<p>' + html + '</p>';
+  
+  previewEl.innerHTML = html;
+}
+
+document.addEventListener('DOMContentLoaded', () => {
+  const previewBtn = document.getElementById('btn-preview');
+  if (previewBtn) {
+    previewBtn.addEventListener('click', () => switchEditorTab('preview'));
+  }
+});
+</script>
+
+<style>
+.admin-page {
+  min-height: 100vh;
+  background: #f5f5f5;
+  padding: 0;
+}
+.admin-container {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+/* 登录界面 */
+.login-view {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 80vh;
+}
+.login-card {
+  background: white;
+  padding: 40px;
+  border-radius: 12px;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+  width: 100%;
+  max-width: 400px;
+}
+.login-card h1 {
+  color: #0a3d62;
+  margin-bottom: 8px;
+  font-size: 1.5rem;
+}
+.login-subtitle {
+  color: #888;
+  margin-bottom: 24px;
+  font-size: 0.9rem;
+}
+.form-group {
+  margin-bottom: 16px;
+}
+.form-group label {
+  display: block;
+  margin-bottom: 6px;
+  font-weight: 600;
+  color: #333;
+  font-size: 0.9rem;
+}
+.form-group input,
+.form-group select,
+.form-group textarea {
+  width: 100%;
+  padding: 10px 12px;
+  border: 1px solid #ddd;
+  border-radius: 6px;
+  font-size: 0.95rem;
+  box-sizing: border-box;
+}
+.form-group input:focus,
+.form-group select:focus,
+.form-group textarea:focus {
+  outline: none;
+  border-color: #0a3d62;
+  box-shadow: 0 0 0 3px rgba(10,61,98,0.1);
+}
+.btn-login {
+  width: 100%;
+  padding: 12px;
+  background: #0a3d62;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  margin-top: 8px;
+}
+.btn-login:hover {
+  background: #082c45;
+}
+.login-error {
+  color: #dc3545;
+  margin-top: 12px;
+  font-size: 0.9rem;
+  text-align: center;
+}
+
+/* 管理界面 */
+.admin-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: white;
+  padding: 16px 24px;
+  border-radius: 8px;
+  margin-bottom: 20px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+}
+.admin-header h1 {
+  color: #0a3d62;
+  margin: 0;
+  font-size: 1.3rem;
+}
+.admin-user {
+  color: #888;
+  font-size: 0.85rem;
+  margin-left: 16px;
+}
+.admin-header-right {
+  display: flex;
+  gap: 10px;
+}
+.btn {
+  padding: 8px 16px;
+  border: none;
+  border-radius: 6px;
+  font-size: 0.9rem;
+  cursor: pointer;
+  font-weight: 500;
+}
+.btn-primary {
+  background: #0a3d62;
+  color: white;
+}
+.btn-primary:hover {
+  background: #082c45;
+}
+.btn-secondary {
+  background: #e9ecef;
+  color: #333;
+}
+.btn-secondary:hover {
+  background: #dee2e6;
+}
+.btn-translate {
+  background: #0ea5e9;
+  color: white;
+}
+.btn-translate:hover {
+  background: #0284c7;
+}
+.btn-danger {
+  background: #dc3545;
+  color: white;
+}
+.btn-danger:hover {
+  background: #c82333;
+}
+.btn-small {
+  padding: 6px 12px;
+  font-size: 0.8rem;
+}
+
+/* 文章列表 */
+.articles-toolbar {
+  display: flex;
+  gap: 12px;
+  margin-bottom: 16px;
+  flex-wrap: wrap;
+}
+.articles-toolbar select,
+.articles-toolbar input {
+  padding: 8px 12px;
+  border: 1px solid #ddd;
+  border-radius: 6px;
+  font-size: 0.9rem;
+}
+.articles-toolbar input {
+  flex: 1;
+  min-width: 200px;
+}
+.articles-list {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+.article-card {
+  background: white;
+  padding: 20px;
+  border-radius: 8px;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+}
+.article-card-main {
+  flex: 1;
+}
+.article-card h3 {
+  margin: 0 0 8px;
+  color: #0a3d62;
+  font-size: 1.1rem;
+}
+.article-excerpt {
+  color: #666;
+  margin: 0 0 12px;
+  font-size: 0.9rem;
+}
+.article-meta {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+  align-items: center;
+  font-size: 0.8rem;
+  color: #888;
+}
+.badge {
+  padding: 3px 8px;
+  border-radius: 4px;
+  font-size: 0.75rem;
+  font-weight: 600;
+}
+.badge-lang {
+  background: #e3f2fd;
+  color: #1565c0;
+}
+.badge-published {
+  background: #e8f5e9;
+  color: #2e7d32;
+}
+.badge-draft {
+  background: #fff3e0;
+  color: #e65100;
+}
+.badge-cat {
+  background: #f3e5f5;
+  color: #6a1b9a;
+}
+.article-card-actions {
+  display: flex;
+  gap: 8px;
+  margin-left: 16px;
+}
+.loading, .empty, .error {
+  text-align: center;
+  padding: 40px;
+  color: #888;
+}
+.error {
+  color: #dc3545;
+}
+
+/* 编辑器 */
+.editor-toolbar {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+  background: white;
+  padding: 12px 20px;
+  border-radius: 8px;
+  margin-bottom: 16px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+}
+.editor-status {
+  flex: 1;
+  color: #888;
+  font-size: 0.85rem;
+}
+.editor-layout {
+  display: grid;
+  grid-template-columns: 320px 1fr;
+  gap: 16px;
+}
+.editor-sidebar {
+  background: white;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+  max-height: calc(100vh - 140px);
+  overflow-y: auto;
+}
+.editor-main {
+  background: white;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+}
+.markdown-editor {
+  width: 100%;
+  min-height: 500px;
+  font-family: 'Courier New', monospace;
+  font-size: 0.9rem;
+  line-height: 1.6;
+  resize: vertical;
+}
+.editor-help {
+  margin-top: 16px;
+  font-size: 0.85rem;
+  color: #666;
+}
+.editor-help code {
+  background: #f5f5f5;
+  padding: 2px 6px;
+  border-radius: 3px;
+  font-size: 0.8rem;
+}
+
+@media (max-width: 768px) {
+  .editor-layout {
+    grid-template-columns: 1fr;
+  }
+  .admin-header {
+    flex-direction: column;
+    gap: 12px;
+  }
+  .article-card {
+    flex-direction: column;
+  }
+  .article-card-actions {
+    margin-left: 0;
+    margin-top: 12px;
+  }
+}
+
+.editor-tabs {
+  display: flex;
+  gap: 4px;
+  margin-bottom: 8px;
+}
+.tab-btn {
+  padding: 6px 16px;
+  border: 1px solid #ddd;
+  background: #f5f5f5;
+  cursor: pointer;
+  border-radius: 4px 4px 0 0;
+}
+.tab-btn.active {
+  background: white;
+  border-bottom-color: white;
+  font-weight: bold;
+}
+.preview-content {
+  border: 1px solid #ddd;
+  padding: 20px;
+  min-height: 400px;
+  background: white;
+  border-radius: 0 4px 4px 4px;
+  line-height: 1.6;
+}
+.preview-content h1 { font-size: 1.8em; margin: 0.5em 0; }
+.preview-content h2 { font-size: 1.5em; margin: 0.5em 0; }
+.preview-content h3 { font-size: 1.2em; margin: 0.5em 0; }
+.preview-content ul { padding-left: 2em; }
+.preview-content li { margin: 0.3em 0; }
+.preview-content p { margin: 0.8em 0; }
+</style>
+</main>
+</body>
+</html>

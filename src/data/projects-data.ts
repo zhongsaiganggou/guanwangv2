@@ -437,11 +437,11 @@ export const projects: ProjectData[] = [
       { src: '/images/projects/overseas/singapore-cr101-depot.jpg', type: 'site', label: { zh: '项目现场', en: 'Project Site' } },
     ],
     overview: {
-      zh: '新加坡陆路交通管理局(LTA)CR101地铁维修站项目，总用钢量约12000吨，采用镀锌85um+底漆80um+中间漆160um+面漆50um防腐体系，由钢柱、桁架、钢梁组成。项目派驻4名RTO驻厂监造，5名ITA专职监督质量。',
-      en: 'Singapore Land Transport Authority (LTA) CR101 MRT Depot project with total steel tonnage of approximately 12,000 tonnes. Utilizing 85um galvanizing + 80um primer + 160um intermediate paint + 50um topcoat anti-corrosion system. Consists of steel columns, trusses, and steel beams. 4 RTOs stationed at factory for supervision, 5 ITAs for dedicated quality oversight.'
+      zh: '新加坡陆路交通管理局(LTA)CR101地铁维修站项目，总用钢量约1900吨，采用镀锌85um+底漆80um+中间漆160um+面漆50um防腐体系，由钢柱、桁架、钢梁组成。项目派驻4名RTO驻厂监造，5名ITA专职监督质量。',
+      en: 'Singapore Land Transport Authority (LTA) CR101 MRT Depot project with total steel tonnage of approximately 1,900 tonnes. Utilizing 85um galvanizing + 80um primer + 160um intermediate paint + 50um topcoat anti-corrosion system. Consists of steel columns, trusses, and steel beams. 4 RTOs stationed at factory for supervision, 5 ITAs for dedicated quality oversight.'
     },
     params: [
-      { label: { zh: '用钢量', en: 'Steel Tonnage' }, value: { zh: '约12000吨', en: 'Approx. 12,000 tonnes' } },
+      { label: { zh: '用钢量', en: 'Steel Tonnage' }, value: { zh: '约1900吨', en: 'Approx. 1,900 tonnes' } },
       { label: { zh: '项目类型', en: 'Project Type' }, value: { zh: '地铁维修站', en: 'MRT Depot' } },
       { label: { zh: '工作范围', en: 'Scope of Work' }, value: { zh: '钢结构设计深化制作供应', en: 'Steel Structure Detailing, Fabrication & Supply' } },
       { label: { zh: '质量监督', en: 'Quality Supervision' }, value: { zh: '4 RTO + 5 ITA驻厂监造', en: '4 RTO + 5 ITA Factory Supervision' } },
