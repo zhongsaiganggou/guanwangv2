@@ -1,4 +1,5 @@
 ---
+import { getCollection } from 'astro:content';
 import BaseLayout from '../../../layouts/BaseLayout.astro';
 import QuoteForm from '../../../components/QuoteForm.astro';
 import '../../../styles/detail.css';
@@ -47,6 +48,30 @@ const articles = [
   },
 ];
 
+// 辅助函数：从post.id提取slug
+function getSlugEn(id) {
+  return id.replace('en/', '').replace('.md', '');
+}
+
+// 从Content Collections获取CMS发布的文章
+const cmsPosts = await getCollection('blog', ({ data }) => {
+  return data.language === 'en' && data.status === 'published';
+});
+
+// 合并硬编码文章和CMS文章，去重
+const existingHrefs = new Set(articles.map(a => a.href));
+const cmsArticles = cmsPosts
+  .filter(post => !existingHrefs.has('/en/blog/' + getSlugEn(post.id) + '/'))
+  .map(post => ({
+    title: post.data.title,
+    category: post.data.category,
+    summary: post.data.excerpt || post.data.metaDescription || '',
+    href: '/en/blog/' + getSlugEn(post.id) + '/',
+    coverImage: post.data.coverImage,
+  }));
+
+const allArticles = [...articles, ...cmsArticles];
+
 const engineeringResources = [
   { title: 'Steel Components & Cladding', href: '/en/components/', desc: 'Fabricated beams, columns, trusses, purlins and roof/wall cladding systems' },
   { title: 'Manufacturing & Quality', href: '/en/manufacturing-quality/', desc: 'Cutting, welding, fabrication and quality control processes' },
@@ -91,7 +116,7 @@ const engineeringResources = [
         <p>Technical articles covering the full project lifecycle — from initial planning and import procedures to cost factors, shipping logistics and container delivery.</p>
       </div>
       <div class="feature-grid">
-        {articles.map((article, i) => (
+        {allArticles.map((article, i) => (
           <a href={article.href} class={`feature-card reveal reveal-delay-${(i % 3) + 1}`} style="text-decoration: none; color: inherit; display: flex; flex-direction: column;">
             <div class="feature-body" style="flex: 1; display: flex; flex-direction: column;">
               <span style="font-size: 12px; font-weight: 600; color: #1a56db; text-transform: uppercase; letter-spacing: 0.5px; margin-bottom: 8px;">{article.category}</span>

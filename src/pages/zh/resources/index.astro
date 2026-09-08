@@ -1,4 +1,5 @@
 ---
+import { getCollection } from 'astro:content';
 import BaseLayout from '../../../layouts/BaseLayout.astro';
 import QuoteForm from '../../../components/QuoteForm.astro';
 import '../../../styles/detail.css';
@@ -22,6 +23,24 @@ const engineeringResources = [
   { title: '出口交付', href: '/zh/export-delivery/', desc: '构件编号、包装、装柜、出口资料协调与物流配合' },
   { title: '定制工程与按图加工', href: '/zh/products/custom-engineering/', desc: '非标构件、复杂节点、设备平台、重型构件按确认图纸定制加工' },
 ];
+
+// 辅助函数：从post.id提取slug
+function getSlugZh(id) {
+  return id.replace('zh/', '').replace('.md', '');
+}
+
+// 从Content Collections获取CMS发布的中文文章
+const cmsPostsZh = await getCollection('blog', ({ data }) => {
+  return data.language === 'zh' && data.status === 'published';
+});
+
+const cmsArticlesZh = cmsPostsZh.map(post => ({
+  title: post.data.title,
+  category: post.data.category,
+  summary: post.data.excerpt || post.data.metaDescription || '',
+  href: '/zh/blog/' + getSlugZh(post.id) + '/',
+  coverImage: post.data.coverImage,
+}));
 ---
 
 <BaseLayout title={title} description={description} lang={lang}>
@@ -87,6 +106,32 @@ const engineeringResources = [
           </div>
         </a>
       </div>
+    </div>
+  </section>
+
+  <!-- Technical Articles -->
+  <section class="detail-section alt" id="articles">
+    <div class="container">
+      <div class="section-heading reveal">
+        <p class="section-index">03 / 技术文章</p>
+        <h2>钢结构技术文章与指南</h2>
+        <p>深入了解钢结构项目从设计、制造到出口交付的技术细节与采购知识。</p>
+      </div>
+      {cmsArticlesZh.length > 0 ? (
+        <div class="feature-grid">
+          {cmsArticlesZh.map((article, i) => (
+            <a href={article.href} class={`feature-card reveal reveal-delay-${(i % 3) + 1}`} style="text-decoration: none; color: inherit;">
+              <div class="feature-body">
+                {article.category && <span class="eyebrow" style="color: #1a56db; font-size: 12px; font-weight: 600;">{article.category}</span>}
+                <h3>{article.title}</h3>
+                {article.summary && <p>{article.summary}</p>}
+              </div>
+            </a>
+          ))}
+        </div>
+      ) : (
+        <p style="text-align: center; color: #888; padding: 40px 0;">暂无技术文章</p>
+      )}
     </div>
   </section>
 
