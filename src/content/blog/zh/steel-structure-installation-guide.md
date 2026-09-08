@@ -8,8 +8,8 @@ metaDescription: "Practical guide for overseas steel structure installation: pre
 h1: Steel Structure Installation Guide for Overseas Projects
 excerpt: A practical guide for overseas buyers on steel structure installation, covering site preparation, lifting plans, bolting, welding, quality control, and coordination with local installation teams.
 coverImage: /images/blog/steel-structure-installation-guide/cover.jpg
-publishedAt: 2026-09-08
-updatedAt: 2026-09-08
+publishedAt: "2026-09-08"
+updatedAt: "2026-09-08"
 ctaType: send-project-requirements
 noindex: false
 author: ZhongSai Steel Structure Editorial Team
