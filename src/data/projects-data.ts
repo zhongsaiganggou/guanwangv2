@@ -24,6 +24,7 @@ export interface ProjectData {
   }[];
   // href 为语言根相对路径（不含 /en/ 或 /zh/ 前缀），由组件按当前 lang 拼接 `/${lang}/${href}`
   relatedLinks: { href: string; label: { zh: string; en: string } }[];
+  capabilities: { zh: string; en: string }[];
 }
 
 const P = '/images/projects/';
@@ -52,6 +53,11 @@ export const projects: ProjectData[] = [
       { label: { zh: '建筑高度', en: 'Building Height' }, value: { zh: '22.6米', en: '22.6 m' } },
       { label: { zh: '跨度', en: 'Span' }, value: { zh: '22米', en: '22 m' } },
       { label: { zh: '用钢量', en: 'Steel Tonnage' }, value: { zh: '约3160吨', en: 'Approx. 3,160 tonnes' } },
+    ],
+    capabilities: [
+      { zh: '大跨度钢结构加工', en: 'Large-Span Steel Fabrication' },
+      { zh: '重型钢结构加工', en: 'Heavy Structural Steel Fabrication' },
+      { zh: '工业钢结构供货能力', en: 'Industrial Steel Structure Supply' },
     ],
     relatedLinks: [
       { href: 'steel-warehouse/', label: { zh: '钢结构仓库', en: 'Steel Warehouse' } },
@@ -83,6 +89,11 @@ export const projects: ProjectData[] = [
       { label: { zh: '结构形式', en: 'Structural System' }, value: { zh: '劲性结构', en: 'Steel-Reinforced Concrete' } },
       { label: { zh: '用钢量', en: 'Steel Tonnage' }, value: { zh: '约2380吨', en: 'Approx. 2,380 tonnes' } },
     ],
+    capabilities: [
+      { zh: '复杂钢构件加工', en: 'Complex Component Fabrication' },
+      { zh: '重型钢结构加工', en: 'Heavy Structural Steel Fabrication' },
+      { zh: '钢结构深化配合', en: 'Structural Detailing Coordination' },
+    ],
     relatedLinks: [
       { href: 'manufacturing-quality/', label: { zh: '制造能力', en: 'Manufacturing' } },
       { href: 'components/fabricated-steel-beams-columns/', label: { zh: '钢梁钢柱', en: 'Beams & Columns' } },
@@ -112,6 +123,11 @@ export const projects: ProjectData[] = [
       { label: { zh: '高度', en: 'Height' }, value: { zh: '34.5米', en: '34.5 m' } },
       { label: { zh: '用钢量', en: 'Steel Tonnage' }, value: { zh: '约8300吨', en: 'Approx. 8,300 tonnes' } },
     ],
+    capabilities: [
+      { zh: '大跨度钢结构加工', en: 'Large-Span Steel Fabrication' },
+      { zh: '工业钢结构供货能力', en: 'Industrial Steel Structure Supply' },
+      { zh: '按项目图纸加工', en: 'Fabrication to Project Drawings' },
+    ],
     relatedLinks: [
       { href: 'steel-workshop/', label: { zh: '工业厂房', en: 'Steel Workshop' } },
       { href: 'manufacturing-quality/', label: { zh: '制造能力', en: 'Manufacturing' } },
@@ -139,6 +155,11 @@ export const projects: ProjectData[] = [
       { label: { zh: '跨度', en: 'Span' }, value: { zh: '60米', en: '60 m' } },
       { label: { zh: '用钢量', en: 'Steel Tonnage' }, value: { zh: '约9800吨', en: 'Approx. 9,800 tonnes' } },
     ],
+    capabilities: [
+      { zh: '大跨度钢结构加工', en: 'Large-Span Steel Fabrication' },
+      { zh: '重型钢结构加工', en: 'Heavy Structural Steel Fabrication' },
+      { zh: '工业钢结构供货能力', en: 'Industrial Steel Structure Supply' },
+    ],
     relatedLinks: [
       { href: 'steel-workshop/', label: { zh: '工业厂房', en: 'Steel Workshop' } },
       { href: 'products/custom-engineering/', label: { zh: '定制加工', en: 'Custom Engineering' } },
@@ -163,6 +184,11 @@ export const projects: ProjectData[] = [
     },
     params: [
       { label: { zh: '用钢量', en: 'Steel Tonnage' }, value: { zh: '约4700吨', en: 'Approx. 4,700 tonnes' } },
+    ],
+    capabilities: [
+      { zh: '工业钢结构供货能力', en: 'Industrial Steel Structure Supply' },
+      { zh: '大跨度钢结构加工', en: 'Large-Span Steel Fabrication' },
+      { zh: '钢结构深化配合', en: 'Structural Detailing Coordination' },
     ],
     relatedLinks: [
       { href: 'steel-workshop/', label: { zh: '工业厂房', en: 'Steel Workshop' } },
@@ -191,6 +217,11 @@ export const projects: ProjectData[] = [
       { label: { zh: '长度', en: 'Length' }, value: { zh: '167米', en: '167 m' } },
       { label: { zh: '宽度', en: 'Width' }, value: { zh: '48米', en: '48 m' } },
       { label: { zh: '用钢量', en: 'Steel Tonnage' }, value: { zh: '约2100吨', en: 'Approx. 2,100 tonnes' } },
+    ],
+    capabilities: [
+      { zh: '复杂钢构件加工', en: 'Complex Component Fabrication' },
+      { zh: '工业钢结构供货能力', en: 'Industrial Steel Structure Supply' },
+      { zh: '按项目图纸加工', en: 'Fabrication to Project Drawings' },
     ],
     relatedLinks: [
       { href: 'steel-warehouse/', label: { zh: '钢结构仓库', en: 'Steel Warehouse' } },
@@ -221,6 +252,11 @@ export const projects: ProjectData[] = [
       { label: { zh: '层数', en: 'Floors' }, value: { zh: '6层钢构', en: '6-story steel structure' } },
       { label: { zh: '用钢量', en: 'Steel Tonnage' }, value: { zh: '约3600吨', en: 'Approx. 3,600 tonnes' } },
     ],
+    capabilities: [
+      { zh: '大跨度钢结构加工', en: 'Large-Span Steel Fabrication' },
+      { zh: '复杂钢构件加工', en: 'Complex Component Fabrication' },
+      { zh: '钢结构深化配合', en: 'Structural Detailing Coordination' },
+    ],
     relatedLinks: [
       { href: 'steel-workshop/', label: { zh: '工业厂房', en: 'Steel Workshop' } },
       { href: 'manufacturing-quality/', label: { zh: '制造能力', en: 'Manufacturing' } },
@@ -249,6 +285,11 @@ export const projects: ProjectData[] = [
       { label: { zh: '高度', en: 'Height' }, value: { zh: '77.7米', en: '77.7 m' } },
       { label: { zh: '设备平台', en: 'Equipment Platforms' }, value: { zh: '22层', en: '22 levels' } },
       { label: { zh: '用钢量', en: 'Steel Tonnage' }, value: { zh: '约6000吨', en: 'Approx. 6,000 tonnes' } },
+    ],
+    capabilities: [
+      { zh: '重型钢结构加工', en: 'Heavy Structural Steel Fabrication' },
+      { zh: '复杂钢构件加工', en: 'Complex Component Fabrication' },
+      { zh: '复杂连接节点加工', en: 'Complex Connection Fabrication' },
     ],
     relatedLinks: [
       { href: 'products/custom-engineering/', label: { zh: '定制加工', en: 'Custom Engineering' } },
@@ -279,6 +320,11 @@ export const projects: ProjectData[] = [
       { label: { zh: '设备平台', en: 'Equipment Platforms' }, value: { zh: '20层', en: '20 levels' } },
       { label: { zh: '用钢量', en: 'Steel Tonnage' }, value: { zh: '约4100吨', en: 'Approx. 4,100 tonnes' } },
     ],
+    capabilities: [
+      { zh: '重型钢结构加工', en: 'Heavy Structural Steel Fabrication' },
+      { zh: '复杂钢构件加工', en: 'Complex Component Fabrication' },
+      { zh: '复杂连接节点加工', en: 'Complex Connection Fabrication' },
+    ],
     relatedLinks: [
       { href: 'products/custom-engineering/', label: { zh: '定制加工', en: 'Custom Engineering' } },
       { href: 'components/fabricated-steel-beams-columns/', label: { zh: '钢梁钢柱', en: 'Beams & Columns' } },
@@ -304,6 +350,11 @@ export const projects: ProjectData[] = [
     params: [
       { label: { zh: '用钢量', en: 'Steel Tonnage' }, value: { zh: '约9000吨', en: 'Approx. 9,000 tonnes' } },
     ],
+    capabilities: [
+      { zh: '工业钢结构供货能力', en: 'Industrial Steel Structure Supply' },
+      { zh: '大跨度钢结构加工', en: 'Large-Span Steel Fabrication' },
+      { zh: '按项目图纸加工', en: 'Fabrication to Project Drawings' },
+    ],
     relatedLinks: [
       { href: 'steel-workshop/', label: { zh: '工业厂房', en: 'Steel Workshop' } },
       { href: 'manufacturing-quality/', label: { zh: '制造能力', en: 'Manufacturing' } },
@@ -328,6 +379,11 @@ export const projects: ProjectData[] = [
     },
     params: [
       { label: { zh: '用钢量', en: 'Steel Tonnage' }, value: { zh: '约500吨', en: 'Approx. 500 tonnes' } },
+    ],
+    capabilities: [
+      { zh: '大跨度钢结构加工', en: 'Large-Span Steel Fabrication' },
+      { zh: '复杂钢构件加工', en: 'Complex Component Fabrication' },
+      { zh: '复杂连接节点加工', en: 'Complex Connection Fabrication' },
     ],
     relatedLinks: [
       { href: 'products/custom-engineering/', label: { zh: '定制加工', en: 'Custom Engineering' } },
@@ -358,11 +414,291 @@ export const projects: ProjectData[] = [
       { label: { zh: '高度', en: 'Height' }, value: { zh: '23米', en: '23 m' } },
       { label: { zh: '用钢量', en: 'Steel Tonnage' }, value: { zh: '约5000吨', en: 'Approx. 5,000 tonnes' } },
     ],
+    capabilities: [
+      { zh: '大跨度钢结构加工', en: 'Large-Span Steel Fabrication' },
+      { zh: '重型钢结构加工', en: 'Heavy Structural Steel Fabrication' },
+      { zh: '复杂连接节点加工', en: 'Complex Connection Fabrication' },
+    ],
     relatedLinks: [
       { href: 'products/custom-engineering/', label: { zh: '定制加工', en: 'Custom Engineering' } },
       { href: 'components/fabricated-steel-beams-columns/', label: { zh: '钢梁钢柱', en: 'Beams & Columns' } },
     ]
   },
+
+  // ========== OVERSEAS PROJECTS (钢结构设计深化制作供应) ==========
+  {
+    slug: 'singapore-cr101-depot',
+    category: { zh: '海外项目', en: 'Overseas Projects' },
+    name: { zh: '新加坡LTA CR101地铁维修站', en: 'Singapore LTA CR101 MRT Depot' },
+    location: { zh: '新加坡', en: 'Singapore' },
+    image: '/images/projects/overseas/singapore-cr101-depot.jpg',
+    heroImageType: 'site',
+    galleryImages: [
+      { src: '/images/projects/overseas/singapore-cr101-depot.jpg', type: 'site', label: { zh: '项目现场', en: 'Project Site' } },
+    ],
+    overview: {
+      zh: '新加坡陆路交通管理局(LTA)CR101地铁维修站项目，总用钢量约12000吨，采用镀锌85um+底漆80um+中间漆160um+面漆50um防腐体系，由钢柱、桁架、钢梁组成。项目派驻4名RTO驻厂监造，5名ITA专职监督质量。',
+      en: 'Singapore Land Transport Authority (LTA) CR101 MRT Depot project with total steel tonnage of approximately 12,000 tonnes. Utilizing 85um galvanizing + 80um primer + 160um intermediate paint + 50um topcoat anti-corrosion system. Consists of steel columns, trusses, and steel beams. 4 RTOs stationed at factory for supervision, 5 ITAs for dedicated quality oversight.'
+    },
+    params: [
+      { label: { zh: '用钢量', en: 'Steel Tonnage' }, value: { zh: '约12000吨', en: 'Approx. 12,000 tonnes' } },
+      { label: { zh: '项目类型', en: 'Project Type' }, value: { zh: '地铁维修站', en: 'MRT Depot' } },
+      { label: { zh: '工作范围', en: 'Scope of Work' }, value: { zh: '钢结构设计深化制作供应', en: 'Steel Structure Detailing, Fabrication & Supply' } },
+      { label: { zh: '质量监督', en: 'Quality Supervision' }, value: { zh: '4 RTO + 5 ITA驻厂监造', en: '4 RTO + 5 ITA Factory Supervision' } },
+    ],
+    capabilities: [
+      { zh: '重型钢结构加工', en: 'Heavy Structural Steel Fabrication' },
+      { zh: '大跨度钢结构加工', en: 'Large-Span Steel Fabrication' },
+      { zh: '复杂防腐体系施工', en: 'Complex Anti-Corrosion System' },
+    ],
+    relatedLinks: [
+      { href: 'manufacturing-quality/', label: { zh: '制造能力', en: 'Manufacturing' } },
+      { href: 'components/fabricated-steel-beams-columns/', label: { zh: '钢梁钢柱', en: 'Beams & Columns' } },
+    ]
+  },
+  {
+    slug: 'singapore-j102-mrt-station',
+    category: { zh: '海外项目', en: 'Overseas Projects' },
+    name: { zh: '新加坡LTA J102地铁站', en: 'Singapore LTA J102 MRT Station' },
+    location: { zh: '新加坡', en: 'Singapore' },
+    image: '/images/projects/overseas/singapore-j102-station.jpg',
+    heroImageType: 'rendering',
+    galleryImages: [
+      { src: '/images/projects/overseas/singapore-j102-station.jpg', type: 'rendering', label: { zh: '项目效果图', en: 'Project Rendering' } },
+    ],
+    overview: {
+      zh: '新加坡LTA J102地铁站项目，总用钢量约1900吨，采用外法兰节点，节点复杂，共有15000个法兰。采用三维全站仪控制节点尺寸，全程RTO驻厂监造，ITA全过程监督质量。',
+      en: 'Singapore LTA J102 MRT Station project with total steel tonnage of approximately 1,900 tonnes. Utilizing external flange connections with complex nodes, totaling 15,000 flanges. 3D total station used for precise node dimension control. RTO stationed at factory for entire fabrication process, ITA supervises quality throughout.'
+    },
+    params: [
+      { label: { zh: '用钢量', en: 'Steel Tonnage' }, value: { zh: '约1900吨', en: 'Approx. 1,900 tonnes' } },
+      { label: { zh: '项目类型', en: 'Project Type' }, value: { zh: '地铁站', en: 'MRT Station' } },
+      { label: { zh: '节点数量', en: 'Flange Count' }, value: { zh: '15000个法兰', en: '15,000 Flanges' } },
+      { label: { zh: '工作范围', en: 'Scope of Work' }, value: { zh: '钢结构设计深化制作供应', en: 'Steel Structure Detailing, Fabrication & Supply' } },
+    ],
+    capabilities: [
+      { zh: '复杂连接节点加工', en: 'Complex Connection Fabrication' },
+      { zh: '高精度尺寸控制', en: 'High-Precision Dimension Control' },
+      { zh: '钢结构深化配合', en: 'Structural Detailing Coordination' },
+    ],
+    relatedLinks: [
+      { href: 'manufacturing-quality/', label: { zh: '制造能力', en: 'Manufacturing' } },
+      { href: 'components/steel-trusses/', label: { zh: '钢桁架', en: 'Steel Trusses' } },
+    ]
+  },
+  {
+    slug: 'singapore-j107-mrt-station',
+    category: { zh: '海外项目', en: 'Overseas Projects' },
+    name: { zh: '新加坡LTA J107地铁站', en: 'Singapore LTA J107 MRT Station' },
+    location: { zh: '新加坡', en: 'Singapore' },
+    image: '/images/projects/overseas/singapore-j107-station.jpg',
+    heroImageType: 'rendering',
+    galleryImages: [
+      { src: '/images/projects/overseas/singapore-j107-station.jpg', type: 'rendering', label: { zh: '项目效果图', en: 'Project Rendering' } },
+    ],
+    overview: {
+      zh: '新加坡LTA J107地铁站项目，总用钢量约1300吨，LTA验厂通过，项目严格按照LTA要求执行，RTO驻厂检查，ITA全程监督制造，项目顺利交付中。',
+      en: 'Singapore LTA J107 MRT Station project with total steel tonnage of approximately 1,300 tonnes. Passed LTA factory inspection. Project strictly executed in accordance with LTA requirements. RTO stationed on-site for inspections, ITA supervising entire manufacturing process. Project successfully delivered.'
+    },
+    params: [
+      { label: { zh: '用钢量', en: 'Steel Tonnage' }, value: { zh: '约1300吨', en: 'Approx. 1,300 tonnes' } },
+      { label: { zh: '项目类型', en: 'Project Type' }, value: { zh: '地铁站', en: 'MRT Station' } },
+      { label: { zh: '工作范围', en: 'Scope of Work' }, value: { zh: '钢结构设计深化制作供应', en: 'Steel Structure Detailing, Fabrication & Supply' } },
+      { label: { zh: '质量标准', en: 'Quality Standard' }, value: { zh: 'LTA严格标准', en: 'LTA Strict Standards' } },
+    ],
+    capabilities: [
+      { zh: '复杂钢构件加工', en: 'Complex Component Fabrication' },
+      { zh: '重型钢结构加工', en: 'Heavy Structural Steel Fabrication' },
+      { zh: '按项目图纸加工', en: 'Fabrication to Project Drawings' },
+    ],
+    relatedLinks: [
+      { href: 'manufacturing-quality/', label: { zh: '制造能力', en: 'Manufacturing' } },
+      { href: 'components/fabricated-steel-beams-columns/', label: { zh: '钢梁钢柱', en: 'Beams & Columns' } },
+    ]
+  },
+  {
+    slug: 'macau-londoner',
+    category: { zh: '海外项目', en: 'Overseas Projects' },
+    name: { zh: '澳门伦敦人项目', en: 'Macau Londoner Project' },
+    location: { zh: '中国澳门', en: 'Macau, China' },
+    image: '/images/projects/overseas/macau-londoner.jpg',
+    heroImageType: 'rendering',
+    galleryImages: [
+      { src: '/images/projects/overseas/macau-londoner.jpg', type: 'rendering', label: { zh: '项目效果图', en: 'Project Rendering' } },
+    ],
+    overview: {
+      zh: '澳门伦敦人项目，总用钢量约8000吨，包括VIP大堂雨篷、水晶宫屋面、GRC背负钢架、演艺馆等钢结构。项目历时2年，属旧改新项目，具有结构复杂、精度要求高、外观成型漂亮等特点，现已成为游客必打卡之地。',
+      en: 'Macau Londoner project with total steel tonnage of approximately 8,000 tonnes. Includes VIP lobby canopy, Crystal Palace roof, GRC-supported steel frame, performance hall, and other steel structures. Project spanned 2 years, a renovation project characterized by complex structure, high precision requirements, and aesthetically appealing design. Now a must-visit tourist destination.'
+    },
+    params: [
+      { label: { zh: '用钢量', en: 'Steel Tonnage' }, value: { zh: '约8000吨', en: 'Approx. 8,000 tonnes' } },
+      { label: { zh: '项目类型', en: 'Project Type' }, value: { zh: '综合娱乐建筑', en: 'Integrated Entertainment Building' } },
+      { label: { zh: '工作范围', en: 'Scope of Work' }, value: { zh: '钢结构设计深化制作供应', en: 'Steel Structure Detailing, Fabrication & Supply' } },
+      { label: { zh: '项目周期', en: 'Project Duration' }, value: { zh: '2年', en: '2 Years' } },
+    ],
+    capabilities: [
+      { zh: '复杂钢构件加工', en: 'Complex Component Fabrication' },
+      { zh: '高精度尺寸控制', en: 'High-Precision Dimension Control' },
+      { zh: '异形钢结构加工', en: 'Irregular Steel Structure Fabrication' },
+    ],
+    relatedLinks: [
+      { href: 'manufacturing-quality/', label: { zh: '制造能力', en: 'Manufacturing' } },
+      { href: 'components/steel-trusses/', label: { zh: '钢桁架', en: 'Steel Trusses' } },
+    ]
+  },
+  {
+    slug: 'macau-city-of-dreams-phase2',
+    category: { zh: '海外项目', en: 'Overseas Projects' },
+    name: { zh: '澳门新濠影汇二期', en: 'Macau City of Dreams Phase 2' },
+    location: { zh: '中国澳门', en: 'Macau, China' },
+    image: '/images/projects/overseas/macau-city-of-dreams.jpg',
+    heroImageType: 'rendering',
+    galleryImages: [
+      { src: '/images/projects/overseas/macau-city-of-dreams.jpg', type: 'rendering', label: { zh: '项目效果图', en: 'Project Rendering' } },
+    ],
+    overview: {
+      zh: '澳门新濠影汇二期项目（水上乐园主体及幕墙、剧院），总用钢量约5000吨，是建筑界女魔王"扎哈·哈迪德"团队的作品。项目特点：节点复杂，复杂的节点有40多个不同方向相贯线钢管组成，所有构件没有一个相同，为控制精度，工厂采用了三维全站仪测量技术，实时测量所有构件尺寸。',
+      en: 'Macau City of Dreams Phase 2 project (water park main structure and curtain wall, theater) with total steel tonnage of approximately 5,000 tonnes. A work of the legendary architect Zaha Hadid team. Project features: highly complex nodes with over 40 intersecting steel pipes in different directions. No two components are identical. To ensure precision, the factory utilizes 3D total station measurement technology for real-time measurement of all component dimensions.'
+    },
+    params: [
+      { label: { zh: '用钢量', en: 'Steel Tonnage' }, value: { zh: '约5000吨', en: 'Approx. 5,000 tonnes' } },
+      { label: { zh: '项目类型', en: 'Project Type' }, value: { zh: '水上乐园及剧院', en: 'Water Park & Theater' } },
+      { label: { zh: '工作范围', en: 'Scope of Work' }, value: { zh: '钢结构设计深化制作供应', en: 'Steel Structure Detailing, Fabrication & Supply' } },
+      { label: { zh: '建筑设计', en: 'Architect' }, value: { zh: '扎哈·哈迪德团队', en: 'Zaha Hadid Team' } },
+    ],
+    capabilities: [
+      { zh: '复杂空间管桁架加工', en: 'Complex Spatial Pipe Truss Fabrication' },
+      { zh: '高精度三维测量', en: 'High-Precision 3D Measurement' },
+      { zh: '异形钢结构加工', en: 'Irregular Steel Structure Fabrication' },
+    ],
+    relatedLinks: [
+      { href: 'manufacturing-quality/', label: { zh: '制造能力', en: 'Manufacturing' } },
+      { href: 'components/steel-trusses/', label: { zh: '钢桁架', en: 'Steel Trusses' } },
+    ]
+  },
+  {
+    slug: 'singapore-sats-bup-centre',
+    category: { zh: '海外项目', en: 'Overseas Projects' },
+    name: { zh: '新加坡樟宜机场SATS货运中心', en: 'Singapore Changi Airport SATS BUP Centre' },
+    location: { zh: '新加坡', en: 'Singapore' },
+    image: '/images/projects/overseas/singapore-sats-bup-centre.jpg',
+    heroImageType: 'site',
+    galleryImages: [
+      { src: '/images/projects/overseas/singapore-sats-bup-centre.jpg', type: 'site', label: { zh: '项目现场', en: 'Project Site' } },
+    ],
+    overview: {
+      zh: '新加坡樟宜机场SATS新货运中心项目，采用工厂整体制作，分段装箱的方法，确保尺寸精准。项目已完工交付。',
+      en: 'Singapore Changi Airport SATS new cargo center project. Manufactured as a whole in the factory and packed in sections to ensure accurate dimensions. Project completed and delivered.'
+    },
+    params: [
+      { label: { zh: '用钢量', en: 'Steel Tonnage' }, value: { zh: '约200吨', en: 'Approx. 200 tonnes' } },
+      { label: { zh: '项目类型', en: 'Project Type' }, value: { zh: '机场货运中心', en: 'Airport Cargo Centre' } },
+      { label: { zh: '工作范围', en: 'Scope of Work' }, value: { zh: '钢结构设计深化制作供应', en: 'Steel Structure Detailing, Fabrication & Supply' } },
+      { label: { zh: '制作方式', en: 'Fabrication Method' }, value: { zh: '整体制作分段装箱', en: 'Whole Fabrication, Sectional Packing' } },
+    ],
+    capabilities: [
+      { zh: '高精度钢结构加工', en: 'High-Precision Steel Fabrication' },
+      { zh: '工业钢结构供货能力', en: 'Industrial Steel Structure Supply' },
+      { zh: '按项目图纸加工', en: 'Fabrication to Project Drawings' },
+    ],
+    relatedLinks: [
+      { href: 'manufacturing-quality/', label: { zh: '制造能力', en: 'Manufacturing' } },
+      { href: 'export-delivery/', label: { zh: '出口交付', en: 'Export Delivery' } },
+    ]
+  },
+  {
+    slug: 'singapore-mcc-innocentre',
+    category: { zh: '海外项目', en: 'Overseas Projects' },
+    name: { zh: '新加坡MCC Innocentre', en: 'Singapore MCC Innocentre' },
+    location: { zh: '新加坡', en: 'Singapore' },
+    image: '/images/projects/overseas/singapore-mcc-innocentre.jpg',
+    heroImageType: 'rendering',
+    galleryImages: [
+      { src: '/images/projects/overseas/singapore-mcc-innocentre.jpg', type: 'rendering', label: { zh: '项目效果图', en: 'Project Rendering' } },
+    ],
+    overview: {
+      zh: '新加坡MCC Innocentre项目，总用钢量约650吨，多层工业建筑钢结构，已完工交付。',
+      en: 'Singapore MCC Innocentre project with total steel tonnage of approximately 650 tonnes. Multi-story industrial building steel structure. Completed and delivered.'
+    },
+    params: [
+      { label: { zh: '用钢量', en: 'Steel Tonnage' }, value: { zh: '约650吨', en: 'Approx. 650 tonnes' } },
+      { label: { zh: '项目类型', en: 'Project Type' }, value: { zh: '多层工业建筑', en: 'Multi-story Industrial Building' } },
+      { label: { zh: '工作范围', en: 'Scope of Work' }, value: { zh: '钢结构设计深化制作供应', en: 'Steel Structure Detailing, Fabrication & Supply' } },
+      { label: { zh: '项目状态', en: 'Project Status' }, value: { zh: '已完工交付', en: 'Completed & Delivered' } },
+    ],
+    capabilities: [
+      { zh: '多层钢结构加工', en: 'Multi-story Steel Fabrication' },
+      { zh: '工业钢结构供货能力', en: 'Industrial Steel Structure Supply' },
+      { zh: '按项目图纸加工', en: 'Fabrication to Project Drawings' },
+    ],
+    relatedLinks: [
+      { href: 'manufacturing-quality/', label: { zh: '制造能力', en: 'Manufacturing' } },
+      { href: 'components/fabricated-steel-beams-columns/', label: { zh: '钢梁钢柱', en: 'Beams & Columns' } },
+    ]
+  },
+
+
+  {
+    slug: 'singapore-airport-t2-connect',
+    category: { zh: '海外项目', en: 'Overseas Projects' },
+    name: { zh: '新加坡樟宜机场T2连接', en: 'Singapore Changi Airport T2 Connect' },
+    location: { zh: '新加坡', en: 'Singapore' },
+    image: '/images/projects/overseas/singapore-airport-t2-connect.jpg',
+    heroImageType: 'site',
+    galleryImages: [
+      { src: '/images/projects/overseas/singapore-airport-t2-connect.jpg', type: 'site', label: { zh: '项目现场', en: 'Project Site' } },
+    ],
+    overview: {
+      zh: '新加坡樟宜机场T2连接(T2C)项目，T2C-Kingpost共209支，总用钢量约4600吨，采用CHS50*50mm、UB914*419*446.4等材料，共用11万颗D25*100的栓钉。项目属于机场扩建工程，结构复杂，精度要求高。',
+      en: 'Singapore Changi Airport Terminal 2 Connect (T2C) project. T2C-Kingpost consists of 209 units with total steel tonnage of approximately 4,600 tonnes. Utilizing CHS50*50mm, UB914*419*446.4 and other materials, with a total of 110,000 D25*100 shear studs. Airport expansion project with complex structure and high precision requirements.'
+    },
+    params: [
+      { label: { zh: '用钢量', en: 'Steel Tonnage' }, value: { zh: '约4600吨', en: 'Approx. 4,600 tonnes' } },
+      { label: { zh: '项目类型', en: 'Project Type' }, value: { zh: '机场扩建', en: 'Airport Expansion' } },
+      { label: { zh: '构件数量', en: 'Component Count' }, value: { zh: '209支Kingpost', en: '209 Kingpost Units' } },
+      { label: { zh: '工作范围', en: 'Scope of Work' }, value: { zh: '钢结构设计深化制作供应', en: 'Steel Structure Detailing, Fabrication & Supply' } },
+    ],
+    capabilities: [
+      { zh: '重型钢结构加工', en: 'Heavy Structural Steel Fabrication' },
+      { zh: '复杂连接节点加工', en: 'Complex Connection Fabrication' },
+      { zh: '高精度尺寸控制', en: 'High-Precision Dimension Control' },
+    ],
+    relatedLinks: [
+      { href: 'manufacturing-quality/', label: { zh: '制造能力', en: 'Manufacturing' } },
+      { href: 'components/fabricated-steel-beams-columns/', label: { zh: '钢梁钢柱', en: 'Beams & Columns' } },
+    ]
+  },
+  {
+    slug: 'singapore-sentosa-waterfront-hotel',
+    category: { zh: '海外项目', en: 'Overseas Projects' },
+    name: { zh: '新加坡圣淘沙名胜世界酒店', en: 'Singapore Sentosa Waterfront Hotel' },
+    location: { zh: '新加坡', en: 'Singapore' },
+    image: '/images/projects/overseas/singapore-sentosa-waterfront-hotel.jpg',
+    heroImageType: 'rendering',
+    galleryImages: [
+      { src: '/images/projects/overseas/singapore-sentosa-waterfront-hotel.jpg', type: 'rendering', label: { zh: '项目效果图', en: 'Project Rendering' } },
+    ],
+    overview: {
+      zh: '新加坡圣淘沙名胜世界酒店项目，Kingpost采用S355钢管，单支长度在21米以上，共用70万颗19*75栓钉，总用钢量约2679吨。项目属于酒店建筑，结构造型独特，钢管构件加工精度要求高。',
+      en: 'Singapore Sentosa Waterfront Hotel project. Kingpost made of S355 steel tubes, each unit exceeding 21 meters in length. A total of 700,000 (19*75mm) shear studs are used, with total steel tonnage of approximately 2,679 tonnes. Hotel building project with unique structural form and high precision requirements for steel tube component fabrication.'
+    },
+    params: [
+      { label: { zh: '用钢量', en: 'Steel Tonnage' }, value: { zh: '约2679吨', en: 'Approx. 2,679 tonnes' } },
+      { label: { zh: '项目类型', en: 'Project Type' }, value: { zh: '酒店建筑', en: 'Hotel Building' } },
+      { label: { zh: '构件长度', en: 'Component Length' }, value: { zh: '单支21米以上', en: 'Over 21m per unit' } },
+      { label: { zh: '工作范围', en: 'Scope of Work' }, value: { zh: '钢结构设计深化制作供应', en: 'Steel Structure Detailing, Fabrication & Supply' } },
+    ],
+    capabilities: [
+      { zh: '大跨度钢管结构加工', en: 'Large-Span Steel Tube Fabrication' },
+      { zh: '重型钢结构加工', en: 'Heavy Structural Steel Fabrication' },
+      { zh: '异形钢结构加工', en: 'Irregular Steel Structure Fabrication' },
+    ],
+    relatedLinks: [
+      { href: 'manufacturing-quality/', label: { zh: '制造能力', en: 'Manufacturing' } },
+      { href: 'components/steel-trusses/', label: { zh: '钢桁架', en: 'Steel Trusses' } },
+    ]
+  },
+
 ];
 
 export function getProjectBySlug(slug: string): ProjectData | undefined {

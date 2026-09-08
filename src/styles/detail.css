@@ -785,3 +785,37 @@
     font-size: 19px;
   }
 }
+
+/* Capability Demonstrated */
+.capability-demonstrated {
+  margin-top: 32px;
+  padding-top: 24px;
+  border-top: 1px solid var(--color-gray-200);
+}
+.capability-demonstrated h3 {
+  margin-bottom: 12px;
+}
+.capability-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+.capability-tag {
+  display: inline-block;
+  padding: 6px 14px;
+  background: var(--color-gray-100);
+  border: 1px solid var(--color-gray-200);
+  border-radius: 4px;
+  font-size: 13px;
+  color: var(--color-gray-700);
+  font-weight: 500;
+}
+@media (max-width: 768px) {
+  .capability-tags {
+    gap: 6px;
+  }
+  .capability-tag {
+    font-size: 12px;
+    padding: 5px 10px;
+  }
+}

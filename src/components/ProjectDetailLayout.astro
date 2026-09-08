@@ -63,6 +63,23 @@ const heroTypeLabel = project.heroImageType === 'rendering'
               : 'ZhongSai Steel Structure participated in structural steel manufacturing / fabrication for this project. Specific supply scope is subject to confirmed project documentation.'}
           </p>
         </div>
+
+        {/* Capability Demonstrated */}
+        {project.capabilities && project.capabilities.length > 0 && (
+          <div class="capability-demonstrated">
+            <h3>{lang === 'zh' ? '项目能力体现' : 'Capability Demonstrated'}</h3>
+            <p style="color: var(--color-gray-600); margin-bottom: 16px;">
+              {lang === 'zh'
+                ? '基于该项目已确认的结构类型和参数，中赛可体现以下加工制造能力：'
+                : 'Based on the confirmed structural type and parameters of this project, ZhongSai demonstrates the following fabrication capabilities:'}
+            </p>
+            <div class="capability-tags">
+              {project.capabilities.map(cap => (
+                <span class="capability-tag">{t(cap)}</span>
+              ))}
+            </div>
+          </div>
+        )}
       </div>
 
       {/* Confirmed Project Data */}

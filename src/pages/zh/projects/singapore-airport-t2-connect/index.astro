@@ -1,0 +1,15 @@
+---
+// 中赛V2 - 中文项目详情: singapore-airport-t2-connect
+import BaseLayout from '../../../../layouts/BaseLayout.astro';
+import ProjectDetailLayout from '../../../../components/ProjectDetailLayout.astro';
+import { getProjectBySlug } from '../../../../data/projects-data';
+
+const lang = 'zh';
+const project = getProjectBySlug('singapore-airport-t2-connect')!;
+const title = `${project.name.zh} | 中赛钢结构项目案例`;
+const description = `${project.name.zh} - ${project.location.zh}的${project.category.zh}项目。中赛钢结构参与了该项目的钢结构设计深化制作供应。`;
+---
+
+<BaseLayout title={title} description={description} lang={lang}>
+  <ProjectDetailLayout project={project} lang={lang} />
+</BaseLayout>
