@@ -1,70 +1,70 @@
-﻿old_url,topic_cluster,recommended_action,priority,notes,target_url
-/blog/gangjiegou-cangku-zaojia-duoshaoqian,Warehouse Cost,MERGE_INTO_STRONG_PAGE,P1,中文仓库造价，合并到英文Cost Guide,/en/blog/steel-warehouse-cost-complete-guide/
-/blog/how-much-does-steel-structure-warehouse-cost,Warehouse Cost,301_TO_PRIMARY,P1,英文仓库造价重复URL,/en/blog/steel-warehouse-cost-complete-guide/
-/blog/steel-warehouse-cost-complete-guide,Warehouse Cost,KEEP_AND_UPDATE,P1,已保留的主Cost Guide,/en/blog/steel-warehouse-cost-complete-guide/
-/blog/gangjiegou-changfang-zaojia-zhinan,Workshop Cost,KEEP_AND_UPDATE,P1,中文厂房造价指南（已创建）,/zh/blog/gangjiegou-changfang-zaojia-zhinan/
-/blog/steel-workshop-cost-factory-building-price,Workshop Cost,301_TO_PRIMARY,P1,中文厂房造价重复URL,/zh/blog/gangjiegou-changfang-zaojia-zhinan/
-/blog/how-to-import-steel-structure-from-china-complete-guide,Import from China,KEEP_AND_UPDATE,P1,已保留的进口指南,/en/blog/how-to-import-steel-structure-from-china-complete-guide/
-/blog/gangjiegou-chukou-feizhou-quanliucheng,Import from China (Africa),KEEP_AND_UPDATE,P1,已保留的非洲进口指南,/en/blog/how-to-import-steel-structure-from-china-to-africa/
-/blog/how-to-import-steel-structure-from-china-to-africa,Import from China (Africa),301_TO_PRIMARY,P1,重复URL,/en/blog/how-to-import-steel-structure-from-china-to-africa/
-/blog/steel-structure-shipping-cost-from-china,Shipping & Container,KEEP_AND_UPDATE,P1,已保留的运输成本指南,/en/blog/steel-structure-shipping-cost-from-china/
-/blog/steel-structure-container-loading-guide,Shipping & Container,KEEP_AND_UPDATE,P1,已保留的装柜指南,/en/blog/steel-structure-container-loading-guide/
-/blog/gangjiegou-anzhuang-zhinan-haiwai,Installation Guide,REWRITE,P2,海外安装指南，需事实安全重写,
-/blog/steel-structure-building-installation-guide-overseas,Installation Guide,REWRITE,P2,海外安装指南英文，需事实安全重写,
-/blog/gangjiegou-vs-hunningtu-chengben-duibi,Steel vs Concrete,REWRITE,P2,钢结构vs混凝土成本对比,
-/blog/steel-structure-vs-concrete-building-cost-comparison,Steel vs Concrete,REWRITE,P2,钢结构vs混凝土英文,
-/blog/top-10-steel-structure-manufacturers-in-china,Supplier Selection,410_LOW_VALUE,DROP,排行榜类内容，不建议恢复,
-/blog/steel-structure-foundation-design-guide,Foundation & Engineering,REWRITE,P2,基础设计指南,
-/blog/gangjiegou-jichu-sheji-zhinan,Foundation & Engineering,REWRITE,P2,中文基础设计指南,
-/blog/steel-structure-corrosion-protection-guide,Corrosion & Materials,REWRITE,P2,防腐指南,
-/blog/gangjiegou-fangfu-chuli-zhinan,Corrosion & Materials,REWRITE,P2,中文防腐指南,
-/blog/steel-grades-explained-q235-q345,Steel Grades,REWRITE,P2,钢材牌号说明,
-/blog/roof-wall-cladding-systems-guide,Roof & Cladding,MERGE_INTO_STRONG_PAGE,P2,合并到Cladding产品页,/en/components/roof-wall-cladding-systems/
-/blog/steel-structure-project-timeline,Project Timeline,REWRITE,P2,项目时间线指南,
-/blog/how-to-choose-steel-structure-supplier,Supplier Selection,REWRITE,P1,供应商选择指南（高搜索意图）,
-/blog/gangjiegou-gongchang-xuanze-zhinan,Supplier Selection,REWRITE,P1,中文厂家选择指南,
-/blog/steel-structure-detailing-shop-drawings-guide,Engineering & Detailing,MERGE_INTO_STRONG_PAGE,P2,合并到Detailing页面,/en/services/structural-steel-detailing/
-/blog/steel-structure-welding-quality-control,Manufacturing & QC,MERGE_INTO_STRONG_PAGE,P2,合并到Manufacturing页面,/en/manufacturing-quality/
-/blog/steel-structure-surface-treatment-coating,Corrosion & Materials,REWRITE,P2,表面处理指南,
-/blog/steel-structure-warehouse-design-guide,Warehouse Design,MERGE_INTO_STRONG_PAGE,P1,合并到Warehouse页面,/en/steel-warehouse/
-/blog/steel-structure-workshop-design-guide,Workshop Design,MERGE_INTO_STRONG_PAGE,P1,合并到Workshop页面,/en/steel-workshop/
-/blog/agricultural-steel-buildings-guide,Agriculture,MERGE_INTO_STRONG_PAGE,P2,合并到Agriculture页面,/en/agricultural-steel-buildings/
-/blog/commercial-steel-buildings-guide,Commercial,MERGE_INTO_STRONG_PAGE,P2,合并到Commercial页面,/en/commercial-public-steel-buildings/
-/blog/mining-steel-structures-guide,Mining,MERGE_INTO_STRONG_PAGE,P2,合并到Mining页面,/en/steel-mining-factory/
-/blog/steel-trusses-types-applications,Components,MERGE_INTO_STRONG_PAGE,P2,合并到Trusses页面,/en/components/steel-trusses/
-/blog/steel-purlins-c-z-guide,Components,MERGE_INTO_STRONG_PAGE,P2,合并到Purlins页面,/en/components/steel-purlins/
-/blog/steel-beams-columns-types,Components,MERGE_INTO_STRONG_PAGE,P2,合并到Beams&Columns页面,/en/components/fabricated-steel-beams-columns/
-/blog/steel-structure-export-documentation,Export & Logistics,MERGE_INTO_STRONG_PAGE,P2,合并到Export Delivery页面,/en/export-delivery/
-/blog/steel-structure-container-loading-tips,Shipping & Container,MERGE_INTO_STRONG_PAGE,P1,合并到装柜指南,/en/blog/steel-structure-container-loading-guide/
-/blog/steel-structure-shipping-cost-calculator,Shipping & Container,MERGE_INTO_STRONG_PAGE,P1,合并到运输成本指南,/en/blog/steel-structure-shipping-cost-from-china/
-/blog/steel-structure-faq,FAQ,DEFER_GSC_REVIEW,P2,FAQ聚合，待GSC数据验证,
-/blog/gangjiegou-changjian-wenti,FAQ,DEFER_GSC_REVIEW,P2,中文FAQ,
-/blog/steel-structure-glossary,Knowledge,410_LOW_VALUE,DROP,术语表低价值,
-/blog/steel-structure-types-overview,Knowledge,MERGE_INTO_STRONG_PAGE,P2,合并到Products Hub,/en/products/
-/blog/industrial-steel-buildings-types,Industrial,MERGE_INTO_STRONG_PAGE,P1,合并到Workshop页面,/en/steel-workshop/
-/blog/warehouse-steel-building-types,Warehouse,MERGE_INTO_STRONG_PAGE,P1,合并到Warehouse页面,/en/steel-warehouse/
-/blog/steel-structure-cost-per-square-meter,Cost,410_LOW_VALUE,DROP,固定价格类，事实风险高,
-/blog/gangjiegou-meipingfang-duoshaoqian,Cost,410_LOW_VALUE,DROP,中文固定价格类,
-/blog/steel-structure-price-per-ton,Cost,410_LOW_VALUE,DROP,固定吨价类,
-/blog/steel-structure-manufacturing-process,Manufacturing,MERGE_INTO_STRONG_PAGE,P2,合并到Manufacturing页面,/en/manufacturing-quality/
-/blog/steel-structure-quality-control-checklist,Manufacturing & QC,MERGE_INTO_STRONG_PAGE,P2,合并到Manufacturing页面,/en/manufacturing-quality/
-/blog/steel-structure-inspection-checklist,Manufacturing & QC,REWRITE,P2,检验清单，可做独立内容,
-/blog/steel-structure-packing-export-guide,Export & Logistics,MERGE_INTO_STRONG_PAGE,P2,合并到Export Delivery,/en/export-delivery/
-/blog/steel-structure-logistics-china,Export & Logistics,MERGE_INTO_STRONG_PAGE,P2,合并到Export Delivery,/en/export-delivery/
-/blog/overseas-steel-structure-installation,Installation Guide,REWRITE,P2,海外安装，需明确技术指导边界,
-/blog/steel-structure-project-management,Project Management,410_LOW_VALUE,DROP,项目管理泛内容,
-/blog/steel-structure-engineering-design,Engineering,MERGE_INTO_STRONG_PAGE,P2,合并到Engineering Design,/en/engineering-design/
-/blog/structural-steel-detailing-services,Detailing,MERGE_INTO_STRONG_PAGE,P2,合并到Detailing页面,/en/services/structural-steel-detailing/
-/blog/steel-structure-bim-services,Engineering,410_LOW_VALUE,DROP,BIM泛内容，非核心业务,
-/blog/steel-structure-sustainability-green-building,Knowledge,DEFER_GSC_REVIEW,P2,可持续建筑，待GSC验证,
-/blog/steel-structure-fire-protection,Corrosion & Materials,REWRITE,P2,防火指南,
-/blog/steel-structure-seismic-design,Foundation & Engineering,REWRITE,P2,抗震设计,
-/blog/steel-structure-wind-load-calculation,Foundation & Engineering,410_LOW_VALUE,DROP,风荷载计算，技术参数风险高,
-/blog/steel-structure-snow-load-design,Foundation & Engineering,410_LOW_VALUE,DROP,雪荷载设计，技术参数风险高,
-/blog/steel-structure-span-table,Engineering,410_LOW_VALUE,DROP,跨度表，固定参数风险高,
-/blog/custom-steel-fabrication-china,Custom Engineering,MERGE_INTO_STRONG_PAGE,P1,合并到Custom Engineering,/en/products/custom-engineering/
-/blog/steel-structure-oem-odm,Custom Engineering,MERGE_INTO_STRONG_PAGE,P2,合并到Custom Engineering,/en/products/custom-engineering/
-/blog/about-zhongsai-steel-structure,Company,MERGE_INTO_STRONG_PAGE,P1,合并到About页面,/en/about/
-/blog/contact-zhongsai-steel-structure,Company,MERGE_INTO_STRONG_PAGE,P1,合并到Contact页面,/en/contact/
-/blog/steel-structure-industry-trends-2024,Industry News,410_LOW_VALUE,DROP,过时行业趋势,
-/blog/steel-structure-market-analysis,Industry News,410_LOW_VALUE,DROP,市场分析泛内容,
+﻿old_url,topic_cluster,recommended_action,priority,notes,target_url,migration_status,new_url,action_taken,production_status
+/blog/gangjiegou-cangku-zaojia-duoshaoqian,Warehouse Cost,MERGE_INTO_STRONG_PAGE,P1,中文仓库造价，合并到英文Cost Guide,/en/blog/steel-warehouse-cost-complete-guide/,,,,
+/blog/how-much-does-steel-structure-warehouse-cost,Warehouse Cost,301_TO_PRIMARY,P1,英文仓库造价重复URL,/en/blog/steel-warehouse-cost-complete-guide/,,,,
+/blog/steel-warehouse-cost-complete-guide,Warehouse Cost,KEEP_AND_UPDATE,P1,已保留的主Cost Guide,/en/blog/steel-warehouse-cost-complete-guide/,,,,
+/blog/gangjiegou-changfang-zaojia-zhinan,Workshop Cost,KEEP_AND_UPDATE,P1,中文厂房造价指南（已创建）,/zh/blog/gangjiegou-changfang-zaojia-zhinan/,,,,
+/blog/steel-workshop-cost-factory-building-price,Workshop Cost,301_TO_PRIMARY,P1,中文厂房造价重复URL,/zh/blog/gangjiegou-changfang-zaojia-zhinan/,,,,
+/blog/how-to-import-steel-structure-from-china-complete-guide,Import from China,KEEP_AND_UPDATE,P1,已保留的进口指南,/en/blog/how-to-import-steel-structure-from-china-complete-guide/,,,,
+/blog/gangjiegou-chukou-feizhou-quanliucheng,Import from China (Africa),KEEP_AND_UPDATE,P1,已保留的非洲进口指南,/en/blog/how-to-import-steel-structure-from-china-to-africa/,,,,
+/blog/how-to-import-steel-structure-from-china-to-africa,Import from China (Africa),301_TO_PRIMARY,P1,重复URL,/en/blog/how-to-import-steel-structure-from-china-to-africa/,,,,
+/blog/steel-structure-shipping-cost-from-china,Shipping & Container,KEEP_AND_UPDATE,P1,已保留的运输成本指南,/en/blog/steel-structure-shipping-cost-from-china/,,,,
+/blog/steel-structure-container-loading-guide,Shipping & Container,KEEP_AND_UPDATE,P1,已保留的装柜指南,/en/blog/steel-structure-container-loading-guide/,,,,
+/blog/gangjiegou-anzhuang-zhinan-haiwai,Installation Guide,REWRITE,P2,海外安装指南，需事实安全重写,,,,,
+/blog/steel-structure-building-installation-guide-overseas,Installation Guide,REWRITE,P2,海外安装指南英文，需事实安全重写,,,,,
+/blog/gangjiegou-vs-hunningtu-chengben-duibi,Steel vs Concrete,REWRITE,P2,钢结构vs混凝土成本对比,,,,,
+/blog/steel-structure-vs-concrete-building-cost-comparison,Steel vs Concrete,REWRITE,P2,钢结构vs混凝土英文,,,,,
+/blog/top-10-steel-structure-manufacturers-in-china,Supplier Selection,410_LOW_VALUE,DROP,排行榜类内容，不建议恢复,,,,,
+/blog/steel-structure-foundation-design-guide,Foundation & Engineering,REWRITE,P2,基础设计指南,,,,,
+/blog/gangjiegou-jichu-sheji-zhinan,Foundation & Engineering,REWRITE,P2,中文基础设计指南,,,,,
+/blog/steel-structure-corrosion-protection-guide,Corrosion & Materials,REWRITE,P2,防腐指南,,,,,
+/blog/gangjiegou-fangfu-chuli-zhinan,Corrosion & Materials,REWRITE,P2,中文防腐指南,,,,,
+/blog/steel-grades-explained-q235-q345,Steel Grades,REWRITE,P2,钢材牌号说明,,,,,
+/blog/roof-wall-cladding-systems-guide,Roof & Cladding,MERGE_INTO_STRONG_PAGE,P2,合并到Cladding产品页,/en/components/roof-wall-cladding-systems/,,,,
+/blog/steel-structure-project-timeline,Project Timeline,REWRITE,P2,项目时间线指南,,,,,
+/blog/how-to-choose-steel-structure-supplier,Supplier Selection,REWRITE,P1,供应商选择指南（高搜索意图）,,,,,
+/blog/gangjiegou-gongchang-xuanze-zhinan,Supplier Selection,REWRITE,P1,中文厂家选择指南,,,,,
+/blog/steel-structure-detailing-shop-drawings-guide,Engineering & Detailing,MERGE_INTO_STRONG_PAGE,P2,合并到Detailing页面,/en/services/structural-steel-detailing/,,,,
+/blog/steel-structure-welding-quality-control,Manufacturing & QC,MERGE_INTO_STRONG_PAGE,P2,合并到Manufacturing页面,/en/manufacturing-quality/,,,,
+/blog/steel-structure-surface-treatment-coating,Corrosion & Materials,REWRITE,P2,表面处理指南,,,,,
+/blog/steel-structure-warehouse-design-guide,Warehouse Design,MERGE_INTO_STRONG_PAGE,P1,合并到Warehouse页面,/en/steel-warehouse/,,,,
+/blog/steel-structure-workshop-design-guide,Workshop Design,MERGE_INTO_STRONG_PAGE,P1,合并到Workshop页面,/en/steel-workshop/,,,,
+/blog/agricultural-steel-buildings-guide,Agriculture,MERGE_INTO_STRONG_PAGE,P2,合并到Agriculture页面,/en/agricultural-steel-buildings/,,,,
+/blog/commercial-steel-buildings-guide,Commercial,MERGE_INTO_STRONG_PAGE,P2,合并到Commercial页面,/en/commercial-public-steel-buildings/,,,,
+/blog/mining-steel-structures-guide,Mining,MERGE_INTO_STRONG_PAGE,P2,合并到Mining页面,/en/steel-mining-factory/,,,,
+/blog/steel-trusses-types-applications,Components,MERGE_INTO_STRONG_PAGE,P2,合并到Trusses页面,/en/components/steel-trusses/,,,,
+/blog/steel-purlins-c-z-guide,Components,MERGE_INTO_STRONG_PAGE,P2,合并到Purlins页面,/en/components/steel-purlins/,,,,
+/blog/steel-beams-columns-types,Components,MERGE_INTO_STRONG_PAGE,P2,合并到Beams&Columns页面,/en/components/fabricated-steel-beams-columns/,,,,
+/blog/steel-structure-export-documentation,Export & Logistics,MERGE_INTO_STRONG_PAGE,P2,合并到Export Delivery页面,/en/export-delivery/,,,,
+/blog/steel-structure-container-loading-tips,Shipping & Container,MERGE_INTO_STRONG_PAGE,P1,合并到装柜指南,/en/blog/steel-structure-container-loading-guide/,,,,
+/blog/steel-structure-shipping-cost-calculator,Shipping & Container,MERGE_INTO_STRONG_PAGE,P1,合并到运输成本指南,/en/blog/steel-structure-shipping-cost-from-china/,,,,
+/blog/steel-structure-faq,FAQ,DEFER_GSC_REVIEW,P2,FAQ聚合，待GSC数据验证,,,,,
+/blog/gangjiegou-changjian-wenti,FAQ,DEFER_GSC_REVIEW,P2,中文FAQ,,,,,
+/blog/steel-structure-glossary,Knowledge,410_LOW_VALUE,DROP,术语表低价值,,,,,
+/blog/steel-structure-types-overview,Knowledge,MERGE_INTO_STRONG_PAGE,P2,合并到Products Hub,/en/products/,,,,
+/blog/industrial-steel-buildings-types,Industrial,MERGE_INTO_STRONG_PAGE,P1,合并到Workshop页面,/en/steel-workshop/,,,,
+/blog/warehouse-steel-building-types,Warehouse,MERGE_INTO_STRONG_PAGE,P1,合并到Warehouse页面,/en/steel-warehouse/,,,,
+/blog/steel-structure-cost-per-square-meter,Cost,410_LOW_VALUE,DROP,固定价格类，事实风险高,,,,,
+/blog/gangjiegou-meipingfang-duoshaoqian,Cost,410_LOW_VALUE,DROP,中文固定价格类,,,,,
+/blog/steel-structure-price-per-ton,Cost,410_LOW_VALUE,DROP,固定吨价类,,,,,
+/blog/steel-structure-manufacturing-process,Manufacturing,MERGE_INTO_STRONG_PAGE,P2,合并到Manufacturing页面,/en/manufacturing-quality/,,,,
+/blog/steel-structure-quality-control-checklist,Manufacturing & QC,MERGE_INTO_STRONG_PAGE,P2,合并到Manufacturing页面,/en/manufacturing-quality/,,,,
+/blog/steel-structure-inspection-checklist,Manufacturing & QC,REWRITE,P2,检验清单，可做独立内容,,,,,
+/blog/steel-structure-packing-export-guide,Export & Logistics,MERGE_INTO_STRONG_PAGE,P2,合并到Export Delivery,/en/export-delivery/,,,,
+/blog/steel-structure-logistics-china,Export & Logistics,MERGE_INTO_STRONG_PAGE,P2,合并到Export Delivery,/en/export-delivery/,,,,
+/blog/overseas-steel-structure-installation,Installation Guide,REWRITE,P2,海外安装，需明确技术指导边界,,,,,
+/blog/steel-structure-project-management,Project Management,410_LOW_VALUE,DROP,项目管理泛内容,,,,,
+/blog/steel-structure-engineering-design,Engineering,MERGE_INTO_STRONG_PAGE,P2,合并到Engineering Design,/en/engineering-design/,,,,
+/blog/structural-steel-detailing-services,Detailing,MERGE_INTO_STRONG_PAGE,P2,合并到Detailing页面,/en/services/structural-steel-detailing/,,,,
+/blog/steel-structure-bim-services,Engineering,410_LOW_VALUE,DROP,BIM泛内容，非核心业务,,,,,
+/blog/steel-structure-sustainability-green-building,Knowledge,DEFER_GSC_REVIEW,P2,可持续建筑，待GSC验证,,,,,
+/blog/steel-structure-fire-protection,Corrosion & Materials,REWRITE,P2,防火指南,,,,,
+/blog/steel-structure-seismic-design,Foundation & Engineering,REWRITE,P2,抗震设计,,,,,
+/blog/steel-structure-wind-load-calculation,Foundation & Engineering,410_LOW_VALUE,DROP,风荷载计算，技术参数风险高,,,,,
+/blog/steel-structure-snow-load-design,Foundation & Engineering,410_LOW_VALUE,DROP,雪荷载设计，技术参数风险高,,,,,
+/blog/steel-structure-span-table,Engineering,410_LOW_VALUE,DROP,跨度表，固定参数风险高,,,,,
+/blog/custom-steel-fabrication-china,Custom Engineering,MERGE_INTO_STRONG_PAGE,P1,合并到Custom Engineering,/en/products/custom-engineering/,,,,
+/blog/steel-structure-oem-odm,Custom Engineering,MERGE_INTO_STRONG_PAGE,P2,合并到Custom Engineering,/en/products/custom-engineering/,,,,
+/blog/about-zhongsai-steel-structure,Company,MERGE_INTO_STRONG_PAGE,P1,合并到About页面,/en/about/,,,,
+/blog/contact-zhongsai-steel-structure,Company,MERGE_INTO_STRONG_PAGE,P1,合并到Contact页面,/en/contact/,,,,
+/blog/steel-structure-industry-trends-2024,Industry News,410_LOW_VALUE,DROP,过时行业趋势,,,,,
+/blog/steel-structure-market-analysis,Industry News,410_LOW_VALUE,DROP,市场分析泛内容,,,,,

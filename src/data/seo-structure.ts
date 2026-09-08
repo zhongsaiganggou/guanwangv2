@@ -229,6 +229,13 @@ const SITEMAP_EN_ONLY = [
   'blog/shipping-cost-steel-structure-from-china',
   'blog/steel-structure-container-loading-guide',
   'blog/steel-warehouse-cost-complete-guide',
+  'blog/how-to-choose-steel-structure-supplier',
+];
+
+// 仅中文的 Blog 页面（无对应英文版本）
+const SITEMAP_ZH_ONLY = [
+  'blog/gangjiegou-changfang-zaojia-zhinan',
+  'blog/gangjiegou-gongchang-xuanze-zhinan',
 ];
 
 export function buildSitemapPaths(): string[] {
@@ -243,6 +250,9 @@ export function buildSitemapPaths(): string[] {
   }
   for (const blog of SITEMAP_EN_ONLY) {
     urls.push(`/en/${blog}/`);
+  }
+  for (const blog of SITEMAP_ZH_ONLY) {
+    urls.push(`/zh/${blog}/`);
   }
   return urls;
 }
