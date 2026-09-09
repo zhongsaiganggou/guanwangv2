@@ -1,131 +1,118 @@
-﻿path_stem,pair_status,en_action,en_new_path,zh_action,zh_new_path,cross_language_redirect,root_version
-,ROOT_ONLY,MISSING,,MISSING,,NO,YES
-/404,EN_ONLY,IGNORE_NON_PAGE,,MISSING,,NO,YES
-/about,PAIRED,KEEP,/en/about/,KEEP,/zh/about/,NO,YES
-/blog,PAIRED,MIGRATE_CONTENT,,MIGRATE_CONTENT,,NO,YES
-/blog/astm-vs-gb-steel-grades-comparison,PAIRED,MIGRATE_CONTENT,,MIGRATE_CONTENT,,NO,NO
-/blog/gangjiegou-anzhuang-zhinan-haiwai,ZH_ONLY,MISSING,,MIGRATE_CONTENT,,NO,YES
-/blog/gangjiegou-cangku-zaojia-2026,ZH_ONLY,MISSING,,GONE_410_CANDIDATE,,NO,NO
-/blog/gangjiegou-cangku-zaojia-duoshaoqian,ZH_ONLY,MISSING,,MIGRATE_CONTENT,,NO,YES
-/blog/gangjiegou-changfang-zaojia-zhinan,ZH_ONLY,MISSING,,MIGRATE_CONTENT,,NO,NO
-/blog/gangjiegou-chukou-feizhou-quanliucheng,ZH_ONLY,MISSING,,MIGRATE_CONTENT,,NO,YES
-/blog/gangjiegou-vs-hunningtu-chengben-duibi,ZH_ONLY,MISSING,,MIGRATE_CONTENT,,NO,YES
-/blog/how-much-does-steel-structure-warehouse-cost,PAIRED,GONE_410_CANDIDATE,,MIGRATE_CONTENT,,NO,YES
-/blog/how-to-buy-steel-buildings-from-china,PAIRED,MIGRATE_CONTENT,,MIGRATE_CONTENT,,NO,NO
-/blog/how-to-choose-steel-structure-manufacturer-china,PAIRED,MIGRATE_CONTENT,,MIGRATE_CONTENT,,NO,NO
-/blog/how-to-import-steel-structure-from-china-complete-guide,PAIRED,MIGRATE_CONTENT,,MIGRATE_CONTENT,,NO,NO
-/blog/how-to-import-steel-structure-from-china-to-africa,EN_ONLY,MIGRATE_CONTENT,,MISSING,,NO,YES
-/blog/prefab-steel-building-installation-guide,EN_ONLY,MIGRATE_CONTENT,,MISSING,,NO,NO
-/blog/prefab-steel-building-roof-systems-comparison,EN_ONLY,MIGRATE_CONTENT,,MISSING,,NO,NO
-/blog/shipping-cost-steel-structure-from-china,PAIRED,MIGRATE_CONTENT,,MIGRATE_CONTENT,,NO,NO
-/blog/steel-structure-building-installation-guide-overseas,EN_ONLY,MIGRATE_CONTENT,,MISSING,,NO,YES
-/blog/steel-structure-container-loading-guide,PAIRED,MIGRATE_CONTENT,,MIGRATE_CONTENT,,NO,NO
-/blog/steel-structure-corrosion-protection-guide,PAIRED,MIGRATE_CONTENT,,MIGRATE_CONTENT,,NO,NO
-/blog/steel-structure-cost-per-square-meter,PAIRED,MIGRATE_CONTENT,,MIGRATE_CONTENT,,NO,NO
-/blog/steel-structure-design-standards-guide,PAIRED,MIGRATE_CONTENT,,MIGRATE_CONTENT,,NO,NO
-/blog/steel-structure-foundation-design-guide,PAIRED,MIGRATE_CONTENT,,MIGRATE_CONTENT,,NO,NO
-/blog/steel-structure-project-timeline-guide,PAIRED,MIGRATE_CONTENT,,MIGRATE_CONTENT,,NO,NO
-/blog/steel-structure-supplier-indonesia-guide,PAIRED,MIGRATE_CONTENT,,MIGRATE_CONTENT,,NO,NO
-/blog/steel-structure-supplier-malaysia-guide,PAIRED,MIGRATE_CONTENT,,MIGRATE_CONTENT,,NO,NO
-/blog/steel-structure-supplier-mexico-guide,PAIRED,MIGRATE_CONTENT,,MIGRATE_CONTENT,,NO,NO
-/blog/steel-structure-supplier-philippines-guide,PAIRED,MIGRATE_CONTENT,,MIGRATE_CONTENT,,NO,NO
-/blog/steel-structure-supplier-saudi-arabia-guide,PAIRED,MIGRATE_CONTENT,,MIGRATE_CONTENT,,NO,NO
-/blog/steel-structure-supplier-thailand-guide,PAIRED,MIGRATE_CONTENT,,MIGRATE_CONTENT,,NO,NO
-/blog/steel-structure-supplier-uae-dubai-guide,PAIRED,MIGRATE_CONTENT,,MIGRATE_CONTENT,,NO,NO
-/blog/steel-structure-vs-concrete-building-cost-comparison,EN_ONLY,MIGRATE_CONTENT,,MISSING,,NO,YES
-/blog/steel-structure-vs-concrete-comparison,EN_ONLY,MIGRATE_CONTENT,,MISSING,,NO,NO
-/blog/steel-structure-wind-load-design-guide,PAIRED,MIGRATE_CONTENT,,MIGRATE_CONTENT,,NO,NO
-/blog/steel-warehouse-cost-complete-guide,PAIRED,MIGRATE_CONTENT,,MIGRATE_CONTENT,,NO,NO
-/blog/steel-warehouse-supplier-nigeria-guide,PAIRED,MIGRATE_CONTENT,,MIGRATE_CONTENT,,NO,NO
-/blog/steel-workshop-cost-factory-building-price,PAIRED,GONE_410_CANDIDATE,,MIGRATE_CONTENT,,NO,NO
-/blog/top-10-steel-structure-manufacturers-in-china,PAIRED,MIGRATE_CONTENT,,MIGRATE_CONTENT,,NO,YES
-/blog/zhongguo-gangjiegou-changjia-paiming,ZH_ONLY,MISSING,,MIGRATE_CONTENT,,NO,YES
-/components,PAIRED,KEEP,/en/components/,KEEP,/zh/components/,NO,NO
-/components/fabricated-steel-beams-columns,PAIRED,KEEP,/en/components/fabricated-steel-beams-columns/,KEEP,/zh/components/fabricated-steel-beams-columns/,NO,NO
-/components/roof-wall-cladding-systems,PAIRED,KEEP,/en/components/roof-wall-cladding-systems/,KEEP,/zh/components/roof-wall-cladding-systems/,NO,NO
-/components/steel-purlins,PAIRED,MERGE_301,/en/components/,MERGE_301,/zh/components/,NO,NO
-/components/steel-trusses,PAIRED,MERGE_301,/en/components/,MERGE_301,/zh/components/,NO,NO
-/contact,PAIRED,KEEP,/en/contact/,KEEP,/zh/contact/,NO,YES
-/countries,PAIRED,MIGRATE_CONTENT,,MIGRATE_CONTENT,,NO,NO
-/countries/indonesia,PAIRED,MIGRATE_CONTENT,,MIGRATE_CONTENT,,NO,NO
-/countries/kenya,PAIRED,MIGRATE_CONTENT,,MIGRATE_CONTENT,,NO,NO
-/countries/nigeria,PAIRED,MIGRATE_CONTENT,,MIGRATE_CONTENT,,NO,NO
-/countries/saudi-arabia,PAIRED,MIGRATE_CONTENT,,MIGRATE_CONTENT,,NO,NO
-/countries/vietnam,PAIRED,MIGRATE_CONTENT,,MIGRATE_CONTENT,,NO,NO
-/en,ROOT_ONLY,MISSING,,MISSING,,NO,YES
-/engineering-design,PAIRED,KEEP,/en/engineering-design/,KEEP,/zh/engineering-design/,NO,NO
-/export-delivery,PAIRED,KEEP,/en/export-delivery/,KEEP,/zh/export-delivery/,NO,NO
-/faq,ZH_ONLY,MISSING,,MIGRATE_CONTENT,,NO,YES
-/landing,PAIRED,RETAIN_TEMPORARILY,,RETAIN_TEMPORARILY,,NO,YES
-/manufacturing-quality,PAIRED,KEEP,/en/manufacturing-quality/,KEEP,/zh/manufacturing-quality/,NO,NO
-/privacy,PAIRED,KEEP,/en/privacy/,KEEP,/zh/privacy/,NO,YES
-/products,PAIRED,KEEP,/en/products/,KEEP,/zh/products/,NO,YES
-/products/agriculture-special,PAIRED,MERGE_301,/en/products/,MERGE_301,/zh/products/,NO,NO
-/products/commercial-public,PAIRED,MERGE_301,/en/products/,MERGE_301,/zh/products/,NO,NO
-/products/custom-engineering,PAIRED,KEEP,/en/products/custom-engineering/,KEEP,/zh/products/custom-engineering/,NO,NO
-/products/industrial,PAIRED,MERGE_301,/en/products/,MERGE_301,/zh/products/,NO,NO
-/products/mining-energy,PAIRED,MERGE_301,/en/products/,MERGE_301,/zh/products/,NO,NO
-/products/residential-light,PAIRED,MERGE_301,/en/products/,MERGE_301,/zh/products/,NO,NO
-/projects,PAIRED,KEEP,/en/projects/,KEEP,/zh/projects/,NO,YES
-/projects/brazil-chinese-supermarket,PAIRED,MIGRATE_CONTENT,,MIGRATE_CONTENT,,NO,NO
-/projects/china-cnooc-pipe-rack,ZH_ONLY,MISSING,,GONE_410_CANDIDATE,,NO,NO
-/projects/china-huarun-center,ZH_ONLY,MISSING,,GONE_410_CANDIDATE,,NO,NO
-/projects/china-qianhai-dreamfactory,ZH_ONLY,MISSING,,GONE_410_CANDIDATE,,NO,NO
-/projects/cnooc-pr6-pipe-rack-frame,PAIRED,301_ONE_TO_ONE,/en/projects/cnooc-pr6-pipe-rack/,301_ONE_TO_ONE,/zh/projects/cnooc-pr6-pipe-rack/,NO,NO
-/projects/cnpc-sixth-construction-cracking-furnace,PAIRED,301_ONE_TO_ONE,/en/projects/cnpc-cracking-furnace/,301_ONE_TO_ONE,/zh/projects/cnpc-cracking-furnace/,NO,NO
-/projects/cnpc-sixth-construction-liquid-furnace,PAIRED,301_ONE_TO_ONE,/en/projects/cnpc-liquid-furnace/,301_ONE_TO_ONE,/zh/projects/cnpc-liquid-furnace/,NO,NO
-/projects/dubai-industrial-warehouse,PAIRED,MIGRATE_CONTENT,,MIGRATE_CONTENT,,NO,NO
-/projects/ethiopia-textile-factory,PAIRED,MIGRATE_CONTENT,,MIGRATE_CONTENT,,NO,NO
-/projects/futian-bonded-zone-customs,PAIRED,KEEP,/en/projects/futian-bonded-zone-customs/,KEEP,/zh/projects/futian-bonded-zone-customs/,NO,NO
-/projects/guangdong-yixian-biotech-manufacturing,PAIRED,301_ONE_TO_ONE,/en/projects/yixian-biotech-manufacturing/,301_ONE_TO_ONE,/zh/projects/yixian-biotech-manufacturing/,NO,NO
-/projects/guangzhou-gongkong-high-end-equipment-base,PAIRED,301_ONE_TO_ONE,/en/projects/guangzhou-high-end-equipment-base/,301_ONE_TO_ONE,/zh/projects/guangzhou-high-end-equipment-base/,NO,NO
-/projects/huarun-center-commercial-residential,PAIRED,301_ONE_TO_ONE,/en/projects/dongguan-huarun-center/,301_ONE_TO_ONE,/zh/projects/dongguan-huarun-center/,NO,NO
-/projects/indonesia-mining-steel-structure,PAIRED,MIGRATE_CONTENT,,MIGRATE_CONTENT,,NO,NO
-/projects/kenya-dairy-farm,PAIRED,GONE_410_CANDIDATE,,GONE_410_CANDIDATE,,NO,NO
-/projects/kenya-dairy-farm-complex,PAIRED,MIGRATE_CONTENT,,MIGRATE_CONTENT,,NO,NO
-/projects/luohu-mixc-commercial-skybridge,PAIRED,301_ONE_TO_ONE,/en/projects/luohu-mixc-skybridge/,301_ONE_TO_ONE,/zh/projects/luohu-mixc-skybridge/,NO,NO
-/projects/malaysia-commercial-complex,PAIRED,MIGRATE_CONTENT,,MIGRATE_CONTENT,,NO,NO
-/projects/mexico-appliance-factory,PAIRED,MIGRATE_CONTENT,,MIGRATE_CONTENT,,NO,NO
-/projects/nigeria-logistics-warehouse,PAIRED,GONE_410_CANDIDATE,,GONE_410_CANDIDATE,,NO,NO
-/projects/oman-oil-equipment-workshop,PAIRED,MIGRATE_CONTENT,,MIGRATE_CONTENT,,NO,NO
-/projects/peru-mining-workshop,PAIRED,MIGRATE_CONTENT,,MIGRATE_CONTENT,,NO,NO
-/projects/philippines-food-processing-plant,PAIRED,MIGRATE_CONTENT,,MIGRATE_CONTENT,,NO,NO
-/projects/saudi-arabia-manufacturing-factory,PAIRED,GONE_410_CANDIDATE,,GONE_410_CANDIDATE,,NO,NO
-/projects/shanghai-baoye-xiegang-aviation-manufacturing,PAIRED,301_ONE_TO_ONE,/en/projects/xiegang-aviation-manufacturing/,301_ONE_TO_ONE,/zh/projects/xiegang-aviation-manufacturing/,NO,NO
-/projects/shantou-luxshare-precision-electronics,PAIRED,301_ONE_TO_ONE,/en/projects/shantou-luxshare-electronics-center/,301_ONE_TO_ONE,/zh/projects/shantou-luxshare-electronics-center/,NO,NO
-/projects/shenzhen-international-zhanjiang-logistics-port,PAIRED,301_ONE_TO_ONE,/en/projects/zhanjiang-logistics-port/,301_ONE_TO_ONE,/zh/projects/zhanjiang-logistics-port/,NO,NO
-/projects/shenzhen-qianhai-dreamfactory,PAIRED,301_ONE_TO_ONE,/en/projects/qianhai-dreamfactory/,301_ONE_TO_ONE,/zh/projects/qianhai-dreamfactory/,NO,NO
-/projects/south-africa-auto-parts-factory,PAIRED,MIGRATE_CONTENT,,MIGRATE_CONTENT,,NO,NO
-/projects/tanzania-grain-storage-warehouse,PAIRED,MIGRATE_CONTENT,,MIGRATE_CONTENT,,NO,NO
-/projects/vietnam-ecommerce-logistics-center,PAIRED,MIGRATE_CONTENT,,MIGRATE_CONTENT,,NO,NO
-/projects/vietnam-logistics-center,ZH_ONLY,MISSING,,MIGRATE_CONTENT,,NO,NO
-/shipments,PAIRED,301_ONE_TO_ONE,/en/export-delivery/,301_ONE_TO_ONE,/zh/export-delivery/,NO,YES
-/solutions,PAIRED,MIGRATE_CONTENT,,MIGRATE_CONTENT,,NO,YES
-/steel-building-solutions/agriculture,PAIRED,MERGE_301,/en/products/,MERGE_301,/zh/products/,NO,NO
-/steel-building-solutions/commercial,PAIRED,MERGE_301,/en/products/,MERGE_301,/zh/products/,NO,NO
-/steel-building-solutions/energy,PAIRED,MERGE_301,/en/products/,MERGE_301,/zh/products/,NO,NO
-/steel-building-solutions/logistics,PAIRED,MERGE_301,/en/steel-warehouse/,MERGE_301,/zh/steel-warehouse/,NO,NO
-/steel-building-solutions/manufacturing,PAIRED,MERGE_301,/en/steel-workshop/,MERGE_301,/zh/steel-workshop/,NO,NO
-/steel-building-solutions/mining,PAIRED,MERGE_301,/en/products/,MERGE_301,/zh/products/,NO,NO
-/steel-building-solutions/public,PAIRED,MERGE_301,/en/products/,MERGE_301,/zh/products/,NO,NO
-/steel-car-4s-dealership,PAIRED,MIGRATE_CONTENT,,MIGRATE_CONTENT,,NO,NO
-/steel-equipment-platform,PAIRED,MIGRATE_CONTENT,,MIGRATE_CONTENT,,NO,NO
-/steel-exhibition-hall,PAIRED,MIGRATE_CONTENT,,MIGRATE_CONTENT,,NO,NO
-/steel-factory-crane,PAIRED,MIGRATE_CONTENT,,MIGRATE_CONTENT,,NO,NO
-/steel-hangar,PAIRED,MIGRATE_CONTENT,,MIGRATE_CONTENT,,NO,NO
-/steel-hospital-building,PAIRED,MIGRATE_CONTENT,,MIGRATE_CONTENT,,NO,NO
-/steel-hotel-restaurant,PAIRED,MIGRATE_CONTENT,,MIGRATE_CONTENT,,NO,NO
-/steel-livestock-barn,PAIRED,MIGRATE_CONTENT,,MIGRATE_CONTENT,,NO,NO
-/steel-mining-conveyor,PAIRED,MIGRATE_CONTENT,,MIGRATE_CONTENT,,NO,NO
-/steel-mining-factory,PAIRED,MIGRATE_CONTENT,,MIGRATE_CONTENT,,NO,NO
-/steel-office-building,PAIRED,MIGRATE_CONTENT,,MIGRATE_CONTENT,,NO,NO
-/steel-residential-villa,PAIRED,MIGRATE_CONTENT,,MIGRATE_CONTENT,,NO,NO
-/steel-school-building,PAIRED,MIGRATE_CONTENT,,MIGRATE_CONTENT,,NO,NO
-/steel-sports-arena,PAIRED,MIGRATE_CONTENT,,MIGRATE_CONTENT,,NO,NO
-/steel-supermarket-mall,PAIRED,MIGRATE_CONTENT,,MIGRATE_CONTENT,,NO,NO
-/steel-warehouse,PAIRED,KEEP,/en/steel-warehouse/,KEEP,/zh/steel-warehouse/,NO,NO
-/steel-warehouse-logistics,PAIRED,MERGE_301,/en/steel-warehouse/,MERGE_301,/zh/steel-warehouse/,NO,NO
-/steel-workshop,PAIRED,KEEP,/en/steel-workshop/,KEEP,/zh/steel-workshop/,NO,NO
-/steel-workshop-processing,PAIRED,MERGE_301,/en/steel-workshop/,MERGE_301,/zh/steel-workshop/,NO,NO
-/terms,PAIRED,KEEP,/en/terms/,KEEP,/zh/terms/,NO,YES
-/zh,ROOT_ONLY,MISSING,,MISSING,,NO,YES
+﻿old_url,old_language,new_url,new_language,cross_language_redirect,notes
+https://zhongsai-steelstructure.com,OTHER,https://zhongsai-steelstructure.com/en/,EN,NO,Root redirect to EN homepage after cutover
+https://zhongsai-steelstructure.com/en,EN,https://zhongsai-steelstructure.com/en/,EN,NO,"Path identical in V2, same search intent"
+https://zhongsai-steelstructure.com/en/about,EN,https://zhongsai-steelstructure.com/en/about/,EN,NO,"Path identical in V2, same search intent"
+https://zhongsai-steelstructure.com/en/agricultural-steel-buildings,EN,https://zhongsai-steelstructure.com/en/agricultural-steel-buildings/,EN,NO,"Path identical in V2, same search intent"
+https://zhongsai-steelstructure.com/en/blog/common-mistakes-importing-steel-structures-china,EN,https://zhongsai-steelstructure.com/en/blog/common-mistakes-importing-steel-structures-china/,EN,NO,"Path identical in V2, same search intent"
+https://zhongsai-steelstructure.com/en/blog/how-to-choose-steel-structure-supplier,EN,https://zhongsai-steelstructure.com/en/blog/how-to-choose-steel-structure-supplier/,EN,NO,"Path identical in V2, same search intent"
+https://zhongsai-steelstructure.com/en/blog/how-to-import-steel-structure-from-china-complete-guide,EN,https://zhongsai-steelstructure.com/en/blog/how-to-import-steel-structure-from-china-complete-guide/,EN,NO,"Path identical in V2, same search intent"
+https://zhongsai-steelstructure.com/en/blog/how-to-import-steel-structure-from-china-to-africa,EN,https://zhongsai-steelstructure.com/en/blog/how-to-import-steel-structure-from-china-to-africa/,EN,NO,"Path identical in V2, same search intent"
+https://zhongsai-steelstructure.com/en/blog/how-to-steel-structure-cost,EN,https://zhongsai-steelstructure.com/en/blog/how-to-steel-structure-cost/,EN,NO,"Path identical in V2, same search intent"
+https://zhongsai-steelstructure.com/en/blog/import-steel-from-china-cost,EN,https://zhongsai-steelstructure.com/en/blog/import-steel-from-china-cost/,EN,NO,"Path identical in V2, same search intent"
+https://zhongsai-steelstructure.com/en/blog/shipping-cost-steel-structure-from-china,EN,https://zhongsai-steelstructure.com/en/blog/shipping-cost-steel-structure-from-china/,EN,NO,"Path identical in V2, same search intent"
+https://zhongsai-steelstructure.com/en/blog/steel-structure-building-lifespan-guide,EN,https://zhongsai-steelstructure.com/en/blog/steel-structure-building-lifespan-guide/,EN,NO,"Path identical in V2, same search intent"
+https://zhongsai-steelstructure.com/en/blog/steel-structure-container-loading-guide,EN,https://zhongsai-steelstructure.com/en/blog/steel-structure-container-loading-guide/,EN,NO,"Path identical in V2, same search intent"
+https://zhongsai-steelstructure.com/en/blog/steel-structure-corrosion-protection-coating-guide,EN,https://zhongsai-steelstructure.com/en/blog/steel-structure-corrosion-protection-coating-guide/,EN,NO,"Path identical in V2, same search intent"
+https://zhongsai-steelstructure.com/en/blog/steel-structure-fabrication-drawings-documents-required,EN,https://zhongsai-steelstructure.com/en/blog/steel-structure-fabrication-drawings-documents-required/,EN,NO,"Path identical in V2, same search intent"
+https://zhongsai-steelstructure.com/en/blog/steel-structure-installation-guide,EN,https://zhongsai-steelstructure.com/en/blog/steel-structure-installation-guide/,EN,NO,"Path identical in V2, same search intent"
+https://zhongsai-steelstructure.com/en/blog/steel-structure-welding-quality-control-guide,EN,https://zhongsai-steelstructure.com/en/blog/steel-structure-welding-quality-control-guide/,EN,NO,"Path identical in V2, same search intent"
+https://zhongsai-steelstructure.com/en/blog/steel-warehouse-cost-complete-guide,EN,https://zhongsai-steelstructure.com/en/blog/steel-warehouse-cost-complete-guide/,EN,NO,"Path identical in V2, same search intent"
+https://zhongsai-steelstructure.com/en/commercial-public-steel-buildings,EN,https://zhongsai-steelstructure.com/en/commercial-public-steel-buildings/,EN,NO,"Path identical in V2, same search intent"
+https://zhongsai-steelstructure.com/en/components,EN,https://zhongsai-steelstructure.com/en/components/,EN,NO,"Path identical in V2, same search intent"
+https://zhongsai-steelstructure.com/en/components/fabricated-steel-beams-columns,EN,https://zhongsai-steelstructure.com/en/components/fabricated-steel-beams-columns/,EN,NO,"Path identical in V2, same search intent"
+https://zhongsai-steelstructure.com/en/components/roof-wall-cladding-systems,EN,https://zhongsai-steelstructure.com/en/components/roof-wall-cladding-systems/,EN,NO,"Path identical in V2, same search intent"
+https://zhongsai-steelstructure.com/en/components/steel-purlins,EN,https://zhongsai-steelstructure.com/en/components/steel-purlins/,EN,NO,"Path identical in V2, same search intent"
+https://zhongsai-steelstructure.com/en/components/steel-trusses,EN,https://zhongsai-steelstructure.com/en/components/steel-trusses/,EN,NO,"Path identical in V2, same search intent"
+https://zhongsai-steelstructure.com/en/contact,EN,https://zhongsai-steelstructure.com/en/contact/,EN,NO,"Path identical in V2, same search intent"
+https://zhongsai-steelstructure.com/en/engineering-design,EN,https://zhongsai-steelstructure.com/en/engineering-design/,EN,NO,"Path identical in V2, same search intent"
+https://zhongsai-steelstructure.com/en/export-delivery,EN,https://zhongsai-steelstructure.com/en/export-delivery/,EN,NO,"Path identical in V2, same search intent"
+https://zhongsai-steelstructure.com/en/manufacturing-quality,EN,https://zhongsai-steelstructure.com/en/manufacturing-quality/,EN,NO,"Path identical in V2, same search intent"
+https://zhongsai-steelstructure.com/en/privacy,EN,https://zhongsai-steelstructure.com/en/privacy/,EN,NO,"Path identical in V2, same search intent"
+https://zhongsai-steelstructure.com/en/products,EN,https://zhongsai-steelstructure.com/en/products/,EN,NO,"Path identical in V2, same search intent"
+https://zhongsai-steelstructure.com/en/products/custom-engineering,EN,https://zhongsai-steelstructure.com/en/products/custom-engineering/,EN,NO,"Path identical in V2, same search intent"
+https://zhongsai-steelstructure.com/en/projects,EN,https://zhongsai-steelstructure.com/en/projects/,EN,NO,"Path identical in V2, same search intent"
+https://zhongsai-steelstructure.com/en/projects/cnooc-pr6-pipe-rack,EN,https://zhongsai-steelstructure.com/en/projects/cnooc-pr6-pipe-rack/,EN,NO,"Path identical in V2, same search intent"
+https://zhongsai-steelstructure.com/en/projects/cnpc-cracking-furnace,EN,https://zhongsai-steelstructure.com/en/projects/cnpc-cracking-furnace/,EN,NO,"Path identical in V2, same search intent"
+https://zhongsai-steelstructure.com/en/projects/cnpc-liquid-furnace,EN,https://zhongsai-steelstructure.com/en/projects/cnpc-liquid-furnace/,EN,NO,"Path identical in V2, same search intent"
+https://zhongsai-steelstructure.com/en/projects/dongguan-huarun-center,EN,https://zhongsai-steelstructure.com/en/projects/dongguan-huarun-center/,EN,NO,"Path identical in V2, same search intent"
+https://zhongsai-steelstructure.com/en/projects/futian-bonded-zone-customs,EN,https://zhongsai-steelstructure.com/en/projects/futian-bonded-zone-customs/,EN,NO,"Path identical in V2, same search intent"
+https://zhongsai-steelstructure.com/en/projects/guangzhou-high-end-equipment-base,EN,https://zhongsai-steelstructure.com/en/projects/guangzhou-high-end-equipment-base/,EN,NO,"Path identical in V2, same search intent"
+https://zhongsai-steelstructure.com/en/projects/luohu-mixc-skybridge,EN,https://zhongsai-steelstructure.com/en/projects/luohu-mixc-skybridge/,EN,NO,"Path identical in V2, same search intent"
+https://zhongsai-steelstructure.com/en/projects/macau-city-of-dreams-phase2,EN,https://zhongsai-steelstructure.com/en/projects/macau-city-of-dreams-phase2/,EN,NO,"Path identical in V2, same search intent"
+https://zhongsai-steelstructure.com/en/projects/macau-londoner,EN,https://zhongsai-steelstructure.com/en/projects/macau-londoner/,EN,NO,"Path identical in V2, same search intent"
+https://zhongsai-steelstructure.com/en/projects/qianhai-dreamfactory,EN,https://zhongsai-steelstructure.com/en/projects/qianhai-dreamfactory/,EN,NO,"Path identical in V2, same search intent"
+https://zhongsai-steelstructure.com/en/projects/shantou-luxshare-electronics-center,EN,https://zhongsai-steelstructure.com/en/projects/shantou-luxshare-electronics-center/,EN,NO,"Path identical in V2, same search intent"
+https://zhongsai-steelstructure.com/en/projects/singapore-airport-t2-connect,EN,https://zhongsai-steelstructure.com/en/projects/singapore-airport-t2-connect/,EN,NO,"Path identical in V2, same search intent"
+https://zhongsai-steelstructure.com/en/projects/singapore-cr101-depot,EN,https://zhongsai-steelstructure.com/en/projects/singapore-cr101-depot/,EN,NO,"Path identical in V2, same search intent"
+https://zhongsai-steelstructure.com/en/projects/singapore-j102-mrt-station,EN,https://zhongsai-steelstructure.com/en/projects/singapore-j102-mrt-station/,EN,NO,"Path identical in V2, same search intent"
+https://zhongsai-steelstructure.com/en/projects/singapore-j107-mrt-station,EN,https://zhongsai-steelstructure.com/en/projects/singapore-j107-mrt-station/,EN,NO,"Path identical in V2, same search intent"
+https://zhongsai-steelstructure.com/en/projects/singapore-mcc-innocentre,EN,https://zhongsai-steelstructure.com/en/projects/singapore-mcc-innocentre/,EN,NO,"Path identical in V2, same search intent"
+https://zhongsai-steelstructure.com/en/projects/singapore-sats-bup-centre,EN,https://zhongsai-steelstructure.com/en/projects/singapore-sats-bup-centre/,EN,NO,"Path identical in V2, same search intent"
+https://zhongsai-steelstructure.com/en/projects/singapore-sentosa-waterfront-hotel,EN,https://zhongsai-steelstructure.com/en/projects/singapore-sentosa-waterfront-hotel/,EN,NO,"Path identical in V2, same search intent"
+https://zhongsai-steelstructure.com/en/projects/xiegang-aviation-manufacturing,EN,https://zhongsai-steelstructure.com/en/projects/xiegang-aviation-manufacturing/,EN,NO,"Path identical in V2, same search intent"
+https://zhongsai-steelstructure.com/en/projects/yixian-biotech-manufacturing,EN,https://zhongsai-steelstructure.com/en/projects/yixian-biotech-manufacturing/,EN,NO,"Path identical in V2, same search intent"
+https://zhongsai-steelstructure.com/en/projects/zhanjiang-logistics-port,EN,https://zhongsai-steelstructure.com/en/projects/zhanjiang-logistics-port/,EN,NO,"Path identical in V2, same search intent"
+https://zhongsai-steelstructure.com/en/resources,EN,https://zhongsai-steelstructure.com/en/resources/,EN,NO,"Path identical in V2, same search intent"
+https://zhongsai-steelstructure.com/en/services/structural-steel-detailing,EN,https://zhongsai-steelstructure.com/en/services/structural-steel-detailing/,EN,NO,"Path identical in V2, same search intent"
+https://zhongsai-steelstructure.com/en/special-custom-steel-structures,EN,https://zhongsai-steelstructure.com/en/special-custom-steel-structures/,EN,NO,"Path identical in V2, same search intent"
+https://zhongsai-steelstructure.com/en/steel-mining-factory,EN,https://zhongsai-steelstructure.com/en/steel-mining-factory/,EN,NO,"Path identical in V2, same search intent"
+https://zhongsai-steelstructure.com/en/steel-warehouse,EN,https://zhongsai-steelstructure.com/en/steel-warehouse/,EN,NO,"Path identical in V2, same search intent"
+https://zhongsai-steelstructure.com/en/steel-workshop,EN,https://zhongsai-steelstructure.com/en/steel-workshop/,EN,NO,"Path identical in V2, same search intent"
+https://zhongsai-steelstructure.com/en/terms,EN,https://zhongsai-steelstructure.com/en/terms/,EN,NO,"Path identical in V2, same search intent"
+https://zhongsai-steelstructure.com/en/transportation-infrastructure-steel,EN,https://zhongsai-steelstructure.com/en/transportation-infrastructure-steel/,EN,NO,"Path identical in V2, same search intent"
+https://zhongsai-steelstructure.com/zh,ZH,https://zhongsai-steelstructure.com/zh/,ZH,NO,"Path identical in V2, same search intent"
+https://zhongsai-steelstructure.com/zh/about,ZH,https://zhongsai-steelstructure.com/zh/about/,ZH,NO,"Path identical in V2, same search intent"
+https://zhongsai-steelstructure.com/zh/agricultural-steel-buildings,ZH,https://zhongsai-steelstructure.com/zh/agricultural-steel-buildings/,ZH,NO,"Path identical in V2, same search intent"
+https://zhongsai-steelstructure.com/zh/blog/common-mistakes-importing-steel-structures-china,ZH,https://zhongsai-steelstructure.com/zh/blog/common-mistakes-importing-steel-structures-china/,ZH,NO,"Path identical in V2, same search intent"
+https://zhongsai-steelstructure.com/zh/blog/gangjiegou-changfang-zaojia-zhinan,ZH,https://zhongsai-steelstructure.com/zh/blog/gangjiegou-changfang-zaojia-zhinan/,ZH,NO,"Path identical in V2, same search intent"
+https://zhongsai-steelstructure.com/zh/blog/gangjiegou-gongchang-xuanze-zhinan,ZH,https://zhongsai-steelstructure.com/zh/blog/gangjiegou-gongchang-xuanze-zhinan/,ZH,NO,"Path identical in V2, same search intent"
+https://zhongsai-steelstructure.com/zh/blog/how-to-steel-structure-cost,ZH,https://zhongsai-steelstructure.com/zh/blog/how-to-steel-structure-cost/,ZH,NO,"Path identical in V2, same search intent"
+https://zhongsai-steelstructure.com/zh/blog/import-steel-from-china-cost,ZH,https://zhongsai-steelstructure.com/zh/blog/import-steel-from-china-cost/,ZH,NO,"Path identical in V2, same search intent"
+https://zhongsai-steelstructure.com/zh/blog/steel-structure-building-lifespan-guide,ZH,https://zhongsai-steelstructure.com/zh/blog/steel-structure-building-lifespan-guide/,ZH,NO,"Path identical in V2, same search intent"
+https://zhongsai-steelstructure.com/zh/blog/steel-structure-corrosion-protection-coating-guide,ZH,https://zhongsai-steelstructure.com/zh/blog/steel-structure-corrosion-protection-coating-guide/,ZH,NO,"Path identical in V2, same search intent"
+https://zhongsai-steelstructure.com/zh/blog/steel-structure-fabrication-drawings-documents-required,ZH,https://zhongsai-steelstructure.com/zh/blog/steel-structure-fabrication-drawings-documents-required/,ZH,NO,"Path identical in V2, same search intent"
+https://zhongsai-steelstructure.com/zh/blog/steel-structure-installation-guide,ZH,https://zhongsai-steelstructure.com/zh/blog/steel-structure-installation-guide/,ZH,NO,"Path identical in V2, same search intent"
+https://zhongsai-steelstructure.com/zh/blog/steel-structure-welding-quality-control-guide,ZH,https://zhongsai-steelstructure.com/zh/blog/steel-structure-welding-quality-control-guide/,ZH,NO,"Path identical in V2, same search intent"
+https://zhongsai-steelstructure.com/zh/commercial-public-steel-buildings,ZH,https://zhongsai-steelstructure.com/zh/commercial-public-steel-buildings/,ZH,NO,"Path identical in V2, same search intent"
+https://zhongsai-steelstructure.com/zh/components,ZH,https://zhongsai-steelstructure.com/zh/components/,ZH,NO,"Path identical in V2, same search intent"
+https://zhongsai-steelstructure.com/zh/components/fabricated-steel-beams-columns,ZH,https://zhongsai-steelstructure.com/zh/components/fabricated-steel-beams-columns/,ZH,NO,"Path identical in V2, same search intent"
+https://zhongsai-steelstructure.com/zh/components/roof-wall-cladding-systems,ZH,https://zhongsai-steelstructure.com/zh/components/roof-wall-cladding-systems/,ZH,NO,"Path identical in V2, same search intent"
+https://zhongsai-steelstructure.com/zh/components/steel-purlins,ZH,https://zhongsai-steelstructure.com/zh/components/steel-purlins/,ZH,NO,"Path identical in V2, same search intent"
+https://zhongsai-steelstructure.com/zh/components/steel-trusses,ZH,https://zhongsai-steelstructure.com/zh/components/steel-trusses/,ZH,NO,"Path identical in V2, same search intent"
+https://zhongsai-steelstructure.com/zh/contact,ZH,https://zhongsai-steelstructure.com/zh/contact/,ZH,NO,"Path identical in V2, same search intent"
+https://zhongsai-steelstructure.com/zh/engineering-design,ZH,https://zhongsai-steelstructure.com/zh/engineering-design/,ZH,NO,"Path identical in V2, same search intent"
+https://zhongsai-steelstructure.com/zh/export-delivery,ZH,https://zhongsai-steelstructure.com/zh/export-delivery/,ZH,NO,"Path identical in V2, same search intent"
+https://zhongsai-steelstructure.com/zh/manufacturing-quality,ZH,https://zhongsai-steelstructure.com/zh/manufacturing-quality/,ZH,NO,"Path identical in V2, same search intent"
+https://zhongsai-steelstructure.com/zh/privacy,ZH,https://zhongsai-steelstructure.com/zh/privacy/,ZH,NO,"Path identical in V2, same search intent"
+https://zhongsai-steelstructure.com/zh/products,ZH,https://zhongsai-steelstructure.com/zh/products/,ZH,NO,"Path identical in V2, same search intent"
+https://zhongsai-steelstructure.com/zh/products/custom-engineering,ZH,https://zhongsai-steelstructure.com/zh/products/custom-engineering/,ZH,NO,"Path identical in V2, same search intent"
+https://zhongsai-steelstructure.com/zh/projects,ZH,https://zhongsai-steelstructure.com/zh/projects/,ZH,NO,"Path identical in V2, same search intent"
+https://zhongsai-steelstructure.com/zh/projects/cnooc-pr6-pipe-rack,ZH,https://zhongsai-steelstructure.com/zh/projects/cnooc-pr6-pipe-rack/,ZH,NO,"Path identical in V2, same search intent"
+https://zhongsai-steelstructure.com/zh/projects/cnpc-cracking-furnace,ZH,https://zhongsai-steelstructure.com/zh/projects/cnpc-cracking-furnace/,ZH,NO,"Path identical in V2, same search intent"
+https://zhongsai-steelstructure.com/zh/projects/cnpc-liquid-furnace,ZH,https://zhongsai-steelstructure.com/zh/projects/cnpc-liquid-furnace/,ZH,NO,"Path identical in V2, same search intent"
+https://zhongsai-steelstructure.com/zh/projects/dongguan-huarun-center,ZH,https://zhongsai-steelstructure.com/zh/projects/dongguan-huarun-center/,ZH,NO,"Path identical in V2, same search intent"
+https://zhongsai-steelstructure.com/zh/projects/futian-bonded-zone-customs,ZH,https://zhongsai-steelstructure.com/zh/projects/futian-bonded-zone-customs/,ZH,NO,"Path identical in V2, same search intent"
+https://zhongsai-steelstructure.com/zh/projects/guangzhou-high-end-equipment-base,ZH,https://zhongsai-steelstructure.com/zh/projects/guangzhou-high-end-equipment-base/,ZH,NO,"Path identical in V2, same search intent"
+https://zhongsai-steelstructure.com/zh/projects/luohu-mixc-skybridge,ZH,https://zhongsai-steelstructure.com/zh/projects/luohu-mixc-skybridge/,ZH,NO,"Path identical in V2, same search intent"
+https://zhongsai-steelstructure.com/zh/projects/macau-city-of-dreams-phase2,ZH,https://zhongsai-steelstructure.com/zh/projects/macau-city-of-dreams-phase2/,ZH,NO,"Path identical in V2, same search intent"
+https://zhongsai-steelstructure.com/zh/projects/macau-londoner,ZH,https://zhongsai-steelstructure.com/zh/projects/macau-londoner/,ZH,NO,"Path identical in V2, same search intent"
+https://zhongsai-steelstructure.com/zh/projects/qianhai-dreamfactory,ZH,https://zhongsai-steelstructure.com/zh/projects/qianhai-dreamfactory/,ZH,NO,"Path identical in V2, same search intent"
+https://zhongsai-steelstructure.com/zh/projects/shantou-luxshare-electronics-center,ZH,https://zhongsai-steelstructure.com/zh/projects/shantou-luxshare-electronics-center/,ZH,NO,"Path identical in V2, same search intent"
+https://zhongsai-steelstructure.com/zh/projects/singapore-airport-t2-connect,ZH,https://zhongsai-steelstructure.com/zh/projects/singapore-airport-t2-connect/,ZH,NO,"Path identical in V2, same search intent"
+https://zhongsai-steelstructure.com/zh/projects/singapore-cr101-depot,ZH,https://zhongsai-steelstructure.com/zh/projects/singapore-cr101-depot/,ZH,NO,"Path identical in V2, same search intent"
+https://zhongsai-steelstructure.com/zh/projects/singapore-j102-mrt-station,ZH,https://zhongsai-steelstructure.com/zh/projects/singapore-j102-mrt-station/,ZH,NO,"Path identical in V2, same search intent"
+https://zhongsai-steelstructure.com/zh/projects/singapore-j107-mrt-station,ZH,https://zhongsai-steelstructure.com/zh/projects/singapore-j107-mrt-station/,ZH,NO,"Path identical in V2, same search intent"
+https://zhongsai-steelstructure.com/zh/projects/singapore-mcc-innocentre,ZH,https://zhongsai-steelstructure.com/zh/projects/singapore-mcc-innocentre/,ZH,NO,"Path identical in V2, same search intent"
+https://zhongsai-steelstructure.com/zh/projects/singapore-sats-bup-centre,ZH,https://zhongsai-steelstructure.com/zh/projects/singapore-sats-bup-centre/,ZH,NO,"Path identical in V2, same search intent"
+https://zhongsai-steelstructure.com/zh/projects/singapore-sentosa-waterfront-hotel,ZH,https://zhongsai-steelstructure.com/zh/projects/singapore-sentosa-waterfront-hotel/,ZH,NO,"Path identical in V2, same search intent"
+https://zhongsai-steelstructure.com/zh/projects/xiegang-aviation-manufacturing,ZH,https://zhongsai-steelstructure.com/zh/projects/xiegang-aviation-manufacturing/,ZH,NO,"Path identical in V2, same search intent"
+https://zhongsai-steelstructure.com/zh/projects/yixian-biotech-manufacturing,ZH,https://zhongsai-steelstructure.com/zh/projects/yixian-biotech-manufacturing/,ZH,NO,"Path identical in V2, same search intent"
+https://zhongsai-steelstructure.com/zh/projects/zhanjiang-logistics-port,ZH,https://zhongsai-steelstructure.com/zh/projects/zhanjiang-logistics-port/,ZH,NO,"Path identical in V2, same search intent"
+https://zhongsai-steelstructure.com/zh/resources,ZH,https://zhongsai-steelstructure.com/zh/resources/,ZH,NO,"Path identical in V2, same search intent"
+https://zhongsai-steelstructure.com/zh/services/structural-steel-detailing,ZH,https://zhongsai-steelstructure.com/zh/services/structural-steel-detailing/,ZH,NO,"Path identical in V2, same search intent"
+https://zhongsai-steelstructure.com/zh/special-custom-steel-structures,ZH,https://zhongsai-steelstructure.com/zh/special-custom-steel-structures/,ZH,NO,"Path identical in V2, same search intent"
+https://zhongsai-steelstructure.com/zh/steel-mining-factory,ZH,https://zhongsai-steelstructure.com/zh/steel-mining-factory/,ZH,NO,"Path identical in V2, same search intent"
+https://zhongsai-steelstructure.com/zh/steel-warehouse,ZH,https://zhongsai-steelstructure.com/zh/steel-warehouse/,ZH,NO,"Path identical in V2, same search intent"
+https://zhongsai-steelstructure.com/zh/steel-workshop,ZH,https://zhongsai-steelstructure.com/zh/steel-workshop/,ZH,NO,"Path identical in V2, same search intent"
+https://zhongsai-steelstructure.com/zh/terms,ZH,https://zhongsai-steelstructure.com/zh/terms/,ZH,NO,"Path identical in V2, same search intent"
+https://zhongsai-steelstructure.com/zh/transportation-infrastructure-steel,ZH,https://zhongsai-steelstructure.com/zh/transportation-infrastructure-steel/,ZH,NO,"Path identical in V2, same search intent"
