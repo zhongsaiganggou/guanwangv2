@@ -19,12 +19,43 @@ export async function getStaticPaths() {
 const { post } = Astro.props;
 const { Content } = await post.render();
 
+// 从post.id中提取slug，格式为 en/slug.md 或 zh/slug.md
+const slug = post.id.replace(/^en\//, '').replace(/\.md$/, '');
+
 const seoTitle = post.data.seoTitle || `${post.data.title} | ZhongSai Steel Structure`;
 const metaDescription = post.data.metaDescription || post.data.excerpt || '';
-const canonical = `https://zhongsai-steelstructure.com/en/blog/${post.id}/`;
+const canonical = `https://zhongsai-steelstructure.com/en/blog/${slug}/`;
 const h1 = post.data.h1 || post.data.title;
+
+// Breadcrumb JSON-LD
+const breadcrumbJsonLd = {
+  '@context': 'https://schema.org',
+  '@type': 'BreadcrumbList',
+  itemListElement: [
+    {
+      '@type': 'ListItem',
+      position: 1,
+      name: 'Home',
+      item: 'https://zhongsai-steelstructure.com/en/',
+    },
+    {
+      '@type': 'ListItem',
+      position: 2,
+      name: 'Resources',
+      item: 'https://zhongsai-steelstructure.com/en/resources/',
+    },
+    {
+      '@type': 'ListItem',
+      position: 3,
+      name: post.data.category || 'Article',
+      item: canonical,
+    },
+  ],
+};
 ---
 
+
+<script type="application/ld+json" set:html={JSON.stringify(breadcrumbJsonLd)} />
 <BaseLayout
   title={seoTitle}
   description={metaDescription}
