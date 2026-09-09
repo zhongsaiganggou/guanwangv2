@@ -149,6 +149,16 @@ class CompetitorAnalyzer:
         return list(set(all_keywords))
 
 
+def to_slug(text):
+    """将文本转换为slug格式（小写，连字符分隔）"""
+    text = text.lower().strip()
+    text = re.sub(r'[\s_]+', '-', text)
+    text = re.sub(r'[^a-z0-9\-]', '', text)
+    text = re.sub(r'-+', '-', text)
+    text = text.strip('-')
+    return text
+
+
 class KeywordResearcher:
     """热搜词研究主类"""
     
@@ -273,14 +283,25 @@ class KeywordResearcher:
             score += 5
         
         # 已发布主题去重（大幅减分）
+        keyword_slug = to_slug(keyword)
         for topic in published_topics:
-            topic_lower = topic.lower()
-            # 计算相似度
-            keyword_words = set(keyword_lower.split())
-            topic_words = set(topic_lower.split())
+            topic_slug = to_slug(topic)
+            # 精确匹配：slug完全相同，直接排除
+            if keyword_slug == topic_slug:
+                score -= 500
+                continue
+            # 包含关系：一个slug包含另一个，高度相关
+            if keyword_slug in topic_slug or topic_slug in keyword_slug:
+                score -= 200
+                continue
+            # 计算词集相似度（使用slug的词）
+            keyword_words = set(keyword_slug.split('-'))
+            topic_words = set(topic_slug.split('-'))
             if keyword_words and topic_words:
                 similarity = len(keyword_words & topic_words) / len(keyword_words | topic_words)
-                if similarity > 0.5:
-                    score -= 100  # 高度重复，排除
+                if similarity > 0.6:
+                    score -= 150  # 高度重复，排除
+                elif similarity > 0.4:
+                    score -= 50   # 中度重复，减分
         
         return score

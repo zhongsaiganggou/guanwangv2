@@ -288,6 +288,7 @@ class ImageGenerator:
         self.generate_image(keyword, cover_path, "", language, "cover")
         images.append({
             "path": f"public/images/blog/{slug}/cover.jpg",
+            "url_path": f"images/blog/{slug}/cover.jpg",
             "local_path": cover_path,
             "alt_text": self.generate_alt_text(keyword, "", language),
             "type": "cover",
@@ -314,6 +315,7 @@ class ImageGenerator:
                     
                     section_images.append({
                         "path": f"public/images/blog/{slug}/{img_filename}",
+                        "url_path": f"images/blog/{slug}/{img_filename}",
                         "local_path": img_path,
                         "alt_text": self.generate_alt_text(keyword, section_title, language),
                         "type": "section",
@@ -359,8 +361,9 @@ class ImageGenerator:
                     context=section_title,
                     language=language
                 )
-                # 在段落后插入图片
-                img_markdown = f"\n![{alt_text}](/{matching_image['path']})\n"
+                # 在段落后插入图片（使用url_path，不是文件系统path）
+                img_url = matching_image.get('url_path', matching_image['path'].replace('public/', ''))
+                img_markdown = f"\n![{alt_text}](/{img_url})\n"
                 result += img_markdown + content
             else:
                 result += content

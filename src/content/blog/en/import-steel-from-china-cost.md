@@ -21,7 +21,7 @@ When sourcing steel structures for your project, understanding import steel from
 
 ## Direct Answer: What You Need to Know
 
-![Steel structure Direct Answer: What You Need to Know related image](/public/images/blog/import-steel-from-china-cost/section_01.jpg)
+![Steel structure Direct Answer: What You Need to Know related image](/images/blog/import-steel-from-china-cost/section_01.jpg)
 
 import steel from china cost is one of the most important considerations when planning a steel structure project. The key factors that determine success include proper planning, clear specifications, quality manufacturing, and effective communication with your supplier.
 
@@ -35,7 +35,7 @@ import steel from china cost is one of the most important considerations when pl
 
 ## Part 1: Understanding the Fundamentals
 
-![Steel structure Part 1: Understanding the Fundamentals related image](/public/images/blog/import-steel-from-china-cost/section_02.jpg)
+![Steel structure Part 1: Understanding the Fundamentals related image](/images/blog/import-steel-from-china-cost/section_02.jpg)
 
 ### What Is Import Steel From China Cost?
 
@@ -62,7 +62,7 @@ Import Steel From China Cost typically involves:
 
 ## Part 2: Key Factors to Consider
 
-![Steel structure Part 2: Key Factors to Consider related image](/public/images/blog/import-steel-from-china-cost/section_03.jpg)
+![Steel structure Part 2: Key Factors to Consider related image](/images/blog/import-steel-from-china-cost/section_03.jpg)
 
 ### 1. Design Requirements
 
@@ -103,7 +103,7 @@ Effective project management ensures smooth execution:
 
 ## Part 3: Common Mistakes to Avoid
 
-![Steel structure mistakes illustration](/public/images/blog/import-steel-from-china-cost/section_04.jpg)
+![Steel structure mistakes illustration](/images/blog/import-steel-from-china-cost/section_04.jpg)
 
 ### Mistake 1: Incomplete Specifications
 

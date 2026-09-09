@@ -111,9 +111,18 @@ class AutoPublisher:
         return []
     
     def save_published_topics(self, topics):
-        """保存已发布主题列表"""
+        """保存已发布主题列表（统一为slug格式，去重）"""
+        # 统一转换为slug格式并去重
+        from modules.keyword_research import to_slug
+        unique_topics = []
+        seen = set()
+        for topic in topics:
+            slug = to_slug(topic)
+            if slug and slug not in seen:
+                seen.add(slug)
+                unique_topics.append(slug)
         with open(self.published_topics_file, "w", encoding="utf-8") as f:
-            json.dump(topics, f, ensure_ascii=False, indent=2)
+            json.dump(unique_topics, f, ensure_ascii=False, indent=2)
     
     def select_keyword(self, keywords, published_topics):
         """选择最佳关键词"""
