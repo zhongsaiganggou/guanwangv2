@@ -642,19 +642,19 @@ const certifications = [
 }
 
 
-/* Certification Wall - compact display */
+/* Certification Wall - compact single row display */
 .cert-wall {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 20px;
-  margin-top: 32px;
+  grid-template-columns: repeat(6, 1fr);
+  gap: 10px;
+  margin-top: 24px;
 }
 .cert-wall-item {
   text-align: center;
   background: #fff;
   border: 1px solid #e8e8e8;
-  border-radius: 8px;
-  padding: 16px 12px 12px;
+  border-radius: 6px;
+  padding: 10px 6px 8px;
   transition: transform 0.2s, box-shadow 0.2s;
 }
 .cert-wall-item:hover {
@@ -663,10 +663,10 @@ const certifications = [
 }
 .cert-wall-image {
   width: 100%;
-  max-width: 180px;
-  margin: 0 auto 10px;
+  max-width: 90px;
+  margin: 0 auto 6px;
   border: 1px solid #ddd;
-  border-radius: 4px;
+  border-radius: 3px;
   overflow: hidden;
   background: #fafafa;
 }
@@ -676,38 +676,41 @@ const certifications = [
   display: block;
 }
 .cert-wall-label {
-  font-size: 0.85rem;
+  font-size: 0.7rem;
   font-weight: 600;
   color: #0a3d62;
   margin: 0;
-  line-height: 1.4;
+  line-height: 1.3;
 }
 .cert-wall-note {
   text-align: center;
-  font-size: 0.82rem;
+  font-size: 0.78rem;
   color: #888;
-  margin-top: 20px;
+  margin-top: 16px;
   font-style: italic;
 }
-@media (max-width: 768px) {
+@media (max-width: 900px) {
   .cert-wall {
-    grid-template-columns: repeat(2, 1fr);
-    gap: 16px;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 10px;
   }
   .cert-wall-image {
-    max-width: 140px;
+    max-width: 80px;
   }
   .cert-wall-label {
-    font-size: 0.78rem;
+    font-size: 0.68rem;
   }
 }
 @media (max-width: 480px) {
   .cert-wall {
-    grid-template-columns: 1fr;
-    gap: 14px;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 8px;
   }
   .cert-wall-image {
-    max-width: 160px;
+    max-width: 70px;
+  }
+  .cert-wall-label {
+    font-size: 0.65rem;
   }
 }
 
