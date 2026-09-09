@@ -89,12 +89,10 @@ const STATIC_BREADCRUMBS: Record<string, { en: Crumb[]; zh: Crumb[] }> = {
   'services/structural-steel-detailing': {
     en: [
       { name: 'Home', href: '/en/' },
-      { name: 'Services' },
       { name: 'Structural Steel Detailing' },
     ],
     zh: [
       { name: '首页', href: '/zh/' },
-      { name: '服务' },
       { name: '钢结构深化设计' },
     ],
   },
@@ -167,8 +165,8 @@ export function buildBreadcrumbJsonLd(pathname: string) {
       };
       if (c.href) {
         el.item = `${SITE_URL}${c.href}`;
-      } else if (i === crumbs.length - 1) {
-        // 当前页（最后一级）使用本页绝对 URL
+      } else {
+        // 所有缺少href的item（包括最后一级）都使用本页绝对 URL
         el.item = `${SITE_URL}${pathname.endsWith('/') ? pathname : pathname + '/'}`;
       }
       return el;
