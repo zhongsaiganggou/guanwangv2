@@ -23,6 +23,8 @@ When sourcing steel structures for your project, understanding import steel from
 
 ![Steel structure Direct Answer: What You Need to Know related image](/images/blog/import-steel-from-china-cost/section_01.jpg)
 
+![Steel structure Direct Answer: What You Need to Know related image](/images/blog/import-steel-from-china-cost/section_01.jpg)
+
 import steel from china cost is one of the most important considerations when planning a steel structure project. The key factors that determine success include proper planning, clear specifications, quality manufacturing, and effective communication with your supplier.
 
 **Key takeaways:**
@@ -34,6 +36,8 @@ import steel from china cost is one of the most important considerations when pl
 ---
 
 ## Part 1: Understanding the Fundamentals
+
+![Steel structure Part 1: Understanding the Fundamentals related image](/images/blog/import-steel-from-china-cost/section_02.jpg)
 
 ![Steel structure Part 1: Understanding the Fundamentals related image](/images/blog/import-steel-from-china-cost/section_02.jpg)
 
@@ -61,6 +65,8 @@ Import Steel From China Cost typically involves:
 ---
 
 ## Part 2: Key Factors to Consider
+
+![Steel structure Part 2: Key Factors to Consider related image](/images/blog/import-steel-from-china-cost/section_03.jpg)
 
 ![Steel structure Part 2: Key Factors to Consider related image](/images/blog/import-steel-from-china-cost/section_03.jpg)
 
@@ -105,6 +111,8 @@ Effective project management ensures smooth execution:
 
 ![Steel structure mistakes illustration](/images/blog/import-steel-from-china-cost/section_04.jpg)
 
+![Steel structure mistakes illustration](/images/blog/import-steel-from-china-cost/section_04.jpg)
+
 ### Mistake 1: Incomplete Specifications
 
 Providing incomplete or unclear specifications leads to inaccurate quotes and potential fabrication errors. Always provide complete design information, including loads, standards, and material specifications.
@@ -128,6 +136,8 @@ Maintain regular communication with your supplier throughout the project. Clear 
 ---
 
 ## Part 4: Best Practices
+
+![Steel structure Part 4: Best Practices related image](/images/blog/import-steel-from-china-cost/section_05.jpg)
 
 ### Before Ordering
 

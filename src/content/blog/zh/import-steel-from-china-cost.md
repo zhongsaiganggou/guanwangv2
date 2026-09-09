@@ -23,6 +23,8 @@ author: "ZhongSai Steel Structure Editorial Team"
 
 ![钢结构直接回答：您需要知道什么相关图片](/images/blog/import-steel-from-china-cost/section_01.jpg)
 
+![钢结构直接回答：您需要知道什么相关图片](/images/blog/import-steel-from-china-cost/section_01.jpg)
+
 import steel from china cost是规划钢结构项目时最重要的考虑因素之一。决定成功的关键因素包括合理的规划、清晰的规格、高质量的制造以及与供应商的有效沟通。
 
 **关键要点：**
@@ -34,6 +36,8 @@ import steel from china cost是规划钢结构项目时最重要的考虑因素�
 ---
 
 ## 第一部分：了解基础知识
+
+![钢结构第一部分：了解基础知识相关图片](/images/blog/import-steel-from-china-cost/section_02.jpg)
 
 ![钢结构第一部分：了解基础知识相关图片](/images/blog/import-steel-from-china-cost/section_02.jpg)
 
@@ -180,6 +184,8 @@ import steel from china cost通常涉及：
 
 ![钢结构第六部分：评估清单相关图片](/images/blog/import-steel-from-china-cost/section_07.jpg)
 
+![钢结构第六部分：评估清单相关图片](/images/blog/import-steel-from-china-cost/section_07.jpg)
+
 使用此清单评估您的import steel from china cost流程：
 
 ### 规划阶段
@@ -220,6 +226,8 @@ import steel from china cost通常涉及：
 ---
 
 ## 总结
+
+![钢结构总结相关图片](/images/blog/import-steel-from-china-cost/section_08.jpg)
 
 ![钢结构总结相关图片](/images/blog/import-steel-from-china-cost/section_08.jpg)
 
