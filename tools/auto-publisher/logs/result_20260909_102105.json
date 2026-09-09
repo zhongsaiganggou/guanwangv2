@@ -1,0 +1,26 @@
+{
+  "run_id": "20260909_102105",
+  "start_time": "2026-09-09T10:21:05.887539",
+  "status": "dry_run_complete",
+  "keyword": "steel structure foundation design guide",
+  "articles": [
+    {
+      "language": "en",
+      "title": "Steel Structure Foundation Design Guide: Complete Guide for Buyers",
+      "category": "Installation & Technical",
+      "word_count": 1203,
+      "url": "https://zhongsai-steelstructure.com/en/blog/steel-structure-foundation-design-guide/"
+    },
+    {
+      "language": "zh",
+      "title": "steel structure foundation design guide：采购商完整指南",
+      "category": "Installation & Technical",
+      "word_count": 361,
+      "url": "https://zhongsai-steelstructure.com/zh/blog/steel-structure-foundation-design-guide/"
+    }
+  ],
+  "errors": [],
+  "warnings": [],
+  "end_time": "2026-09-09T10:21:08.643048",
+  "duration": 2.755509
+}

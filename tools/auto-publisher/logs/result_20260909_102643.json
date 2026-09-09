@@ -1,0 +1,26 @@
+{
+  "run_id": "20260909_102643",
+  "start_time": "2026-09-09T10:26:43.722226",
+  "status": "dry_run_complete",
+  "keyword": "steel structure welding quality control guide",
+  "articles": [
+    {
+      "language": "en",
+      "title": "Steel Structure Welding Quality Control Guide: Complete Guide for Buyers",
+      "category": "Manufacturing & Quality",
+      "word_count": 1247,
+      "url": "https://zhongsai-steelstructure.com/en/blog/steel-structure-welding-quality-control-guide/"
+    },
+    {
+      "language": "zh",
+      "title": "steel structure welding quality control guide：采购商完整指南",
+      "category": "Manufacturing & Quality",
+      "word_count": 395,
+      "url": "https://zhongsai-steelstructure.com/zh/blog/steel-structure-welding-quality-control-guide/"
+    }
+  ],
+  "errors": [],
+  "warnings": [],
+  "end_time": "2026-09-09T10:26:46.289748",
+  "duration": 2.567522
+}

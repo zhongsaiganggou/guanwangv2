@@ -1,0 +1,27 @@
+{
+  "run_id": "20260909_103527",
+  "start_time": "2026-09-09T10:35:27.861910",
+  "status": "success",
+  "keyword": "import steel from china cost",
+  "articles": [
+    {
+      "language": "en",
+      "title": "Import Steel From China Cost: Complete Guide for Buyers",
+      "category": "Cost & Planning",
+      "word_count": 1237,
+      "url": "https://zhongsai-steelstructure.com/en/blog/import-steel-from-china-cost/"
+    },
+    {
+      "language": "zh",
+      "title": "import steel from china cost：采购商完整指南",
+      "category": "Cost & Planning",
+      "word_count": 365,
+      "url": "https://zhongsai-steelstructure.com/zh/blog/import-steel-from-china-cost/"
+    }
+  ],
+  "errors": [],
+  "warnings": [],
+  "commit_sha": "cc6b36213649de383e65ec9647224c9cd50a5f7e",
+  "end_time": "2026-09-09T10:44:38.883583",
+  "duration": 551.021673
+}
