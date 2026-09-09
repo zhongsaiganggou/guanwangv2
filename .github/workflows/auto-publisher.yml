@@ -1,17 +1,10 @@
 name: Auto Publisher - Weekly Blog Posts
 
-# 触发条件：
-# 1. 定时触发：每周二、四、六 北京时间10:00（UTC 02:00）
-# 2. 手动触发：可以在GitHub Actions页面手动运行
 on:
   schedule:
-    # cron格式：分 时 日 月 周
-    # 每周二(2)、四(4)、六(6) UTC 02:00 = 北京时间10:00
     - cron: '0 2 * * 2,4,6'
   workflow_dispatch:
-    # 手动触发
 
-# 权限配置：允许写入仓库内容
 permissions:
   contents: write
   actions: read
@@ -42,14 +35,11 @@ jobs:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
           echo "开始运行自动发文系统..."
-          cd tools/auto-publisher
-          python run.py
+          python tools/auto-publisher/run.py
           
-          # 读取最新的结果文件
-          LATEST_RESULT=$(ls -t logs/result_*.json | head -1)
+          LATEST_RESULT=$(ls -t tools/auto-publisher/logs/result_*.json | head -1)
           echo "结果文件: $LATEST_RESULT"
           
-          # 提取关键信息
           if [ -f "$LATEST_RESULT" ]; then
             STATUS=$(python -c "import json; data=json.load(open('$LATEST_RESULT')); print(data.get('status', 'unknown'))")
             KEYWORD=$(python -c "import json; data=json.load(open('$LATEST_RESULT')); print(data.get('keyword', 'N/A'))")
