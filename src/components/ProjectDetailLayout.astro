@@ -9,7 +9,7 @@ interface Props {
 
 const { project, lang } = Astro.props;
 const t = (obj: { zh: string; en: string }) => obj[lang];
-const projectsBase = `/${lang}/projects`;
+const projectsBase = `/${lang}/projects/`;
 const heroTypeLabel = project.heroImageType === 'rendering'
   ? (lang === 'zh' ? '项目效果图' : 'Project Rendering')
   : project.heroImageType === 'site'
