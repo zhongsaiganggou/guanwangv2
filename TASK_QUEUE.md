@@ -2,6 +2,7 @@
 
 > 最后更新：2026-09-09
 > 当前执行：TASK-01
+> 部署规则：长任务完成后部署到Preview，不部署Production，等用户允许上线
 
 ---
 
@@ -14,163 +15,17 @@
 
 ---
 
-## 任务队列
+## 任务队列总览
 
-### 🟡 TASK-01: 技术SEO清理与优化
-- **优先级**: P0
-- **状态**: 进行中
-- **文档**: `docs/tasks/01-seo-cleanup.md`
-- **目标**: 清理新旧页面并存、统一URL规范、修复301/Canonical/Sitemap/hreflang、清理旧产品URL体系、检查中英文对应关系、优化表单转化、完成桌面端+移动端真实验收
-- **关键产出**: URL_AUDIT.csv、CANONICAL_AUDIT.csv、HREFLANG_AUDIT.csv、SEO_METADATA_AUDIT.csv、CONTENT_AUDIT.csv
-- **预计Commit**: 待完成
-
----
-
-### ⬜ TASK-02: 内容增长 - 第三批技术文章
-- **优先级**: P1
-- **状态**: 待执行
-- **文档**: `docs/tasks/02-content-batch3.md`
-- **目标**: 基于GSC热搜词和竞品分析，创作5-8篇高质量技术文章，中英文双版本同时发布
-- **关键要求**:
-  - 每篇文章2000-3000字
-  - 中英文双版本（同一slug，不同语言目录）
-  - 每篇文章根据段落内容生成多张不同的AI真实工业图片（不要卡通图）
-  - 自动进入Sitemap和Resources Hub
-  - 自然内链到相关产品/能力页面
-- **候选主题**:
-  - Steel Structure Installation Guide（安装指南）
-  - Corrosion Protection Guide（防腐指南）
-  - Steel Grades Explained（钢材等级详解，已完成）
-  - Surface Treatment & Coating（表面处理，已完成）
-  - Steel vs Concrete（钢 vs 混凝土）
-  - Foundation / Design Inputs Guide（基础/设计输入指南）
-  - Project Timeline / Procurement Process（项目时间线/采购流程）
-  - Packing & Marking Guide（包装与标记指南）
-  - Structural Steel Detailing Guide（钢结构详图指南）
-  - Fabrication Tolerance / Quality Guidance（制造公差/质量指南）
-- **预计Commit**: 待完成
-
----
-
-### ⬜ TASK-03: 公司主体定位与证书归属梳理
-- **优先级**: P2
-- **状态**: 待执行（用户明确要求"以后单独处理"）
-- **文档**: `docs/tasks/03-entity-positioning.md`
-- **目标**: 统一全站对ZhongSai的实体描述，明确证书主体归属，避免误导客户
-- **关键问题**:
-  - manufacturer vs trading company vs export supplier 的表述统一
-  - "our factory" / "our certification" / "our workers" 的使用边界
-  - 证书图片主体与中赛进出口公司的关系说明
-  - 合作工厂/生产基地的表述规范
-- **硬规则**:
-  - 不得虚构认证、案例、项目
-  - 不得修改证书图片上的真实信息
-  - 如证书主体不是中赛进出口公司，需保留真实主体说明
-- **预计Commit**: 待完成
-
----
-
-### ⬜ TASK-04: Projects案例页面真实性梳理
-- **优先级**: P2
-- **状态**: 待执行
-- **文档**: `docs/tasks/04-projects-authenticity.md`
-- **目标**: 区分"旧生成海外项目"和"新验证真实项目"，明确每个项目的ZhongSai Scope
-- **关键工作**:
-  - 逐个审计当前12个国内项目 + 9个恢复的新加坡/澳门项目
-  - 区分：OLD GENERATED PROJECT（410）vs NEW VERIFIED PROJECT（200）
-  - 每个项目增加字段：Project Name、Location、Year、Project Type、ZhongSai Scope、Steel Tonnage、Services Provided
-  - 如实际参与范围只是Steel Fabrication/Component Supply/Detailing/Export Supply，必须明确写出
-  - 不得虚构客户、吨位、合同金额、项目角色、施工范围
-- **预计Commit**: 待完成
-
----
-
-### ⬜ TASK-05: 移动端深度优化
-- **优先级**: P2
-- **状态**: 待执行
-- **文档**: `docs/tasks/05-mobile-optimization.md`
-- **目标**: 在375px、390px、430px真实设备尺寸下完成全站移动端体验优化
-- **测试页面**: 首页、Products、Workshop、Warehouse、Projects、About、Contact、Resource、Article
-- **重点检查**: 导航、字体、按钮、表格、图片、FAQ、Sticky CTA、表单、上传文件、语言切换、Footer
-- **硬规则**: 不能只缩放浏览器窗口，必须真实检查
-- **预计Commit**: 待完成
-
----
-
-### ⬜ TASK-06: 页面速度优化
-- **优先级**: P3
-- **状态**: 待执行
-- **文档**: `docs/tasks/06-performance-optimization.md`
-- **目标**: 优化桌面端+移动端的LCP、INP、CLS指标
-- **重点优化**:
-  - Hero背景图、产品图片、项目图片
-  - 视频、第三方脚本、字体、JS Bundle
-  - 图片：WebP/AVIF、正确尺寸、懒加载、首屏关键图不要lazy-load、设置width/height避免布局偏移
-- **硬规则**: 不要为了跑分破坏现有视觉
-- **预计Commit**: 待完成
-
----
-
-### ⬜ TASK-07: GEO/AEO内容增强
-- **优先级**: P2
-- **状态**: 待执行
-- **文档**: `docs/tasks/07-geo-aeo-enhancement.md`
-- **目标**: 提升AI搜索（Google AI Overview、ChatGPT、Perplexity等）的可引用性
-- **关键工作**:
-  - 核心商业页面增加Direct Answer Blocks
-  - 增加FAQ（Question → 2-5句直接答案 → Evidence/Details → Next Step）
-  - 明确结论、定义、流程、表格、项目数据、真实案例、技术参数
-  - 减少"leading world-class best top manufacturer excellent quality"等无证据营销词
-  - 保持并强化：中赛是谁、做什么、不做什么、服务哪些客户、制造能力、出口能力、技术指导
-- **预计Commit**: 待完成
-
----
-
-### ⬜ TASK-08: Resources内容清理与优化
-- **优先级**: P3
-- **状态**: 待执行
-- **文档**: `docs/tasks/08-resources-content-cleanup.md`
-- **目标**: 扫描现有全部Resource/Blog，评估质量，合并重复内容，重写不自然标题
-- **关键工作**:
-  - 输出CONTENT_AUDIT.csv
-  - 字段：URL、Title、主题、搜索意图、目标关键词、是否重复、质量、是否有流量价值、建议动作
-  - 动作：KEEP / UPDATE / MERGE / 301 / DELETE
-  - 重点检查：AI痕迹明显标题、语法错误、薄内容、重复内容、多个页面抢同一关键词、过时内容
-  - 例如："How To Steel Structure Cost"这种不自然标题需要重写
-- **硬规则**: 暂时不要批量生成新文章，先清理现有内容
-- **预计Commit**: 待完成
-
----
-
-### ⬜ TASK-09: 内部链接策略优化
-- **优先级**: P3
-- **状态**: 待执行
-- **文档**: `docs/tasks/09-internal-linking-strategy.md`
-- **目标**: 建立Hub/Spoke内部链接结构，避免关键词蚕食，提升主题权威度
-- **关键工作**:
-  - 关键词聚类分析
-  - Hub页面（Products、Components、Resources、Manufacturing、Export Delivery）
-  - Spoke页面（具体产品、具体文章）
-  - Related内容推荐优化
-  - 面包屑导航优化
-  - 确保所有内部链接直接指向最终200 URL（不经过301）
-- **预计Commit**: 待完成
-
----
-
-### ⬜ TASK-10: Contact表单CRO持续优化
-- **优先级**: P3
-- **状态**: 待执行
-- **文档**: `docs/tasks/10-contact-form-cro.md`
-- **目标**: 提升询盘提交率，优化海外华人客户体验
-- **关键工作**:
-  - 微信优先（微信ID必填，WhatsApp/电话/邮箱选填）
-  - 字段优化：姓名、项目国家/地区、微信ID、项目类型、项目预计时间、图纸上传、项目描述
-  - 不要同时强制微信+WhatsApp+电话+邮箱
-  - Honeypot字段（Website）对真实用户完全不可见
-  - 表单提交测试
-  - 提交成功页优化
-- **预计Commit**: 待完成
+| 编号 | 任务名称 | 优先级 | 状态 | 文档 |
+|------|---------|--------|------|------|
+| TASK-00 | GSC索引清理 + 结构化数据验证 | P0 | ✅ 已完成 | - |
+| TASK-01 | 技术SEO清理与优化 | P0 | 🟡 进行中 | `docs/tasks/01-seo-cleanup.md` |
+| TASK-02 | 关键词地图与搜索意图优化 | P1 | ⬜ 待执行 | `docs/tasks/02-keyword-mapping.md` |
+| TASK-03 | 核心赚钱页面 SEO+GEO+CRO 深度优化 | P0 | ⬜ 待执行 | `docs/tasks/03-core-pages-seo-geo-cro.md` |
+| TASK-04 | Projects案例体系 + 第一方证据 + GEO权威性建设 | P1 | ⬜ 待执行 | `docs/tasks/04-projects-evidence-geo-authority.md` |
+| TASK-05 | Resources内容中心 + Topic Cluster + SEO/GEO内容矩阵 | P2 | ⬜ 待执行 | `docs/tasks/05-resources-topic-cluster-content-matrix.md` |
+| TASK-06 | 多语言国际SEO + 国家/地区页面 + Localization体系 | P3 | ⏳ 待规划 | - |
 
 ---
 
@@ -188,6 +43,93 @@
 
 ---
 
+## 进行中任务
+
+### 🟡 TASK-01: 技术SEO清理与优化
+- **优先级**: P0
+- **状态**: 进行中
+- **文档**: `docs/tasks/01-seo-cleanup.md`
+- **目标**: 清理新旧页面并存、统一URL规范、修复301/Canonical/Sitemap/hreflang、清理旧产品URL体系、检查中英文对应关系、优化表单转化、完成桌面端+移动端真实验收
+- **关键产出**: URL_AUDIT.csv、CANONICAL_AUDIT.csv、HREFLANG_AUDIT.csv、SEO_METADATA_AUDIT.csv、CONTENT_AUDIT.csv
+- **当前进度**:
+  - ✅ 确认Git基线（HEAD: fb0f21e → 7e5333e）
+  - ✅ 读取sitemap.xml（110个URL，全部带斜杠）
+  - ✅ 创建URL审计脚本
+  - ✅ 运行URL审计（252个URL）
+  - ✅ 分析URL审计结果
+  - ⬜ 修复non-slash问题（确认是308，无需修复）
+  - ⬜ 清理旧产品URL体系
+  - ⬜ 检查Canonical
+  - ⬜ 检查hreflang
+  - ⬜ 检查Sitemap
+  - ⬜ 检查robots.txt
+  - ⬜ 扫描内部链接
+  - ⬜ 检查404和Redirect Chain
+  - ⬜ 检查Title/Meta/H1
+  - ⬜ 检查Schema
+  - ⬜ 优化Contact表单
+  - ⬜ 检查移动端
+  - ⬜ 构建部署到Preview
+  - ⬜ 等待用户允许上线
+
+---
+
+## 待执行任务
+
+### ⬜ TASK-02: 关键词地图与搜索意图优化
+- **优先级**: P1
+- **状态**: 待执行（已收到任务要求）
+- **文档**: `docs/tasks/02-keyword-mapping.md`
+- **前置任务**: TASK-01
+- **目标**: 建立关键词 → 搜索意图 → 页面 → 内容 → 内链 → 转化映射体系，避免关键词蚕食
+- **关键产出**: KEYWORD_MAP.csv、CONTENT_CANNIBALIZATION.csv、INTERNAL_LINK_MAP.csv、MASTER KEYWORD MAP报告、CANNIBALIZATION REPORT、PAGE ACTION LIST、HUB STRUCTURE建议
+
+---
+
+### ⬜ TASK-03: 核心赚钱页面 SEO+GEO+CRO 深度优化
+- **优先级**: P0
+- **状态**: 待执行（已收到任务要求）
+- **文档**: `docs/tasks/03-core-pages-seo-geo-cro.md`
+- **前置任务**: TASK-01、TASK-02
+- **目标**: 把最重要、最有商业价值的页面优化成能排名 + AI容易理解 + 用户容易信任 + 广告流量能承接 + 最终促进询盘
+- **P0页面（先做6个）**: 英文首页、中文首页、Products总入口、Steel Workshop、Steel Warehouse、Contact
+- **P1页面**: About、Manufacturing & Quality、Projects、Resources首页、重点产品分类页
+- **关键产出**: 每个页面的PAGE_BRIEF、优化后的页面、验收报告
+
+---
+
+### ⬜ TASK-04: Projects案例体系 + 第一方证据 + GEO权威性建设
+- **优先级**: P1
+- **状态**: 待执行（已收到任务要求）
+- **文档**: `docs/tasks/04-projects-evidence-geo-authority.md`
+- **前置任务**: TASK-01~03
+- **目标**: 把网站从"自我介绍型官网"升级成"有证据、可验证、AI更愿意引用、客户更容易信任"的网站
+- **核心原则**: 真实公司 + 真实业务 + 真实项目 + 真实数据 + 真实图片 + 真实经验 + 清晰结构 + 可验证证据
+- **禁止**: 虚构案例、客户、项目国家、吨位、金额、合作范围、认证、媒体报道、客户评价、排名、奖项
+- **关键产出**: PROJECT_AUDIT.csv、PROJECT_DATABASE.csv、PROJECT_COUNTRY_DATABASE.csv、IMAGE_ASSET_DATABASE.csv、COMPANY_FACTS.json、SALES_FAQ_DATABASE.csv、CERTIFICATION_DATABASE.csv、GEO_AUTHORITY_REPORT.md
+
+---
+
+### ⬜ TASK-05: Resources内容中心 + Topic Cluster + SEO/GEO内容矩阵建设
+- **优先级**: P2
+- **状态**: 待执行（已收到任务要求）
+- **文档**: `docs/tasks/05-resources-topic-cluster-content-matrix.md`
+- **前置任务**: TASK-01~04
+- **目标**: 围绕核心产品和客户决策路径建立内容资产，不是堆博客数量
+- **核心原则**: 每篇新内容必须至少服务一个目标（SEO/GEO/AEO/客户教育/供应商尽调/采购决策/销售转化/产品页支持/案例支持/品牌权威）
+- **关键产出**: RESOURCE_AUDIT.csv、CONTENT_MASTER_PLAN.csv、FAQ_DATABASE.csv、TOPIC_CLUSTER_MAP.csv、CONTENT_UPDATE_LOG.csv
+- **第一批主题**: 10-15个，先选5个最有价值的执行
+
+---
+
+### ⏳ TASK-06: 多语言国际SEO + 国家/地区页面 + Localization体系
+- **优先级**: P3
+- **状态**: 待规划（TASK-05完成后进入）
+- **目标**: 专门解决马来西亚、印尼、巴西、墨西哥、沙特、尼日利亚等目标市场应该怎么做，而不是简单复制"国家名 + Steel Structure"
+- **前置任务**: TASK-01~05
+
+---
+
 ## 执行规则
 
 1. **每次只执行一个任务**：完成当前任务后，用户说"继续下一个任务"再开始下一个
@@ -196,13 +138,16 @@
 4. **Git提交规范**：每个任务完成后单独提交，commit message包含任务编号
 5. **用户确认**：涉及高风险操作（删除页面、修改URL、修改公司定位）前，必须用户确认
 6. **不跨任务**：执行TASK-01时，不主动做TASK-02的内容，除非用户明确要求
+7. **部署规则**：长任务完成后部署到Preview，不部署Production，等用户允许上线
+8. **预览验证**：不上线但要可以预览，完成代码修改后部署到Cloudflare Pages Preview
 
 ---
 
 ## 如何使用
 
-- **"执行 TASK-02"** → 我读取 `docs/tasks/02-content-batch3.md`，开始执行
+- **"执行 TASK-02"** → 我读取 `docs/tasks/02-keyword-mapping.md`，开始执行
 - **"继续下一个任务"** → 我读取队列，找到下一个待执行任务
 - **"任务进度"** → 我更新此文档，显示当前状态和已完成情况
 - **"暂停当前任务"** → 我保存当前进度，标记为暂停
 - **"添加任务"** → 我在此文档中添加新任务条目
+- **"允许上线"** → 我把当前Preview部署到Production
