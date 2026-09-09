@@ -1,0 +1,217 @@
+{
+  "system": {
+    "name": "ZhongSai Auto Publisher",
+    "version": "1.0.0",
+    "proxy": "http://127.0.0.1:12334",
+    "schedule": {
+      "days": [
+        1,
+        3,
+        5
+      ],
+      "time": "10:00",
+      "timezone": "Asia/Shanghai"
+    },
+    "articles_per_run": 1,
+    "min_word_count_en": 2000,
+    "max_word_count_en": 3000,
+    "min_word_count_zh": 2000,
+    "max_word_count_zh": 3000
+  },
+  "github": {
+    "token": "",
+    "repo": "zhongsaiganggou/guanwangv2",
+    "branch": "main",
+    "content_path_en": "src/content/blog/en/",
+    "content_path_zh": "src/content/blog/zh/",
+    "image_path": "public/images/blog/"
+  },
+  "cloudflare": {
+    "account_id": "",
+    "project_name": "zhongsai-website-v2",
+    "api_token": "",
+    "auto_deploy": true,
+    "deploy_wait_seconds": 120
+  },
+  "ai": {
+    "provider": "doubao",
+    "api_key": "",
+    "api_base": "https://ark.cn-beijing.volces.com/api/v3",
+    "model": "doubao-pro-32k",
+    "temperature": 0.7,
+    "max_tokens": 4000
+  },
+  "image_gen": {
+    "provider": "seedream",
+    "api_key": "",
+    "width": 2048,
+    "height": 1365,
+    "style": "professional industrial photography"
+  },
+  "keyword_research": {
+    "google_suggest": {
+      "enabled": true,
+      "language": "en",
+      "country": "us"
+    },
+    "competitor_analysis": {
+      "enabled": true,
+      "competitors": [
+        "https://www.steelconstruction.info",
+        "https://www.steel.org",
+        "https://www.aisc.org"
+      ]
+    },
+    "seed_keywords": [
+      "steel structure",
+      "steel building",
+      "prefab steel",
+      "steel fabrication",
+      "steel warehouse",
+      "steel workshop",
+      "import steel from china",
+      "steel structure cost",
+      "steel structure installation",
+      "steel structure coating",
+      "steel structure design",
+      "steel structure supplier",
+      "steel structure manufacturer",
+      "steel structure export",
+      "steel structure shipping",
+      "steel structure container loading",
+      "steel structure quality",
+      "steel structure welding",
+      "steel structure drawing",
+      "steel structure specification"
+    ],
+    "business_relevant_keywords": [
+      "steel",
+      "structure",
+      "building",
+      "fabrication",
+      "warehouse",
+      "workshop",
+      "factory",
+      "import",
+      "china",
+      "cost",
+      "price",
+      "installation",
+      "coating",
+      "corrosion",
+      "design",
+      "supplier",
+      "manufacturer",
+      "export",
+      "shipping",
+      "container",
+      "quality",
+      "welding",
+      "drawing",
+      "specification",
+      "truss",
+      "beam",
+      "column",
+      "purlin",
+      "cladding",
+      "foundation",
+      "load",
+      "wind",
+      "seismic",
+      "galvanizing",
+      "paint",
+      "maintenance",
+      "lifespan",
+      "durability",
+      "mistakes",
+      "guide",
+      "tips",
+      "checklist",
+      "comparison",
+      "vs",
+      "how to",
+      "what is",
+      "benefits",
+      "advantages",
+      "disadvantages",
+      "process",
+      "steps",
+      "requirements",
+      "documents",
+      "drawings",
+      "boq",
+      "quotation",
+      "procurement",
+      "sourcing",
+      "verification",
+      "inspection",
+      "quality control",
+      "certification",
+      "iso",
+      "ce marking",
+      "standards",
+      "astm",
+      "en",
+      "gb"
+    ]
+  },
+  "categories": [
+    "Cost & Planning",
+    "Import & Shipping",
+    "Manufacturing & Quality",
+    "Installation & Technical",
+    "Supplier Selection",
+    "Materials & Components"
+  ],
+  "cta_types": [
+    "send-drawings",
+    "send-project-requirements",
+    "discuss-your-project",
+    "view-manufacturing",
+    "view-export-process",
+    "view-components"
+  ],
+  "fact_safety": {
+    "forbidden_patterns": [
+      "\\$\\d+\\.?\\d*\\s*(per|/|each)",
+      "\\d+\\.?\\d*\\s*\\$\\s*(per|/|ton|m2|sqm)",
+      "guaranteed delivery",
+      "guaranteed price",
+      "free design",
+      "24.?hour",
+      "save\\s+\\d+%",
+      "\\d+%\\s+cheaper",
+      "best manufacturer",
+      "top \\d+",
+      "no\\.\\s*1",
+      "60\\+ countries",
+      "700\\+ containers",
+      "20\\+ years",
+      "global projects",
+      "worldwide delivery",
+      "overseas completed"
+    ],
+    "allowed_company_facts": [
+      "15+ years export experience",
+      "100,000 m2 production base",
+      "100,000 tonnes annual capacity",
+      "300+ frontline workers",
+      "ISO 9001"
+    ],
+    "required_disclaimers": [
+      "Final structural design should be based on project location, applicable codes, loads and project-specific engineering requirements."
+    ]
+  },
+  "logging": {
+    "log_dir": "tools/auto-publisher/logs/",
+    "data_dir": "tools/auto-publisher/data/",
+    "drafts_dir": "tools/auto-publisher/drafts/",
+    "published_topics_file": "tools/auto-publisher/data/published_topics.json",
+    "max_log_files": 90
+  },
+  "notification": {
+    "enabled": false,
+    "webhook_url": "",
+    "email": ""
+  }
+}

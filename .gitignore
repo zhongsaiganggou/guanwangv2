@@ -18,6 +18,10 @@ dist/
 __pycache__/
 *.pyc
 
+# Auto-publisher system (required for GitHub Actions)
+!tools/auto-publisher/**/*.py
+!tools/auto-publisher/*.py
+
 # Image-audit regenerable scan caches & thumbnail dumps
 /_img_meta.json
 /_img_refs.json
@@ -44,3 +48,6 @@ Desktop.ini
 # Logs
 *.log
 npm-debug.log*
+
+# Auto-publisher local config (contains secrets, never commit)
+tools/auto-publisher/config.local.json

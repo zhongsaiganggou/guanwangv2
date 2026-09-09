@@ -1,0 +1,16 @@
+{
+  "_comment": "本地配置文件 - 包含敏感信息，不会提交到GitHub。复制此文件为config.local.json并填入真实值。",
+  "github": {
+    "token": "你的GitHub Personal Access Token",
+    "repo": "zhongsaiganggou/guanwangv2",
+    "branch": "main"
+  },
+  "cloudflare": {
+    "account_id": "你的Cloudflare Account ID",
+    "project_name": "zhongsai-website-v2",
+    "api_token": "你的Cloudflare API Token"
+  },
+  "system": {
+    "proxy": "http://127.0.0.1:12334"
+  }
+}

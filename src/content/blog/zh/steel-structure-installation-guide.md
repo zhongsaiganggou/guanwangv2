@@ -1,248 +1,250 @@
 ---
-title: Steel Structure Installation Guide for Overseas Projects
+title: 海外项目钢结构安装完整指南
 language: zh
 category: Installation & Technical
 status: published
-seoTitle: Steel Structure Installation Guide for Overseas Projects | ZhongSai Steel Structure
-metaDescription: "Practical guide for overseas steel structure installation: preparation, lifting, bolting, welding, safety, quality control and coordination with local contractors."
-h1: Steel Structure Installation Guide for Overseas Projects
-excerpt: A practical guide for overseas buyers on steel structure installation, covering site preparation, lifting plans, bolting, welding, quality control, and coordination with local installation teams.
+seoTitle: 海外项目钢结构安装完整指南 | 中赛钢构
+metaDescription: "海外钢结构安装实用指南：现场准备、吊装方案、螺栓连接、现场焊接、安全管理、质量控制及与当地承包商的协调配合。"
+h1: 海外项目钢结构安装完整指南
+excerpt: 面向海外采购商的钢结构安装实用指南，涵盖现场准备、吊装方案、螺栓连接、现场焊接、质量控制以及与当地安装团队的协调配合。
 coverImage: /images/blog/steel-structure-installation-guide/cover.jpg
 publishedAt: "2026-09-08"
-updatedAt: "2026-09-08"
+updatedAt: "2026-09-09"
 ctaType: send-project-requirements
 noindex: false
-author: ZhongSai Steel Structure Editorial Team
+author: 中赛钢构编辑团队
 ---
 
 
-# Steel Structure Installation Guide for Overseas Projects
+# 海外项目钢结构安装完整指南
 
-Proper installation is critical to the safety, durability, and performance of any steel structure. For overseas projects, coordination between the steel supplier, local contractors, and project owners becomes even more important.
+正确的安装对任何钢结构的安全性、耐久性和使用性能都至关重要。对于海外项目，钢结构供应商、当地承包商和项目业主之间的协调配合显得尤为重要。
 
-## 1. Before Installation Begins
+## 1. 安装开始前的准备
 
-### Site Preparation
-- Ensure the site is level, compacted, and accessible for delivery trucks and cranes
-- Clear the installation area of obstacles, debris, and underground utilities
-- Prepare temporary roads for heavy equipment movement
-- Plan storage areas for steel components, bolts, welding materials, and tools
+### 现场准备
+- 确保场地平整、压实，运输车辆和起重设备能够顺利进出
+- 清除安装区域的障碍物、建筑垃圾和地下管线
+- 准备重型设备移动的临时道路
+- 规划钢构件、螺栓、焊接材料和工具的存放区域
 
-### Foundation Inspection
-Before any steel is erected, thoroughly inspect the concrete foundations:
-- Verify column base plate positions match the structural drawings
-- Check anchor bolt positions, projections, and thread condition
-- Confirm foundation concrete has reached the required strength
-- Measure foundation levels and record any deviations
+### 基础验收
+在吊装任何钢构件之前，必须对混凝土基础进行全面检查：
+- 核对柱底板位置是否与结构图纸一致
+- 检查地脚螺栓的位置、外露长度和螺纹状况
+- 确认基础混凝土已达到设计要求的强度
+- 测量基础标高，记录任何偏差
 
-### Delivery and Storage Planning
-- Plan delivery sequencing so components arrive in installation order
-- Store components on level, stable blocking to prevent deformation
-- Keep similar members grouped and clearly identified
-- Protect bolt holes, connection surfaces, and finished coatings from damage
+### 运输与存放规划
+- 规划运输顺序，确保构件按安装顺序到场
+- 构件应存放在平整、稳定的垫木上，防止变形
+- 同类构件集中存放并清晰标识
+- 保护螺栓孔、连接面和成品涂层不受损坏
 
-## 2. Lifting and Crane Planning
+## 2. 吊装与起重设备规划
 
-### Crane Selection
-Select the appropriate crane based on:
-- Maximum component weight and dimensions
-- Lifting radius and height required
-- Site conditions and ground bearing capacity
-- Weather conditions and wind limits
-- Available access and working space
+### 起重机选型
+根据以下因素选择合适的起重机：
+- 最大构件的重量和尺寸
+- 所需的吊装半径和高度
+- 现场条件和地面承载能力
+- 天气条件和风力限制
+- 可用的进出通道和作业空间
 
-### Lifting Points
-- Use only designated lifting points or lug angles specified in the fabrication drawings
-- Never lift from random points on the member â this can cause deformation or damage
-- For long or flexible members, use spreader beams or multiple lifting points
-- Verify sling angles and ensure they are within safe working limits
+### 吊点选择
+- 只能使用加工图纸中指定的吊点或吊耳
+- 严禁从构件的任意位置起吊，这可能导致变形或损坏
+- 对于长构件或柔性构件，应使用平衡梁或多点吊装
+- 核对吊索角度，确保在安全工作范围内
 
-### Weather Considerations
-- Stop lifting operations when wind speed exceeds the safe limit
-- Avoid lifting in rain, snow, or fog when visibility is poor
-- Secure partially erected structures before leaving the site overnight
-- Check weather forecasts and plan critical lifts during favorable conditions
+### 天气因素
+- 当风速超过安全限值时，停止吊装作业
+- 避免在雨、雪或能见度差的雾天进行吊装
+- 夜间离开现场前，固定好已部分安装的结构
+- 关注天气预报，选择有利天气进行关键吊装作业
 
-## 3. Installation Sequence
+## 3. 安装顺序
 
-### General Principles
-Follow a logical installation sequence that ensures structural stability at every stage:
-1. Erect columns and secure with temporary bracing
-2. Install primary beams to form stable bays
-3. Add secondary members (purlins, girts, bracing)
-4. Install roof and wall cladding after structural alignment is confirmed
-5. Complete connections and final torqueing
+### 一般原则
+遵循合理的安装顺序，确保每个阶段的结构稳定性：
+1. 吊装立柱并用临时支撑固定
+2. 安装主梁，形成稳定的开间
+3. 安装次构件（檩条、墙梁、支撑）
+4. 结构对齐确认后，安装屋面板和墙面板
+5. 完成连接并进行最终紧固
 
-### Column Installation
-- Lift columns vertically using lifting lugs or designated lifting points
-- Align column base plates with anchor bolts
-- Install nuts and washers, but do not fully tighten initially
-- Use temporary bracing or guy wires to hold columns plumb
-- Check column verticality with a theodolite or total station
-- Adjust as needed before tightening base plate nuts
+### 立柱安装
+- 使用吊耳或指定吊点垂直起吊立柱
+- 将柱底板与地脚螺栓对齐
+- 安装螺母和垫圈，但初始不要完全拧紧
+- 使用临时支撑或缆风绳保持立柱垂直
+- 使用经纬仪或全站仪检查立柱垂直度
+- 调整到位后，再拧紧柱底板螺母
 
-### Beam Installation
-- Lift beams to the correct elevation and position
-- Align bolt holes with column connection plates
-- Install drift pins to align holes, then insert bolts
-- Install enough bolts to hold the member safely before releasing the crane
-- Do not force members into position â this can cause damage or residual stress
+### 梁安装
+- 将梁起吊到正确的标高和位置
+- 将螺栓孔与柱连接板对齐
+- 使用冲钉对齐孔位，然后穿入螺栓
+- 安装足够数量的螺栓确保构件安全后，再松开起重机
+- 不得强行将构件就位，这可能导致损坏或残余应力
 
-## 4. Bolted Connections
+## 4. 螺栓连接
 
-### Bolt Types
-- **Ordinary bolts (Grade 4.6/4.8)**: For secondary connections and non-critical joints
-- **High-strength bolts (Grade 8.8/10.9)**: For primary structural connections requiring pre-tension
-- **Anchor bolts**: For column base plate connections to foundations
+### 螺栓类型
+- **普通螺栓（4.6/4.8级）**：用于次连接和非关键节点
+- **高强度螺栓（8.8/10.9级）**：用于需要预紧力的主要结构连接
+- **地脚螺栓**：用于柱底板与基础的连接
 
-### Installation Procedure
-1. Clean bolt holes and remove burrs, dirt, and rust
-2. Insert bolts from the consistent direction
-3. Install washers under both bolt head and nut
-4. Hand-tighten nuts initially
-5. Use a calibrated torque wrench for final tightening
-6. Mark tightened bolts with paint to indicate completion
+### 安装程序
+1. 清洁螺栓孔，去除毛刺、污垢和锈蚀
+2. 螺栓从一致的方向穿入
+3. 螺栓头和螺母下方均安装垫圈
+4. 初始手动拧紧螺母
+5. 使用经校准的扭矩扳手进行最终拧紧
+6. 用油漆标记已拧紧的螺栓，表示完成
 
-### Torque Control
-- Follow the torque values specified in the project specifications
-- Calibrate torque wrenches regularly
-- Record torque values and inspection results
+### 扭矩控制
+- 遵循项目规格书中规定的扭矩值
+- 定期校准扭矩扳手
+- 记录扭矩值和检查结果
 
-## 5. Welding on Site
+## 5. 现场焊接
 
-### When Field Welding is Needed
-Most steel structures are designed for bolted connections to minimize field welding. However, field welding may be required for:
-- Column splices
-- Beam-to-column moment connections
-- Special connections that cannot be bolted
-- Repair of damaged or misaligned connections
+### 何时需要现场焊接
+大多数钢结构设计为螺栓连接，以尽量减少现场焊接。但在以下情况下可能需要现场焊接：
+- 立柱拼接
+- 梁与柱的刚接节点
+- 无法采用螺栓连接的特殊节点
+- 损坏或错位节点的修复
 
-### Welding Preparation
-- Clean weld surfaces of rust, paint, oil, and moisture
-- Ensure proper fit-up and gap dimensions per the WPS
-- Use appropriate backing bars or run-off tabs if required
-- Protect the welding area from wind, rain, and excessive humidity
-- Preheat materials if required
+### 焊接准备
+- 清洁焊接表面的锈蚀、油漆、油污和水分
+- 按照焊接工艺规程（WPS）确保合适的装配和间隙尺寸
+- 必要时使用合适的垫板或引弧板
+- 保护焊接区域免受风、雨和过高湿度的影响
+- 必要时对材料进行预热
 
-### Welding Quality Control
-- Only qualified welders should perform structural welding
-- Follow the approved WPS for current, voltage, travel speed, and electrode type
-- Use proper welding sequence to minimize distortion
-- Perform visual inspection after welding
-- For critical joints, arrange NDT as specified
+### 焊接质量控制
+- 只有合格的焊工才能进行结构焊接
+- 遵循经批准的焊接工艺规程（WPS），包括电流、电压、焊接速度和焊条类型
+- 采用合理的焊接顺序以减少变形
+- 焊接后进行外观检查
+- 对于关键节点，按规定安排无损检测（NDT）
 
-## 6. Alignment and Tolerance Control
+## 6. 对齐与公差控制
 
-### Critical Checks
-During and after installation, verify:
-- Column verticality (plumb)
-- Column spacing and bay dimensions
-- Beam elevation and level
-- Roof slope and camber
-- Overall building dimensions (diagonal checks)
-- Connection alignment and fit-up
+### 关键检查项
+在安装过程中和安装完成后，核对以下内容：
+- 立柱垂直度
+- 立柱间距和开间尺寸
+- 梁的标高和水平度
+- 屋面坡度和起拱
+- 建筑整体尺寸（对角线检查）
+- 连接对齐和装配质量
 
-### Adjustment Methods
-- Use shims under base plates for elevation adjustment
-- Adjust guy wires or temporary bracing for plumb correction
-- Use jacks or come-alongs for alignment of heavy members
-- Never use heat to correct misalignment unless specifically approved by the engineer
+### 调整方法
+- 在柱底板下使用垫片进行标高调整
+- 调整缆风绳或临时支撑进行垂直度校正
+- 使用千斤顶或紧线器对齐重型构件
+- 未经工程师明确批准，不得使用加热方法校正错位
 
-## 7. Safety Management
+## 7. 安全管理
 
-### Personal Protective Equipment (PPE)
-All installation workers must use:
-- Safety helmets (hard hats)
-- Safety harnesses with lanyards for work at height
-- Steel-toe safety boots
-- Gloves appropriate for the task
-- Eye protection for grinding, cutting, and welding
-- Hearing protection in noisy areas
+### 个人防护装备（PPE）
+所有安装工人必须使用：
+- 安全帽
+- 高处作业用的安全带和安全绳
+- 防砸安全鞋
+- 适合作业任务的手套
+- 打磨、切割和焊接时的护目镜
+- 噪音区域的听力防护
 
-### Fall Protection
-- Install guardrails or safety nets where possible
-- Use full-body harnesses with shock-absorbing lanyards
-- Anchor points must be certified and capable of holding the required load
-- Never work on unbraced or unstable structures
-- Use proper access ladders or lifts
+### 防坠落保护
+- 尽可能安装防护栏杆或安全网
+- 使用带缓冲安全绳的全身式安全带
+- 锚点必须经过认证，能够承受所需载荷
+- 严禁在未支撑或不稳定的结构上作业
+- 使用合适的登高梯或升降设备
 
-### Crane and Lifting Safety
-- Only certified crane operators should operate lifting equipment
-- Perform daily pre-use inspections of cranes and slings
-- Keep workers clear of lifting zones
-- Use tag lines to control suspended loads
-- Stop operations if any unsafe condition is observed
+### 起重与吊装安全
+- 只有持证起重机操作员才能操作起重设备
+- 每天使用前检查起重机和吊索
+- 工人远离吊装区域
+- 使用缆风绳控制悬吊载荷
+- 发现任何不安全状况，立即停止作业
 
-## 8. Coordination with Local Contractors
+## 8. 与当地承包商的协调
 
-### Clear Communication
-- Provide installation drawings, erection sequences, and connection details in advance
-- Hold pre-installation meetings to review the plan, schedule, and safety requirements
-- Assign a single point of contact for technical questions
-- Document all decisions and changes in writing
+### 清晰沟通
+- 提前提供安装图纸、吊装顺序和连接细节
+- 召开安装前会议，审查方案、进度计划和安全要求
+- 指定单一技术问题联系人
+- 所有决定和变更均以书面形式记录
 
-### Technical Support from the Supplier
-A reputable steel supplier should provide:
-- Detailed erection drawings and member identification lists
-- Connection details and bolt torque specifications
-- Welding procedure specifications (WPS) if field welding is required
-- Technical guidance during installation (remote or on-site)
-- Responses to technical questions within a reasonable timeframe
+### 供应商的技术支持
+信誉良好的钢结构供应商应提供：
+- 详细的吊装图纸和构件标识清单
+- 连接细节和螺栓扭矩规格
+- 如需现场焊接，提供焊接工艺规程（WPS）
+- 安装期间的技术指导（远程或现场）
+- 在合理时间内回复技术问题
 
-## 9. Inspection and Acceptance
+## 9. 检查与验收
 
-### Inspection Stages
-1. **Foundation inspection** â before steel erection begins
-2. **In-process inspection** â during installation, checking alignment, bolting, and welding
-3. **Final structural inspection** â after all structural steel is in place
-4. **Connection inspection** â verify all bolts are torqued, welds are complete
-5. **Handover inspection** â before cladding or other trades proceed
+### 检查阶段
+1. **基础验收** — 钢结构吊装开始前
+2. **过程检查** — 安装期间，检查对齐、螺栓和焊接
+3. **最终结构检查** — 所有结构钢安装完成后
+4. **连接检查** — 核实所有螺栓已拧紧、焊缝已完成
+5. **交接检查** — 围护或其他工种进场前
 
-### Documentation
-Maintain complete records:
-- Foundation inspection reports
-- Column alignment and plumb readings
-- Bolt torque inspection records
-- Welding inspection and NDT reports
-- Material certificates and traceability records
-- As-built drawings and any field changes
-- Photographic records of key stages
+### 文件记录
+保持完整的记录：
+- 基础验收报告
+- 立柱对齐和垂直度测量记录
+- 螺栓扭矩检查记录
+- 焊接检查和无损检测报告
+- 材质证书和可追溯性记录
+- 竣工图纸和任何现场变更
+- 关键阶段的照片记录
 
-## 10. Post-Installation Considerations
+## 10. 安装后注意事项
 
-### Coating Touch-Up
-- Inspect all shop-applied coatings for damage during transport and installation
-- Touch up damaged areas according to the coating specification
-- Pay special attention to connection areas, bolt heads, and field welds
-- Ensure proper surface preparation before touch-up painting
+### 涂层修补
+- 检查所有工厂涂层在运输和安装过程中是否受损
+- 按照涂层规格修补受损区域
+- 特别注意连接区域、螺栓头和现场焊缝
+- 修补涂装前确保正确的表面处理
 
-### Final Cleanup
-- Remove all temporary bracing, guy wires, and erection aids
-- Clean the site of welding slag, bolt off-cuts, packaging, and other debris
-- Ensure no temporary materials are left inside the structure
-- Restore any site areas disturbed during installation
+### 最终清理
+- 拆除所有临时支撑、缆风绳和安装辅助设施
+- 清理现场的焊渣、螺栓边角料、包装和其他建筑垃圾
+- 确保结构内没有遗留临时材料
+- 恢复安装过程中被破坏的场地区域
 
-### Handover
-- Provide as-built drawings and documentation to the project owner
-- Confirm all inspections and tests are complete and accepted
-- Obtain formal sign-off for the structural steel package
-- Coordinate handover to the next trade (cladding, MEP, etc.)
+### 工程交接
+- 向项目业主提供竣工图纸和文件
+- 确认所有检查和测试已完成并通过验收
+- 获得钢结构分项工程的正式签字确认
+- 协调与下一工种（围护、机电等）的交接
 
-## Summary
+## 总结
 
-Successful overseas steel structure installation requires careful planning, proper sequencing, rigorous quality control, and strong safety management. Key success factors include:
+成功的海外钢结构安装需要周密的规划、合理的顺序、严格的质量控制和强有力的安全管理。关键成功因素包括：
 
-1. **Thorough preparation** â site readiness, foundation inspection, and delivery planning
-2. **Proper lifting** â correct crane selection, lifting points, and weather awareness
-3. **Logical sequence** â columns first, then primary beams, then secondary members
-4. **Connection quality** â correct bolts, proper torque, qualified welding
-5. **Alignment control** â regular plumb, level, and dimension checks
-6. **Safety first** â PPE, fall protection, and lifting safety at all times
-7. **Clear coordination** â communication between supplier, contractor, and owner
-8. **Complete documentation** â inspection records, test reports, and as-built drawings
+1. **充分准备** — 现场就绪、基础验收、运输规划
+2. **正确吊装** — 合适的起重机选型、吊点选择、天气意识
+3. **合理顺序** — 先立柱，再主梁，然后次构件
+4. **连接质量** — 正确的螺栓、适当的扭矩、合格的焊接
+5. **对齐控制** — 定期检查垂直度、水平度和尺寸
+6. **安全第一** — 始终坚持个人防护、防坠落和吊装安全
+7. **清晰协调** — 供应商、承包商和业主之间的有效沟通
+8. **完整文件** — 检查记录、测试报告和竣工图纸
 
-By following these guidelines and working with an experienced steel supplier that provides strong technical support, overseas projects can achieve safe, efficient, and high-quality steel structure installation.
+遵循以上指南，并与能够提供强有力技术支持的经验丰富的钢结构供应商合作，海外项目可以实现安全、高效、高质量的钢结构安装。
+
+最终结构设计应基于项目位置、适用规范、荷载和项目特定的工程要求。
 
 ---
 
-*Planning a steel structure project? Send your drawings or project requirements for review. ZhongSai can support fabrication supply, export coordination, and overseas installation technical guidance according to project scope.*
+*有钢结构项目？发送您的图纸或项目需求进行评估。中赛可根据项目范围提供加工制造供应、出口协调以及海外安装技术指导。*
