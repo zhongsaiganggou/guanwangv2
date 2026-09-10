@@ -245,6 +245,8 @@ export function buildSitemapPaths(): string[] {
     for (const proj of projects) {
       urls.push(`/${lang}/projects/${proj.slug}/`);
     }
+    // Country/region pages
+    urls.push(`/${lang}/projects/singapore/`);
   }
   for (const blog of SITEMAP_EN_ONLY) {
     urls.push(`/en/${blog}/`);

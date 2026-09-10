@@ -27,6 +27,11 @@ const description = '查看中赛钢构精选的物流仓储、工业制造、�
 
   <section class="projects-grid-section">
     <div class="container">
+      <div class="country-filter">
+        <span class="filter-label">按地区筛选:</span>
+        <a href="/zh/projects/singapore/" class="filter-link">新加坡 (5个项目)</a>
+        <span class="filter-current">全部项目</span>
+      </div>
       <div class="projects-grid">
         {projects.map(project => (
           <ProjectCard project={project} lang={lang} />
@@ -72,6 +77,40 @@ const description = '查看中赛钢构精选的物流仓储、工业制造、�
   color: rgba(255,255,255,0.85);
   max-width: 700px;
   line-height: 1.7;
+}
+.country-filter {
+  margin-bottom: 24px;
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  flex-wrap: wrap;
+}
+.filter-label {
+  font-size: 0.9rem;
+  color: #666;
+  font-weight: 600;
+}
+.filter-link {
+  padding: 6px 16px;
+  background: #fff;
+  border: 1px solid #ddd;
+  border-radius: 20px;
+  text-decoration: none;
+  color: #0a3d62;
+  font-size: 0.88rem;
+  transition: all 0.2s;
+}
+.filter-link:hover {
+  background: #0a3d62;
+  color: #fff;
+  border-color: #0a3d62;
+}
+.filter-current {
+  padding: 6px 16px;
+  background: #0a3d62;
+  color: #fff;
+  border-radius: 20px;
+  font-size: 0.88rem;
 }
 .projects-grid-section {
   padding: 40px 0 32px;

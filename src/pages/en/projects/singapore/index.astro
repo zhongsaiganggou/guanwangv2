@@ -1,0 +1,421 @@
+---
+// ZhongSai V2 - Singapore Country Page
+// 5 verified Singapore projects: MRT stations, airport, SATS BUP, MCC Innocentre
+import BaseLayout from '../../../../layouts/BaseLayout.astro';
+import ProjectCard from '../../../../components/ProjectCard.astro';
+import QuoteForm from '../../../../components/QuoteForm.astro';
+import ExportDeliveryCTA from '../../../../components/ExportDeliveryCTA.astro';
+import { projects } from '../../../../data/projects-data';
+
+const lang = 'en';
+const title = 'Steel Structure Projects in Singapore | ZhongSai Manufacturing References';
+const description = 'ZhongSai Steel Structure project references in Singapore, including MRT stations, airport terminal connections, SATS BUP centre and MCC innovation centre. Fabrication and export supply for Singapore construction projects.';
+
+// Filter Singapore projects
+const singaporeProjects = projects.filter(p => p.slug.startsWith('singapore-'));
+---
+
+<BaseLayout title={title} description={description} lang={lang}>
+  <section class="country-hero">
+    <div class="container">
+      <div class="hub-breadcrumb">
+        <a href="/en/">Home</a><span>/</span><a href="/en/projects/">Projects</a><span>/</span><span>Singapore</span>
+      </div>
+      <p class="eyebrow">SINGAPORE PROJECT REFERENCES</p>
+      <h1>Steel Structure Projects in Singapore</h1>
+      <p class="country-subtitle">
+        ZhongSai has participated in steel structure fabrication and supply for multiple Singapore construction projects, including MRT stations, airport terminal connections, and commercial building structures. These projects demonstrate our capability in complex steel component fabrication, precision manufacturing and export delivery for Singapore market requirements.
+      </p>
+      <div class="country-stats">
+        <div class="stat-item">
+          <span class="stat-number">{singaporeProjects.length}</span>
+          <span class="stat-label">Verified Projects</span>
+        </div>
+        <div class="stat-item">
+          <span class="stat-number">3+</span>
+          <span class="stat-label">Project Types</span>
+        </div>
+        <div class="stat-item">
+          <span class="stat-number">EN/SS</span>
+          <span class="stat-label">Standards Experience</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="country-overview">
+    <div class="container">
+      <div class="overview-grid">
+        <div class="overview-content">
+          <h2>Singapore Steel Structure Market</h2>
+          <p>
+            Singapore is a key Southeast Asian construction market with high standards for structural steel fabrication, quality control and project management. Singapore construction projects typically require compliance with British Standards (BS/EN), Singapore Standards (SS), and project-specific quality requirements.
+          </p>
+          <p>
+            Common steel structure applications in Singapore include:
+          </p>
+          <ul>
+            <li>Mass Rapid Transit (MRT) stations and depots</li>
+            <li>Airport terminal buildings and connections</li>
+            <li>Commercial and mixed-use developments</li>
+            <li>Industrial and logistics facilities</li>
+            <li>Public infrastructure projects</li>
+          </ul>
+        </div>
+        <div class="overview-sidebar">
+          <div class="sidebar-card">
+            <h3>Singapore Building Standards</h3>
+            <ul>
+              <li>BCA (Building and Construction Authority)</li>
+              <li>SS (Singapore Standards)</li>
+              <li>EN (European Standards)</li>
+              <li>BS (British Standards)</li>
+              <li>Project-specific specifications</li>
+            </ul>
+          </div>
+          <div class="sidebar-card">
+            <h3>ZhongSai Capabilities for Singapore</h3>
+            <ul>
+              <li>Complex steel component fabrication</li>
+              <li>Precision dimensional control</li>
+              <li>Welding quality control</li>
+              <li>Surface treatment (painting/galvanizing)</li>
+              <li>Export packing and container loading</li>
+              <li>Shipping documentation</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="country-projects">
+    <div class="container">
+      <h2>ZhongSai Projects in Singapore</h2>
+      <p class="section-intro">
+        The following are verified steel structure projects in Singapore where ZhongSai participated in fabrication and supply. Each project has specific scope and technical requirements.
+      </p>
+      <div class="projects-grid">
+        {singaporeProjects.map(project => (
+          <ProjectCard project={project} lang={lang} />
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <section class="country-import">
+    <div class="container">
+      <h2>Importing Steel Structures from China to Singapore</h2>
+      <div class="import-steps">
+        <div class="step-item">
+          <div class="step-number">1</div>
+          <h3>Project Requirements</h3>
+          <p>Provide structural drawings, member schedules, connection details, material specifications and applicable project standards for fabrication review.</p>
+        </div>
+        <div class="step-item">
+          <div class="step-number">2</div>
+          <h3>Technical Review & Quotation</h3>
+          <p>ZhongSai engineering team reviews drawings, identifies fabrication requirements, and provides preliminary quotation based on project scope.</p>
+        </div>
+        <div class="step-item">
+          <div class="step-number">3</div>
+          <h3>Detailing & Fabrication</h3>
+          <p>Shop drawing detailing, material preparation, cutting, welding, assembly, surface treatment and quality inspection according to project specifications.</p>
+        </div>
+        <div class="step-item">
+          <div class="step-number">4</div>
+          <h3>Packing & Export</h3>
+          <p>Steel members are identified, packed and loaded into containers. Export documentation including packing list, commercial invoice and certificate of origin is prepared.</p>
+        </div>
+        <div class="step-item">
+          <div class="step-number">5</div>
+          <h3>Shipping & Delivery</h3>
+          <p>Sea freight from China ports to Singapore. Typical transit time is 5-7 days. Installation technical guidance can be provided remotely or on-site as required.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="country-faq">
+    <div class="container">
+      <h2>Frequently Asked Questions</h2>
+      <div class="faq-list">
+        <div class="faq-item">
+          <h3>Can ZhongSai fabricate according to Singapore standards?</h3>
+          <p>Yes. ZhongSai has experience with EN, BS and project-specific specifications commonly used in Singapore construction projects. We can review project specifications and adjust fabrication processes accordingly.</p>
+        </div>
+        <div class="faq-item">
+          <h3>What is the typical lead time for Singapore projects?</h3>
+          <p>Lead time depends on project scope, complexity and quantity. Typical fabrication lead time is 4-8 weeks after drawing approval. Sea freight to Singapore takes approximately 5-7 days.</p>
+        </div>
+        <div class="faq-item">
+          <h3>Can you provide third-party inspection?</h3>
+          <p>Third-party inspection can be coordinated based on project requirements. We can work with designated inspection agencies for material certification, dimensional inspection and welding quality verification.</p>
+        </div>
+        <div class="faq-item">
+          <h3>Do you provide installation services in Singapore?</h3>
+          <p>ZhongSai provides installation technical guidance, including installation drawings, sequence guidance and remote technical support. We do not typically provide local construction labor, but can coordinate with local contractors as required.</p>
+        </div>
+        <div class="faq-item">
+          <h3>What documents are provided for export to Singapore?</h3>
+          <p>Standard export documents include commercial invoice, packing list, bill of lading, certificate of origin, material certificates and inspection records. Additional documents can be provided based on project requirements.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="country-disclaimer">
+    <div class="container">
+      <p>Project information shown on this page is based on available project records. Specific scope, technical details and participation may vary by project. All project names and locations are used for reference purposes only.</p>
+    </div>
+  </section>
+
+  <section class="country-quote">
+    <div class="container">
+      <ExportDeliveryCTA lang="en" />
+
+      <div class="quote-intro">
+        <p class="eyebrow">PROJECT INQUIRY</p>
+        <h2>Have a Singapore Steel Structure Project?</h2>
+        <p>Send drawings or project requirements. Based on our Singapore project experience, we can provide fabrication and supply solutions for your project.</p>
+      </div>
+      <QuoteForm lang={lang} />
+    </div>
+  </section>
+</BaseLayout>
+
+<style>
+.country-hero {
+  padding: 56px 0 40px;
+  background: linear-gradient(135deg, #0a3d62 0%, #0d4f7a 100%);
+  color: #fff;
+}
+.country-hero h1 {
+  font-size: 2.2rem;
+  margin: 12px 0 16px;
+  color: #fff;
+  max-width: 800px;
+}
+.country-subtitle {
+  font-size: 1.05rem;
+  color: rgba(255,255,255,0.85);
+  max-width: 750px;
+  line-height: 1.7;
+}
+.country-stats {
+  display: flex;
+  gap: 40px;
+  margin-top: 32px;
+}
+.stat-item {
+  display: flex;
+  flex-direction: column;
+}
+.stat-number {
+  font-size: 2rem;
+  font-weight: 700;
+  color: #fff;
+}
+.stat-label {
+  font-size: 0.9rem;
+  color: rgba(255,255,255,0.7);
+  margin-top: 4px;
+}
+.country-overview {
+  padding: 48px 0;
+  background: #fff;
+}
+.overview-grid {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  gap: 40px;
+}
+.overview-content h2 {
+  font-size: 1.8rem;
+  color: #0a3d62;
+  margin-bottom: 16px;
+}
+.overview-content p {
+  color: #555;
+  line-height: 1.8;
+  margin-bottom: 16px;
+}
+.overview-content ul {
+  color: #555;
+  line-height: 1.8;
+  padding-left: 20px;
+}
+.overview-content li {
+  margin-bottom: 8px;
+}
+.sidebar-card {
+  background: #f8f9fa;
+  padding: 24px;
+  border-radius: 8px;
+  margin-bottom: 20px;
+}
+.sidebar-card h3 {
+  font-size: 1.1rem;
+  color: #0a3d62;
+  margin-bottom: 12px;
+}
+.sidebar-card ul {
+  color: #555;
+  line-height: 1.7;
+  padding-left: 18px;
+}
+.sidebar-card li {
+  margin-bottom: 6px;
+}
+.country-projects {
+  padding: 48px 0 32px;
+  background: #f8f9fa;
+}
+.country-projects h2 {
+  font-size: 1.8rem;
+  color: #0a3d62;
+  margin-bottom: 12px;
+}
+.section-intro {
+  color: #555;
+  max-width: 700px;
+  margin-bottom: 32px;
+  line-height: 1.7;
+}
+.projects-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 28px;
+}
+.country-import {
+  padding: 48px 0;
+  background: #fff;
+}
+.country-import h2 {
+  font-size: 1.8rem;
+  color: #0a3d62;
+  margin-bottom: 32px;
+}
+.import-steps {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 20px;
+}
+.step-item {
+  background: #f8f9fa;
+  padding: 24px;
+  border-radius: 8px;
+  position: relative;
+}
+.step-number {
+  width: 36px;
+  height: 36px;
+  background: #0a3d62;
+  color: #fff;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 700;
+  margin-bottom: 16px;
+}
+.step-item h3 {
+  font-size: 1rem;
+  color: #0a3d62;
+  margin-bottom: 8px;
+}
+.step-item p {
+  font-size: 0.88rem;
+  color: #666;
+  line-height: 1.6;
+}
+.country-faq {
+  padding: 48px 0;
+  background: #f8f9fa;
+}
+.country-faq h2 {
+  font-size: 1.8rem;
+  color: #0a3d62;
+  margin-bottom: 32px;
+}
+.faq-list {
+  max-width: 800px;
+}
+.faq-item {
+  background: #fff;
+  padding: 24px;
+  border-radius: 8px;
+  margin-bottom: 16px;
+}
+.faq-item h3 {
+  font-size: 1.05rem;
+  color: #0a3d62;
+  margin-bottom: 8px;
+}
+.faq-item p {
+  color: #555;
+  line-height: 1.7;
+}
+.country-disclaimer {
+  padding: 16px 0;
+  background: #fff;
+  border-top: 1px solid rgba(0,0,0,0.06);
+}
+.country-disclaimer p {
+  color: #888;
+  font-size: 0.85rem;
+  text-align: center;
+  margin: 0;
+  line-height: 1.6;
+}
+.country-quote {
+  padding: 32px 0 48px;
+  background: #f8f9fa;
+}
+.quote-intro {
+  text-align: center;
+  margin-bottom: 24px;
+}
+.quote-intro h2 {
+  font-size: 1.8rem;
+  color: #0a3d62;
+  margin: 8px 0 12px;
+}
+.quote-intro p {
+  color: #555;
+  max-width: 600px;
+  margin: 0 auto;
+}
+@media (max-width: 1024px) {
+  .projects-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .import-steps {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+@media (max-width: 768px) {
+  .overview-grid {
+    grid-template-columns: 1fr;
+  }
+  .country-stats {
+    flex-wrap: wrap;
+    gap: 24px;
+  }
+  .import-steps {
+    grid-template-columns: 1fr;
+  }
+}
+@media (max-width: 640px) {
+  .country-hero h1 {
+    font-size: 1.6rem;
+  }
+  .projects-grid {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+  .quote-intro h2 {
+    font-size: 1.4rem;
+  }
+}
+</style>

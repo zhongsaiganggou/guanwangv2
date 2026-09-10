@@ -1,0 +1,421 @@
+---
+// ZhongSai V2 - Singapore Country Page (Chinese)
+// 5 verified Singapore projects: MRT stations, airport, SATS BUP, MCC Innocentre
+import BaseLayout from '../../../../layouts/BaseLayout.astro';
+import ProjectCard from '../../../../components/ProjectCard.astro';
+import QuoteForm from '../../../../components/QuoteForm.astro';
+import ExportDeliveryCTA from '../../../../components/ExportDeliveryCTA.astro';
+import { projects } from '../../../../data/projects-data';
+
+const lang = 'zh';
+const title = '新加坡钢结构项目案例 | 中赛钢构制造参考';
+const description = '中赛钢构在新加坡的钢结构项目案例，包括地铁站、机场航站楼连接、SATS BUP中心、MCC创新中心等。为新加坡建筑项目提供钢结构制造与出口供货服务。';
+
+// Filter Singapore projects
+const singaporeProjects = projects.filter(p => p.slug.startsWith('singapore-'));
+---
+
+<BaseLayout title={title} description={description} lang={lang}>
+  <section class="country-hero">
+    <div class="container">
+      <div class="hub-breadcrumb">
+        <a href="/zh/">首页</a><span>/</span><a href="/zh/projects/">项目案例</a><span>/</span><span>新加坡</span>
+      </div>
+      <p class="eyebrow">新加坡项目案例</p>
+      <h1>新加坡钢结构项目案例</h1>
+      <p class="country-subtitle">
+        中赛钢构参与了多个新加坡建筑项目的钢结构制造与供货，包括地铁站、机场航站楼连接、商业建筑结构等。这些项目展示了我们在复杂钢构件加工、精密制造以及满足新加坡市场要求的出口交付能力。
+      </p>
+      <div class="country-stats">
+        <div class="stat-item">
+          <span class="stat-number">{singaporeProjects.length}</span>
+          <span class="stat-label">已验证项目</span>
+        </div>
+        <div class="stat-item">
+          <span class="stat-number">3+</span>
+          <span class="stat-label">项目类型</span>
+        </div>
+        <div class="stat-item">
+          <span class="stat-number">EN/SS</span>
+          <span class="stat-label">标准经验</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="country-overview">
+    <div class="container">
+      <div class="overview-grid">
+        <div class="overview-content">
+          <h2>新加坡钢结构市场概述</h2>
+          <p>
+            新加坡是东南亚重要的建筑市场，对钢结构制造、质量控制和项目管理有较高标准。新加坡建筑项目通常要求符合英国标准（BS/EN）、新加坡标准（SS）以及项目特定的质量要求。
+          </p>
+          <p>
+            新加坡常见的钢结构应用包括：
+          </p>
+          <ul>
+            <li>地铁（MRT）车站和车辆段</li>
+            <li>机场航站楼及连接通道</li>
+            <li>商业及综合开发项目</li>
+            <li>工业和物流设施</li>
+            <li>公共基础设施项目</li>
+          </ul>
+        </div>
+        <div class="overview-sidebar">
+          <div class="sidebar-card">
+            <h3>新加坡建筑标准</h3>
+            <ul>
+              <li>BCA（建设局）</li>
+              <li>SS（新加坡标准）</li>
+              <li>EN（欧洲标准）</li>
+              <li>BS（英国标准）</li>
+              <li>项目特定规范</li>
+            </ul>
+          </div>
+          <div class="sidebar-card">
+            <h3>中赛服务新加坡的能力</h3>
+            <ul>
+              <li>复杂钢构件加工</li>
+              <li>精密尺寸控制</li>
+              <li>焊接质量控制</li>
+              <li>表面处理（喷漆/镀锌）</li>
+              <li>出口包装与装柜</li>
+              <li>海运文件办理</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="country-projects">
+    <div class="container">
+      <h2>中赛在新加坡的项目</h2>
+      <p class="section-intro">
+        以下是中赛参与制造与供货的新加坡已验证钢结构项目。每个项目有具体的参与范围和技术要求。
+      </p>
+      <div class="projects-grid">
+        {singaporeProjects.map(project => (
+          <ProjectCard project={project} lang={lang} />
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <section class="country-import">
+    <div class="container">
+      <h2>从中国进口钢结构到新加坡流程</h2>
+      <div class="import-steps">
+        <div class="step-item">
+          <div class="step-number">1</div>
+          <h3>项目需求确认</h3>
+          <p>提供结构图纸、构件清单、节点详图、材料规格和适用项目标准，用于制造评审。</p>
+        </div>
+        <div class="step-item">
+          <div class="step-number">2</div>
+          <h3>技术评审与报价</h3>
+          <p>中赛技术团队评审图纸，确认制造要求，根据项目范围提供初步报价。</p>
+        </div>
+        <div class="step-item">
+          <div class="step-number">3</div>
+          <h3>深化设计与制造</h3>
+          <p>加工图深化、材料准备、切割、焊接、组装、表面处理和质量检验，按项目规范执行。</p>
+        </div>
+        <div class="step-item">
+          <div class="step-number">4</div>
+          <h3>包装与出口</h3>
+          <p>钢构件编号、包装并装入集装箱。准备出口文件，包括装箱单、商业发票和原产地证。</p>
+        </div>
+        <div class="step-item">
+          <div class="step-number">5</div>
+          <h3>海运与交付</h3>
+          <p>从中国港口海运至新加坡，典型运输时间5-7天。可根据需要提供远程或现场安装技术指导。</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="country-faq">
+    <div class="container">
+      <h2>常见问题</h2>
+      <div class="faq-list">
+        <div class="faq-item">
+          <h3>中赛能按新加坡标准制造吗？</h3>
+          <p>可以。中赛有新加坡建筑项目常用的EN、BS及项目特定规范的经验。我们可以评审项目规范并相应调整制造工艺。</p>
+        </div>
+        <div class="faq-item">
+          <h3>新加坡项目典型交付周期是多久？</h3>
+          <p>交付周期取决于项目范围、复杂度和数量。图纸确认后典型制造周期为4-8周。海运至新加坡约5-7天。</p>
+        </div>
+        <div class="faq-item">
+          <h3>可以提供第三方检验吗？</h3>
+          <p>可根据项目要求协调第三方检验。我们可与指定检验机构合作，进行材料认证、尺寸检验和焊接质量验证。</p>
+        </div>
+        <div class="faq-item">
+          <h3>在新加坡提供安装服务吗？</h3>
+          <p>中赛提供安装技术指导，包括安装图纸、顺序指导和远程技术支持。我们通常不提供当地施工劳务，但可根据需要与当地承包商协调。</p>
+        </div>
+        <div class="faq-item">
+          <h3>出口到新加坡提供哪些文件？</h3>
+          <p>标准出口文件包括商业发票、装箱单、提单、原产地证、材料证书和检验记录。可根据项目要求提供额外文件。</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="country-disclaimer">
+    <div class="container">
+      <p>本页面展示的项目信息基于现有项目记录。具体参与范围和技术细节可能因项目而异。所有项目名称和地点仅供参考。</p>
+    </div>
+  </section>
+
+  <section class="country-quote">
+    <div class="container">
+      <ExportDeliveryCTA lang="zh" />
+
+      <div class="quote-intro">
+        <p class="eyebrow">项目咨询</p>
+        <h2>有新加坡钢结构项目？</h2>
+        <p>发送图纸或项目需求。基于我们的新加坡项目经验，我们可以为您的项目提供制造和供货方案。</p>
+      </div>
+      <QuoteForm lang={lang} />
+    </div>
+  </section>
+</BaseLayout>
+
+<style>
+.country-hero {
+  padding: 56px 0 40px;
+  background: linear-gradient(135deg, #0a3d62 0%, #0d4f7a 100%);
+  color: #fff;
+}
+.country-hero h1 {
+  font-size: 2.2rem;
+  margin: 12px 0 16px;
+  color: #fff;
+  max-width: 800px;
+}
+.country-subtitle {
+  font-size: 1.05rem;
+  color: rgba(255,255,255,0.85);
+  max-width: 750px;
+  line-height: 1.7;
+}
+.country-stats {
+  display: flex;
+  gap: 40px;
+  margin-top: 32px;
+}
+.stat-item {
+  display: flex;
+  flex-direction: column;
+}
+.stat-number {
+  font-size: 2rem;
+  font-weight: 700;
+  color: #fff;
+}
+.stat-label {
+  font-size: 0.9rem;
+  color: rgba(255,255,255,0.7);
+  margin-top: 4px;
+}
+.country-overview {
+  padding: 48px 0;
+  background: #fff;
+}
+.overview-grid {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  gap: 40px;
+}
+.overview-content h2 {
+  font-size: 1.8rem;
+  color: #0a3d62;
+  margin-bottom: 16px;
+}
+.overview-content p {
+  color: #555;
+  line-height: 1.8;
+  margin-bottom: 16px;
+}
+.overview-content ul {
+  color: #555;
+  line-height: 1.8;
+  padding-left: 20px;
+}
+.overview-content li {
+  margin-bottom: 8px;
+}
+.sidebar-card {
+  background: #f8f9fa;
+  padding: 24px;
+  border-radius: 8px;
+  margin-bottom: 20px;
+}
+.sidebar-card h3 {
+  font-size: 1.1rem;
+  color: #0a3d62;
+  margin-bottom: 12px;
+}
+.sidebar-card ul {
+  color: #555;
+  line-height: 1.7;
+  padding-left: 18px;
+}
+.sidebar-card li {
+  margin-bottom: 6px;
+}
+.country-projects {
+  padding: 48px 0 32px;
+  background: #f8f9fa;
+}
+.country-projects h2 {
+  font-size: 1.8rem;
+  color: #0a3d62;
+  margin-bottom: 12px;
+}
+.section-intro {
+  color: #555;
+  max-width: 700px;
+  margin-bottom: 32px;
+  line-height: 1.7;
+}
+.projects-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 28px;
+}
+.country-import {
+  padding: 48px 0;
+  background: #fff;
+}
+.country-import h2 {
+  font-size: 1.8rem;
+  color: #0a3d62;
+  margin-bottom: 32px;
+}
+.import-steps {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 20px;
+}
+.step-item {
+  background: #f8f9fa;
+  padding: 24px;
+  border-radius: 8px;
+  position: relative;
+}
+.step-number {
+  width: 36px;
+  height: 36px;
+  background: #0a3d62;
+  color: #fff;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 700;
+  margin-bottom: 16px;
+}
+.step-item h3 {
+  font-size: 1rem;
+  color: #0a3d62;
+  margin-bottom: 8px;
+}
+.step-item p {
+  font-size: 0.88rem;
+  color: #666;
+  line-height: 1.6;
+}
+.country-faq {
+  padding: 48px 0;
+  background: #f8f9fa;
+}
+.country-faq h2 {
+  font-size: 1.8rem;
+  color: #0a3d62;
+  margin-bottom: 32px;
+}
+.faq-list {
+  max-width: 800px;
+}
+.faq-item {
+  background: #fff;
+  padding: 24px;
+  border-radius: 8px;
+  margin-bottom: 16px;
+}
+.faq-item h3 {
+  font-size: 1.05rem;
+  color: #0a3d62;
+  margin-bottom: 8px;
+}
+.faq-item p {
+  color: #555;
+  line-height: 1.7;
+}
+.country-disclaimer {
+  padding: 16px 0;
+  background: #fff;
+  border-top: 1px solid rgba(0,0,0,0.06);
+}
+.country-disclaimer p {
+  color: #888;
+  font-size: 0.85rem;
+  text-align: center;
+  margin: 0;
+  line-height: 1.6;
+}
+.country-quote {
+  padding: 32px 0 48px;
+  background: #f8f9fa;
+}
+.quote-intro {
+  text-align: center;
+  margin-bottom: 24px;
+}
+.quote-intro h2 {
+  font-size: 1.8rem;
+  color: #0a3d62;
+  margin: 8px 0 12px;
+}
+.quote-intro p {
+  color: #555;
+  max-width: 600px;
+  margin: 0 auto;
+}
+@media (max-width: 1024px) {
+  .projects-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .import-steps {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+@media (max-width: 768px) {
+  .overview-grid {
+    grid-template-columns: 1fr;
+  }
+  .country-stats {
+    flex-wrap: wrap;
+    gap: 24px;
+  }
+  .import-steps {
+    grid-template-columns: 1fr;
+  }
+}
+@media (max-width: 640px) {
+  .country-hero h1 {
+    font-size: 1.6rem;
+  }
+  .projects-grid {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+  .quote-intro h2 {
+    font-size: 1.4rem;
+  }
+}
+</style>
