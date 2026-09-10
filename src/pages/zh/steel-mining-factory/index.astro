@@ -3,24 +3,42 @@ import BaseLayout from '../../../layouts/BaseLayout.astro';
 import QuoteForm from '../../../components/QuoteForm.astro';
 import '../../../styles/detail.css';
 
-const title = '矿业与重型工业钢结构解决方案 | 中赛钢构';
-const description = '中赛钢构为矿业及重型工业项目提供钢结构制造与构件供应，包括加工厂房、设备支撑结构、工业建筑等。从图纸审核到制造加工、包装装柜、出口协调，为工业环境提供可靠钢构件。';
+const title = '矿业与重工业钢结构｜设计深化、制造与出口｜中赛钢构';
+const description = '为矿业厂房、加工设施、输送系统、设备平台及其他重工业应用提供工程化钢结构。中赛钢构提供复杂结构深化、重型制造、项目定制表面处理及出口包装交付。';
 const lang = 'zh';
 const canonical = 'https://zhongsai-steelstructure.com/zh/steel-mining-factory/';
 ---
 
 <BaseLayout title={title} description={description} lang={lang}>
-  <!-- Hero -->
+  <!-- Hero - 复杂工业能力 -->
   <section class="detail-hero">
     <div class="detail-hero-bg" style="background-image: url('/images/products/app-mining-energy-hero.jpg');"></div>
     <div class="detail-hero-overlay"></div>
     <div class="detail-hero-content">
-      <span class="eyebrow">矿业与重型工业 · 钢结构制造</span>
-      <h1>矿业与重型工业钢结构解决方案</h1>
-      <p class="lead">中赛钢构为矿业加工设施、重型工业建筑及设备支撑结构提供钢结构制造与构件供应。从图纸审核到制造加工、包装装柜、出口协调，为 demanding 工业环境提供可靠钢构件供应。</p>
+      <span class="eyebrow">矿业 · 能源 · 重工业钢结构制造</span>
+      <h1>矿业、能源与重工业项目钢结构</h1>
+      <p class="lead">为矿业厂房、加工设施、输送系统、设备平台及其他重工业应用提供工程化钢结构。从复杂结构深化到重型制造和出口包装，我们为苛刻工业环境提供可靠钢构件。</p>
+      <div class="hero-capabilities">
+        <div class="cap-item">
+          <span class="cap-icon">📐</span>
+          <span>复杂结构深化设计</span>
+        </div>
+        <div class="cap-item">
+          <span class="cap-icon">🏭</span>
+          <span>重型构件制造加工</span>
+        </div>
+        <div class="cap-item">
+          <span class="cap-icon">🛡️</span>
+          <span>项目定制表面防护</span>
+        </div>
+        <div class="cap-item">
+          <span class="cap-icon">🚢</span>
+          <span>出口包装与交付</span>
+        </div>
+      </div>
       <div class="detail-hero-actions">
-        <a href="#quote" class="btn btn-primary">提交矿业重工业项目需求</a>
-        <a href="/zh/products/" class="btn btn-outline">查看全部产品</a>
+        <a href="#quote" class="btn btn-primary">提交图纸技术审核</a>
+        <a href="#quote-info" class="btn btn-outline">咨询工业项目</a>
       </div>
     </div>
   </section>
@@ -32,156 +50,420 @@ const canonical = 'https://zhongsai-steelstructure.com/zh/steel-mining-factory/'
       <span class="sep">/</span>
       <a href="/zh/products/">产品</a>
       <span class="sep">/</span>
-      <span class="current">矿业与重型工业</span>
+      <span class="current">矿业与重工业</span>
     </div>
   </nav>
 
-  <!-- 01 应用概述 -->
+  <!-- 01 典型应用场景 -->
   <section class="detail-section">
     <div class="container">
       <div class="section-heading reveal">
-        <p class="section-index">01 / 应用概述</p>
-        <h2>矿业与重型工业项目的钢结构需求</h2>
-        <p>矿业及重型工业设施需要承受重载、设备支撑及苛刻运行环境的坚固钢结构。中赛钢构根据项目图纸和技术规格制造钢结构构件，供应钢梁、钢柱、桁架、平台及支撑结构，满足工业应用需求。</p>
+        <p class="section-index">01 / 应用场景</p>
+        <h2>典型重工业钢结构应用场景</h2>
+        <p>矿业、能源和重工业项目需要专门设计的钢结构，承受重载、设备支撑、腐蚀环境和复杂连接节点。</p>
       </div>
-      <div class="requirement-grid">
-        <div class="requirement-card reveal reveal-delay-1">
-          <div class="req-icon">01</div>
-          <h3>加工厂房</h3>
-          <p>矿物加工厂、破碎筛分设施及工业加工建筑的钢结构，按项目结构要求设计制造。</p>
+      <div class="app-grid">
+        <div class="app-card reveal reveal-delay-1">
+          <h3>矿业加工厂</h3>
+          <p>矿物加工厂、破碎筛分设施和矿石处理建筑的钢结构。</p>
         </div>
-        <div class="requirement-card reveal reveal-delay-2">
-          <div class="req-icon">02</div>
-          <h3>设备支撑结构</h3>
-          <p>钢平台、支撑框架及设备基础结构，按设备荷载要求和项目图纸制造加工。</p>
+        <div class="app-card reveal reveal-delay-2">
+          <h3>矿物加工设施</h3>
+          <p>加工设备支撑结构、多层平台和物料搬运系统。</p>
         </div>
-        <div class="requirement-card reveal reveal-delay-3">
-          <div class="req-icon">03</div>
-          <h3>重型工业建筑</h3>
-          <p>矿业运营工业厂房、维修设施及重型设备仓库的钢结构，可配置行车支撑结构。</p>
+        <div class="app-card reveal reveal-delay-3">
+          <h3>输送廊道</h3>
+          <p>散料输送用钢输送机支撑结构、转运站和廊道框架。</p>
         </div>
-        <div class="requirement-card reveal reveal-delay-1">
-          <div class="req-icon">04</div>
-          <h3>输送与管廊支撑</h3>
-          <p>输送系统、管廊及工业物料搬运基础设施的钢结构支撑，按项目设计规格制造。</p>
+        <div class="app-card reveal reveal-delay-1">
+          <h3>设备支撑平台</h3>
+          <p>工业钢平台、设备支撑框架和检修维护结构。</p>
         </div>
-        <div class="requirement-card reveal reveal-delay-2">
-          <div class="req-icon">05</div>
-          <h3>定制加工构件</h3>
-          <p>按项目图纸生产定制钢构件及复杂加工件，包括厚板加工和组合截面构件。</p>
+        <div class="app-card reveal reveal-delay-2">
+          <h3>管廊支架</h3>
+          <p>工业管道、电缆桥架和公用设施支撑系统的钢结构管廊。</p>
         </div>
-        <div class="requirement-card reveal reveal-delay-3">
-          <div class="req-icon">06</div>
-          <h3>出口包装装柜</h3>
-          <p>重型工业构件包装装柜出口，含构件编号、装箱清单及出口资料协调支持。</p>
+        <div class="app-card reveal reveal-delay-3">
+          <h3>破碎/筛分结构</h3>
+          <p>破碎机、筛分机和物料处理设备的重型支撑框架。</p>
+        </div>
+        <div class="app-card reveal reveal-delay-1">
+          <h3>电力与能源设施</h3>
+          <p>发电厂、能源设施和工业工艺建筑的钢结构。</p>
+        </div>
+        <div class="app-card reveal reveal-delay-2">
+          <h3>重型机械平台</h3>
+          <p>重型机械、工业设备和工艺系统的支撑结构。</p>
+        </div>
+        <div class="app-card reveal reveal-delay-3">
+          <h3>工业检修平台</h3>
+          <p>工业设施的检修通道、楼梯系统和维护平台。</p>
+        </div>
+        <div class="app-card reveal reveal-delay-1">
+          <h3>大跨度工业建筑</h3>
+          <p>用于重工业作业、维护和存储的大跨度钢框架建筑。</p>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- 02 技术要求 -->
+  <!-- 02 关键工程考虑因素 -->
   <section class="detail-section alt">
     <div class="container">
       <div class="section-heading reveal">
-        <p class="section-index">02 / 技术要求</p>
-        <h2>矿业与工业钢结构项目所需信息</h2>
-        <p>准确的制造加工和报价需要完整的项目信息。以下信息直接影响结构设计、构件规格、制造要求及包装装柜方案。</p>
+        <p class="section-index">02 / 工程考虑因素</p>
+        <h2>重工业钢结构关键工程考虑因素</h2>
+        <p>重工业钢结构需要针对多种荷载类型和环境条件进行仔细的工程分析。所有设计参数均为项目特定，根据经审批的图纸、适用规范和客户规格确定。</p>
       </div>
-      <div class="image-text-block">
-        <div class="itb-image">
-          <img src="/images/manufacturing/real/welding-9820.jpg" alt="中赛重型钢构件制造加工" loading="lazy">
+      <div class="engineering-grid">
+        <div class="eng-card reveal reveal-delay-1">
+          <h4>设备集中荷载</h4>
+          <p>重型设备在特定支撑点产生集中荷载，需要加固连接和荷载分布分析。</p>
         </div>
-        <div class="itb-content">
-          <h3>报价与制造所需项目信息</h3>
-          <ul>
-            <li>项目国家及目的港</li>
-            <li>结构图纸或建筑方案图</li>
-            <li>工程量清单（BOQ）如有</li>
-            <li>设备荷载要求及支撑点位</li>
-            <li>行车要求（吨位、起升高度、行车数量）</li>
-            <li>建筑尺寸：长 × 宽 × 檐高</li>
-            <li>当地气候数据：风速、雪荷载、抗震设防</li>
-            <li>表面处理及涂装要求</li>
-            <li>项目设计规定的材料牌号要求</li>
-          </ul>
-          <p style="margin-top: 16px; font-size: 0.875rem; color: #64748b;">* 具体跨度、荷载、构件规格及技术参数以项目图纸和双方确认的技术要求为准。中赛钢构不提供未经确认技术范围的结构设计。</p>
+        <div class="eng-card reveal reveal-delay-2">
+          <h4>动力荷载</h4>
+          <p>运行机械和工艺设备产生动力荷载，需要在结构设计中进行疲劳分析和振动考虑。</p>
+        </div>
+        <div class="eng-card reveal reveal-delay-3">
+          <h4>振动</h4>
+          <p>设备引起的振动影响结构性能，需要振动分析和适当的连接节点设计。</p>
+        </div>
+        <div class="eng-card reveal reveal-delay-1">
+          <h4>吊车荷载</h4>
+          <p>桥式吊车系统对柱子和基础施加竖向和水平荷载，需要加固结构构件。</p>
+        </div>
+        <div class="eng-card reveal reveal-delay-2">
+          <h4>输送机荷载</h4>
+          <p>输送系统沿支撑结构施加分布荷载和点荷载，需要协调结构和设备接口设计。</p>
+        </div>
+        <div class="eng-card reveal reveal-delay-3">
+          <h4>风荷载</h4>
+          <p>高架结构、输送廊道和高层平台承受风荷载，根据项目位置和适用规范确定。</p>
+        </div>
+        <div class="eng-card reveal reveal-delay-1">
+          <h4>抗震要求</h4>
+          <p>抗震设防要求影响结构配置、连接设计和构件截面，按当地建筑规范执行。</p>
+        </div>
+        <div class="eng-card reveal reveal-delay-2">
+          <h4>腐蚀环境</h4>
+          <p>矿业、化工和沿海环境需要耐腐蚀材料选择和表面防护系统。</p>
+        </div>
+        <div class="eng-card reveal reveal-delay-3">
+          <h4>检修通道</h4>
+          <p>工业结构需要安全的检修通道，包括平台、楼梯、栏杆和设备拆卸预留。</p>
+        </div>
+        <div class="eng-card reveal reveal-delay-1">
+          <h4>连接复杂性</h4>
+          <p>重工业结构通常需要复杂的螺栓和焊接连接，具有多荷载路径和接口要求。</p>
+        </div>
+        <div class="eng-card reveal reveal-delay-2">
+          <h4>运输尺寸限制</h4>
+          <p>超大型构件需要模块化制造规划，以适应集装箱或项目特定物流限制。</p>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- 03 制造能力 -->
+  <!-- 03 工程参数表 -->
   <section class="detail-section">
     <div class="container">
       <div class="section-heading reveal">
-        <p class="section-index">03 / 制造能力</p>
-        <h2>重型工业钢构件制造能力</h2>
-        <p>中赛钢构拥有100,000 m²生产基地，年产能100,000吨，一线生产工人300+。制造流程涵盖切割、焊接、组装、表面处理及质量控制，可生产各种规格和复杂度的钢结构构件。</p>
+        <p class="section-index">03 / 工程参数</p>
+        <h2>重工业结构典型工程参数参考</h2>
+        <p>以下所有参数仅为项目参考值。实际数值必须根据项目图纸、荷载计算、设备规格和适用设计规范确定。中赛钢构根据经审批的项目图纸进行制造。</p>
+      </div>
+      <div class="params-table-wrapper">
+        <table class="params-table">
+          <thead>
+            <tr>
+              <th>参数项</th>
+              <th>按项目确定</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><strong>结构类型</strong></td>
+              <td>平台 / 桁架 / 框架 / 廊道 / 支撑结构</td>
+            </tr>
+            <tr>
+              <td><strong>主材牌号</strong></td>
+              <td>根据图纸和适用规范确定</td>
+            </tr>
+            <tr>
+              <td><strong>设备荷载</strong></td>
+              <td>项目特定，按设备制造商数据确定</td>
+            </tr>
+            <tr>
+              <td><strong>动力荷载</strong></td>
+              <td>项目特定，按运行条件和分析确定</td>
+            </tr>
+            <tr>
+              <td><strong>吊车需求</strong></td>
+              <td>如适用，按吊车吨位和工作级别确定</td>
+            </tr>
+            <tr>
+              <td><strong>连接方式</strong></td>
+              <td>螺栓 / 焊接 / 组合，按项目图纸确定</td>
+            </tr>
+            <tr>
+              <td><strong>表面防护</strong></td>
+              <td>涂装 / 镀锌 / 项目定制涂层系统</td>
+            </tr>
+            <tr>
+              <td><strong>腐蚀类别</strong></td>
+              <td>根据项目环境和客户规格确定</td>
+            </tr>
+            <tr>
+              <td><strong>设计标准</strong></td>
+              <td>基于项目所在国 / 客户规格确定</td>
+            </tr>
+            <tr>
+              <td><strong>制造公差</strong></td>
+              <td>根据经审批图纸和项目要求确定</td>
+            </tr>
+            <tr>
+              <td><strong>出口方式</strong></td>
+              <td>集装箱 / 项目特定物流</td>
+            </tr>
+            <tr>
+              <td><strong>安装支持</strong></td>
+              <td>可提供技术指导</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <p class="params-note"><strong>说明：</strong>重工业结构不提供通用标准值。每个项目需要根据实际设备荷载、运行条件、场地环境和适用设计规范进行结构分析。中赛钢构根据经审批的项目图纸提供制造和出口供货服务。</p>
+    </div>
+  </section>
+
+  <!-- 04 输送廊道 -->
+  <section class="detail-section alt">
+    <div class="container">
+      <div class="section-heading reveal">
+        <p class="section-index">04 / 输送结构</p>
+        <h2>钢输送廊道与转运站结构</h2>
+        <p>输送系统是矿业、港口、发电厂和散料处理设施的关键基础设施。钢输送廊道和转运站需要针对跨度、支撑、动力荷载和设备接口进行专门工程设计。</p>
+      </div>
+      <div class="image-text-block">
+        <div class="itb-image">
+          <img src="/images/projects/cnooc-pr6-pipe-rack-frame-aerial-rendering.jpg" alt="钢输送廊道与转运站结构" loading="lazy">
+        </div>
+        <div class="itb-content">
+          <h3>输送结构关键工程考虑因素</h3>
+          <ul>
+            <li><strong>输送廊道跨度</strong> — 跨度由支撑间距、输送机荷载和结构分析确定</li>
+            <li><strong>支撑结构</strong> — 柱子、支撑和基础按竖向和侧向荷载设计</li>
+            <li><strong>转运站</strong> — 物料转运点的多层结构，含设备支撑平台</li>
+            <li><strong>检修通道</strong> — 输送机检查和维护用走道、楼梯和检修平台</li>
+            <li><strong>风荷载</strong> — 高架廊道结构按项目位置和规范承受风荷载</li>
+            <li><strong>动力荷载</strong> — 输送机运行产生动力荷载，需要结构分析</li>
+            <li><strong>设备接口</strong> — 输送机支撑、驱动和附件的协调连接点</li>
+            <li><strong>模块化运输限制</strong> — 廊道分段制造以适应集装箱或项目物流限制</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 05 设备平台 -->
+  <section class="detail-section">
+    <div class="container">
+      <div class="section-heading reveal">
+        <p class="section-index">05 / 设备平台</p>
+        <h2>工业设备平台与支撑结构</h2>
+        <p>重型工业设备需要坚固的支撑平台，针对集中荷载、振动、检修通道和设备接口进行设计。中赛钢构根据项目图纸和设备规格制造设备平台和支撑结构。</p>
+      </div>
+      <div class="image-text-block reverse">
+        <div class="itb-image">
+          <img src="/images/projects/cnpc-sixth-construction-cracking-furnace-equipment-detail.jpg" alt="工业设备平台与支撑结构" loading="lazy">
+        </div>
+        <div class="itb-content">
+          <h3>设备平台设计考虑因素</h3>
+          <ul>
+            <li><strong>设备支撑</strong> — 平台按特定设备重量、占地面积和荷载分布设计</li>
+            <li><strong>检修通道</strong> — 设备检查、维护和部件更换的安全通道</li>
+            <li><strong>活荷载</strong> — 平台活荷载按适用规范和运行要求确定</li>
+            <li><strong>集中荷载</strong> — 设备点荷载分析并通过结构框架分布</li>
+            <li><strong>楼梯与栏杆</strong> — 检修楼梯、扶手和护栏按安全要求设置</li>
+            <li><strong>设备接口</strong> — 设备安装的协调连接点和预埋件</li>
+            <li><strong>后期维护</strong> — 设备拆卸、更换和持续维护通道的预留</li>
+          </ul>
+          <div style="margin-top: 20px;">
+            <a href="/zh/components/steel-trusses/" class="btn btn-outline">查看钢桁架与平台</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 06 腐蚀防护 -->
+  <section class="detail-section alt">
+    <div class="container">
+      <div class="section-heading reveal">
+        <p class="section-index">06 / 表面防护</p>
+        <h2>苛刻工业环境的表面防护</h2>
+        <p>矿业、能源和重工业环境经常使钢结构暴露于腐蚀条件，包括湿气、化学侵蚀、盐雾和磨蚀性物料。适当的表面防护对结构长期耐久性至关重要。</p>
+      </div>
+      <div class="corrosion-grid">
+        <div class="corr-card reveal reveal-delay-1">
+          <h4>涂装系统</h4>
+          <p>多层涂装系统，包括底漆、中间漆和面漆，按项目环境、腐蚀类别和客户要求指定。涂装厚度和质量在包装前检查。</p>
+        </div>
+        <div class="corr-card reveal reveal-delay-2">
+          <h4>热浸镀锌</h4>
+          <p>热浸镀锌为适合镀锌槽尺寸的构件提供腐蚀防护。镀锌厚度和质量按适用标准验证。</p>
+        </div>
+        <div class="corr-card reveal reveal-delay-3">
+          <h4>项目定制涂层系统</h4>
+          <p>针对高腐蚀环境的专业涂层系统，包括耐化学腐蚀涂层、环氧系统和其他按客户要求和设计规格指定的防护方法。</p>
+        </div>
+      </div>
+      <p style="margin-top: 24px; color: #666; font-size: 0.92rem; text-align: center;">具体腐蚀防护系统根据项目环境类别、客户规格、适用标准和设计使用年限确定。未经项目特定工程分析，不提供固定防腐寿命保证。</p>
+    </div>
+  </section>
+
+  <!-- 07 制造质量 -->
+  <section class="detail-section">
+    <div class="container">
+      <div class="section-heading reveal">
+        <p class="section-index">07 / 制造质量</p>
+        <h2>重工业构件制造与质量控制</h2>
+        <p>重工业钢构件需要严格的制造质量控制。中赛钢构运营100,000㎡生产基地，年产能100,000吨，在整个制造过程中实施可追溯材料管理和过程质量检验。</p>
       </div>
       <div class="feature-grid">
         <div class="feature-card reveal reveal-delay-1">
           <div class="feature-img" style="background-image: url('/images/manufacturing/real/cutting-9809.jpg');"></div>
           <div class="feature-body">
-            <h3>数控切割与备料</h3>
-            <p>钢板和型钢按加工图纸切割，全程材料可追溯，生产过程标识清晰。</p>
+            <h3>材料可追溯性</h3>
+            <p>钢材从采购到制造全程跟踪，材料证书和标识在生产过程中始终保持。</p>
           </div>
         </div>
         <div class="feature-card reveal reveal-delay-2">
           <div class="feature-img" style="background-image: url('/images/manufacturing/real/welding-9820.jpg');"></div>
           <div class="feature-body">
-            <h3>焊接与组装</h3>
-            <p>重型钢构件按项目规格组装焊接，执行焊接工艺评定及过程质量检验。</p>
+            <h3>切割与焊接</h3>
+            <p>数控切割和合格焊接工艺按项目规格执行，含焊接工艺评定和过程检验。</p>
           </div>
         </div>
         <div class="feature-card reveal reveal-delay-1">
           <div class="feature-img" style="background-image: url('/images/manufacturing/real/assembly-9821.jpg');"></div>
           <div class="feature-body">
-            <h3>表面处理</h3>
-            <p>按项目要求进行抛丸除锈及涂装或热镀锌，包装前检查涂层厚度和质量。</p>
+            <h3>尺寸检验</h3>
+            <p>成品构件在表面处理和包装前，按经审批图纸和项目公差进行尺寸检查。</p>
           </div>
         </div>
         <div class="feature-card reveal reveal-delay-2">
           <div class="feature-img" style="background-image: url('/images/company/factory-yard-gantry-crane.jpg');"></div>
           <div class="feature-body">
-            <h3>成品检查与包装</h3>
-            <p>成品构件按确认加工要求检查、整理、编号，并进入包装与装柜准备环节。</p>
+            <h3>预拼装与包装</h3>
+            <p>如项目规格要求则进行预拼装。构件标识、包装并准备装柜，附装箱清单。</p>
           </div>
         </div>
       </div>
       <div style="margin-top: 28px; display: flex; gap: 16px; flex-wrap: wrap;">
-        <a href="/zh/manufacturing-quality/" class="btn btn-outline">查看制造能力</a>
-        <a href="/zh/products/custom-engineering/" class="btn btn-outline">查看按图定制加工</a>
+        <a href="/zh/manufacturing-quality/" class="btn btn-outline">查看制造与质量</a>
+        <a href="/zh/products/custom-engineering/" class="btn btn-outline">查看工程与深化</a>
       </div>
     </div>
   </section>
 
-  <!-- 04 出口交付 -->
-  <section class="detail-section alt">
+  <!-- 08 报价所需信息 -->
+  <section class="detail-section alt" id="quote-info">
     <div class="container">
       <div class="section-heading reveal">
-        <p class="section-index">04 / 出口交付</p>
-        <h2>包装、装柜与出口协调</h2>
-        <p>重型工业钢构件需要精心的包装和装柜方案，以保护构件在海运途中不受损坏，并确保目的港高效卸货。中赛钢构根据项目需求协调包装、编号、装柜及出口资料支持。</p>
+        <p class="section-index">08 / 报价资料</p>
+        <h2>技术审核与报价所需资料</h2>
+        <p>重工业钢结构的准确技术审核和报价需要完整的项目信息。以下资料直接影响结构设计、构件截面、制造要求、表面防护和包装出口规划。</p>
       </div>
-      <div class="image-text-block reverse">
-        <div class="itb-image">
-          <img src="/images/container-loading.jpg" alt="钢结构出口装柜" loading="lazy">
-        </div>
-        <div class="itb-content">
-          <h3>重型工业构件出口准备</h3>
+      <div class="quote-info-grid">
+        <div class="quote-info-card drawing">
+          <h4>项目与设计资料</h4>
           <ul>
-            <li>构件编号与安装图对应</li>
-            <li>大型构件单独包装防护</li>
-            <li>型钢及小型构件成捆包装</li>
-            <li>装柜方案与重量分布规划</li>
-            <li>木方垫木及加固防止运输损伤</li>
-            <li>装箱清单与柜号对应</li>
-            <li>出口资料支持与物流协调</li>
+            <li>项目所在国家 / 地点</li>
+            <li>建筑总平面图</li>
+            <li>结构图纸与节点详图</li>
+            <li>设备布置与支撑点</li>
+            <li>荷载信息（恒载、活载、设备、动力）</li>
+            <li>设计规范与适用标准</li>
+            <li>材料规格与牌号要求</li>
           </ul>
-          <div style="margin-top: 20px;">
-            <a href="/zh/export-delivery/" class="btn btn-outline">查看出口交付流程</a>
-          </div>
         </div>
+        <div class="quote-info-card no-drawing">
+          <h4>制造与交付要求</h4>
+          <ul>
+            <li>表面处理与涂层要求</li>
+            <li>制造公差规格</li>
+            <li>预拼装要求（如有）</li>
+            <li>交付港口 / 目的地</li>
+            <li>项目进度与交付时间</li>
+            <li>包装与标识要求</li>
+            <li>检验与文件要求</li>
+          </ul>
+        </div>
+      </div>
+      <div style="margin-top: 24px; text-align: center;">
+        <a href="#quote" class="btn btn-primary">上传图纸审核</a>
+      </div>
+      <p class="quote-note">* 技术审核与报价需要项目特定图纸和荷载信息。基本项目参数可进行初步评估，但准确报价需要完整技术文件。</p>
+    </div>
+  </section>
+
+  <!-- 09 相关项目案例 -->
+  <section class="detail-section">
+    <div class="container">
+      <div class="section-heading reveal">
+        <p class="section-index">09 / 相关项目</p>
+        <h2>重工业与能源项目案例参考</h2>
+        <p>精选重工业和能源项目，展示中赛钢构在复杂工业应用中的钢结构制造与供货能力。</p>
+      </div>
+      <div class="project-grid">
+        <a href="/zh/projects/cnooc-pr6-pipe-rack/" class="project-card reveal reveal-delay-1">
+          <div class="project-img" style="background-image: url('/images/projects/cnooc-pr6-pipe-rack-frame-aerial-rendering.jpg');"></div>
+          <div class="project-body">
+            <span class="project-type">能源 · 管廊</span>
+            <h3>中海油PR6管廊钢结构</h3>
+            <div class="project-meta">
+              <span>📍 广东</span>
+            </div>
+            <p class="project-scope">中海油能源设施工业管廊钢结构制造与供货，含多层支撑框架和公用设施结构。</p>
+          </div>
+        </a>
+        <a href="/zh/projects/cnpc-cracking-furnace/" class="project-card reveal reveal-delay-2">
+          <div class="project-img" style="background-image: url('/images/projects/cnpc-sixth-construction-cracking-furnace-aerial-view.jpg');"></div>
+          <div class="project-body">
+            <span class="project-type">石化 · 炉体</span>
+            <h3>中石油裂解炉钢结构</h3>
+            <div class="project-meta">
+              <span>📍 中国</span>
+            </div>
+            <p class="project-scope">大型石化裂解炉钢结构，含主体框架、多层设备平台和支撑系统。</p>
+          </div>
+        </a>
+        <a href="/zh/projects/cnpc-liquid-furnace/" class="project-card reveal reveal-delay-3">
+          <div class="project-img" style="background-image: url('/images/projects/cnpc-sixth-construction-liquid-furnace-aerial-view.jpg');"></div>
+          <div class="project-body">
+            <span class="project-type">石化 · 炉体</span>
+            <h3>中石油液体炉钢结构</h3>
+            <div class="project-meta">
+              <span>📍 中国</span>
+            </div>
+            <p class="project-scope">石化液体炉钢结构项目，含主体框架、设备平台和工业工艺设施多层支撑系统。</p>
+          </div>
+        </a>
+        <a href="/zh/projects/guangzhou-high-end-equipment-base/" class="project-card reveal reveal-delay-1">
+          <div class="project-img" style="background-image: url('/images/projects/guangzhou-gongkong-high-end-equipment-base-aerial-rendering.jpg');"></div>
+          <div class="project-body">
+            <span class="project-type">工业 · 重型装备</span>
+            <h3>广州高端装备研发生产基地</h3>
+            <div class="project-meta">
+              <span>📍 广东广州</span>
+            </div>
+            <p class="project-scope">现代高端装备研发生产基地，大跨度、高净高钢结构厂房，适用于重型装备制造。</p>
+          </div>
+        </a>
+      </div>
+      <div style="margin-top: 28px; text-align: center;">
+        <a href="/zh/projects/" class="btn btn-outline">查看全部项目</a>
       </div>
     </div>
   </section>
@@ -191,8 +473,8 @@ const canonical = 'https://zhongsai-steelstructure.com/zh/steel-mining-factory/'
     <div class="container">
       <div class="section-heading reveal" style="text-align: center;">
         <p class="section-index" style="justify-content: center;">服务边界</p>
-        <h2 style="color: #fff;">中赛钢构提供与不提供的服务</h2>
-        <p style="margin: 0 auto;">明确矿业与重型工业项目的服务范围。</p>
+        <h2 style="color: #fff;">中赛钢构提供什么，不提供什么</h2>
+        <p style="margin: 0 auto;">明确矿业与重工业项目的服务范围。</p>
       </div>
       <div class="geo-boundary">
         <div class="geo-box include">
@@ -200,43 +482,312 @@ const canonical = 'https://zhongsai-steelstructure.com/zh/steel-mining-factory/'
           <ul>
             <li>图纸审核与加工图支持</li>
             <li>按项目图纸制造钢结构构件</li>
-            <li>钢梁、钢柱、桁架、平台及定制构件</li>
-            <li>表面处理（抛丸、涂装、热镀锌按规格）</li>
-            <li>构件编号、包装及装柜</li>
-            <li>出口资料支持与物流协调</li>
+            <li>钢梁、钢柱、桁架、平台、管廊及定制构件</li>
+            <li>按经审批图纸制造复杂连接节点</li>
+            <li>表面处理（涂装、镀锌、项目定制涂层）</li>
+            <li>构件标识、包装与集装箱装柜</li>
+            <li>出口单证支持与物流协调</li>
             <li>海外安装技术指导</li>
           </ul>
         </div>
         <div class="geo-box exclude">
-          <h4>中赛钢构不直接承接</h4>
+          <h4>中赛钢构不直接承担</h4>
           <ul>
-            <li>项目当地施工或安装</li>
+            <li>项目所在地当地施工或安装</li>
             <li>当地基础施工</li>
-            <li>矿山运营或矿物加工</li>
-            <li>当地总承包 / EPC</li>
-            <li>矿山设备供应或工艺设计</li>
-            <li>作为持牌报关行提供报关服务</li>
-            <li>作为持牌货代提供货运代理服务</li>
+            <li>矿业运营或矿物加工</li>
+            <li>当地总包 / EPC工程</li>
+            <li>矿业设备供应或工艺工程</li>
+            <li>输送设备制造</li>
+            <li>作为持牌报关行办理清关</li>
+            <li>作为持牌货代提供运输服务</li>
           </ul>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- 报价 CTA -->
+  <!-- 10 常见问题 -->
+  <section class="detail-section">
+    <div class="container">
+      <div class="section-heading reveal" style="text-align: center;">
+        <p class="section-index" style="justify-content: center;">10 / 常见问题</p>
+        <h2>重工业钢结构项目常见问题</h2>
+      </div>
+      <div class="detail-faq">
+        <div class="faq-item">
+          <button class="faq-question" aria-expanded="false">
+            <span>中赛钢构可以根据客户提供的图纸制造钢结构吗？</span>
+            <span class="faq-icon">+</span>
+          </button>
+          <div class="faq-answer">
+            <div class="faq-answer-inner">
+              可以。中赛钢构根据客户提供的结构图纸、加工图和项目规格制造钢结构。我们审核图纸的制造可行性，在需要时提供深化设计支持，并按经审批的技术文件制造构件。准确制造需要包含荷载信息、连接节点详图和材料规格的完整图纸。
+            </div>
+          </div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-question" aria-expanded="false">
+            <span>可以承接矿业输送机和设备平台项目吗？</span>
+            <span class="faq-icon">+</span>
+          </button>
+          <div class="faq-answer">
+            <div class="faq-answer-inner">
+              可以。中赛钢构有制造输送廊道、转运站、设备支撑平台、管廊和工业工艺建筑钢结构的经验。我们按项目图纸制造钢结构构件，包括复杂连接、多层平台和支撑框架。我们不制造输送机设备本身，但提供钢结构支撑系统。
+            </div>
+          </div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-question" aria-expanded="false">
+            <span>如何处理重型设备和动力荷载？</span>
+            <span class="faq-icon">+</span>
+          </button>
+          <div class="faq-answer">
+            <div class="faq-answer-inner">
+              重型设备和动力荷载通过按项目图纸和适用规范的结构设计来处理。我们按经审批的结构计算制造构件，这些计算考虑了设备集中荷载、动力荷载、振动、吊车荷载和其他项目特定荷载条件。加固连接、加重构件截面和适当支撑按设计要求纳入。所有荷载处理均基于客户提供的结构设计和工程分析。
+            </div>
+          </div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-question" aria-expanded="false">
+            <span>腐蚀环境适合什么表面处理？</span>
+            <span class="faq-icon">+</span>
+          </button>
+          <div class="faq-answer">
+            <div class="faq-answer-inner">
+              腐蚀工业环境的表面处理根据项目环境类别、客户规格和适用标准选择。选项包括多层涂装系统、热浸镀锌（适用于镀锌槽尺寸的构件），以及针对高腐蚀条件的项目定制涂层系统。适当的系统由项目的腐蚀类别、设计使用年限和客户要求确定。未经项目特定工程分析，我们不提供固定防腐寿命保证。
+            </div>
+          </div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-question" aria-expanded="false">
+            <span>可以按哪些设计标准制造？</span>
+            <span class="faq-icon">+</span>
+          </button>
+          <div class="faq-answer">
+            <div class="faq-answer-inner">
+              中赛钢构可根据项目要求按多种设计标准制造，包括中国标准（GB）、美国标准（AISC）、欧洲标准（EN）、英国标准（BS）及其他项目指定规范。适用标准根据项目所在地、客户要求和当地主管部门规定确认。制造按引用适用设计规范的经审批项目图纸执行。
+            </div>
+          </div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-question" aria-expanded="false">
+            <span>超大型钢构件如何运输？</span>
+            <span class="faq-icon">+</span>
+          </button>
+          <div class="faq-answer">
+            <div class="faq-answer-inner">
+              超大型钢构件通过模块化制造规划运输。当构件超过标准集装箱尺寸时，我们根据项目物流要求确定适当的运输方式，可能包括项目特定散货运输、超尺寸集装箱配置或模块化分段制造以便现场组装。提供构件标识、装箱清单和出口单证支持。具体运输方式按项目尺寸、构件尺寸和物流限制确定。
+            </div>
+          </div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-question" aria-expanded="false">
+            <span>提供海外安装服务吗？</span>
+            <span class="faq-icon">+</span>
+          </button>
+          <div class="faq-answer">
+            <div class="faq-answer-inner">
+              中赛钢构提供设计/深化、制造、出口供货和安装技术指导。当地土建施工和安装通常由当地承包商完成。我们可提供安装图纸、构件标识系统、螺栓紧固规格和远程技术支持，协助您的当地安装团队。可根据项目需求安排现场技术指导。除非有明确的书面协议，我们不作为当地总包或EPC承包商进行现场施工。
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 11 报价CTA + QuoteForm -->
   <section class="detail-section dark" id="quote">
     <div class="container">
       <div class="section-heading reveal" style="text-align: center;">
-        <p class="section-index" style="justify-content: center; color: #f59e0b;">获取报价</p>
-        <h2 style="color: #fff;">提交您的矿业与工业项目需求</h2>
-        <p style="margin: 0 auto; color: rgba(255,255,255,0.75);">如有图纸请上传，如暂无完整图纸可提交基本项目需求。</p>
+        <p class="section-index" style="justify-content: center; color: #f59e0b;">11 / 获取技术审核</p>
+        <h2 style="color: #fff;">提交重工业项目图纸</h2>
+        <p style="margin: 0 auto; color: rgba(255,255,255,0.75);">上传结构图纸进行技术审核，或提交项目需求进行初步评估。</p>
       </div>
       <QuoteForm lang="zh" />
     </div>
   </section>
 </BaseLayout>
 
+<style>
+.hero-capabilities {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin: 20px 0;
+}
+.cap-item {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  background: rgba(255,255,255,0.15);
+  backdrop-filter: blur(8px);
+  padding: 8px 16px;
+  border-radius: 20px;
+  font-size: 0.9rem;
+  color: #fff;
+  border: 1px solid rgba(255,255,255,0.2);
+}
+.cap-icon {
+  font-size: 1.1rem;
+}
+.app-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 20px;
+  margin-top: 32px;
+}
+.app-card {
+  background: #fff;
+  border-radius: 12px;
+  padding: 24px;
+  box-shadow: 0 2px 12px rgba(0,0,0,0.06);
+  border-left: 4px solid #0a3d62;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.app-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 24px rgba(0,0,0,0.1);
+}
+.app-card h3 {
+  color: #0a3d62;
+  font-size: 1.05rem;
+  margin-bottom: 10px;
+}
+.app-card p {
+  color: #555;
+  font-size: 0.9rem;
+  line-height: 1.6;
+}
+.engineering-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 20px;
+  margin-top: 32px;
+}
+.eng-card {
+  background: #fff;
+  border-radius: 12px;
+  padding: 24px;
+  box-shadow: 0 2px 12px rgba(0,0,0,0.06);
+  border-top: 3px solid #d97706;
+}
+.eng-card h4 {
+  color: #0a3d62;
+  font-size: 1rem;
+  margin-bottom: 10px;
+}
+.eng-card p {
+  color: #555;
+  font-size: 0.88rem;
+  line-height: 1.6;
+}
+.corrosion-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 24px;
+  margin-top: 32px;
+}
+.corr-card {
+  background: #fff;
+  border-radius: 12px;
+  padding: 28px;
+  box-shadow: 0 2px 12px rgba(0,0,0,0.06);
+  border-left: 4px solid #059669;
+}
+.corr-card h4 {
+  color: #0a3d62;
+  font-size: 1.1rem;
+  margin-bottom: 12px;
+}
+.corr-card p {
+  color: #555;
+  font-size: 0.92rem;
+  line-height: 1.7;
+}
+.project-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 24px;
+  margin-top: 32px;
+}
+.project-card {
+  background: #fff;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 2px 12px rgba(0,0,0,0.06);
+  text-decoration: none;
+  color: inherit;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  display: block;
+}
+.project-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 24px rgba(0,0,0,0.12);
+}
+.project-img {
+  height: 180px;
+  background-size: cover;
+  background-position: center;
+}
+.project-body {
+  padding: 20px;
+}
+.project-type {
+  display: inline-block;
+  background: #fef3c7;
+  color: #92400e;
+  padding: 4px 10px;
+  border-radius: 4px;
+  font-size: 0.75rem;
+  font-weight: 600;
+  margin-bottom: 10px;
+}
+.project-body h3 {
+  color: #1a1a1a;
+  font-size: 1.05rem;
+  margin-bottom: 8px;
+  line-height: 1.4;
+}
+.project-meta {
+  color: #888;
+  font-size: 0.85rem;
+  margin-bottom: 10px;
+}
+.project-scope {
+  color: #666;
+  font-size: 0.88rem;
+  line-height: 1.5;
+}
+@media (max-width: 768px) {
+  .hero-capabilities {
+    gap: 8px;
+  }
+  .cap-item {
+    padding: 6px 12px;
+    font-size: 0.8rem;
+  }
+  .app-grid, .engineering-grid, .corrosion-grid, .project-grid {
+    grid-template-columns: 1fr;
+    gap: 16px;
+  }
+  .project-img {
+    height: 160px;
+  }
+}
+</style>
+
 <script>
+  // FAQ toggle
+  document.querySelectorAll('.faq-question').forEach(btn => {
+    btn.addEventListener('click', () => {
+      const item = btn.closest('.faq-item');
+      const isOpen = item.classList.contains('open');
+      item.classList.toggle('open');
+      btn.setAttribute('aria-expanded', !isOpen);
+    });
+  });
+
   // Scroll reveal
   const revealElements = document.querySelectorAll('.reveal');
   if ('IntersectionObserver' in window) {
