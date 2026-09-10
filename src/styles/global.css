@@ -601,6 +601,13 @@ main {
   color: #ef4444;
 }
 
+.form-group label .optional,
+.form-field label .optional {
+  color: #94a3b8;
+  font-weight: 400;
+  font-size: 0.85em;
+}
+
 .form-group input,
 .form-group select,
 .form-group textarea {

@@ -54,6 +54,7 @@ const texts = lang === 'zh' ? {
   requiredWeChat: '请输入微信号',
   requiredPhoneCode: '请选择国家区号',
   privacyNote: '提交即表示您同意我们的隐私政策，我们不会分享您的信息。',
+  optionalLabel: '可选',
 } : {
   title: 'Get Project Solution & Quote',
   subtitle: 'Upload drawings if you have them; or submit basic project requirements if not.',
@@ -98,6 +99,7 @@ const texts = lang === 'zh' ? {
   requiredWeChat: 'Please enter WeChat ID',
   requiredPhoneCode: 'Please select country / calling code',
   privacyNote: 'By submitting, you agree to our privacy policy. We will not share your information.',
+  optionalLabel: 'Optional',
 };
 
 const phoneCodes = [
@@ -168,15 +170,15 @@ const phoneCodes = [
 
       <div class="form-grid form-grid-3">
         <div class="form-field">
-          <label for={`${id}-phone-code`}>{texts.phoneCode} <span class="req">*</span></label>
-          <select id={`${id}-phone-code`} name="phone_code" required>
+          <label for={`${id}-phone-code`}>{texts.phoneCode} <span class="optional">{texts.optionalLabel}</span></label>
+          <select id={`${id}-phone-code`} name="phone_code">
             {phoneCodes.map(c => <option value={c.code}>{c.name}</option>)}
           </select>
           <span class="field-error" data-error-for="phone_code"></span>
         </div>
         <div class="form-field">
-          <label for={`${id}-phone`}>{texts.phone} <span class="req">*</span></label>
-          <input type="tel" id={`${id}-phone`} name="phone" required autocomplete="tel" />
+          <label for={`${id}-phone`}>{texts.phone} <span class="optional">{texts.optionalLabel}</span></label>
+          <input type="tel" id={`${id}-phone`} name="phone" autocomplete="tel" />
           <span class="field-error" data-error-for="phone"></span>
         </div>
         <div class="form-field">
@@ -311,15 +313,15 @@ const phoneCodes = [
 
       <div class="form-grid form-grid-3">
         <div class="form-field">
-          <label for={`${id}-phone-code`}>{texts.phoneCode} <span class="req">*</span></label>
-          <select id={`${id}-phone-code`} name="phone_code" required>
+          <label for={`${id}-phone-code`}>{texts.phoneCode} <span class="optional">{texts.optionalLabel}</span></label>
+          <select id={`${id}-phone-code`} name="phone_code">
             {phoneCodes.map(c => <option value={c.code}>{c.name}</option>)}
           </select>
           <span class="field-error" data-error-for="phone_code"></span>
         </div>
         <div class="form-field">
-          <label for={`${id}-phone`}>{texts.phone} <span class="req">*</span></label>
-          <input type="tel" id={`${id}-phone`} name="phone" required autocomplete="tel" />
+          <label for={`${id}-phone`}>{texts.phone} <span class="optional">{texts.optionalLabel}</span></label>
+          <input type="tel" id={`${id}-phone`} name="phone" autocomplete="tel" />
           <span class="field-error" data-error-for="phone"></span>
         </div>
         <div class="form-field">
@@ -547,8 +549,6 @@ const phoneCodes = [
 
         const requiredFields = [
           { name: 'name', msg: isZh ? '请输入姓名' : 'Please enter your name' },
-          { name: 'phone_code', msg: isZh ? '请选择国家区号' : 'Please select country / calling code' },
-          { name: 'phone', msg: isZh ? '请输入WhatsApp或电话' : 'Please enter WhatsApp or phone' },
           { name: 'wechat', msg: isZh ? '请输入微信号' : 'Please enter WeChat ID' },
           { name: 'country', msg: isZh ? '请输入项目所在国家' : 'Please enter the project country' },
         ];
