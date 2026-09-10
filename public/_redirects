@@ -106,3 +106,115 @@
 /zh/projects/singapore-cr101-depot/  https://zhongsai-steelstructure.com/zh/projects/singapore-j102-mrt-station/  301
 /en/projects/singapore-sentosa-waterfront-hotel/  https://zhongsai-steelstructure.com/en/projects/  301
 /zh/projects/singapore-sentosa-waterfront-hotel/  https://zhongsai-steelstructure.com/zh/projects/  301
+
+# === Legacy URL Catch-all Redirects (Added 2026-09-10) ===
+
+# Country pages -> Homepage
+/en/countries/*  https://zhongsai-steelstructure.com/en/  301
+/zh/countries/*  https://zhongsai-steelstructure.com/zh/  301
+
+# FAQ -> Resources
+/faq  https://zhongsai-steelstructure.com/en/resources/  301
+/zh/faq  https://zhongsai-steelstructure.com/zh/resources/  301
+
+# Old application pages -> relevant product pages
+/en/steel-mining-factory  https://zhongsai-steelstructure.com/en/steel-mining-factory/  301
+/en/steel-supermarket-mall  https://zhongsai-steelstructure.com/en/commercial-public-steel-buildings/  301
+/zh/steel-mining-factory  https://zhongsai-steelstructure.com/zh/steel-mining-factory/  301
+/zh/steel-supermarket-mall  https://zhongsai-steelstructure.com/zh/commercial-public-steel-buildings/  301
+
+# Old components -> Components hub
+/en/components/steel-purlins  https://zhongsai-steelstructure.com/en/components/steel-purlins/  301
+/en/components/steel-trusses  https://zhongsai-steelstructure.com/en/components/steel-trusses/  301
+/zh/components/steel-purlins  https://zhongsai-steelstructure.com/zh/components/steel-purlins/  301
+/zh/components/steel-trusses  https://zhongsai-steelstructure.com/zh/components/steel-trusses/  301
+
+# Old legacy projects -> Projects hub (old generated projects)
+/en/projects/brazil-chinese-supermarket/  https://zhongsai-steelstructure.com/en/projects/  301
+/en/projects/dubai-industrial-warehouse/  https://zhongsai-steelstructure.com/en/projects/  301
+/en/projects/ethiopia-textile-factory/  https://zhongsai-steelstructure.com/en/projects/  301
+/en/projects/indonesia-mining-steel-structure/  https://zhongsai-steelstructure.com/en/projects/  301
+/en/projects/kenya-dairy-farm-complex/  https://zhongsai-steelstructure.com/en/projects/  301
+/en/projects/malaysia-commercial-complex/  https://zhongsai-steelstructure.com/en/projects/  301
+/en/projects/mexico-appliance-factory/  https://zhongsai-steelstructure.com/en/projects/  301
+/en/projects/oman-oil-equipment-workshop/  https://zhongsai-steelstructure.com/en/projects/  301
+/en/projects/peru-mining-workshop/  https://zhongsai-steelstructure.com/en/projects/  301
+/en/projects/philippines-food-processing-plant/  https://zhongsai-steelstructure.com/en/projects/  301
+/en/projects/south-africa-auto-parts-factory/  https://zhongsai-steelstructure.com/en/projects/  301
+/en/projects/tanzania-grain-storage-warehouse/  https://zhongsai-steelstructure.com/en/projects/  301
+/en/projects/vietnam-ecommerce-logistics-center/  https://zhongsai-steelstructure.com/en/projects/  301
+/zh/projects/brazil-chinese-supermarket/  https://zhongsai-steelstructure.com/zh/projects/  301
+/zh/projects/dubai-industrial-warehouse/  https://zhongsai-steelstructure.com/zh/projects/  301
+/zh/projects/ethiopia-textile-factory/  https://zhongsai-steelstructure.com/zh/projects/  301
+/zh/projects/indonesia-mining-steel-structure/  https://zhongsai-steelstructure.com/zh/projects/  301
+/zh/projects/kenya-dairy-farm-complex/  https://zhongsai-steelstructure.com/zh/projects/  301
+/zh/projects/malaysia-commercial-complex/  https://zhongsai-steelstructure.com/zh/projects/  301
+/zh/projects/mexico-appliance-factory/  https://zhongsai-steelstructure.com/zh/projects/  301
+/zh/projects/oman-oil-equipment-workshop/  https://zhongsai-steelstructure.com/zh/projects/  301
+/zh/projects/peru-mining-workshop/  https://zhongsai-steelstructure.com/zh/projects/  301
+/zh/projects/philippines-food-processing-plant/  https://zhongsai-steelstructure.com/zh/projects/  301
+/zh/projects/south-africa-auto-parts-factory/  https://zhongsai-steelstructure.com/zh/projects/  301
+/zh/projects/tanzania-grain-storage-warehouse/  https://zhongsai-steelstructure.com/zh/projects/  301
+/zh/projects/vietnam-ecommerce-logistics-center/  https://zhongsai-steelstructure.com/zh/projects/  301
+/zh/projects/vietnam-logistics-center/  https://zhongsai-steelstructure.com/zh/projects/  301
+
+# === Legacy Blog Articles 301 (Added 2026-09-10) ===
+/blog/  https://zhongsai-steelstructure.com/zh/resources/  301
+/blog/gangjiegou-anzhuang-zhinan-haiwai/  https://zhongsai-steelstructure.com/en/resources/  301
+/blog/gangjiegou-vs-hunningtu-chengben-duibi/  https://zhongsai-steelstructure.com/zh/resources/  301
+/blog/steel-structure-building-installation-guide-overseas/  https://zhongsai-steelstructure.com/en/resources/  301
+/blog/steel-structure-vs-concrete-building-cost-comparison/  https://zhongsai-steelstructure.com/en/blog/steel-warehouse-cost-complete-guide/  301
+/blog/top-10-steel-structure-manufacturers-in-china/  https://zhongsai-steelstructure.com/en/blog/how-to-choose-steel-structure-supplier/  301
+/blog/zhongguo-gangjiegou-changjia-paiming/  https://zhongsai-steelstructure.com/en/blog/how-to-choose-steel-structure-supplier/  301
+/en/blog/  https://zhongsai-steelstructure.com/en/blog/steel-warehouse-cost-complete-guide/  301
+/en/blog/astm-vs-gb-steel-grades-comparison/  https://zhongsai-steelstructure.com/en/resources/  301
+/en/blog/how-to-buy-steel-buildings-from-china/  https://zhongsai-steelstructure.com/en/resources/  301
+/en/blog/how-to-choose-steel-structure-manufacturer-china/  https://zhongsai-steelstructure.com/en/blog/how-to-choose-steel-structure-supplier/  301
+/en/blog/how-to-import-steel-structure-from-china-complete-guide/  https://zhongsai-steelstructure.com/en/blog/how-to-import-steel-structure-from-china-complete-guide/  301
+/en/blog/how-to-import-steel-structure-from-china-to-africa/  https://zhongsai-steelstructure.com/en/blog/how-to-import-steel-structure-from-china-complete-guide/  301
+/en/blog/prefab-steel-building-installation-guide/  https://zhongsai-steelstructure.com/en/resources/  301
+/en/blog/prefab-steel-building-roof-systems-comparison/  https://zhongsai-steelstructure.com/en/resources/  301
+/en/blog/shipping-cost-steel-structure-from-china/  https://zhongsai-steelstructure.com/en/blog/shipping-cost-steel-structure-from-china/  301
+/en/blog/steel-structure-building-installation-guide-overseas/  https://zhongsai-steelstructure.com/en/resources/  301
+/en/blog/steel-structure-container-loading-guide/  https://zhongsai-steelstructure.com/en/blog/shipping-cost-steel-structure-from-china/  301
+/en/blog/steel-structure-corrosion-protection-guide/  https://zhongsai-steelstructure.com/en/resources/  301
+/en/blog/steel-structure-cost-per-square-meter/  https://zhongsai-steelstructure.com/en/blog/steel-warehouse-cost-complete-guide/  301
+/en/blog/steel-structure-design-standards-guide/  https://zhongsai-steelstructure.com/en/resources/  301
+/en/blog/steel-structure-foundation-design-guide/  https://zhongsai-steelstructure.com/en/resources/  301
+/en/blog/steel-structure-project-timeline-guide/  https://zhongsai-steelstructure.com/en/resources/  301
+/en/blog/steel-structure-supplier-indonesia-guide/  https://zhongsai-steelstructure.com/en/blog/how-to-choose-steel-structure-supplier/  301
+/en/blog/steel-structure-supplier-malaysia-guide/  https://zhongsai-steelstructure.com/en/blog/how-to-choose-steel-structure-supplier/  301
+/en/blog/steel-structure-supplier-mexico-guide/  https://zhongsai-steelstructure.com/en/blog/how-to-choose-steel-structure-supplier/  301
+/en/blog/steel-structure-supplier-philippines-guide/  https://zhongsai-steelstructure.com/en/blog/how-to-choose-steel-structure-supplier/  301
+/en/blog/steel-structure-supplier-saudi-arabia-guide/  https://zhongsai-steelstructure.com/en/blog/how-to-choose-steel-structure-supplier/  301
+/en/blog/steel-structure-supplier-thailand-guide/  https://zhongsai-steelstructure.com/en/blog/how-to-choose-steel-structure-supplier/  301
+/en/blog/steel-structure-supplier-uae-dubai-guide/  https://zhongsai-steelstructure.com/en/blog/how-to-choose-steel-structure-supplier/  301
+/en/blog/steel-structure-vs-concrete-building-cost-comparison/  https://zhongsai-steelstructure.com/en/blog/steel-warehouse-cost-complete-guide/  301
+/en/blog/steel-structure-vs-concrete-comparison/  https://zhongsai-steelstructure.com/en/blog/steel-warehouse-cost-complete-guide/  301
+/en/blog/steel-structure-wind-load-design-guide/  https://zhongsai-steelstructure.com/en/resources/  301
+/en/blog/steel-warehouse-cost-complete-guide/  https://zhongsai-steelstructure.com/en/blog/steel-warehouse-cost-complete-guide/  301
+/en/blog/steel-warehouse-supplier-nigeria-guide/  https://zhongsai-steelstructure.com/en/blog/steel-warehouse-cost-complete-guide/  301
+/en/blog/top-10-steel-structure-manufacturers-in-china/  https://zhongsai-steelstructure.com/en/blog/how-to-choose-steel-structure-supplier/  301
+/zh/blog/  https://zhongsai-steelstructure.com/zh/resources/  301
+/zh/blog/astm-vs-gb-steel-grades-comparison/  https://zhongsai-steelstructure.com/zh/resources/  301
+/zh/blog/gangjiegou-anzhuang-zhinan-haiwai/  https://zhongsai-steelstructure.com/zh/resources/  301
+/zh/blog/gangjiegou-changfang-zaojia-zhinan/  https://zhongsai-steelstructure.com/zh/blog/gangjiegou-changfang-zaojia-zhinan/  301
+/zh/blog/gangjiegou-vs-hunningtu-chengben-duibi/  https://zhongsai-steelstructure.com/zh/resources/  301
+/zh/blog/how-to-buy-steel-buildings-from-china/  https://zhongsai-steelstructure.com/zh/resources/  301
+/zh/blog/how-to-choose-steel-structure-manufacturer-china/  https://zhongsai-steelstructure.com/zh/blog/gangjiegou-gongchang-xuanze-zhinan/  301
+/zh/blog/steel-structure-corrosion-protection-guide/  https://zhongsai-steelstructure.com/zh/resources/  301
+/zh/blog/steel-structure-cost-per-square-meter/  https://zhongsai-steelstructure.com/zh/blog/gangjiegou-changfang-zaojia-zhinan/  301
+/zh/blog/steel-structure-design-standards-guide/  https://zhongsai-steelstructure.com/zh/resources/  301
+/zh/blog/steel-structure-foundation-design-guide/  https://zhongsai-steelstructure.com/zh/resources/  301
+/zh/blog/steel-structure-project-timeline-guide/  https://zhongsai-steelstructure.com/zh/resources/  301
+/zh/blog/steel-structure-supplier-indonesia-guide/  https://zhongsai-steelstructure.com/zh/blog/gangjiegou-gongchang-xuanze-zhinan/  301
+/zh/blog/steel-structure-supplier-malaysia-guide/  https://zhongsai-steelstructure.com/zh/blog/gangjiegou-gongchang-xuanze-zhinan/  301
+/zh/blog/steel-structure-supplier-mexico-guide/  https://zhongsai-steelstructure.com/zh/blog/gangjiegou-gongchang-xuanze-zhinan/  301
+/zh/blog/steel-structure-supplier-philippines-guide/  https://zhongsai-steelstructure.com/zh/blog/gangjiegou-gongchang-xuanze-zhinan/  301
+/zh/blog/steel-structure-supplier-saudi-arabia-guide/  https://zhongsai-steelstructure.com/zh/blog/gangjiegou-gongchang-xuanze-zhinan/  301
+/zh/blog/steel-structure-supplier-thailand-guide/  https://zhongsai-steelstructure.com/zh/blog/gangjiegou-gongchang-xuanze-zhinan/  301
+/zh/blog/steel-structure-supplier-uae-dubai-guide/  https://zhongsai-steelstructure.com/zh/blog/gangjiegou-gongchang-xuanze-zhinan/  301
+/zh/blog/steel-structure-wind-load-design-guide/  https://zhongsai-steelstructure.com/zh/resources/  301
+/zh/blog/steel-warehouse-supplier-nigeria-guide/  https://zhongsai-steelstructure.com/zh/blog/gangjiegou-changfang-zaojia-zhinan/  301
+/zh/blog/top-10-steel-structure-manufacturers-in-china/  https://zhongsai-steelstructure.com/zh/blog/gangjiegou-gongchang-xuanze-zhinan/  301
+/zh/blog/zhongguo-gangjiegou-changjia-paiming/  https://zhongsai-steelstructure.com/zh/blog/gangjiegou-gongchang-xuanze-zhinan/  301
