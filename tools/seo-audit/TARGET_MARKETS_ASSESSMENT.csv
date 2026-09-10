@@ -1,0 +1,19 @@
+country,region,real_projects,inquiry_records,search_demand,content_differentiation,competition_inverse,case_images,total_score,recommendation,status,priority
+Singapore,Southeast Asia,5,4,4,4,3,5,29,Can create country page immediately,VERIFIED,P1
+Macau,Greater China,5,2,2,2,3,5,21,Can consider as regional filter,VERIFIED,P2
+Malaysia,Southeast Asia,0,3,4,3,3,0,13,Create content first, no country page,TARGET,P2
+Indonesia,Southeast Asia,0,3,4,4,3,0,14,Create content first, no country page,TARGET,P2
+Philippines,Southeast Asia,0,2,3,3,3,0,11,Observe,TARGET,P3
+Thailand,Southeast Asia,0,2,3,3,3,0,11,Observe,TARGET,P3
+Vietnam,Southeast Asia,0,2,3,3,3,0,11,Observe,TARGET,P3
+Saudi Arabia,Middle East,0,3,4,4,2,0,13,Create content first, no country page,TARGET,P2
+UAE,Middle East,0,2,3,3,2,0,10,Observe,TARGET,P3
+Nigeria,Africa,0,3,3,3,3,0,12,Create content first, no country page,TARGET,P2
+Kenya,Africa,0,2,2,2,3,0,9,Observe,TARGET,P3
+South Africa,Africa,0,2,2,2,3,0,9,Observe,TARGET,P3
+Brazil,Latin America,0,3,3,4,2,0,12,Create content first, no country page,TARGET,P2
+Mexico,Latin America,0,2,3,3,2,0,10,Observe,TARGET,P3
+Chile,Latin America,0,1,2,2,3,0,8,Observe,TARGET,P3
+Peru,Latin America,0,1,2,2,3,0,8,Observe,TARGET,P3
+Australia,Oceania,0,2,3,4,1,0,10,Observe,TARGET,P3
+Canada,North America,0,2,2,3,1,0,8,Observe,TARGET,P3
