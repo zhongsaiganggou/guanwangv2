@@ -1,46 +1,16 @@
 // Cloudflare Pages Middleware for 410 Gone responses
 // Handles generated legacy project URLs that are not verified ZhongSai cases
+// NOTE: URLs with 301 redirects in _redirects should NOT be here (middleware runs first)
 
 const GONE_URLS = new Set([
+  // Only keep URLs that should return 410 (permanently removed, no redirect target)
+  // Old project URLs now have 301 redirects in _redirects, so they are removed from here
   "/en/blog/how-much-does-steel-structure-warehouse-cost/",
   "/en/blog/steel-workshop-cost-factory-building-price/",
-  "/en/projects/brazil-chinese-supermarket/",
-  "/en/projects/dubai-industrial-warehouse/",
-  "/en/projects/ethiopia-textile-factory/",
-  "/en/projects/indonesia-mining-steel-structure/",
-  "/en/projects/kenya-dairy-farm/",
-  "/en/projects/kenya-dairy-farm-complex/",
-  "/en/projects/malaysia-commercial-complex/",
-  "/en/projects/mexico-appliance-factory/",
-  "/en/projects/nigeria-logistics-warehouse/",
-  "/en/projects/oman-oil-equipment-workshop/",
-  "/en/projects/peru-mining-workshop/",
-  "/en/projects/philippines-food-processing-plant/",
-  "/en/projects/saudi-arabia-manufacturing-factory/",
-  "/en/projects/south-africa-auto-parts-factory/",
-  "/en/projects/tanzania-grain-storage-warehouse/",
-  "/en/projects/vietnam-ecommerce-logistics-center/",
   "/zh/blog/gangjiegou-cangku-zaojia-2026/",
-  "/zh/projects/brazil-chinese-supermarket/",
   "/zh/projects/china-cnooc-pipe-rack/",
   "/zh/projects/china-huarun-center/",
   "/zh/projects/china-qianhai-dreamfactory/",
-  "/zh/projects/dubai-industrial-warehouse/",
-  "/zh/projects/ethiopia-textile-factory/",
-  "/zh/projects/indonesia-mining-steel-structure/",
-  "/zh/projects/kenya-dairy-farm-complex/",
-  "/zh/projects/kenya-dairy-farm/",
-  "/zh/projects/malaysia-commercial-complex/",
-  "/zh/projects/mexico-appliance-factory/",
-  "/zh/projects/nigeria-logistics-warehouse/",
-  "/zh/projects/oman-oil-equipment-workshop/",
-  "/zh/projects/peru-mining-workshop/",
-  "/zh/projects/philippines-food-processing-plant/",
-  "/zh/projects/saudi-arabia-manufacturing-factory/",
-  "/zh/projects/south-africa-auto-parts-factory/",
-  "/zh/projects/tanzania-grain-storage-warehouse/",
-  "/zh/projects/vietnam-ecommerce-logistics-center/",
-  "/zh/projects/vietnam-logistics-center/"
 ]);
 
 const GONE_HTML = `<!DOCTYPE html>
