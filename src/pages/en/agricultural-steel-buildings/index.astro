@@ -3,24 +3,42 @@ import BaseLayout from '../../../layouts/BaseLayout.astro';
 import QuoteForm from '../../../components/QuoteForm.astro';
 import '../../../styles/detail.css';
 
-const title = 'Agricultural Steel Buildings | Livestock & Farm Steel Structures | ZhongSai';
-const description = 'ZhongSai Steel Structure provides agricultural steel building solutions for livestock shelters, poultry houses, farm storage and greenhouse frames, with corrosion-resistant design, ventilation planning and durable enclosure systems.';
+const title = 'Agricultural & Livestock Steel Buildings | Poultry, Cattle & Farm Structures | ZhongSai';
+const description = 'Steel buildings engineered for poultry farms, cattle barns, livestock facilities, agricultural storage and farm applications, with ventilation, insulation and corrosion protection adapted to project conditions.';
 const lang = 'en';
 const canonical = 'https://zhongsai-steelstructure.com/en/agricultural-steel-buildings/';
 ---
 
 <BaseLayout title={title} description={description} lang={lang}>
-  <!-- Hero -->
+  <!-- Hero - Agriculture Capability -->
   <section class="detail-hero">
     <div class="detail-hero-bg" style="background-image: url('/images/products/app-agriculture-livestock.jpg');"></div>
     <div class="detail-hero-overlay"></div>
     <div class="detail-hero-content">
-      <span class="eyebrow">Agricultural · Livestock Steel Structure</span>
-      <h1>Agricultural Steel Buildings & Livestock Structures</h1>
-      <p class="lead">ZhongSai Steel Structure delivers steel structure solutions for agricultural and livestock projects — including poultry houses, livestock shelters, farm storage buildings and greenhouse steel frames. From design detailing to fabrication and export, we support corrosion-resistant framing, ventilation planning, durable enclosure systems and cost-effective farm building supply.</p>
+      <span class="eyebrow">Agriculture · Livestock Steel Structure</span>
+      <h1>Steel Structures for Agriculture and Livestock Projects</h1>
+      <p class="lead">Steel buildings engineered for poultry farms, cattle barns, livestock facilities, agricultural storage and other farm applications, with ventilation, insulation and corrosion protection adapted to project conditions. From design detailing to fabrication and export, we deliver cost-effective farm building steel structures.</p>
+      <div class="hero-capabilities">
+        <div class="cap-item">
+          <span class="cap-icon">🏗️</span>
+          <span>Large-Span Structural Solutions</span>
+        </div>
+        <div class="cap-item">
+          <span class="cap-icon">💨</span>
+          <span>Ventilation & Insulation Options</span>
+        </div>
+        <div class="cap-item">
+          <span class="cap-icon">🛡️</span>
+          <span>Corrosion-Resistant Surface Systems</span>
+        </div>
+        <div class="cap-item">
+          <span class="cap-icon">🚢</span>
+          <span>Prefabricated Export Delivery</span>
+        </div>
+      </div>
       <div class="detail-hero-actions">
-        <a href="#quote" class="btn btn-primary">Discuss Your Agricultural Building Project</a>
-        <a href="/en/products/" class="btn btn-outline">View All Products</a>
+        <a href="#quote" class="btn btn-primary">Send Your Farm Building Requirements</a>
+        <a href="#quote-info" class="btn btn-outline">Request a Project Quote</a>
       </div>
     </div>
   </section>
@@ -32,223 +50,730 @@ const canonical = 'https://zhongsai-steelstructure.com/en/agricultural-steel-bui
       <span class="sep">/</span>
       <a href="/en/products/">Products</a>
       <span class="sep">/</span>
-      <span class="current">Agricultural Steel Buildings</span>
+      <span class="current">Agricultural & Livestock</span>
     </div>
   </nav>
 
-  <!-- 01 / Agricultural Project Requirements -->
+  <!-- 01 Typical Applications -->
   <section class="detail-section">
     <div class="container">
       <div class="section-heading reveal">
-        <p class="section-index">01 / Agricultural Project Requirements</p>
-        <h2>What Information Is Needed for Agricultural Steel Buildings</h2>
-        <p>Agricultural steel buildings require careful planning around animal welfare, ventilation, corrosion resistance and operational efficiency. The following information directly influences structural framing, enclosure specification and building layout.</p>
+        <p class="section-index">01 / Applications</p>
+        <h2>Typical Agricultural and Livestock Steel Building Applications</h2>
+        <p>Steel structures provide durable, cost-effective and fast-to-erect building solutions for a wide range of agricultural and livestock applications, from animal housing to farm storage and equipment facilities.</p>
       </div>
-      <div class="requirement-grid">
-        <div class="requirement-card reveal reveal-delay-1">
-          <div class="req-icon">01</div>
-          <h3>Building Type</h3>
-          <p>Poultry house, livestock shelter, farm storage, greenhouse frame or mixed-use agricultural building — different uses require different structural and enclosure configurations.</p>
+      <div class="app-grid">
+        <div class="app-card reveal reveal-delay-1">
+          <h3>Poultry Houses</h3>
+          <p>Steel-framed poultry houses for broiler and layer farms, with ventilation openings, insulation options and corrosion-resistant framing for humid, ammonia-rich environments.</p>
         </div>
-        <div class="requirement-card reveal reveal-delay-2">
-          <div class="req-icon">02</div>
-          <h3>Ventilation Needs</h3>
-          <p>Natural ventilation, mechanical ventilation, tunnel ventilation or mixed systems — airflow requirements affect building dimensions, openings and roof design.</p>
+        <div class="app-card reveal reveal-delay-2">
+          <h3>Cattle Barns</h3>
+          <p>Large-span cattle barns and livestock shelters with natural ventilation, open-side options and durable framing for dairy, beef and feedlot operations.</p>
         </div>
-        <div class="requirement-card reveal reveal-delay-3">
-          <div class="req-icon">03</div>
-          <h3>Corrosion Environment</h3>
-          <p>Livestock buildings have higher humidity and ammonia exposure — corrosion-resistant coating and material selection are critical for long-term durability.</p>
+        <div class="app-card reveal reveal-delay-3">
+          <h3>Pig Farms</h3>
+          <p>Steel structures for pig farming facilities, including gestation barns, finishing houses and nursery buildings with appropriate ventilation and corrosion protection.</p>
         </div>
-        <div class="requirement-card reveal reveal-delay-1">
-          <div class="req-icon">04</div>
-          <h3>Climate & Location</h3>
-          <p>Local wind load, snow load, temperature range and seismic conditions determine structural member sizing and connection design.</p>
+        <div class="app-card reveal reveal-delay-1">
+          <h3>Livestock Shelters</h3>
+          <p>Open and enclosed livestock shelters for various animal types, with flexible span configurations and durable steel framing for farm operations.</p>
         </div>
-        <div class="requirement-card reveal reveal-delay-2">
-          <div class="req-icon">05</div>
-          <h3>Enclosure System</h3>
-          <p>Roof and wall panel type, insulation level, lighting panels and ventilation openings are determined per building use and local climate.</p>
+        <div class="app-card reveal reveal-delay-2">
+          <h3>Feed Storage Buildings</h3>
+          <p>Steel buildings for feed storage, grain bins support structures and feed processing facilities with appropriate loading and environmental protection.</p>
         </div>
-        <div class="requirement-card reveal reveal-delay-3">
-          <div class="req-icon">06</div>
-          <h3>Operational Layout</h3>
-          <p>Feed passages, animal zones, equipment access and cleaning routes affect building width, column placement and door openings.</p>
+        <div class="app-card reveal reveal-delay-3">
+          <h3>Agricultural Warehouses</h3>
+          <p>Large-span agricultural warehouses for equipment storage, harvested goods, farm supplies and general agricultural storage needs.</p>
+        </div>
+        <div class="app-card reveal reveal-delay-1">
+          <h3>Equipment Sheds</h3>
+          <p>Steel equipment sheds and farm machinery storage buildings with wide door openings, durable framing and flexible layout configurations.</p>
+        </div>
+        <div class="app-card reveal reveal-delay-2">
+          <h3>Farm Workshops</h3>
+          <p>Steel-framed farm workshops and maintenance facilities with equipment support, work areas and storage integration for farm operations.</p>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- 02 / Livestock & Poultry Structures -->
+  <!-- 02 Engineering Parameters -->
   <section class="detail-section alt">
     <div class="container">
       <div class="section-heading reveal">
-        <p class="section-index">02 / Livestock & Poultry Structures</p>
-        <h2>Steel Framing for Livestock and Poultry Buildings</h2>
-        <p>Livestock and poultry buildings require wide-span, column-free interiors to maximize usable space for animal housing and operational equipment. Steel portal frames provide the structural efficiency needed for these applications.</p>
+        <p class="section-index">02 / Engineering Parameters</p>
+        <h2>Typical Engineering Parameters for Agricultural Steel Buildings</h2>
+        <p>All parameters below are project-based references. Actual values must be determined according to animal type, climate, building size, loads and local design requirements. ZhongSai fabricates per approved project drawings.</p>
+      </div>
+      <div class="params-table-wrapper">
+        <table class="params-table">
+          <thead>
+            <tr>
+              <th>Parameter</th>
+              <th>Project Basis</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><strong>Building Type</strong></td>
+              <td>Poultry house / cattle barn / pig farm / storage / workshop</td>
+            </tr>
+            <tr>
+              <td><strong>Structural System</strong></td>
+              <td>Portal frame / multi-span frame / open-sided structure</td>
+            </tr>
+            <tr>
+              <td><strong>Span</strong></td>
+              <td>According to animal type, equipment layout and project requirements</td>
+            </tr>
+            <tr>
+              <td><strong>Eave Height</strong></td>
+              <td>According to ventilation needs, equipment and animal housing requirements</td>
+            </tr>
+            <tr>
+              <td><strong>Bay Spacing</strong></td>
+              <td>Project specific, coordinated with building layout and equipment</td>
+            </tr>
+            <tr>
+              <td><strong>Ventilation</strong></td>
+              <td>Natural / mechanical / mixed / tunnel, per animal type and climate</td>
+            </tr>
+            <tr>
+              <td><strong>Insulation</strong></td>
+              <td>According to climate, animal type and thermal requirements</td>
+            </tr>
+            <tr>
+              <td><strong>Roof System</strong></td>
+              <td>Metal sheet / sandwich panel / insulated system with ventilation openings</td>
+            </tr>
+            <tr>
+              <td><strong>Wall System</strong></td>
+              <td>Metal sheet / sandwich panel / open-sided / curtain wall system</td>
+            </tr>
+            <tr>
+              <td><strong>Surface Protection</strong></td>
+              <td>Painting / galvanizing per corrosion environment and project specification</td>
+            </tr>
+            <tr>
+              <td><strong>Drainage</strong></td>
+              <td>Roof slope and gutter system per project rainfall and layout requirements</td>
+            </tr>
+            <tr>
+              <td><strong>Natural Lighting</strong></td>
+              <td>Translucent panels / ridge lighting per building use and energy requirements</td>
+            </tr>
+            <tr>
+              <td><strong>Design Standard</strong></td>
+              <td>Based on project country, client specification and local requirements</td>
+            </tr>
+            <tr>
+              <td><strong>Export Method</strong></td>
+              <td>Containerized shipment of prefabricated components</td>
+            </tr>
+            <tr>
+              <td><strong>Installation Support</strong></td>
+              <td>Technical guidance available for local contractor installation</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <p class="params-note"><strong>Note:</strong> No universal standard values are provided for agricultural buildings. Each project requires structural analysis based on actual animal type, climate conditions, building dimensions, equipment layout and applicable design codes. Specific spans, insulation thickness and environmental ratings are determined per project requirements.</p>
+    </div>
+  </section>
+
+  <!-- 03 Poultry House -->
+  <section class="detail-section">
+    <div class="container">
+      <div class="section-heading reveal">
+        <p class="section-index">03 / Poultry Houses</p>
+        <h2>Steel Poultry Houses</h2>
+        <p>Poultry houses require careful attention to ventilation, insulation, moisture control and corrosion resistance due to the humid, ammonia-rich environment. Steel portal frames provide the wide-span, column-free interiors needed for efficient poultry production.</p>
+      </div>
+      <div class="image-text-block">
+        <div class="itb-image">
+          <img src="/images/products/app-agriculture-livestock.jpg" alt="Steel poultry house structure" loading="lazy">
+        </div>
+        <div class="itb-content">
+          <h3>Key Design Considerations for Poultry Houses</h3>
+          <ul>
+            <li><strong>Ventilation systems</strong> — natural, mechanical, tunnel or mixed ventilation per climate and bird density</li>
+            <li><strong>Roof insulation</strong> — insulated roof systems to manage temperature extremes and condensation</li>
+            <li><strong>Wall enclosure</strong> — curtain walls, solid panels or mixed systems per climate and ventilation strategy</li>
+            <li><strong>Moisture control</strong> — appropriate roof slope, ventilation openings and drainage to manage humidity</li>
+            <li><strong>Internal equipment layout</strong> — column-free interiors accommodate feeding lines, watering systems and egg collection equipment</li>
+            <li><strong>Cleaning and maintenance</strong> — durable, washable surfaces and accessible structure for regular cleaning and biosecurity</li>
+            <li><strong>Large-span reduced columns</strong> — wide-span portal frames minimize interior columns for maximum usable space</li>
+          </ul>
+          <p style="margin-top: 16px; color: #666; font-size: 0.92rem;">ZhongSai provides the structural steel framing and enclosure systems for poultry houses. Poultry equipment (feeding, watering, climate control systems) is supplied by specialized equipment manufacturers per project requirements.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 04 Cattle Barn -->
+  <section class="detail-section alt">
+    <div class="container">
+      <div class="section-heading reveal">
+        <p class="section-index">04 / Cattle Barns</p>
+        <h2>Steel Cattle Barns</h2>
+        <p>Cattle barns and livestock shelters require large, open spaces with natural ventilation, shade and appropriate drainage. Steel structures provide durable, cost-effective framing for dairy, beef and feedlot operations.</p>
       </div>
       <div class="image-text-block reverse">
         <div class="itb-image">
-          <img src="/images/products/app-agriculture-livestock.jpg" alt="Agricultural steel building livestock structure" loading="lazy">
+          <img src="/images/products/05-agriculture-special.jpg" alt="Steel cattle barn and livestock structure" loading="lazy">
         </div>
         <div class="itb-content">
-          <h3>Wide-Span Framing for Agricultural Use</h3>
+          <h3>Key Design Considerations for Cattle Barns</h3>
           <ul>
-            <li>Portal frame design provides column-free interiors for livestock housing and operational space</li>
-            <li>Corrosion-resistant surface treatment specified for high-humidity livestock environments</li>
-            <li>Roof slope and ventilation openings designed per building type and climate</li>
-            <li>Insulation and enclosure systems configured for animal comfort and energy efficiency</li>
-            <li>Specific spans, heights and loads determined per project drawings and technical requirements</li>
+            <li><strong>Large open spaces</strong> — wide-span frames provide unobstructed areas for animal housing, feeding and movement</li>
+            <li><strong>Natural ventilation</strong> — open-sided designs, ridge vents and appropriate eave heights for natural airflow</li>
+            <li><strong>Shade and shelter</strong> — roof overhangs and shaded areas protect animals from direct sun and precipitation</li>
+            <li><strong>Drainage</strong> — appropriate floor slopes, gutter systems and site drainage for manure management and animal comfort</li>
+            <li><strong>Animal movement space</strong> — layout coordinated with feeding alleys, milking parlor access and animal flow patterns</li>
+            <li><strong>Roof height</strong> — eave and ridge heights determined by ventilation needs, equipment and animal comfort requirements</li>
+            <li><strong>Local climate adaptation</strong> — insulation, ventilation and enclosure systems configured per local temperature, humidity and wind conditions</li>
           </ul>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- 03 / Farm Storage & Greenhouse Frames -->
+  <!-- 05 Ventilation & Climate -->
   <section class="detail-section">
     <div class="container">
       <div class="section-heading reveal">
-        <p class="section-index">03 / Farm Storage & Greenhouse Frames</p>
-        <h2>Farm Storage Buildings and Greenhouse Steel Frames</h2>
-        <p>Beyond livestock housing, agricultural projects often require storage buildings for equipment, feed and harvested goods, as well as steel frames for greenhouse and nursery structures.</p>
+        <p class="section-index">05 / Ventilation & Climate</p>
+        <h2>Ventilation and Climate Adaptation</h2>
+        <p>Proper ventilation and climate control are critical for animal health, productivity and building durability in agricultural steel structures. Ventilation strategies are determined based on animal type, building size, local climate and operational requirements.</p>
       </div>
-      <div class="feature-grid">
-        <div class="feature-card reveal reveal-delay-1">
-          <div class="feature-img" style="background-image: url('/images/products/05-agriculture-special.jpg');"></div>
-          <div class="feature-body">
-            <h3>Farm Storage Buildings</h3>
-            <p>Steel storage buildings for farm equipment, feed storage and agricultural goods, with clear-span interiors and flexible door configurations.</p>
-          </div>
+      <div class="climate-grid">
+        <div class="climate-card reveal reveal-delay-1">
+          <h4>Natural Ventilation</h4>
+          <p>Open-sided designs, ridge vents, eave openings and appropriate building orientation for natural airflow. Suitable for mild climates and many cattle barn applications.</p>
         </div>
-        <div class="feature-card reveal reveal-delay-2">
-          <div class="feature-img" style="background-image: url('/images/products/detail-greenhouse-frame.jpg');"></div>
-          <div class="feature-body">
-            <h3>Greenhouse Steel Frames</h3>
-            <p>Custom steel framing for greenhouse and nursery structures, supporting glazing systems, ventilation equipment and environmental control installations.</p>
-          </div>
+        <div class="climate-card reveal reveal-delay-2">
+          <h4>Ridge Ventilation</h4>
+          <p>Continuous ridge vents combined with eave inlets create stack effect ventilation for heat and moisture removal. Common in poultry houses and enclosed livestock buildings.</p>
+        </div>
+        <div class="climate-card reveal reveal-delay-3">
+          <h4>Side Openings</h4>
+          <p>Adjustable side wall openings, curtain systems and removable panels allow flexible ventilation control for varying weather conditions and animal needs.</p>
+        </div>
+        <div class="climate-card reveal reveal-delay-1">
+          <h4>Insulated Roof / Wall Options</h4>
+          <p>Sandwich panel insulation, fiberglass insulation under metal sheets, and thermal breaks to manage temperature extremes and condensation in hot or cold climates.</p>
+        </div>
+        <div class="climate-card reveal reveal-delay-2">
+          <h4>Hot Climate Considerations</h4>
+          <p>Increased ventilation openings, reflective roof surfaces, insulation, ridge vents and shade structures to manage heat stress and maintain animal comfort.</p>
+        </div>
+        <div class="climate-card reveal reveal-delay-3">
+          <h4>Humid Climate Considerations</h4>
+          <p>Enhanced moisture management through ventilation, vapor barriers, appropriate roof slopes and corrosion-resistant framing to address high humidity and condensation risks.</p>
         </div>
       </div>
+      <p style="margin-top: 24px; color: #666; font-size: 0.92rem; text-align: center;">Specific ventilation and insulation solutions are determined based on project country, temperature range, humidity levels, animal type and applicable local standards. No universal environmental ratings are provided without project-specific engineering analysis.</p>
     </div>
   </section>
 
-  <!-- 04 / Corrosion & Durability -->
+  <!-- 06 Corrosion Protection -->
   <section class="detail-section alt">
     <div class="container">
       <div class="section-heading reveal">
-        <p class="section-index">04 / Corrosion & Durability</p>
-        <h2>Corrosion Resistance and Long-Term Durability</h2>
-        <p>Agricultural environments — especially livestock buildings — present higher humidity, ammonia exposure and corrosive conditions. Material selection and surface treatment directly affect building service life.</p>
+        <p class="section-index">06 / Corrosion Protection</p>
+        <h2>Corrosion Protection for Livestock Environments</h2>
+        <p>Livestock and agricultural environments expose steel structures to moisture, ammonia, cleaning chemicals and corrosive conditions. Appropriate surface protection is essential for long-term structural durability and reduced maintenance.</p>
+      </div>
+      <div class="corrosion-grid">
+        <div class="corr-card reveal reveal-delay-1">
+          <h4>Painting Systems</h4>
+          <p>Multi-coat paint systems including primer, intermediate and topcoat layers, specified per project corrosion category and client requirements. Coating thickness and quality checked before packing.</p>
+        </div>
+        <div class="corr-card reveal reveal-delay-2">
+          <h4>Hot-Dip Galvanizing</h4>
+          <p>Hot-dip galvanizing provides corrosion protection for components suitable for galvanizing bath dimensions. Particularly suitable for highly corrosive livestock environments with moisture and ammonia exposure.</p>
+        </div>
+        <div class="corr-card reveal reveal-delay-3">
+          <h4>Project-Specific Coating</h4>
+          <p>Specialized coating systems for highly corrosive agricultural environments, including chemical-resistant coatings and other project-specified protection methods per client requirements and design specifications.</p>
+        </div>
+      </div>
+      <p style="margin-top: 24px; color: #666; font-size: 0.92rem; text-align: center;">Specific corrosion protection systems are determined based on project environment category, animal type, cleaning practices, client specification and design service life. No fixed corrosion lifespan guarantees are provided without project-specific engineering analysis.</p>
+    </div>
+  </section>
+
+  <!-- 07 Roof & Wall Options -->
+  <section class="detail-section">
+    <div class="container">
+      <div class="section-heading reveal">
+        <p class="section-index">07 / Roof & Wall Systems</p>
+        <h2>Roof and Wall Enclosure Options</h2>
+        <p>Agricultural steel buildings can be configured with various roof and wall enclosure systems to match climate, ventilation needs, animal type and budget requirements. All enclosure systems are coordinated with the structural steel framing.</p>
       </div>
       <div class="image-text-block reverse">
         <div class="itb-image">
-          <img src="/images/manufacturing/real/workshop-overview-wide-9815.jpg" alt="Steel structure fabrication corrosion treatment" loading="lazy">
+          <img src="/images/products/detail-cladding-system.jpg" alt="Agricultural steel building roof and wall systems" loading="lazy">
         </div>
         <div class="itb-content">
-          <h3>Durability Planning for Agricultural Environments</h3>
+          <h3>Available Enclosure Configuration Options</h3>
           <ul>
-            <li>Surface treatment and coating specified per environmental exposure level</li>
-            <li>Material grade and thickness selected for long-term structural performance</li>
-            <li>Enclosure materials chosen for corrosion resistance in agricultural settings</li>
-            <li>Connection details designed to minimize moisture trapping and corrosion points</li>
-            <li>Specific coating systems and material grades determined per project technical requirements</li>
+            <li><strong>Metal sheet</strong> — cost-effective single-skin roof and wall panels for open or naturally ventilated agricultural buildings</li>
+            <li><strong>Sandwich panel</strong> — insulated composite panels (PU, rock wool, EPS) for temperature-controlled and insulated livestock buildings</li>
+            <li><strong>Insulated panels</strong> — various insulation thicknesses and core materials per thermal requirements and climate conditions</li>
+            <li><strong>Translucent panels</strong> — natural lighting panels in roof or walls where appropriate, reducing daytime lighting energy needs</li>
+            <li><strong>Ventilation openings</strong> — ridge vents, eave openings, side wall inlets and exhaust fan openings coordinated with ventilation strategy</li>
           </ul>
+          <p style="margin-top: 16px; color: #666; font-size: 0.92rem;">All enclosure options are specified according to climate, insulation requirements, ventilation strategy and project budget. Specific panel types, insulation thickness and configurations are determined per project requirements.</p>
           <div style="margin-top: 20px;">
-            <a href="/en/manufacturing-quality/" class="btn btn-outline">View Manufacturing Quality</a>
+            <a href="/en/components/roof-wall-cladding-systems/" class="btn btn-outline">View Cladding Systems</a>
           </div>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- 05 / Fabrication & Export Supply -->
+  <!-- 08 Information Required for Quotation -->
+  <section class="detail-section alt" id="quote-info">
+    <div class="container">
+      <div class="section-heading reveal">
+        <p class="section-index">08 / Quotation Information</p>
+        <h2>Information Required for Agricultural Building Quotation</h2>
+        <p>Accurate quotation for agricultural and livestock steel buildings requires complete project information. The following details directly influence structural design, member sizing, enclosure specification and packing/export planning.</p>
+      </div>
+      <div class="quote-info-grid">
+        <div class="quote-info-card drawing">
+          <h4>Project & Building Information</h4>
+          <ul>
+            <li>Project country / city</li>
+            <li>Animal type (poultry, cattle, pig, etc.)</li>
+            <li>Building length (reference)</li>
+            <li>Building width (reference)</li>
+            <li>Eave height (reference)</li>
+            <li>Required capacity / usage (number of animals, storage volume)</li>
+            <li>Ventilation requirement (natural, mechanical, tunnel)</li>
+          </ul>
+        </div>
+        <div class="quote-info-card no-drawing">
+          <h4>Enclosure & Delivery Requirements</h4>
+          <ul>
+            <li>Insulation requirement (R-value, panel type)</li>
+            <li>Roof / wall preference (metal sheet, sandwich panel)</li>
+            <li>Surface treatment requirement (painting, galvanizing)</li>
+            <li>Drawings if available (architectural, structural)</li>
+            <li>Local design code if specified</li>
+            <li>Delivery port / destination</li>
+            <li>Project schedule and timeline</li>
+          </ul>
+        </div>
+      </div>
+      <div style="margin-top: 24px; text-align: center;">
+        <a href="#quote" class="btn btn-primary">Send Farm Layout / Project Requirements</a>
+      </div>
+      <p class="quote-note">* Preliminary quotation possible with basic project parameters, but accurate pricing requires complete building specifications and drawings. Animal housing equipment (feeding, watering, climate control) is quoted separately by specialized equipment suppliers.</p>
+    </div>
+  </section>
+
+  <!-- 09 Related Projects -->
   <section class="detail-section">
     <div class="container">
       <div class="section-heading reveal">
-        <p class="section-index">05 / Fabrication & Export Supply</p>
-        <h2>From Drawings to Export Delivery for Agricultural Projects</h2>
-        <p>ZhongSai operates its own production base, fabricating agricultural steel building components per project drawings, covering cutting, assembly, welding, surface treatment and quality control.</p>
+        <p class="section-index">09 / Related Capability References</p>
+        <h2>Large-Span Steel Building Capability References</h2>
+        <p>The following projects demonstrate ZhongSai's capability in large-span steel structure fabrication, corrosion-resistant surface treatment and prefabricated export delivery — capabilities directly applicable to agricultural and livestock building projects.</p>
       </div>
-      <div class="process-flow">
-        <div class="process-step reveal reveal-delay-1">
-          <div class="step-num">01</div>
-          <h4>Drawings Confirmation</h4>
-          <p>Project drawings, BOQ and technical requirements confirmed</p>
+      <div class="project-grid">
+        <a href="/en/projects/guangzhou-high-end-equipment-base/" class="project-card reveal reveal-delay-1">
+          <div class="project-img" style="background-image: url('/images/projects/guangzhou-gongkong-high-end-equipment-base-aerial-rendering.jpg');"></div>
+          <div class="project-body">
+            <span class="project-type">Large-Span Industrial</span>
+            <h3>Guangzhou High-End Equipment Base</h3>
+            <div class="project-meta">
+              <span>📍 Guangzhou, China</span>
+            </div>
+            <p class="project-scope">Large-span, high-height steel structure workshops demonstrating wide-span framing capability applicable to agricultural buildings.</p>
+          </div>
+        </a>
+        <a href="/en/projects/xiegang-aviation-manufacturing/" class="project-card reveal reveal-delay-2">
+          <div class="project-img" style="background-image: url('/images/projects/shanghai-baoye-xiegang-aviation-manufacturing-aerial-rendering.jpg');"></div>
+          <div class="project-body">
+            <span class="project-type">Industrial Manufacturing</span>
+            <h3>Xiegang Aviation Manufacturing</h3>
+            <div class="project-meta">
+              <span>📍 Dongguan, China</span>
+            </div>
+            <p class="project-scope">Large-span industrial steel structure with corrosion-resistant framing and prefabricated export-ready components.</p>
+          </div>
+        </a>
+        <a href="/en/projects/zhanjiang-logistics-port/" class="project-card reveal reveal-delay-3">
+          <div class="project-img" style="background-image: url('/images/projects/zhanjiang-logistics-port-aerial-rendering.jpg');"></div>
+          <div class="project-body">
+            <span class="project-type">Large-Span Warehouse</span>
+            <h3>Zhanjiang Logistics Port</h3>
+            <div class="project-meta">
+              <span>📍 Zhanjiang, China</span>
+            </div>
+            <p class="project-scope">Large-span warehouse steel structures demonstrating wide-span framing, enclosure systems and fast erection capability.</p>
+          </div>
+        </a>
+        <a href="/en/projects/shantou-luxshare-electronics-center/" class="project-card reveal reveal-delay-1">
+          <div class="project-img" style="background-image: url('/images/projects/shantou-luxshare-precision-electronics-aerial-rendering.jpg');"></div>
+          <div class="project-body">
+            <span class="project-type">Industrial Park</span>
+            <h3>Luxshare Precision Electronics Center</h3>
+            <div class="project-meta">
+              <span>📍 Shantou, China</span>
+            </div>
+            <p class="project-scope">Multi-building industrial park with large-span steel structures, insulated enclosure systems and coordinated ventilation design.</p>
+          </div>
+        </a>
+      </div>
+      <p style="margin-top: 20px; color: #888; font-size: 0.85rem; text-align: center; font-style: italic;">Note: Projects listed above are industrial and commercial steel structure projects demonstrating ZhongSai's large-span fabrication, corrosion protection and prefabricated export capabilities. These capabilities are directly applicable to agricultural and livestock building projects. Dedicated agricultural project references can be provided upon request.</p>
+      <div style="margin-top: 20px; text-align: center;">
+        <a href="/en/projects/" class="btn btn-outline">View All Projects</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Service Boundary -->
+  <section class="detail-section dark">
+    <div class="container">
+      <div class="section-heading reveal" style="text-align: center;">
+        <p class="section-index" style="justify-content: center;">Service Boundary</p>
+        <h2 style="color: #fff;">What ZhongSai Provides and Does Not Provide</h2>
+        <p style="margin: 0 auto;">Clear service scope for agricultural and livestock building projects.</p>
+      </div>
+      <div class="geo-boundary">
+        <div class="geo-box include">
+          <h4>ZhongSai Provides</h4>
+          <ul>
+            <li>Structural design detailing and fabrication drawing support</li>
+            <li>Steel structure fabrication for agricultural buildings</li>
+            <li>Steel beams, columns, trusses and framing components</li>
+            <li>Roof and wall enclosure system supply (metal sheet, sandwich panel)</li>
+            <li>Ventilation opening and ridge vent structural provisions</li>
+            <li>Corrosion-resistant surface treatment (painting, galvanizing)</li>
+            <li>Component marking, packing and container loading</li>
+            <li>Export documentation support and logistics coordination</li>
+            <li>Overseas installation technical guidance</li>
+          </ul>
         </div>
-        <div class="process-step reveal reveal-delay-2">
-          <div class="step-num">02</div>
-          <h4>Design Detailing</h4>
-          <p>Detailing design and fabrication drawing preparation</p>
-        </div>
-        <div class="process-step reveal reveal-delay-3">
-          <div class="step-num">03</div>
-          <h4>Fabrication</h4>
-          <p>Agricultural steel component fabrication organized per drawings</p>
-        </div>
-        <div class="process-step reveal reveal-delay-4">
-          <div class="step-num">04</div>
-          <h4>Component Marking</h4>
-          <p>Component marking and numbering arranged based on shop drawings</p>
-        </div>
-        <div class="process-step reveal reveal-delay-1">
-          <div class="step-num">05</div>
-          <h4>Packing & Loading</h4>
-          <p>Packing organized by component type and container loading requirements</p>
-        </div>
-        <div class="process-step reveal reveal-delay-2">
-          <div class="step-num">06</div>
-          <h4>Export Coordination</h4>
-          <p>Export documentation support and logistics coordination</p>
+        <div class="geo-box exclude">
+          <h4>ZhongSai Does Not Directly Provide</h4>
+          <ul>
+            <li>Poultry / livestock equipment (feeding, watering, climate control)</li>
+            <li>Animal husbandry consulting or production management</li>
+            <li>Local construction or erection at project site</li>
+            <li>Local foundation construction</li>
+            <li>Local general contracting / EPC</li>
+            <li>Manure management system design or supply</li>
+            <li>Customs brokerage as a licensed customs broker</li>
+            <li>Freight forwarding as a licensed freight forwarder</li>
+          </ul>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- Related -->
-  <section class="detail-section alt">
+  <!-- 10 FAQ -->
+  <section class="detail-section">
     <div class="container">
-      <div class="section-heading reveal">
-        <p class="section-index">06 / Related</p>
-        <h2>Related Capabilities</h2>
-        <p>Explore related ZhongSai capabilities and services for your project.</p>
+      <div class="section-heading reveal" style="text-align: center;">
+        <p class="section-index" style="justify-content: center;">10 / FAQ</p>
+        <h2>Frequently Asked Questions About Agricultural Steel Buildings</h2>
       </div>
-      <div class="feature-grid">
-        <div class="feature-card reveal reveal-delay-1">
-          <div class="feature-body">
-            <h3><a href="/en/steel-warehouse/" style="color: inherit; text-decoration: none;">Steel Warehouse</a></h3>
-            <p>Storage and logistics steel buildings</p>
-            <a href="/en/steel-warehouse/" style="color: #2563eb; font-size: 14px; font-weight: 600;">Learn more →</a>
+      <div class="detail-faq">
+        <div class="faq-item">
+          <button class="faq-question" aria-expanded="false">
+            <span>Can steel buildings be used for poultry and livestock farms?</span>
+            <span class="faq-icon">+</span>
+          </button>
+          <div class="faq-answer">
+            <div class="faq-answer-inner">
+              Yes. Steel structures are widely used for poultry houses, cattle barns, pig farms and other livestock facilities. Steel portal frames provide large-span, column-free interiors ideal for animal housing and equipment layout. With appropriate ventilation, insulation and corrosion-resistant surface treatment, steel buildings provide durable, cost-effective and fast-to-erect solutions for agricultural applications.
+            </div>
           </div>
         </div>
-        <div class="feature-card reveal reveal-delay-2">
-          <div class="feature-body">
-            <h3><a href="/en/products/custom-engineering/" style="color: inherit; text-decoration: none;">Custom Engineering</a></h3>
-            <p>Custom steel structure fabrication</p>
-            <a href="/en/products/custom-engineering/" style="color: #2563eb; font-size: 14px; font-weight: 600;">Learn more →</a>
+        <div class="faq-item">
+          <button class="faq-question" aria-expanded="false">
+            <span>How do you handle ventilation in livestock buildings?</span>
+            <span class="faq-icon">+</span>
+          </button>
+          <div class="faq-answer">
+            <div class="faq-answer-inner">
+              Ventilation is handled through structural provisions in the steel building design, including ridge vents, eave openings, side wall inlets, exhaust fan openings and appropriate roof slopes. The specific ventilation strategy (natural, mechanical, tunnel or mixed) is determined based on animal type, building size, local climate and operational requirements. ZhongSai provides the structural framing and enclosure provisions for ventilation systems; mechanical ventilation equipment (fans, controllers) is supplied by specialized equipment manufacturers.
+            </div>
           </div>
         </div>
-        <div class="feature-card reveal reveal-delay-3">
-          <div class="feature-body">
-            <h3><a href="/en/components/roof-wall-cladding-systems/" style="color: inherit; text-decoration: none;">Roof & Wall Cladding</a></h3>
-            <p>Enclosure system supply</p>
-            <a href="/en/components/roof-wall-cladding-systems/" style="color: #2563eb; font-size: 14px; font-weight: 600;">Learn more →</a>
+        <div class="faq-item">
+          <button class="faq-question" aria-expanded="false">
+            <span>Can insulation be added for hot or cold climates?</span>
+            <span class="faq-icon">+</span>
+          </button>
+          <div class="faq-answer">
+            <div class="faq-answer-inner">
+              Yes. Insulation can be added to roof and wall systems based on climate and thermal requirements. Options include sandwich panels (PU, rock wool, EPS) with various insulation thicknesses, or fiberglass insulation under metal sheets. The appropriate insulation type and thickness are determined based on local temperature range, animal type, ventilation strategy and energy efficiency goals. Specific thermal performance values are determined per project requirements.
+            </div>
           </div>
         </div>
-        <div class="feature-card reveal reveal-delay-4">
-          <div class="feature-body">
-            <h3><a href="/en/export-delivery/" style="color: inherit; text-decoration: none;">Export Delivery</a></h3>
-            <p>Packing, loading and export coordination</p>
-            <a href="/en/export-delivery/" style="color: #2563eb; font-size: 14px; font-weight: 600;">Learn more →</a>
+        <div class="faq-item">
+          <button class="faq-question" aria-expanded="false">
+            <span>What surface treatment is suitable for humid or corrosive farm environments?</span>
+            <span class="faq-icon">+</span>
+          </button>
+          <div class="faq-answer">
+            <div class="faq-answer-inner">
+              For humid and corrosive livestock environments (with moisture, ammonia and cleaning chemicals), suitable surface treatments include multi-coat paint systems, hot-dip galvanizing (for components fitting galvanizing bath dimensions), and project-specific coating systems. The appropriate protection system is determined based on project environment category, animal type, cleaning practices, client specification and design service life. Hot-dip galvanizing is often preferred for highly corrosive livestock environments. No fixed corrosion lifespan guarantees are provided without project-specific engineering analysis.
+            </div>
+          </div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-question" aria-expanded="false">
+            <span>Can you design large-span livestock buildings?</span>
+            <span class="faq-icon">+</span>
+          </button>
+          <div class="faq-answer">
+            <div class="faq-answer-inner">
+              Yes. Steel portal frame structures can be designed for large-span livestock buildings with minimal interior columns, maximizing usable space for animal housing, feeding equipment and operational flow. Specific spans are determined based on animal type, equipment layout, building dimensions, load requirements and applicable design codes. We provide structural design detailing support and fabrication per approved project drawings.
+            </div>
+          </div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-question" aria-expanded="false">
+            <span>What information is required for quotation?</span>
+            <span class="faq-icon">+</span>
+          </button>
+          <div class="faq-answer">
+            <div class="faq-answer-inner">
+              For agricultural building quotation, please provide: project country/city, animal type (poultry, cattle, pig, etc.), building dimensions (length, width, eave height), required capacity or usage, ventilation requirements (natural, mechanical, tunnel), insulation requirements, roof/wall preferences, surface treatment requirements, available drawings or sketches, local design code if specified, delivery port, and project schedule. Preliminary quotation is possible with basic parameters, but accurate pricing requires complete specifications and drawings.
+            </div>
+          </div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-question" aria-expanded="false">
+            <span>Do you provide local installation?</span>
+            <span class="faq-icon">+</span>
+          </button>
+          <div class="faq-answer">
+            <div class="faq-answer-inner">
+              ZhongSai provides design/detailing, fabrication, export supply and technical installation guidance. Local civil works and construction are normally handled by local contractors. We can provide installation drawings, component identification systems, bolt tightening specifications and remote technical support to assist your local installation team. On-site technical guidance can be arranged based on project requirements. Unless a specific written agreement states otherwise, we do not act as a local general contractor or EPC contractor for on-site construction.
+            </div>
           </div>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- Quote Form -->
-  <section id="quote" class="detail-section">
+  <!-- 11 Quote CTA + QuoteForm -->
+  <section class="detail-section dark" id="quote">
     <div class="container">
-      <QuoteForm />
+      <div class="section-heading reveal" style="text-align: center;">
+        <p class="section-index" style="justify-content: center; color: #f59e0b;">11 / Get Quotation</p>
+        <h2 style="color: #fff;">Submit Your Agricultural Building Project Requirements</h2>
+        <p style="margin: 0 auto; color: rgba(255,255,255,0.75);">Send your farm layout or project requirements for preliminary assessment and quotation.</p>
+      </div>
+      <QuoteForm lang="en" />
     </div>
   </section>
 </BaseLayout>
+
+<style>
+.hero-capabilities {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin: 20px 0;
+}
+.cap-item {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  background: rgba(255,255,255,0.15);
+  backdrop-filter: blur(8px);
+  padding: 8px 16px;
+  border-radius: 20px;
+  font-size: 0.9rem;
+  color: #fff;
+  border: 1px solid rgba(255,255,255,0.2);
+}
+.cap-icon {
+  font-size: 1.1rem;
+}
+.app-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 20px;
+  margin-top: 32px;
+}
+.app-card {
+  background: #fff;
+  border-radius: 12px;
+  padding: 24px;
+  box-shadow: 0 2px 12px rgba(0,0,0,0.06);
+  border-left: 4px solid #15803d;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.app-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 24px rgba(0,0,0,0.1);
+}
+.app-card h3 {
+  color: #15803d;
+  font-size: 1.05rem;
+  margin-bottom: 10px;
+}
+.app-card p {
+  color: #555;
+  font-size: 0.9rem;
+  line-height: 1.6;
+}
+.climate-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 20px;
+  margin-top: 32px;
+}
+.climate-card {
+  background: #fff;
+  border-radius: 12px;
+  padding: 24px;
+  box-shadow: 0 2px 12px rgba(0,0,0,0.06);
+  border-top: 3px solid #0ea5e9;
+}
+.climate-card h4 {
+  color: #0c4a6e;
+  font-size: 1rem;
+  margin-bottom: 10px;
+}
+.climate-card p {
+  color: #555;
+  font-size: 0.88rem;
+  line-height: 1.6;
+}
+.corrosion-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 24px;
+  margin-top: 32px;
+}
+.corr-card {
+  background: #fff;
+  border-radius: 12px;
+  padding: 28px;
+  box-shadow: 0 2px 12px rgba(0,0,0,0.06);
+  border-left: 4px solid #059669;
+}
+.corr-card h4 {
+  color: #064e3b;
+  font-size: 1.1rem;
+  margin-bottom: 12px;
+}
+.corr-card p {
+  color: #555;
+  font-size: 0.92rem;
+  line-height: 1.7;
+}
+.project-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 24px;
+  margin-top: 32px;
+}
+.project-card {
+  background: #fff;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 2px 12px rgba(0,0,0,0.06);
+  text-decoration: none;
+  color: inherit;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  display: block;
+}
+.project-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 24px rgba(0,0,0,0.12);
+}
+.project-img {
+  height: 180px;
+  background-size: cover;
+  background-position: center;
+}
+.project-body {
+  padding: 20px;
+}
+.project-type {
+  display: inline-block;
+  background: #dcfce7;
+  color: #166534;
+  padding: 4px 10px;
+  border-radius: 4px;
+  font-size: 0.75rem;
+  font-weight: 600;
+  margin-bottom: 10px;
+}
+.project-body h3 {
+  color: #1a1a1a;
+  font-size: 1.05rem;
+  margin-bottom: 8px;
+  line-height: 1.4;
+}
+.project-meta {
+  color: #888;
+  font-size: 0.85rem;
+  margin-bottom: 10px;
+}
+.project-scope {
+  color: #666;
+  font-size: 0.88rem;
+  line-height: 1.5;
+}
+@media (max-width: 768px) {
+  .hero-capabilities {
+    gap: 8px;
+  }
+  .cap-item {
+    padding: 6px 12px;
+    font-size: 0.8rem;
+  }
+  .app-grid, .climate-grid, .corrosion-grid, .project-grid {
+    grid-template-columns: 1fr;
+    gap: 16px;
+  }
+  .project-img {
+    height: 160px;
+  }
+}
+</style>
+
+<script>
+  // FAQ toggle
+  document.querySelectorAll('.faq-question').forEach(btn => {
+    btn.addEventListener('click', () => {
+      const item = btn.closest('.faq-item');
+      const isOpen = item.classList.contains('open');
+      item.classList.toggle('open');
+      btn.setAttribute('aria-expanded', !isOpen);
+    });
+  });
+
+  // Scroll reveal
+  const revealElements = document.querySelectorAll('.reveal');
+  if ('IntersectionObserver' in window) {
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.style.opacity = '1';
+          entry.target.style.transform = 'translateY(0)';
+          observer.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.1 });
+    revealElements.forEach(el => {
+      el.style.opacity = '0';
+      el.style.transform = 'translateY(24px)';
+      el.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+      observer.observe(el);
+    });
+  }
+</script>
