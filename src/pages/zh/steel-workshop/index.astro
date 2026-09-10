@@ -1,27 +1,44 @@
 ---
 import BaseLayout from '../../../layouts/BaseLayout.astro';
-import Breadcrumb from '../../../components/Breadcrumb.astro';
 import QuoteForm from '../../../components/QuoteForm.astro';
 import '../../../styles/detail.css';
 
-const title = '钢结构工业厂房与生产车间 | 中赛钢构';
-const description = '中赛钢构提供钢结构工业厂房与生产车间解决方案，覆盖设计深化、制造加工、构件供应、包装装柜与出口交付，支持行车需求、设备布置与生产空间规划。';
+const title = '钢结构厂房厂家｜工业厂房设计、制造与出口｜中赛钢构';
+const description = '中赛钢构提供钢结构厂房、工业车间的设计深化、生产加工、装柜出口及海外安装技术指导，适用于制造工厂、加工车间及带行车工业建筑。';
 const lang = 'zh';
 const canonical = 'https://zhongsai-steelstructure.com/zh/steel-workshop/';
 ---
 
 <BaseLayout title={title} description={description} lang={lang}>
-  <!-- Hero -->
+  <!-- Hero - 客户需求导向 -->
   <section class="detail-hero">
     <div class="detail-hero-bg" style="background-image: url('/images/products/app-industrial-workshop-hero.jpg');"></div>
     <div class="detail-hero-overlay"></div>
     <div class="detail-hero-content">
       <span class="eyebrow">工业厂房 · 生产车间</span>
-      <h1>钢结构工业厂房与生产车间</h1>
-      <p class="lead">中赛钢构为生产制造类项目提供钢结构厂房解决方案，从设计深化到制造出口，支持设备布置、行车需求与生产空间规划，帮助客户把生产场地需求转化为可交付的钢结构建筑。</p>
+      <h1>工业制造项目钢结构厂房</h1>
+      <p class="lead">为制造工厂、加工车间及带行车工业建筑定制的钢结构厂房。从结构深化到装柜出口，我们将您的生产场地需求转化为可交付的钢结构建筑。</p>
+      <div class="hero-capabilities">
+        <div class="cap-item">
+          <span class="cap-icon">📐</span>
+          <span>结构设计与深化</span>
+        </div>
+        <div class="cap-item">
+          <span class="cap-icon">🏭</span>
+          <span>工厂制造加工</span>
+        </div>
+        <div class="cap-item">
+          <span class="cap-icon">🚢</span>
+          <span>集装箱出口</span>
+        </div>
+        <div class="cap-item">
+          <span class="cap-icon">🔧</span>
+          <span>海外安装技术指导</span>
+        </div>
+      </div>
       <div class="detail-hero-actions">
-        <a href="#quote" class="btn btn-primary">提交厂房项目需求</a>
-        <a href="/zh/products/" class="btn btn-outline">查看全部产品</a>
+        <a href="#quote" class="btn btn-primary">提交图纸进行工程审核</a>
+        <a href="#quote-info" class="btn btn-outline">获取项目报价</a>
       </div>
     </div>
   </section>
@@ -37,54 +54,165 @@ const canonical = 'https://zhongsai-steelstructure.com/zh/steel-workshop/';
     </div>
   </nav>
 
-  <!-- 01 Workshop Project Requirements -->
+  <!-- 01 典型应用场景 -->
   <section class="detail-section">
     <div class="container">
       <div class="section-heading reveal">
-        <p class="section-index">01 / 厂房项目需求</p>
-        <h2>工业厂房项目需要确认哪些信息</h2>
-        <p>钢结构厂房的结构配置取决于生产用途、设备布置和使用环境。在方案阶段，以下信息直接影响柱网、层高、行车和围护系统的设计。</p>
+        <p class="section-index">01 / 应用场景</p>
+        <h2>钢结构厂房典型应用场景</h2>
+        <p>钢结构厂房广泛应用于需要大跨度生产空间、设备集成和行车配套结构设计的工业领域。</p>
       </div>
-      <div class="requirement-grid">
-        <div class="requirement-card reveal reveal-delay-1">
-          <div class="req-icon">01</div>
-          <h3>厂房用途</h3>
-          <p>生产制造、加工装配、设备车间还是混合用途，不同工艺对空间和荷载有不同要求。</p>
+      <div class="app-grid">
+        <div class="app-card reveal reveal-delay-1">
+          <h3>制造工厂</h3>
+          <p>需要开阔平面布局、设备基础和物料搬运集成的生产设施。</p>
         </div>
-        <div class="requirement-card reveal reveal-delay-2">
-          <div class="req-icon">02</div>
-          <h3>设备布置</h3>
-          <p>主要生产设备的尺寸、重量、位置和运行空间，影响柱网布局和结构荷载设计。</p>
+        <div class="app-card reveal reveal-delay-2">
+          <h3>加工车间</h3>
+          <p>具有特定工艺流程布局、通风和生产线配套的加工装配设施。</p>
         </div>
-        <div class="requirement-card reveal reveal-delay-3">
-          <div class="req-icon">03</div>
-          <h3>生产空间</h3>
-          <p>所需净工作高度、通道宽度、物料堆放区域，以及未来扩建预留空间。</p>
+        <div class="app-card reveal reveal-delay-3">
+          <h3>机械加工厂</h3>
+          <p>重型机械制造，需要行车配套、高荷载能力和设备进出通道。</p>
         </div>
-        <div class="requirement-card reveal reveal-delay-1">
-          <div class="req-icon">04</div>
-          <h3>行车需求</h3>
-          <p>是否需要行车、吊车吨位、运行范围和轨顶高度，需在结构设计阶段确认。</p>
+        <div class="app-card reveal reveal-delay-1">
+          <h3>汽车相关厂房</h3>
+          <p>汽车生产装配设施，大跨度、生产线布局和车辆进出通道。</p>
         </div>
-        <div class="requirement-card reveal reveal-delay-2">
-          <div class="req-icon">05</div>
-          <h3>通风采光</h3>
-          <p>生产工艺对通风、排烟、自然采光的要求，影响屋面开窗和围护系统配置。</p>
+        <div class="app-card reveal reveal-delay-2">
+          <h3>重工业设施</h3>
+          <p>需要高檐口、重级吊车荷载和稳固结构设计的重型工业应用。</p>
         </div>
-        <div class="requirement-card reveal reveal-delay-3">
-          <div class="req-icon">06</div>
-          <h3>围护要求</h3>
-          <p>屋面墙面材料、保温隔热、防水等级等围护需求，根据使用环境和项目要求确定。</p>
+        <div class="app-card reveal reveal-delay-3">
+          <h3>带行车厂房</h3>
+          <p>配备桥式吊车系统的厂房，加固柱和吊车梁一体化设计。</p>
+        </div>
+        <div class="app-card reveal reveal-delay-1">
+          <h3>装配厂房</h3>
+          <p>装配生产大厅，灵活柱网、自然采光和通风系统。</p>
+        </div>
+        <div class="app-card reveal reveal-delay-2">
+          <h3>生产车间</h3>
+          <p>可适应不断变化的制造工艺和设备布局的多功能生产大厅。</p>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- 02 Structural & Production Space Planning -->
+  <!-- 02 典型工程参数 -->
   <section class="detail-section alt">
     <div class="container">
       <div class="section-heading reveal">
-        <p class="section-index">02 / 结构与空间规划</p>
+        <p class="section-index">02 / 工程参数</p>
+        <h2>典型工程参数参考</h2>
+        <p>工业厂房的结构配置因生产工艺、设备布局和当地建筑规范而异。以下参数为项目参考值，实际设计值必须根据项目图纸、荷载计算和适用的当地标准确定。</p>
+      </div>
+      <div class="params-table-wrapper">
+        <table class="params-table">
+          <thead>
+            <tr>
+              <th>参数项</th>
+              <th>典型 / 按项目确定</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><strong>建筑类型</strong></td>
+              <td>工业厂房 / 工厂 / 加工车间</td>
+            </tr>
+            <tr>
+              <td><strong>结构体系</strong></td>
+              <td>门式刚架 / 多跨钢框架</td>
+            </tr>
+            <tr>
+              <td><strong>跨度</strong></td>
+              <td>根据项目要求确定</td>
+            </tr>
+            <tr>
+              <td><strong>檐口高度</strong></td>
+              <td>根据设备和工艺要求确定</td>
+            </tr>
+            <tr>
+              <td><strong>柱距</strong></td>
+              <td>按项目具体确定</td>
+            </tr>
+            <tr>
+              <td><strong>行车</strong></td>
+              <td>可选，根据吊装要求确定</td>
+            </tr>
+            <tr>
+              <td><strong>主材牌号</strong></td>
+              <td>Q355B或项目指定等效牌号</td>
+            </tr>
+            <tr>
+              <td><strong>连接方式</strong></td>
+              <td>螺栓连接 / 焊接</td>
+            </tr>
+            <tr>
+              <td><strong>屋面系统</strong></td>
+              <td>金属压型板 / 夹芯板</td>
+            </tr>
+            <tr>
+              <td><strong>墙面系统</strong></td>
+              <td>金属压型板 / 夹芯板</td>
+            </tr>
+            <tr>
+              <td><strong>表面处理</strong></td>
+              <td>涂装 / 镀锌，根据环境确定</td>
+            </tr>
+            <tr>
+              <td><strong>设计标准</strong></td>
+              <td>根据项目所在地和客户要求确定</td>
+            </tr>
+            <tr>
+              <td><strong>出口方式</strong></td>
+              <td>集装箱运输</td>
+            </tr>
+            <tr>
+              <td><strong>安装支持</strong></td>
+              <td>可提供技术指导</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <p class="params-note"><strong>说明：</strong>以上所有参数仅为项目参考值。实际跨度、高度、荷载、钢材牌号和连接细节必须由具备资质的结构工程师根据项目具体图纸、荷载计算和适用的当地建筑规范确定。中赛根据经审批的项目图纸提供钢结构制作和出口供货服务。</p>
+    </div>
+  </section>
+
+  <!-- 03 带行车钢结构厂房 -->
+  <section class="detail-section">
+    <div class="container">
+      <div class="section-heading reveal">
+        <p class="section-index">03 / 行车厂房</p>
+        <h2>带行车钢结构厂房</h2>
+        <p>许多工业制造设施需要桥式吊车系统进行物料搬运、设备维护和生产作业。行车需求对结构设计有显著影响，应在项目最早阶段确认。</p>
+      </div>
+      <div class="image-text-block">
+        <div class="itb-image">
+          <img src="/images/company/factory-steel-beam-fabrication.jpg" alt="带行车钢结构厂房构件加工" loading="lazy">
+        </div>
+        <div class="itb-content">
+          <h3>带行车厂房关键设计要点</h3>
+          <ul>
+            <li><strong>行车吨位确认</strong> — 起重量、工作制和运行频率需在结构设计前明确</li>
+            <li><strong>柱子加固</strong> — 行车荷载需要加固柱截面和增加支撑系统</li>
+            <li><strong>吊车梁（牛腿）设计</strong> — 牛腿或吊车梁需在正确标高与柱子一体化设计</li>
+            <li><strong>基础反力</strong> — 行车荷载向基础传递附加的竖向和水平力</li>
+            <li><strong>跨度与柱距</strong> — 吊车轨道对齐影响柱网布局</li>
+            <li><strong>轨顶高度</strong> — 决定所需檐口高度和结构净空</li>
+            <li><strong>用钢量影响</strong> — 不同吊车吨位显著影响整体结构用钢量</li>
+          </ul>
+          <p style="margin-top: 16px; color: #666; font-size: 0.92rem;">不提供统一的行车吨位范围作为通用标准 — 每个项目需根据实际吊装需求、建筑尺寸和适用设计规范进行结构分析。</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 04 结构与生产空间规划 -->
+  <section class="detail-section alt">
+    <div class="container">
+      <div class="section-heading reveal">
+        <p class="section-index">04 / 结构与空间规划</p>
         <h2>围绕生产动线的结构与空间规划</h2>
         <p>工业厂房的核心是生产效率。结构规划需要配合设备布置、生产流程和物料运输，而不是单纯追求大跨度。</p>
       </div>
@@ -107,11 +235,101 @@ const canonical = 'https://zhongsai-steelstructure.com/zh/steel-workshop/';
     </div>
   </section>
 
-  <!-- 03 Steel Structure Fabrication -->
+  <!-- 05 报价需要提供什么资料 -->
+  <section class="detail-section" id="quote-info">
+    <div class="container">
+      <div class="section-heading reveal">
+        <p class="section-index">05 / 报价资料</p>
+        <h2>获取厂房报价需要提供什么资料</h2>
+        <p>提供越完整的项目信息，报价越准确。仅凭长宽高无法给出准确报价，需要结合用途、设备和技术要求综合评估。</p>
+      </div>
+      <div class="quote-info-grid">
+        <div class="quote-info-card drawing">
+          <h4>已有图纸 / BOQ</h4>
+          <ul>
+            <li>项目所在国家 / 城市</li>
+            <li>建筑图纸 / 结构图纸</li>
+            <li>工程量清单（BOQ）</li>
+            <li>项目技术规格书</li>
+            <li>行车 / 设备特殊要求</li>
+            <li>当地设计规范（如有指定）</li>
+          </ul>
+        </div>
+        <div class="quote-info-card no-drawing">
+          <h4>暂无完整图纸</h4>
+          <ul>
+            <li>项目所在国家 / 城市</li>
+            <li>建筑长度（参考尺寸）</li>
+            <li>建筑宽度（参考尺寸）</li>
+            <li>檐口高度（参考尺寸）</li>
+            <li>行车需求（吨位 / 数量）</li>
+            <li>厂房用途（生产 / 加工 / 设备）</li>
+            <li>屋面墙面要求</li>
+            <li>已有图纸或草图</li>
+          </ul>
+        </div>
+      </div>
+      <div style="margin-top: 24px; text-align: center;">
+        <a href="#quote" class="btn btn-primary">上传图纸 / 提交项目需求</a>
+      </div>
+      <p class="quote-note">* 初步方案与报价需基于项目用途和基本参数进行需求评估，最终方案与价格以图纸和技术要求确认为准。</p>
+    </div>
+  </section>
+
+  <!-- 06 从图纸到交付流程 -->
+  <section class="detail-section alt">
+    <div class="container">
+      <div class="section-heading reveal">
+        <p class="section-index">06 / 流程</p>
+        <h2>从项目图纸到出口交付的完整流程</h2>
+        <p>中赛钢构提供从设计深化到出口交付的钢结构供应服务，当地施工由客户或当地施工团队完成。</p>
+      </div>
+      <div class="process-flow">
+        <div class="process-step reveal reveal-delay-1">
+          <div class="step-num">01</div>
+          <h4>项目信息审核</h4>
+          <p>图纸、BOQ与技术要求审核</p>
+          <a href="/zh/products/custom-engineering/" class="process-link">工程支持 →</a>
+        </div>
+        <div class="process-step reveal reveal-delay-2">
+          <div class="step-num">02</div>
+          <h4>结构设计 / 深化</h4>
+          <p>深化设计与构件加工图编制</p>
+          <a href="/zh/products/custom-engineering/" class="process-link">深化设计 →</a>
+        </div>
+        <div class="process-step reveal reveal-delay-3">
+          <div class="step-num">03</div>
+          <h4>材料准备</h4>
+          <p>钢材采购与材料可追溯性验证</p>
+          <a href="/zh/manufacturing-quality/" class="process-link">制造能力 →</a>
+        </div>
+        <div class="process-step reveal reveal-delay-4">
+          <div class="step-num">04</div>
+          <h4>制造与质量检验</h4>
+          <p>切割、组立、焊接与尺寸检验</p>
+          <a href="/zh/manufacturing-quality/" class="process-link">质量控制 →</a>
+        </div>
+        <div class="process-step reveal reveal-delay-1">
+          <div class="step-num">05</div>
+          <h4>标识、包装与装柜</h4>
+          <p>构件标识，按装柜要求组织包装</p>
+          <a href="/zh/export-delivery/" class="process-link">出口交付 →</a>
+        </div>
+        <div class="process-step reveal reveal-delay-2">
+          <div class="step-num">06</div>
+          <h4>出口交付与安装指导</h4>
+          <p>出口单证、海运与海外安装技术指导</p>
+          <a href="/zh/export-delivery/" class="process-link">安装指导 →</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 07 钢结构制造 -->
   <section class="detail-section">
     <div class="container">
       <div class="section-heading reveal">
-        <p class="section-index">03 / 钢结构制造</p>
+        <p class="section-index">07 / 钢结构制造</p>
         <h2>从图纸到构件的制造加工</h2>
         <p>中赛钢构拥有自有生产基地，覆盖切割、组立、焊接、矫正、钻孔、表面处理和质量检验等关键制造环节，按项目图纸组织钢结构构件加工。</p>
       </div>
@@ -138,11 +356,11 @@ const canonical = 'https://zhongsai-steelstructure.com/zh/steel-workshop/';
     </div>
   </section>
 
-  <!-- 04 Roof & Wall Systems -->
+  <!-- 08 屋面墙面围护系统 -->
   <section class="detail-section alt">
     <div class="container">
       <div class="section-heading reveal">
-        <p class="section-index">04 / 围护系统</p>
+        <p class="section-index">08 / 围护系统</p>
         <h2>屋面与墙面围护系统</h2>
         <p>工业厂房的围护系统直接影响使用环境和运营成本。中赛钢构可根据项目要求提供屋面板、墙面板及配套围护材料，与钢结构主体协调供应。</p>
       </div>
@@ -167,60 +385,67 @@ const canonical = 'https://zhongsai-steelstructure.com/zh/steel-workshop/';
     </div>
   </section>
 
-  <!-- 05 From Drawings to Export Supply -->
+  <!-- 09 相关项目案例 -->
   <section class="detail-section">
     <div class="container">
       <div class="section-heading reveal">
-        <p class="section-index">05 / 从图纸到出口交付</p>
-        <h2>从项目图纸到出口交付的完整流程</h2>
-        <p>中赛钢构提供从设计深化到出口交付的钢结构供应服务，当地施工由客户或当地施工团队完成。</p>
+        <p class="section-index">09 / 相关项目</p>
+        <h2>工业制造项目案例参考</h2>
+        <p>精选工业制造和生产设施项目，展示中赛钢构钢结构制作与供货能力。</p>
       </div>
-      <div class="process-flow">
-        <div class="process-step reveal reveal-delay-1">
-          <div class="step-num">01</div>
-          <h4>图纸确认</h4>
-          <p>项目图纸、BOQ与技术要求确认</p>
-        </div>
-        <div class="process-step reveal reveal-delay-2">
-          <div class="step-num">02</div>
-          <h4>设计深化</h4>
-          <p>深化设计与构件加工图编制</p>
-        </div>
-        <div class="process-step reveal reveal-delay-3">
-          <div class="step-num">03</div>
-          <h4>制造加工</h4>
-          <p>按图纸组织钢结构构件制造</p>
-        </div>
-        <div class="process-step reveal reveal-delay-4">
-          <div class="step-num">04</div>
-          <h4>构件标识</h4>
-          <p>可根据深化图进行构件标识与编号</p>
-        </div>
-        <div class="process-step reveal reveal-delay-1">
-          <div class="step-num">05</div>
-          <h4>包装装柜</h4>
-          <p>按构件类型和装柜要求组织包装</p>
-        </div>
-        <div class="process-step reveal reveal-delay-2">
-          <div class="step-num">06</div>
-          <h4>出口单证</h4>
-          <p>出口单证支持与物流协调</p>
-        </div>
-        <div class="process-step reveal reveal-delay-3">
-          <div class="step-num">07</div>
-          <h4>海运交付</h4>
-          <p>集装箱装柜与海运出口安排</p>
-        </div>
-        <div class="process-step reveal reveal-delay-4">
-          <div class="step-num">08</div>
-          <h4>技术指导</h4>
-          <p>海外安装技术指导（当地施工由客户团队完成）</p>
-        </div>
+      <div class="project-grid">
+        <a href="/zh/projects/xiegang-aviation-manufacturing/" class="project-card reveal reveal-delay-1">
+          <div class="project-img" style="background-image: url('/images/projects/shanghai-baoye-xiegang-aviation-manufacturing-aerial-rendering.jpg');"></div>
+          <div class="project-body">
+            <span class="project-type">工业制造</span>
+            <h3>谢岗通用航空制造项目</h3>
+            <div class="project-meta">
+              <span>📍 广东东莞</span>
+            </div>
+            <p class="project-scope">通用航空制造及供应链项目钢结构制作与供货。</p>
+          </div>
+        </a>
+        <a href="/zh/projects/guangzhou-high-end-equipment-base/" class="project-card reveal reveal-delay-2">
+          <div class="project-img" style="background-image: url('/images/projects/guangzhou-gongkong-high-end-equipment-base-aerial-rendering.jpg');"></div>
+          <div class="project-body">
+            <span class="project-type">工业制造</span>
+            <h3>广州高端装备研发生产基地</h3>
+            <div class="project-meta">
+              <span>📍 广东广州</span>
+            </div>
+            <p class="project-scope">大湾区现代高端装备研发生产基地钢结构供货。</p>
+          </div>
+        </a>
+        <a href="/zh/projects/yixian-biotech-manufacturing/" class="project-card reveal reveal-delay-3">
+          <div class="project-img" style="background-image: url('/images/projects/guangdong-yixian-biotech-manufacturing-aerial-rendering.jpg');"></div>
+          <div class="project-body">
+            <span class="project-type">工业制造</span>
+            <h3>逸仙生物科技高端制造厂房</h3>
+            <div class="project-meta">
+              <span>📍 广东</span>
+            </div>
+            <p class="project-scope">生物科技高端制造厂房钢结构制作加工。</p>
+          </div>
+        </a>
+        <a href="/zh/projects/shantou-luxshare-electronics-center/" class="project-card reveal reveal-delay-1">
+          <div class="project-img" style="background-image: url('/images/projects/shantou-luxshare-precision-electronics-aerial-rendering.jpg');"></div>
+          <div class="project-body">
+            <span class="project-type">产业园区</span>
+            <h3>立讯精密电子信息产业中心</h3>
+            <div class="project-meta">
+              <span>📍 广东汕头</span>
+            </div>
+            <p class="project-scope">全球电子信息产业中心钢结构供货。</p>
+          </div>
+        </a>
+      </div>
+      <div style="margin-top: 28px; text-align: center;">
+        <a href="/zh/projects/" class="btn btn-outline">查看全部项目</a>
       </div>
     </div>
   </section>
 
-  <!-- GEO Service Boundary -->
+  <!-- 服务边界 -->
   <section class="detail-section dark">
     <div class="container">
       <div class="section-heading reveal" style="text-align: center;">
@@ -256,49 +481,91 @@ const canonical = 'https://zhongsai-steelstructure.com/zh/steel-workshop/';
     </div>
   </section>
 
-  <!-- 06 What We Need for Quotation -->
-  <section class="detail-section alt" id="quote-info">
-    <div class="container">
-      <div class="section-heading reveal">
-        <p class="section-index">06 / 报价资料</p>
-        <h2>获取厂房报价需要提供什么资料</h2>
-        <p>提供越完整的项目信息，报价越准确。仅凭长宽高无法给出准确报价，需要结合用途、设备和技术要求综合评估。</p>
-      </div>
-      <div class="quote-info-grid">
-        <div class="quote-info-card drawing">
-          <h4>已有图纸 / BOQ</h4>
-          <ul>
-            <li>项目所在国家</li>
-            <li>建筑图纸 / 结构图纸</li>
-            <li>工程量清单（BOQ）</li>
-            <li>项目技术规格书</li>
-            <li>行车 / 设备特殊要求</li>
-          </ul>
-        </div>
-        <div class="quote-info-card no-drawing">
-          <h4>暂无完整图纸</h4>
-          <ul>
-            <li>项目所在国家</li>
-            <li>厂房用途（生产 / 加工 / 设备）</li>
-            <li>长度 / 宽度 / 高度（参考尺寸）</li>
-            <li>行车需求（吨位 / 数量）</li>
-            <li>主要设备布置说明</li>
-            <li>其他特殊要求</li>
-          </ul>
-        </div>
-      </div>
-      <p class="quote-note">* 初步方案与报价需基于项目用途和基本参数进行需求评估，最终方案与价格以图纸和技术要求确认为准。</p>
-    </div>
-  </section>
-
-  <!-- 07 FAQ -->
+  <!-- 10 常见问题 -->
   <section class="detail-section">
     <div class="container">
       <div class="section-heading reveal" style="text-align: center;">
-        <p class="section-index" style="justify-content: center;">07 / 常见问题</p>
-        <h2>工业厂房项目常见问题</h2>
+        <p class="section-index" style="justify-content: center;">10 / 常见问题</p>
+        <h2>钢结构厂房项目常见问题</h2>
       </div>
       <div class="detail-faq">
+        <div class="faq-item">
+          <button class="faq-question" aria-expanded="false">
+            <span>可以根据我的建筑图纸设计钢结构厂房吗？</span>
+            <span class="faq-icon">+</span>
+          </button>
+          <div class="faq-answer">
+            <div class="faq-answer-inner">
+              可以。中赛钢构可根据您的建筑图纸或基本项目参数提供结构深化和加工图编制支持。我们的工程团队会审核项目需求、设备布局和当地设计规范，编制用于制作的深化图。最终结构设计应由具备资质的工程师根据适用的当地法规确认。
+            </div>
+          </div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-question" aria-expanded="false">
+            <span>厂房可以配备行车吗？</span>
+            <span class="faq-icon">+</span>
+          </button>
+          <div class="faq-answer">
+            <div class="faq-answer-inner">
+              可以。钢结构厂房可设计配备桥式吊车系统。您需要提供行车吨位、数量、运行范围、轨顶高度和工作制等信息。行车需求直接影响柱子设计、基础反力和整体用钢量，需在方案阶段确认，不建议后期追加。
+            </div>
+          </div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-question" aria-expanded="false">
+            <span>获取报价需要提供什么信息？</span>
+            <span class="faq-icon">+</span>
+          </button>
+          <div class="faq-answer">
+            <div class="faq-answer-inner">
+              为获得准确报价，请提供：项目所在国家/城市、建筑尺寸（长度、宽度、檐口高度）、行车需求、厂房用途、屋面墙面要求、已有图纸，以及当地设计规范（如有指定）。如果您有完整图纸或BOQ，报价会更准确。仅凭基本尺寸无法给出准确报价。
+            </div>
+          </div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-question" aria-expanded="false">
+            <span>可以采用哪些设计标准？</span>
+            <span class="faq-icon">+</span>
+          </button>
+          <div class="faq-answer">
+            <div class="faq-answer-inner">
+              中赛钢构可根据项目要求按多种设计标准进行制作，包括中国标准（GB）、美国标准（AISC）、欧洲标准（EN）、英国标准（BS）及其他项目指定规范。适用标准应根据项目所在地、客户要求和当地主管部门规定确认。
+            </div>
+          </div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-question" aria-expanded="false">
+            <span>你们提供当地施工吗？</span>
+            <span class="faq-icon">+</span>
+          </button>
+          <div class="faq-answer">
+            <div class="faq-answer-inner">
+              中赛钢构制造和出口钢结构，并提供安装技术指导。当地土建施工、基础施工和现场安装通常由当地承包商或客户的施工团队完成。我们可提供安装图纸、技术支持和远程指导，协助您的当地团队。除非有明确的书面协议，我们不作为当地总包或EPC承包商。
+            </div>
+          </div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-question" aria-expanded="false">
+            <span>钢结构厂房构件如何出口运输？</span>
+            <span class="faq-icon">+</span>
+          </button>
+          <div class="faq-answer">
+            <div class="faq-answer-inner">
+              钢结构构件经过标识、包装后装入海运集装箱进行远洋运输。包装按构件类型和装柜要求组织，以最大化集装箱利用率并防止运输损坏。我们提供出口单证支持并可协调物流。所需集装箱数量取决于建筑尺寸和构件尺寸。
+            </div>
+          </div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-question" aria-expanded="false">
+            <span>提供安装支持吗？</span>
+            <span class="faq-icon">+</span>
+          </button>
+          <div class="faq-answer">
+            <div class="faq-answer-inner">
+              是的。中赛钢构提供海外安装技术指导，包括安装图纸、构件标识系统、螺栓紧固规格和远程技术支持。可根据项目需求安排现场技术指导。当地安装人工和施工由客户或当地施工团队提供。
+            </div>
+          </div>
+        </div>
         <div class="faq-item">
           <button class="faq-question" aria-expanded="false">
             <span>没有完整图纸可以开始吗？</span>
@@ -310,37 +577,15 @@ const canonical = 'https://zhongsai-steelstructure.com/zh/steel-workshop/';
             </div>
           </div>
         </div>
-        <div class="faq-item">
-          <button class="faq-question" aria-expanded="false">
-            <span>有行车需求需要提供什么信息？</span>
-            <span class="faq-icon">+</span>
-          </button>
-          <div class="faq-answer">
-            <div class="faq-answer-inner">
-              需要提供行车吨位、数量、运行范围、轨顶高度和工作制等信息。行车需求直接影响结构设计，需在方案阶段确认，不建议后期追加。
-            </div>
-          </div>
-        </div>
-        <div class="faq-item">
-          <button class="faq-question" aria-expanded="false">
-            <span>可以只采购钢结构构件吗？</span>
-            <span class="faq-icon">+</span>
-          </button>
-          <div class="faq-answer">
-            <div class="faq-answer-inner">
-              可以。中赛钢构可根据项目图纸单独供应钢梁、钢柱、桁架等钢结构构件，也可同时供应屋面墙面围护系统。具体供应范围按项目需求确定。
-            </div>
-          </div>
-        </div>
       </div>
     </div>
   </section>
 
-  <!-- 08 Quote CTA + QuoteForm -->
+  <!-- 11 报价CTA + QuoteForm -->
   <section class="detail-section dark" id="quote">
     <div class="container">
       <div class="section-heading reveal" style="text-align: center;">
-        <p class="section-index" style="justify-content: center; color: #f59e0b;">08 / 获取报价</p>
+        <p class="section-index" style="justify-content: center; color: #f59e0b;">11 / 获取报价</p>
         <h2 style="color: #fff;">提交工业厂房项目需求</h2>
         <p style="margin: 0 auto; color: rgba(255,255,255,0.75);">有图纸可直接上传，暂无完整图纸也可提交项目基本需求。</p>
       </div>
@@ -348,6 +593,143 @@ const canonical = 'https://zhongsai-steelstructure.com/zh/steel-workshop/';
     </div>
   </section>
 </BaseLayout>
+
+<style>
+.hero-capabilities {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin: 20px 0;
+}
+.cap-item {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  background: rgba(255,255,255,0.15);
+  backdrop-filter: blur(8px);
+  padding: 8px 16px;
+  border-radius: 20px;
+  font-size: 0.9rem;
+  color: #fff;
+  border: 1px solid rgba(255,255,255,0.2);
+}
+.cap-icon {
+  font-size: 1.1rem;
+}
+.app-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 20px;
+  margin-top: 32px;
+}
+.app-card {
+  background: #fff;
+  border-radius: 12px;
+  padding: 24px;
+  box-shadow: 0 2px 12px rgba(0,0,0,0.06);
+  border-left: 4px solid #0a3d62;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.app-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 24px rgba(0,0,0,0.1);
+}
+.app-card h3 {
+  color: #0a3d62;
+  font-size: 1.1rem;
+  margin-bottom: 10px;
+}
+.app-card p {
+  color: #555;
+  font-size: 0.92rem;
+  line-height: 1.6;
+}
+.project-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 24px;
+  margin-top: 32px;
+}
+.project-card {
+  background: #fff;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 2px 12px rgba(0,0,0,0.06);
+  text-decoration: none;
+  color: inherit;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  display: block;
+}
+.project-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 24px rgba(0,0,0,0.12);
+}
+.project-img {
+  height: 180px;
+  background-size: cover;
+  background-position: center;
+}
+.project-body {
+  padding: 20px;
+}
+.project-type {
+  display: inline-block;
+  background: #e8f4f8;
+  color: #0a3d62;
+  padding: 4px 10px;
+  border-radius: 4px;
+  font-size: 0.78rem;
+  font-weight: 600;
+  margin-bottom: 10px;
+}
+.project-body h3 {
+  color: #1a1a1a;
+  font-size: 1.05rem;
+  margin-bottom: 8px;
+  line-height: 1.4;
+}
+.project-meta {
+  color: #888;
+  font-size: 0.85rem;
+  margin-bottom: 10px;
+}
+.project-scope {
+  color: #666;
+  font-size: 0.88rem;
+  line-height: 1.5;
+}
+.process-link {
+  display: inline-block;
+  margin-top: 8px;
+  color: #0a3d62;
+  font-size: 0.82rem;
+  text-decoration: none;
+  font-weight: 500;
+}
+.process-link:hover {
+  text-decoration: underline;
+}
+@media (max-width: 768px) {
+  .hero-capabilities {
+    gap: 8px;
+  }
+  .cap-item {
+    padding: 6px 12px;
+    font-size: 0.82rem;
+  }
+  .app-grid {
+    grid-template-columns: 1fr;
+    gap: 16px;
+  }
+  .project-grid {
+    grid-template-columns: 1fr;
+    gap: 16px;
+  }
+  .project-img {
+    height: 160px;
+  }
+}
+</style>
 
 <script>
   // FAQ toggle
