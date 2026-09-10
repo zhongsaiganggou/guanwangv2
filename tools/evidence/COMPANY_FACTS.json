@@ -1,0 +1,113 @@
+{
+  "_comment": "ZhongSai Steel Structure - Company Facts Database (First-party Data Source)",
+  "_note": "All data must be verified before publishing. Empty fields mean data not yet confirmed.",
+  "_last_updated": "2026-09-10",
+  "_data_source": "User-provided company materials and official documents",
+
+  "company": {
+    "legal_name_en": "Shenzhen ZhongSai Steel Structure Import and Export Co., Ltd.",
+    "legal_name_zh": "深圳市中赛钢结构进出口有限公司",
+    "brand_name": "ZhongSai Steel Structure",
+    "brand_name_zh": "中赛钢构",
+    "business_type": "Steel Structure Manufacturer & Export Supplier",
+    "business_type_zh": "钢结构制造与出口供应商",
+    "headquarters": "Shenzhen, Guangdong, China",
+    "headquarters_zh": "中国广东深圳",
+    "manufacturing_base": "",
+    "manufacturing_base_zh": "",
+    "established_year": "",
+    "years_in_steel": 20,
+    "years_in_export": 15
+  },
+
+  "capabilities": {
+    "factory_area_m2": 100000,
+    "factory_area_note": "100,000 m² production base (confirmed)",
+    "annual_capacity_tonnes": 100000,
+    "annual_capacity_note": "100,000 tonnes annual capacity (confirmed)",
+    "workers_count": 300,
+    "workers_note": "300+ frontline production workers (confirmed)",
+    "countries_served": "",
+    "countries_served_note": "To be verified with actual project records",
+    "projects_delivered": "",
+    "projects_delivered_note": "To be verified with actual project records",
+    "containers_shipped": "",
+    "containers_shipped_note": "To be verified with actual shipping records"
+  },
+
+  "services": {
+    "design_coordination": true,
+    "detailing": true,
+    "steel_fabrication": true,
+    "secondary_steel": true,
+    "roof_wall_systems": true,
+    "surface_treatment": true,
+    "quality_inspection": true,
+    "packing": true,
+    "container_loading": true,
+    "export_documents": true,
+    "installation_guidance": true,
+    "local_construction": false,
+    "local_foundation": false,
+    "local_mep": false,
+    "epc_turnkey": false
+  },
+
+  "certifications": {
+    "_note": "Only include certifications that can be verified with actual certificates",
+    "iso_9001": true,
+    "iso_9001_note": "ISO 9001 Quality Management (confirmed in trust bar)",
+    "ce": false,
+    "ce_note": "To be verified",
+    "cidb": false,
+    "cidb_note": "To be verified",
+    "other": []
+  },
+
+  "markets": {
+    "primary_regions": ["Southeast Asia", "Middle East", "Africa", "Latin America"],
+    "verified_countries": ["Singapore", "Macau"],
+    "verified_countries_note": "Singapore and Macau projects verified in project database",
+    "other_countries_to_verify": []
+  },
+
+  "main_products": [
+    "Steel Workshop",
+    "Steel Warehouse",
+    "Steel Factory Building",
+    "Industrial Steel Structure",
+    "Commercial Steel Structure",
+    "Mining & Energy Steel Structure",
+    "Agricultural Steel Structure",
+    "Steel Components (Beams, Columns, Trusses, Purlins)",
+    "Roof & Wall Cladding Systems"
+  ],
+
+  "contact": {
+    "primary_method": "WeChat",
+    "secondary_method": "Email / WhatsApp",
+    "response_time": "Within 24 hours",
+    "quote_turnaround": "Subject to project complexity and information completeness"
+  },
+
+  "publication_rules": {
+    "_note": "Rules for what data can be published on the website",
+    "can_publish": [
+      "Factory area and capacity (confirmed)",
+      "Worker count (confirmed)",
+      "Years of experience (confirmed)",
+      "Project names and locations (verified)",
+      "Project parameters (verified from drawings)",
+      "Manufacturing process photos (owned)",
+      "Certifications (with actual certificates)"
+    ],
+    "cannot_publish_without_verification": [
+      "Countries served count",
+      "Projects delivered count",
+      "Containers shipped count",
+      "Client names (without permission)",
+      "Contract values",
+      "Specific delivery timelines"
+    ]
+  }
+}
