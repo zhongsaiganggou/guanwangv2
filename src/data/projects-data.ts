@@ -427,44 +427,14 @@ export const projects: ProjectData[] = [
 
   // ========== OVERSEAS PROJECTS (钢结构设计深化制作供应) ==========
   {
-    slug: 'singapore-cr101-depot',
+    slug: 'singapore-j102-mrt-station',
     category: { zh: '海外项目', en: 'Overseas Projects' },
-    name: { zh: '新加坡LTA CR101地铁维修站', en: 'Singapore LTA CR101 MRT Depot' },
+    name: { zh: '新加坡LTA J102地铁站', en: 'Singapore LTA J102 MRT Station' },
     location: { zh: '新加坡', en: 'Singapore' },
     image: '/images/projects/overseas/singapore-cr101-depot.jpg',
     heroImageType: 'site',
     galleryImages: [
       { src: '/images/projects/overseas/singapore-cr101-depot.jpg', type: 'site', label: { zh: '项目现场', en: 'Project Site' } },
-    ],
-    overview: {
-      zh: '新加坡陆路交通管理局(LTA)CR101地铁维修站项目，总用钢量约1900吨，采用镀锌85um+底漆80um+中间漆160um+面漆50um防腐体系，由钢柱、桁架、钢梁组成。项目派驻4名RTO驻厂监造，5名ITA专职监督质量。',
-      en: 'Singapore Land Transport Authority (LTA) CR101 MRT Depot project with total steel tonnage of approximately 1,900 tonnes. Utilizing 85um galvanizing + 80um primer + 160um intermediate paint + 50um topcoat anti-corrosion system. Consists of steel columns, trusses, and steel beams. 4 RTOs stationed at factory for supervision, 5 ITAs for dedicated quality oversight.'
-    },
-    params: [
-      { label: { zh: '用钢量', en: 'Steel Tonnage' }, value: { zh: '约1900吨', en: 'Approx. 1,900 tonnes' } },
-      { label: { zh: '项目类型', en: 'Project Type' }, value: { zh: '地铁维修站', en: 'MRT Depot' } },
-      { label: { zh: '工作范围', en: 'Scope of Work' }, value: { zh: '钢结构设计深化制作供应', en: 'Steel Structure Detailing, Fabrication & Supply' } },
-      { label: { zh: '质量监督', en: 'Quality Supervision' }, value: { zh: '4 RTO + 5 ITA驻厂监造', en: '4 RTO + 5 ITA Factory Supervision' } },
-    ],
-    capabilities: [
-      { zh: '重型钢结构加工', en: 'Heavy Structural Steel Fabrication' },
-      { zh: '大跨度钢结构加工', en: 'Large-Span Steel Fabrication' },
-      { zh: '复杂防腐体系施工', en: 'Complex Anti-Corrosion System' },
-    ],
-    relatedLinks: [
-      { href: 'manufacturing-quality/', label: { zh: '制造能力', en: 'Manufacturing' } },
-      { href: 'components/fabricated-steel-beams-columns/', label: { zh: '钢梁钢柱', en: 'Beams & Columns' } },
-    ]
-  },
-  {
-    slug: 'singapore-j102-mrt-station',
-    category: { zh: '海外项目', en: 'Overseas Projects' },
-    name: { zh: '新加坡LTA J102地铁站', en: 'Singapore LTA J102 MRT Station' },
-    location: { zh: '新加坡', en: 'Singapore' },
-    image: '/images/projects/overseas/singapore-j102-station.jpg',
-    heroImageType: 'rendering',
-    galleryImages: [
-      { src: '/images/projects/overseas/singapore-j102-station.jpg', type: 'rendering', label: { zh: '项目效果图', en: 'Project Rendering' } },
     ],
     overview: {
       zh: '新加坡LTA J102地铁站项目，总用钢量约1900吨，采用外法兰节点，节点复杂，共有15000个法兰。采用三维全站仪控制节点尺寸，全程RTO驻厂监造，ITA全过程监督质量。',
@@ -491,10 +461,10 @@ export const projects: ProjectData[] = [
     category: { zh: '海外项目', en: 'Overseas Projects' },
     name: { zh: '新加坡LTA J107地铁站', en: 'Singapore LTA J107 MRT Station' },
     location: { zh: '新加坡', en: 'Singapore' },
-    image: '/images/projects/overseas/singapore-j107-station.jpg',
+    image: '/images/projects/overseas/singapore-j102-station.jpg',
     heroImageType: 'rendering',
     galleryImages: [
-      { src: '/images/projects/overseas/singapore-j107-station.jpg', type: 'rendering', label: { zh: '项目效果图', en: 'Project Rendering' } },
+      { src: '/images/projects/overseas/singapore-j102-station.jpg', type: 'rendering', label: { zh: '项目效果图', en: 'Project Rendering' } },
     ],
     overview: {
       zh: '新加坡LTA J107地铁站项目，总用钢量约1300吨，LTA验厂通过，项目严格按照LTA要求执行，RTO驻厂检查，ITA全程监督制造，项目顺利交付中。',
@@ -581,10 +551,10 @@ export const projects: ProjectData[] = [
     category: { zh: '海外项目', en: 'Overseas Projects' },
     name: { zh: '新加坡樟宜机场SATS货运中心', en: 'Singapore Changi Airport SATS BUP Centre' },
     location: { zh: '新加坡', en: 'Singapore' },
-    image: '/images/projects/overseas/singapore-sats-bup-centre.jpg',
+    image: '/images/projects/overseas/singapore-mcc-innocentre.jpg',
     heroImageType: 'site',
     galleryImages: [
-      { src: '/images/projects/overseas/singapore-sats-bup-centre.jpg', type: 'site', label: { zh: '项目现场', en: 'Project Site' } },
+      { src: '/images/projects/overseas/singapore-mcc-innocentre.jpg', type: 'site', label: { zh: '项目现场', en: 'Project Site' } },
     ],
     overview: {
       zh: '新加坡樟宜机场SATS新货运中心项目，采用工厂整体制作，分段装箱的方法，确保尺寸精准。项目已完工交付。',
@@ -611,10 +581,10 @@ export const projects: ProjectData[] = [
     category: { zh: '海外项目', en: 'Overseas Projects' },
     name: { zh: '新加坡MCC Innocentre', en: 'Singapore MCC Innocentre' },
     location: { zh: '新加坡', en: 'Singapore' },
-    image: '/images/projects/overseas/singapore-mcc-innocentre.jpg',
+    image: '/images/projects/overseas/singapore-j107-station.jpg',
     heroImageType: 'rendering',
     galleryImages: [
-      { src: '/images/projects/overseas/singapore-mcc-innocentre.jpg', type: 'rendering', label: { zh: '项目效果图', en: 'Project Rendering' } },
+      { src: '/images/projects/overseas/singapore-j107-station.jpg', type: 'rendering', label: { zh: '项目效果图', en: 'Project Rendering' } },
     ],
     overview: {
       zh: '新加坡MCC Innocentre项目，总用钢量约650吨，多层工业建筑钢结构，已完工交付。',
@@ -666,36 +636,6 @@ export const projects: ProjectData[] = [
     relatedLinks: [
       { href: 'manufacturing-quality/', label: { zh: '制造能力', en: 'Manufacturing' } },
       { href: 'components/fabricated-steel-beams-columns/', label: { zh: '钢梁钢柱', en: 'Beams & Columns' } },
-    ]
-  },
-  {
-    slug: 'singapore-sentosa-waterfront-hotel',
-    category: { zh: '海外项目', en: 'Overseas Projects' },
-    name: { zh: '新加坡圣淘沙名胜世界酒店', en: 'Singapore Sentosa Waterfront Hotel' },
-    location: { zh: '新加坡', en: 'Singapore' },
-    image: '/images/projects/overseas/singapore-sentosa-waterfront-hotel.jpg',
-    heroImageType: 'rendering',
-    galleryImages: [
-      { src: '/images/projects/overseas/singapore-sentosa-waterfront-hotel.jpg', type: 'rendering', label: { zh: '项目效果图', en: 'Project Rendering' } },
-    ],
-    overview: {
-      zh: '新加坡圣淘沙名胜世界酒店项目，Kingpost采用S355钢管，单支长度在21米以上，共用70万颗19*75栓钉，总用钢量约2679吨。项目属于酒店建筑，结构造型独特，钢管构件加工精度要求高。',
-      en: 'Singapore Sentosa Waterfront Hotel project. Kingpost made of S355 steel tubes, each unit exceeding 21 meters in length. A total of 700,000 (19*75mm) shear studs are used, with total steel tonnage of approximately 2,679 tonnes. Hotel building project with unique structural form and high precision requirements for steel tube component fabrication.'
-    },
-    params: [
-      { label: { zh: '用钢量', en: 'Steel Tonnage' }, value: { zh: '约2679吨', en: 'Approx. 2,679 tonnes' } },
-      { label: { zh: '项目类型', en: 'Project Type' }, value: { zh: '酒店建筑', en: 'Hotel Building' } },
-      { label: { zh: '构件长度', en: 'Component Length' }, value: { zh: '单支21米以上', en: 'Over 21m per unit' } },
-      { label: { zh: '工作范围', en: 'Scope of Work' }, value: { zh: '钢结构设计深化制作供应', en: 'Steel Structure Detailing, Fabrication & Supply' } },
-    ],
-    capabilities: [
-      { zh: '大跨度钢管结构加工', en: 'Large-Span Steel Tube Fabrication' },
-      { zh: '重型钢结构加工', en: 'Heavy Structural Steel Fabrication' },
-      { zh: '异形钢结构加工', en: 'Irregular Steel Structure Fabrication' },
-    ],
-    relatedLinks: [
-      { href: 'manufacturing-quality/', label: { zh: '制造能力', en: 'Manufacturing' } },
-      { href: 'components/steel-trusses/', label: { zh: '钢桁架', en: 'Steel Trusses' } },
     ]
   },
 
