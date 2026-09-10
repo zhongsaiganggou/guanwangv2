@@ -1,0 +1,42 @@
+source_page,target_page,anchor_text,link_type,priority,notes
+/en/,/en/products/,Steel Structure Solutions,hub,high,首页主导航
+/en/,/en/components/,Steel Components,hub,high,首页主导航
+/en/,/en/projects/,Projects,hub,high,首页主导航
+/en/,/en/resources/,Resources,hub,high,首页主导航
+/en/,/en/about/,About,page,medium,页脚
+/en/,/en/contact/,Contact,page,high,CTA按钮
+/en/products/,/en/steel-workshop/,Steel Workshop,product,high,Products Hub卡片
+/en/products/,/en/steel-warehouse/,Steel Warehouse,product,high,Products Hub卡片
+/en/products/,/en/steel-mining-factory/,Mining Steel Structure,product,medium,Products Hub卡片
+/en/products/,/en/components/fabricated-steel-beams-columns/,Fabricated Steel Beams,component,medium,Products Hub
+/en/steel-workshop/,/en/steel-warehouse/,Steel Warehouse,related_product,medium,相关产品
+/en/steel-workshop/,/en/projects/xiegang-aviation-manufacturing/,Aviation Manufacturing Project,related_project,medium,相关案例
+/en/steel-workshop/,/en/blog/steel-warehouse-cost-complete-guide/,Cost Guide,related_guide,low,相关指南
+/en/steel-workshop/,/en/contact/,Send Your Drawings,cta,high,页面CTA
+/en/steel-warehouse/,/en/steel-workshop/,Steel Workshop,related_product,medium,相关产品
+/en/steel-warehouse/,/en/projects/zhanjiang-logistics-port/,Logistics Port Project,related_project,medium,相关案例
+/en/steel-warehouse/,/en/blog/steel-warehouse-cost-complete-guide/,Steel Warehouse Cost Guide,related_guide,high,相关指南
+/en/steel-warehouse/,/en/contact/,Send Your Drawings,cta,high,页面CTA
+/en/projects/,/en/steel-workshop/,Steel Workshop,related_product,medium,项目→产品
+/en/projects/,/en/steel-warehouse/,Steel Warehouse,related_product,medium,项目→产品
+/en/blog/steel-warehouse-cost-complete-guide/,/en/steel-warehouse/,Steel Warehouse,product,high,Guide→产品（Pillar链接）
+/en/blog/steel-warehouse-cost-complete-guide/,/en/contact/,Get Preliminary Quotation,cta,medium,Guide CTA
+/en/blog/how-to-choose-steel-structure-supplier/,/en/about/,About ZhongSai,page,high,供应商选择→About
+/en/blog/how-to-choose-steel-structure-supplier/,/en/manufacturing-quality/,Manufacturing Quality,page,high,供应商选择→制造能力
+/en/blog/how-to-import-steel-structure-from-china-complete-guide/,/en/export-delivery/,Export Delivery,page,high,进口指南→出口交付
+/en/blog/how-to-import-steel-structure-from-china-complete-guide/,/en/blog/steel-structure-container-loading-guide/,Container Loading Guide,related_guide,medium,相关指南
+/en/blog/how-to-import-steel-structure-from-china-to-africa/,/en/blog/how-to-import-steel-structure-from-china-complete-guide/,Complete Import Guide,related_guide,high,地区篇→主文章（解决蚕食）
+/en/about/,/en/manufacturing-quality/,Manufacturing & Quality,page,high,About→制造能力
+/en/about/,/en/projects/,Projects,page,medium,About→案例
+/en/manufacturing-quality/,/en/export-delivery/,Export Delivery,page,medium,制造→出口
+/en/export-delivery/,/en/blog/steel-structure-container-loading-guide/,Container Loading Guide,related_guide,medium,出口→装柜指南
+/en/contact/,/en/products/,Products,page,medium,Contact→产品入口
+/en/contact/,/en/steel-workshop/,Steel Workshop,product,medium,Contact→核心产品
+/en/contact/,/en/steel-warehouse/,Steel Warehouse,product,medium,Contact→核心产品
+/zh/,/zh/products/,钢结构解决方案,hub,high,中文首页主导航
+/zh/,/zh/projects/,项目案例,hub,high,中文首页主导航
+/zh/,/zh/contact/,联系我们,page,high,中文首页CTA
+/zh/products/,/zh/steel-workshop/,钢结构厂房,product,high,中文Products Hub
+/zh/products/,/zh/steel-warehouse/,钢结构仓库,product,high,中文Products Hub
+/zh/blog/gangjiegou-changfang-zaojia-zhinan/,/zh/steel-workshop/,钢结构厂房,product,high,中文造价指南→产品
+/zh/blog/gangjiegou-gongchang-xuanze-zhinan/,/zh/about/,关于中赛,page,high,中文选择指南→About
