@@ -11,25 +11,19 @@
 
 /* 4x2 流程网格 */
 .process-grid {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 60px;
 }
 
 .process-card {
-  background: #fff;
-  border: 1px solid #e5e7eb;
-  border-radius: 2px;
-  overflow: hidden;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-  display: flex;
-  flex-direction: column;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 40px;
+  align-items: center;
 }
-
-.process-card:hover {
-  transform: translateY(-4px);
-  
-}
+.process-card:nth-child(even) .process-card-img { order: 2; }
+.process-card:nth-child(even) .process-card-body { order: 1; }
 
 /* 流程卡片图片 */
 .process-card-img {

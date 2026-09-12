@@ -763,3 +763,7 @@
   color: #666;
   line-height: 1.7;
 }
+
+.about-hero { padding: 64px 0 40px; background: #fff; }
+.about-hero h1 { font-size: 2.4rem; margin: 12px 0 16px; color: #111; max-width: 800px; }
+.about-hero-desc { font-size: 1.05rem; color: #555; max-width: 700px; line-height: 1.7; }

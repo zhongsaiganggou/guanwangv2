@@ -819,3 +819,7 @@
     padding: 5px 10px;
   }
 }
+
+.project-detail-hero-light { padding: 64px 0 48px; background: #fff; }
+.project-detail-hero-light .project-hero-image { display: none; }
+.project-detail-hero-light .project-hero-content { position: static; padding: 0; }
