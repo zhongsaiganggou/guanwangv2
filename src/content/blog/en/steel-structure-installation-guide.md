@@ -3,8 +3,8 @@ title: "Steel Structure Installation Guide for Overseas Projects"
 language: "en"
 category: "Installation & Technical"
 status: "published"
-seoTitle: "Steel Structure Installation Guide for Overseas Projects | ZhongSai Steel Structure"
-metaDescription: "Practical guide for overseas steel structure installation: preparation, lifting, bolting, welding, safety, quality control and coordination with local contractors."
+seoTitle: "Steel Structure Installation Guide for Overseas Projects | ZhongSai"
+metaDescription: "Practical guide for overseas steel structure installation: preparation, lifting, bolting, welding, safety, quality control and coordination with local..."
 h1: "Steel Structure Installation Guide for Overseas Projects"
 excerpt: "A practical guide for overseas buyers on steel structure installation, covering site preparation, lifting plans, bolting, welding, quality control, and coordination with local installation teams."
 coverImage: "/images/blog/steel-structure-installation-guide/cover.jpg"
@@ -14,8 +14,6 @@ ctaType: "send-project-requirements"
 noindex: false
 author: "ZhongSai Steel Structure Editorial Team"
 ---
-
-# Steel Structure Installation Guide for Overseas Projects
 
 Proper installation is critical to the safety, durability, and performance of any steel structure. For overseas projects, coordination between the steel supplier, local contractors, and project owners becomes even more important.
 

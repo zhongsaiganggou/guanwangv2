@@ -1,0 +1,208 @@
+---
+// ZhongSai V2 - 感谢页面（项目询盘提交成功）
+import BaseLayout from '../../../layouts/BaseLayout.astro';
+
+const lang = 'zh';
+const title = '感谢您的提交｜项目询盘已接收｜中赛钢构';
+const description = '您的钢结构项目询盘已接收。中赛钢构工程团队将评审您的项目信息，并尽快与您联系。';
+---
+
+<BaseLayout title={title} description={description} lang={lang} noindex={true}>
+  <section class="thank-you-section">
+    <div class="container">
+      <div class="thank-you-card">
+        <div class="thank-you-icon">
+          <svg width="64" height="64" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/>
+            <polyline points="22 4 12 14.01 9 11.01"/>
+          </svg>
+        </div>
+        <h1>您的项目询盘已接收</h1>
+        <p class="thank-you-desc">感谢您提交钢结构项目需求。中赛钢构自有工程和交付团队将评审您的项目信息，并尽快与您联系。</p>
+        
+        <div class="thank-you-next-steps">
+          <h3>接下来会发生什么</h3>
+          <ol>
+            <li><strong>初步评审</strong> — 我们的工程团队评审您的图纸、尺寸和项目需求。</li>
+            <li><strong>信息确认</strong> — 如需更多细节，我们将通过微信或邮件联系您确认。</li>
+            <li><strong>项目方案</strong> — 基于确认的范围，提供技术和商务方案。</li>
+          </ol>
+        </div>
+
+        <div class="thank-you-contact">
+          <h3>需要直接联系我们？</h3>
+          <div class="contact-methods">
+            <a href="https://wa.me/8613192007378?text=您好中赛钢构，我有一个钢结构项目，想沟通项目需求。" target="_blank" rel="noopener" class="contact-method">
+              <span class="method-icon">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.91.34 1.85.57 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+              </span>
+              <span class="method-text">
+                <small>WHATSAPP</small>
+                <b>+86 131 9200 7378</b>
+              </span>
+            </a>
+            <a href="mailto:zhongsaiganggou@gmail.com" class="contact-method">
+              <span class="method-icon">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-10 6L2 7"/></svg>
+              </span>
+              <span class="method-text">
+                <small>邮箱</small>
+                <b>zhongsaiganggou@gmail.com</b>
+              </span>
+            </a>
+          </div>
+          <p class="wechat-note">微信是我们的主要联系方式。添加我们后可直接发送项目图纸和需求。</p>
+        </div>
+
+        <div class="thank-you-actions">
+          <a href="/zh/" class="btn btn-primary">返回首页</a>
+          <a href="/zh/projects/" class="btn btn-outline">查看项目案例</a>
+        </div>
+      </div>
+    </div>
+  </section>
+</BaseLayout>
+
+<style>
+.thank-you-section {
+  padding: 80px 0;
+  background: var(--bg-light, #f8f9fa);
+  min-height: 70vh;
+  display: flex;
+  align-items: center;
+}
+.thank-you-card {
+  max-width: 720px;
+  margin: 0 auto;
+  background: #fff;
+  padding: 48px;
+  border-radius: 16px;
+  box-shadow: 0 4px 24px rgba(0,0,0,0.06);
+  text-align: center;
+}
+.thank-you-icon {
+  width: 80px;
+  height: 80px;
+  margin: 0 auto 24px;
+  background: rgba(34, 197, 94, 0.1);
+  color: #22c55e;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.thank-you-card h1 {
+  font-size: 1.8rem;
+  color: var(--primary, #0a3d62);
+  margin-bottom: 16px;
+}
+.thank-you-desc {
+  font-size: 1.05rem;
+  color: var(--text-secondary, #555);
+  line-height: 1.7;
+  margin-bottom: 32px;
+}
+.thank-you-next-steps {
+  text-align: left;
+  background: var(--bg-light, #f8f9fa);
+  padding: 28px;
+  border-radius: 12px;
+  margin-bottom: 32px;
+}
+.thank-you-next-steps h3 {
+  font-size: 1.15rem;
+  color: var(--primary, #0a3d62);
+  margin-bottom: 16px;
+}
+.thank-you-next-steps ol {
+  padding-left: 20px;
+  margin: 0;
+}
+.thank-you-next-steps li {
+  margin-bottom: 12px;
+  color: var(--text-secondary, #555);
+  line-height: 1.6;
+  font-size: 0.95rem;
+}
+.thank-you-next-steps li strong {
+  color: var(--text-primary, #222);
+}
+.thank-you-contact {
+  text-align: left;
+  margin-bottom: 32px;
+}
+.thank-you-contact h3 {
+  font-size: 1.15rem;
+  color: var(--primary, #0a3d62);
+  margin-bottom: 16px;
+}
+.contact-methods {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 16px;
+  margin-bottom: 16px;
+}
+.contact-method {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 16px;
+  background: var(--bg-light, #f8f9fa);
+  border-radius: 10px;
+  text-decoration: none;
+  transition: all 0.2s;
+}
+.contact-method:hover {
+  background: rgba(10, 61, 98, 0.05);
+  transform: translateY(-2px);
+}
+.method-icon {
+  color: var(--primary, #0a3d62);
+  flex-shrink: 0;
+}
+.method-text small {
+  display: block;
+  font-size: 0.7rem;
+  color: #888;
+  letter-spacing: 0.5px;
+  margin-bottom: 2px;
+}
+.method-text b {
+  font-size: 0.9rem;
+  color: var(--text-primary, #222);
+}
+.wechat-note {
+  font-size: 0.88rem;
+  color: var(--text-secondary, #666);
+  font-style: italic;
+  margin: 0;
+}
+.thank-you-actions {
+  display: flex;
+  gap: 16px;
+  justify-content: center;
+}
+.thank-you-actions .btn {
+  padding: 12px 28px;
+}
+@media (max-width: 768px) {
+  .thank-you-section {
+    padding: 40px 0;
+  }
+  .thank-you-card {
+    padding: 32px 24px;
+  }
+  .thank-you-card h1 {
+    font-size: 1.4rem;
+  }
+  .contact-methods {
+    grid-template-columns: 1fr;
+  }
+  .thank-you-actions {
+    flex-direction: column;
+  }
+  .thank-you-actions .btn {
+    width: 100%;
+  }
+}
+</style>

@@ -1,255 +1,730 @@
 ---
-// ZhongSai V2 - Steel Trusses Component Page (ZH)
 import BaseLayout from '../../../../layouts/BaseLayout.astro';
 import QuoteForm from '../../../../components/QuoteForm.astro';
-import FAQ from '../../../../components/FAQ.astro';
 import '../../../../styles/hub.css';
 
 const lang = 'zh';
-const title = '钢桁架｜屋架桁架、管桁架、转换桁架按图纸定制加工｜中赛钢构';
-const description = '中赛钢构按图纸定制加工钢桁架：屋架桁架、管桁架、转换桁架、支撑桁架，焊接或螺栓连接，构件编号、包装与出口交付。';
-
-const faqItems = [
-  { question: '钢桁架适用于哪些场景？', answer: '钢桁架适用于大跨度屋面结构、转换结构、人行天桥、工业厂房屋面、展厅、体育馆、飞机库等。桁架通过三角形受力体系高效传递荷载，在大跨度情况下比实腹梁更节省材料。' },
-  { question: '屋架桁架和管桁架有什么区别？', answer: '屋架桁架通常采用角钢或H型钢，通过节点板焊接或螺栓连接，适用于工业与商业建筑屋面。管桁架采用圆管或矩形管直接焊接节点（CHS/RHS），外观简洁、抗风性能好，常用于大型公共建筑、体育馆、交通枢纽。' },
-  { question: '钢桁架加工需要提供哪些图纸？', answer: '为获得准确的桁架加工与报价，请提供：桁架布置图（跨度、坡度、节点间距）、构件截面表（弦杆与腹杆规格、钢号）、连接详图（焊接或螺栓、节点板尺寸、螺栓规格）、荷载说明（恒载、活载、风载、抗震）、涂装要求、加工标准。图纸越完整，加工与报价越精准。' },
-  { question: '没有完整加工图纸可以加工桁架吗？', answer: '如果暂无完整加工图，可提供结构设计图、跨度、荷载要求与建筑用途。中赛可根据确认的结构设计协调深化设计支持，形成加工图后再进行加工制造。当地现场安装通常由客户或其当地施工团队负责。' }
-];
+const title = '项目用钢桁架结构｜深化、制造与出口｜中赛钢构';
+const description = '适用于工业建筑、仓库、公共建筑及大跨度应用的项目定制钢桁架结构。中赛钢构基于批准的项目图纸提供结构深化、制造、出口交付和技术支持。';
 ---
 
 <BaseLayout title={title} description={description} lang={lang}>
+  <!-- Hero -->
   <section class="hub-hero">
-    <div class="hub-hero-bg" style="background-image: url('/images/components/steel-truss-hero.jpg')"></div>
+    <div class="hub-hero-bg" style="background-image: url('/images/components/steel-truss-hero.jpg');"></div>
     <div class="hub-hero-overlay"></div>
     <div class="container hub-hero-content">
       <div class="hub-breadcrumb">
-        <a href="/zh/">首页</a><span>/</span><a href="/zh/components/">构件</a><span>/</span><span>钢桁架</span>
+        <a href="/zh/">首页</a><span>/</span><a href="/zh/components/">钢构件</a><span>/</span><span>钢桁架</span>
       </div>
-      <p class="eyebrow">构件 · 钢桁架</p>
-      <h1>按图纸定制加工<br>钢桁架</h1>
-      <p class="lead">屋架桁架、管桁架、转换桁架与支撑桁架——按您的结构图纸定制加工，焊接或螺栓连接，构件编号、包装与出口交付。<strong>桁架按确认图纸加工。</strong>查看其它钢构件，请前往 <a href="/zh/components/" style="color:rgba(255,255,255,0.92);text-decoration:underline;">全部构件</a>。</p>
+      <p class="eyebrow">项目钢结构 · 钢桁架结构</p>
+      <h1>大跨度项目用钢桁架结构</h1>
+      <p class="lead">适用于工业建筑、仓库、公共建筑及其他大跨度应用的项目定制钢桁架结构，基于批准的项目图纸提供深化、制造和出口交付。</p>
+      <div class="detail-hero-actions">
+        <a href="#quote" class="btn btn-primary">提交项目图纸</a>
+        <a href="#engineering-review" class="btn btn-outline">申请技术评审</a>
+      </div>
     </div>
   </section>
 
-  <section class="section" style="padding: 60px 0;">
+  <!-- Breadcrumb -->
+  <nav class="detail-breadcrumb">
     <div class="container">
-      <div class="answer-first reveal">
-        <p class="section-index">01 / 概述</p>
-        <h2>什么是钢桁架？</h2>
-        <p class="answer-lead">钢桁架是由钢构件在节点处连接形成的三角形格构式结构体系，用于高效承受大跨度荷载。中赛按确认的结构图纸定制加工钢桁架——包括屋架桁架、管桁架、转换桁架与支撑桁架——提供构件编号、包装与出口协调。</p>
-        <div class="answer-grid">
-          <div class="answer-item">
-            <h4>典型应用</h4>
-            <ul>
-              <li>工业厂房屋面</li>
-              <li>仓库与物流屋面</li>
-              <li>展厅与体育馆</li>
-              <li>飞机库</li>
-              <li>人行天桥</li>
-              <li>转换结构</li>
-            </ul>
-          </div>
-          <div class="answer-item">
-            <h4>常见形式</h4>
-            <ul>
-              <li>普拉特桁架、华伦桁架、豪式桁架</li>
-              <li>管桁架（CHS/RHS直接焊接）</li>
-              <li>角钢桁架（节点板连接）</li>
-              <li>H型钢组合桁架</li>
-              <li>螺栓或焊接连接</li>
-            </ul>
-          </div>
-          <div class="answer-item">
-            <h4>加工要点</h4>
-            <ul>
-              <li>构件切割与精准装配</li>
-              <li>节点板加工与钻孔</li>
-              <li>按项目规格焊接</li>
-              <li>表面处理与涂装</li>
-              <li>构件编号便于现场安装</li>
-              <li>包装与装柜</li>
-            </ul>
-          </div>
-        </div>
-      </div>
+      <a href="/zh/">首页</a>
+      <span class="sep">/</span>
+      <a href="/zh/components/">钢构件</a>
+      <span class="sep">/</span>
+      <span class="current">钢桁架结构</span>
     </div>
-  </section>
+  </nav>
 
-  <section class="section" style="padding: 60px 0; background: var(--color-gray-50);">
-    <div class="container">
-      <div class="section-heading reveal" style="margin-bottom: 36px;">
-        <div>
-          <p class="section-index">02 / 桁架类型</p>
-          <h2>常见钢桁架类型</h2>
-        </div>
-        <div>
-          <p>中赛按项目图纸加工各种桁架形式。桁架类型由跨度、荷载、建筑要求与结构设计指定的连接方式决定。</p>
-        </div>
-      </div>
-      <div class="truss-type-grid">
-        <div class="truss-type-card reveal">
-          <h3>屋架桁架</h3>
-          <p>角钢或H型钢屋架桁架，节点板连接，常用于工业厂房、仓库与农业建筑。按屋面坡度、跨度与荷载要求配置。</p>
-          <span class="truss-tag">工业 · 仓库 · 农业</span>
-        </div>
-        <div class="truss-type-card reveal reveal-delay-2">
-          <h3>管桁架</h3>
-          <p>圆管（CHS）或矩形管（RHS）桁架，直接焊接节点，外观简洁、抗风性能好，适用于大型公共建筑、体育馆与交通枢纽。</p>
-          <span class="truss-tag">公共 · 体育 · 交通</span>
-        </div>
-        <div class="truss-type-card reveal reveal-delay-3">
-          <h3>转换桁架</h3>
-          <p>重型转换桁架，用于在大净空跨度上承受上部楼层荷载，常见于需要底层无柱空间的商业建筑。按特定荷载与挠度标准加工。</p>
-          <span class="truss-tag">商业 · 综合体</span>
-        </div>
-        <div class="truss-type-card reveal">
-          <h3>支撑桁架</h3>
-          <p>垂直与水平支撑桁架，为钢结构提供侧向稳定，抵抗风载与地震作用。通常采用角钢或圆钢构件，螺栓或焊接连接。</p>
-          <span class="truss-tag">结构稳定</span>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- 桁架加工证据 -->
-  <section class="section" style="padding: 50px 0; background: var(--color-gray-50);">
-    <div class="container">
-      <div class="image-text-block">
-        <div class="itb-image">
-          <img src="/images/components/steel-truss-fabrication.jpg" alt="工厂内大型钢桁架加工制作" loading="lazy">
-        </div>
-        <div class="itb-content">
-          <h3>真实桁架加工</h3>
-          <p>钢桁架根据确认的结构图纸进行加工制作，包括杆件切割、精密装配、节点板制作与钻孔、按项目规范焊接以及表面处理。</p>
-          <ul>
-            <li>杆件切割与精密装配</li>
-            <li>节点板制作与钻孔</li>
-            <li>按项目规范焊接</li>
-            <li>构件编号便于现场安装</li>
-          </ul>
-        </div>
-      </div>
-    </div>
-  </section>
-
-<section class="section" style="padding: 60px 0;">
-    <div class="container">
-      <div class="drawings-required reveal">
-        <div class="dr-text">
-          <p class="section-index">03 / 所需资料</p>
-          <h2>桁架加工所需图纸</h2>
-          <p>为获得准确的桁架加工与报价，请提供以下信息。技术资料越完整，加工与交付越精准。</p>
-          <ul class="dr-list">
-            <li><strong>桁架布置图</strong>——整体尺寸、跨度、坡度、节点间距</li>
-            <li><strong>构件截面表</strong>——弦杆与腹杆规格、钢号</li>
-            <li><strong>连接详图</strong>——焊接或螺栓、节点板尺寸、螺栓规格</li>
-            <li><strong>荷载说明</strong>——恒载、活载、风载、抗震（如适用）</li>
-            <li><strong>涂装要求</strong>——油漆体系、镀锌、防火（如需要）</li>
-            <li><strong>加工标准</strong>——适用规范与项目特定要求</li>
-          </ul>
-        </div>
-        <div class="dr-cta">
-          <div class="dr-cta-box">
-            <h3>已有桁架图纸？</h3>
-            <p>上传结构图纸，获取加工评估与报价。</p>
-            <a href="#quote" class="btn btn-primary">上传桁架图纸 →</a>
-          </div>
-          <div class="dr-cta-box" style="background: var(--color-gray-100);">
-            <h3>暂无完整图纸？</h3>
-            <p>提供跨度、荷载与建筑用途，可协调深化设计支持。</p>
-            <a href="#quote" class="btn btn-secondary">提交桁架需求 →</a>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <section class="section" style="padding: 50px 0; background: var(--color-gray-50);">
-    <div class="container">
-      <div class="section-heading reveal" style="margin-bottom: 28px;">
-        <p class="section-index">04 / 相关</p>
-        <h2>相关钢构件与能力</h2>
-      </div>
-      <div class="related-grid">
-        <a href="/zh/components/fabricated-steel-beams-columns/" class="related-card">
-          <h4>钢梁与钢柱</h4>
-          <p>H型钢梁、箱型柱、组合截面构件按图纸加工。</p>
-          <span>查看 →</span>
-        </a>
-        <a href="/zh/components/steel-purlins/" class="related-card">
-          <h4>钢檩条</h4>
-          <p>C型与Z型冷弯檩条，用于屋面墙面次结构。</p>
-          <span>查看 →</span>
-        </a>
-        <a href="/zh/components/roof-wall-cladding-systems/" class="related-card">
-          <h4>围护系统</h4>
-          <p>屋面板、墙面板、夹芯板与围护附件。</p>
-          <span>查看 →</span>
-        </a>
-        <a href="/zh/products/custom-engineering/" class="related-card">
-          <h4>定制工程</h4>
-          <p>复杂与特殊用途钢结构按项目图纸加工。</p>
-          <span>查看 →</span>
-        </a>
-      </div>
-    </div>
-  </section>
-
-  <section class="faq-section">
+  <!-- 01 / 结构作用 -->
+  <section class="detail-section">
     <div class="container">
       <div class="section-heading reveal">
-        <p class="section-index">05 / 常见问题</p>
-        <h2>常见问题解答</h2>
+        <p class="section-index">结构作用</p>
+        <h2>钢桁架结构在项目中的作用</h2>
+        <p>钢桁架是用于需要大跨度或减少中间支撑的三角化结构体系。它们以比实腹梁更少的材料重量，高效承受大跨度的屋面、楼面和转换荷载。</p>
       </div>
-      <FAQ items={faqItems} idPrefix="trusses-zh" lang={lang} />
+      <div class="image-text-block">
+        <div class="itb-image">
+          <img src="/images/components/complex-steel-truss-fabrication.jpg" alt="工厂内复杂钢桁架制造，CHS/RHS相贯节点" loading="lazy">
+        </div>
+        <div class="itb-content">
+          <h3>在建筑项目中的结构角色</h3>
+          <ul>
+            <li><strong>大跨度屋面支撑：</strong>在没有中间柱子的情况下承受大跨度屋面荷载</li>
+            <li><strong>转换结构：</strong>当下层需要无柱空间时，将上部楼层荷载传递到选定的柱子</li>
+            <li><strong>轻质高效：</strong>三角化几何形状提供比实腹梁更高的强度重量比</li>
+            <li><strong>建筑灵活性：</strong>可配置为各种屋面轮廓，包括坡顶、弧形和平顶</li>
+            <li><strong>经济用材：</strong>材料集中在应力最高处，减少整体钢材用量</li>
+          </ul>
+        </div>
+      </div>
     </div>
   </section>
 
-  <section class="quote-cta-section" id="quote">
+  <!-- 02 / 项目应用 -->
+  <section class="detail-section alt">
     <div class="container">
-      <div class="quote-cta-header reveal">
-        <p class="section-index" style="color: #f59e0b;">06 / 获取报价</p>
-        <h2>发送桁架图纸进行加工评估</h2>
-        <p>上传结构桁架图纸或提供项目需求，中赛工程团队将审核并提供加工报价。</p>
+      <div class="section-heading reveal">
+        <p class="section-index">项目应用</p>
+        <h2>钢桁架在实际项目中的应用场景</h2>
+        <p>钢桁架结构广泛应用于需要大跨度、无柱空间的各类建筑和基础设施项目。</p>
       </div>
-      <QuoteForm lang={lang} />
+      <div class="application-grid">
+        <div class="app-card reveal">
+          <h4>工业厂房</h4>
+          <p>大型制造工厂和加工设施，需要无柱生产空间和吊车净空。</p>
+        </div>
+        <div class="app-card reveal reveal-delay-1">
+          <h4>仓储物流</h4>
+          <p>配送中心和物流仓库，需要大跨度用于货架系统和物料搬运。</p>
+        </div>
+        <div class="app-card reveal reveal-delay-2">
+          <h4>展览馆</h4>
+          <p>展览和会议中心，需要大型无柱楼层面积用于灵活展览布局。</p>
+        </div>
+        <div class="app-card reveal">
+          <h4>体育建筑</h4>
+          <p>室内体育馆、健身房和体育场，需要运动场地上方的大跨度屋面。</p>
+        </div>
+        <div class="app-card reveal reveal-delay-1">
+          <h4>飞机库</h4>
+          <p>飞机维修机库，需要极大的净跨度用于飞机进出和操作。</p>
+        </div>
+        <div class="app-card reveal reveal-delay-2">
+          <h4>交通设施</h4>
+          <p>车站雨棚、机场航站楼和交通枢纽，需要公共空间上方的大跨度屋面结构。</p>
+        </div>
+        <div class="app-card reveal">
+          <h4>公共建筑</h4>
+          <p>文化中心、礼堂和社区建筑，需要建筑表现力强的大跨度屋面。</p>
+        </div>
+        <div class="app-card reveal reveal-delay-1">
+          <h4>转换结构</h4>
+          <p>混合用途建筑的转换大梁和转换桁架，楼层间柱网变化时使用。</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 03 / 工程考虑因素 -->
+  <section class="detail-section">
+    <div class="container">
+      <div class="section-heading reveal">
+        <p class="section-index">工程考虑</p>
+        <h2>桁架项目的关键工程考虑因素</h2>
+        <p>钢桁架设计和制造需要仔细考虑多个工程因素。所有具体数值由项目图纸、荷载和适用的当地设计规范确定。</p>
+      </div>
+      <div class="param-table-container">
+        <table class="param-table">
+          <thead>
+            <tr>
+              <th>工程因素</th>
+              <th>基于项目的考虑</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><strong>跨度</strong></td>
+              <td>由项目建筑要求和柱网布置确定。桁架可根据荷载和挠度标准设计为各种跨度范围。</td>
+            </tr>
+            <tr>
+              <td><strong>结构荷载</strong></td>
+              <td>恒载、活载、雪载、风载和地震荷载，按项目位置和适用建筑规范确定。</td>
+            </tr>
+            <tr>
+              <td><strong>吊车荷载</strong></td>
+              <td>桥式吊车荷载（如适用），包括吊车起重量、跨度、工作级别和影响桁架设计的冲击系数。</td>
+            </tr>
+            <tr>
+              <td><strong>动力荷载</strong></td>
+              <td>支撑机械、输送机或其他动力设备的结构的动力和振动考虑。</td>
+            </tr>
+            <tr>
+              <td><strong>连接类型</strong></td>
+              <td>焊接连接（节点板或直接焊接）或螺栓连接（高强度螺栓），根据项目要求和现场装配确定。</td>
+            </tr>
+            <tr>
+              <td><strong>挠度</strong></td>
+              <td>按适用规范和项目要求的挠度限值，对支撑脆性饰面的大跨度屋架尤为重要。</td>
+            </tr>
+            <tr>
+              <td><strong>运输限制</strong></td>
+              <td>构件和桁架分段尺寸考虑集装箱尺寸、公路运输限制和现场装配要求。</td>
+            </tr>
+            <tr>
+              <td><strong>腐蚀环境</strong></td>
+              <td>环境腐蚀类别决定表面保护体系选择，从标准涂装到热浸镀锌。</td>
+            </tr>
+            <tr>
+              <td><strong>现场装配</strong></td>
+              <td>现场安装顺序、连接可达性、临时支撑要求和安装公差，按项目条件确定。</td>
+            </tr>
+            <tr>
+              <td><strong>当地设计规范</strong></td>
+              <td>按适用的当地建筑规范和项目规范设计，包括材料标准、荷载组合和安全系数。</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </section>
+
+  <!-- 04 / 项目设计与深化 -->
+  <section class="detail-section alt">
+    <div class="container">
+      <div class="section-heading reveal">
+        <p class="section-index">设计深化</p>
+        <h2>基于项目的设计与深化</h2>
+        <p>中赛钢构从项目结构图纸出发，协调深化以开发可制造的桁架图纸，责任范围由项目合同和批准图纸确定。</p>
+      </div>
+      <div class="process-grid">
+        <div class="process-item reveal">
+          <div class="process-num">01</div>
+          <h4>建筑/结构图纸评审</h4>
+          <p>评审客户提供的建筑和结构图纸，包括桁架布置、跨度、荷载和连接要求。</p>
+        </div>
+        <div class="process-item reveal reveal-delay-1">
+          <div class="process-num">02</div>
+          <h4>结构深化协调</h4>
+          <p>基于确认的结构设计协调加工图开发，包括构件尺寸、节点细节和连接设计。</p>
+        </div>
+        <div class="process-item reveal reveal-delay-2">
+          <div class="process-num">03</div>
+          <h4>连接与节点设计</h4>
+          <p>开发连接细节，包括节点板、螺栓/焊接连接、拼接接头和底板接口。</p>
+        </div>
+        <div class="process-item reveal">
+          <div class="process-num">04</div>
+          <h4>现场装配接口规划</h4>
+          <p>规划现场装配接口，包括拼接位置、螺栓可达性、临时支撑和安装顺序考虑。</p>
+        </div>
+        <div class="process-item reveal reveal-delay-1">
+          <div class="process-num">05</div>
+          <h4>运输分段设计</h4>
+          <p>设计桁架分段用于集装箱运输和公路运输，优化构件长度同时减少现场连接。</p>
+        </div>
+        <div class="process-item reveal reveal-delay-2">
+          <div class="process-num">06</div>
+          <h4>批准图纸用于制造</h4>
+          <p>仅在批准图纸和确认技术规范后进行制造。责任范围按项目合同确定。</p>
+        </div>
+      </div>
+      <div style="margin-top: 24px; padding: 16px; background: #fffbeb; border-left: 4px solid #f59e0b; border-radius: 4px;">
+        <p style="margin: 0; color: #92400e; font-size: 0.9rem;"><strong>范围说明：</strong>中赛钢构可提供项目深化和制造协调支持。结构设计责任由项目合同、批准图纸和适用的专业要求确定。中赛钢构不承担超出项目合同明确约定范围的结构设计责任。</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- 05 / 制造能力 -->
+  <section class="detail-section">
+    <div class="container">
+      <div class="section-heading reveal">
+        <p class="section-index">制造能力</p>
+        <h2>项目钢结构制造能力</h2>
+        <p>中赛钢构运营生产基地，配备精密钢桁架制造设备，具有文件化的质量流程和面向出口的包装与交付。</p>
+      </div>
+      <div class="capability-grid">
+        <div class="capability-item reveal">
+          <h4>数控切割</h4>
+          <p>精密数控等离子和火焰切割桁架构件、节点板和连接板，尺寸准确。</p>
+        </div>
+        <div class="capability-item reveal reveal-delay-1">
+          <h4>钻孔</h4>
+          <p>数控钻孔用于节点板、连接板和构件端连接的螺栓孔，孔位定位准确。</p>
+        </div>
+        <div class="capability-item reveal reveal-delay-2">
+          <h4>焊接</h4>
+          <p>合格的焊接工艺和焊工，按项目规范进行角焊、部分熔透和全熔透焊接。</p>
+        </div>
+        <div class="capability-item reveal">
+          <h4>装配</h4>
+          <p>精密桁架装配，包括构件配合、节点对齐和胎架装配，精确控制几何形状。</p>
+        </div>
+        <div class="capability-item reveal reveal-delay-1">
+          <h4>尺寸检验</h4>
+          <p>关键制造阶段的尺寸验证，包括桁架几何形状、节点位置和连接配合。</p>
+        </div>
+        <div class="capability-item reveal reveal-delay-2">
+          <h4>试拼装</h4>
+          <p>按项目规范要求对复杂桁架进行试拼装，发货前验证配合和连接对齐。</p>
+        </div>
+        <div class="capability-item reveal">
+          <h4>表面处理</h4>
+          <p>按SA 2.5或项目指定标准进行抛丸和表面处理，然后进行涂层施工。</p>
+        </div>
+        <div class="capability-item reveal reveal-delay-1">
+          <h4>涂装</h4>
+          <p>多道涂装体系，包括底漆、中间漆和面漆，按规范验证干膜厚度。</p>
+        </div>
+        <div class="capability-item reveal reveal-delay-2">
+          <h4>镀锌</h4>
+          <p>适用于镀锌浴尺寸的桁架构件热浸镀锌协调，按适用标准执行。</p>
+        </div>
+        <div class="capability-item reveal">
+          <h4>构件编号</h4>
+          <p>与装配图匹配的唯一桁架和构件标识系统，包括件号、方向和连接参考。</p>
+        </div>
+        <div class="capability-item reveal reveal-delay-1">
+          <h4>出口包装</h4>
+          <p>为集装箱运输组织的包装，附详细装箱单、桁架构件清单和处理说明。</p>
+        </div>
+      </div>
+      <div style="text-align: center; margin-top: 30px;">
+        <a href="/zh/manufacturing-quality/" class="btn btn-outline">查看制造与质量 →</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- 06 / 连接与结构接口 -->
+  <section class="detail-section alt">
+    <div class="container">
+      <div class="section-heading reveal">
+        <p class="section-index">连接接口</p>
+        <h2>连接与结构接口</h2>
+        <p>钢桁架连接和结构接口对项目性能至关重要。连接设计基于项目结构图纸和适用标准进行协调。</p>
+      </div>
+      <div class="connection-grid">
+        <div class="connection-item reveal">
+          <h4>焊接连接</h4>
+          <p>角钢桁架的节点板焊接连接，以及管桁架的直接焊接CHS/RHS连接。按合格WPS和项目检验要求焊接。</p>
+        </div>
+        <div class="connection-item reveal reveal-delay-1">
+          <h4>螺栓连接</h4>
+          <p>现场装配桁架的高强度螺栓连接，包括螺栓等级规范、孔公差和按项目要求的拧紧程序。</p>
+        </div>
+        <div class="connection-item reveal reveal-delay-2">
+          <h4>拼接接头</h4>
+          <p>用于运输分段的桁架拼接接头，设计用于荷载传递和现场装配精度。拼接位置优化用于运输和安装。</p>
+        </div>
+        <div class="connection-item reveal">
+          <h4>底板</h4>
+          <p>桁架支撑底板和承压连接，包括锚栓接口和向支撑柱或基础的荷载传递。</p>
+        </div>
+        <div class="connection-item reveal reveal-delay-1">
+          <h4>节点板</h4>
+          <p>用于多构件连接节点的定制节点板，精确孔位和焊接准备，确保桁架装配准确。</p>
+        </div>
+        <div class="connection-item reveal reveal-delay-2">
+          <h4>建筑接口</h4>
+          <p>与建筑结构体系的协调，包括柱连接、支撑接口、屋面系统支撑和侧向荷载传递路径。</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 07 / 表面处理 -->
+  <section class="detail-section">
+    <div class="container">
+      <div class="section-heading reveal">
+        <p class="section-index">表面处理</p>
+        <h2>桁架结构表面处理</h2>
+        <p>表面保护体系根据项目环境、腐蚀类别、客户规范和设计寿命要求选择。</p>
+      </div>
+      <div class="surface-grid">
+        <div class="surface-card reveal">
+          <h4>涂装体系</h4>
+          <p>多道涂装体系，包括环氧底漆、环氧中间漆和聚氨酯面漆。体系选择基于腐蚀类别和项目规范，验证干膜厚度。</p>
+        </div>
+        <div class="surface-card reveal reveal-delay-1">
+          <h4>热浸镀锌</h4>
+          <p>适用于镀锌浴尺寸的桁架构件和部件热浸镀锌。为外部和工业环境提供持久的腐蚀保护，按适用标准执行。</p>
+        </div>
+        <div class="surface-card reveal reveal-delay-2">
+          <h4>项目定制涂层</h4>
+          <p>用于腐蚀性工业环境的专业涂层体系，包括高性能环氧、聚氨酯和氟碳涂层，按项目规范和环境要求执行。</p>
+        </div>
+      </div>
+      <div style="margin-top: 24px; padding: 16px; background: #f0fdf4; border-left: 4px solid #22c55e; border-radius: 4px;">
+        <p style="margin: 0; color: #166534; font-size: 0.9rem;"><strong>说明：</strong>具体防腐保护体系由项目环境、腐蚀类别、客户规范、当地标准和设计寿命要求确定。中赛钢构不保证固定的无腐蚀使用寿命；实际性能取决于环境、维护和涂层体系规范。</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- 08 / 出口与现场装配 -->
+  <section class="detail-section alt">
+    <div class="container">
+      <div class="section-heading reveal">
+        <p class="section-index">出口装配</p>
+        <h2>出口交付与现场装配考虑</h2>
+        <p>中赛钢构桁架结构为出口交付设计和包装，仔细考虑运输分段、集装箱装载和现场装配要求。</p>
+      </div>
+      <div class="export-grid">
+        <div class="export-item reveal">
+          <h4>构件编号</h4>
+          <p>与装配图匹配的唯一桁架和构件标识系统，包括件号、方向标记和连接参考，确保现场装配准确。</p>
+        </div>
+        <div class="export-item reveal reveal-delay-1">
+          <h4>包装组织</h4>
+          <p>桁架构件按装配顺序和连接组包装，成品表面和螺纹部件有保护包装。附详细装箱单。</p>
+        </div>
+        <div class="export-item reveal reveal-delay-2">
+          <h4>集装箱装载</h4>
+          <p>优化集装箱装载计划，最大化空间利用同时保护桁架构件。按项目要求提供装载图和集装箱装箱记录。</p>
+        </div>
+        <div class="export-item reveal">
+          <h4>超长构件分段</h4>
+          <p>长桁架构件按集装箱和公路运输限制分段，带设计的拼接连接用于现场装配。分段优化以减少现场连接。</p>
+        </div>
+        <div class="export-item reveal reveal-delay-1">
+          <h4>螺栓现场连接</h4>
+          <p>为现场装配设计的螺栓连接，带预钻孔、高强度螺栓和清晰的装配说明。深化时考虑连接可达性。</p>
+        </div>
+        <div class="export-item reveal reveal-delay-2">
+          <h4>安装顺序</h4>
+          <p>现场安装顺序考虑，包括临时支撑要求、连接可达性、吊点和桁架安装安全考虑。</p>
+        </div>
+      </div>
+      <div style="text-align: center; margin-top: 30px;">
+        <a href="/zh/export-delivery/" class="btn btn-outline">查看出口与交付 →</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- 09 / 技术评审所需资料 -->
+  <section id="engineering-review" class="detail-section">
+    <div class="container">
+      <div class="section-heading reveal">
+        <p class="section-index">技术评审</p>
+        <h2>技术评审所需资料</h2>
+        <p>项目文件越完整，技术评审和制造计划越准确。提交现有资料，中赛钢构将确认所需的任何补充信息。</p>
+      </div>
+      <div class="requirement-grid">
+        <div class="requirement-card reveal reveal-delay-1">
+          <div class="req-icon">01</div>
+          <h3>项目国家/城市</h3>
+          <p>项目位置，用于适用设计规范、环境条件、物流规划和出口文件。</p>
+        </div>
+        <div class="requirement-card reveal reveal-delay-2">
+          <div class="req-icon">02</div>
+          <h3>建筑图纸</h3>
+          <p>建筑图纸，显示桁架布置、跨度要求、屋面轮廓和建筑约束。</p>
+        </div>
+        <div class="requirement-card reveal reveal-delay-3">
+          <div class="req-icon">03</div>
+          <h3>结构图纸</h3>
+          <p>结构设计图纸，包括桁架几何形状、构件尺寸、荷载规范和连接设计。</p>
+        </div>
+        <div class="requirement-card reveal reveal-delay-1">
+          <div class="req-icon">04</div>
+          <h3>总体布置图</h3>
+          <p>建筑总体布置图，显示桁架位置、支撑结构和建筑接口。</p>
+        </div>
+        <div class="requirement-card reveal reveal-delay-2">
+          <div class="req-icon">05</div>
+          <h3>荷载</h3>
+          <p>设计荷载，包括恒载、活载、雪载、风载、地震荷载和任何特殊设备或吊车荷载。</p>
+        </div>
+        <div class="requirement-card reveal reveal-delay-3">
+          <div class="req-icon">06</div>
+          <h3>材料要求</h3>
+          <p>指定的钢材牌号、材料标准和桁架构件及连接的任何特殊材料要求或测试需求。</p>
+        </div>
+        <div class="requirement-card reveal reveal-delay-1">
+          <div class="req-icon">07</div>
+          <h3>设计标准</h3>
+          <p>适用的设计规范和标准，包括材料标准、荷载组合、连接设计和安全系数。</p>
+        </div>
+        <div class="requirement-card reveal reveal-delay-2">
+          <div class="req-icon">08</div>
+          <h3>表面处理</h3>
+          <p>所需表面保护体系：涂装规范、镀锌要求或项目定制涂层体系。</p>
+        </div>
+        <div class="requirement-card reveal reveal-delay-3">
+          <div class="req-icon">09</div>
+          <h3>项目进度</h3>
+          <p>要求的制造时间线、分批交付日期和影响生产计划的现场安装顺序。</p>
+        </div>
+        <div class="requirement-card reveal reveal-delay-1">
+          <div class="req-icon">10</div>
+          <h3>目的港</h3>
+          <p>目的港或交付地点，用于物流规划、包装组织和出口文件协调。</p>
+        </div>
+      </div>
+      <div style="text-align: center; margin-top: 30px;">
+        <a href="#quote" class="btn btn-primary">上传项目图纸</a>
+        <a href="#quote" class="btn btn-outline" style="margin-left: 12px;">发送项目要求</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- 10 / 相关项目类型 -->
+  <section class="detail-section alt">
+    <div class="container">
+      <div class="section-heading reveal">
+        <p class="section-index">相关项目</p>
+        <h2>相关项目类型与应用</h2>
+        <p>钢桁架结构用于多种项目类型。探索桁架结构常用的相关解决方案和项目类别。</p>
+      </div>
+      <div class="related-grid">
+        <a href="/zh/steel-workshop/" class="related-card reveal">
+          <h4>工业与制造</h4>
+          <p>工业厂房和制造工厂，需要大跨度无柱生产空间。</p>
+        </a>
+        <a href="/zh/steel-warehouse/" class="related-card reveal reveal-delay-1">
+          <h4>仓储与物流</h4>
+          <p>仓库和配送中心，需要大跨度用于货架和物料搬运。</p>
+        </a>
+        <a href="/zh/commercial-public-steel-buildings/" class="related-card reveal reveal-delay-2">
+          <h4>商业与公共建筑</h4>
+          <p>展览馆、体育建筑和公共设施，需要建筑表现力强的大跨度屋面。</p>
+        </a>
+        <a href="/zh/transportation-infrastructure-steel/" class="related-card reveal">
+          <h4>交通基础设施</h4>
+          <p>车站雨棚、机场航站楼和交通枢纽，需要公共空间上方的大跨度屋面结构。</p>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- 11 / 相关结构能力 -->
+  <section class="detail-section">
+    <div class="container">
+      <div class="section-heading reveal">
+        <p class="section-index">相关能力</p>
+        <h2>相关钢结构能力</h2>
+        <p>钢桁架在建筑项目中与其他结构钢构件协同工作。探索相关的结构能力和构件类型。</p>
+      </div>
+      <div class="related-grid">
+        <a href="/zh/components/fabricated-steel-beams-columns/#steel-beams" class="related-card reveal">
+          <h4>钢梁</h4>
+          <p>水平结构构件，支撑屋面、楼面、平台和设备，常与桁架系统协同工作。</p>
+        </a>
+        <a href="/zh/components/fabricated-steel-beams-columns/#steel-columns" class="related-card reveal reveal-delay-1">
+          <h4>钢柱</h4>
+          <p>竖向结构构件，将桁架和建筑荷载传递到基础，支撑桁架承重点。</p>
+        </a>
+        <a href="/zh/components/" class="related-card reveal reveal-delay-2">
+          <h4>全部钢构件</h4>
+          <p>完整的结构钢构件范围，包括梁、柱、桁架、平台和特殊加工结构。</p>
+        </a>
+        <a href="/zh/engineering-design/" class="related-card reveal">
+          <h4>工程与深化</h4>
+          <p>桁架项目的结构深化和工程协调，包括连接设计和加工图开发。</p>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- 12 / FAQ -->
+  <section class="detail-section alt">
+    <div class="container">
+      <div class="section-heading reveal">
+        <p class="section-index">常见问题</p>
+        <h2>常见问题</h2>
+        <p>关于中赛钢构钢桁架制造、项目能力和交付的常见问题。</p>
+      </div>
+      <div class="faq-container">
+        <div class="faq-item reveal">
+          <h4>中赛钢构可以根据项目图纸制造钢桁架吗？</h4>
+          <p>可以。中赛钢构根据客户提供的结构图纸和批准的加工图制造钢桁架。我们也可以协调深化支持，基于确认的结构设计开发制造图纸。仅在批准图纸和确认技术规范后进行制造。</p>
+        </div>
+        <div class="faq-item reveal reveal-delay-1">
+          <h4>可以支持桁架项目的加工图和深化吗？</h4>
+          <p>可以。中赛钢构可以为桁架项目提供加工图和深化协调支持，包括构件深化、连接设计协调和制造图纸开发。结构设计责任由项目合同、批准图纸和适用的专业要求确定。</p>
+        </div>
+        <div class="faq-item reveal reveal-delay-2">
+          <h4>大型桁架构件如何分段运输？</h4>
+          <p>大型桁架构件根据集装箱尺寸、公路运输限制和现场装配要求分段。分段设计旨在减少现场连接同时确保运输可行性。拼接连接预先设计为螺栓连接，用于准确的现场装配。提供详细装箱单和装配图。</p>
+        </div>
+        <div class="faq-item reveal">
+          <h4>钢桁架可以使用哪些表面处理？</h4>
+          <p>可用的表面处理包括多道涂装体系（环氧底漆、中间漆和面漆）、适用于镀锌浴尺寸构件的热浸镀锌，以及用于腐蚀环境的项目定制涂层体系。具体体系选择由项目环境、腐蚀类别、客户规范和设计寿命要求确定。</p>
+        </div>
+        <div class="faq-item reveal reveal-delay-1">
+          <h4>桁架构件发货前可以试拼装吗？</h4>
+          <p>可以。按项目规范要求，复杂桁架可以进行试拼装，发货前验证配合、连接对齐和几何精度。试拼装范围和要求由项目规范和桁架结构的复杂性确定。</p>
+        </div>
+        <div class="faq-item reveal reveal-delay-2">
+          <h4>结构接口如何与建筑体系协调？</h4>
+          <p>结构接口通过评审建筑和结构图纸进行协调，包括桁架支撑点、柱连接、支撑接口、屋面系统支撑和侧向荷载传递路径。连接细节基于项目结构设计开发，责任范围由项目合同和批准图纸定义。</p>
+        </div>
+        <div class="faq-item reveal">
+          <h4>提供桁架结构的当地安装吗？</h4>
+          <p>中赛钢构为钢桁架结构提供深化、制造、出口供应和技术安装指导。当地土建工程和现场施工通常由当地承包商处理。中赛钢构可以按项目要求提供安装图纸、装配说明和远程技术指导，以支持现场安装。</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 项目CTA -->
+  <section class="detail-section dark" style="padding: 60px 0;">
+    <div class="container">
+      <div style="text-align: center; max-width: 700px; margin: 0 auto;">
+        <p class="section-index" style="justify-content: center; color: #f59e0b;">开始项目</p>
+        <h2 style="color: #fff; margin-bottom: 16px;">有钢桁架项目？</h2>
+        <p style="color: rgba(255,255,255,0.8); margin-bottom: 24px;">发送您的项目图纸、结构要求和交付地点进行技术评审。中赛钢构将评审您的要求，并确认准确制造计划和报价所需的内容。</p>
+        <div style="display: flex; gap: 16px; justify-content: center; flex-wrap: wrap;">
+          <a href="#quote" class="btn btn-primary">提交项目图纸</a>
+          <a href="#quote" class="btn btn-outline" style="border-color: rgba(255,255,255,0.5); color: #fff;">申请技术评审</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Quote Form -->
+  <section id="quote" class="detail-section">
+    <div class="container">
+      <QuoteForm />
     </div>
   </section>
 </BaseLayout>
 
 <style>
-  .answer-first h2 { margin-bottom: 16px; }
-  .answer-lead { font-size: 1.1rem; line-height: 1.8; color: var(--color-gray-700); margin-bottom: 32px; max-width: 900px; }
-  .answer-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; }
-  .answer-item { background: white; padding: 24px; border-radius: 10px; border: 1px solid var(--color-gray-200); }
-  .answer-item h4 { margin-bottom: 12px; color: var(--color-primary); }
-  .answer-item ul { list-style: none; padding: 0; margin: 0; }
-  .answer-item li { padding: 5px 0; font-size: 0.9rem; color: var(--color-gray-600); border-bottom: 1px solid var(--color-gray-100); }
-  .answer-item li:last-child { border-bottom: none; }
-  .truss-type-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 24px; }
-  .truss-type-card { background: white; padding: 28px; border-radius: 12px; border: 1px solid var(--color-gray-200); }
-  .truss-type-card h3 { margin-bottom: 10px; }
-  .truss-type-card p { color: var(--color-gray-600); line-height: 1.7; margin-bottom: 14px; }
-  .truss-tag { display: inline-block; background: var(--color-primary-light); color: var(--color-primary); padding: 4px 12px; border-radius: 20px; font-size: 0.8rem; font-weight: 600; }
-  .drawings-required { display: grid; grid-template-columns: 1.3fr 1fr; gap: 40px; align-items: start; }
-  .dr-text h2 { margin-bottom: 14px; }
-  .dr-text p { color: var(--color-gray-600); line-height: 1.7; margin-bottom: 20px; }
-  .dr-list { list-style: none; padding: 0; }
-  .dr-list li { padding: 10px 0 10px 24px; position: relative; color: var(--color-gray-700); border-bottom: 1px solid var(--color-gray-100); }
-  .dr-list li::before { content: '▸'; position: absolute; left: 0; color: var(--color-primary); }
-  .dr-cta-box { background: white; padding: 24px; border-radius: 12px; margin-bottom: 16px; border: 1px solid var(--color-gray-200); }
-  .dr-cta-box h3 { margin-bottom: 8px; font-size: 1.1rem; }
-  .dr-cta-box p { color: var(--color-gray-600); font-size: 0.9rem; margin-bottom: 14px; }
-  .related-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 16px; }
-  .related-card { background: white; padding: 20px; border-radius: 10px; text-decoration: none; color: inherit; border: 1px solid var(--color-gray-200); transition: transform 0.2s; }
-  .related-card:hover { transform: translateY(-2px); box-shadow: 0 4px 16px rgba(0,0,0,0.08); }
-  .related-card h4 { margin-bottom: 6px; font-size: 1rem; }
-  .related-card p { font-size: 0.85rem; color: var(--color-gray-600); margin-bottom: 8px; }
-  .related-card span { color: var(--color-primary); font-weight: 600; font-size: 0.85rem; }
-  @media (max-width: 900px) {
-    .answer-grid { grid-template-columns: 1fr; }
-    .truss-type-grid { grid-template-columns: 1fr; }
-    .drawings-required { grid-template-columns: 1fr; }
-    .related-grid { grid-template-columns: repeat(2, 1fr); }
+.application-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 16px;
+}
+.app-card {
+  background: #fff;
+  padding: 20px;
+  border-radius: 8px;
+  border: 1px solid #e5e7eb;
+}
+.app-card h4 {
+  margin: 0 0 8px 0;
+  color: #1f2937;
+  font-size: 1rem;
+}
+.app-card p {
+  margin: 0;
+  color: #6b7280;
+  font-size: 0.88rem;
+  line-height: 1.6;
+}
+.process-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 20px;
+}
+.process-item {
+  background: #fff;
+  padding: 20px;
+  border-radius: 8px;
+  border: 1px solid #e5e7eb;
+  position: relative;
+}
+.process-num {
+  position: absolute;
+  top: 16px;
+  right: 16px;
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: #dbeafe;
+}
+.process-item h4 {
+  margin: 0 0 8px 0;
+  color: #1f2937;
+  font-size: 0.95rem;
+  padding-right: 40px;
+}
+.process-item p {
+  margin: 0;
+  color: #6b7280;
+  font-size: 0.85rem;
+  line-height: 1.5;
+}
+.connection-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 16px;
+}
+.connection-item {
+  background: #fff;
+  padding: 18px;
+  border-radius: 8px;
+  border-left: 4px solid #2563eb;
+}
+.connection-item h4 {
+  margin: 0 0 8px 0;
+  color: #1f2937;
+  font-size: 0.95rem;
+}
+.connection-item p {
+  margin: 0;
+  color: #6b7280;
+  font-size: 0.85rem;
+  line-height: 1.5;
+}
+.surface-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 20px;
+}
+.surface-card {
+  background: #fff;
+  padding: 24px;
+  border-radius: 8px;
+  border: 1px solid #e5e7eb;
+}
+.surface-card h4 {
+  margin: 0 0 12px 0;
+  color: #1f2937;
+  font-size: 1.05rem;
+}
+.surface-card p {
+  margin: 0;
+  color: #6b7280;
+  font-size: 0.88rem;
+  line-height: 1.6;
+}
+.export-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 16px;
+}
+.export-item {
+  background: #fff;
+  padding: 18px;
+  border-radius: 8px;
+  border: 1px solid #e5e7eb;
+}
+.export-item h4 {
+  margin: 0 0 8px 0;
+  color: #1f2937;
+  font-size: 0.95rem;
+}
+.export-item p {
+  margin: 0;
+  color: #6b7280;
+  font-size: 0.85rem;
+  line-height: 1.5;
+}
+.related-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 16px;
+}
+.related-card {
+  background: #fff;
+  padding: 20px;
+  border-radius: 8px;
+  border: 1px solid #e5e7eb;
+  text-decoration: none;
+  color: inherit;
+  transition: border-color 0.3s ease;
+  display: block;
+}
+.related-card:hover {
+  border-color: #2563eb;
+}
+.related-card h4 {
+  margin: 0 0 8px 0;
+  color: #1f2937;
+  font-size: 1rem;
+}
+.related-card p {
+  margin: 0;
+  color: #6b7280;
+  font-size: 0.85rem;
+  line-height: 1.5;
+}
+@media (max-width: 768px) {
+  .application-grid, .process-grid, .connection-grid, .surface-grid, .export-grid, .related-grid {
+    grid-template-columns: 1fr;
   }
+}
 </style>

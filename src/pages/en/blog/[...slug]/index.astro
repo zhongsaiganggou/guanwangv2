@@ -22,7 +22,7 @@ const { Content } = await post.render();
 // 从post.id中提取slug，格式为 en/slug.md 或 zh/slug.md
 const slug = post.id.replace(/^en\//, '').replace(/\.md$/, '');
 
-const seoTitle = post.data.seoTitle || `${post.data.title} | ZhongSai Steel Structure`;
+const seoTitle = post.data.seoTitle || `${post.data.title} | ZhongSai`;
 const metaDescription = post.data.metaDescription || post.data.excerpt || '';
 const canonical = `https://zhongsai-steelstructure.com/en/blog/${slug}/`;
 const h1 = post.data.h1 || post.data.title;

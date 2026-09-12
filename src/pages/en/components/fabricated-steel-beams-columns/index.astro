@@ -1,26 +1,28 @@
 ---
 import BaseLayout from '../../../../layouts/BaseLayout.astro';
 import QuoteForm from '../../../../components/QuoteForm.astro';
-import '../../../../styles/detail.css';
+import '../../../../styles/hub.css';
 
-const title = 'Fabricated Steel Beams & Columns | Custom Steel Fabrication | ZhongSai';
-const description = 'ZhongSai fabricates steel beams and columns from project drawings, shop drawings and technical specifications. Includes H-section members, welded beams, steel columns and custom fabricated members, with marking, packing and export delivery support.';
 const lang = 'en';
-const canonical = 'https://zhongsai-steelstructure.com/en/components/fabricated-steel-beams-columns/';
+const title = 'Steel Beams & Columns for Projects | ZhongSai';
+const description = 'Project-specific steel beams and columns for industrial buildings, warehouses, commercial structures and infrastructure.';
 ---
 
 <BaseLayout title={title} description={description} lang={lang}>
   <!-- Hero -->
-  <section class="detail-hero">
-    <div class="detail-hero-bg" style="background-image: url('/images/components/finished-steel-beams-columns.jpg');"></div>
-    <div class="detail-hero-overlay"></div>
-    <div class="detail-hero-content">
-      <span class="eyebrow">Steel Beams · Columns · Drawing-Based</span>
-      <h1>Fabricated Steel Beams & Columns to Project Drawings</h1>
-      <p class="lead">ZhongSai fabricates H-section members, welded steel beams, steel columns and custom fabricated steel members from project structural drawings, shop drawings and technical specifications. Specific materials, dimensions, welding requirements and surface treatment are determined per project drawings and technical requirements, with component marking, packing, container loading and export delivery support.</p>
+  <section class="hub-hero">
+    <div class="hub-hero-bg" style="background-image: url('/images/components/finished-steel-beams-columns.jpg');"></div>
+    <div class="hub-hero-overlay"></div>
+    <div class="container hub-hero-content">
+      <div class="hub-breadcrumb">
+        <a href="/en/">Home</a><span>/</span><a href="/en/components/">Components</a><span>/</span><span>Steel Beams & Columns</span>
+      </div>
+      <p class="eyebrow">PROJECT STEELWORK · Steel Beams & Columns</p>
+      <h1>Steel Beams & Columns for Structural Projects</h1>
+      <p class="lead">Project-specific steel beams and columns for industrial buildings, warehouses, commercial structures and infrastructure applications, with detailing, fabrication and export delivery based on approved project drawings.</p>
       <div class="detail-hero-actions">
-        <a href="#quote" class="btn btn-primary">Submit Drawings for Quotation</a>
-        <a href="/en/manufacturing-quality/" class="btn btn-outline">View Manufacturing Capability</a>
+        <a href="#quote" class="btn btn-primary">Send Your Project Drawings</a>
+        <a href="#engineering-review" class="btn btn-outline">Request Engineering Review</a>
       </div>
     </div>
   </section>
@@ -30,353 +32,759 @@ const canonical = 'https://zhongsai-steelstructure.com/en/components/fabricated-
     <div class="container">
       <a href="/en/">Home</a>
       <span class="sep">/</span>
-      <a href="/en/components/">Components</a>
+      <a href="/en/components/">Steel Components</a>
       <span class="sep">/</span>
       <span class="current">Steel Beams & Columns</span>
     </div>
   </nav>
 
-  <!-- 01 Fabricated Beams & Columns -->
+  <!-- 01 / What This Structure Does -->
   <section class="detail-section">
     <div class="container">
       <div class="section-heading reveal">
-        <p class="section-index">01 / What We Fabricate</p>
-        <h2>What Steel Beams & Columns Can ZhongSai Fabricate</h2>
-        <p>Based on project drawings and technical requirements, ZhongSai can fabricate the following types of steel beams and columns. Specific fabrication scope and technical requirements are confirmed per project drawings.</p>
+        <p class="section-index">Structure Function</p>
+        <h2>What Steel Beams and Columns Do in Projects</h2>
+        <p>Steel beams and columns are the primary structural members in building and industrial projects, working together to transfer loads from roof and floor systems to foundations.</p>
+      </div>
+      <div class="dual-column">
+        <div class="dual-card reveal" id="steel-columns">
+          <div class="dual-icon">
+            <img src="/images/components/steel-beams-columns-fabrication.jpg" alt="Steel columns fabricated in factory" loading="lazy">
+          </div>
+          <h3>Steel Columns</h3>
+          <p class="dual-def">Vertical structural members used to transfer roof, floor, crane and equipment loads into foundations.</p>
+          <ul>
+            <li><strong>H-columns:</strong> Wide-flange columns for general building and industrial applications</li>
+            <li><strong>Box columns:</strong> Built-up box sections for heavy loads and architectural applications</li>
+            <li><strong>Lattice columns:</strong> Built-up lattice columns for tall and heavy industrial structures</li>
+            <li><strong>Crane columns:</strong> Columns designed for overhead crane loads with bracket supports</li>
+          </ul>
+        </div>
+        <div class="dual-card reveal reveal-delay-1" id="steel-beams">
+          <div class="dual-icon">
+            <img src="/images/components/steel-beams-columns-fabrication.jpg" alt="Steel beams fabricated in factory" loading="lazy">
+          </div>
+          <h3>Steel Beams</h3>
+          <p class="dual-def">Horizontal structural members used to support roofs, floors, platforms, equipment and secondary structural systems.</p>
+          <ul>
+            <li><strong>H-beams:</strong> Wide-flange beams for general floor and roof support</li>
+            <li><strong>Welded built-up beams:</strong> Custom fabricated beams for non-standard loads and spans</li>
+            <li><strong>Box beams:</strong> Built-up box girders for heavy loads and long spans</li>
+            <li><strong>Crane beams:</strong> Beams designed to support overhead crane runway systems</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 02 / Where It Is Used in Projects -->
+  <section class="detail-section alt">
+    <div class="container">
+      <div class="section-heading reveal">
+        <p class="section-index">Project Applications</p>
+        <h2>Where Steel Beams and Columns Are Used</h2>
+        <p>Steel beams and columns form the primary structural framework across a wide range of building and industrial project types.</p>
+      </div>
+      <div class="application-grid">
+        <div class="app-card reveal">
+          <h4>Industrial Workshops</h4>
+          <p>Manufacturing plants and processing facilities requiring heavy load support, crane columns and equipment platform supports.</p>
+        </div>
+        <div class="app-card reveal reveal-delay-1">
+          <h4>Warehouses & Logistics</h4>
+          <p>Distribution centers and logistics warehouses requiring clear-span framing, racking support and mezzanine structures.</p>
+        </div>
+        <div class="app-card reveal reveal-delay-2">
+          <h4>Commercial Buildings</h4>
+          <p>Office buildings, retail centers and mixed-use structures requiring efficient floor framing and column grids.</p>
+        </div>
+        <div class="app-card reveal">
+          <h4>Public Buildings</h4>
+          <p>Exhibition halls, sports arenas and cultural facilities requiring long-span beams and heavy load columns.</p>
+        </div>
+        <div class="app-card reveal reveal-delay-1">
+          <h4>Mining & Heavy Industry</h4>
+          <p>Processing plants, equipment platforms and heavy industrial structures requiring heavy-duty beams and columns.</p>
+        </div>
+        <div class="app-card reveal reveal-delay-2">
+          <h4>Energy Facilities</h4>
+          <p>Power plants and energy facilities requiring equipment support structures, platform framing and heavy load columns.</p>
+        </div>
+        <div class="app-card reveal">
+          <h4>Transportation Infrastructure</h4>
+          <p>Station structures, canopies and bridge components requiring specialized beam and column configurations.</p>
+        </div>
+        <div class="app-card reveal reveal-delay-1">
+          <h4>Multi-story Buildings</h4>
+          <p>Mid-rise and high-rise structures requiring efficient column grids, floor beam systems and load transfer structures.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 03 / Key Engineering Considerations -->
+  <section class="detail-section">
+    <div class="container">
+      <div class="section-heading reveal">
+        <p class="section-index">Engineering Considerations</p>
+        <h2>Key Engineering Considerations for Beam & Column Projects</h2>
+        <p>Steel beam and column design requires careful consideration of multiple engineering factors. All specific values are determined by project drawings, loads and applicable local design codes.</p>
+      </div>
+      <div class="param-table-container">
+        <table class="param-table">
+          <thead>
+            <tr>
+              <th>Engineering Factor</th>
+              <th>Project-Based Consideration</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><strong>Span</strong></td>
+              <td>Beam span determined by column spacing and architectural layout. Column height determined by floor-to-floor and eave height requirements.</td>
+            </tr>
+            <tr>
+              <td><strong>Structural Loads</strong></td>
+              <td>Dead load, live load, snow load, wind load and seismic load per project location and applicable building code.</td>
+            </tr>
+            <tr>
+              <td><strong>Equipment Loads</strong></td>
+              <p>Concentrated equipment loads, platform loads and process equipment loads affecting beam and column sizing.</td>
+            </tr>
+            <tr>
+              <td><strong>Crane Loads</strong></td>
+              <td>Overhead crane loads, including crane capacity, span, duty class and impact factors affecting crane beams and columns.</td>
+            </tr>
+            <tr>
+              <td><strong>Dynamic Loads</strong></td>
+              <td>Dynamic and vibration considerations for structures supporting machinery, conveyors or other dynamic equipment.</td>
+            </tr>
+            <tr>
+              <td><strong>Connection Type</strong></td>
+              <td>Welded connections (shop welding) or bolted connections (site assembly) based on project requirements and transport limits.</td>
+            </tr>
+            <tr>
+              <td><strong>Deflection</strong></td>
+              <td>Beam deflection limits per applicable code and project requirements, particularly important for floors supporting brittle finishes.</td>
+            </tr>
+            <tr>
+              <td><strong>Transport Limits</strong></td>
+              <td>Member sizing considering container dimensions, road transport limits and site assembly requirements for long beams and tall columns.</td>
+            </tr>
+            <tr>
+              <td><strong>Corrosion Environment</strong></td>
+              <td>Environmental corrosion category determining surface protection system selection, from standard painting to hot-dip galvanizing.</td>
+            </tr>
+            <tr>
+              <td><strong>Site Assembly</strong></td>
+              <td>Site erection sequence, connection accessibility, lifting requirements and installation tolerances per project conditions.</td>
+            </tr>
+            <tr>
+              <td><strong>Local Design Codes</strong></td>
+              <td>Design per applicable local building codes and project specifications, including material standards, load combinations and safety factors.</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </section>
+
+  <!-- 04 / Project-Based Design & Detailing -->
+  <section class="detail-section alt">
+    <div class="container">
+      <div class="section-heading reveal">
+        <p class="section-index">Design & Detailing</p>
+        <h2>Project-Based Design and Detailing</h2>
+        <p>ZhongSai works from project structural drawings and coordinates detailing to develop fabrication-ready beam and column drawings, with responsibility scope defined by project contract and approved drawings.</p>
+      </div>
+      <div class="process-grid">
+        <div class="process-item reveal">
+          <div class="process-num">01</div>
+          <h4>Architectural / Structural Drawings Review</h4>
+          <p>Review client-provided architectural and structural drawings, including column grids, beam layouts, loading and connection requirements.</p>
+        </div>
+        <div class="process-item reveal reveal-delay-1">
+          <div class="process-num">02</div>
+          <h4>Structural Detailing Coordination</h4>
+          <p>Coordinate shop drawing development based on confirmed structural design, including member sizes, connection details and fabrication requirements.</p>
+        </div>
+        <div class="process-item reveal reveal-delay-2">
+          <div class="process-num">03</div>
+          <h4>Connection Design Coordination</h4>
+          <p>Develop connection details including base plates, end plates, stiffeners, gusset plates and bolted/welded connection interfaces.</p>
+        </div>
+        <div class="process-item reveal">
+          <div class="process-num">04</div>
+          <h4>Site Assembly Interface Planning</h4>
+          <p>Plan site assembly interfaces including splice locations, bolt access, temporary supports and erection sequence considerations.</p>
+        </div>
+        <div class="process-item reveal reveal-delay-1">
+          <div class="process-num">05</div>
+          <h4>Transport Segmentation Design</h4>
+          <p>Design member segmentation for container shipping and road transport, optimizing member lengths while minimizing site connections.</p>
+        </div>
+        <div class="process-item reveal reveal-delay-2">
+          <div class="process-num">06</div>
+          <h4>Approved Drawings for Fabrication</h4>
+          <p>Fabrication proceeds only after approved drawings and confirmed technical specifications. Responsibility scope per project contract.</p>
+        </div>
+      </div>
+      <div style="margin-top: 24px; padding: 16px; background: #fffbeb; border-left: 4px solid #f59e0b; border-radius: 4px;">
+        <p style="margin: 0; color: #92400e; font-size: 0.9rem;"><strong>Scope Note:</strong> ZhongSai can provide project detailing and fabrication coordination support. Structural design responsibility is determined by project contract, approved drawings and applicable professional requirements. ZhongSai does not assume structural design responsibility beyond the scope explicitly agreed in the project contract.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- 05 / Fabrication Capabilities -->
+  <section class="detail-section">
+    <div class="container">
+      <div class="section-heading reveal">
+        <p class="section-index">Fabrication</p>
+        <h2>Fabrication Capabilities for Project Steelwork</h2>
+        <p>ZhongSai operates a production base equipped for precision steel beam and column fabrication, with documented quality processes and export-oriented packing and delivery.</p>
+      </div>
+      <div class="capability-grid">
+        <div class="capability-item reveal">
+          <h4>CNC Cutting</h4>
+          <p>Precision CNC plasma and flame cutting for beam and column members, stiffeners and connection plates with accurate dimensions.</p>
+        </div>
+        <div class="capability-item reveal reveal-delay-1">
+          <h4>Drilling</h4>
+          <p>CNC drilling for bolt holes in end plates, connection plates and member end connections with accurate hole positioning.</p>
+        </div>
+        <div class="capability-item reveal reveal-delay-2">
+          <h4>Welding</h4>
+          <p>Qualified welding procedures and welders for fillet, partial penetration and full penetration welds per project specifications.</p>
+        </div>
+        <div class="capability-item reveal">
+          <h4>Assembly</h4>
+          <p>Precision beam and column assembly including web-to-flange fitting, stiffener placement and connection plate alignment.</p>
+        </div>
+        <div class="capability-item reveal reveal-delay-1">
+          <h4>Dimensional Inspection</h4>
+          <p>Dimensional verification at critical fabrication stages, including member straightness, connection alignment and fit-up verification.</p>
+        </div>
+        <div class="capability-item reveal reveal-delay-2">
+          <h4>Trial Assembly</h4>
+          <p>Trial assembly for complex connections where required by project specification, verifying fit-up before shipment.</p>
+        </div>
+        <div class="capability-item reveal">
+          <h4>Surface Preparation</h4>
+          <p>Shot blasting and surface preparation per SA 2.5 or project-specified standards before coating application.</p>
+        </div>
+        <div class="capability-item reveal reveal-delay-1">
+          <h4>Painting</h4>
+          <p>Multi-coat paint systems including primer, intermediate and finish coats, with dry film thickness verification per specification.</p>
+        </div>
+        <div class="capability-item reveal reveal-delay-2">
+          <h4>Galvanizing</h4>
+          <p>Hot-dip galvanizing coordination for members suitable for galvanizing bath dimensions, per applicable standards.</p>
+        </div>
+        <div class="capability-item reveal">
+          <h4>Component Marking</h4>
+          <p>Unique member identification system matching assembly drawings, including piece marks, orientation and connection references.</p>
+        </div>
+        <div class="capability-item reveal reveal-delay-1">
+          <h4>Export Packing</h4>
+          <p>Packing organized for container shipping, with detailed packing lists, member inventory and handling instructions.</p>
+        </div>
+      </div>
+      <div style="text-align: center; margin-top: 30px;">
+        <a href="/en/manufacturing-quality/" class="btn btn-outline">View Manufacturing & Quality →</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- 06 / Connections & Structural Interfaces -->
+  <section class="detail-section alt">
+    <div class="container">
+      <div class="section-heading reveal">
+        <p class="section-index">Connections</p>
+        <h2>Connections and Structural Interfaces</h2>
+        <p>Beam and column connections and structural interfaces are critical to project performance. Connection design is coordinated based on project structural drawings and applicable standards.</p>
+      </div>
+      <div class="connection-grid">
+        <div class="connection-item reveal">
+          <h4>Base Plates</h4>
+          <p>Column base plates and bearing connections, including anchor bolt interfaces and load transfer to foundations. Base plate design per column loads and foundation requirements.</p>
+        </div>
+        <div class="connection-item reveal reveal-delay-1">
+          <h4>End Plates</h4>
+          <p>Beam end plate connections for beam-to-column and beam-to-beam connections, with pre-drilled bolt holes and weld preparation per connection design.</p>
+        </div>
+        <div class="connection-item reveal reveal-delay-2">
+          <h4>Stiffeners</h4>
+          <p>Web stiffeners, flange stiffeners and bearing stiffeners for beam and column connections at load concentration points, per connection design requirements.</p>
+        </div>
+        <div class="connection-item reveal">
+          <h4>Splice Joints</h4>
+          <p>Beam and column splice joints for transport segmentation, designed for load transfer and site assembly accuracy. Splice locations optimized for transport and erection.</p>
+        </div>
+        <div class="connection-item reveal reveal-delay-1">
+          <h4>Crane Bracket Connections</h4>
+          <p>Crane beam bracket connections on columns, including bracket design, stiffener placement and crane beam support interfaces per crane system requirements.</p>
+        </div>
+        <div class="connection-item reveal reveal-delay-2">
+          <h4>Building Interfaces</h4>
+          <p>Coordination with building structural system including beam-to-column connections, bracing interfaces, floor system support and lateral load transfer paths.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 07 / Surface Treatment -->
+  <section class="detail-section">
+    <div class="container">
+      <div class="section-heading reveal">
+        <p class="section-index">Surface Treatment</p>
+        <h2>Surface Treatment for Beams and Columns</h2>
+        <p>Surface protection systems are selected based on project environment, corrosion category, client specifications and design life requirements.</p>
+      </div>
+      <div class="surface-grid">
+        <div class="surface-card reveal">
+          <h4>Painting Systems</h4>
+          <p>Multi-coat paint systems including epoxy primer, epoxy intermediate and polyurethane finish coats. System selection based on corrosion category and project specifications, with dry film thickness verification.</p>
+        </div>
+        <div class="surface-card reveal reveal-delay-1">
+          <h4>Hot-Dip Galvanizing</h4>
+          <p>Hot-dip galvanizing for beam and column members suitable for galvanizing bath dimensions. Provides durable corrosion protection for exterior and industrial environments, per applicable standards.</p>
+        </div>
+        <div class="surface-card reveal reveal-delay-2">
+          <h4>Project-Specific Coating</h4>
+          <p>Specialized coating systems for corrosive industrial environments, including high-performance epoxy, polyurethane and fluoropolymer coatings per project specifications and environmental requirements.</p>
+        </div>
+      </div>
+      <div style="margin-top: 24px; padding: 16px; background: #f0fdf4; border-left: 4px solid #22c55e; border-radius: 4px;">
+        <p style="margin: 0; color: #166534; font-size: 0.9rem;"><strong>Note:</strong> Specific corrosion protection system is determined by project environment, corrosion category, client specifications, local standards and design life requirements. ZhongSai does not guarantee fixed corrosion-free service life; actual performance depends on environment, maintenance and coating system specification.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- 08 / Export & Site Assembly -->
+  <section class="detail-section alt">
+    <div class="container">
+      <div class="section-heading reveal">
+        <p class="section-index">Export & Assembly</p>
+        <h2>Export Delivery and Site Assembly Considerations</h2>
+        <p>ZhongSai beams and columns are designed and packed for export delivery, with careful consideration of transport segmentation, container loading and site assembly requirements.</p>
+      </div>
+      <div class="export-grid">
+        <div class="export-item reveal">
+          <h4>Component Marking</h4>
+          <p>Unique beam and column identification system matching assembly drawings, including piece marks, orientation marks and connection references for accurate site assembly.</p>
+        </div>
+        <div class="export-item reveal reveal-delay-1">
+          <h4>Packing Organization</h4>
+          <p>Members packed by assembly sequence and connection groups, with protective packaging for finished surfaces and threaded components. Detailed packing lists included.</p>
+        </div>
+        <div class="export-item reveal reveal-delay-2">
+          <h4>Container Loading</h4>
+          <p>Optimized container loading plan maximizing space utilization while protecting members. Loading diagrams and container packing records provided per project requirements.</p>
+        </div>
+        <div class="export-item reveal">
+          <h4>Long Member Segmentation</h4>
+          <p>Long beams and tall columns segmented for container and road transport limits, with designed splice connections for site assembly. Segmentation optimized to minimize site connections.</p>
+        </div>
+        <div class="export-item reveal reveal-delay-1">
+          <h4>Bolted Site Connections</h4>
+          <p>Bolted connections designed for site assembly with pre-drilled holes, high-strength bolts and clear assembly instructions. Connection accessibility considered during detailing.</p>
+        </div>
+        <div class="export-item reveal reveal-delay-2">
+          <h4>Installation Sequence</h4>
+          <p>Site erection sequence considerations including column erection sequence, beam installation order, temporary bracing requirements and safety considerations.</p>
+        </div>
+      </div>
+      <div style="text-align: center; margin-top: 30px;">
+        <a href="/en/export-delivery/" class="btn btn-outline">View Export & Delivery →</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- 09 / Information Required for Engineering Review -->
+  <section id="engineering-review" class="detail-section">
+    <div class="container">
+      <div class="section-heading reveal">
+        <p class="section-index">Engineering Review</p>
+        <h2>Information Required for Engineering Review</h2>
+        <p>The more complete the project documentation, the more accurate the engineering review and fabrication planning. Submit available materials and ZhongSai will confirm any additional information needed.</p>
       </div>
       <div class="requirement-grid">
-        <div class="requirement-card reveal reveal-delay-1" id="steel-beams">
+        <div class="requirement-card reveal reveal-delay-1">
           <div class="req-icon">01</div>
-          <h3>H-Section Members</h3>
-          <p>H-beams and H-columns, fabricated per drawing dimensions and welding requirements.</p>
+          <h3>Project Country / City</h3>
+          <p>Project location for applicable design codes, environmental conditions, logistics planning and export documentation.</p>
         </div>
         <div class="requirement-card reveal reveal-delay-2">
           <div class="req-icon">02</div>
-          <h3>Welded Steel Beams</h3>
-          <p>Built-up welded beams, box beams, fabricated per connection details and welding requirements.</p>
+          <h3>Architectural Drawings</h3>
+          <p>Building architectural drawings showing column grids, beam layouts, floor plans, eave heights and architectural constraints.</p>
         </div>
-        <div class="requirement-card reveal reveal-delay-3" id="steel-columns">
+        <div class="requirement-card reveal reveal-delay-3">
           <div class="req-icon">03</div>
-          <h3>Steel Columns</h3>
-          <p>H-columns, box columns, lattice columns, fabricated per project structural drawings.</p>
+          <h3>Structural Drawings</h3>
+          <p>Structural design drawings including member sizes, loading specifications, connection design and foundation interfaces.</p>
         </div>
-        <div class="requirement-card reveal reveal-delay-1" id="box-sections">
+        <div class="requirement-card reveal reveal-delay-1">
           <div class="req-icon">04</div>
-          <h3>Custom Fabricated Members</h3>
-          <p>Equipment platform members, bracing, gusset plates and custom irregular steel members.</p>
+          <h3>General Arrangement Drawings</h3>
+          <p>Overall building arrangement drawings showing beam and column positions, supporting structures and building interfaces.</p>
         </div>
-        <div class="requirement-card reveal reveal-delay-2" id="crane-beams">
+        <div class="requirement-card reveal reveal-delay-2">
           <div class="req-icon">05</div>
-          <h3>Crane Beams</h3>
-          <p>Crane beam fabrication per crane system and structural requirements.</p>
+          <h3>Loads</h3>
+          <p>Design loads including dead load, live load, snow load, wind load, seismic load and any special equipment or crane loads.</p>
         </div>
         <div class="requirement-card reveal reveal-delay-3">
           <div class="req-icon">06</div>
-          <h3>Connection Components</h3>
-          <p>Gusset plates, connection plates, stiffeners and other accessory members, supplied with the primary structure.</p>
+          <h3>Material Requirements</h3>
+          <p>Specified steel grades, material standards and any special material requirements or testing needs for beams and columns.</p>
         </div>
+        <div class="requirement-card reveal reveal-delay-1">
+          <div class="req-icon">07</div>
+          <h3>Design Standard</h3>
+          <p>Applicable design codes and standards, including material standards, load combinations, connection design and safety factors.</p>
+        </div>
+        <div class="requirement-card reveal reveal-delay-2">
+          <div class="req-icon">08</div>
+          <h3>Surface Treatment</h3>
+          <p>Required surface protection system: painting specification, galvanizing requirements or project-specific coating systems.</p>
+        </div>
+        <div class="requirement-card reveal reveal-delay-3">
+          <div class="req-icon">09</div>
+          <h3>Project Schedule</h3>
+          <p>Required fabrication timeline, batch delivery dates and site installation sequence affecting production planning.</p>
+        </div>
+        <div class="requirement-card reveal reveal-delay-1">
+          <div class="req-icon">10</div>
+          <h3>Delivery Port</h3>
+          <p>Destination port or delivery location for logistics planning, packing organization and export documentation coordination.</p>
+        </div>
+      </div>
+      <div style="text-align: center; margin-top: 30px;">
+        <a href="#quote" class="btn btn-primary">Upload Project Drawings</a>
+        <a href="#quote" class="btn btn-outline" style="margin-left: 12px;">Send Project Requirements</a>
       </div>
     </div>
   </section>
 
-  <!-- 02 Fabrication to Project Drawings -->
+  <!-- 10 / Related Project Types -->
   <section class="detail-section alt">
     <div class="container">
       <div class="section-heading reveal">
-        <p class="section-index">02 / Drawing-Based Fabrication</p>
-        <h2>Steel Beam & Column Fabrication from Project Drawings</h2>
-        <p>ZhongSai organizes steel beam and column fabrication based on customer-provided structural drawings, shop drawings and technical specifications. Specific steel grades, welding procedures, inspection requirements and surface treatment are determined per project drawings and technical requirements.</p>
+        <p class="section-index">Related Projects</p>
+        <h2>Related Project Types and Applications</h2>
+        <p>Steel beams and columns are used across multiple project types. Explore related solutions and project categories where beam and column structures are commonly applied.</p>
       </div>
-      <div class="image-text-block">
-        <div class="itb-image">
-          <img src="/images/components/steel-beams-columns-fabrication.jpg" alt="Fabricated H-section steel beams and columns" loading="lazy">
-        </div>
-        <div class="itb-content">
-          <h3>From Drawings to Fabricated Members</h3>
-          <p>ZhongSai operates its own production base, fabricating steel beams, columns and custom members per project drawings.</p>
-          <ul>
-            <li>Fabrication organized from structural and shop drawings</li>
-            <li>Manufacturing requirements controlled per project technical specifications</li>
-            <li>BOQ component list verification and quotation support</li>
-            <li>Specific materials, dimensions and welding requirements per project agreement</li>
-            <li>Surface treatment arranged per project requirements, specific methods and specifications per technical requirements</li>
-          </ul>
-        </div>
+      <div class="related-grid">
+        <a href="/en/steel-workshop/" class="related-card reveal">
+          <h4>Industrial & Manufacturing</h4>
+          <p>Industrial workshops and manufacturing plants requiring heavy load columns, crane beams and equipment platform supports.</p>
+        </a>
+        <a href="/en/steel-warehouse/" class="related-card reveal reveal-delay-1">
+          <h4>Warehousing & Logistics</h4>
+          <p>Warehouses and distribution centers requiring clear-span framing, racking support columns and mezzanine beam systems.</p>
+        </a>
+        <a href="/en/steel-mining-factory/" class="related-card reveal reveal-delay-2">
+          <h4>Mining & Heavy Industry</h4>
+          <p>Processing plants and heavy industrial structures requiring heavy-duty beams, equipment support columns and platform framing.</p>
+        </a>
+        <a href="/en/commercial-public-steel-buildings/" class="related-card reveal">
+          <h4>Commercial & Public Buildings</h4>
+          <p>Commercial structures and public facilities requiring efficient floor beam systems, column grids and long-span framing.</p>
+        </a>
       </div>
     </div>
   </section>
 
-  <!-- 03 Typical Project Applications -->
+  <!-- 11 / Related Structural Capabilities -->
   <section class="detail-section">
     <div class="container">
       <div class="section-heading reveal">
-        <p class="section-index">03 / Typical Applications</p>
-        <h2>Typical Project Applications for Fabricated Beams & Columns</h2>
-        <p>Fabricated steel beams and columns can be used in the following types of steel structure projects. Specific application scope is determined per project drawings and technical requirements.</p>
+        <p class="section-index">Related Capabilities</p>
+        <h2>Related Structural Capabilities</h2>
+        <p>Steel beams and columns work together with other structural steel components in building projects. Explore related structural capabilities and component types.</p>
       </div>
-      <div class="feature-grid">
-        <div class="feature-card reveal reveal-delay-1">
-          <div class="feature-img" style="background-image: url('/images/products/01-industrial.jpg');"></div>
-          <div class="feature-body">
-            <h3>Industrial Workshops & Factories</h3>
-            <p>Primary frames, crane beams and bracing systems for steel structure industrial workshops.</p>
-            <a href="/en/steel-workshop/" class="feature-link">View Industrial Workshop →</a>
-          </div>
-        </div>
-        <div class="feature-card reveal reveal-delay-2">
-          <div class="feature-img" style="background-image: url('/images/products/04-warehouse-logistics.jpg');"></div>
-          <div class="feature-body">
-            <h3>Warehouses & Logistics Buildings</h3>
-            <p>Primary frames and bracing systems for steel structure warehouses and logistics buildings.</p>
-            <a href="/en/steel-warehouse/" class="feature-link">View Warehouse Solutions →</a>
-          </div>
-        </div>
-        <div class="feature-card reveal reveal-delay-1">
-          <div class="feature-img" style="background-image: url('/images/components/finished-steel-members-stacked.jpg');"></div>
-          <div class="feature-body">
-            <h3>Equipment Platforms & Custom Structures</h3>
-            <p>Industrial equipment platforms, access platforms and custom irregular steel structure members.</p>
-            <a href="/en/products/custom-engineering/" class="feature-link">View Custom Engineering →</a>
-          </div>
-        </div>
-        <div class="feature-card reveal reveal-delay-2">
-          <div class="feature-img" style="background-image: url('/images/products/03-commercial-public.jpg');"></div>
-          <div class="feature-body">
-            <h3>Commercial & Industrial Buildings</h3>
-            <p>Primary frames for commercial buildings, exhibition halls and other industrial steel structure projects.</p>
-          </div>
-        </div>
+      <div class="related-grid">
+        <a href="/en/components/steel-trusses/" class="related-card reveal">
+          <h4>Steel Trusses</h4>
+          <p>Long-span truss structures working with beam and column framing for roof support and transfer structures.</p>
+        </a>
+        <a href="/en/components/" class="related-card reveal reveal-delay-1">
+          <h4>All Steel Components</h4>
+          <p>Complete range of structural steel components including beams, columns, trusses, platforms and special fabricated structures.</p>
+        </a>
+        <a href="/en/engineering-design/" class="related-card reveal reveal-delay-2">
+          <h4>Engineering & Detailing</h4>
+          <p>Structural detailing and engineering coordination for beam and column projects, including connection design and shop drawing development.</p>
+        </a>
+        <a href="/en/components/steel-purlins/" class="related-card reveal">
+          <h4>Steel Purlins & Secondary</h4>
+          <p>C/Z purlins and secondary structural members supporting roof and wall systems, working with primary beam and column framing.</p>
+        </a>
       </div>
     </div>
   </section>
 
-  <!-- 04 From Drawing to Fabricated Member -->
+  <!-- 12 / FAQ -->
   <section class="detail-section alt">
     <div class="container">
       <div class="section-heading reveal">
-        <p class="section-index">04 / Fabrication Process</p>
-        <h2>Drawing-to-Fabricated-Member Process</h2>
-        <p>The following is a brief overview of the drawing-based fabrication process for steel beams and columns. For detailed manufacturing, quality control and the 8-step fabrication process, please view the manufacturing capability page.</p>
+        <p class="section-index">FAQ</p>
+        <h2>Frequently Asked Questions</h2>
+        <p>Common questions about steel beam and column fabrication, project capabilities and delivery from ZhongSai.</p>
       </div>
-      <div class="process-flow">
-        <div class="process-step reveal reveal-delay-1">
-          <div class="step-num">01</div>
-          <h4>Drawing Review</h4>
-          <p>Structural drawing and fabrication feasibility review</p>
+      <div class="faq-container">
+        <div class="faq-item reveal">
+          <h4>Can ZhongSai fabricate steel beams and columns according to project drawings?</h4>
+          <p>Yes. ZhongSai fabricates steel beams and columns based on client-provided structural drawings and approved shop drawings. We can also coordinate detailing support to develop fabrication drawings based on confirmed structural design. Fabrication proceeds only after approved drawings and confirmed technical specifications.</p>
         </div>
-        <div class="process-step reveal reveal-delay-2">
-          <div class="step-num">02</div>
-          <h4>Detailing Coordination</h4>
-          <p>Shop drawing and fabrication drawing coordination</p>
+        <div class="faq-item reveal reveal-delay-1">
+          <h4>Can you support shop drawing and detailing for beam and column projects?</h4>
+          <p>Yes. ZhongSai can provide shop drawing and detailing coordination support for beam and column projects, including member detailing, connection design coordination and fabrication drawing development. Structural design responsibility is determined by project contract, approved drawings and applicable professional requirements.</p>
         </div>
-        <div class="process-step reveal reveal-delay-3">
-          <div class="step-num">03</div>
-          <h4>Fabrication</h4>
-          <p>Cutting, assembly, welding, straightening, drilling</p>
+        <div class="faq-item reveal reveal-delay-2">
+          <h4>How are long beams and tall columns handled for shipping?</h4>
+          <p>Long beams and tall columns are segmented based on container dimensions, road transport limits and site assembly requirements. Segmentation is designed to minimize site connections while ensuring transport feasibility. Splice connections are pre-designed with bolted connections for accurate site assembly. Detailed packing lists and assembly drawings are provided.</p>
         </div>
-        <div class="process-step reveal reveal-delay-4">
-          <div class="step-num">04</div>
-          <h4>Surface Treatment</h4>
-          <p>Shot blasting and coating arranged where required per project</p>
+        <div class="faq-item reveal">
+          <h4>Which surface treatments can be used for beams and columns?</h4>
+          <p>Available surface treatments include multi-coat painting systems (epoxy primer, intermediate and finish coats), hot-dip galvanizing for members suitable for galvanizing bath dimensions, and project-specific coating systems for corrosive environments. Specific system selection is determined by project environment, corrosion category, client specifications and design life requirements.</p>
         </div>
-        <div class="process-step reveal reveal-delay-1">
-          <div class="step-num">05</div>
-          <h4>Marking & Packing</h4>
-          <p>Component marking, numbering and packing for container loading</p>
+        <div class="faq-item reveal reveal-delay-1">
+          <h4>Can beam and column connections be trial assembled before shipment?</h4>
+          <p>Yes. Trial assembly can be performed for complex connections where required by project specification, verifying fit-up, connection alignment and geometry accuracy before shipment. Trial assembly scope and requirements are determined by project specifications and complexity of the connection design.</p>
         </div>
-        <div class="process-step reveal reveal-delay-2">
-          <div class="step-num">06</div>
-          <h4>Export Preparation</h4>
-          <p>Export documentation support and logistics coordination</p>
+        <div class="faq-item reveal reveal-delay-2">
+          <h4>How are crane loads handled in column and beam design?</h4>
+          <p>Crane loads are handled through specialized crane columns with bracket supports and crane beams designed for the specific crane system. Crane capacity, span, duty class and impact factors are considered in the structural design. Crane beam and column connections are detailed per crane system requirements. All crane-related design is based on project structural drawings and specifications.</p>
         </div>
-      </div>
-      <div style="margin-top: 24px;">
-        <a href="/en/manufacturing-quality/" class="btn btn-outline">View Detailed 8-Step Manufacturing Process</a>
-      </div>
-    </div>
-  </section>
-
-  <!-- 05 What We Need for Quotation -->
-  <section class="detail-section">
-    <div class="container">
-      <div class="section-heading reveal">
-        <p class="section-index">05 / Quotation Requirements</p>
-        <h2>What Information Is Needed for a Beam & Column Quotation</h2>
-        <p>The more complete the drawings and technical documentation, the more accurate the review and quotation. If documentation is incomplete, you can first submit available materials, and ZhongSai will further confirm what is needed for fabrication and quotation.</p>
-      </div>
-      <div class="quote-info-grid">
-        <div class="quote-info-card drawing">
-          <h4>Have Complete Drawings</h4>
-          <ul>
-            <li>Project country</li>
-            <li>Structural drawings (architectural / structural)</li>
-            <li>Shop drawings (if available)</li>
-            <li>Bill of Quantities (BOQ) (if available)</li>
-            <li>Project technical specifications</li>
-            <li>Required quantity / supply scope</li>
-          </ul>
-        </div>
-        <div class="quote-info-card no-drawing">
-          <h4>Incomplete Documentation</h4>
-          <ul>
-            <li>Project country</li>
-            <li>Available drawings or sketches</li>
-            <li>Component types and approximate quantities</li>
-            <li>Project use and basic dimensions</li>
-            <li>Known technical requirements</li>
-            <li>Submit available materials for initial review</li>
-          </ul>
-        </div>
-      </div>
-      <p class="quote-note">* PDF drawings, BOQ or other available project documents can be submitted for initial review. Additional drawings, specifications or technical information may be required before the final fabrication scope and quotation are confirmed.</p>
-    </div>
-  </section>
-
-  <!-- 06 Related Capabilities -->
-  <section class="detail-section alt">
-    <div class="container">
-      <div class="section-heading reveal">
-        <p class="section-index">06 / Related Capabilities</p>
-        <h2>Related Capabilities & Pages</h2>
-      </div>
-      <div class="related-links">
-        <a href="/en/components/" class="related-link-card reveal reveal-delay-1">
-
-          <h4>Components & Materials</h4>
-          <p>Steel beams, columns, trusses, purlins and cladding systems</p>
-          <span class="rl-arrow">View Details →</span>
-        </a>
-        <a href="/en/products/custom-engineering/" class="related-link-card reveal reveal-delay-2">
-
-          <h4>Custom Engineering & Fabrication</h4>
-          <p>Structural steel fabrication in China for overseas projects</p>
-          <span class="rl-arrow">View Details →</span>
-        </a>
-        <a href="/en/manufacturing-quality/" class="related-link-card reveal reveal-delay-3">
-
-          <h4>Manufacturing & Quality Control</h4>
-          <p>8-step fabrication process, quality control and packing for export</p>
-          <span class="rl-arrow">View Details →</span>
-        </a>
-        <a href="/en/steel-workshop/" class="related-link-card reveal reveal-delay-1">
-
-          <h4>Industrial Workshop</h4>
-          <p>Steel structure industrial workshop solutions</p>
-          <span class="rl-arrow">View Details →</span>
-        </a>
-        <a href="/en/steel-warehouse/" class="related-link-card reveal reveal-delay-2">
-
-          <h4>Steel Warehouse</h4>
-          <p>Steel structure warehouse and logistics building solutions</p>
-          <span class="rl-arrow">View Details →</span>
-        </a>
-        <a href="/en/components/roof-wall-cladding-systems/" class="related-link-card reveal reveal-delay-3">
-
-          <h4>Roof & Wall Cladding Systems</h4>
-          <p>Roof panels, wall panels and supporting cladding materials</p>
-          <span class="rl-arrow">View Details →</span>
-        </a>
-      </div>
-    </div>
-  </section>
-
-  <!-- 07 FAQ -->
-  <section class="detail-section">
-    <div class="container">
-      <div class="section-heading reveal" style="text-align: center;">
-        <p class="section-index" style="justify-content: center;">07 / FAQ</p>
-        <h2>Frequently Asked Questions About Beam & Column Fabrication</h2>
-      </div>
-      <div class="detail-faq">
-        <div class="faq-item">
-          <button class="faq-question" aria-expanded="false">
-            <span>Can ZhongSai fabricate steel beams and columns from customer drawings?</span>
-            <span class="faq-icon">+</span>
-          </button>
-          <div class="faq-answer">
-            <div class="faq-answer-inner">
-              Yes. ZhongSai organizes steel beam, column and custom member fabrication based on customer-provided structural drawings, shop drawings and technical specifications. Specific materials, dimensions, welding requirements and surface treatment are determined per project drawings and technical requirements. Fabrication can be arranged after drawing review.
-            </div>
-          </div>
-        </div>
-        <div class="faq-item">
-          <button class="faq-question" aria-expanded="false">
-            <span>What drawings are required for a beam and column quotation?</span>
-            <span class="faq-icon">+</span>
-          </button>
-          <div class="faq-answer">
-            <div class="faq-answer-inner">
-              Ideally, you should provide structural drawings, shop drawings, Bill of Quantities (BOQ), project technical specifications and project country. If documentation is incomplete, you can first submit available materials, and ZhongSai will further confirm what is needed for fabrication and quotation. PDF drawings, BOQ or other available project documents can be submitted for initial review.
-            </div>
-          </div>
-        </div>
-        <div class="faq-item">
-          <button class="faq-question" aria-expanded="false">
-            <span>Can custom fabricated steel members be produced?</span>
-            <span class="faq-icon">+</span>
-          </button>
-          <div class="faq-answer">
-            <div class="faq-answer-inner">
-              Yes. ZhongSai can fabricate custom irregular steel members per project drawings, including equipment platform members, bracing, gusset plates and other non-standard members. Specific fabrication scope and technical requirements are confirmed per project drawings.
-            </div>
-          </div>
-        </div>
-        <div class="faq-item">
-          <button class="faq-question" aria-expanded="false">
-            <span>Can fabricated beams and columns be packed and prepared for export?</span>
-            <span class="faq-icon">+</span>
-          </button>
-          <div class="faq-answer">
-            <div class="faq-answer-inner">
-              Yes. Components may be marked and numbered based on shop drawings and project requirements. Packing is organized by component type, container loading sequence and export transport requirements, supporting container loading. ZhongSai provides export documentation support and logistics coordination, but does not act as a customs broker or freight forwarder. Local construction and erection are performed by the customer or local construction team.
-            </div>
-          </div>
+        <div class="faq-item reveal">
+          <h4>Do you provide local installation for beam and column structures?</h4>
+          <p>ZhongSai provides detailing, fabrication, export supply and technical installation guidance for steel beam and column structures. Local civil works and on-site construction are normally handled by local contractors. ZhongSai can provide installation drawings, assembly instructions and remote technical guidance to support site erection, per project requirements.</p>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- 08 Quote CTA + QuoteForm -->
-  <section class="detail-section dark" id="quote">
+  <!-- Project CTA -->
+  <section class="detail-section dark" style="padding: 60px 0;">
     <div class="container">
-      <div class="section-heading reveal" style="text-align: center;">
-        <p class="section-index" style="justify-content: center; color: #f59e0b;">08 / Get Quotation</p>
-        <h2 style="color: #fff;">Have Drawings or BOQ? Submit for Project Quotation</h2>
-        <p style="margin: 0 auto; color: rgba(255,255,255,0.75);">Submit project drawings, BOQ and technical requirements. ZhongSai will conduct an initial review and confirm what is needed for quotation.</p>
+      <div style="text-align: center; max-width: 700px; margin: 0 auto;">
+        <p class="section-index" style="justify-content: center; color: #f59e0b;">Start Your Project</p>
+        <h2 style="color: #fff; margin-bottom: 16px;">Have a Steel Beam & Column Project?</h2>
+        <p style="color: rgba(255,255,255,0.8); margin-bottom: 24px;">Send your project drawings, structural requirements and delivery location for engineering review. ZhongSai will review your requirements and confirm what is needed for accurate fabrication planning and quotation.</p>
+        <div style="display: flex; gap: 16px; justify-content: center; flex-wrap: wrap;">
+          <a href="#quote" class="btn btn-primary">Send Your Project Drawings</a>
+          <a href="#quote" class="btn btn-outline" style="border-color: rgba(255,255,255,0.5); color: #fff;">Request Engineering Review</a>
+        </div>
       </div>
-      <QuoteForm lang="en" />
+    </div>
+  </section>
+
+  <!-- Quote Form -->
+  <section id="quote" class="detail-section">
+    <div class="container">
+      <QuoteForm />
     </div>
   </section>
 </BaseLayout>
 
-<script>
-  // FAQ toggle
-  document.querySelectorAll('.faq-question').forEach(btn => {
-    btn.addEventListener('click', () => {
-      const item = btn.closest('.faq-item');
-      const isOpen = item.classList.contains('open');
-      item.classList.toggle('open');
-      btn.setAttribute('aria-expanded', !isOpen);
-    });
-  });
-
-  // Scroll reveal
-  const revealElements = document.querySelectorAll('.reveal');
-  if ('IntersectionObserver' in window) {
-    const observer = new IntersectionObserver((entries) => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting) {
-          entry.target.style.opacity = '1';
-          entry.target.style.transform = 'translateY(0)';
-          observer.unobserve(entry.target);
-        }
-      });
-    }, { threshold: 0.1 });
-    revealElements.forEach(el => {
-      el.style.opacity = '0';
-      el.style.transform = 'translateY(24px)';
-      el.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
-      observer.observe(el);
-    });
+<style>
+.dual-column {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 24px;
+}
+.dual-card {
+  background: #fff;
+  padding: 24px;
+  border-radius: 12px;
+  border: 1px solid #e5e7eb;
+}
+.dual-icon img {
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
+  border-radius: 8px;
+  margin-bottom: 16px;
+}
+.dual-card h3 {
+  margin: 0 0 8px 0;
+  color: #1f2937;
+  font-size: 1.2rem;
+}
+.dual-def {
+  margin: 0 0 16px 0;
+  color: #4b5563;
+  font-size: 0.95rem;
+  line-height: 1.6;
+  font-style: italic;
+}
+.dual-card ul {
+  margin: 0;
+  padding-left: 20px;
+}
+.dual-card li {
+  margin-bottom: 8px;
+  color: #6b7280;
+  font-size: 0.88rem;
+  line-height: 1.5;
+}
+.application-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 16px;
+}
+.app-card {
+  background: #fff;
+  padding: 20px;
+  border-radius: 8px;
+  border: 1px solid #e5e7eb;
+}
+.app-card h4 {
+  margin: 0 0 8px 0;
+  color: #1f2937;
+  font-size: 1rem;
+}
+.app-card p {
+  margin: 0;
+  color: #6b7280;
+  font-size: 0.88rem;
+  line-height: 1.6;
+}
+.process-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 20px;
+}
+.process-item {
+  background: #fff;
+  padding: 20px;
+  border-radius: 8px;
+  border: 1px solid #e5e7eb;
+  position: relative;
+}
+.process-num {
+  position: absolute;
+  top: 16px;
+  right: 16px;
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: #dbeafe;
+}
+.process-item h4 {
+  margin: 0 0 8px 0;
+  color: #1f2937;
+  font-size: 0.95rem;
+  padding-right: 40px;
+}
+.process-item p {
+  margin: 0;
+  color: #6b7280;
+  font-size: 0.85rem;
+  line-height: 1.5;
+}
+.connection-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 16px;
+}
+.connection-item {
+  background: #fff;
+  padding: 18px;
+  border-radius: 8px;
+  border-left: 4px solid #2563eb;
+}
+.connection-item h4 {
+  margin: 0 0 8px 0;
+  color: #1f2937;
+  font-size: 0.95rem;
+}
+.connection-item p {
+  margin: 0;
+  color: #6b7280;
+  font-size: 0.85rem;
+  line-height: 1.5;
+}
+.surface-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 20px;
+}
+.surface-card {
+  background: #fff;
+  padding: 24px;
+  border-radius: 8px;
+  border: 1px solid #e5e7eb;
+}
+.surface-card h4 {
+  margin: 0 0 12px 0;
+  color: #1f2937;
+  font-size: 1.05rem;
+}
+.surface-card p {
+  margin: 0;
+  color: #6b7280;
+  font-size: 0.88rem;
+  line-height: 1.6;
+}
+.export-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 16px;
+}
+.export-item {
+  background: #fff;
+  padding: 18px;
+  border-radius: 8px;
+  border: 1px solid #e5e7eb;
+}
+.export-item h4 {
+  margin: 0 0 8px 0;
+  color: #1f2937;
+  font-size: 0.95rem;
+}
+.export-item p {
+  margin: 0;
+  color: #6b7280;
+  font-size: 0.85rem;
+  line-height: 1.5;
+}
+.related-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 16px;
+}
+.related-card {
+  background: #fff;
+  padding: 20px;
+  border-radius: 8px;
+  border: 1px solid #e5e7eb;
+  text-decoration: none;
+  color: inherit;
+  transition: border-color 0.3s ease;
+  display: block;
+}
+.related-card:hover {
+  border-color: #2563eb;
+}
+.related-card h4 {
+  margin: 0 0 8px 0;
+  color: #1f2937;
+  font-size: 1rem;
+}
+.related-card p {
+  margin: 0;
+  color: #6b7280;
+  font-size: 0.85rem;
+  line-height: 1.5;
+}
+@media (max-width: 768px) {
+  .dual-column {
+    grid-template-columns: 1fr;
   }
-</script>
+  .application-grid, .process-grid, .connection-grid, .surface-grid, .export-grid, .related-grid {
+    grid-template-columns: 1fr;
+  }
+}
+</style>

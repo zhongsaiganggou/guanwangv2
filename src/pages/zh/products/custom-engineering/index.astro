@@ -44,7 +44,7 @@ const canonical = 'https://zhongsai-steelstructure.com/zh/products/custom-engine
   <section class="detail-section">
     <div class="container">
       <div class="section-heading reveal">
-        <p class="section-index">01 / 按图加工</p>
+        <p class="section-index">按图加工</p>
         <h2>根据项目图纸进行钢结构定制加工</h2>
         <p>中赛钢构根据客户提供的结构图纸、深化图、技术规格书和工程量清单（BOQ），组织钢构件的定制加工与供应。具体材料、尺寸、焊接要求和表面处理按项目图纸与技术要求确定。</p>
       </div>
@@ -70,7 +70,7 @@ const canonical = 'https://zhongsai-steelstructure.com/zh/products/custom-engine
   <section class="detail-section alt">
     <div class="container">
       <div class="section-heading reveal">
-        <p class="section-index">02 / 可加工构件</p>
+        <p class="section-index">可加工构件</p>
         <h2>中赛钢构可以加工哪些钢结构构件</h2>
         <p>根据项目图纸和技术要求，中赛钢构可加工以下类型钢结构构件。具体加工范围和技术要求按项目图纸确认。</p>
       </div>
@@ -116,7 +116,7 @@ const canonical = 'https://zhongsai-steelstructure.com/zh/products/custom-engine
   <section class="detail-section">
     <div class="container">
       <div class="section-heading reveal">
-        <p class="section-index">03 / 加工流程</p>
+        <p class="section-index">加工流程</p>
         <h2>从图纸到出口交付的加工流程</h2>
         <p>以下为按图加工的简要流程。详细制造过程、质量控制和8步制造流程请查看制造能力页面。</p>
       </div>
@@ -172,7 +172,7 @@ const canonical = 'https://zhongsai-steelstructure.com/zh/products/custom-engine
   <section class="detail-section alt">
     <div class="container">
       <div class="section-heading reveal">
-        <p class="section-index">04 / 图纸与BOQ要求</p>
+        <p class="section-index">图纸与BOQ要求</p>
         <h2>获取按图加工报价需要提供什么资料</h2>
         <p>提供越完整的图纸和技术资料，评估和报价越准确。资料不完整时可先提交现有资料，中赛钢构将进一步确认制造与报价所需信息。</p>
       </div>
@@ -208,7 +208,7 @@ const canonical = 'https://zhongsai-steelstructure.com/zh/products/custom-engine
   <section class="detail-section">
     <div class="container">
       <div class="section-heading reveal">
-        <p class="section-index">05 / 出口项目加工</p>
+        <p class="section-index">出口项目加工</p>
         <h2>面向海外出口项目的钢结构加工</h2>
         <p>中赛钢构为海外工程公司、承包商和采购方提供按图加工的钢结构构件，支持出口包装、装柜和交付准备。</p>
       </div>
@@ -235,7 +235,7 @@ const canonical = 'https://zhongsai-steelstructure.com/zh/products/custom-engine
   <section class="detail-section dark">
     <div class="container">
       <div class="section-heading reveal" style="text-align: center;">
-        <p class="section-index" style="justify-content: center;">06 / 为什么选择中赛</p>
+        <p class="section-index" style="justify-content: center;">为什么选择中赛</p>
         <h2 style="color: #fff;">中赛钢构按图加工的核心能力</h2>
         <p style="margin: 0 auto;">中赛钢构的制造与出口能力包括：</p>
       </div>
@@ -278,7 +278,7 @@ const canonical = 'https://zhongsai-steelstructure.com/zh/products/custom-engine
   <section class="detail-section">
     <div class="container">
       <div class="section-heading reveal">
-        <p class="section-index">07 / 相关能力</p>
+        <p class="section-index">相关能力</p>
         <h2>相关能力与页面</h2>
       </div>
       <div class="related-links">
@@ -326,7 +326,7 @@ const canonical = 'https://zhongsai-steelstructure.com/zh/products/custom-engine
   <section class="detail-section alt">
     <div class="container">
       <div class="section-heading reveal" style="text-align: center;">
-        <p class="section-index" style="justify-content: center;">08 / 常见问题</p>
+        <p class="section-index" style="justify-content: center;">常见问题</p>
         <h2>按图加工常见问题</h2>
       </div>
       <div class="detail-faq">
@@ -384,7 +384,7 @@ const canonical = 'https://zhongsai-steelstructure.com/zh/products/custom-engine
   <section class="detail-section dark" id="quote">
     <div class="container">
       <div class="section-heading reveal" style="text-align: center;">
-        <p class="section-index" style="justify-content: center; color: #f59e0b;">09 / 获取报价</p>
+        <p class="section-index" style="justify-content: center; color: #f59e0b;">项目询盘</p>
         <h2 style="color: #fff;">有图纸或BOQ？提交项目资料获取评估</h2>
         <p style="margin: 0 auto; color: rgba(255,255,255,0.75);">提交项目图纸、BOQ和技术要求，中赛钢构将进行初步评估并确认报价所需信息。</p>
       </div>
@@ -401,6 +401,8 @@ const canonical = 'https://zhongsai-steelstructure.com/zh/products/custom-engine
       const isOpen = item.classList.contains('open');
       item.classList.toggle('open');
       btn.setAttribute('aria-expanded', !isOpen);
+      const answer = item.querySelector('.faq-answer');
+      if (answer) answer.hidden = !answer.hidden;
     });
   });
 

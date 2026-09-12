@@ -2,7 +2,7 @@
 title: "CMS Publishing Test Article"
 slug: "cms-publishing-test"
 language: "en"
-seoTitle: "CMS Publishing Test | ZhongSai Steel Structure"
+seoTitle: "CMS Publishing Test | ZhongSai"
 metaDescription: "Test article for CMS publishing workflow verification."
 h1: "CMS Publishing Test Article"
 excerpt: "This is a test article to verify the CMS content collection and dynamic routing system."

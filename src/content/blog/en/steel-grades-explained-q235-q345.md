@@ -1,8 +1,8 @@
 ---
 title: "Steel Grades Explained: Q235 vs Q345 Structural Steel Selection Guide"
 language: "en"
-seoTitle: "Steel Grades Explained: Q235 vs Q345 Structural Steel Selection Guide | ZhongSai"
-metaDescription: "Understanding structural steel grades Q235 and Q345 — yield strength, chemical composition, weldability, applications, and how to choose the right grade for your steel structure project."
+seoTitle: "Steel Grades Explained: Q235 vs Q345 | ZhongSai"
+metaDescription: "Understanding structural steel grades Q235 and Q345 — yield strength, chemical composition, weldability, applications, and how to choose the right..."
 h1: "Steel Grades Explained: Q235 vs Q345 Structural Steel Selection Guide"
 excerpt: "A practical guide to understanding Chinese structural steel grades Q235 and Q345, including yield strength, chemical composition, weldability, and project selection criteria."
 category: "Materials & Components"

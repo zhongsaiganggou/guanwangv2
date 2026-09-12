@@ -25,7 +25,7 @@ const { lang, currentPath, singleLanguage = false } = Astro.props;
       <div class="header-actions">
         <LanguageSwitch lang={lang} currentPath={currentPath} singleLanguage={singleLanguage} />
         <a href={`/${lang}/contact/#quote-form`} class="btn btn-primary btn-small">
-          {lang === 'zh' ? '获取报价' : 'Get a Quote'}
+          {lang === 'zh' ? '提交项目图纸' : 'Send Project Drawings'}
         </a>
         <button class="mobile-menu-toggle" id="mobile-menu-toggle" aria-label={lang === 'zh' ? '打开菜单' : 'Open menu'} aria-expanded="false" aria-controls="mobile-nav">
           <span></span>

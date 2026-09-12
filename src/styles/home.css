@@ -10,7 +10,10 @@
   position: relative;
   background: var(--color-dark);
   color: white;
-  padding: 100px 0 80px;
+  min-height: 88vh;
+  display: flex;
+  align-items: center;
+  padding: 0;
   overflow: hidden;
 }
 
@@ -22,7 +25,7 @@
   bottom: 0;
   background-size: cover;
   background-position: center;
-  opacity: 0.35;
+  opacity: 0.5;
 }
 
 .hero-home-overlay {
@@ -37,9 +40,13 @@
   position: relative;
   z-index: 1;
   display: grid;
-  grid-template-columns: 1.5fr 1fr;
+  grid-template-columns: 1.4fr 1fr;
   gap: 60px;
   align-items: center;
+  width: 100%;
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 0 40px;
 }
 
 .hero-home .eyebrow {
@@ -53,7 +60,7 @@
 }
 
 .hero-home h1 {
-  font-size: 48px;
+  font-size: 64px;
   font-weight: 800;
   line-height: 1.15;
   margin-bottom: 20px;
@@ -85,16 +92,15 @@
 }
 
 .hero-stat {
-  background: rgba(255,255,255,0.08);
-  border: 1px solid rgba(255,255,255,0.15);
-  border-radius: 12px;
-  padding: 24px 20px;
-  backdrop-filter: blur(10px);
+  border-left: 2px solid var(--color-secondary);
+  padding: 8px 0 8px 16px;
+  background: transparent;
+  backdrop-filter: none;
 }
 
 .hero-stat b {
   display: block;
-  font-size: 32px;
+  font-size: 48px;
   font-weight: 800;
   color: var(--color-secondary);
   line-height: 1;
@@ -144,15 +150,15 @@
 /* Customer Entry */
 .customer-entry {
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: repeat(3, 1fr);
   gap: 24px;
   margin-top: 40px;
 }
 
-.customer-card {
+.customer-card { border: none; border-left: 2px solid var(--color-gray-200); background: transparent; padding-left: 24px;
   background: var(--color-white);
   border: 1px solid var(--color-gray-200, #e5e7eb);
-  border-radius: 16px;
+  border-radius: 2px;
   padding: 32px;
   transition: all 0.3s ease;
   text-decoration: none;
@@ -170,7 +176,7 @@
 .customer-card-icon {
   width: 48px;
   height: 48px;
-  border-radius: 12px;
+  border-radius: 2px;
   background: linear-gradient(135deg, var(--color-primary), var(--color-primary-dark));
   color: white;
   display: flex;
@@ -244,7 +250,7 @@
 }
 
 .section-heading h2 {
-  font-size: 36px;
+  font-size: 44px;
   font-weight: 800;
   line-height: 1.2;
   color: var(--color-dark);
@@ -274,7 +280,7 @@
 }
 
 .scope-card {
-  border-radius: 16px;
+  border-radius: 2px;
   padding: 32px;
 }
 
@@ -298,7 +304,7 @@
 .scope-card-head i {
   width: 36px;
   height: 36px;
-  border-radius: 8px;
+  border-radius: 2px;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -352,7 +358,7 @@
   flex-shrink: 0;
   width: 32px;
   height: 32px;
-  border-radius: 8px;
+  border-radius: 2px;
   background: var(--color-primary);
   color: white;
   display: flex;
@@ -427,7 +433,7 @@
 .capability-card {
   background: var(--color-white);
   border: 1px solid var(--color-gray-200, #e5e7eb);
-  border-radius: 16px;
+  border-radius: 2px;
   overflow: hidden;
   transition: all 0.3s ease;
   display: flex;
@@ -491,7 +497,7 @@
 
 .factory-item {
   position: relative;
-  border-radius: 12px;
+  border-radius: 2px;
   overflow: hidden;
   background: var(--color-dark);
 }
@@ -590,7 +596,7 @@
 
 .case-card {
   position: relative;
-  border-radius: 16px;
+  border-radius: 2px;
   overflow: hidden;
   background: var(--color-dark);
   min-height: 280px;
@@ -645,7 +651,7 @@
 .case-stat {
   background: var(--color-white);
   border: 1px solid var(--color-gray-200, #e5e7eb);
-  border-radius: 16px;
+  border-radius: 2px;
   padding: 32px;
   display: flex;
   flex-direction: column;
@@ -747,7 +753,7 @@
   padding: 16px 20px;
   background: rgba(255,255,255,0.08);
   border: 1px solid rgba(255,255,255,0.15);
-  border-radius: 10px;
+  border-radius: 2px;
   color: white;
   text-decoration: none;
   transition: all 0.2s;
@@ -774,7 +780,7 @@
 
 .quote-form-card {
   background: white;
-  border-radius: 16px;
+  border-radius: 2px;
   padding: 32px;
   color: var(--color-dark);
 }
@@ -919,7 +925,7 @@
     font-size: 12px;
   }
   .customer-entry {
-    grid-template-columns: 1fr;
+    grid-template-columns: 1fr 1fr;
   }
   .section-heading h2 {
     font-size: 26px;
@@ -1068,7 +1074,7 @@
   padding: 6px 16px;
   background: rgba(245,158,11,0.12);
   border: 1px solid rgba(245,158,11,0.3);
-  border-radius: 100px;
+  border-radius: 2px;
   letter-spacing: 3px;
 }
 
@@ -1081,7 +1087,7 @@
   position: relative;
   background: rgba(255,255,255,0.06);
   border: 1px solid rgba(255,255,255,0.12);
-  border-radius: 14px;
+  border-radius: 2px;
   padding: 22px 18px;
   overflow: hidden;
   transition: all 0.4s ease;
@@ -1165,10 +1171,10 @@
   margin-top: 48px;
 }
 
-.customer-card {
+.customer-card { border: none; border-left: 2px solid var(--color-gray-200); background: transparent; padding-left: 24px;
   position: relative;
   padding: 40px 36px;
-  border-radius: 20px;
+  border-radius: 2px;
   border: 1px solid var(--color-gray-200, #e5e7eb);
   overflow: hidden;
   background: white;
@@ -1200,7 +1206,7 @@
 .customer-card-icon {
   width: 56px;
   height: 56px;
-  border-radius: 16px;
+  border-radius: 2px;
   font-size: 24px;
   margin-bottom: 24px;
   box-shadow: 0 8px 20px rgba(30,64,175,0.25);
@@ -1243,7 +1249,7 @@
 
 .capability-card {
   position: relative;
-  border-radius: 20px;
+  border-radius: 2px;
   overflow: hidden;
   background: white;
   border: 1px solid var(--color-gray-200, #e5e7eb);
@@ -1314,7 +1320,7 @@
 
 .factory-grid .factory-item {
   position: relative;
-  border-radius: 16px;
+  border-radius: 2px;
   overflow: hidden;
   cursor: pointer;
 }
@@ -1428,9 +1434,9 @@
 
 .case-card {
   position: relative;
-  border-radius: 20px;
+  border-radius: 2px;
   overflow: hidden;
-  min-height: 400px;
+  min-height: 280px;
   cursor: pointer;
 }
 
@@ -1481,7 +1487,7 @@
 
 .case-card {
   position: relative;
-  border-radius: 20px;
+  border-radius: 2px;
   overflow: hidden;
   cursor: pointer;
 }
@@ -1642,7 +1648,7 @@
   .section-heading { grid-template-columns: 1fr; gap: 20px; }
   .section-heading h2 { font-size: 28px; }
   .customer-entry { grid-template-columns: 1fr; }
-  .customer-card { padding: 28px 24px; }
+  .customer-card { border: none; border-left: 2px solid var(--color-gray-200); background: transparent; padding-left: 24px; padding: 28px 24px; }
   .factory-grid {
     grid-template-columns: 1fr;
   }
@@ -1673,7 +1679,7 @@
 
 /* 三大核心能力 - 新结构 */
 .capability-card {
-  border-radius: 12px;
+  border-radius: 2px;
   overflow: hidden;
   background: #fff;
   border: 1px solid #e5e7eb;
@@ -1765,7 +1771,7 @@
 .factory-item {
   position: relative;
   overflow: hidden;
-  border-radius: 10px;
+  border-radius: 2px;
 }
 
 .factory-item img {
@@ -1796,30 +1802,30 @@
 .quick-entry-grid {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
-  gap: 16px;
+  gap: 20px;
 }
 
 .quick-entry-card {
-  background: rgba(255,255,255,0.06);
-  border: 1px solid rgba(255,255,255,0.12);
-  border-radius: 12px;
-  padding: 28px 22px;
-  transition: background 0.3s ease, transform 0.3s ease;
+  background: var(--color-white);
+  border: 1px solid var(--color-gray-200);
+  border-radius: 2px;
+  padding: 28px 24px;
+  transition: border-color 0.3s ease;
   text-decoration: none;
   display: block;
 }
 
+
 .quick-entry-card:hover {
-  background: rgba(255,255,255,0.1);
-  transform: translateY(-3px);
+  border-color: var(--color-primary);
   text-decoration: none;
 }
 
 .quick-entry-card h4 {
-  color: #fff;
+  color: var(--color-gray-900);
   font-size: 16px;
   font-weight: 600;
-  margin-bottom: 6px;
+  margin-bottom: 0;
 }
 
 .quick-entry-card p {
@@ -1885,7 +1891,7 @@
 }
 .planning-card {
   background: white;
-  border-radius: 12px;
+  border-radius: 2px;
   padding: 32px;
   text-decoration: none;
   color: inherit;
@@ -1928,7 +1934,7 @@
   text-align: center;
   padding: 32px 24px;
   background: var(--color-gray-100);
-  border-radius: 12px;
+  border-radius: 2px;
 }
 .next-step-num {
   width: 48px;
@@ -1964,7 +1970,7 @@
 .risk-card {
   background: rgba(255,255,255,0.05);
   border: 1px solid rgba(255,255,255,0.1);
-  border-radius: 12px;
+  border-radius: 2px;
   padding: 28px;
 }
 .risk-num {
@@ -1990,3 +1996,46 @@
     grid-template-columns: 1fr;
   }
 }
+
+/* Projects Evidence - 4-column project cards */
+.cases-grid-4 {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 16px;
+  margin-bottom: 32px;
+}
+.cases-grid-4 .case-card {
+  min-height: 260px;
+  border-radius: 2px;
+}
+.cases-grid-4 .case-card .case-overlay small {
+  font-size: 0.7rem;
+}
+.cases-grid-4 .case-card .case-overlay b {
+  font-size: 0.95rem;
+}
+.cases-grid-4 .case-card .case-overlay em {
+  font-size: 0.72rem;
+  line-height: 1.4;
+}
+.cases-more {
+  text-align: center;
+  margin-top: 8px;
+}
+@media (max-width: 1024px) {
+  .cases-grid-4 {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+@media (max-width: 640px) {
+  .cases-grid-4 {
+    grid-template-columns: 1fr;
+  }
+  .cases-grid-4 .case-card {
+    min-height: 220px;
+  }
+}
+
+
+/* Force quick-entry cards visible */
+.quick-entry-card.reveal { opacity: 1 !important; transform: none !important; }

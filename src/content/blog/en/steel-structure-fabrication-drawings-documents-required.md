@@ -3,8 +3,8 @@ title: "What Drawings & Documents Are Required for Steel Structure Fabrication?"
 language: "en"
 category: "Manufacturing & Quality"
 status: "published"
-seoTitle: "Drawings & Documents Required for Steel Structure Fabrication | Complete Guide"
-metaDescription: "Complete guide to drawings and documents needed for steel structure fabrication. Learn about structural drawings, shop drawings, BOQ, design data, and how to prepare your project for manufacturing."
+seoTitle: "Drawings & Documents Required for Steel Structure Fabrication"
+metaDescription: "Complete guide to drawings and documents needed for steel structure fabrication. Learn about structural drawings, shop drawings, BOQ, design data, and..."
 h1: "What Drawings & Documents Are Required for Steel Structure Fabrication?"
 excerpt: "Complete guide to all drawings and documents needed for steel structure fabrication, including structural drawings, shop drawings, BOQ, design data, and project preparation checklist."
 coverImage: "/images/blog/steel-structure-fabrication-drawings-documents-required/cover.jpg"
@@ -14,8 +14,6 @@ ctaType: "send-drawings"
 noindex: false
 author: "ZhongSai Steel Structure Editorial Team"
 ---
-
-# What Drawings & Documents Are Required for Steel Structure Fabrication?
 
 One of the most common questions buyers ask is: **"What do I need to send to get my steel structure fabricated?"**
 

@@ -1,5 +1,5 @@
 ---
-// ZhongSai V2 - English Manufacturing & Quality Page
+// ZhongSai V2 - English Manufacturing & Quality Page (Upgraded)
 import BaseLayout from '../../../layouts/BaseLayout.astro';
 import QuoteForm from '../../../components/QuoteForm.astro';
 import ExportDeliveryCTA from '../../../components/ExportDeliveryCTA.astro';
@@ -7,65 +7,133 @@ import '../../../styles/hub.css';
 import '../../../styles/manufacturing.css';
 
 const lang = 'en';
-const title = 'Steel Structure Manufacturing & Quality Control | ZhongSai';
-const description = 'ZhongSai steel structure manufacturing process: raw material inspection, CNC cutting, assembly & welding, straightening & drilling, custom component fabrication, surface treatment, quality control, marking & packing. Custom fabrication and export delivery.';
+const title = 'Steel Structure Manufacturing & Quality Control | ZhongSai Factory';
+const description = 'Project-based steel structure fabrication for overseas projects: raw material control, CNC cutting, assembly & welding, dimensional inspection, surface...';
 
-const eightSteps = [
+const manufacturingSteps = [
   {
     num: '01',
-    title: 'Raw Material Preparation',
-    desc: 'Steel and supporting materials are received, sorted and prepared in the material yard according to project specifications and requirements.',
-    img: '/images/company/factory-yard-gantry-crane.jpg'
+    title: 'Drawing Review & Detailing',
+    desc: 'Project and shop drawings are reviewed, with key dimensions, connections and fabrication requirements confirmed before production begins.',
+    img: '/images/manufacturing/process/01-drawing-review.jpg'
   },
   {
     num: '02',
-    title: 'CNC Cutting',
-    desc: 'CNC cutting equipment is used to cut steel plates according to shop drawings, with dimensional accuracy and cut surface quality controlled.',
-    img: '/images/manufacturing/real/cutting-prep-9809.jpg'
+    title: 'Material Preparation',
+    desc: 'Steel plates, sections and supporting materials are received, identified and prepared according to project specifications and material grade requirements.',
+    img: '/images/company/factory-yard-gantry-crane.jpg'
   },
   {
     num: '03',
-    title: 'Assembly & Welding',
-    desc: 'H-beam assembly and welding are organized according to project drawings and welding process requirements, with welding distortion controlled.',
-    img: '/images/manufacturing/real/assembly-welding-9821.jpg'
+    title: 'CNC Cutting & Drilling',
+    desc: 'CNC cutting and drilling equipment processes steel plates and sections according to shop drawings, with dimensional accuracy and hole positioning controlled.',
+    img: '/images/manufacturing/real/cutting-prep-9809.jpg'
   },
   {
     num: '04',
-    title: 'Drilling & Member Finishing',
-    desc: 'Drilling, end-plate fabrication and member finishing are organized according to shop drawings, with hole position accuracy and member dimensions controlled per project requirements.',
-    img: '/images/components/finished-steel-beams-columns.jpg'
+    title: 'Assembly & Welding',
+    desc: 'Components are assembled and welded according to approved drawings and welding process requirements, with fit-up and welding distortion controlled.',
+    img: '/images/manufacturing/real/assembly-welding-9821.jpg'
   },
   {
     num: '05',
-    title: 'Custom Component Fabrication',
-    desc: 'Box sections, trusses, gusset plates and other custom components are fabricated, with detailing and manufacturing organized to project drawings.',
-    img: '/images/company/factory-steel-beam-fabrication.jpg'
+    title: 'Dimensional Inspection',
+    desc: 'Finished components are inspected for length, hole position, diagonal, straightness and connection interface accuracy against project drawings.',
+    img: '/images/manufacturing/real/qc-inspection.jpg'
   },
   {
     num: '06',
-    title: 'Surface Preparation & Coating',
-    desc: 'Surface cleaning, shot blasting and coating may be arranged where required by the project, with specific treatment methods and specifications per project technical requirements.',
-    img: '/images/components/finished-coated-components.jpg'
+    title: 'Surface Treatment',
+    desc: 'Surface cleaning, shot blasting, painting or hot-dip galvanizing may be arranged where required by the project environment, corrosion category and client specification.',
+    img: '/images/manufacturing/real/painting.jpg'
   },
   {
     num: '07',
-    title: 'Finished Member Check & Delivery Preparation',
-    desc: 'Finished members are checked against confirmed fabrication requirements, organized and prepared for packing and delivery.',
-    img: '/images/components/finished-steel-members-stacked.jpg'
+    title: 'Component Marking',
+    desc: 'Components are marked and numbered based on shop drawings and installation sequence requirements, facilitating overseas site identification and erection.',
+    img: '/images/manufacturing/real/component-marking.jpg'
   },
   {
     num: '08',
-    title: 'Marking, Packing & Loading',
-    desc: 'Component marking and numbering may be arranged based on shop drawings and project requirements, with packing organized by component type, container loading sequence and export transport requirements.',
+    title: 'Packing & Container Loading',
+    desc: 'Components are grouped, packed and loaded into containers according to component type, loading sequence and export transport requirements, with packing lists included.',
     img: '/images/container-loading.jpg'
   }
 ];
 
+const qualityStages = [
+  { stage: 'Material', control: 'Grade confirmation, mill certificate verification, material identification' },
+  { stage: 'Cutting', control: 'Dimension verification, cut surface quality, hole position accuracy' },
+  { stage: 'Assembly', control: 'Geometry verification, fit-up check, alignment control' },
+  { stage: 'Welding', control: 'Visual inspection, welding process compliance, project-required NDT where specified' },
+  { stage: 'Surface', control: 'Surface preparation quality, coating thickness, galvanizing inspection where applicable' },
+  { stage: 'Final', control: 'Dimensional verification, marking check, packing list review' }
+];
+
 const evidenceImages = [
-  '/images/manufacturing/real/factory-overview-9819.jpg',
-  '/images/manufacturing/real/cutting-prep-9809.jpg',
-  '/images/manufacturing/real/welding-9820.jpg',
-  '/images/manufacturing/real/assembly-welding-9821.jpg'
+  { src: '/images/manufacturing/real/factory-overview-9819.jpg', alt: 'ZhongSai steel structure manufacturing facility overview', caption: 'Manufacturing facility overview' },
+  { src: '/images/manufacturing/real/cutting-prep-9809.jpg', alt: 'CNC cutting and material preparation at ZhongSai factory', caption: 'CNC cutting and preparation' },
+  { src: '/images/manufacturing/real/welding-9820.jpg', alt: 'Steel structure welding process at ZhongSai manufacturing facility', caption: 'Assembly and welding' },
+  { src: '/images/manufacturing/real/assembly-welding-9821.jpg', alt: 'H-beam assembly and welding production line', caption: 'H-beam assembly line' },
+  { src: '/images/company/factory-steel-beam-fabrication.jpg', alt: 'Steel beam fabrication at ZhongSai production base', caption: 'Steel beam fabrication' },
+  { src: '/images/components/finished-coated-components.jpg', alt: 'Finished and coated steel structure components', caption: 'Surface treated components' },
+  { src: '/images/container-loading.jpg', alt: 'Steel structure components loaded into shipping container for export', caption: 'Container loading for export' },
+  { src: '/images/company/factory-yard-gantry-crane.jpg', alt: 'Factory yard with gantry crane for steel material storage', caption: 'Material yard and storage' }
+];
+
+const projectTypes = [
+  { name: 'Industrial Workshops', href: '/en/steel-workshop/' },
+  { name: 'Warehouses & Logistics', href: '/en/steel-warehouse/' },
+  { name: 'Mining & Heavy Industry', href: '/en/steel-mining-factory/' },
+  { name: 'Steel Platforms', href: '/en/components/' },
+  { name: 'Conveyor Galleries', href: '/en/components/' },
+  { name: 'Pipe Racks', href: '/en/components/' },
+  { name: 'Public & Infrastructure', href: '/en/transportation-infrastructure-steel/' },
+  { name: 'Special Steel Structures', href: '/en/special-custom-steel-structures/' }
+];
+
+const certifications = [
+  { name: 'ISO 9001', desc: 'Quality management system', holder: 'Huizhou manufacturing base', img: '/images/certifications/iso-9001-quality.jpg', valid: '2025-2028' },
+  { name: 'ISO 14001', desc: 'Environmental management system', holder: 'Huizhou manufacturing base', img: '/images/certifications/iso-14001-environmental.jpg', valid: '2025-2028' },
+  { name: 'ISO 45001', desc: 'Occupational health & safety management', holder: 'Huizhou manufacturing base', img: '/images/certifications/iso-45001-occupational.jpg', valid: '2025-2028' },
+  { name: 'ISO 3834-2', desc: 'Comprehensive quality requirements for fusion welding', holder: 'Dongguan manufacturing base', img: '/images/certifications/iso-3834-welding.jpg', valid: '2024-2027' },
+  { name: 'EN 1090 EXC2', desc: 'CE/CPR for structural steel components', holder: 'Dongguan manufacturing base', img: '/images/certifications/en-1090-ce.jpg', valid: 'Since 2024' },
+  { name: 'CIDB IBS', desc: 'Malaysian Industrialised Building System certification', holder: 'Malaysia partner / Huizhou factory', img: '/images/certifications/malaysia-cidb-ibs.jpg', valid: '2026-2027' },
+];
+
+const faqs = [
+  {
+    q: 'Can ZhongSai manufacture based on client-issued drawings?',
+    a: 'Yes. ZhongSai can fabricate steel structures based on client-issued structural drawings, general arrangement drawings and shop drawings. We can also support shop detailing coordination before production where required by the project. All fabrication is based on approved drawings and project technical specifications.'
+  },
+  {
+    q: 'Can you support shop detailing before production?',
+    a: 'Yes. ZhongSai can support structural detailing and shop drawing coordination as part of the project scope, including connection detailing, member scheduling and fabrication drawing preparation. The specific scope of detailing responsibility is determined per project contract and drawing requirements.'
+  },
+  {
+    q: 'How do you control steel fabrication quality?',
+    a: 'Quality control is organized by manufacturing stage: material grade and certificate verification at incoming inspection, dimensional and hole position checks after cutting, geometry and fit-up verification during assembly, visual and project-required NDT during welding, surface preparation and coating inspection after treatment, and final dimensional and marking verification before packing. Specific inspection methods and acceptance criteria are per project technical requirements.'
+  },
+  {
+    q: 'Can complex steel structures be trial assembled before shipment?',
+    a: 'Trial assembly or partial pre-assembly can be arranged for complex trusses, platforms, special connections and infrastructure structures where required by the project. Not all projects require full trial assembly. The need and scope of trial assembly are determined based on project complexity, client requirements and contract specifications.'
+  },
+  {
+    q: 'How are components marked for overseas installation?',
+    a: 'Components are marked and numbered based on shop drawings, installation sequence requirements and project identification systems. Each component is identified with its drawing reference, member ID and packing group. This helps overseas installation teams correctly identify, locate and erect components according to the installation sequence, reducing site confusion and errors.'
+  },
+  {
+    q: 'What corrosion protection systems are available?',
+    a: 'Surface protection options include painting systems, hot-dip galvanizing where applicable, and project-specific coating systems. The specific protection system is determined based on the project environment, corrosion category, client specification, local standards and design life requirements. We do not apply a one-size-fits-all coating system to all projects.'
+  },
+  {
+    q: 'How are steel structures packed into containers?',
+    a: 'Components are grouped and packed according to component type, weight, container loading sequence and export transport requirements. Long members may be segmented to fit container dimensions where required. Packing lists are included with each shipment, and components are protected against damage during transport. Optimized container loading can reduce freight cost in suitable projects, though actual savings vary by project size and component dimensions.'
+  },
+  {
+    q: 'Do you provide local construction?',
+    a: 'ZhongSai provides design/detailing coordination, steel structure fabrication, export supply and technical installation guidance. Local civil works, foundation construction, on-site labor installation and local government approvals are normally handled by local contractors or the project owner\'s appointed construction team. Specific scope is determined per project contract.'
+  }
 ];
 ---
 
@@ -76,11 +144,33 @@ const evidenceImages = [
     <div class="hub-hero-overlay"></div>
     <div class="container hub-hero-content">
       <div class="hub-breadcrumb">
-        <a href="/en/">Home</a><span>/</span><span>Manufacturing</span>
+        <a href="/en/">Home</a><span>/</span><span>Manufacturing & Quality</span>
       </div>
-      <p class="eyebrow">MANUFACTURING · From Drawings to Delivery</p>
-      <h1>Steel Structure Manufacturing<br>& Quality Control</h1>
-      <p class="lead">ZhongSai transforms project drawings into export-ready steel structure components — an 8-step manufacturing process from raw material inspection to marking and packing.</p>
+      <p class="eyebrow">MANUFACTURING · From Drawings to Export Delivery</p>
+      <h1>Steel Structure Manufacturing<br>and Quality Control for Overseas Projects</h1>
+      <p class="lead">Project-based steel fabrication for industrial buildings, warehouses, mining, infrastructure and other overseas steel structure projects, with controlled production, inspection, marking, packing and export delivery.</p>
+      <div class="hero-stats">
+        <div class="hero-stat">
+          <span class="stat-number">~100,000 m²</span>
+          <span class="stat-label">Manufacturing Base</span>
+        </div>
+        <div class="hero-stat">
+          <span class="stat-number">~100,000 t</span>
+          <span class="stat-label">Annual Capacity</span>
+        </div>
+        <div class="hero-stat">
+          <span class="stat-number">300+</span>
+          <span class="stat-label">Frontline Workers</span>
+        </div>
+        <div class="hero-stat">
+          <span class="stat-number">Project-Based</span>
+          <span class="stat-label">Fabrication & Export</span>
+        </div>
+      </div>
+      <div class="hero-cta-group">
+        <a href="#quote" class="btn btn-primary">Send Project Drawings for Manufacturing Review</a>
+        <a href="/en/projects/" class="btn btn-secondary">View Project Evidence</a>
+      </div>
     </div>
   </section>
 
@@ -89,12 +179,12 @@ const evidenceImages = [
     <div class="container">
       <div class="section-heading reveal">
         <div>
-          <p class="section-index">01 / Overview</p>
-          <h2>From Drawings to Export-Ready Components</h2>
+          <p class="section-index">Overview</p>
+          <h2>From Approved Drawings to Export-Ready Components</h2>
         </div>
         <div>
-          <p>ZhongSai provides steel structure fabrication services, covering design detailing, material preparation, cutting, assembly & welding, straightening & drilling, custom component fabrication, surface treatment, quality control, component marking and packing & container loading.</p>
-          <p style="margin-top: 12px;">Fabrication and inspection are conducted according to project drawings, shop drawings, project technical specifications and applicable project requirements. Specific materials, welding, surface treatment and inspection parameters are determined per project requirements.</p>
+          <p>ZhongSai provides project-based steel structure fabrication services, covering drawing review, shop detailing coordination, material preparation, CNC cutting, assembly & welding, dimensional inspection, surface treatment, component marking, packing and container loading.</p>
+          <p style="margin-top: 12px;">Fabrication and inspection are conducted according to approved project drawings, shop drawings, project technical specifications and applicable project requirements. Specific materials, welding procedures, surface treatment and inspection parameters are determined per project requirements and contract terms.</p>
         </div>
       </div>
     </div>
@@ -105,23 +195,23 @@ const evidenceImages = [
     <div class="container">
       <div class="section-heading reveal" style="margin-bottom: 40px;">
         <div>
-          <p class="section-index">02 / Process</p>
-          <h2>Eight-Step Manufacturing Process</h2>
+          <p class="section-index">Process</p>
+          <h2>From Drawings to Fabrication: 8-Step Manufacturing Process</h2>
         </div>
         <div>
-          <p>From raw material inspection to marking and packing, each step is organized according to project drawings and technical requirements.</p>
+          <p>Each step is organized according to approved project drawings and technical requirements, with quality control integrated at every stage.</p>
         </div>
       </div>
+      <p style="font-size:13px;color:#16a34a;margin-bottom:16px;">All manufacturing steps above are performed at ZhongSai Dongguan / Huizhou manufacturing bases</p>
       <div class="process-grid">
-        {eightSteps.map((step, i) => (
+        {manufacturingSteps.map((step, i) => (
           <div class={`process-card reveal reveal-delay-${(i % 4) + 1}`}>
             <div class="process-card-img">
-              <img src={step.img} alt={step.num === "07" ? "ZhongSai manufacturing facility" : step.title} loading="lazy">
+              <img src={step.img} alt={step.title} loading={i < 2 ? "eager" : "lazy"} width="400" height="250">
               <span class="process-card-num">STEP {step.num}</span>
             </div>
             <div class="process-card-body">
               <h3>{step.title}</h3>
-              
               <p>{step.desc}</p>
             </div>
           </div>
@@ -130,138 +220,662 @@ const evidenceImages = [
     </div>
   </section>
 
-  <!-- 03 Manufacturing Evidence -->
+  <!-- 03 Raw Material Control -->
   <section class="section" style="padding: 70px 0; background: #f8fafc;">
     <div class="container">
-      <div class="section-heading reveal" style="margin-bottom: 36px;">
+      <div class="section-heading reveal">
         <div>
-          <p class="section-index">03 / Facility</p>
-          <h2>Real Manufacturing Facility</h2>
+          <p class="section-index">Material</p>
+          <h2>Raw Material Inspection and Traceability</h2>
         </div>
         <div>
-          <p>ZhongSai production base covers cutting, assembly & welding, surface treatment, quality control and packing & container loading.</p>
+          <p>Material control begins at incoming inspection and continues through production, ensuring that steel grades and material properties match project requirements.</p>
         </div>
       </div>
-      <div class="evidence-grid">
+      <div class="quality-grid">
+        <div class="quality-item reveal reveal-delay-1">
+          <h4>Material Grade Confirmation</h4>
+          <p>Steel plates and sections are verified against project-specified material grades and standards before entering production.</p>
+        </div>
+        <div class="quality-item reveal reveal-delay-2">
+          <h4>Mill Certificates</h4>
+          <p>Mill test certificates are collected and verified for incoming materials where required by project specifications and client requirements.</p>
+        </div>
+        <div class="quality-item reveal reveal-delay-3">
+          <h4>Material Identification</h4>
+          <p>Plates and sections are identified and tracked throughout production, maintaining traceability from incoming material to finished components.</p>
+        </div>
+        <div class="quality-item reveal reveal-delay-4">
+          <h4>Incoming Inspection</h4>
+          <p>Visual and dimensional checks are conducted on incoming materials, with surface quality, section dimensions and plate thickness verified per project requirements.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 04 Cutting, Assembly & Welding -->
+  <section class="section" style="padding: 70px 0;">
+    <div class="container">
+      <div class="section-heading reveal">
+        <div>
+          <p class="section-index">Production</p>
+          <h2>CNC Cutting, Assembly and Welding</h2>
+        </div>
+        <div>
+          <p>Core production processes are organized according to approved drawings and welding process requirements, with dimensional accuracy and welding quality controlled at each stage.</p>
+        </div>
+      </div>
+            <div class="dual-path-grid" style="grid-template-columns: repeat(3, 1fr); gap: 24px; margin-top: 40px;">
+        <div class="dual-path-card reveal reveal-delay-1" style="padding: 0; overflow: hidden;">
+          <div style="width: 100%; height: 180px; overflow: hidden; background: #e2e8f0;">
+            <img src="/images/manufacturing/real/cutting-prep-9809.jpg" alt="CNC cutting and material preparation" style="width: 100%; height: 100%; object-fit: cover;" loading="lazy" width="400" height="180">
+          </div>
+          <div style="padding: 24px 28px;">
+            <div class="path-icon" style="width: 48px; height: 48px; font-size: 16px; font-weight: 700; color:#fff; margin-bottom: 16px; display:flex; align-items:center; justify-content:center; background: #1e40af; border-radius: 8px;">01</div>
+            <h3 style="font-size: 20px; margin-bottom: 12px; color: #0f172a;">CNC Cutting & Drilling</h3>
+            <ul style="margin: 0; padding-left: 18px; color: #475569; font-size: 14px; line-height: 1.8;">
+            <li>Plate cutting per shop drawings</li>
+            <li>Section cutting and end preparation</li>
+            <li>CNC drilling for bolted connections</li>
+            <li>Hole position accuracy control</li>
+            <li>Pre-assembly preparation</li>
+            </ul>
+          </div>
+        </div>
+        <div class="dual-path-card reveal reveal-delay-2" style="padding: 0; overflow: hidden;">
+          <div style="width: 100%; height: 180px; overflow: hidden; background: #e2e8f0;">
+            <img src="/images/manufacturing/real/assembly-welding-9821.jpg" alt="H-beam assembly and fit-up" style="width: 100%; height: 100%; object-fit: cover;" loading="lazy" width="400" height="180">
+          </div>
+          <div style="padding: 24px 28px;">
+            <div class="path-icon" style="width: 48px; height: 48px; font-size: 16px; font-weight: 700; color:#fff; margin-bottom: 16px; display:flex; align-items:center; justify-content:center; background: #1e40af; border-radius: 8px;">02</div>
+            <h3 style="font-size: 20px; margin-bottom: 12px; color: #0f172a;">Assembly & Fit-up</h3>
+            <ul style="margin: 0; padding-left: 18px; color: #475569; font-size: 14px; line-height: 1.8;">
+            <li>H-beam assembly and alignment</li>
+            <li>Component fit-up per drawings</li>
+            <li>Connection interface verification</li>
+            <li>Geometric dimension control</li>
+            <li>Welding preparation and sequencing</li>
+            </ul>
+          </div>
+        </div>
+        <div class="dual-path-card reveal reveal-delay-3" style="padding: 0; overflow: hidden;">
+          <div style="width: 100%; height: 180px; overflow: hidden; background: #e2e8f0;">
+            <img src="/images/manufacturing/real/welding-9820.jpg" alt="Steel structure welding quality control" style="width: 100%; height: 100%; object-fit: cover;" loading="lazy" width="400" height="180">
+          </div>
+          <div style="padding: 24px 28px;">
+            <div class="path-icon" style="width: 48px; height: 48px; font-size: 16px; font-weight: 700; color:#fff; margin-bottom: 16px; display:flex; align-items:center; justify-content:center; background: #1e40af; border-radius: 8px;">03</div>
+            <h3 style="font-size: 20px; margin-bottom: 12px; color: #0f172a;">Welding Quality</h3>
+            <ul style="margin: 0; padding-left: 18px; color: #475569; font-size: 14px; line-height: 1.8;">
+            <li>Welding per approved WPS where applicable</li>
+            <li>Welding sequence and distortion control</li>
+            <li>Visual inspection of all welds</li>
+            <li>Project-required NDT (UT/MT/PT)</li>
+            <li>Welder qualification per project requirements</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+  </section>
+
+  <!-- 05 Dimensional Inspection & Trial Assembly -->
+  <section class="section" style="padding: 70px 0; background: #f8fafc;">
+    <div class="container">
+      <div class="section-heading reveal">
+        <div>
+          <p class="section-index">Inspection</p>
+          <h2>Dimensional Inspection and Trial Assembly</h2>
+        </div>
+        <div>
+          <p>Final inspection ensures that component dimensions, connection interfaces and marking match project drawings, supporting correct overseas site assembly.</p>
+        </div>
+      </div>
+      <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 40px; margin-top: 40px;" class="inspection-grid">
+        <div class="reveal reveal-delay-1">
+          <h3 style="font-size: 22px; margin-bottom: 20px; color: #0f172a;">Dimensional Inspection</h3>
+          <div class="quality-grid" style="grid-template-columns: 1fr 1fr; gap: 16px;">
+            <div class="quality-item" style="padding: 20px;">
+              <h4 style="font-size: 15px;">Length & Straightness</h4>
+              <p style="font-size: 13px;">Member length and straightness verified against drawing tolerances.</p>
+            </div>
+            <div class="quality-item" style="padding: 20px;">
+              <h4 style="font-size: 15px;">Hole Position</h4>
+              <p style="font-size: 13px;">Bolt hole positions and spacing checked for connection compatibility.</p>
+            </div>
+            <div class="quality-item" style="padding: 20px;">
+              <h4 style="font-size: 15px;">Diagonal & Geometry</h4>
+              <p style="font-size: 13px;">Diagonal measurements and assembly geometry verified for squareness.</p>
+            </div>
+            <div class="quality-item" style="padding: 20px;">
+              <h4 style="font-size: 15px;">Connection Interface</h4>
+              <p style="font-size: 13px;">Connection plates, end plates and interface dimensions checked for site fit.</p>
+            </div>
+          </div>
+        </div>
+        <div class="reveal reveal-delay-2">
+          <h3 style="font-size: 22px; margin-bottom: 20px; color: #0f172a;">Trial Assembly When Required</h3>
+          <p style="color: #475569; line-height: 1.8; margin-bottom: 20px;">For complex trusses, steel platforms, special connections, infrastructure structures and other complex projects, trial assembly or partial pre-assembly can be arranged where required by the project.</p>
+          <p style="color: #475569; line-height: 1.8; margin-bottom: 20px;">Not all projects require full trial assembly. The need and scope of trial assembly are determined based on:</p>
+          <ul style="color: #475569; line-height: 2; padding-left: 20px;">
+            <li>Project complexity and connection type</li>
+            <li>Client requirements and contract specifications</li>
+            <li>Overseas site assembly constraints</li>
+            <li>Component size and transport segmentation</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 06 Surface Treatment -->
+  <section class="section" style="padding: 70px 0;">
+    <div class="container">
+      <div class="section-heading reveal">
+        <div>
+          <p class="section-index">Coating</p>
+          <h2>Surface Preparation and Corrosion Protection</h2>
+        </div>
+        <div>
+          <p>Surface protection systems are selected based on project environment, corrosion category, client specification and design life requirements.</p>
+        </div>
+      </div>
+      <div class="quality-grid" style="margin-top: 40px;">
+        <div class="quality-item reveal reveal-delay-1">
+          <h4>Surface Cleaning</h4>
+          <p>Steel surfaces are cleaned and prepared before coating, with rust, scale and contaminants removed per project requirements.</p>
+        </div>
+        <div class="quality-item reveal reveal-delay-2">
+          <h4>Shot Blasting</h4>
+          <p>Shot blasting or abrasive blasting may be arranged where required by the project specification, achieving the required surface cleanliness and profile.</p>
+        </div>
+        <div class="quality-item reveal reveal-delay-3">
+          <h4>Painting Systems</h4>
+          <p>Primer, intermediate and topcoat painting systems can be applied per project specification, with coating thickness and adhesion verified where required.</p>
+        </div>
+        <div class="quality-item reveal reveal-delay-4">
+          <h4>Hot-Dip Galvanizing</h4>
+          <p>Hot-dip galvanizing can be arranged for suitable components where specified by the project, providing corrosion protection for appropriate applications.</p>
+        </div>
+      </div>
+      <div style="margin-top: 32px; padding: 24px; background: #fffbeb; border-left: 4px solid #f59e0b; border-radius: 0 8px 8px 0;" class="reveal">
+        <p style="margin: 0; color: #92400e; font-size: 14px; line-height: 1.7;"><strong>Important:</strong> The specific corrosion protection system is determined based on the project environment, corrosion category, client specification, local standards and design life requirements. We do not apply a one-size-fits-all coating system to all projects, and we do not guarantee fixed corrosion protection lifetimes without project-specific engineering analysis.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- 07 Component Marking for Overseas Installation -->
+  <section class="dual-path-section">
+    <div class="container">
+      <div class="section-heading reveal" style="color: white; text-align: center; display: block; margin-bottom: 36px;">
+        <p class="section-index" style="color: #f59e0b;">Marking</p>
+        <h2 style="color: white; margin-bottom: 10px;">Component Marking for Overseas Installation</h2>
+        <p style="color: rgba(255,255,255,0.65); max-width: 750px; margin: 0 auto;">Clear component marking and numbering reduces overseas site installation confusion, helping local contractors correctly identify, locate and erect each component according to the installation sequence.</p>
+      </div>
+      <div class="dual-path-grid" style="grid-template-columns: repeat(3, 1fr); gap: 20px;" class="marking-grid">
+        <div class="dual-path-card reveal reveal-delay-1" style="padding: 28px 24px;">
+          <div class="path-icon" style="width: 44px; height: 44px; font-size: 15px; font-weight: 700; color:#fff; margin-bottom: 14px;">01</div>
+          <h3 style="font-size: 18px; margin-bottom: 8px;">Component ID</h3>
+          <p style="font-size: 14px; margin-bottom: 0;">Each component is marked with a unique identification number corresponding to its position in the shop drawings and erection sequence.</p>
+        </div>
+        <div class="dual-path-card reveal reveal-delay-2" style="padding: 28px 24px;">
+          <div class="path-icon" style="width: 44px; height: 44px; font-size: 15px; font-weight: 700; color:#fff; margin-bottom: 14px;">02</div>
+          <h3 style="font-size: 18px; margin-bottom: 8px;">Drawing Reference</h3>
+          <p style="font-size: 14px; margin-bottom: 0;">Marking includes drawing sheet references and member marks, allowing site teams to cross-reference components with installation drawings.</p>
+        </div>
+        <div class="dual-path-card reveal reveal-delay-3" style="padding: 28px 24px;">
+          <div class="path-icon" style="width: 44px; height: 44px; font-size: 15px; font-weight: 700; color:#fff; margin-bottom: 14px;">03</div>
+          <h3 style="font-size: 18px; margin-bottom: 8px;">Packing Group</h3>
+          <p style="font-size: 14px; margin-bottom: 0;">Components are grouped by packing unit and container, with packing lists identifying which components are in each package and container.</p>
+        </div>
+        <div class="dual-path-card reveal reveal-delay-4" style="padding: 28px 24px;">
+          <div class="path-icon" style="width: 44px; height: 44px; font-size: 15px; font-weight: 700; color:#fff; margin-bottom: 14px;">04</div>
+          <h3 style="font-size: 18px; margin-bottom: 8px;">Installation Sequence</h3>
+          <p style="font-size: 14px; margin-bottom: 0;">Where required by the project, marking can include erection sequence references to support organized site assembly and reduce installation errors.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 08 Packing & Container Loading -->
+  <section class="section" style="padding: 70px 0; background: #f8fafc;">
+    <div class="container">
+      <div class="section-heading reveal">
+        <div>
+          <p class="section-index">Export</p>
+          <h2>Packing and Container Loading</h2>
+        </div>
+        <div>
+          <p>Components are packed and loaded to protect against transport damage and optimize container space, supporting efficient overseas delivery.</p>
+        </div>
+      </div>
+      <div style="display: grid; grid-template-columns: 1.2fr 1fr; gap: 48px; align-items: start; margin-top: 40px;" class="packing-grid">
+        <div class="reveal reveal-delay-1">
+          <div class="quality-grid" style="grid-template-columns: 1fr 1fr; gap: 16px;">
+            <div class="quality-item" style="padding: 20px;">
+              <h4 style="font-size: 15px;">Component Grouping</h4>
+              <p style="font-size: 13px;">Components grouped by type, weight and installation sequence for efficient packing and site unloading.</p>
+            </div>
+            <div class="quality-item" style="padding: 20px;">
+              <h4 style="font-size: 15px;">Packing Lists</h4>
+              <p style="font-size: 13px;">Detailed packing lists included with each shipment, identifying components, quantities and package numbers.</p>
+            </div>
+            <div class="quality-item" style="padding: 20px;">
+              <h4 style="font-size: 15px;">Transport Protection</h4>
+              <p style="font-size: 13px;">Components protected against damage during sea transport, with edge protection, blocking and bracing as appropriate.</p>
+            </div>
+            <div class="quality-item" style="padding: 20px;">
+              <h4 style="font-size: 15px;">Long Member Segmentation</h4>
+              <p style="font-size: 13px;">Oversized and long members segmented to fit standard container dimensions where required, with bolted splice connections for site assembly.</p>
+            </div>
+            <div class="quality-item" style="padding: 20px;">
+              <h4 style="font-size: 15px;">Loading Planning</h4>
+              <p style="font-size: 13px;">Container loading planned to optimize space utilization and weight distribution, with loading sequence coordinated for site access.</p>
+            </div>
+            <div class="quality-item" style="padding: 20px;">
+              <h4 style="font-size: 15px;">Export Documentation</h4>
+              <p style="font-size: 13px;">Export documentation support including packing lists, commercial invoices and other required shipping documents per destination requirements.</p>
+            </div>
+          </div>
+        </div>
+        <div class="reveal reveal-delay-2">
+          <div style="position: relative; border-radius: 12px; overflow: hidden; margin-bottom: 24px;">
+            <img src="/images/container-loading.jpg" alt="Steel structure components being loaded into shipping container for export" style="width: 100%; height: auto; display: block;" width="500" height="350">
+          </div>
+          <div style="padding: 24px; background: #eff6ff; border-radius: 12px; border: 1px solid #bfdbfe;">
+            <h4 style="font-size: 17px; color: #1e40af; margin-bottom: 12px;">Optimized Container Loading</h4>
+            <p style="font-size: 14px; color: #1e3a5f; line-height: 1.7; margin: 0;">Optimized container loading can reduce freight cost in suitable projects. Actual savings vary by project size, component dimensions, container type and shipping route. We plan loading to maximize space utilization while ensuring component protection and safe handling.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 09 Quality Control by Stage -->
+  <section class="section" style="padding: 70px 0;">
+    <div class="container">
+      <div class="section-heading reveal">
+        <div>
+          <p class="section-index">Quality Table</p>
+          <h2>Quality Control by Manufacturing Stage</h2>
+        </div>
+        <div>
+          <p>Quality control is integrated at every manufacturing stage, with specific inspection activities organized according to project technical requirements and contract specifications.</p>
+        </div>
+      </div>
+      <div style="margin-top: 40px; overflow-x: auto;" class="quality-table-wrap reveal">
+        <table style="width: 100%; border-collapse: collapse; background: white; border-radius: 12px; overflow: hidden; box-shadow: 0 1px 3px rgba(0,0,0,0.1);" class="quality-table">
+          <thead>
+            <tr style="background: #1e3a5f; color: white;">
+              <th style="padding: 16px 20px; text-align: left; font-size: 15px; font-weight: 600;">Manufacturing Stage</th>
+              <th style="padding: 16px 20px; text-align: left; font-size: 15px; font-weight: 600;">Typical Quality Control Activities</th>
+            </tr>
+          </thead>
+          <tbody>
+            {qualityStages.map((item, i) => (
+              <tr style={i % 2 === 0 ? 'background: #f8fafc;' : 'background: white;'}>
+                <td style="padding: 14px 20px; font-weight: 600; color: #0f172a; border-bottom: 1px solid #e2e8f0; font-size: 14px;">{item.stage}</td>
+                <td style="padding: 14px 20px; color: #475569; border-bottom: 1px solid #e2e8f0; font-size: 14px; line-height: 1.6;">{item.control}</td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
+      </div>
+      <p style="margin-top: 16px; font-size: 13px; color: #64748b; font-style: italic;">Specific inspection methods, acceptance criteria and testing requirements are determined per project technical specifications and contract terms. Not all projects require all listed inspection activities.</p>
+    </div>
+  </section>
+
+  <!-- 10 Project-Based Manufacturing -->
+  <section class="section" style="padding: 70px 0; background: #f8fafc;">
+    <div class="container">
+      <div class="section-heading reveal">
+        <div>
+          <p class="section-index">Project Types</p>
+          <h2>Manufacturing for Project-Specific Steel Structures</h2>
+        </div>
+        <div>
+          <p>ZhongSai is not a standard SKU steel product supplier. We manufacture steel structures according to project drawings and technical requirements, covering a wide range of project types and structural systems.</p>
+        </div>
+      </div>
+      <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; margin-top: 40px;" class="project-types-grid">
+        {projectTypes.map((pt, i) => (
+          <a href={pt.href} class={`reveal reveal-delay-${(i % 4) + 1}`} style="display: block; padding: 20px; background: white; border-radius: 10px; border: 1px solid #e2e8f0; text-decoration: none; color: #0f172a; font-weight: 500; font-size: 14px; transition: all 0.2s; text-align: center;">
+            {pt.name}
+          </a>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- 11 Manufacturing Evidence -->
+  <section class="section" style="padding: 70px 0;">
+    <div class="container">
+      <div class="section-heading reveal">
+        <div>
+          <p class="section-index">Evidence</p>
+          <h2>Real Manufacturing Evidence</h2>
+        </div>
+        <div>
+          <p>Photographic evidence of ZhongSai manufacturing facility, production processes, quality control and export preparation. These are real factory and production photos, not AI-generated renderings.</p>
+        </div>
+      </div>
+      <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; margin-top: 40px;" class="evidence-grid-upgraded">
         {evidenceImages.map((img, i) => (
-          <div class={`evidence-item reveal reveal-delay-${(i % 4) + 1}`}>
-            <img src={img} alt="ZhongSai manufacturing facility" loading="lazy">
+          <div class={`reveal reveal-delay-${(i % 4) + 1}`} style="position: relative; border-radius: 10px; overflow: hidden; background: #f1f5f9;">
+            <img src={img.src} alt={img.alt} loading={i < 4 ? "eager" : "lazy"} style="width: 100%; height: 180px; object-fit: cover; display: block;" width="300" height="180">
+            <div style="position: absolute; bottom: 0; left: 0; right: 0; padding: 8px 12px; background: linear-gradient(transparent, rgba(0,0,0,0.7)); color: white; font-size: 12px;">{img.caption}</div>
           </div>
         ))}
       </div>
     </div>
   </section>
 
-  <!-- 04 Quality & Project Requirements -->
+  <!-- 12 Certifications -->
+  <section class="section" style="padding: 70px 0; background: #f8fafc;">
+    <div class="container">
+      <div class="section-heading reveal">
+        <div>
+          <p class="section-index">Certifications</p>
+          <h2>Certifications and Manufacturing Standards</h2>
+        </div>
+        <div>
+          <p>ZhongSai follows established quality management and manufacturing standards. Specific certifications apply to the relevant manufacturing entity and scope as indicated on each certificate.</p>
+        </div>
+      </div>
+      <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; margin-top: 40px;" class="cert-grid">
+        {certifications.map((cert, i) => (
+          <div class={`reveal reveal-delay-${(i % 3) + 1}`} style="background: white; border-radius: 12px; overflow: hidden; border: 1px solid #e2e8f0;">
+            <div style="height: 160px; overflow: hidden; background: #f8fafc;">
+              <img src={cert.img} alt={cert.name} style="width: 100%; height: 100%; object-fit: contain;" loading="lazy">
+            </div>
+            <div style="padding: 20px; text-align: center;">
+              <h4 style="font-size: 15px; font-weight: 600; color: #0f172a; margin-bottom: 6px;">{cert.name}</h4>
+              <p style="font-size: 12.5px; color: #64748b; line-height: 1.5; margin: 0 0 8px;">{cert.desc}</p>
+              <p style="font-size: 11px; color: #94a3b8; margin: 0;">Holder: {cert.holder} · {cert.valid}</p>
+            </div>
+          </div>
+        ))}
+      </div>
+      <div style="margin-top: 32px; padding: 20px; background: #fffbeb; border-left: 4px solid #f59e0b; border-radius: 0 8px 8px 0;" class="reveal">
+        <p style="margin: 0; color: #92400e; font-size: 13px; line-height: 1.7;"><strong>Note:</strong> Certificate holders, certificate numbers, validity periods and applicable scopes should be verified against original certificate documents. Where certificates are held by the associated manufacturing base or production entity rather than the export company directly, the relationship is clearly stated. We do not claim certifications that do not apply to the relevant entity or scope.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- 13 FAQ -->
   <section class="section" style="padding: 70px 0;">
     <div class="container">
       <div class="section-heading reveal">
         <div>
-          <p class="section-index">04 / Quality</p>
-          <h2>Quality & Project Requirements</h2>
+          <p class="section-index">FAQ</p>
+          <h2>Frequently Asked Questions</h2>
         </div>
         <div>
-          <p>Fabrication and inspection are conducted according to project drawings, shop drawings, project technical specifications and applicable project requirements. ZhongSai follows ISO 9001 quality management system requirements.</p>
-          <p style="margin-top: 12px;">Specific welding procedures, inspection ratios, testing methods and acceptance criteria are per project technical requirements and contract terms.</p>
+          <p>Common questions about ZhongSai steel structure manufacturing, quality control and export delivery.</p>
         </div>
       </div>
-      <div class="quality-grid">
-        <div class="quality-item reveal reveal-delay-1">
-          <h4>Drawings & Detailing</h4>
-          <p>Fabrication organized to project and shop drawings, with key dimensions and connections verified against drawings.</p>
-        </div>
-        <div class="quality-item reveal reveal-delay-2">
-          <h4>In-Process Inspection</h4>
-          <p>Dimensional, welding and visual inspection and records organized during fabrication per project requirements.</p>
-        </div>
-        <div class="quality-item reveal reveal-delay-3">
-          <h4>Final Inspection</h4>
-          <p>Final inspection is organized according to project technical requirements before packing and dispatch where applicable.</p>
-        </div>
-        <div class="quality-item reveal reveal-delay-4">
-          <h4>ISO 9001</h4>
-          <p>ZhongSai follows ISO 9001 quality management system requirements.</p>
-        </div>
+      <div style="max-width: 900px; margin: 40px auto 0;" class="faq-container">
+        {faqs.map((faq, i) => (
+          <details class={`reveal reveal-delay-${(i % 4) + 1}`} style="margin-bottom: 12px; background: white; border: 1px solid #e2e8f0; border-radius: 10px; overflow: hidden;">
+            <summary style="padding: 18px 24px; cursor: pointer; font-weight: 600; color: #0f172a; font-size: 15px; list-style: none; display: flex; justify-content: space-between; align-items: center;">
+              <span>{faq.q}</span>
+              <span style="color: #1e40af; font-size: 20px; flex-shrink: 0; margin-left: 16px;">+</span>
+            </summary>
+            <div style="padding: 0 24px 20px; color: #475569; font-size: 14px; line-height: 1.8;">
+              {faq.a}
+            </div>
+          </details>
+        ))}
       </div>
     </div>
   </section>
 
-  <!-- 05 Marking, Packing & Export Preparation -->
-  <section class="dual-path-section">
+  <!-- 14 Internal Links / Related -->
+  <section class="section" style="padding: 70px 0; background: #f8fafc;">
     <div class="container">
-      <div class="section-heading reveal" style="color: white; text-align: center; display: block; margin-bottom: 36px;">
-        <p class="section-index" style="color: #f59e0b;">05 / Export Preparation</p>
-        <h2 style="color: white; margin-bottom: 10px;">Marking, Packing & Export Preparation</h2>
-        <p style="color: rgba(255,255,255,0.65); max-width: 700px; margin: 0 auto;">Component marking and numbering may be arranged based on shop drawings and project requirements, with packing organized by component type, container loading sequence and export transport requirements, supporting container loading and export documentation preparation.</p>
-      </div>
-      <div class="dual-path-grid" style="grid-template-columns: repeat(3, 1fr); gap: 20px;">
-        <div class="dual-path-card reveal reveal-delay-1" style="padding: 28px 24px;">
-          <div class="path-icon" style="width: 44px; height: 44px; font-size: 15px; font-weight: 700; color:#fff; margin-bottom: 14px;">01</div>
-          <h3 style="font-size: 18px; margin-bottom: 8px;">Component Marking</h3>
-          <p style="font-size: 14px; margin-bottom: 0;">Component marking available based on shop drawings and project requirements, facilitating site erection identification and verification.</p>
-        </div>
-        <div class="dual-path-card reveal reveal-delay-2" style="padding: 28px 24px;">
-          <div class="path-icon" style="width: 44px; height: 44px; font-size: 15px; font-weight: 700; color:#fff; margin-bottom: 14px;">02</div>
-          <h3 style="font-size: 18px; margin-bottom: 8px;">Packing Organization</h3>
-          <p style="font-size: 14px; margin-bottom: 0;">Packing organized by component type, container loading sequence and export transport requirements, with packing lists included.</p>
-        </div>
-        <div class="dual-path-card reveal reveal-delay-3" style="padding: 28px 24px;">
-          <div class="path-icon" style="width: 44px; height: 44px; font-size: 15px; font-weight: 700; color:#fff; margin-bottom: 14px;">03</div>
-          <h3 style="font-size: 18px; margin-bottom: 8px;">Export Preparation</h3>
-          <p style="font-size: 14px; margin-bottom: 0;">Container loading support, export documentation support and logistics coordination, coordinated with project delivery schedule.</p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- 06 Related Capabilities -->
-  <section class="section" style="padding: 70px 0;">
-    <div class="container">
-      <div class="section-heading reveal" style="margin-bottom: 36px;">
+      <div class="section-heading reveal">
         <div>
-          <p class="section-index">06 / Related</p>
-          <h2>Related Capabilities & Products</h2>
+          <p class="section-index">Related</p>
+          <h2>Related Capabilities and Project Evidence</h2>
         </div>
         <div>
-          <p>Explore ZhongSai component supply, cladding systems and product categories.</p>
+          <p>Explore ZhongSai engineering capabilities, project types and export delivery services that support our manufacturing operations.</p>
         </div>
       </div>
-      <div class="related-grid">
-        <a href="/en/components/" class="related-card reveal reveal-delay-1">
-          <h4>Components & Materials</h4>
-          <p>Steel beams, columns, trusses, purlins and cladding systems, custom fabricated to drawings.</p>
+      <div class="related-grid" style="margin-top: 40px;">
+        <a href="/en/engineering-design/" class="related-card reveal reveal-delay-1">
+          <h4>Engineering & Detailing</h4>
+          <p>Structural design coordination, shop detailing and connection engineering supporting fabrication.</p>
+          <span class="related-cta">View Engineering →</span>
+        </a>
+        <a href="/en/steel-workshop/" class="related-card reveal reveal-delay-2">
+          <h4>Steel Workshop</h4>
+          <p>Industrial workshop and manufacturing plant steel structures, fabricated to project drawings.</p>
+          <span class="related-cta">View Workshop →</span>
+        </a>
+        <a href="/en/steel-warehouse/" class="related-card reveal reveal-delay-3">
+          <h4>Steel Warehouse</h4>
+          <p>Logistics and storage warehouse steel structures, with large-span and high-clearance capability.</p>
+          <span class="related-cta">View Warehouse →</span>
+        </a>
+        <a href="/en/export-delivery/" class="related-card reveal reveal-delay-4">
+          <h4>Export Delivery</h4>
+          <p>Container loading, export documentation and logistics coordination for overseas project delivery.</p>
+          <span class="related-cta">View Export →</span>
+        </a>
+        <a href="/en/projects/" class="related-card reveal reveal-delay-1">
+          <h4>Project Evidence</h4>
+          <p>Real project case studies demonstrating ZhongSai manufacturing and export delivery capability.</p>
+          <span class="related-cta">View Projects →</span>
+        </a>
+        <a href="/en/components/" class="related-card reveal reveal-delay-2">
+          <h4>Steel Components</h4>
+          <p>Steel beams, columns, trusses, platforms and other fabricated steel components.</p>
           <span class="related-cta">View Components →</span>
         </a>
-        <a href="/en/components/fabricated-steel-beams-columns/" class="related-card reveal reveal-delay-2">
-          <h4>Steel Beams & Columns</h4>
-          <p>H-beams, columns and box sections, fabricated to project drawings and load requirements.</p>
-          <span class="related-cta">View Details →</span>
+        <a href="/en/steel-mining-factory/" class="related-card reveal reveal-delay-3">
+          <h4>Mining & Heavy Industry</h4>
+          <p>Heavy industrial steel structures for mining, energy and processing plant applications.</p>
+          <span class="related-cta">View Mining →</span>
         </a>
-        <a href="/en/components/roof-wall-cladding-systems/" class="related-card reveal reveal-delay-3">
-          <h4>Cladding Systems</h4>
-          <p>Roof panels, wall panels, sandwich panels and accessories, supplied with steel structure package.</p>
-          <span class="related-cta">View Details →</span>
-        </a>
-        <a href="/en/products/" class="related-card reveal reveal-delay-4">
-          <h4>Product Categories</h4>
-          <p>Industrial workshops, warehouses, mining, commercial, agriculture and custom engineering steel structures.</p>
-          <span class="related-cta">View Products →</span>
+        <a href="/en/contact/" class="related-card reveal reveal-delay-4">
+          <h4>Contact & Quote</h4>
+          <p>Submit your project drawings and technical requirements for manufacturing review and quotation.</p>
+          <span class="related-cta">Get Started →</span>
         </a>
       </div>
     </div>
   </section>
 
-  <!-- 07 Quote CTA -->
-  <section class="quote-cta-section" id="quote">
+  <!-- 15 Quote CTA -->
+  
+  <!-- Related Projects -->
+  <section class="related-projects-section">
     <div class="container">
-      <ExportDeliveryCTA lang="en" />
-
-      <div class="quote-cta-header reveal">
-        <p class="section-index" style="color: #f59e0b;">07 / Get a Quote</p>
-        <h2>Submit Drawings for Manufacturing Quotation</h2>
-        <p>Upload structural drawings or BOQ lists. ZhongSai will provide a fabrication and export delivery quotation based on your project requirements.</p>
+      <div class="rp-heading">
+        <h2>Real Projects Through This Manufacturing Process</h2>
+        <p>The structural steel components of the following projects were fabricated, inspected and delivered through ZhongSai's manufacturing process.</p>
       </div>
-      <QuoteForm lang={lang} />
+      <div class="rp-grid">
+        <a href="/en/projects/guangzhou-high-end-equipment-base/" class="related-project-card">
+          <div class="rpc-image">
+            <img src="/images/projects/guangzhou-gongkong-high-end-equipment-base-aerial-rendering.jpg" alt="Guangzhou High-End Equipment Base" loading="lazy">
+          </div>
+          <div class="rpc-content">
+            <span class="rpc-category">Industrial</span>
+            <h4>Guangzhou High-End Equipment Base</h4>
+            <p class="rpc-location">Guangzhou, China</p>
+            <p class="rpc-data">60m span · 9,800 tonnes</p>
+            <p class="rpc-scope"><span>ZhongSai Scope:</span> Steel Structure Fabrication & Supply</p>
+          </div>
+        </a>
+        <a href="/en/projects/zhanjiang-logistics-port/" class="related-project-card">
+          <div class="rpc-image">
+            <img src="/images/projects/shenzhen-international-zhanjiang-logistics-port-aerial-rendering.jpg" alt="Zhanjiang Logistics Port" loading="lazy">
+          </div>
+          <div class="rpc-content">
+            <span class="rpc-category">Logistics</span>
+            <h4>Zhanjiang Logistics Port</h4>
+            <p class="rpc-location">Zhanjiang, China</p>
+            <p class="rpc-data">100,000 m² · 3,160 tonnes</p>
+            <p class="rpc-scope"><span>ZhongSai Scope:</span> Steel Structure Fabrication & Supply</p>
+          </div>
+        </a>
+        <a href="/en/projects/singapore-airport-t2-connect/" class="related-project-card">
+          <div class="rpc-image">
+            <img src="/images/projects/overseas/singapore-airport-t2-connect.jpg" alt="Singapore Changi Airport T2 Connect" loading="lazy">
+          </div>
+          <div class="rpc-content">
+            <span class="rpc-category">Overseas</span>
+            <h4>Singapore Changi Airport T2 Connect</h4>
+            <p class="rpc-location">Singapore</p>
+            <p class="rpc-data">4,600 tonnes · 209 Kingposts</p>
+            <p class="rpc-scope"><span>ZhongSai Scope:</span> Detailing, Fabrication & Export Supply</p>
+          </div>
+        </a>
+      </div>
+      <div class="rp-more">
+        <a href="/en/projects/" class="btn btn-outline">View All Projects →</a>
+      </div>
+    </div>
+  </section>
+
+<ExportDeliveryCTA lang="en" />
+
+<section class="quote-cta-section" id="quote">
+    <div class="container">
+      <div class="quote-cta-header reveal">
+        <p class="section-index" style="color: #f59e0b;">Project Inquiry</p>
+        <h2>Have Project Drawings Ready?</h2>
+        <p>Send your drawings, project location and technical requirements for manufacturing review. ZhongSai will provide a fabrication and export delivery quotation based on your project specifications.</p>
+      </div>
+      <div style="display: flex; gap: 16px; margin-bottom: 32px; flex-wrap: wrap;" class="quote-cta-buttons reveal">
+        <a href="#quote-form" class="btn btn-primary" style="font-size: 16px; padding: 14px 32px;">Send Project Drawings</a>
+        <a href="/en/contact/" class="btn btn-secondary" style="font-size: 16px; padding: 14px 32px;">Request Engineering Review</a>
+      </div>
+      <div id="quote-form">
+        <QuoteForm lang={lang} />
+      </div>
     </div>
   </section>
 </BaseLayout>
+
+<style>
+.hero-stats {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+  margin: 32px 0;
+}
+.hero-stat {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+.stat-number {
+  font-size: 24px;
+  font-weight: 700;
+  color: #f59e0b;
+}
+.stat-label {
+  font-size: 13px;
+  color: rgba(255,255,255,0.7);
+}
+.hero-cta-group {
+  display: flex;
+  gap: 16px;
+  flex-wrap: wrap;
+  margin-top: 8px;
+}
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 12px 28px;
+  border-radius: 8px;
+  font-weight: 600;
+  font-size: 15px;
+  text-decoration: none;
+  transition: all 0.2s;
+  border: none;
+  cursor: pointer;
+}
+.btn-primary {
+  background: #f59e0b;
+  color: #0f172a;
+}
+.btn-primary:hover {
+  background: #d97706;
+}
+.btn-secondary {
+  background: rgba(255,255,255,0.1);
+  color: white;
+  border: 1px solid rgba(255,255,255,0.3);
+}
+.btn-secondary:hover {
+  background: rgba(255,255,255,0.2);
+}
+.inspection-grid, .packing-grid, .marking-grid, .project-types-grid, .cert-grid, .evidence-grid-upgraded, .quality-table-wrap, .quote-cta-buttons {
+  /* responsive handled by media queries */
+}
+details summary::-webkit-details-marker {
+  display: none;
+}
+details[open] summary span:last-child {
+  transform: rotate(45deg);
+}
+details summary span:last-child {
+  transition: transform 0.2s;
+}
+@media (max-width: 1024px) {
+  .hero-stats {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .inspection-grid {
+    grid-template-columns: 1fr !important;
+  }
+  .packing-grid {
+    grid-template-columns: 1fr !important;
+  }
+  .marking-grid {
+    grid-template-columns: repeat(2, 1fr) !important;
+  }
+  .project-types-grid {
+    grid-template-columns: repeat(2, 1fr) !important;
+  }
+  .cert-grid {
+    grid-template-columns: repeat(2, 1fr) !important;
+  }
+  .evidence-grid-upgraded {
+    grid-template-columns: repeat(2, 1fr) !important;
+  }
+}
+@media (max-width: 768px) {
+  .hero-stats {
+    grid-template-columns: 1fr 1fr;
+    gap: 16px;
+  }
+  .stat-number {
+    font-size: 20px;
+  }
+  .marking-grid {
+    grid-template-columns: 1fr !important;
+  }
+  .project-types-grid {
+    grid-template-columns: 1fr 1fr !important;
+  }
+  .cert-grid {
+    grid-template-columns: 1fr 1fr !important;
+  }
+  .evidence-grid-upgraded {
+    grid-template-columns: 1fr 1fr !important;
+  }
+  .quality-grid {
+    grid-template-columns: 1fr !important;
+  }
+  .hero-cta-group {
+    flex-direction: column;
+  }
+  .hero-cta-group .btn {
+    width: 100%;
+  }
+}
+</style>

@@ -6,7 +6,7 @@ import EngineeringServiceGuide from '../../../../components/EngineeringServiceGu
 import '../../../../styles/detail.css';
 
 const title = 'Structural Steel Fabrication in China | Custom Fabrication | ZhongSai';
-const description = 'ZhongSai Steel Structure provides structural steel fabrication in China for overseas projects. We fabricate steel beams, columns, trusses and custom members from project drawings, shop drawings and BOQ, with packing, container loading and export delivery support.';
+const description = 'ZhongSai Steel Structure provides structural steel fabrication in China for overseas projects. We fabricate steel beams, columns, trusses and custom...';
 const lang = 'en';
 const canonical = 'https://zhongsai-steelstructure.com/en/products/custom-engineering/';
 ---
@@ -44,7 +44,7 @@ const canonical = 'https://zhongsai-steelstructure.com/en/products/custom-engine
   <section class="detail-section">
     <div class="container">
       <div class="section-heading reveal">
-        <p class="section-index">01 / Drawing-Based Fabrication</p>
+        <p class="section-index">Drawing-Based Fabrication</p>
         <h2>Custom Structural Steel Fabrication from Project Drawings</h2>
         <p>ZhongSai fabricates steel components based on customer-provided structural drawings, shop drawings, technical specifications and Bill of Quantities (BOQ). Specific materials, dimensions, welding requirements and surface treatment are determined per project drawings and technical requirements.</p>
       </div>
@@ -70,7 +70,7 @@ const canonical = 'https://zhongsai-steelstructure.com/en/products/custom-engine
   <section class="detail-section alt">
     <div class="container">
       <div class="section-heading reveal">
-        <p class="section-index">02 / What We Fabricate</p>
+        <p class="section-index">What We Fabricate</p>
         <h2>What Structural Steel Components Can ZhongSai Fabricate</h2>
         <p>Based on project drawings and technical requirements, ZhongSai can fabricate the following types of steel components. Specific fabrication scope and technical requirements are confirmed per project drawings.</p>
       </div>
@@ -116,7 +116,7 @@ const canonical = 'https://zhongsai-steelstructure.com/en/products/custom-engine
   <section class="detail-section">
     <div class="container">
       <div class="section-heading reveal">
-        <p class="section-index">03 / Fabrication Process</p>
+        <p class="section-index">Fabrication Process</p>
         <h2>Drawing-to-Export Fabrication Process</h2>
         <p>The following is a brief overview of the drawing-based fabrication process. For detailed manufacturing, quality control and the 8-step fabrication process, please view the manufacturing capability page.</p>
       </div>
@@ -172,7 +172,7 @@ const canonical = 'https://zhongsai-steelstructure.com/en/products/custom-engine
   <section class="detail-section alt">
     <div class="container">
       <div class="section-heading reveal">
-        <p class="section-index">04 / Drawing & BOQ Requirements</p>
+        <p class="section-index">Drawing & BOQ Requirements</p>
         <h2>What Information Is Needed for a Fabrication Quotation</h2>
         <p>The more complete the drawings and technical documentation, the more accurate the review and quotation. If documentation is incomplete, you can first submit available materials, and ZhongSai will further confirm what is needed for fabrication and quotation.</p>
       </div>
@@ -208,7 +208,7 @@ const canonical = 'https://zhongsai-steelstructure.com/en/products/custom-engine
   <section class="detail-section">
     <div class="container">
       <div class="section-heading reveal">
-        <p class="section-index">05 / Export Project Fabrication</p>
+        <p class="section-index">Export Project Fabrication</p>
         <h2>Structural Steel Fabrication for Overseas Export Projects</h2>
         <p>ZhongSai provides drawing-based steel component fabrication for overseas contractors, engineering firms and procurement teams, with export packing, container loading and delivery preparation support.</p>
       </div>
@@ -235,7 +235,7 @@ const canonical = 'https://zhongsai-steelstructure.com/en/products/custom-engine
   <section class="detail-section dark">
     <div class="container">
       <div class="section-heading reveal" style="text-align: center;">
-        <p class="section-index" style="justify-content: center;">06 / Why ZhongSai</p>
+        <p class="section-index" style="justify-content: center;">Why ZhongSai</p>
         <h2 style="color: #fff;">Core Capabilities for Drawing-Based Fabrication</h2>
         <p style="margin: 0 auto;">ZhongSai's manufacturing and export capabilities include:</p>
       </div>
@@ -278,7 +278,7 @@ const canonical = 'https://zhongsai-steelstructure.com/en/products/custom-engine
   <section class="detail-section">
     <div class="container">
       <div class="section-heading reveal">
-        <p class="section-index">07 / Related Capabilities</p>
+        <p class="section-index">Related Capabilities</p>
         <h2>Related Capabilities & Pages</h2>
       </div>
       <div class="related-links">
@@ -326,7 +326,7 @@ const canonical = 'https://zhongsai-steelstructure.com/en/products/custom-engine
   <section class="detail-section alt">
     <div class="container">
       <div class="section-heading reveal" style="text-align: center;">
-        <p class="section-index" style="justify-content: center;">08 / FAQ</p>
+        <p class="section-index" style="justify-content: center;">FAQ</p>
         <h2>Frequently Asked Questions About Drawing-Based Fabrication</h2>
       </div>
       <div class="detail-faq">
@@ -384,7 +384,7 @@ const canonical = 'https://zhongsai-steelstructure.com/en/products/custom-engine
   <section class="detail-section dark" id="quote">
     <div class="container">
       <div class="section-heading reveal" style="text-align: center;">
-        <p class="section-index" style="justify-content: center; color: #f59e0b;">09 / Get Quotation</p>
+        <p class="section-index" style="justify-content: center; color: #f59e0b;">Get Quotation</p>
         <h2 style="color: #fff;">Have Drawings or BOQ? Submit for Project Review</h2>
         <p style="margin: 0 auto; color: rgba(255,255,255,0.75);">Submit project drawings, BOQ and technical requirements. ZhongSai will conduct an initial review and confirm what is needed for quotation.</p>
       </div>
@@ -401,6 +401,8 @@ const canonical = 'https://zhongsai-steelstructure.com/en/products/custom-engine
       const isOpen = item.classList.contains('open');
       item.classList.toggle('open');
       btn.setAttribute('aria-expanded', !isOpen);
+      const answer = item.querySelector('.faq-answer');
+      if (answer) answer.hidden = !answer.hidden;
     });
   });
 

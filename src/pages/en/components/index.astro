@@ -1,283 +1,552 @@
 ---
-// ZhongSai V2 - English Components Hub (Rebuilt: all cards have clear action)
 import BaseLayout from '../../../layouts/BaseLayout.astro';
 import QuoteForm from '../../../components/QuoteForm.astro';
 import '../../../styles/hub.css';
 
 const lang = 'en';
-const title = 'Steel Components & Cladding Systems | Beams, Columns, Trusses, Purlins | ZhongSai';
-const description = 'ZhongSai Steel Structure provides custom fabricated steel components and cladding systems to drawings — beams, columns, trusses, crane beams, C/Z purlins, roof and wall panels, sandwich panels, with component marking, packing and export delivery.';
-
-// Primary Structural Members - all cards have clear action
-const primaryMembers = [
-  {
-    title: 'Steel Beams',
-    desc: 'H-beams, built-up beams and welded beams, fabricated to drawings with pre-fabricated end connection plates.',
-    href: '/en/components/fabricated-steel-beams-columns/#steel-beams',
-    actionType: 'anchor',
-    cta: 'View Steel Beams →'
-  },
-  {
-    title: 'Steel Columns',
-    desc: 'H-columns, box columns and lattice columns, designed for load and height, with pre-fabricated base plates and stiffeners.',
-    href: '/en/components/fabricated-steel-beams-columns/#steel-columns',
-    actionType: 'anchor',
-    cta: 'View Steel Columns →'
-  },
-  {
-    title: 'Box Sections',
-    desc: 'Box columns and box beams for long-span and heavy-load structures, fabricated to project drawings with full penetration welding.',
-    href: '/en/components/fabricated-steel-beams-columns/#box-sections',
-    actionType: 'anchor',
-    cta: 'View Box Sections →'
-  },
-  {
-    title: 'Crane Beams',
-    desc: 'Overhead crane beams and under-hung crane beams, designed for crane tonnage and duty class, fabricated to crane system requirements.',
-    href: '/en/components/fabricated-steel-beams-columns/#crane-beams',
-    actionType: 'anchor',
-    cta: 'View Crane Beams →'
-  },
-  {
-    title: 'Steel Trusses',
-    desc: 'Roof trusses, transfer trusses and pipe trusses, designed for span and load, with welded or bolted connections. Custom fabricated to drawings.',
-    href: '/en/components/steel-trusses/',
-    actionType: 'detail',
-    cta: 'View Steel Trusses →'
-  },
-  {
-    title: 'Platforms & Bracing',
-    desc: 'Working platforms, equipment platforms, column bracing and roof bracing — custom fabricated to equipment layout and structural stability requirements.',
-    href: '#quote',
-    actionType: 'quote',
-    cta: 'Send Platform & Bracing Drawings →'
-  }
-];
-
-// Secondary Structural Members - all cards have clear action
-const secondaryMembers = [
-  {
-    title: 'C Purlins',
-    desc: 'Cold-formed C-section purlins for roof and wall secondary structures, selected by spacing and load, with pre-punched connection holes.',
-    href: '/en/components/steel-purlins/#c-purlins',
-    actionType: 'anchor',
-    cta: 'View C Purlins →'
-  },
-  {
-    title: 'Z Purlins',
-    desc: 'Cold-formed Z-section purlins with lapped connections, suitable for wide-spacing roofs with better continuous bending performance.',
-    href: '/en/components/steel-purlins/#z-purlins',
-    actionType: 'anchor',
-    cta: 'View Z Purlins →'
-  },
-  {
-    title: 'Bracing System',
-    desc: 'Column bracing, roof horizontal bracing and vertical bracing using angle steel or round bars, ensuring overall structural stability.',
-    href: '#quote',
-    actionType: 'quote',
-    cta: 'Send Bracing Requirements →'
-  },
-  {
-    title: 'Connection Components',
-    desc: 'Gusset plates, stiffeners, connection plates and high-strength bolts, pre-fabricated to shop drawings for accurate site erection.',
-    href: '#quote',
-    actionType: 'quote',
-    cta: 'Send Connection Details →'
-  }
-];
-
-// Cladding Systems - all cards have unique anchor targets
-const claddingSystems = [
-  {
-    title: 'Roof Panels',
-    desc: 'Color-coated profiled roof panels, standing seam panels in various profiles and thicknesses, waterproof and wind-resistant.',
-    href: '/en/components/roof-wall-cladding-systems/#roof-panels',
-    actionType: 'anchor',
-    cta: 'View Roof Panels →'
-  },
-  {
-    title: 'Wall Panels',
-    desc: 'Color-coated profiled wall panels, horizontal and vertical siding, various profiles and colors for coordinated building appearance.',
-    href: '/en/components/roof-wall-cladding-systems/#wall-panels',
-    actionType: 'anchor',
-    cta: 'View Wall Panels →'
-  },
-  {
-    title: 'Sandwich Panels',
-    desc: 'EPS / PU / PIR sandwich panels for thermal insulation, suitable for factories and warehouses with temperature control requirements.',
-    href: '/en/components/roof-wall-cladding-systems/#sandwich-panels',
-    actionType: 'anchor',
-    cta: 'View Sandwich Panels →'
-  },
-  {
-    title: 'Cladding Accessories',
-    desc: 'Gutters, trims, flashings, skylights and ventilators — a complete cladding accessory package coordinated with panel system.',
-    href: '/en/components/roof-wall-cladding-systems/#cladding-accessories',
-    actionType: 'anchor',
-    cta: 'View Accessories →'
-  }
-];
+const title = 'Steel Structure Components & Special Structures | ZhongSai';
+const description = 'Fabricated steel components and special steel structures manufactured to project drawings: steel beams, columns, trusses, platforms, pipe racks,...';
 ---
 
 <BaseLayout title={title} description={description} lang={lang}>
   <!-- Hero -->
   <section class="hub-hero">
-    <div class="hub-hero-bg" style="background-image: url('/images/manufacturing/real/assembly-welding-9821.jpg')"></div>
+    <div class="hub-hero-bg" style="background-image: url('/images/manufacturing/real/assembly-welding-9821.jpg');"></div>
     <div class="hub-hero-overlay"></div>
     <div class="container hub-hero-content">
       <div class="hub-breadcrumb">
-        <a href="/en/">Home</a><span>/</span><span>Components</span>
+        <a href="/en/">Home</a><span>/</span><a href="/en/products/">Products</a><span>/</span><span>Steel Components</span>
       </div>
-      <p class="eyebrow">COMPONENTS · By Steel Member Type</p>
-      <h1>Custom Steel Components &<br>Cladding Systems to Drawings</h1>
-      <p class="lead">Steel beams, columns, trusses, purlins and roof & wall cladding systems — custom fabricated, component marked, packed and delivered for export. <strong>Components are organized by steel member type.</strong> For complete building solutions by application, see <a href="/en/products/" style="color:rgba(255,255,255,0.92);text-decoration:underline;">Products</a>.</p>
+      <p class="eyebrow">STEEL COMPONENTS · SPECIAL STRUCTURES</p>
+      <h1>Steel Structure Components and Special Fabricated Structures</h1>
+      <p class="lead">Fabricated steel components and special steel structures manufactured to project drawings for industrial, mining, commercial and infrastructure applications. ZhongSai provides drawing-based fabrication, structural detailing, complex welded/bolted assemblies, export packing and delivery.</p>
+      <div class="detail-hero-actions">
+        <a href="#quote" class="btn btn-primary">Send Component Drawings for Review</a>
+        <a href="#fabrication" class="btn btn-outline">Request Fabrication Quote</a>
+      </div>
     </div>
   </section>
 
-  <!-- Direct Answer Block (GEO) -->
-  <section class="component-section" style="padding: 40px 0; background: #f8fafc;">
+  <!-- Breadcrumb -->
+  <nav class="detail-breadcrumb">
     <div class="container">
-      <div style="max-width: 800px; margin: 0 auto;">
-        <h2 style="font-size: 1.5rem; margin-bottom: 16px; color: #0f172a;">What information is needed for fabricated steel components?</h2>
-        <p style="font-size: 1.05rem; line-height: 1.7; color: #334155; margin-bottom: 16px;">
-          Structural drawings, member schedules, connection details, material specifications and applicable project standards are typically needed for fabrication review. Clear drawing references and member identification help ensure accurate manufacturing and on-site assembly.
-        </p>
-        <div style="margin-top: 20px; padding: 16px; background: #fff; border-radius: 8px; border: 1px solid #e2e8f0;">
-          <p style="font-weight: 600; margin-bottom: 8px; color: #0f172a;">Buyer Questions</p>
-          <ul style="margin: 0; padding-left: 20px; color: #334155; line-height: 1.8;">
-            <li>What drawings are needed for component fabrication?</li>
-            <li>Can components be fabricated from customer-supplied drawings?</li>
-            <li>How are steel members identified and marked?</li>
-            <li>What information is needed for a quotation?</li>
+      <a href="/en/">Home</a>
+      <span class="sep">/</span>
+      <a href="/en/products/">Products</a>
+      <span class="sep">/</span>
+      <span class="current">Steel Components & Special Structures</span>
+    </div>
+  </nav>
+
+  <!-- 01 / Component Categories -->
+  <section class="detail-section">
+    <div class="container">
+      <div class="section-heading reveal">
+        <p class="section-index">Component Categories</p>
+        <h2>Steel Component Types We Fabricate</h2>
+        <p>ZhongSai fabricates a wide range of structural steel components and special structures to client drawings. Each component type has specific engineering considerations and fabrication requirements.</p>
+      </div>
+      <div class="component-category-grid">
+        <a href="/en/components/fabricated-steel-beams-columns/#steel-columns" class="component-category-card reveal">
+          <div class="cc-image">
+            <img src="/images/components/steel-beams-columns-fabrication.jpg" alt="Steel columns fabricated in factory" loading="lazy">
+          </div>
+          <div class="cc-content">
+            <h3>Steel Columns</h3>
+            <p>Vertical structural members used to transfer roof, floor and equipment loads to foundations. H-columns, box columns and lattice columns fabricated to drawings.</p>
+            <span class="cc-cta">View Steel Columns →</span>
+          </div>
+        </a>
+        <a href="/en/components/fabricated-steel-beams-columns/#steel-beams" class="component-category-card reveal reveal-delay-1">
+          <div class="cc-image">
+            <img src="/images/components/steel-beams-columns-fabrication.jpg" alt="Steel beams fabricated in factory" loading="lazy">
+          </div>
+          <div class="cc-content">
+            <h3>Steel Beams</h3>
+            <p>Horizontal structural members used to support floors, roofs, platforms and equipment. H-beams, built-up beams and welded beams with pre-fabricated connections.</p>
+            <span class="cc-cta">View Steel Beams →</span>
+          </div>
+        </a>
+        <a href="/en/components/steel-trusses/" class="component-category-card reveal reveal-delay-2">
+          <div class="cc-image">
+            <img src="/images/components/steel-truss-hero.jpg" alt="Steel truss structure in factory" loading="lazy">
+          </div>
+          <div class="cc-content">
+            <h3>Steel Trusses</h3>
+            <p>Long-span structural assemblies used where reduced intermediate support is required. Roof trusses, transfer trusses and pipe trusses with welded or bolted connections.</p>
+            <span class="cc-cta">View Steel Trusses →</span>
+          </div>
+        </a>
+        <a href="#quote" class="component-category-card reveal">
+          <div class="cc-image">
+            <img src="/images/products/02-mining-energy.jpg" alt="Industrial steel platform structure" loading="lazy">
+          </div>
+          <div class="cc-content">
+            <h3>Steel Platforms</h3>
+            <p>Elevated structures used for equipment support, maintenance access and industrial operations. Working platforms, equipment platforms and access structures fabricated to layout.</p>
+            <span class="cc-cta">Send Platform Drawings →</span>
+          </div>
+        </a>
+        <a href="#quote" class="component-category-card reveal reveal-delay-1">
+          <div class="cc-image">
+            <img src="/images/products/app-mining-energy.jpg" alt="Pipe rack steel structure for industrial plant" loading="lazy">
+          </div>
+          <div class="cc-content">
+            <h3>Pipe Racks</h3>
+            <p>Structural systems supporting process piping, cable trays and utility services. Multi-level pipe racks with coordinated support points and access platforms.</p>
+            <span class="cc-cta">Send Pipe Rack Drawings →</span>
+          </div>
+        </a>
+        <a href="#quote" class="component-category-card reveal reveal-delay-2">
+          <div class="cc-image">
+            <img src="/images/products/app-mining-energy-hero.jpg" alt="Conveyor gallery steel structure for bulk material handling" loading="lazy">
+          </div>
+          <div class="cc-content">
+            <h3>Conveyor Galleries</h3>
+            <p>Steel support and enclosure structures for bulk material conveying systems. Conveyor galleries, transfer towers and support structures with maintenance access.</p>
+            <span class="cc-cta">Send Conveyor Drawings →</span>
+          </div>
+        </a>
+        <a href="/en/special-custom-steel-structures/" class="component-category-card reveal">
+          <div class="cc-image">
+            <img src="/images/products/06-custom-engineering.jpg" alt="Special fabricated steel structure with complex geometry" loading="lazy">
+          </div>
+          <div class="cc-content">
+            <h3>Special Fabricated Structures</h3>
+            <p>Custom and complex steel structures requiring specialized fabrication. Curved structures, space frames, architectural steel and non-standard structural assemblies.</p>
+            <span class="cc-cta">View Special Structures →</span>
+          </div>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- 02 / Component Definitions -->
+  <section class="detail-section alt">
+    <div class="container">
+      <div class="section-heading reveal">
+        <p class="section-index">Component Definitions</p>
+        <h2>What Each Steel Component Is Used For</h2>
+        <p>Clear definitions of each structural steel component type and its typical application in building and industrial projects.</p>
+      </div>
+      <div class="definition-grid">
+        <div class="definition-item reveal">
+          <h4>Steel Columns</h4>
+          <p>Vertical structural members that transfer gravity loads (roof, floor, equipment) and lateral loads to the foundation. Available as H-section, box section, lattice and built-up columns.</p>
+        </div>
+        <div class="definition-item reveal reveal-delay-1">
+          <h4>Steel Beams</h4>
+          <p>Horizontal structural members that carry transverse loads and transfer them to columns or supports. Used for floor support, roof framing, crane beams and equipment supports.</p>
+        </div>
+        <div class="definition-item reveal reveal-delay-2">
+          <h4>Steel Trusses</h4>
+          <p>Triangulated structural assemblies that efficiently carry loads over long spans with reduced material weight. Used for roofs, bridges, transfer structures and long-span canopies.</p>
+        </div>
+        <div class="definition-item reveal">
+          <h4>Steel Platforms</h4>
+          <p>Elevated structural surfaces providing access, working space or equipment support. Includes mezzanines, maintenance platforms, equipment platforms and access walkways.</p>
+        </div>
+        <div class="definition-item reveal reveal-delay-1">
+          <h4>Pipe Racks</h4>
+          <p>Structural frameworks designed to support process piping, cable trays, HVAC ducts and utility lines in industrial plants. Multi-level configurations with coordinated support points.</p>
+        </div>
+        <div class="definition-item reveal reveal-delay-2">
+          <h4>Conveyor Galleries</h4>
+          <p>Enclosed or open structural support systems for bulk material conveying equipment. Includes gallery framing, support towers, transfer structures and maintenance access systems.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 03 / Fabrication Capabilities -->
+  <section id="fabrication" class="detail-section">
+    <div class="container">
+      <div class="section-heading reveal">
+        <p class="section-index">Fabrication Capabilities</p>
+        <h2>Steel Component Fabrication Capabilities</h2>
+        <p>ZhongSai operates a production base equipped for precision steel component fabrication, with documented quality processes and export-oriented packing and delivery.</p>
+      </div>
+      <div class="capability-grid">
+        <div class="capability-item reveal">
+          <h4>CNC Cutting</h4>
+          <p>Precision CNC plasma and flame cutting for plate and section steel, ensuring accurate dimensions and clean cut edges.</p>
+        </div>
+        <div class="capability-item reveal reveal-delay-1">
+          <h4>Drilling</h4>
+          <p>CNC drilling and punching for bolt holes, connection plates and component details with accurate hole positioning.</p>
+        </div>
+        <div class="capability-item reveal reveal-delay-2">
+          <h4>Welding</h4>
+          <p>Qualified welding procedures and welders for fillet, partial penetration and full penetration welds per project specifications.</p>
+        </div>
+        <div class="capability-item reveal">
+          <h4>Assembly</h4>
+          <p>Precision fitting and assembly of components, including built-up sections, truss assemblies and complex welded structures.</p>
+        </div>
+        <div class="capability-item reveal reveal-delay-1">
+          <h4>Dimensional Inspection</h4>
+          <p>Dimensional verification at critical fabrication stages, with recorded inspection results and fit-up verification.</p>
+        </div>
+        <div class="capability-item reveal reveal-delay-2">
+          <h4>Surface Preparation</h4>
+          <p>Shot blasting and surface preparation per SA 2.5 or project-specified standards before coating application.</p>
+        </div>
+        <div class="capability-item reveal">
+          <h4>Painting</h4>
+          <p>Multi-coat paint systems including primer, intermediate and finish coats, with dry film thickness verification per specification.</p>
+        </div>
+        <div class="capability-item reveal reveal-delay-1">
+          <h4>Galvanizing</h4>
+          <p>Hot-dip galvanizing coordination for components suitable for galvanizing bath dimensions, per applicable standards.</p>
+        </div>
+        <div class="capability-item reveal reveal-delay-2">
+          <h4>Trial Assembly</h4>
+          <p>Trial assembly for complex structures where required by project specification, verifying fit-up before shipment.</p>
+        </div>
+        <div class="capability-item reveal">
+          <h4>Component Marking</h4>
+          <p>Unique component identification system matching assembly drawings, including piece marks, orientation and connection references.</p>
+        </div>
+        <div class="capability-item reveal reveal-delay-1">
+          <h4>Export Packing</h4>
+          <p>Packing organized for container shipping, with detailed packing lists, component inventory and handling instructions.</p>
+        </div>
+      </div>
+      <div style="text-align: center; margin-top: 30px;">
+        <a href="/en/manufacturing-quality/" class="btn btn-outline">View Manufacturing & Quality →</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- 04 / Drawing-Based Manufacturing -->
+  <section class="detail-section alt">
+    <div class="container">
+      <div class="section-heading reveal">
+        <p class="section-index">Drawing-Based</p>
+        <h2>Fabrication Based on Client Drawings</h2>
+        <p>ZhongSai fabricates steel components based on client-supplied drawings and specifications, with engineering coordination and detailing support where required.</p>
+      </div>
+      <div class="image-text-block">
+        <div class="itb-image">
+          <img src="/images/manufacturing/real/workshop-overview-wide-9815.jpg" alt="Steel component fabrication based on client drawings" loading="lazy">
+        </div>
+        <div class="itb-content">
+          <h3>How Drawing-Based Fabrication Works</h3>
+          <ul>
+            <li>Can fabricate from client-issued IFC (Issued for Construction) drawings and shop drawings</li>
+            <li>Can support structural detailing and connection design coordination where required by project scope</li>
+            <li>Can handle connection optimization and fabrication feasibility review before production</li>
+            <li>Can produce to project-specified material grades, welding standards and inspection requirements</li>
+            <li>Fabrication proceeds only after approved drawings and confirmed technical specifications</li>
+            <li>ZhongSai does not assume structural design responsibility beyond the scope explicitly agreed in the project contract</li>
           </ul>
+          <div style="margin-top: 20px;">
+            <a href="/en/engineering-design/" class="btn btn-outline">View Engineering & Detailing →</a>
+          </div>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- Primary Structural Members -->
-  <section class="component-section">
+  <!-- 05 / Information Required -->
+  <section class="detail-section">
     <div class="container">
-      <div class="component-section-header reveal">
-        <p class="section-index">01 / Primary Members</p>
-        <h2>Primary Structural Members</h2>
-        <p>Main load-bearing building components including beams, columns, trusses and crane beams — custom fabricated to structural drawings and load requirements.</p>
+      <div class="section-heading reveal">
+        <p class="section-index">Information Required</p>
+        <h2>Typical Information Required for Fabrication Review</h2>
+        <p>The more complete the project documentation, the more accurate the fabrication review and quotation. Submit available materials and ZhongSai will confirm any additional information needed.</p>
       </div>
-      <div class="component-item-grid">
-        {primaryMembers.map((item, i) => (
-          <a href={item.href} class={`component-item component-item-clickable reveal reveal-delay-${(i % 3) + 1}`}>
-            <h4>{item.title}</h4>
-            <p>{item.desc}</p>
-            <span class="component-item-cta">{item.cta}</span>
-          </a>
-        ))}
+      <div class="requirement-grid">
+        <div class="requirement-card reveal reveal-delay-1">
+          <div class="req-icon">01</div>
+          <h3>Structural Drawings</h3>
+          <p>General arrangement drawings, structural drawings and connection details for component fabrication review.</p>
+        </div>
+        <div class="requirement-card reveal reveal-delay-2">
+          <div class="req-icon">02</div>
+          <h3>Shop Drawings</h3>
+          <p>Fabrication drawings, member schedules and bill of materials if available, for accurate production planning.</p>
+        </div>
+        <div class="requirement-card reveal reveal-delay-3">
+          <div class="req-icon">03</div>
+          <h3>Material Grade</h3>
+          <p>Specified steel grade, material standard and any special material requirements or testing needs.</p>
+        </div>
+        <div class="requirement-card reveal reveal-delay-1">
+          <div class="req-icon">04</div>
+          <h3>Connection Requirements</h3>
+          <p>Bolted or welded connection specifications, bolt grades, connection design standards and inspection requirements.</p>
+        </div>
+        <div class="requirement-card reveal reveal-delay-2">
+          <div class="req-icon">05</div>
+          <h3>Welding Requirements</h3>
+          <p>Welding procedure specifications, welder qualification requirements, NDT inspection levels and acceptance criteria.</p>
+        </div>
+        <div class="requirement-card reveal reveal-delay-3">
+          <div class="req-icon">06</div>
+          <h3>Surface Treatment</h3>
+          <p>Required surface protection system: painting specification, galvanizing requirements or duplex coating systems.</p>
+        </div>
+        <div class="requirement-card reveal reveal-delay-1">
+          <div class="req-icon">07</div>
+          <h3>Quantity / Tonnage</h3>
+          <p>Estimated component quantities, total steel tonnage, batch delivery requirements and production schedule needs.</p>
+        </div>
+        <div class="requirement-card reveal reveal-delay-2">
+          <div class="req-icon">08</div>
+          <h3>Project Country</h3>
+          <p>Project location for applicable design codes, environmental conditions, logistics planning and export documentation.</p>
+        </div>
+        <div class="requirement-card reveal reveal-delay-3">
+          <div class="req-icon">09</div>
+          <h3>Delivery Port</h3>
+          <p>Destination port or delivery location for logistics planning, packing organization and export documentation coordination.</p>
+        </div>
+        <div class="requirement-card reveal reveal-delay-1">
+          <div class="req-icon">10</div>
+          <h3>Required Schedule</h3>
+          <p>Required fabrication timeline, batch delivery dates and site installation sequence affecting production planning.</p>
+        </div>
+      </div>
+      <div style="text-align: center; margin-top: 30px;">
+        <a href="#quote" class="btn btn-primary">Upload Steel Component Drawings</a>
       </div>
     </div>
   </section>
 
-  <!-- Secondary Structural Members -->
-  <section class="component-section" style="background: var(--color-gray-50);">
+  <!-- 06 / Industries We Serve -->
+  <section class="detail-section alt">
     <div class="container">
-      <div class="component-section-header reveal">
-        <p class="section-index">02 / Secondary Members</p>
-        <h2>Secondary Structural Members</h2>
-        <p>Roof and wall secondary structures, bracing systems and connection components — working with primary members to form a complete load-bearing system.</p>
+      <div class="section-heading reveal">
+        <p class="section-index">Industries</p>
+        <h2>Industries We Serve with Steel Components</h2>
+        <p>ZhongSai fabricated steel components are used across a wide range of industries and applications, each with specific structural requirements.</p>
       </div>
-      <div class="component-item-grid">
-        {secondaryMembers.map((item, i) => (
-          <a href={item.href} class={`component-item component-item-clickable reveal reveal-delay-${(i % 3) + 1}`}>
-            <h4>{item.title}</h4>
-            <p>{item.desc}</p>
-            <span class="component-item-cta">{item.cta}</span>
-          </a>
-        ))}
+      <div class="industry-grid">
+        <a href="/en/steel-workshop/" class="industry-card reveal">
+          <h4>Industrial Plants</h4>
+          <p>Manufacturing facilities, processing plants, workshops and industrial buildings with crane and equipment support requirements.</p>
+        </a>
+        <a href="/en/steel-warehouse/" class="industry-card reveal reveal-delay-1">
+          <h4>Warehouses</h4>
+          <p>Logistics centers, distribution hubs, storage facilities and industrial warehouses with clear-span and racking requirements.</p>
+        </a>
+        <a href="/en/steel-mining-factory/" class="industry-card reveal reveal-delay-2">
+          <h4>Mining</h4>
+          <p>Mining processing plants, conveyor galleries, pipe racks, equipment platforms and heavy industrial structures.</p>
+        </a>
+        <a href="/en/steel-mining-factory/" class="industry-card reveal">
+          <h4>Energy</h4>
+          <p>Power plants, energy facilities, industrial infrastructure and heavy equipment support structures.</p>
+        </a>
+        <a href="/en/agricultural-steel-buildings/" class="industry-card reveal reveal-delay-1">
+          <h4>Agriculture</h4>
+          <p>Livestock buildings, poultry houses, farm storage, agricultural facilities and greenhouse structures.</p>
+        </a>
+        <a href="/en/commercial-public-steel-buildings/" class="industry-card reveal reveal-delay-2">
+          <h4>Commercial Buildings</h4>
+          <p>Commercial structures, public buildings, exhibition halls, sports facilities and architectural steel structures.</p>
+        </a>
+        <a href="/en/transportation-infrastructure-steel/" class="industry-card reveal">
+          <h4>Infrastructure</h4>
+          <p>Pedestrian bridges, station structures, canopies, corridors and transportation infrastructure steel components.</p>
+        </a>
       </div>
     </div>
   </section>
 
-  <!-- Cladding Systems -->
-  <section class="component-section">
+  <!-- 07 / Related Solutions -->
+  <section class="detail-section">
     <div class="container">
-      <div class="component-section-header reveal">
-        <p class="section-index">03 / Cladding Systems</p>
-        <h2>Roof & Wall Cladding Systems</h2>
-        <p>Roof and wall cladding systems including profiled panels, sandwich panels and accessories — supplied together with primary steel structure to form a complete building envelope package.</p>
+      <div class="section-heading reveal">
+        <p class="section-index">Related Solutions</p>
+        <h2>Complete Building Solutions by Application</h2>
+        <p>In addition to individual steel components, ZhongSai provides complete prefabricated steel building solutions by industry and application.</p>
       </div>
-      <div class="component-item-grid">
-        {claddingSystems.map((item, i) => (
-          <a href={item.href} class={`component-item component-item-clickable reveal reveal-delay-${(i % 3) + 1}`}>
-            <h4>{item.title}</h4>
-            <p>{item.desc}</p>
-            <span class="component-item-cta">{item.cta}</span>
-          </a>
-        ))}
-      </div>
-    </div>
-  </section>
-
-  <!-- From Drawings to Fabrication -->
-  <section class="dual-path-section">
-    <div class="container">
-      <div class="section-heading reveal" style="color: white; text-align: center; display: block; margin-bottom: 8px;">
-        <p class="section-index" style="color: #f59e0b;">04 / Process</p>
-        <h2 style="color: white; margin-bottom: 10px;">From Drawings to Delivery</h2>
-        <p style="color: rgba(255,255,255,0.65); max-width: 700px; margin: 0 auto;">You provide the drawings — we complete fabrication, marking, packing and export delivery.</p>
-      </div>
-      <div class="dual-path-grid" style="grid-template-columns: repeat(4, 1fr); gap: 18px;">
-        <div class="dual-path-card reveal reveal-delay-1" style="padding: 24px 20px;">
-          <div class="path-icon" style="width: 40px; height: 40px; font-size: 15px; font-weight: 700; color:#fff; margin-bottom: 12px;">01</div>
-          <h3 style="font-size: 16px; margin-bottom: 6px;">Detailing</h3>
-          <p style="font-size: 13px; margin-bottom: 0;">Structural drawings converted to shop drawings and component lists</p>
+      <div class="feature-grid">
+        <div class="feature-card reveal reveal-delay-1">
+          <div class="feature-body">
+            <h3><a href="/en/steel-workshop/" style="color: inherit; text-decoration: none;">Steel Workshop</a></h3>
+            <p>Industrial manufacturing buildings, processing workshops and crane-equipped facilities.</p>
+            <a href="/en/steel-workshop/" style="color: #2563eb; font-size: 14px; font-weight: 600;">View Steel Workshop →</a>
+          </div>
         </div>
-        <div class="dual-path-card reveal reveal-delay-2" style="padding: 24px 20px;">
-          <div class="path-icon" style="width: 40px; height: 40px; font-size: 15px; font-weight: 700; color:#fff; margin-bottom: 12px;">02</div>
-          <h3 style="font-size: 16px; margin-bottom: 6px;">Fabrication</h3>
-          <p style="font-size: 13px; margin-bottom: 0;">Cutting, assembly, welding, drilling and surface treatment</p>
+        <div class="feature-card reveal reveal-delay-2">
+          <div class="feature-body">
+            <h3><a href="/en/steel-warehouse/" style="color: inherit; text-decoration: none;">Steel Warehouse</a></h3>
+            <p>Logistics warehouses, distribution centers and industrial storage buildings.</p>
+            <a href="/en/steel-warehouse/" style="color: #2563eb; font-size: 14px; font-weight: 600;">View Steel Warehouse →</a>
+          </div>
         </div>
-        <div class="dual-path-card reveal reveal-delay-3" style="padding: 24px 20px;">
-          <div class="path-icon" style="width: 40px; height: 40px; font-size: 15px; font-weight: 700; color:#fff; margin-bottom: 12px;">03</div>
-          <h3 style="font-size: 16px; margin-bottom: 6px;">Marking</h3>
-          <p style="font-size: 13px; margin-bottom: 0;">Component marking and packing lists based on shop drawings</p>
+        <div class="feature-card reveal reveal-delay-3">
+          <div class="feature-body">
+            <h3><a href="/en/steel-mining-factory/" style="color: inherit; text-decoration: none;">Mining & Heavy Industry</a></h3>
+            <p>Mining plants, processing facilities, conveyor systems and heavy industrial structures.</p>
+            <a href="/en/steel-mining-factory/" style="color: #2563eb; font-size: 14px; font-weight: 600;">View Mining →</a>
+          </div>
         </div>
-        <div class="dual-path-card reveal reveal-delay-4" style="padding: 24px 20px;">
-          <div class="path-icon" style="width: 40px; height: 40px; font-size: 15px; font-weight: 700; color:#fff; margin-bottom: 12px;">04</div>
-          <h3 style="font-size: 16px; margin-bottom: 6px;">Packing & Export</h3>
-          <p style="font-size: 13px; margin-bottom: 0;">Packed and loaded in marking order, export documentation support</p>
+        <div class="feature-card reveal reveal-delay-1">
+          <div class="feature-body">
+            <h3><a href="/en/transportation-infrastructure-steel/" style="color: inherit; text-decoration: none;">Transportation Infrastructure</a></h3>
+            <p>Pedestrian bridges, station structures, canopies and corridor steel structures.</p>
+            <a href="/en/transportation-infrastructure-steel/" style="color: #2563eb; font-size: 14px; font-weight: 600;">View Infrastructure →</a>
+          </div>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- Quote CTA -->
-  <section class="quote-cta-section" id="quote">
+  <!-- CRO Bottom CTA -->
+  <section class="detail-section dark" style="padding: 60px 0;">
     <div class="container">
-      <div class="quote-cta-header reveal">
-        <p class="section-index" style="color: #f59e0b;">05 / Get a Quote</p>
-        <h2>Submit Drawings for Component Quotation</h2>
-        <p>Upload structural drawings or BOQ lists. ZhongSai will provide a quotation for component fabrication and cladding systems based on your requirements.</p>
+      <div style="text-align: center; max-width: 700px; margin: 0 auto;">
+        <p class="section-index" style="justify-content: center; color: #f59e0b;">Get Started</p>
+        <h2 style="color: #fff; margin-bottom: 16px;">Have Steel Component Drawings?</h2>
+        <p style="color: rgba(255,255,255,0.8); margin-bottom: 24px;">Send your drawings, material grade, quantity and delivery location for fabrication review. ZhongSai will review your requirements and confirm what is needed for an accurate quotation.</p>
+        <div style="display: flex; gap: 16px; justify-content: center; flex-wrap: wrap;">
+          <a href="#quote" class="btn btn-primary">Send Drawings</a>
+          <a href="#quote" class="btn btn-outline" style="border-color: rgba(255,255,255,0.5); color: #fff;">Request Engineering Review</a>
+        </div>
       </div>
-      <QuoteForm lang={lang} />
+    </div>
+  </section>
+
+  <!-- Quote Form -->
+  <section id="quote" class="detail-section">
+    <div class="container">
+      <QuoteForm />
     </div>
   </section>
 </BaseLayout>
 
 <style>
-  .component-item-clickable {
-    cursor: pointer;
-    transition: transform 0.2s ease, box-shadow 0.2s ease;
-    text-decoration: none;
-    color: inherit;
-    display: block;
+.component-category-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 24px;
+}
+.component-category-card {
+  background: #fff;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 2px 12px rgba(0,0,0,0.06);
+  border: 1px solid #e5e7eb;
+  text-decoration: none;
+  color: inherit;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  display: block;
+}
+.component-category-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 24px rgba(0,0,0,0.12);
+}
+.cc-image img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  display: block;
+}
+.cc-content {
+  padding: 20px;
+}
+.cc-content h3 {
+  margin: 0 0 10px 0;
+  font-size: 1.15rem;
+  color: #1f2937;
+}
+.cc-content p {
+  margin: 0 0 12px 0;
+  color: #6b7280;
+  font-size: 0.9rem;
+  line-height: 1.6;
+}
+.cc-cta {
+  color: #2563eb;
+  font-weight: 600;
+  font-size: 0.9rem;
+}
+.definition-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 20px;
+}
+.definition-item {
+  background: #fff;
+  padding: 20px;
+  border-radius: 8px;
+  border-left: 4px solid #2563eb;
+}
+.definition-item h4 {
+  margin: 0 0 8px 0;
+  color: #1f2937;
+  font-size: 1rem;
+}
+.definition-item p {
+  margin: 0;
+  color: #6b7280;
+  font-size: 0.88rem;
+  line-height: 1.6;
+}
+.capability-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 16px;
+}
+.capability-item {
+  background: #fff;
+  padding: 18px;
+  border-radius: 8px;
+  border: 1px solid #e5e7eb;
+}
+.capability-item h4 {
+  margin: 0 0 8px 0;
+  color: #1f2937;
+  font-size: 0.95rem;
+}
+.capability-item p {
+  margin: 0;
+  color: #6b7280;
+  font-size: 0.85rem;
+  line-height: 1.5;
+}
+.industry-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 16px;
+}
+.industry-card {
+  background: #fff;
+  padding: 20px;
+  border-radius: 8px;
+  border: 1px solid #e5e7eb;
+  text-decoration: none;
+  color: inherit;
+  transition: border-color 0.3s ease;
+}
+.industry-card:hover {
+  border-color: #2563eb;
+}
+.industry-card h4 {
+  margin: 0 0 8px 0;
+  color: #1f2937;
+  font-size: 1rem;
+}
+.industry-card p {
+  margin: 0;
+  color: #6b7280;
+  font-size: 0.85rem;
+  line-height: 1.5;
+}
+@media (max-width: 768px) {
+  .component-category-grid {
+    grid-template-columns: 1fr;
+    gap: 16px;
   }
-  .component-item-clickable:hover {
-    transform: translateY(-3px);
-    box-shadow: 0 8px 24px rgba(0,0,0,0.1);
+  .cc-image img {
+    height: 160px;
   }
-  .component-item-cta {
-    display: inline-block;
-    margin-top: 12px;
-    color: var(--color-primary);
-    font-weight: 600;
-    font-size: 0.9rem;
+  .definition-grid, .capability-grid, .industry-grid {
+    grid-template-columns: 1fr;
   }
+}
 </style>

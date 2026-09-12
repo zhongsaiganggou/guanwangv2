@@ -1,5 +1,22 @@
----
-import Placeholder from '../../../components/Placeholder.astro';
+﻿---
+import BaseLayout from '../../../layouts/BaseLayout.astro';
+
+const title = 'FAQ | ZhongSai Steel Structure';
+const description = 'Frequently asked questions about steel structure design, fabrication, export delivery and installation technical support.';
+const lang = 'en';
+const canonical = 'https://zhongsai-steelstructure.com/en/resources/';
 ---
 
-<Placeholder lang="en" title="FAQ" />
+<BaseLayout title={title} description={description} lang={lang} canonical={canonical}>
+  <section style="padding: 80px 0; text-align: center; background: #f8f9fa;">
+    <div class="container">
+      <h1 style="font-size: 1.8rem; color: #0a3d62; margin-bottom: 16px;">Frequently Asked Questions</h1>
+      <p style="font-size: 1.05rem; color: #555; margin-bottom: 32px; max-width: 600px; margin-left: auto; margin-right: auto;">
+        For frequently asked questions about steel structure design, fabrication, export delivery and installation technical support, please visit our technical resource center.
+      </p>
+      <a href="/en/resources/" class="btn btn-primary" style="display: inline-block; padding: 14px 32px; font-size: 1rem;">
+        Visit Technical Resource Center →
+      </a>
+    </div>
+  </section>
+</BaseLayout>

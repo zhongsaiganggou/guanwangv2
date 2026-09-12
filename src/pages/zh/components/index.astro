@@ -1,169 +1,552 @@
 ---
-// ZhongSai V2 - Chinese Components Hub (Rebuilt: all cards have clear action)
 import BaseLayout from '../../../layouts/BaseLayout.astro';
 import QuoteForm from '../../../components/QuoteForm.astro';
 import '../../../styles/hub.css';
 
 const lang = 'zh';
-const title = '钢构件与围护系统｜钢梁、钢柱、桁架、檩条、彩钢板｜中赛钢构';
-const description = '中赛钢构按图纸定制加工钢构件与围护系统：钢梁、钢柱、桁架、行车梁、C/Z型钢檩条、屋面板、墙面板、夹芯板，提供构件编号、包装与出口交付。';
-
-const primaryMembers = [
-  { title: '钢梁', desc: 'H型钢梁、组合截面梁、焊接梁，按图纸加工，预制端部连接板。', href: '/zh/components/fabricated-steel-beams-columns/#steel-beams', actionType: 'anchor', cta: '查看钢梁 →' },
-  { title: '钢柱', desc: 'H型钢柱、箱型柱、格构柱，按荷载与高度设计，预制底板与加劲板。', href: '/zh/components/fabricated-steel-beams-columns/#steel-columns', actionType: 'anchor', cta: '查看钢柱 →' },
-  { title: '箱型截面', desc: '箱型柱与箱型梁，适用于大跨度重载结构，按图纸全熔透焊接加工。', href: '/zh/components/fabricated-steel-beams-columns/#box-sections', actionType: 'anchor', cta: '查看箱型截面 →' },
-  { title: '行车梁', desc: '桥式行车梁与悬挂行车梁，按行车吨位与工作制设计，按行车系统要求加工。', href: '/zh/components/fabricated-steel-beams-columns/#crane-beams', actionType: 'anchor', cta: '查看行车梁 →' },
-  { title: '钢桁架', desc: '屋架桁架、转换桁架、管桁架，按跨度与荷载设计，焊接或螺栓连接。', href: '/zh/components/steel-trusses/', actionType: 'detail', cta: '查看钢桁架 →' },
-  { title: '平台与支撑', desc: '操作平台、设备平台、柱间支撑与屋面支撑，按设备布局与结构稳定要求定制加工。', href: '#quote', actionType: 'quote', cta: '发送平台与支撑图纸 →' }
-];
-
-const secondaryMembers = [
-  { title: 'C型钢檩条', desc: '冷弯C型檩条，用于屋面墙面次结构，按间距与荷载选型，预制连接孔。', href: '/zh/components/steel-purlins/#c-purlins', actionType: 'anchor', cta: '查看C型钢檩条 →' },
-  { title: 'Z型钢檩条', desc: '冷弯Z型檩条，搭接连接，适用于大间距屋面，连续抗弯性能优于C型。', href: '/zh/components/steel-purlins/#z-purlins', actionType: 'anchor', cta: '查看Z型钢檩条 →' },
-  { title: '支撑系统', desc: '柱间支撑、屋面水平支撑与垂直支撑，采用角钢或圆钢，确保整体结构稳定。', href: '#quote', actionType: 'quote', cta: '发送支撑系统需求 →' },
-  { title: '连接构件', desc: '节点板、加劲板、连接板与高强螺栓，按深化图预制，确保现场安装精准。', href: '#quote', actionType: 'quote', cta: '发送节点详图 →' }
-];
-
-const claddingSystems = [
-  { title: '屋面板', desc: '彩涂压型屋面板、直立锁边板，多种板型与厚度，防水抗风。', href: '/zh/components/roof-wall-cladding-systems/#roof-panels', actionType: 'anchor', cta: '查看屋面板 →' },
-  { title: '墙面板', desc: '彩涂压型墙面板，横铺与竖铺，多种板型与颜色，建筑外观协调统一。', href: '/zh/components/roof-wall-cladding-systems/#wall-panels', actionType: 'anchor', cta: '查看墙面板 →' },
-  { title: '夹芯板', desc: 'EPS/PU/PIR夹芯板，保温隔热，适用于有温控要求的厂房与仓库。', href: '/zh/components/roof-wall-cladding-systems/#sandwich-panels', actionType: 'anchor', cta: '查看夹芯板 →' },
-  { title: '围护附件', desc: '天沟、收边、泛水、采光带、通风器——完整的围护附件配套。', href: '/zh/components/roof-wall-cladding-systems/#cladding-accessories', actionType: 'anchor', cta: '查看围护附件 →' }
-];
+const title = '钢结构构件与特殊钢结构｜加工制造与出口｜中赛钢构';
+const description = '按项目图纸加工制造钢结构构件与特殊钢结构：钢梁、钢柱、钢桁架、钢平台、管廊、输送廊道及定制加工结构。基于图纸制造、出口包装与交付。';
 ---
 
 <BaseLayout title={title} description={description} lang={lang}>
+  <!-- Hero -->
   <section class="hub-hero">
-    <div class="hub-hero-bg" style="background-image: url('/images/manufacturing/real/assembly-welding-9821.jpg')"></div>
+    <div class="hub-hero-bg" style="background-image: url('/images/manufacturing/real/assembly-welding-9821.jpg');"></div>
     <div class="hub-hero-overlay"></div>
     <div class="container hub-hero-content">
       <div class="hub-breadcrumb">
-        <a href="/zh/">首页</a><span>/</span><span>构件</span>
+        <a href="/zh/">首页</a><span>/</span><a href="/zh/products/">产品</a><span>/</span><span>钢构件</span>
       </div>
-      <p class="eyebrow">构件 · 按钢构件类型</p>
-      <h1>按图纸定制加工<br>钢构件与围护系统</h1>
-      <p class="lead">钢梁、钢柱、桁架、檩条、屋面板与墙面板——按图纸定制加工、构件编号、包装出口交付。<strong>构件按钢构件类型分类。</strong>按建筑应用查看完整方案，请前往 <a href="/zh/products/" style="color:rgba(255,255,255,0.92);text-decoration:underline;">产品</a> 页面。</p>
-    </div>
-  </section>
-
-  <section class="component-section">
-    <div class="container">
-      <div class="component-section-header reveal">
-        <p class="section-index">01 / 主要受力构件</p>
-        <h2>主要受力构件</h2>
-        <p>建筑主要承重构件，包括钢梁、钢柱、桁架与行车梁——按结构图纸与荷载要求定制加工。</p>
-      </div>
-      <div class="component-item-grid">
-        {primaryMembers.map((item, i) => (
-          <a href={item.href} class={`component-item component-item-clickable reveal reveal-delay-${(i % 3) + 1}`}>
-            <h4>{item.title}</h4>
-            <p>{item.desc}</p>
-            <span class="component-item-cta">{item.cta}</span>
-          </a>
-        ))}
+      <p class="eyebrow">钢构件 · 特殊钢结构</p>
+      <h1>钢结构构件与特殊加工钢结构</h1>
+      <p class="lead">按项目图纸加工制造钢结构构件与特殊钢结构，适用于工业、矿业、商业和基础设施项目。中赛钢构提供基于图纸的制造、结构深化、复杂焊接/螺栓装配、出口包装与交付。</p>
+      <div class="detail-hero-actions">
+        <a href="#quote" class="btn btn-primary">发送构件图纸评审</a>
+        <a href="#fabrication" class="btn btn-outline">申请制造报价</a>
       </div>
     </div>
   </section>
 
-  <section class="component-section" style="background: var(--color-gray-50);">
+  <!-- Breadcrumb -->
+  <nav class="detail-breadcrumb">
     <div class="container">
-      <div class="component-section-header reveal">
-        <p class="section-index">02 / 次要构件</p>
-        <h2>次要结构构件</h2>
-        <p>屋面墙面次结构、支撑系统与连接构件——与主要构件配合形成完整受力体系。</p>
+      <a href="/zh/">首页</a>
+      <span class="sep">/</span>
+      <a href="/zh/products/">产品</a>
+      <span class="sep">/</span>
+      <span class="current">钢构件与特殊钢结构</span>
+    </div>
+  </nav>
+
+  <!-- 01 / 构件分类 -->
+  <section class="detail-section">
+    <div class="container">
+      <div class="section-heading reveal">
+        <p class="section-index">构件分类</p>
+        <h2>我们制造的钢构件类型</h2>
+        <p>中赛钢构按客户图纸制造各类钢结构构件和特殊结构。每种构件类型都有特定的工程考虑因素和制造要求。</p>
       </div>
-      <div class="component-item-grid">
-        {secondaryMembers.map((item, i) => (
-          <a href={item.href} class={`component-item component-item-clickable reveal reveal-delay-${(i % 3) + 1}`}>
-            <h4>{item.title}</h4>
-            <p>{item.desc}</p>
-            <span class="component-item-cta">{item.cta}</span>
-          </a>
-        ))}
+      <div class="component-category-grid">
+        <a href="/zh/components/fabricated-steel-beams-columns/#steel-columns" class="component-category-card reveal">
+          <div class="cc-image">
+            <img src="/images/components/finished-steel-beams-columns.jpg" alt="成品钢柱构件" loading="lazy">
+          </div>
+          <div class="cc-content">
+            <h3>钢柱</h3>
+            <p>用于将屋面、楼面和设备荷载传递到基础的竖向结构构件。H型钢柱、箱型柱和格构柱按图纸加工。</p>
+            <span class="cc-cta">查看钢柱 →</span>
+          </div>
+        </a>
+        <a href="/zh/components/fabricated-steel-beams-columns/#steel-beams" class="component-category-card reveal reveal-delay-1">
+          <div class="cc-image">
+            <img src="/images/components/finished-steel-members-stacked.jpg" alt="成品钢梁构件" loading="lazy">
+          </div>
+          <div class="cc-content">
+            <h3>钢梁</h3>
+            <p>用于支撑楼面、屋面、平台和设备的水平结构构件。H型钢梁、组合梁和焊接梁，带预制连接节点。</p>
+            <span class="cc-cta">查看钢梁 →</span>
+          </div>
+        </a>
+        <a href="/zh/components/steel-trusses/" class="component-category-card reveal reveal-delay-2">
+          <div class="cc-image">
+            <img src="/images/components/steel-truss-hero.jpg" alt="工厂内的钢桁架结构" loading="lazy">
+          </div>
+          <div class="cc-content">
+            <h3>钢桁架</h3>
+            <p>用于需要减少中间支撑的大跨度结构装配。屋架、转换桁架和管桁架，焊接或螺栓连接。</p>
+            <span class="cc-cta">查看钢桁架 →</span>
+          </div>
+        </a>
+        <a href="#quote" class="component-category-card reveal">
+          <div class="cc-image">
+            <img src="/images/products/02-mining-energy.jpg" alt="工业钢平台结构" loading="lazy">
+          </div>
+          <div class="cc-content">
+            <h3>钢平台</h3>
+            <p>用于设备支撑、检修通道和工业操作的高架结构。工作平台、设备平台和通道结构按布局加工。</p>
+            <span class="cc-cta">发送平台图纸 →</span>
+          </div>
+        </a>
+        <a href="#quote" class="component-category-card reveal reveal-delay-1">
+          <div class="cc-image">
+            <img src="/images/products/app-mining-energy.jpg" alt="工业厂房用管廊钢结构" loading="lazy">
+          </div>
+          <div class="cc-content">
+            <h3>管廊</h3>
+            <p>支撑工艺管道、电缆桥架和公用设施的结构系统。多层管廊，带协调支撑点和检修平台。</p>
+            <span class="cc-cta">发送管廊图纸 →</span>
+          </div>
+        </a>
+        <a href="#quote" class="component-category-card reveal reveal-delay-2">
+          <div class="cc-image">
+            <img src="/images/products/app-mining-energy-hero.jpg" alt="散料输送用输送廊道钢结构" loading="lazy">
+          </div>
+          <div class="cc-content">
+            <h3>输送廊道</h3>
+            <p>散料输送系统的钢结构支撑和围护结构。输送廊道、转运站和支撑结构，带检修通道。</p>
+            <span class="cc-cta">发送输送图纸 →</span>
+          </div>
+        </a>
+        <a href="/zh/special-custom-steel-structures/" class="component-category-card reveal">
+          <div class="cc-image">
+            <img src="/images/products/06-custom-engineering.jpg" alt="复杂几何形状的特殊加工钢结构" loading="lazy">
+          </div>
+          <div class="cc-content">
+            <h3>特殊加工结构</h3>
+            <p>需要专门制造的定制和复杂钢结构。曲线结构、空间网架、建筑钢结构和非标准结构装配。</p>
+            <span class="cc-cta">查看特殊结构 →</span>
+          </div>
+        </a>
       </div>
     </div>
   </section>
 
-  <section class="component-section">
+  <!-- 02 / 构件定义 -->
+  <section class="detail-section alt">
     <div class="container">
-      <div class="component-section-header reveal">
-        <p class="section-index">03 / 围护系统</p>
-        <h2>屋面与墙面围护系统</h2>
-        <p>屋面板、墙面板、夹芯板与围护附件——可与主要钢结构配套供应，形成完整建筑围护体系。</p>
+      <div class="section-heading reveal">
+        <p class="section-index">构件定义</p>
+        <h2>每种钢构件的用途</h2>
+        <p>各类结构钢构件的明确定义及其在建筑和工业项目中的典型应用。</p>
       </div>
-      <div class="component-item-grid">
-        {claddingSystems.map((item, i) => (
-          <a href={item.href} class={`component-item component-item-clickable reveal reveal-delay-${(i % 3) + 1}`}>
-            <h4>{item.title}</h4>
-            <p>{item.desc}</p>
-            <span class="component-item-cta">{item.cta}</span>
-          </a>
-        ))}
-      </div>
-    </div>
-  </section>
-
-  <section class="dual-path-section">
-    <div class="container">
-      <div class="section-heading reveal" style="color: white; text-align: center; display: block; margin-bottom: 8px;">
-        <p class="section-index" style="color: #f59e0b;">04 / 流程</p>
-        <h2 style="color: white; margin-bottom: 10px;">从图纸到交付</h2>
-        <p style="color: rgba(255,255,255,0.65); max-width: 700px; margin: 0 auto;">您提供图纸——我们完成加工、编号、包装与出口交付。</p>
-      </div>
-      <div class="dual-path-grid" style="grid-template-columns: repeat(4, 1fr); gap: 18px;">
-        <div class="dual-path-card reveal reveal-delay-1" style="padding: 24px 20px;">
-          <div class="path-icon" style="width: 40px; height: 40px; font-size: 15px; font-weight: 700; color:#fff; margin-bottom: 12px;">01</div>
-          <h3 style="font-size: 16px; margin-bottom: 6px;">深化设计</h3>
-          <p style="font-size: 13px; margin-bottom: 0;">结构图纸转化为加工图与构件清单</p>
+      <div class="definition-grid">
+        <div class="definition-item reveal">
+          <h4>钢柱</h4>
+          <p>将重力荷载（屋面、楼面、设备）和侧向荷载传递到基础的竖向结构构件。可用H型、箱型、格构和组合柱。</p>
         </div>
-        <div class="dual-path-card reveal reveal-delay-2" style="padding: 24px 20px;">
-          <div class="path-icon" style="width: 40px; height: 40px; font-size: 15px; font-weight: 700; color:#fff; margin-bottom: 12px;">02</div>
-          <h3 style="font-size: 16px; margin-bottom: 6px;">加工制造</h3>
-          <p style="font-size: 13px; margin-bottom: 0;">切割、装配、焊接、钻孔与表面处理</p>
+        <div class="definition-item reveal reveal-delay-1">
+          <h4>钢梁</h4>
+          <p>承受横向荷载并将其传递给柱子或支撑的水平结构构件。用于楼面支撑、屋面框架、吊车梁和设备支撑。</p>
         </div>
-        <div class="dual-path-card reveal reveal-delay-3" style="padding: 24px 20px;">
-          <div class="path-icon" style="width: 40px; height: 40px; font-size: 15px; font-weight: 700; color:#fff; margin-bottom: 12px;">03</div>
-          <h3 style="font-size: 16px; margin-bottom: 6px;">构件编号</h3>
-          <p style="font-size: 13px; margin-bottom: 0;">按加工图构件编号与包装清单</p>
+        <div class="definition-item reveal reveal-delay-2">
+          <h4>钢桁架</h4>
+          <p>以较少材料重量高效承受大跨度荷载的三角化结构装配。用于屋面、桥梁、转换结构和大跨度雨棚。</p>
         </div>
-        <div class="dual-path-card reveal reveal-delay-4" style="padding: 24px 20px;">
-          <div class="path-icon" style="width: 40px; height: 40px; font-size: 15px; font-weight: 700; color:#fff; margin-bottom: 12px;">04</div>
-          <h3 style="font-size: 16px; margin-bottom: 6px;">包装出口</h3>
-          <p style="font-size: 13px; margin-bottom: 0;">按编号顺序包装装柜，出口资料支持</p>
+        <div class="definition-item reveal">
+          <h4>钢平台</h4>
+          <p>提供通道、工作空间或设备支撑的高架结构表面。包括夹层、检修平台、设备平台和通道走道。</p>
+        </div>
+        <div class="definition-item reveal reveal-delay-1">
+          <h4>管廊</h4>
+          <p>设计用于支撑工业厂房中工艺管道、电缆桥架、暖通空调管道和公用设施管线的结构框架。多层配置带协调支撑点。</p>
+        </div>
+        <div class="definition-item reveal reveal-delay-2">
+          <h4>输送廊道</h4>
+          <p>散料输送设备的封闭或开放式结构支撑系统。包括廊道框架、支撑塔、转运结构和检修通道系统。</p>
         </div>
       </div>
     </div>
   </section>
 
-  <section class="quote-cta-section" id="quote">
+  <!-- 03 / 制造能力 -->
+  <section id="fabrication" class="detail-section">
     <div class="container">
-      <div class="quote-cta-header reveal">
-        <p class="section-index" style="color: #f59e0b;">05 / 获取报价</p>
-        <h2>发送图纸获取构件报价</h2>
-        <p>上传结构图纸或BOQ材料清单，中赛将根据您的需求提供构件加工与围护系统报价。</p>
+      <div class="section-heading reveal">
+        <p class="section-index">制造能力</p>
+        <h2>钢构件制造能力</h2>
+        <p>中赛钢构运营生产基地，配备精密钢构件制造设备，具有文件化的质量流程和面向出口的包装与交付。</p>
       </div>
-      <QuoteForm lang={lang} />
+      <div class="capability-grid">
+        <div class="capability-item reveal">
+          <h4>数控切割</h4>
+          <p>精密数控等离子和火焰切割板材和型钢，确保尺寸准确和切割边缘清洁。</p>
+        </div>
+        <div class="capability-item reveal reveal-delay-1">
+          <h4>钻孔</h4>
+          <p>数控钻孔和冲孔，用于螺栓孔、连接板和构件细节，孔位定位准确。</p>
+        </div>
+        <div class="capability-item reveal reveal-delay-2">
+          <h4>焊接</h4>
+          <p>合格的焊接工艺和焊工，按项目规范进行角焊、部分熔透和全熔透焊接。</p>
+        </div>
+        <div class="capability-item reveal">
+          <h4>装配</h4>
+          <p>构件精密装配，包括组合截面、桁架装配和复杂焊接结构。</p>
+        </div>
+        <div class="capability-item reveal reveal-delay-1">
+          <h4>尺寸检验</h4>
+          <p>关键制造阶段的尺寸验证，记录检验结果和配合验证。</p>
+        </div>
+        <div class="capability-item reveal reveal-delay-2">
+          <h4>表面处理</h4>
+          <p>按SA 2.5或项目指定标准进行抛丸和表面处理，然后进行涂层施工。</p>
+        </div>
+        <div class="capability-item reveal">
+          <h4>涂装</h4>
+          <p>多道涂装体系，包括底漆、中间漆和面漆，按规范验证干膜厚度。</p>
+        </div>
+        <div class="capability-item reveal reveal-delay-1">
+          <h4>镀锌</h4>
+          <p>适用于镀锌浴尺寸的构件热浸镀锌协调，按适用标准执行。</p>
+        </div>
+        <div class="capability-item reveal reveal-delay-2">
+          <h4>试拼装</h4>
+          <p>按项目规范要求对复杂结构进行试拼装，发货前验证配合。</p>
+        </div>
+        <div class="capability-item reveal">
+          <h4>构件编号</h4>
+          <p>与装配图匹配的唯一构件标识系统，包括件号、方向和连接参考。</p>
+        </div>
+        <div class="capability-item reveal reveal-delay-1">
+          <h4>出口包装</h4>
+          <p>为集装箱运输组织的包装，附详细装箱单、构件清单和处理说明。</p>
+        </div>
+      </div>
+      <div style="text-align: center; margin-top: 30px;">
+        <a href="/zh/manufacturing-quality/" class="btn btn-outline">查看制造与质量 →</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- 04 / 基于图纸制造 -->
+  <section class="detail-section alt">
+    <div class="container">
+      <div class="section-heading reveal">
+        <p class="section-index">基于图纸</p>
+        <h2>基于客户图纸的制造</h2>
+        <p>中赛钢构根据客户提供的图纸和规范制造钢构件，按需提供工程协调和深化支持。</p>
+      </div>
+      <div class="image-text-block">
+        <div class="itb-image">
+          <img src="/images/manufacturing/real/workshop-overview-wide-9815.jpg" alt="基于客户图纸的钢构件制造" loading="lazy">
+        </div>
+        <div class="itb-content">
+          <h3>基于图纸制造的工作方式</h3>
+          <ul>
+            <li>可按客户发布的IFC（施工图）图纸和加工图制造</li>
+            <li>可按项目范围要求提供结构深化和连接设计协调支持</li>
+            <li>可在生产前进行连接优化和制造可行性评审</li>
+            <li>可按项目指定的材料牌号、焊接标准和检验要求生产</li>
+            <li>仅在批准图纸和确认技术规范后进行制造</li>
+            <li>中赛钢构不承担超出项目合同明确约定范围的结构设计责任</li>
+          </ul>
+          <div style="margin-top: 20px;">
+            <a href="/zh/engineering-design/" class="btn btn-outline">查看工程与深化 →</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 05 / 所需资料 -->
+  <section class="detail-section">
+    <div class="container">
+      <div class="section-heading reveal">
+        <p class="section-index">所需资料</p>
+        <h2>制造评审典型所需资料</h2>
+        <p>项目文件越完整，制造评审和报价越准确。提交现有资料，中赛钢构将确认所需的任何补充信息。</p>
+      </div>
+      <div class="requirement-grid">
+        <div class="requirement-card reveal reveal-delay-1">
+          <div class="req-icon">01</div>
+          <h3>结构图纸</h3>
+          <p>总体布置图、结构图纸和连接细节，用于构件制造评审。</p>
+        </div>
+        <div class="requirement-card reveal reveal-delay-2">
+          <div class="req-icon">02</div>
+          <h3>加工图纸</h3>
+          <p>制造图纸、构件清单和材料表（如有），用于准确的生产计划。</p>
+        </div>
+        <div class="requirement-card reveal reveal-delay-3">
+          <div class="req-icon">03</div>
+          <h3>材料牌号</h3>
+          <p>指定的钢材牌号、材料标准和任何特殊材料要求或测试需求。</p>
+        </div>
+        <div class="requirement-card reveal reveal-delay-1">
+          <div class="req-icon">04</div>
+          <h3>连接要求</h3>
+          <p>螺栓或焊接连接规范、螺栓等级、连接设计标准和检验要求。</p>
+        </div>
+        <div class="requirement-card reveal reveal-delay-2">
+          <div class="req-icon">05</div>
+          <h3>焊接要求</h3>
+          <p>焊接工艺规范、焊工资格要求、无损检测等级和验收标准。</p>
+        </div>
+        <div class="requirement-card reveal reveal-delay-3">
+          <div class="req-icon">06</div>
+          <h3>表面处理</h3>
+          <p>所需表面保护体系：涂装规范、镀锌要求或复合涂层体系。</p>
+        </div>
+        <div class="requirement-card reveal reveal-delay-1">
+          <div class="req-icon">07</div>
+          <h3>数量 / 吨位</h3>
+          <p>估算构件数量、总钢吨位、分批交付要求和生产进度需求。</p>
+        </div>
+        <div class="requirement-card reveal reveal-delay-2">
+          <div class="req-icon">08</div>
+          <h3>项目国家</h3>
+          <p>项目位置，用于适用设计规范、环境条件、物流规划和出口文件。</p>
+        </div>
+        <div class="requirement-card reveal reveal-delay-3">
+          <div class="req-icon">09</div>
+          <h3>目的港</h3>
+          <p>目的港或交付地点，用于物流规划、包装组织和出口文件协调。</p>
+        </div>
+        <div class="requirement-card reveal reveal-delay-1">
+          <div class="req-icon">10</div>
+          <h3>要求进度</h3>
+          <p>要求的制造时间线、分批交付日期和影响生产计划的现场安装顺序。</p>
+        </div>
+      </div>
+      <div style="text-align: center; margin-top: 30px;">
+        <a href="#quote" class="btn btn-primary">上传钢构件图纸</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- 06 / 服务行业 -->
+  <section class="detail-section alt">
+    <div class="container">
+      <div class="section-heading reveal">
+        <p class="section-index">服务行业</p>
+        <h2>钢构件服务的行业</h2>
+        <p>中赛钢构制造的钢构件用于广泛的行业和应用，每个行业都有特定的结构要求。</p>
+      </div>
+      <div class="industry-grid">
+        <a href="/zh/steel-workshop/" class="industry-card reveal">
+          <h4>工业厂房</h4>
+          <p>制造设施、加工厂、车间和工业建筑，带吊车和设备支撑要求。</p>
+        </a>
+        <a href="/zh/steel-warehouse/" class="industry-card reveal reveal-delay-1">
+          <h4>仓储物流</h4>
+          <p>物流中心、配送枢纽、仓储设施和工业仓库，大跨度和货架要求。</p>
+        </a>
+        <a href="/zh/steel-mining-factory/" class="industry-card reveal reveal-delay-2">
+          <h4>矿业</h4>
+          <p>选矿厂、输送廊道、管廊、设备平台和重工业结构。</p>
+        </a>
+        <a href="/zh/steel-mining-factory/" class="industry-card reveal">
+          <h4>能源</h4>
+          <p>发电厂、能源设施、工业基础设施和重型设备支撑结构。</p>
+        </a>
+        <a href="/zh/agricultural-steel-buildings/" class="industry-card reveal reveal-delay-1">
+          <h4>农业</h4>
+          <p>畜牧建筑、家禽舍、农场仓储、农业设施和温室结构。</p>
+        </a>
+        <a href="/zh/commercial-public-steel-buildings/" class="industry-card reveal reveal-delay-2">
+          <h4>商业建筑</h4>
+          <p>商业结构、公共建筑、展览馆、体育设施和建筑钢结构。</p>
+        </a>
+        <a href="/zh/transportation-infrastructure-steel/" class="industry-card reveal">
+          <h4>基础设施</h4>
+          <p>人行天桥、站房结构、雨棚、连廊和交通基础设施钢构件。</p>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- 07 / 相关解决方案 -->
+  <section class="detail-section">
+    <div class="container">
+      <div class="section-heading reveal">
+        <p class="section-index">相关方案</p>
+        <h2>按应用的完整建筑解决方案</h2>
+        <p>除独立钢构件外，中赛钢构还提供按行业和应用的完整预制钢结构建筑解决方案。</p>
+      </div>
+      <div class="feature-grid">
+        <div class="feature-card reveal reveal-delay-1">
+          <div class="feature-body">
+            <h3><a href="/zh/steel-workshop/" style="color: inherit; text-decoration: none;">钢结构厂房</a></h3>
+            <p>工业制造建筑、加工车间和带吊车设施。</p>
+            <a href="/zh/steel-workshop/" style="color: #2563eb; font-size: 14px; font-weight: 600;">查看钢结构厂房 →</a>
+          </div>
+        </div>
+        <div class="feature-card reveal reveal-delay-2">
+          <div class="feature-body">
+            <h3><a href="/zh/steel-warehouse/" style="color: inherit; text-decoration: none;">钢结构仓库</a></h3>
+            <p>物流仓库、配送中心和工业仓储建筑。</p>
+            <a href="/zh/steel-warehouse/" style="color: #2563eb; font-size: 14px; font-weight: 600;">查看钢结构仓库 →</a>
+          </div>
+        </div>
+        <div class="feature-card reveal reveal-delay-3">
+          <div class="feature-body">
+            <h3><a href="/zh/steel-mining-factory/" style="color: inherit; text-decoration: none;">矿业与重工业</a></h3>
+            <p>选矿厂、加工设施、输送系统和重工业结构。</p>
+            <a href="/zh/steel-mining-factory/" style="color: #2563eb; font-size: 14px; font-weight: 600;">查看矿业 →</a>
+          </div>
+        </div>
+        <div class="feature-card reveal reveal-delay-1">
+          <div class="feature-body">
+            <h3><a href="/zh/transportation-infrastructure-steel/" style="color: inherit; text-decoration: none;">交通基础设施</a></h3>
+            <p>人行天桥、站房结构、雨棚和连廊钢结构。</p>
+            <a href="/zh/transportation-infrastructure-steel/" style="color: #2563eb; font-size: 14px; font-weight: 600;">查看基础设施 →</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CRO底部CTA -->
+  <section class="detail-section dark" style="padding: 60px 0;">
+    <div class="container">
+      <div style="text-align: center; max-width: 700px; margin: 0 auto;">
+        <p class="section-index" style="justify-content: center; color: #f59e0b;">开始合作</p>
+        <h2 style="color: #fff; margin-bottom: 16px;">有钢构件图纸？</h2>
+        <p style="color: rgba(255,255,255,0.8); margin-bottom: 24px;">发送您的图纸、材料牌号、数量和交付地点进行制造评审。中赛钢构将评审您的要求并确认准确报价所需的内容。</p>
+        <div style="display: flex; gap: 16px; justify-content: center; flex-wrap: wrap;">
+          <a href="#quote" class="btn btn-primary">发送图纸</a>
+          <a href="#quote" class="btn btn-outline" style="border-color: rgba(255,255,255,0.5); color: #fff;">申请报价</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Quote Form -->
+  <section id="quote" class="detail-section">
+    <div class="container">
+      <QuoteForm />
     </div>
   </section>
 </BaseLayout>
 
 <style>
-  .component-item-clickable {
-    cursor: pointer;
-    transition: transform 0.2s ease, box-shadow 0.2s ease;
-    text-decoration: none;
-    color: inherit;
-    display: block;
+.component-category-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 24px;
+}
+.component-category-card {
+  background: #fff;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 2px 12px rgba(0,0,0,0.06);
+  border: 1px solid #e5e7eb;
+  text-decoration: none;
+  color: inherit;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  display: block;
+}
+.component-category-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 24px rgba(0,0,0,0.12);
+}
+.cc-image img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  display: block;
+}
+.cc-content {
+  padding: 20px;
+}
+.cc-content h3 {
+  margin: 0 0 10px 0;
+  font-size: 1.15rem;
+  color: #1f2937;
+}
+.cc-content p {
+  margin: 0 0 12px 0;
+  color: #6b7280;
+  font-size: 0.9rem;
+  line-height: 1.6;
+}
+.cc-cta {
+  color: #2563eb;
+  font-weight: 600;
+  font-size: 0.9rem;
+}
+.definition-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 20px;
+}
+.definition-item {
+  background: #fff;
+  padding: 20px;
+  border-radius: 8px;
+  border-left: 4px solid #2563eb;
+}
+.definition-item h4 {
+  margin: 0 0 8px 0;
+  color: #1f2937;
+  font-size: 1rem;
+}
+.definition-item p {
+  margin: 0;
+  color: #6b7280;
+  font-size: 0.88rem;
+  line-height: 1.6;
+}
+.capability-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 16px;
+}
+.capability-item {
+  background: #fff;
+  padding: 18px;
+  border-radius: 8px;
+  border: 1px solid #e5e7eb;
+}
+.capability-item h4 {
+  margin: 0 0 8px 0;
+  color: #1f2937;
+  font-size: 0.95rem;
+}
+.capability-item p {
+  margin: 0;
+  color: #6b7280;
+  font-size: 0.85rem;
+  line-height: 1.5;
+}
+.industry-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 16px;
+}
+.industry-card {
+  background: #fff;
+  padding: 20px;
+  border-radius: 8px;
+  border: 1px solid #e5e7eb;
+  text-decoration: none;
+  color: inherit;
+  transition: border-color 0.3s ease;
+}
+.industry-card:hover {
+  border-color: #2563eb;
+}
+.industry-card h4 {
+  margin: 0 0 8px 0;
+  color: #1f2937;
+  font-size: 1rem;
+}
+.industry-card p {
+  margin: 0;
+  color: #6b7280;
+  font-size: 0.85rem;
+  line-height: 1.5;
+}
+@media (max-width: 768px) {
+  .component-category-grid {
+    grid-template-columns: 1fr;
+    gap: 16px;
   }
-  .component-item-clickable:hover {
-    transform: translateY(-3px);
-    box-shadow: 0 8px 24px rgba(0,0,0,0.1);
+  .cc-image img {
+    height: 160px;
   }
-  .component-item-cta {
-    display: inline-block;
-    margin-top: 12px;
-    color: var(--color-primary);
-    font-weight: 600;
-    font-size: 0.9rem;
+  .definition-grid, .capability-grid, .industry-grid {
+    grid-template-columns: 1fr;
   }
+}
 </style>

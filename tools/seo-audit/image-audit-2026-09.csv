@@ -1,0 +1,51 @@
+页面URL,图片位置,当前图片,是否匹配,是否替换,新图片,图片来源,是否AI,新ALT,桌面验收,移动端验收,备注
+/en/products/,Products Hub分类展示,06-custom-engineering.jpg,部分匹配,否,保留,,否,Custom steel engineering service,待验收,待验收,
+/en/products/,Products Hub分类展示,03-commercial-public.jpg,部分匹配,否,保留,,否,Commercial and public steel buildings,待验收,待验收,
+/en/steel-workshop/,Hero,app-industrial-workshop-hero.jpg,匹配,否,保留,,否,Steel structure workshop for industrial manufacturing,待验收,待验收,
+/en/steel-workshop/,制造能力,factory-steel-beam-fabrication.jpg,匹配(真实工厂),否,保留,,否,Steel beam fabrication at ZhongSai factory,待验收,待验收,真实工厂图
+/en/steel-workshop/,制造能力,factory-interior-production.jpg,匹配(真实工厂),否,保留,,否,Factory interior production area,待验收,待验收,真实工厂图
+/en/steel-workshop/,围护系统,detail-cladding-system.jpg,匹配,否,保留,,否,Roof and wall cladding system detail,待验收,待验收,
+/en/steel-workshop/,项目案例,4个工业项目,匹配,否,保留,,否,,待验收,待验收,
+/en/steel-warehouse/,Hero,app-warehouse-logistics-hero.jpg,匹配,否,保留,,否,Steel structure warehouse for logistics and storage,待验收,待验收,
+/en/steel-warehouse/,仓库内部,detail-warehouse-interior.jpg,匹配,否,保留,,否,Steel warehouse interior with clear span,待验收,待验收,
+/en/steel-warehouse/,围护系统,detail-cladding-system.jpg,匹配,否,保留,,否,Roof and wall cladding system detail,待验收,待验收,
+/en/steel-warehouse/,项目案例,湛江物流港+3个工业项目,部分匹配,是,替换2个工业项目为仓储相关,已有图片,否,,待验收,待验收,3个工业项目中2个与仓库主题不够相关
+/en/agricultural-steel-buildings/,Hero,app-agriculture-livestock.jpg,匹配(开放式牛舍),否,保留,,否,Steel livestock barn in agricultural setting,待验收,待验收,
+/en/agricultural-steel-buildings/,牛舍专节,05-agriculture-special.jpg,部分匹配(工厂内轻钢框架),是,替换为更匹配的牛舍/养殖建筑图,AI生成,是,,待验收,待验收,当前图是工厂内构件，不是牛舍建筑
+/en/agricultural-steel-buildings/,围护系统,detail-cladding-system.jpg,匹配,否,保留,,否,Roof and wall cladding system detail,待验收,待验收,
+/en/agricultural-steel-buildings/,能力参考,4个工业/商业项目,匹配(已明确标注为能力参考),否,保留,,否,,待验收,待验收,已明确标注非农业项目
+/en/steel-mining-factory/,Hero,app-mining-energy-hero.jpg,匹配(矿业井架),否,保留,,否,Mining steel structure headframe,待验收,待验收,
+/en/steel-mining-factory/,管廊,cnooc-pr6-pipe-rack.jpg,匹配(真实项目),否,保留,,否,Pipe rack steel structure for CNOOC project,待验收,待验收,真实项目图
+/en/steel-mining-factory/,裂解炉,cnpc-cracking-furnace.jpg,匹配(真实项目),否,保留,,否,Steel structure for cracking furnace,待验收,待验收,真实项目图
+/en/steel-mining-factory/,制造,4张真实工厂图,匹配(真实工厂),否,保留,,否,,待验收,待验收,真实工厂图
+/en/commercial-public-steel-buildings/,Hero,app-commercial-public.jpg,匹配,否,保留,,否,Commercial and public steel buildings,待验收,待验收,
+/en/commercial-public-steel-buildings/,展示,06-custom-engineering.jpg,不匹配,是,替换为商业公共建筑相关图,已有图片,否,03-commercial-public.jpg或detail-hospital-building.jpg,待验收,待验收,custom-engineering与商业公共主题不符
+/en/commercial-public-steel-buildings/,展示,03-commercial-public.jpg,匹配,否,保留,,否,Commercial and public steel buildings,待验收,待验收,
+/en/commercial-public-steel-buildings/,医院,detail-hospital-building.jpg,匹配,否,保留,,否,Hospital steel structure building,待验收,待验收,
+/en/transportation-infrastructure-steel/,Hero,app-transport-infrastructure.jpg,匹配,否,保留,,否,Transportation infrastructure steel structures,待验收,待验收,
+/en/transportation-infrastructure-steel/,飞机库,detail-aircraft-hangar.jpg,匹配,否,保留,,否,Aircraft hangar steel structure,待验收,待验收,
+/en/transportation-infrastructure-steel/,港口,detail-port-terminal.jpg,匹配,否,保留,,否,Port terminal steel structure,待验收,待验收,
+/en/transportation-infrastructure-steel/,制造,workshop-overview-wide.jpg,匹配(真实工厂),否,保留,,否,Factory workshop overview,待验收,待验收,真实工厂图
+/en/special-custom-steel-structures/,Hero,app-special-custom.jpg,匹配,否,保留,,否,Special and custom steel structures,待验收,待验收,
+/en/special-custom-steel-structures/,展示,03-commercial-public.jpg,不匹配,是,替换为特种结构相关图,已有图片,否,detail-spiral-staircase.jpg或06-custom-engineering.jpg,待验收,待验收,commercial-public与特种定制主题不符
+/en/special-custom-steel-structures/,螺旋楼梯,detail-spiral-staircase.jpg,匹配,否,保留,,否,Spiral staircase steel structure,待验收,待验收,
+/en/special-custom-steel-structures/,展示,06-custom-engineering.jpg,匹配,否,保留,,否,Custom steel engineering,待验收,待验收,
+/en/components/,Components Hub,assembly-welding-9821.jpg,匹配(真实工厂),否,补充,添加更多构件展示图,已有图片,否,,待验收,待验收,只有1张图，应展示多种构件
+/en/components/fabricated-steel-beams-columns/,构件本体,steel-beams-columns-fabrication.jpg,匹配,否,保留,,否,Steel beams and columns fabrication,待验收,待验收,
+/en/components/fabricated-steel-beams-columns/,成品,finished-steel-beams-columns.jpg,匹配,否,保留,,否,Finished steel beams and columns,待验收,待验收,
+/en/components/fabricated-steel-beams-columns/,成品堆叠,finished-steel-members-stacked.jpg,匹配,否,保留,,否,Steel members stacked in factory,待验收,待验收,
+/en/components/fabricated-steel-beams-columns/,应用,01-industrial.jpg,部分匹配,否,保留,,否,Industrial steel building application,待验收,待验收,产品分类图，可接受
+/en/components/fabricated-steel-beams-columns/,应用,04-warehouse-logistics.jpg,部分匹配,否,保留,,否,Warehouse logistics steel building application,待验收,待验收,产品分类图，可接受
+/en/components/fabricated-steel-beams-columns/,应用,03-commercial-public.jpg,部分匹配,否,保留,,否,Commercial public steel building application,待验收,待验收,产品分类图，可接受
+/en/components/steel-trusses/,Hero,steel-truss-hero.jpg,匹配(构件本体清晰),否,保留,,否,Large steel truss structure in factory,待验收,待验收,
+/en/components/steel-trusses/,制造,steel-truss-fabrication.jpg,匹配(焊接过程),否,保留,,否,Steel truss welding fabrication,待验收,待验收,
+/en/components/steel-trusses/,复杂节点,complex-steel-truss-fabrication.jpg,匹配但未使用,是,添加,已有图片,否,Complex steel truss fabrication with pipe nodes,待验收,待验收,这张好图未在Trusses页面使用
+/en/components/steel-trusses/,应用场景,缺失,是,添加,AI生成或已有,是,,待验收,待验收,缺少桁架安装/应用场景图
+/en/components/steel-purlins/,Hero,steel-purlins-hero.jpg,匹配,否,保留,,否,Steel purlins in factory,待验收,待验收,
+/en/components/steel-purlins/,制造,steel-purlins-fabrication.jpg,匹配,否,保留,,否,Steel purlins fabrication,待验收,待验收,
+/en/components/steel-purlins/,安装/应用,缺失,是,添加,AI生成,是,,待验收,待验收,缺少檩条安装/应用场景图
+/en/components/roof-wall-cladding-systems/,安装,roof-wall-cladding-installation.jpg,匹配,否,保留,,否,Roof and wall cladding installation,待验收,待验收,
+/en/components/roof-wall-cladding-systems/,构件,finished-steel-members-stacked.jpg,部分匹配,否,保留,,否,Steel members stacked,待验收,待验收,
+/en/components/roof-wall-cladding-systems/,涂层,finished-coated-components.jpg,匹配,否,保留,,否,Finished coated steel components,待验收,待验收,
+/en/components/roof-wall-cladding-systems/,细节,brochure-envelope-system-detail.jpg,匹配但未使用,是,添加,已有图片,否,Envelope system detail,待验收,待验收,这张细节图未使用
+/en/components/roof-wall-cladding-systems/,概览,brochure-envelope-system-overview.jpg,匹配但未使用,是,添加,已有图片,否,Envelope system overview,待验收,待验收,这张概览图未使用

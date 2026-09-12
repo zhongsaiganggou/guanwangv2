@@ -3,8 +3,8 @@ title: "7 Common Mistakes When Importing Steel Structures from China (And How to
 language: "en"
 category: "Import & Shipping"
 status: "published"
-seoTitle: "7 Common Mistakes Importing Steel Structures from China | Avoid These Pitfalls"
-metaDescription: "Learn the 7 most common mistakes buyers make when importing steel structures from China, and how to avoid them. Practical guide for first-time and experienced importers."
+seoTitle: "7 Common Mistakes Importing Steel Structures from China"
+metaDescription: "Learn the 7 most common mistakes buyers make when importing steel structures from China, and how to avoid them."
 h1: "7 Common Mistakes When Importing Steel Structures from China (And How to Avoid Them)"
 excerpt: "The 7 most costly and common mistakes when importing prefabricated steel structures from China, with practical solutions and buyer checklists to avoid pitfalls."
 coverImage: "/images/blog/common-mistakes-importing-steel-structures-china/cover.jpg"
@@ -14,8 +14,6 @@ ctaType: "send-project-requirements"
 noindex: false
 author: "ZhongSai Steel Structure Editorial Team"
 ---
-
-# 7 Common Mistakes When Importing Steel Structures from China
 
 Importing steel structures from China can deliver significant cost savings and access to world-class manufacturing capacity. However, many buyers — especially first-time importers — make costly mistakes that lead to delays, quality issues, budget overruns, and even unusable shipments.
 

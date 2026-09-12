@@ -1,71 +1,141 @@
 ---
-// ZhongSai V2 - English Export Delivery Page
+// ZhongSai V2 - English Export Delivery Page (Upgraded)
 import BaseLayout from '../../../layouts/BaseLayout.astro';
 import QuoteForm from '../../../components/QuoteForm.astro';
+import ExportDeliveryCTA from '../../../components/ExportDeliveryCTA.astro';
 import '../../../styles/hub.css';
 import '../../../styles/manufacturing.css';
 
 const lang = 'en';
-const title = 'Steel Structure Export from China | Packing, Loading & Delivery Support';
-const description = 'Learn how ZhongSai supports overseas steel structure projects with packing, component marking, container loading, export documentation support, logistics coordination and overseas installation technical guidance.';
+const title = 'Steel Structure Export & Overseas Delivery | ZhongSai';
+const description = 'From design and fabrication planning to component marking, packing, container loading and overseas delivery coordination, ZhongSai in-house design and...';
+const canonical = 'https://zhongsai-steelstructure.com/en/export-delivery/';
 
-const exportProcess = [
-  { num: '01', title: 'Confirmed Drawings & Project Scope', desc: 'Project drawings, specifications and delivery requirements are confirmed before fabrication completion.' },
-  { num: '02', title: 'Fabrication Completion', desc: 'Steel components are fabricated according to confirmed drawings and project technical requirements.' },
-  { num: '03', title: 'Inspection & Preparation', desc: 'Manufacturing and inspection are organized according to confirmed drawings, specifications and project requirements.' },
-  { num: '04', title: 'Component Marking', desc: 'Component marking can be organized according to confirmed drawings and project requirements for erection identification.' },
-  { num: '05', title: 'Packing', desc: 'Packing methods are confirmed according to component type, container loading requirements and export handling needs.' },
-  { num: '06', title: 'Loading / Container Loading', desc: 'Loading and container loading plans are coordinated to optimize space utilization and protect components during transport.' },
-  { num: '07', title: 'Export Documentation Coordination', desc: 'Commercial documentation, packing information and export declaration support are coordinated according to project requirements.' },
-  { num: '08', title: 'Overseas Technical Guidance', desc: 'Installation drawings, video resources and technical guidance are provided to support the customer or local construction team.' }
+// Full Design-to-Delivery process (13 steps)
+const fullProcess = [
+  { num: '01', title: 'Project Review', desc: 'Review project requirements, drawings, delivery location and timeline.' },
+  { num: '02', title: 'Structural Design', desc: 'Coordinate structural design considering manufacturing, shipping and site assembly.' },
+  { num: '03', title: 'Detailing & Shop Drawings', desc: 'Develop fabrication-ready shop drawings with component numbering and connection details.' },
+  { num: '04', title: 'Fabrication Planning', desc: 'Plan production sequence, material preparation and manufacturing schedule.' },
+  { num: '05', title: 'Manufacturing', desc: 'Fabricate steel components according to approved drawings and project specifications.' },
+  { num: '06', title: 'Quality Inspection', desc: 'Inspect dimensions, welding, surface treatment and assembly accuracy.' },
+  { num: '07', title: 'Component Marking', desc: 'Mark each component with project-specific ID matching drawings and packing list.' },
+  { num: '08', title: 'Packing', desc: 'Group components by installation sequence, protect surfaces and pack accessories.' },
+  { num: '09', title: 'Container Loading', desc: 'Load containers optimizing space utilization, weight distribution and unloading order.' },
+  { num: '10', title: 'Export Documentation', desc: 'Prepare commercial invoice, packing list, export declaration and shipping documents.' },
+  { num: '11', title: 'Shipment', desc: 'Coordinate container booking, port delivery and ocean freight arrangements.' },
+  { num: '12', title: 'Delivery Coordination', desc: 'Coordinate shipment status, document handover and destination delivery.' },
+  { num: '13', title: 'Installation Technical Support', desc: 'Provide installation drawings, component identification and remote technical guidance.' }
 ];
 
-const loadingSteps = [
+// Design team responsibilities
+const designTeamItems = [
+  { title: 'Component Size Optimization', desc: 'Coordinate member dimensions considering manufacturing and transport limitations.' },
+  { title: 'Transport Limitation Planning', desc: 'Plan member segmentation based on container dimensions and shipping constraints.' },
+  { title: 'Container Dimension Coordination', desc: 'Ensure component lengths fit standard containers or plan appropriate segmentation.' },
+  { title: 'Member Segmentation Design', desc: 'Design bolt splice locations at structurally appropriate positions for transport.' },
+  { title: 'Bolt Splice Locations', desc: 'Coordinate splice positions avoiding high-moment zones for field assembly.' },
+  { title: 'Site Assembly Interfaces', desc: 'Design connection interfaces for efficient and accurate on-site bolted assembly.' },
+  { title: 'Component Numbering System', desc: 'Develop marking system linking components to drawings, packing list and erection sequence.' },
+  { title: 'Installation Sequence Planning', desc: 'Coordinate packing and loading order with logical site erection sequence.' }
+];
+
+// Delivery team responsibilities
+const deliveryTeamItems = [
+  { title: 'Production Completion Tracking', desc: 'Monitor manufacturing progress and coordinate production completion status.' },
+  { title: 'Packing Plan Development', desc: 'Develop project-specific packing plans based on component types and installation sequence.' },
+  { title: 'Container Loading Plan', desc: 'Plan container loading optimizing space, weight distribution and unloading convenience.' },
+  { title: 'Packing List Preparation', desc: 'Prepare detailed packing lists linking components, packages and containers.' },
+  { title: 'Component Identification Coordination', desc: 'Ensure marking system is correctly applied and matches documentation.' },
+  { title: 'Shipping Schedule Coordination', desc: 'Coordinate production completion with container booking and loading dates.' },
+  { title: 'Export Documentation', desc: 'Prepare and coordinate commercial invoice, packing list, export declaration and certificates.' },
+  { title: 'Delivery Port & Shipment', desc: 'Coordinate port delivery, container loading and ocean freight arrangements.' },
+  { title: 'Client & Contractor Handover', desc: 'Coordinate document handover, shipment status communication and destination delivery support.' }
+];
+
+// Container loading optimization factors
+const loadingFactors = [
+  { title: 'Member Dimensions', desc: 'Coordinate component lengths and cross-sections with container internal dimensions.' },
+  { title: 'Container Dimensions', desc: 'Plan based on 40GP, 40HQ, 45HQ or project-specific container types.' },
+  { title: 'Weight Distribution', desc: 'Distribute weight evenly within containers for safe transport and handling.' },
+  { title: 'Loading Sequence', desc: 'Organize loading order to support logical unloading and erection sequence at site.' },
+  { title: 'Space Utilization', desc: 'Optimize packing to reduce wasted container space while maintaining component protection.' },
+  { title: 'Movement Protection', desc: 'Secure components against movement during ocean transport with appropriate bracing.' },
+  { title: 'Unloading Convenience', desc: 'Plan loading so components can be unloaded in logical order without rehandling.' }
+];
+
+// Export documentation items
+const exportDocs = [
+  { title: 'Commercial Invoice', desc: 'Prepare commercial documentation for export declaration and destination customs.' },
+  { title: 'Packing List', desc: 'Detailed packing list linking components, packages, containers and weights.' },
+  { title: 'Export Declaration Documents', desc: 'Support export declaration documentation according to Chinese export regulations.' },
+  { title: 'Certificate-related Documents', desc: 'Coordinate certificate documents where applicable based on project requirements.' },
+  { title: 'Bill of Lading Coordination', desc: 'Coordinate bill of lading information with freight forwarders and shipping lines.' },
+  { title: 'Project / Product Documentation', desc: 'Provide installation drawings, material certificates and inspection records as required.' }
+];
+
+// Project types supported
+const projectTypes = [
+  { name: 'Industrial Workshops', href: '/en/steel-workshop/', desc: 'Manufacturing plants, processing facilities and crane-equipped industrial buildings.' },
+  { name: 'Warehouses', href: '/en/steel-warehouse/', desc: 'Logistics centers, distribution hubs and industrial storage buildings.' },
+  { name: 'Mining Structures', href: '/en/steel-mining-factory/', desc: 'Processing plants, conveyor galleries, equipment platforms and heavy industrial structures.' },
+  { name: 'Agriculture Buildings', href: '/en/agricultural-steel-buildings/', desc: 'Poultry houses, cattle barns, livestock facilities and agricultural storage.' },
+  { name: 'Commercial / Public Structures', href: '/en/commercial-public-steel-buildings/', desc: 'Exhibition halls, sports buildings, commercial facilities and public buildings.' },
+  { name: 'Infrastructure Steel', href: '/en/transportation-infrastructure-steel/', desc: 'Pedestrian bridges, station structures, canopies and infrastructure components.' },
+  { name: 'Special Steel Structures', href: '/en/special-custom-steel-structures/', desc: 'Custom and special-purpose steel structures for unique project requirements.' }
+];
+
+// FAQ items
+const faqs = [
   {
-    img: '/images/components/finished-steel-members-stacked.jpg',
-    title: 'Component Preparation',
-    desc: 'Finished members are prepared and organized for loading according to project requirements.'
+    q: 'How are steel structures shipped from China?',
+    a: 'Steel structures are fabricated in our factory, then components are marked, packed and loaded into shipping containers. Container loading is optimized for space utilization and component protection. After export documentation is prepared, containers are delivered to port and shipped by ocean freight to the destination country.'
   },
   {
-    img: '/images/export/heavy-member-prep-308_web.jpg',
-    title: 'Crane Lifting & Truck Loading',
-    desc: 'Heavy components are lifted and loaded using appropriate equipment, with packing protection in place.'
+    q: 'Can large steel members fit inside shipping containers?',
+    a: 'Most standard steel components are designed to fit within standard shipping containers (typically 40GP or 40HQ). For members that exceed standard container lengths, our in-house design team can plan bolt splice locations to segment long members for container transport. In special cases, open-top containers, flat racks or project-specific logistics may be considered based on member dimensions, port conditions and logistics arrangements.'
   },
   {
-    img: '/images/export/container-loading-310_web.jpg',
-    title: 'Container Loading',
-    desc: 'Components are loaded into containers according to packing plans, optimizing space utilization and transport safety.'
+    q: 'How do you identify components for installation?',
+    a: 'Each steel component receives a project-specific identification marking that corresponds with approved shop drawings. The packing list links each component ID with its package, container and installation sequence reference. This system helps the local installation team correctly identify and assemble components at the project site, reducing errors and improving erection efficiency.'
   },
   {
-    img: '/images/export/container-loading-256_web.jpg',
-    title: 'Loaded Container & Export Preparation',
-    desc: 'Loaded containers are prepared for export, with documentation and logistics coordination organized according to project requirements.'
+    q: 'Can ZhongSai optimize the structure for container shipping?',
+    a: 'Yes. Our in-house design team considers container dimensions, transport limitations and site assembly requirements during the structural design and detailing phase. This includes planning member segmentation, bolt splice locations, component numbering and packing sequence. By coordinating design with delivery, we can optimize container space utilization and, in suitable projects, help reduce freight costs through efficient loading arrangements.'
+  },
+  {
+    q: 'What export documents can you support?',
+    a: 'ZhongSai can support preparation of commercial invoices, detailed packing lists, export declaration documents, and coordinate bill of lading information. Material certificates, inspection records and installation drawings are provided according to project requirements. Specific certificate documents can be coordinated based on destination country requirements. We do not replace the customer or their appointed customs broker for destination country customs clearance.'
+  },
+  {
+    q: 'Can you coordinate delivery to my project country?',
+    a: 'Yes. Our in-house project delivery team coordinates production completion, packing plans, container loading, export documentation, container booking and port delivery. We work with freight forwarders and shipping lines to arrange ocean freight to the destination port. Shipment status and document handover are communicated to the customer throughout the delivery process.'
+  },
+  {
+    q: 'Do you provide customs clearance?',
+    a: 'ZhongSai prepares and coordinates Chinese export documentation and supports export declaration. For destination country customs clearance, the customer or their appointed customs broker typically handles import declaration and customs procedures. We can provide required documentation and information to support the customer destination customs clearance process, but we do not act as the importer of record or customs broker in the destination country.'
+  },
+  {
+    q: 'Do you provide installation after delivery?',
+    a: 'ZhongSai provides installation technical guidance, including installation drawings, component identification references, erection sequence information and remote technical clarification. Local civil works, foundation construction, on-site labor and actual erection are normally handled by the customer or their appointed local construction team. In specific projects, on-site technical guidance may be arranged according to the agreed project scope, but ZhongSai does not act as the local construction contractor or EPC contractor.'
   }
 ];
 
-const zhongSaiSupports = [
-  'Fabrication',
-  'Component supply',
-  'Component marking',
-  'Packing',
-  'Container loading',
-  'Export documentation support',
-  'Logistics coordination',
-  'Overseas installation technical guidance'
-];
-
-const localTeamHandles = [
-  'Local unloading',
-  'Local site labor',
-  'Local erection',
-  'Local construction',
-  'Site safety management',
-  'Local permits / statutory approvals where applicable'
+// Related links
+const relatedLinks = [
+  { name: 'Engineering & Design', href: '/en/engineering-design/', desc: 'Structural design, detailing and engineering support' },
+  { name: 'Manufacturing & Quality', href: '/en/manufacturing-quality/', desc: 'Factory fabrication, quality control and production evidence' },
+  { name: 'Projects', href: '/en/projects/', desc: 'Real project cases with delivery and scope evidence' },
+  { name: 'Steel Workshop', href: '/en/steel-workshop/', desc: 'Industrial workshop and manufacturing plant structures' },
+  { name: 'Steel Warehouse', href: '/en/steel-warehouse/', desc: 'Logistics and storage building structures' },
+  { name: 'Mining & Heavy Industry', href: '/en/steel-mining-factory/', desc: 'Mining, energy and heavy industrial steel structures' },
+  { name: 'Special Steel Structures', href: '/en/special-custom-steel-structures/', desc: 'Custom and special-purpose steel structures' },
+  { name: 'Contact & Quote', href: '/en/contact/', desc: 'Submit project drawings for delivery planning and quote' }
 ];
 ---
 
 <BaseLayout title={title} description={description} lang={lang}>
-  <!-- Section 01: Hero -->
+  <!-- Hero -->
   <section class="hub-hero">
     <div class="hub-hero-bg" style="background-image: url('/images/export/loading-truck_web.jpg')"></div>
     <div class="hub-hero-overlay"></div>
@@ -73,366 +143,747 @@ const localTeamHandles = [
       <div class="hub-breadcrumb">
         <a href="/en/">Home</a><span>/</span><span>Export Delivery</span>
       </div>
-      <p class="eyebrow">EXPORT DELIVERY</p>
-      <h1>Steel Structure Export Supply from China</h1>
-      <p class="hub-hero-desc">ZhongSai supports overseas steel structure projects from fabrication completion through component marking, packing, loading, export documentation coordination and overseas installation technical guidance.</p>
-    </div>
-  </section>
-
-  <!-- Section 02: From Fabrication to Export -->
-  <section class="hub-section">
-    <div class="container">
-      <div class="hub-section-head">
-        <p class="section-num">01</p>
-        <h2>From Fabrication Completion to Export Preparation</h2>
-      </div>
-      <p class="section-intro">Inspection, marking and packing are organized according to confirmed drawings and project requirements.</p>
-      <div class="process-grid">
-        {exportProcess.map(step => (
-          <div class="process-card">
-            <div class="step-number">STEP {step.num}</div>
-            <h3>{step.title}</h3>
-            <p>{step.desc}</p>
+      <p class="eyebrow">EXPORT DELIVERY · From Factory to Destination</p>
+      <h1>Steel Structure Export<br>and Overseas Project Delivery</h1>
+      <p class="lead">From design and fabrication planning to component marking, packing, container loading and overseas delivery coordination, ZhongSai in-house design and delivery teams work together to support steel structure projects from factory to destination.</p>
+      <div class="hero-capabilities">
+        <div class="cap-item">
+          <span class="cap-icon">◆</span>
+          <div>
+            <span class="cap-title">In-House Design Team</span>
+            <span class="cap-desc">Design for manufacturing, shipping & site assembly</span>
           </div>
-        ))}
+        </div>
+        <div class="cap-item">
+          <span class="cap-icon">◆</span>
+          <div>
+            <span class="cap-title">In-House Delivery Team</span>
+            <span class="cap-desc">Packing, loading, docs & shipment coordination</span>
+          </div>
+        </div>
+        <div class="cap-item">
+          <span class="cap-icon">◆</span>
+          <div>
+            <span class="cap-title">Project-Specific Packing</span>
+            <span class="cap-desc">Component marking & installation sequence packing</span>
+          </div>
+        </div>
+        <div class="cap-item">
+          <span class="cap-icon">◆</span>
+          <div>
+            <span class="cap-title">Export Documentation</span>
+            <span class="cap-desc">Commercial invoice, packing list & export support</span>
+          </div>
+        </div>
+      </div>
+      <div class="hero-cta-group">
+        <a href="#quote" class="btn btn-primary">Send Your Project Drawings</a>
+        <a href="#delivery-process" class="btn btn-secondary">Discuss Delivery Requirements</a>
       </div>
     </div>
   </section>
 
-  <!-- Section 03: Component Marking & Packing -->
-  <section class="hub-section hub-section-light">
+  <!-- 01: From Design to Delivery -->
+  <section class="section" id="delivery-process" style="padding: 70px 0;">
     <div class="container">
-      <div class="hub-section-head">
-        <p class="section-num">02</p>
-        <h2>Component Marking & Packing for Export</h2>
-      </div>
-      <div class="export-content-grid">
-        <div class="export-text">
-          <p>Different project components may require different packing methods depending on component type, size and transport requirements.</p>
-          <p>Component marking can be organized according to confirmed drawings, supporting identification during loading and project-site coordination.</p>
-          <p>Small accessories and connection materials may require grouped packing to ensure all items are accounted for during unloading and erection.</p>
-          <p>Packing methods are confirmed according to component type, container loading requirements and export handling needs.</p>
+      <div class="section-heading reveal">
+        <div>
+          <p class="section-index">完整流程</p>
+          <h2>From Design to Overseas Delivery</h2>
         </div>
-        <div class="export-image">
-          <img src="/images/export/heavy-member-prep-308_web.jpg" alt="Steel components prepared for export packing and loading" width="600" height="450" loading="lazy">
+        <div>
+          <p>ZhongSai in-house design team and delivery team collaborate throughout the project. Design does not end when drawings are released, and delivery does not begin only after fabrication is complete. Both teams coordinate around manufacturing, transport and site assembly from the early project stage.</p>
         </div>
       </div>
-    </div>
-  </section>
-
-  <!-- Section 04: Loading & Container Preparation -->
-  <section class="hub-section">
-    <div class="container">
-      <div class="hub-section-head">
-        <p class="section-num">03</p>
-        <h2>Loading & Container Preparation</h2>
-      </div>
-      <div class="loading-steps-grid">
-        {loadingSteps.map((step, i) => (
-          <div class="loading-step-card">
-            <div class="loading-step-img">
-              <img src={step.img} alt={step.title} width="500" height="375" loading="lazy">
-            </div>
-            <div class="loading-step-content">
-              <span class="step-number">STEP {String(i + 1).padStart(2, '0')}</span>
+      <div class="process-timeline">
+        {fullProcess.map((step, i) => (
+          <div class={`timeline-item reveal reveal-delay-${(i % 4) + 1}`}>
+            <div class="timeline-num">{step.num}</div>
+            <div class="timeline-content">
               <h3>{step.title}</h3>
               <p>{step.desc}</p>
             </div>
           </div>
         ))}
       </div>
-      <p class="loading-note">Optimized packing and container loading can help improve container space utilization. Specific loading capacity depends on actual cargo dimensions, weight and transport requirements.</p>
     </div>
   </section>
 
-  <!-- Section 05: Export Documentation & Logistics Coordination -->
-  <section class="hub-section hub-section-light">
+  <!-- 02: In-House Design Team -->
+  <section class="section" style="padding: 70px 0; background: #f8fafc;">
     <div class="container">
-      <div class="hub-section-head">
-        <p class="section-num">04</p>
-        <h2>Export Documentation & Logistics Coordination</h2>
+      <div class="section-heading reveal">
+        <div>
+          <p class="section-index">设计团队</p>
+          <h2>Design for Manufacturing, Shipping and Site Assembly</h2>
+        </div>
+        <div>
+          <p>Steel structure design must consider not only structural performance, but also whether components can be manufactured, loaded into containers, transported overseas and assembled efficiently at the project site. ZhongSai in-house design team integrates these considerations from the structural design phase.</p>
+        </div>
       </div>
-      <div class="export-two-col">
-        <div class="export-col">
-          <h3>Export Documentation Support</h3>
-          <ul class="export-list">
-            <li>Commercial documentation preparation support</li>
-            <li>Packing information / packing list coordination</li>
-            <li>Export declaration documentation support</li>
-            <li>Shipping-related document coordination</li>
-            <li>Project-specific export document preparation where applicable</li>
-          </ul>
-        </div>
-        <div class="export-col">
-          <h3>Logistics Coordination</h3>
-          <ul class="export-list">
-            <li>Coordinate loading / container loading schedule</li>
-            <li>Coordinate transport arrangements</li>
-            <li>Support shipping document preparation</li>
-            <li>Communicate project delivery requirements with relevant logistics parties</li>
-          </ul>
-          <p class="export-note">Freight forwarding and customs-clearance arrangements are coordinated with relevant service providers according to project requirements. ZhongSai's core role remains steel structure manufacturing and export supply.</p>
-        </div>
+      <div class="quality-grid" style="margin-top: 40px;">
+        {designTeamItems.map((item, i) => (
+          <div class={`quality-item reveal reveal-delay-${(i % 4) + 1}`}>
+            <h4>{item.title}</h4>
+            <p>{item.desc}</p>
+          </div>
+        ))}
+      </div>
+      <div style="margin-top: 24px; padding: 20px; background: #eff6ff; border-left: 4px solid #1e40af; border-radius: 0 8px 8px 0;" class="reveal">
+        <p style="margin: 0; color: #1e3a5f; font-size: 14px; line-height: 1.7;"><strong>Key advantage:</strong> By coordinating structural design with container dimensions, transport limitations and site assembly requirements, ZhongSai can reduce unnecessary transport waste and improve on-site erection efficiency. This is the value of having an in-house design team that understands both structural engineering and export delivery.</p>
       </div>
     </div>
   </section>
 
-  <!-- Section 06: Overseas Installation Technical Guidance + Boundary -->
-  <section class="hub-section">
+  <!-- 03: In-House Delivery Team -->
+  <section class="section" style="padding: 70px 0;">
     <div class="container">
-      <div class="hub-section-head">
-        <p class="section-num">05</p>
-        <h2>Overseas Installation Technical Guidance</h2>
+      <div class="section-heading reveal">
+        <div>
+          <p class="section-index">交付团队</p>
+          <h2>In-House Project Delivery Team</h2>
+        </div>
+        <div>
+          <p>ZhongSai project delivery team coordinates the transition from manufacturing completion to overseas shipment and destination delivery. This is not a third-party freight forwarding service — it is an internal project coordination function that ensures packing, loading, documentation and shipment are organized according to project requirements.</p>
+        </div>
       </div>
-      <div class="guidance-content">
-        <p>For projects requiring installation support, ZhongSai may provide overseas technical guidance according to the confirmed project scope.</p>
-        <p>Local erection labor, construction organization and local site management are handled by the customer or local construction team.</p>
+      <div class="quality-grid" style="margin-top: 40px;">
+        {deliveryTeamItems.map((item, i) => (
+          <div class={`quality-item reveal reveal-delay-${(i % 4) + 1}`}>
+            <h4>{item.title}</h4>
+            <p>{item.desc}</p>
+          </div>
+        ))}
       </div>
+    </div>
+  </section>
 
-      <!-- Boundary Dual Column -->
-      <div class="boundary-dual">
-        <div class="boundary-col boundary-col-primary">
-          <h3>ZHONGSAI SUPPORTS</h3>
-          <ul>
-            {zhongSaiSupports.map(item => <li>{item}</li>)}
+  <!-- 04: Early Delivery Planning -->
+  <section class="section" style="padding: 70px 0; background: #f8fafc;">
+    <div class="container">
+      <div class="section-heading reveal">
+        <div>
+          <p class="section-index">早期规划</p>
+          <h2>Early Delivery Planning Starts with Design</h2>
+        </div>
+        <div>
+          <p>The advantage of ZhongSai in-house design team + in-house delivery team is that delivery planning can begin at the design stage, not after fabrication is complete.</p>
+        </div>
+      </div>
+      <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 32px; margin-top: 40px;" class="planning-grid">
+        <div class="reveal reveal-delay-1" style="padding: 32px; background: white; border-radius: 12px; border: 1px solid #e2e8f0;">
+          <div style="display: flex; align-items: center; gap: 12px; margin-bottom: 16px;">
+            <div style="width: 40px; height: 40px; background: #1e40af; border-radius: 8px; display: flex; align-items: center; justify-content: center; color: white; font-weight: 700;">A</div>
+            <h3 style="font-size: 18px; margin: 0; color: #0f172a;">If you have complete structural drawings</h3>
+          </div>
+          <p style="color: #475569; font-size: 14px; line-height: 1.8; margin: 0 0 16px;">ZhongSai in-house design team reviews the drawings for manufacturing feasibility, container transport compatibility and site assembly efficiency.</p>
+          <ul style="margin: 0; padding-left: 20px; color: #475569; font-size: 14px; line-height: 2;">
+            <li>Review member dimensions against container limits</li>
+            <li>Identify components requiring segmentation</li>
+            <li>Plan bolt splice locations for transport</li>
+            <li>Coordinate packing and loading sequence</li>
+            <li>Develop component numbering system</li>
           </ul>
         </div>
-        <div class="boundary-col boundary-col-secondary">
-          <h3>LOCAL PROJECT TEAM HANDLES</h3>
-          <ul>
-            {localTeamHandles.map(item => <li>{item}</li>)}
+        <div class="reveal reveal-delay-2" style="padding: 32px; background: white; border-radius: 12px; border: 1px solid #e2e8f0;">
+          <div style="display: flex; align-items: center; gap: 12px; margin-bottom: 16px;">
+            <div style="width: 40px; height: 40px; background: #f59e0b; border-radius: 8px; display: flex; align-items: center; justify-content: center; color: white; font-weight: 700;">B</div>
+            <h3 style="font-size: 18px; margin: 0; color: #0f172a;">If you only have architectural drawings or project requirements</h3>
+          </div>
+          <p style="color: #475569; font-size: 14px; line-height: 1.8; margin: 0 0 16px;">ZhongSai design team can consider member segmentation, transport limitations and site assembly requirements during the structural scheme development phase.</p>
+          <ul style="margin: 0; padding-left: 20px; color: #475569; font-size: 14px; line-height: 2;">
+            <li>Coordinate column spacing with container dimensions</li>
+            <li>Plan member lengths for efficient container loading</li>
+            <li>Design splice locations for transport and assembly</li>
+            <li>Optimize structure for manufacturing and delivery</li>
+            <li>Plan packing and erection sequence from the start</li>
           </ul>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- Section 06: Buyer Questions -->
-  <section class="hub-section hub-section-light">
+  <!-- 05: Component Marking -->
+  <section class="section" style="padding: 70px 0;">
     <div class="container">
-      <div class="hub-section-head">
-        <p class="section-num">06</p>
-        <h2>Questions from First-Time Buyers</h2>
+      <div class="section-heading reveal">
+        <div>
+          <p class="section-index">构件编号</p>
+          <h2>Component Marking and Identification</h2>
+        </div>
+        <div>
+          <p>Clear component identification is critical for overseas project delivery. Each steel member must be traceable from fabrication through packing, shipping, unloading and on-site assembly.</p>
+        </div>
       </div>
-      <div style="display:grid;grid-template-columns:1fr;gap:24px;max-width:800px">
-        <div><h3 style="margin-bottom:8px">How are steel members identified before shipping?</h3><p style="color:#666;line-height:1.7">Each member receives a unique marking number matching erection drawings. Packing lists correspond to marking numbers, containers and packages for clear site sorting.</p></div>
-        <div><h3 style="margin-bottom:8px">What export documents can ZhongSai support?</h3><p style="color:#666;line-height:1.7">Commercial invoices, packing lists and required export documentation prepared per destination requirements. Specific certificates confirmed during project communication.</p></div>
-        <div><h3 style="margin-bottom:8px">How are steel structures packed for container loading?</h3><p style="color:#666;line-height:1.7">Components organized by erection sequence and protected for ocean transport. Loading plans maximize container utilization while maintaining protection and unloading order.</p></div>
-        <div><h3 style="margin-bottom:8px">Can ZhongSai provide installation technical guidance overseas?</h3><p style="color:#666;line-height:1.7">Yes. Erection drawings, guidance videos and engineer support available per project scope. On-site construction labor arranged by client or local team.</p></div>
+      <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 48px; align-items: start; margin-top: 40px;" class="marking-grid">
+        <div class="reveal reveal-delay-1">
+          <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 16px;">
+            <div style="padding: 20px; background: #f8fafc; border-radius: 10px; border: 1px solid #e2e8f0;">
+              <h4 style="font-size: 14px; color: #1e3a5f; margin-bottom: 8px;">Project-Specific ID</h4>
+              <p style="font-size: 12px; color: #64748b; line-height: 1.6; margin: 0;">Each member assigned a unique project identification number.</p>
+            </div>
+            <div style="padding: 20px; background: #f8fafc; border-radius: 10px; border: 1px solid #e2e8f0;">
+              <h4 style="font-size: 14px; color: #1e3a5f; margin-bottom: 8px;">Drawing Correspondence</h4>
+              <p style="font-size: 12px; color: #64748b; line-height: 1.6; margin: 0;">Marking matches approved shop drawing references.</p>
+            </div>
+            <div style="padding: 20px; background: #f8fafc; border-radius: 10px; border: 1px solid #e2e8f0;">
+              <h4 style="font-size: 14px; color: #1e3a5f; margin-bottom: 8px;">Packing List Link</h4>
+              <p style="font-size: 12px; color: #64748b; line-height: 1.6; margin: 0;">Components linked with packages, containers and weights.</p>
+            </div>
+            <div style="padding: 20px; background: #f8fafc; border-radius: 10px; border: 1px solid #e2e8f0;">
+              <h4 style="font-size: 14px; color: #1e3a5f; margin-bottom: 8px;">Site Assembly Support</h4>
+              <p style="font-size: 12px; color: #64748b; line-height: 1.6; margin: 0;">Identification supports efficient overseas site erection.</p>
+            </div>
+          </div>
+        </div>
+        <div class="reveal reveal-delay-2">
+          <div style="position: relative; border-radius: 12px; overflow: hidden; box-shadow: 0 4px 12px rgba(0,0,0,0.1);">
+            <img src="/images/export/container-loading-310_web.jpg" alt="Steel components loaded into shipping container with identification marking" style="width: 100%; height: auto; display: block;" width="500" height="350">
+          </div>
+          <p style="text-align: center; font-size: 12px; color: #94a3b8; margin-top: 12px; font-style: italic;">Steel components prepared for container loading with project-specific identification.</p>
+        </div>
       </div>
     </div>
   </section>
 
-  <!-- Section 07: Project Inquiry / QuoteForm -->
-  <section class="hub-section hub-section-dark">
+  <!-- 06: Packing -->
+  <section class="section" style="padding: 70px 0; background: #f8fafc;">
     <div class="container">
-      <div class="hub-section-head">
-        <p class="section-num">06</p>
+      <div class="section-heading reveal">
+        <div>
+          <p class="section-index">包装</p>
+          <h2>Packing for Overseas Steel Structure Projects</h2>
+        </div>
+        <div>
+          <p>Packing methods are determined by component type, size, surface treatment and transport requirements. The goal is to protect components during ocean transport while supporting efficient unloading and on-site assembly.</p>
+        </div>
+      </div>
+      <div style="display: grid; grid-template-columns: repeat(4, 1fr); gap: 20px; margin-top: 40px;" class="packing-grid">
+        <div class="reveal reveal-delay-1" style="padding: 24px; background: white; border-radius: 10px; border: 1px solid #e2e8f0;">
+          <h4 style="font-size: 15px; color: #0f172a; margin-bottom: 10px;">Grouping by Structure</h4>
+          <p style="font-size: 13px; color: #64748b; line-height: 1.6; margin: 0;">Components grouped by structural system and installation sequence for logical site handling.</p>
+        </div>
+        <div class="reveal reveal-delay-2" style="padding: 24px; background: white; border-radius: 10px; border: 1px solid #e2e8f0;">
+          <h4 style="font-size: 15px; color: #0f172a; margin-bottom: 10px;">Surface Protection</h4>
+          <p style="font-size: 13px; color: #64748b; line-height: 1.6; margin: 0;">Painted and coated surfaces protected against abrasion and damage during transport.</p>
+        </div>
+        <div class="reveal reveal-delay-3" style="padding: 24px; background: white; border-radius: 10px; border: 1px solid #e2e8f0;">
+          <h4 style="font-size: 15px; color: #0f172a; margin-bottom: 10px;">Bolt & Accessory Packing</h4>
+          <p style="font-size: 13px; color: #64748b; line-height: 1.6; margin: 0;">Bolts, nuts, washers and connection plates grouped and identified for each assembly.</p>
+        </div>
+        <div class="reveal reveal-delay-4" style="padding: 24px; background: white; border-radius: 10px; border: 1px solid #e2e8f0;">
+          <h4 style="font-size: 15px; color: #0f172a; margin-bottom: 10px;">Small Part Identification</h4>
+          <p style="font-size: 13px; color: #64748b; line-height: 1.6; margin: 0;">Small components and accessories clearly labeled to prevent loss and ensure accountability.</p>
+        </div>
+        <div class="reveal reveal-delay-1" style="padding: 24px; background: white; border-radius: 10px; border: 1px solid #e2e8f0;">
+          <h4 style="font-size: 15px; color: #0f172a; margin-bottom: 10px;">Moisture Protection</h4>
+          <p style="font-size: 13px; color: #64748b; line-height: 1.6; margin: 0;">Moisture and transport protection applied where required based on component type and voyage duration.</p>
+        </div>
+        <div class="reveal reveal-delay-2" style="padding: 24px; background: white; border-radius: 10px; border: 1px solid #e2e8f0;">
+          <h4 style="font-size: 15px; color: #0f172a; margin-bottom: 10px;">Packing List Preparation</h4>
+          <p style="font-size: 13px; color: #64748b; line-height: 1.6; margin: 0;">Detailed packing lists prepared linking each component to its package, container and installation reference.</p>
+        </div>
+        <div class="reveal reveal-delay-3" style="padding: 24px; background: white; border-radius: 10px; border: 1px solid #e2e8f0;">
+          <h4 style="font-size: 15px; color: #0f172a; margin-bottom: 10px;">Steel Beam Packing</h4>
+          <p style="font-size: 13px; color: #64748b; line-height: 1.6; margin: 0;">Steel beams and columns bundled and protected according to size, weight and surface treatment.</p>
+        </div>
+        <div class="reveal reveal-delay-4" style="padding: 24px; background: white; border-radius: 10px; border: 1px solid #e2e8f0;">
+          <h4 style="font-size: 15px; color: #0f172a; margin-bottom: 10px;">Truss & Special Packing</h4>
+          <p style="font-size: 13px; color: #64748b; line-height: 1.6; margin: 0;">Trusses and special components packed with appropriate bracing and protection for complex geometries.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 07: Container Loading -->
+  <section class="section" style="padding: 70px 0;">
+    <div class="container">
+      <div class="section-heading reveal">
+        <div>
+          <p class="section-index">科学装柜</p>
+          <h2>Optimized Container Loading</h2>
+        </div>
+        <div>
+          <p>Container loading is planned to optimize space utilization, weight distribution and unloading convenience. Through proper member segmentation, container planning and scientific loading, freight costs can be reduced in suitable projects.</p>
+        </div>
+      </div>
+      <div class="quality-grid" style="margin-top: 40px;">
+        {loadingFactors.map((factor, i) => (
+          <div class={`quality-item reveal reveal-delay-${(i % 4) + 1}`}>
+            <h4>{factor.title}</h4>
+            <p>{factor.desc}</p>
+          </div>
+        ))}
+      </div>
+      <div style="margin-top: 32px; padding: 24px; background: linear-gradient(135deg, #eff6ff 0%, #dbeafe 100%); border-radius: 12px; border: 1px solid #bfdbfe;" class="reveal">
+        <div style="display: flex; align-items: flex-start; gap: 16px;">
+          <div style="width: 48px; height: 48px; background: #1e40af; border-radius: 50%; display: flex; align-items: center; justify-content: center; color: white; font-size: 20px; flex-shrink: 0;">💡</div>
+          <div>
+            <h4 style="font-size: 17px; color: #1e3a5f; margin-bottom: 8px;">Freight Cost Optimization</h4>
+            <p style="font-size: 14px; color: #1e3a5f; line-height: 1.7; margin: 0;">Through reasonable member segmentation, container planning and scientific loading, approximately <strong>20% freight cost reduction</strong> can be achieved in suitable projects. The actual savings ratio depends on project component dimensions, weight, shipping route and container loading conditions. This is not a guaranteed saving for every project.</p>
+          </div>
+        </div>
+      </div>
+      <!-- Loading evidence images -->
+      <div style="display: grid; grid-template-columns: repeat(4, 1fr); gap: 16px; margin-top: 32px;" class="loading-evidence-grid">
+        <div class="reveal reveal-delay-1" style="border-radius: 10px; overflow: hidden;">
+          <img src="/images/components/finished-steel-members-stacked.jpg" alt="Finished steel members prepared for container loading" style="width: 100%; height: 180px; object-fit: cover; display: block;" width="300" height="180" loading="lazy">
+        </div>
+        <div class="reveal reveal-delay-2" style="border-radius: 10px; overflow: hidden;">
+          <img src="/images/export/heavy-member-prep-308_web.jpg" alt="Heavy steel members prepared for truck loading" style="width: 100%; height: 180px; object-fit: cover; display: block;" width="300" height="180" loading="lazy">
+        </div>
+        <div class="reveal reveal-delay-3" style="border-radius: 10px; overflow: hidden;">
+          <img src="/images/export/container-loading-310_web.jpg" alt="Steel components being loaded into shipping container" style="width: 100%; height: 180px; object-fit: cover; display: block;" width="300" height="180" loading="lazy">
+        </div>
+        <div class="reveal reveal-delay-4" style="border-radius: 10px; overflow: hidden;">
+          <img src="/images/export/container-loading-256_web.jpg" alt="Loaded shipping container prepared for export delivery" style="width: 100%; height: 180px; object-fit: cover; display: block;" width="300" height="180" loading="lazy">
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 08: Oversized Components -->
+  <section class="section" style="padding: 70px 0; background: #f8fafc;">
+    <div class="container">
+      <div class="section-heading reveal">
+        <div>
+          <p class="section-index">超长构件</p>
+          <h2>Handling Long and Oversized Steel Members</h2>
+        </div>
+        <div>
+          <p>Some steel components may exceed standard shipping container dimensions. ZhongSai in-house design team plans segmentation and transport solutions during the design phase to address oversized member challenges.</p>
+        </div>
+      </div>
+      <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 32px; margin-top: 40px;" class="oversized-grid">
+        <div class="reveal reveal-delay-1" style="padding: 28px; background: white; border-radius: 12px; border: 1px solid #e2e8f0;">
+          <h3 style="font-size: 18px; color: #0f172a; margin-bottom: 16px;">Standard Container Solutions</h3>
+          <ul style="margin: 0; padding-left: 20px; color: #475569; font-size: 14px; line-height: 2;">
+            <li>Most components designed to fit 40GP / 40HQ containers</li>
+            <li>Long members segmented with bolt splice connections</li>
+            <li>Splice locations planned at structurally appropriate positions</li>
+            <li>Segmented members assembled on-site with bolted connections</li>
+            <li>Component numbering ensures correct field assembly</li>
+          </ul>
+        </div>
+        <div class="reveal reveal-delay-2" style="padding: 28px; background: white; border-radius: 12px; border: 1px solid #e2e8f0;">
+          <h3 style="font-size: 18px; color: #0f172a; margin-bottom: 16px;">Special Logistics Considerations</h3>
+          <ul style="margin: 0; padding-left: 20px; color: #475569; font-size: 14px; line-height: 2;">
+            <li>Open-top containers may be considered for height-limited components</li>
+            <li>Flat rack containers for exceptionally wide or heavy members</li>
+            <li>Project-specific logistics for non-standard oversized components</li>
+            <li>Transport method determined by member dimensions and port conditions</li>
+            <li>Road transport constraints assessed for destination country delivery</li>
+          </ul>
+        </div>
+      </div>
+      <div style="margin-top: 24px; padding: 16px 20px; background: #fffbeb; border-left: 4px solid #f59e0b; border-radius: 0 8px 8px 0;" class="reveal">
+        <p style="margin: 0; color: #92400e; font-size: 13px; line-height: 1.7;"><strong>Note:</strong> Specific transport methods for oversized components are determined on a project basis according to member dimensions, weight, port conditions, destination country road regulations and logistics arrangements. ZhongSai design team can advise on segmentation options during the design phase.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- 09: Export Documentation -->
+  <section class="section" style="padding: 70px 0;">
+    <div class="container">
+      <div class="section-heading reveal">
+        <div>
+          <p class="section-index">出口资料</p>
+          <h2>Export Documentation Support</h2>
+        </div>
+        <div>
+          <p>ZhongSai supports preparation and coordination of export documentation according to project requirements. We do not replace the customer or their appointed customs broker for destination country customs clearance.</p>
+        </div>
+      </div>
+      <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; margin-top: 40px;" class="docs-grid">
+        {exportDocs.map((doc, i) => (
+          <div class={`reveal reveal-delay-${(i % 4) + 1}`} style="padding: 24px; background: #f8fafc; border-radius: 10px; border: 1px solid #e2e8f0;">
+            <h4 style="font-size: 15px; color: #1e3a5f; margin-bottom: 10px;">{doc.title}</h4>
+            <p style="font-size: 13px; color: #64748b; line-height: 1.6; margin: 0;">{doc.desc}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- 10: Delivery Coordination -->
+  <section class="section" style="padding: 70px 0; background: #f8fafc;">
+    <div class="container">
+      <div class="section-heading reveal">
+        <div>
+          <p class="section-index">交付协调</p>
+          <h2>Overseas Delivery Coordination</h2>
+        </div>
+        <div>
+          <p>ZhongSai in-house delivery team coordinates the full delivery process from production completion through shipment and destination handover. This ensures that manufacturing, packing, loading and shipping are aligned with the project timeline.</p>
+        </div>
+      </div>
+      <div style="display: grid; grid-template-columns: repeat(4, 1fr); gap: 20px; margin-top: 40px;" class="delivery-grid">
+        <div class="reveal reveal-delay-1" style="padding: 24px; background: white; border-radius: 10px; border: 1px solid #e2e8f0; text-align: center;">
+          <div style="width: 44px; height: 44px; background: #eff6ff; border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 12px;">
+            <span style="color: #1e40af; font-weight: 700; font-size: 16px;">01</span>
+          </div>
+          <h4 style="font-size: 14px; color: #0f172a; margin-bottom: 8px;">Production Schedule</h4>
+          <p style="font-size: 12px; color: #64748b; line-height: 1.6; margin: 0;">Coordinate production completion with packing and loading schedule.</p>
+        </div>
+        <div class="reveal reveal-delay-2" style="padding: 24px; background: white; border-radius: 10px; border: 1px solid #e2e8f0; text-align: center;">
+          <div style="width: 44px; height: 44px; background: #eff6ff; border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 12px;">
+            <span style="color: #1e40af; font-weight: 700; font-size: 16px;">02</span>
+          </div>
+          <h4 style="font-size: 14px; color: #0f172a; margin-bottom: 8px;">Container Booking</h4>
+          <p style="font-size: 12px; color: #64748b; line-height: 1.6; margin: 0;">Coordinate container booking with freight forwarders and shipping lines.</p>
+        </div>
+        <div class="reveal reveal-delay-3" style="padding: 24px; background: white; border-radius: 10px; border: 1px solid #e2e8f0; text-align: center;">
+          <div style="width: 44px; height: 44px; background: #eff6ff; border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 12px;">
+            <span style="color: #1e40af; font-weight: 700; font-size: 16px;">03</span>
+          </div>
+          <h4 style="font-size: 14px; color: #0f172a; margin-bottom: 8px;">Loading & Port Delivery</h4>
+          <p style="font-size: 12px; color: #64748b; line-height: 1.6; margin: 0;">Coordinate loading date, truck transport and port delivery for export.</p>
+        </div>
+        <div class="reveal reveal-delay-4" style="padding: 24px; background: white; border-radius: 10px; border: 1px solid #e2e8f0; text-align: center;">
+          <div style="width: 44px; height: 44px; background: #eff6ff; border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 12px;">
+            <span style="color: #1e40af; font-weight: 700; font-size: 16px;">04</span>
+          </div>
+          <h4 style="font-size: 14px; color: #0f172a; margin-bottom: 8px;">Shipment & Handover</h4>
+          <p style="font-size: 12px; color: #64748b; line-height: 1.6; margin: 0;">Track shipment status, coordinate document handover and destination delivery.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 11: Installation Handover -->
+  <section class="section" style="padding: 70px 0;">
+    <div class="container">
+      <div class="section-heading reveal">
+        <div>
+          <p class="section-index">安装衔接</p>
+          <h2>Handover for Overseas Installation</h2>
+        </div>
+        <div>
+          <p>After delivery, ZhongSai provides documentation and technical support to help the local installation team correctly assemble the steel structure. Local civil works and actual construction are normally handled by the customer or their appointed local construction team.</p>
+        </div>
+      </div>
+      <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 32px; margin-top: 40px;" class="handover-grid">
+        <div class="reveal reveal-delay-1" style="padding: 32px; background: #ecfdf5; border-radius: 12px; border: 1px solid #a7f3d0;">
+          <h3 style="font-size: 18px; color: #065f46; margin-bottom: 16px;">ZhongSai Provides</h3>
+          <ul style="margin: 0; padding-left: 20px; color: #065f46; font-size: 14px; line-height: 2;">
+            <li>Component identification references</li>
+            <li>Installation drawings and erection plans</li>
+            <li>Detailed packing lists with container references</li>
+            <li>Installation sequence information</li>
+            <li>Technical clarification and remote guidance</li>
+            <li>Project-specific technical support as agreed</li>
+          </ul>
+        </div>
+        <div class="reveal reveal-delay-2" style="padding: 32px; background: #fef2f2; border-radius: 12px; border: 1px solid #fecaca;">
+          <h3 style="font-size: 18px; color: #991b1b; margin-bottom: 16px;">Local Project Team Handles</h3>
+          <ul style="margin: 0; padding-left: 20px; color: #991b1b; font-size: 14px; line-height: 2;">
+            <li>Local unloading and site logistics</li>
+            <li>Foundation and civil works construction</li>
+            <li>On-site labor and erection crew</li>
+            <li>Actual steel structure erection</li>
+            <li>Site safety management and supervision</li>
+            <li>Local permits and statutory approvals</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 12: Project Types -->
+  <section class="section" style="padding: 70px 0; background: #f8fafc;">
+    <div class="container">
+      <div class="section-heading reveal">
+        <div>
+          <p class="section-index">项目类型</p>
+          <h2>Project Types We Support for Export Delivery</h2>
+        </div>
+        <div>
+          <p>ZhongSai export delivery capabilities support a wide range of steel structure project types, each with specific packing, loading and delivery requirements.</p>
+        </div>
+      </div>
+      <div class="related-grid" style="margin-top: 40px;">
+        {projectTypes.map((pt, i) => (
+          <a href={pt.href} class={`related-card reveal reveal-delay-${(i % 4) + 1}`}>
+            <h4>{pt.name}</h4>
+            <p>{pt.desc}</p>
+            <span class="related-cta">Learn more →</span>
+          </a>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- 13: Related Links -->
+  <section class="section" style="padding: 70px 0;">
+    <div class="container">
+      <div class="section-heading reveal">
+        <div>
+          <p class="section-index">相关能力</p>
+          <h2>Related Capabilities and Project Evidence</h2>
+        </div>
+        <div>
+          <p>Export delivery is integrated with ZhongSai engineering, manufacturing and project capabilities.</p>
+        </div>
+      </div>
+      <div class="related-grid" style="margin-top: 40px;">
+        {relatedLinks.map((link, i) => (
+          <a href={link.href} class={`related-card reveal reveal-delay-${(i % 4) + 1}`}>
+            <h4>{link.name}</h4>
+            <p>{link.desc}</p>
+            <span class="related-cta">Learn more →</span>
+          </a>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- 14: FAQ -->
+  <section class="section" style="padding: 70px 0; background: #f8fafc;">
+    <div class="container">
+      <div class="section-heading reveal">
+        <div>
+          <p class="section-index">常见问题</p>
+          <h2>Frequently Asked Questions</h2>
+        </div>
+        <div>
+          <p>Common questions about steel structure export delivery, container loading and overseas project coordination.</p>
+        </div>
+      </div>
+      <div style="max-width: 900px; margin: 40px auto 0;" class="faq-container">
+        {faqs.map((faq, i) => (
+          <details class={`reveal reveal-delay-${(i % 4) + 1}`} style="margin-bottom: 12px; background: white; border: 1px solid #e2e8f0; border-radius: 10px; overflow: hidden;">
+            <summary style="padding: 18px 24px; cursor: pointer; font-weight: 600; color: #0f172a; font-size: 15px; list-style: none; display: flex; justify-content: space-between; align-items: center;">
+              <span>{faq.q}</span>
+              <span style="color: #1e40af; font-size: 20px; flex-shrink: 0; margin-left: 16px;">+</span>
+            </summary>
+            <div style="padding: 0 24px 20px; color: #475569; font-size: 14px; line-height: 1.8;">
+              {faq.a}
+            </div>
+          </details>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- 15: Quote CTA -->
+  
+  <!-- Related Projects -->
+  <section class="related-projects-section">
+    <div class="container">
+      <div class="rp-heading">
+        <h2>Real Projects with Export Delivery Records</h2>
+        <p>The structural steel components of the following projects were marked, packed, container-loaded and export-coordinated by ZhongSai's delivery team.</p>
+      </div>
+      <div class="rp-grid">
+        <a href="/en/projects/singapore-airport-t2-connect/" class="related-project-card">
+          <div class="rpc-image">
+            <img src="/images/projects/overseas/singapore-airport-t2-connect.jpg" alt="Singapore Changi Airport T2 Connect" loading="lazy">
+          </div>
+          <div class="rpc-content">
+            <span class="rpc-category">Export</span>
+            <h4>Singapore Changi Airport T2 Connect</h4>
+            <p class="rpc-location">Singapore</p>
+            <p class="rpc-data">4,600 tonnes · 110K shear studs</p>
+            <p class="rpc-scope"><span>ZhongSai Scope:</span> Detailing, Fabrication & Export Supply</p>
+          </div>
+        </a>
+        <a href="/en/projects/singapore-sats-bup-centre/" class="related-project-card">
+          <div class="rpc-image">
+            <img src="/images/projects/overseas/singapore-mcc-innocentre.jpg" alt="Singapore SATS BUP Centre" loading="lazy">
+          </div>
+          <div class="rpc-content">
+            <span class="rpc-category">Export</span>
+            <h4>Singapore SATS BUP Centre</h4>
+            <p class="rpc-location">Singapore</p>
+            <p class="rpc-data">200 tonnes · sectional packing</p>
+            <p class="rpc-scope"><span>ZhongSai Scope:</span> Detailing, Fabrication & Export Supply</p>
+          </div>
+        </a>
+        <a href="/en/projects/singapore-j107-mrt-station/" class="related-project-card">
+          <div class="rpc-image">
+            <img src="/images/projects/overseas/singapore-j102-station.jpg" alt="Singapore LTA J107 MRT Station" loading="lazy">
+          </div>
+          <div class="rpc-content">
+            <span class="rpc-category">Export</span>
+            <h4>Singapore LTA J107 MRT Station</h4>
+            <p class="rpc-location">Singapore</p>
+            <p class="rpc-data">1,300 tonnes · LTA standards</p>
+            <p class="rpc-scope"><span>ZhongSai Scope:</span> Detailing, Fabrication & Export Supply</p>
+          </div>
+        </a>
+      </div>
+      <div class="rp-more">
+        <a href="/en/projects/" class="btn btn-outline">View All Projects →</a>
+      </div>
+    </div>
+  </section>
+
+<section class="quote-cta-section" id="quote">
+    <div class="container">
+      <ExportDeliveryCTA lang="en" />
+
+      <div class="quote-cta-header reveal">
+        <p class="section-index" style="color: #f59e0b;">开始合作</p>
         <h2>Planning a Steel Structure Project for Export?</h2>
+        <p>Send your project drawings, delivery location and technical requirements. ZhongSai in-house design and delivery teams will review manufacturing and delivery feasibility, and prepare a project-specific quotation covering fabrication, packing, container loading and export delivery coordination.</p>
       </div>
-      <div class="form-intro">
-        <p>If you already have drawings or a BOQ, send the available project documents.</p>
-        <p>If drawings are not yet available, provide the project country, building type, intended use and available dimensions.</p>
+      <div style="display: flex; gap: 16px; margin-bottom: 32px; flex-wrap: wrap;" class="quote-cta-buttons reveal">
+        <a href="#quote-form" class="btn btn-primary" style="font-size: 16px; padding: 14px 32px;">Send Project Drawings</a>
+        <a href="/en/contact/" class="btn btn-secondary" style="font-size: 16px; padding: 14px 32px;">Discuss Delivery Requirements</a>
       </div>
-      <QuoteForm lang="en" />
+      <div id="quote-form">
+        <QuoteForm lang={lang} />
+      </div>
     </div>
   </section>
 </BaseLayout>
 
 <style>
-.section-intro {
-  max-width: 700px;
-  margin: 0 auto 32px;
-  text-align: center;
-  color: var(--text-secondary, #666);
-  font-size: 1.05rem;
-}
-.export-content-grid {
+.hero-capabilities {
   display: grid;
-  grid-template-columns: 1.2fr 1fr;
-  gap: 48px;
-  align-items: center;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+  margin: 28px 0;
 }
-.export-text p {
-  margin-bottom: 16px;
-  line-height: 1.7;
-  color: var(--text-secondary, #555);
+.cap-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  padding: 14px 16px;
+  background: rgba(255,255,255,0.08);
+  border-radius: 10px;
+  border: 1px solid rgba(255,255,255,0.15);
 }
-.export-image img {
-  width: 100%;
-  height: auto;
-  border-radius: 12px;
-  object-fit: cover;
+.cap-icon {
+  color: #f59e0b;
+  font-size: 14px;
+  margin-top: 2px;
+  flex-shrink: 0;
 }
-.loading-steps-grid {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 28px;
-  margin-top: 32px;
-}
-.loading-step-card {
-  background: #fff;
-  border-radius: 12px;
-  overflow: hidden;
-  border: 1px solid rgba(0,0,0,0.06);
-}
-.loading-step-img img {
-  width: 100%;
-  height: 240px;
-  object-fit: cover;
+.cap-title {
   display: block;
+  font-size: 14px;
+  font-weight: 600;
+  color: white;
+  margin-bottom: 2px;
 }
-.loading-step-content {
+.cap-desc {
+  display: block;
+  font-size: 12px;
+  color: rgba(255,255,255,0.65);
+}
+.hero-cta-group {
+  display: flex;
+  gap: 16px;
+  flex-wrap: wrap;
+  margin-top: 8px;
+}
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 12px 28px;
+  border-radius: 8px;
+  font-weight: 600;
+  font-size: 15px;
+  text-decoration: none;
+  transition: all 0.2s;
+  border: none;
+  cursor: pointer;
+}
+.btn-primary {
+  background: #f59e0b;
+  color: #0f172a;
+}
+.btn-primary:hover {
+  background: #d97706;
+}
+.btn-secondary {
+  background: rgba(255,255,255,0.1);
+  color: white;
+  border: 1px solid rgba(255,255,255,0.3);
+}
+.btn-secondary:hover {
+  background: rgba(255,255,255,0.2);
+}
+.process-timeline {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 20px;
+  margin-top: 40px;
+}
+.timeline-item {
   padding: 20px;
+  background: white;
+  border-radius: 10px;
+  border: 1px solid #e2e8f0;
+  position: relative;
 }
-.step-number {
+.timeline-num {
   display: inline-block;
-  font-size: 0.72rem;
+  font-size: 12px;
   font-weight: 700;
-  letter-spacing: 0.06em;
-  color: #0a3d62;
-  background: rgba(10, 61, 98, 0.08);
-  padding: 3px 10px;
+  color: #1e40af;
+  background: #eff6ff;
+  padding: 4px 10px;
   border-radius: 4px;
   margin-bottom: 10px;
 }
-.loading-step-content h3 {
-  font-size: 1.15rem;
+.timeline-content h3 {
+  font-size: 15px;
+  color: #0f172a;
   margin-bottom: 6px;
-  color: #0a3d62;
 }
-.loading-step-content p {
-  color: #666;
+.timeline-content p {
+  font-size: 12px;
+  color: #64748b;
   line-height: 1.6;
-  font-size: 0.92rem;
   margin: 0;
 }
-.loading-note {
-  text-align: center;
-  margin-top: 32px;
-  font-style: italic;
-  color: var(--text-secondary, #666);
-  font-size: 0.9rem;
+details summary::-webkit-details-marker {
+  display: none;
 }
-.export-two-col {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 32px;
+details[open] summary span:last-child {
+  transform: rotate(45deg);
 }
-.export-col {
-  padding: 32px;
-  background: #fff;
-  border-radius: 12px;
-  border: 1px solid rgba(0,0,0,0.06);
-}
-.export-col h3 {
-  font-size: 1.2rem;
-  margin-bottom: 16px;
-  color: var(--primary, #0a3d62);
-}
-.export-list {
-  list-style: none;
-  padding: 0;
-}
-.export-list li {
-  padding: 8px 0;
-  padding-left: 24px;
-  position: relative;
-  font-size: 0.95rem;
-  color: var(--text-secondary, #555);
-  border-bottom: 1px solid rgba(0,0,0,0.05);
-}
-.export-list li::before {
-  content: '✓';
-  position: absolute;
-  left: 0;
-  color: var(--primary, #0a3d62);
-  font-weight: 700;
-}
-.export-list li:last-child {
-  border-bottom: none;
-}
-.export-note {
-  margin-top: 16px;
-  padding: 12px 16px;
-  background: rgba(10, 61, 98, 0.05);
-  border-radius: 8px;
-  font-size: 0.85rem;
-  color: var(--text-secondary, #666);
-  line-height: 1.5;
-}
-.guidance-content {
-  max-width: 800px;
-  margin: 0 auto 32px;
-  text-align: center;
-}
-.guidance-content p {
-  margin-bottom: 12px;
-  line-height: 1.7;
-  color: var(--text-secondary, #555);
-  font-size: 1.05rem;
-}
-.boundary-dual {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 32px;
-  margin-top: 32px;
-}
-.boundary-col {
-  padding: 32px;
-  border-radius: 12px;
-}
-.boundary-col-primary {
-  background: rgba(10, 61, 98, 0.05);
-  border-left: 4px solid var(--primary, #0a3d62);
-}
-.boundary-col-secondary {
-  background: rgba(120, 120, 120, 0.05);
-  border-left: 4px solid #888;
-}
-.boundary-col h3 {
-  font-size: 1rem;
-  margin-bottom: 16px;
-  letter-spacing: 0.5px;
-}
-.boundary-col ul {
-  list-style: none;
-  padding: 0;
-}
-.boundary-col li {
-  padding: 8px 0;
-  border-bottom: 1px solid rgba(0,0,0,0.06);
-  font-size: 0.95rem;
-  color: var(--text-secondary, #555);
-}
-.boundary-col li:last-child {
-  border-bottom: none;
-}
-.form-intro {
-  max-width: 600px;
-  margin: 0 auto 24px;
-  text-align: center;
-}
-.form-intro p {
-  color: rgba(255,255,255,0.85);
-  margin-bottom: 4px;
+details summary span:last-child {
+  transition: transform 0.2s;
 }
 @media (max-width: 1024px) {
-  .export-content-grid,
-  .export-two-col,
-  .boundary-dual {
+  .hero-capabilities {
     grid-template-columns: 1fr;
   }
-  .loading-steps-grid {
-    grid-template-columns: 1fr;
+  .process-timeline {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .marking-grid, .planning-grid, .oversized-grid, .handover-grid {
+    grid-template-columns: 1fr !important;
+  }
+  .packing-grid, .delivery-grid {
+    grid-template-columns: repeat(2, 1fr) !important;
+  }
+  .docs-grid {
+    grid-template-columns: repeat(2, 1fr) !important;
+  }
+  .loading-evidence-grid {
+    grid-template-columns: repeat(2, 1fr) !important;
   }
 }
 @media (max-width: 768px) {
-  .loading-step-content {
-    padding: 16px;
+  .process-timeline {
+    grid-template-columns: 1fr;
   }
-  .loading-step-img img {
-    height: 200px;
+  .packing-grid, .delivery-grid, .docs-grid {
+    grid-template-columns: 1fr !important;
+  }
+  .loading-evidence-grid {
+    grid-template-columns: 1fr 1fr !important;
+  }
+  .hero-cta-group {
+    flex-direction: column;
+  }
+  .hero-cta-group .btn {
+    width: 100%;
   }
 }
 </style>

@@ -2,7 +2,7 @@
 title: "Steel Structure Surface Treatment & Coating Guide: Corrosion Protection for Export Projects"
 language: "en"
 seoTitle: "Steel Structure Surface Treatment & Coating Guide | ZhongSai"
-metaDescription: "Complete guide to steel structure surface preparation, primer selection, coating systems, galvanizing, and corrosion protection for export steel structure projects."
+metaDescription: "Complete guide to steel structure surface preparation, primer selection, coating systems, galvanizing, and corrosion protection for export steel..."
 h1: "Steel Structure Surface Treatment & Coating Guide: Corrosion Protection for Export Projects"
 excerpt: "A practical guide to surface preparation, primer systems, topcoats, galvanizing, and corrosion protection specifications for prefabricated steel structures."
 category: "Manufacturing & Quality"

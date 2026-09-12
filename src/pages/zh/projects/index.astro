@@ -28,14 +28,28 @@ const description = '查看中赛钢构精选的物流仓储、工业制造、�
   <section class="projects-grid-section">
     <div class="container">
       <div class="country-filter">
-        <span class="filter-label">按地区筛选:</span>
-        <a href="/zh/projects/singapore/" class="filter-link">新加坡 (5个项目)</a>
+        <span class="filter-label">按地区:</span>
+        <a href="/zh/projects/singapore/" class="filter-link">新加坡项目</a>
         <span class="filter-current">全部项目</span>
       </div>
-      <div class="projects-grid">
+      <div class="category-filter" id="categoryFilter">
+        <span class="filter-label">按应用:</span>
+        <button class="filter-btn active" data-category="all">全部</button>
+        <button class="filter-btn" data-category="物流仓储">物流仓储</button>
+        <button class="filter-btn" data-category="工业制造">工业制造</button>
+        <button class="filter-btn" data-category="商业公共">商业公共</button>
+        <button class="filter-btn" data-category="石化能源">石化能源</button>
+        <button class="filter-btn" data-category="海外项目">海外项目</button>
+      </div>
+      <div class="projects-grid" id="projectsGrid">
         {projects.map(project => (
-          <ProjectCard project={project} lang={lang} />
+          <div class="project-card-wrapper" data-category={project.category.zh}>
+            <ProjectCard project={project} lang={lang} />
+          </div>
         ))}
+      </div>
+      <div class="no-projects" id="noProjects" style="display:none;">
+        <p>该分类下暂无项目</p>
       </div>
     </div>
   </section>
@@ -58,6 +72,36 @@ const description = '查看中赛钢构精选的物流仓储、工业制造、�
       <QuoteForm lang={lang} />
     </div>
   </section>
+<script is:inline>
+document.addEventListener('DOMContentLoaded', function() {
+  const filterBtns = document.querySelectorAll('.filter-btn');
+  const cards = document.querySelectorAll('.project-card-wrapper');
+  const noProjects = document.getElementById('noProjects');
+  
+  filterBtns.forEach(btn => {
+    btn.addEventListener('click', function() {
+      filterBtns.forEach(b => b.classList.remove('active'));
+      this.classList.add('active');
+      
+      const category = this.getAttribute('data-category');
+      let visibleCount = 0;
+      
+      cards.forEach(card => {
+        if (category === 'all' || card.getAttribute('data-category') === category) {
+          card.style.display = '';
+          visibleCount++;
+        } else {
+          card.style.display = 'none';
+        }
+      });
+      
+      if (noProjects) {
+        noProjects.style.display = visibleCount === 0 ? 'block' : 'none';
+      }
+    });
+  });
+});
+</script>
 </BaseLayout>
 
 <style>
@@ -165,6 +209,52 @@ const description = '查看中赛钢构精选的物流仓储、工业制造、�
   }
   .quote-intro h2 {
     font-size: 1.4rem;
+  }
+}
+
+.category-filter {
+  margin-bottom: 24px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+.filter-btn {
+  padding: 6px 16px;
+  background: #fff;
+  border: 1px solid #ddd;
+  border-radius: 20px;
+  font-size: 0.85rem;
+  color: #555;
+  cursor: pointer;
+  transition: all 0.2s;
+  font-family: inherit;
+}
+.filter-btn:hover {
+  border-color: #0a3d62;
+  color: #0a3d62;
+}
+.filter-btn.active {
+  background: #0a3d62;
+  color: #fff;
+  border-color: #0a3d62;
+}
+.project-card-wrapper {
+  display: block;
+}
+.no-projects {
+  text-align: center;
+  padding: 60px 20px;
+  color: #999;
+  font-size: 1rem;
+}
+@media (max-width: 640px) {
+  .category-filter {
+    gap: 8px;
+  }
+  .filter-btn {
+    padding: 5px 12px;
+    font-size: 0.8rem;
   }
 }
 </style>

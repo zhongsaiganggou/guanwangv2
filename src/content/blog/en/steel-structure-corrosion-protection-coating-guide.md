@@ -3,8 +3,8 @@ title: "Steel Structure Corrosion Protection & Coating Complete Guide"
 language: "en"
 category: "Manufacturing & Quality"
 status: "published"
-seoTitle: "Steel Structure Corrosion Protection & Coating Complete Guide | ZhongSai"
-metaDescription: "Complete guide to steel structure corrosion protection. Learn about surface preparation, coating systems, paint types, DFT standards, and how to choose the right protection for your environment."
+seoTitle: "Steel Structure Corrosion Protection & Coating Guide | ZhongSai"
+metaDescription: "Complete guide to steel structure corrosion protection. Learn about surface preparation, coating systems, paint types, DFT standards, and how to choose..."
 h1: "Steel Structure Corrosion Protection & Coating Complete Guide"
 excerpt: "Everything you need to know about steel structure corrosion protection: surface preparation standards, coating systems, paint types, DFT requirements, and environment-specific recommendations."
 coverImage: "/images/blog/steel-structure-corrosion-protection-coating-guide/cover.jpg"
@@ -14,8 +14,6 @@ ctaType: "send-drawings"
 noindex: false
 author: "ZhongSai Steel Structure Editorial Team"
 ---
-
-# Steel Structure Corrosion Protection & Coating Complete Guide
 
 Steel is one of the strongest and most versatile building materials available, but it has one natural enemy: **corrosion**. Without proper protection, rust can compromise structural integrity, reduce lifespan, and lead to costly maintenance or replacement.
 

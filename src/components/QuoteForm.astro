@@ -55,6 +55,18 @@ const texts = lang === 'zh' ? {
   requiredPhoneCode: '请选择国家区号',
   privacyNote: '提交即表示您同意我们的隐私政策，我们不会分享您的信息。',
   optionalLabel: '可选',
+  customerType: '您的身份',
+  customerTypeOptions: ['请选择', '项目业主 / 投资方', '工程公司 / 承包商', '开发商', '采购 / 贸易公司', '其他'],
+  projectStage: '项目阶段',
+  projectStageOptions: ['请选择', '规划阶段', '图纸设计中', '准备报价', '招标中', '采购阶段'],
+  advancedOptions: '高级选项（可选）',
+  advancedHint: '如您了解以下信息，可帮助我们更快评审项目。不确定的选项可留空。',
+  windLoad: '风荷载',
+  snowLoad: '雪荷载',
+  seismicRequirement: '抗震要求',
+  craneCapacity: '吊车吨位',
+  equipmentLoad: '设备荷载',
+  notSure: '不确定',
 } : {
   title: 'Get Project Solution & Quote',
   subtitle: 'Upload drawings if you have them; or submit basic project requirements if not.',
@@ -100,6 +112,18 @@ const texts = lang === 'zh' ? {
   requiredPhoneCode: 'Please select country / calling code',
   privacyNote: 'By submitting, you agree to our privacy policy. We will not share your information.',
   optionalLabel: 'Optional',
+  customerType: 'I am a',
+  customerTypeOptions: ['Please select', 'Project Owner / Investor', 'Engineering Company / Contractor', 'Developer', 'Procurement / Trading Company', 'Other'],
+  projectStage: 'Project Stage',
+  projectStageOptions: ['Please select', 'Planning', 'Drawings in Progress', 'Ready for Quotation', 'Tendering', 'Procurement'],
+  advancedOptions: 'Advanced Options (Optional)',
+  advancedHint: 'If you know the following, it helps us review your project faster. Leave blank if unsure.',
+  windLoad: 'Wind Load',
+  snowLoad: 'Snow Load',
+  seismicRequirement: 'Seismic Requirement',
+  craneCapacity: 'Crane Capacity',
+  equipmentLoad: 'Equipment Load',
+  notSure: 'Not Sure',
 };
 
 const phoneCodes = [
@@ -194,6 +218,21 @@ const phoneCodes = [
         <span class="field-error" data-error-for="country"></span>
       </div>
 
+      <div class="form-grid form-grid-2">
+        <div class="form-field">
+          <label for={`${id}-customer-type`}>{texts.customerType}</label>
+          <select id={`${id}-customer-type`} name="customerType">
+            {texts.customerTypeOptions.map((opt, i) => <option value={i === 0 ? '' : opt}>{opt}</option>)}
+          </select>
+        </div>
+        <div class="form-field">
+          <label for={`${id}-project-stage`}>{texts.projectStage}</label>
+          <select id={`${id}-project-stage`} name="projectStage">
+            {texts.projectStageOptions.map((opt, i) => <option value={i === 0 ? '' : opt}>{opt}</option>)}
+          </select>
+        </div>
+      </div>
+
       <div class="form-path-panel active" data-panel="drawings">
         <div class="form-field form-upload">
           <label for={`${id}-drawing`}>{texts.drawingUpload}</label>
@@ -244,6 +283,33 @@ const phoneCodes = [
           </div>
         </div>
       </div>
+
+      <details class="advanced-options">
+        <summary>{texts.advancedOptions}</summary>
+        <p class="advanced-hint">{texts.advancedHint}</p>
+        <div class="form-grid form-grid-3">
+          <div class="form-field">
+            <label for={`${id}-wind-load`}>{texts.windLoad}</label>
+            <input type="text" id={`${id}-wind-load`} name="windLoad" placeholder={texts.notSure} />
+          </div>
+          <div class="form-field">
+            <label for={`${id}-snow-load`}>{texts.snowLoad}</label>
+            <input type="text" id={`${id}-snow-load`} name="snowLoad" placeholder={texts.notSure} />
+          </div>
+          <div class="form-field">
+            <label for={`${id}-seismic`}>{texts.seismicRequirement}</label>
+            <input type="text" id={`${id}-seismic`} name="seismicRequirement" placeholder={texts.notSure} />
+          </div>
+          <div class="form-field">
+            <label for={`${id}-crane-capacity`}>{texts.craneCapacity}</label>
+            <input type="text" id={`${id}-crane-capacity`} name="craneCapacity" placeholder={texts.notSure} />
+          </div>
+          <div class="form-field">
+            <label for={`${id}-equipment-load`}>{texts.equipmentLoad}</label>
+            <input type="text" id={`${id}-equipment-load`} name="equipmentLoad" placeholder={texts.notSure} />
+          </div>
+        </div>
+      </details>
 
       <div class="form-field">
         <label for={`${id}-message`}>{texts.message}</label>
@@ -337,6 +403,21 @@ const phoneCodes = [
         <span class="field-error" data-error-for="country"></span>
       </div>
 
+      <div class="form-grid form-grid-2">
+        <div class="form-field">
+          <label for={`${id}-customer-type`}>{texts.customerType}</label>
+          <select id={`${id}-customer-type`} name="customerType">
+            {texts.customerTypeOptions.map((opt, i) => <option value={i === 0 ? '' : opt}>{opt}</option>)}
+          </select>
+        </div>
+        <div class="form-field">
+          <label for={`${id}-project-stage`}>{texts.projectStage}</label>
+          <select id={`${id}-project-stage`} name="projectStage">
+            {texts.projectStageOptions.map((opt, i) => <option value={i === 0 ? '' : opt}>{opt}</option>)}
+          </select>
+        </div>
+      </div>
+
       <div class="form-path-panel active" data-panel="drawings">
         <div class="form-field form-upload">
           <label for={`${id}-drawing`}>{texts.drawingUpload}</label>
@@ -387,6 +468,33 @@ const phoneCodes = [
           </div>
         </div>
       </div>
+
+      <details class="advanced-options">
+        <summary>{texts.advancedOptions}</summary>
+        <p class="advanced-hint">{texts.advancedHint}</p>
+        <div class="form-grid form-grid-3">
+          <div class="form-field">
+            <label for={`${id}-wind-load`}>{texts.windLoad}</label>
+            <input type="text" id={`${id}-wind-load`} name="windLoad" placeholder={texts.notSure} />
+          </div>
+          <div class="form-field">
+            <label for={`${id}-snow-load`}>{texts.snowLoad}</label>
+            <input type="text" id={`${id}-snow-load`} name="snowLoad" placeholder={texts.notSure} />
+          </div>
+          <div class="form-field">
+            <label for={`${id}-seismic`}>{texts.seismicRequirement}</label>
+            <input type="text" id={`${id}-seismic`} name="seismicRequirement" placeholder={texts.notSure} />
+          </div>
+          <div class="form-field">
+            <label for={`${id}-crane-capacity`}>{texts.craneCapacity}</label>
+            <input type="text" id={`${id}-crane-capacity`} name="craneCapacity" placeholder={texts.notSure} />
+          </div>
+          <div class="form-field">
+            <label for={`${id}-equipment-load`}>{texts.equipmentLoad}</label>
+            <input type="text" id={`${id}-equipment-load`} name="equipmentLoad" placeholder={texts.notSure} />
+          </div>
+        </div>
+      </details>
 
       <div class="form-field">
         <label for={`${id}-message`}>{texts.message}</label>
@@ -869,4 +977,24 @@ const phoneCodes = [
     .form-path-btn { padding: 12px 14px; font-size: 0.85rem; }
     .form-upload .upload-area { padding: 20px 16px; min-height: 90px; }
   }
+
+.advanced-options {
+  margin: 16px 0;
+  padding: 16px 20px;
+  background: var(--bg-light, #f8f9fa);
+  border-radius: 8px;
+}
+.advanced-options summary {
+  cursor: pointer;
+  font-weight: 600;
+  color: var(--primary, #0a3d62);
+  font-size: 0.95rem;
+}
+.advanced-hint {
+  font-size: 0.85rem;
+  color: var(--text-secondary, #666);
+  margin: 12px 0;
+  font-style: italic;
+}
+
 </style>

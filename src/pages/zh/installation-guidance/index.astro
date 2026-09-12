@@ -1,0 +1,744 @@
+---
+// ZhongSai V2 - Chinese Installation Guidance & Site Technical Support Page
+import BaseLayout from '../../../layouts/BaseLayout.astro';
+import QuoteForm from '../../../components/QuoteForm.astro';
+import ExportDeliveryCTA from '../../../components/ExportDeliveryCTA.astro';
+import '../../../styles/hub.css';
+import '../../../styles/manufacturing.css';
+
+const lang = 'zh';
+const title = '钢结构安装技术指导与海外项目支持｜中赛钢构';
+const description = '海外钢结构安装技术指导与项目支持：安装图纸、构件识别、安装顺序、节点解释及项目技术协调，助力当地施工团队顺利完成安装。';
+const canonical = 'https://zhongsai-steelstructure.com/zh/installation-guidance/';
+
+const projectChain = [
+  { title: '项目资料审核', desc: '审核项目需求、图纸和技术规格。' },
+  { title: '结构设计', desc: '根据项目荷载和规范进行结构设计配合。' },
+  { title: '深化设计', desc: '加工图深化和制造图纸编制。' },
+  { title: '工厂制造', desc: '按批准图纸和质量标准进行钢结构加工。' },
+  { title: '质量检验', desc: '尺寸、焊接和表面处理质量控制。' },
+  { title: '构件编号', desc: '构件识别和编号与安装图纸对应。' },
+  { title: '包装装柜', desc: '有序包装、集装箱装载和发运准备。' },
+  { title: '海外交付', desc: '出口资料、海运协调和交付交接。' },
+  { title: '现场交接', desc: '资料、装箱单和构件识别交接。' },
+  { title: '安装指导', desc: '技术支持、图纸解释和安装协调。' },
+];
+
+const beforeShipment = [
+  { title: '构件编号', desc: '每个构件分配项目专属编号，与安装图纸对应。' },
+  { title: '图纸对应', desc: '构件编号与批准的安装图和装配图对应。' },
+  { title: '包装顺序', desc: '按安装顺序分组包装，便于现场卸货。' },
+  { title: '螺栓包识别', desc: '螺栓、螺母和垫圈按连接组包装并标识。' },
+  { title: '构件拆分', desc: '长构件为集装箱运输拆分，设置螺栓拼接节点。' },
+  { title: '现场拼装考虑', desc: '在设计和深化阶段即考虑现场拼装。' },
+  { title: '安装顺序规划', desc: '发运前规划安装顺序，指导当地施工团队。' },
+];
+
+const componentIdMethods = [
+  { title: '构件编号', desc: '每个钢构件上的唯一识别标记或标签。' },
+  { title: '图纸编号', desc: '构件参考与具体安装图纸图号和详图对应。' },
+  { title: '装箱清单', desc: '完整清单将每个构件映射到其包装和位置。' },
+  { title: '捆包识别', desc: '成捆次要构件通过捆包标签和内容清单识别。' },
+  { title: '安装图纸', desc: '安装图纸显示每个构件的准确位置和方向。' },
+];
+
+const erectionDrawingContents = [
+  '轴线和柱定位参考',
+  '柱位置和柱底板接口',
+  '主梁和屋面梁位置',
+  '支撑构件位置和方向',
+  '桁架定位和连接参考',
+  '螺栓连接详图和明细表',
+  '连接节点详图参考和说明',
+  '构件编号和装配顺序参考',
+];
+
+const installationSequence = [
+  { step: '01', title: '基础与锚栓核验', desc: '钢结构安装前核验锚栓位置、轴线尺寸和基础标高。' },
+  { step: '02', title: '钢柱安装', desc: '将钢柱安装到已核验的基础上，调直并临时固定。' },
+  { step: '03', title: '主梁/屋面梁安装', desc: '按批准图纸安装主要框架构件，与钢柱连接。' },
+  { step: '04', title: '临时稳定', desc: '安装过程中按要求设置临时支撑和稳定措施。' },
+  { step: '05', title: '支撑安装', desc: '安装永久支撑系统，建立结构稳定性。' },
+  { step: '06', title: '次要钢结构', desc: '安装檩条、墙梁、次要框架和附件支撑。' },
+  { step: '07', title: '屋面/墙面系统', desc: '按项目规格安装屋面和墙面围护系统。' },
+  { step: '08', title: '最终螺栓紧固与检验', desc: '完成最终螺栓紧固、尺寸检查和质量检验。' },
+];
+
+const qualityChecks = [
+  { title: '钢柱垂直度', desc: '检查钢柱垂直度是否在规定公差范围内。' },
+  { title: '轴线对齐', desc: '核验建筑轴线尺寸和柱间距。' },
+  { title: '连接完整性', desc: '确认所有连接按图纸完整安装。' },
+  { title: '螺栓安装', desc: '核验螺栓等级、规格和紧固是否符合规格。' },
+  { title: '支撑系统', desc: '确认所有支撑构件正确安装并张紧。' },
+  { title: '结构稳定性', desc: '围护施工前核验整体结构稳定性。' },
+  { title: '屋面/墙面对齐', desc: '检查檩条、墙梁和围护板对齐情况。' },
+];
+
+const siteQuestions = [
+  { q: '现场找不到某个构件怎么办？', a: '将构件编号与装箱清单和安装图纸交叉核对。联系中赛交付团队，提供构件编号和项目参考，以便查询和澄清。' },
+  { q: '构件编号怎么看？', a: '构件编号对应安装图纸图例。每个编号标识构件类型、位置和连接参考，均在批准图纸上标明。' },
+  { q: '装箱单和安装图纸怎么对应？', a: '装箱单将每个包装件映射到其构件编号，构件编号在安装图纸上有参考。这样现场团队可以按安装顺序定位构件。' },
+  { q: '安装时某个节点看不懂怎么办？', a: '不要自行修改节点。参考连接节点详图，联系中赛工程团队进行澄清。结构连接的现场变更需要技术审批。' },
+  { q: '发现构件损伤如何报告？', a: '用照片、构件编号和包装参考记录损伤情况。立即联系中赛交付团队进行评估，并指导修复或更换方案。' },
+  { q: '现场尺寸与图纸不一致怎么办？', a: '停止受影响区域的工作，用测量数据和照片记录差异，联系中赛工程团队。未经技术批准，不得强行安装或修改结构构件。' },
+  { q: '安装顺序可以在现场改变吗？', a: '顺序变更可能影响安装过程中的结构稳定性。在更改批准的安装顺序前，请咨询项目工程师和中赛技术团队。' },
+];
+
+const faqs = [
+  { q: '中赛负责海外钢结构安装吗？', a: '中赛为海外钢结构项目提供安装指导、技术资料和项目协调。实际安装通常由当地承包商执行。对复杂或重要项目，中赛可安排工程师赴现场提供技术指导。' },
+  { q: '我们当地的施工队能安装吗？', a: '可以。中赛提供安装图纸、构件识别、安装顺序信息和技术澄清，支持当地承包商。大多数项目由客户选择的当地施工团队完成安装。' },
+  { q: '你们提供哪些安装图纸？', a: '中赛提供安装图纸，包括轴线、柱定位、梁和屋面梁位置、支撑布置、连接节点、构件编号和装配参考。具体图纸交付内容按项目范围确认。' },
+  { q: '现场如何识别钢构件？', a: '每个构件带有与安装图纸对应的编号。装箱单将构件映射到其包装，成捆次要构件有捆包识别。这套系统让现场团队能够定位和识别每个构件。' },
+  { q: '安装过程中连接节点不清楚怎么办？', a: '不要自行修改或临时处理连接。参考连接节点详图，联系中赛工程团队进行澄清。结构连接的变更需要技术审核和批准。' },
+  { q: '中赛能在安装期间提供技术支持吗？', a: '可以。中赛自有设计和交付团队在安装阶段提供技术澄清、图纸解释、节点指导和项目协调。所有项目均提供远程技术支持；复杂或重要项目可安排工程师赴现场指导。' },
+  { q: '能派工程师到项目现场吗？', a: '可以。中赛自有工程团队可根据项目需要赴海外项目现场进行安装指导、技术交底和节点协调。所有项目均提供远程技术支持和图纸澄清，现场工程师派遣根据项目范围、地点、签证、工期和商务协议确认。' },
+  { q: '基础和当地施工由谁负责？', a: '基础、当地人工、起重设备、现场安全管理、当地许可和土建工程通常由客户和当地承包商负责。中赛提供钢结构供应、技术资料和安装指导。' },
+];
+---
+
+<BaseLayout lang={lang} title={title} description={description} canonical={canonical}>
+  <!-- Hero Section -->
+  <section class="hero-engineering" style="background: linear-gradient(135deg, #0f172a 0%, #1e3a5f 50%, #1e40af 100%); padding: 100px 0 80px; color: white;">
+    <div class="container">
+      <div style="max-width: 800px;">
+        <p style="color: #93c5fd; font-size: 14px; font-weight: 600; letter-spacing: 1px; margin-bottom: 16px;">安装技术指导与项目支持</p>
+        <h1 style="font-size: 42px; font-weight: 700; line-height: 1.2; margin-bottom: 20px;">海外钢结构项目安装技术指导</h1>
+        <p style="font-size: 18px; line-height: 1.7; color: #cbd5e1; margin-bottom: 32px;">中赛通过安装图纸、构件识别、安装顺序、节点解释和项目专属技术指导，从交付到现场拼装全程支持当地施工团队。复杂或重要项目可派工程师到现场指导安装。</p>
+        <div style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 16px; margin-bottom: 36px;">
+          <div style="display: flex; align-items: center; gap: 12px;">
+            <div style="width: 40px; height: 40px; background: rgba(59,130,246,0.2); border-radius: 8px; display: flex; align-items: center; justify-content: center; flex-shrink: 0;">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#60a5fa" stroke-width="2"><path d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"/></svg>
+            </div>
+            <span style="font-size: 15px; color: #e2e8f0;">安装图纸支持</span>
+          </div>
+          <div style="display: flex; align-items: center; gap: 12px;">
+            <div style="width: 40px; height: 40px; background: rgba(59,130,246,0.2); border-radius: 8px; display: flex; align-items: center; justify-content: center; flex-shrink: 0;">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#60a5fa" stroke-width="2"><path d="M7 7h.01M7 3h5c.512 0 1.024.195 1.414.586l7 7a2 2 0 010 2.828l-7 7a2 2 0 01-2.828 0l-7-7A1.994 1.994 0 013 12V7a4 4 0 014-4z"/></svg>
+            </div>
+            <span style="font-size: 15px; color: #e2e8f0;">构件识别系统</span>
+          </div>
+          <div style="display: flex; align-items: center; gap: 12px;">
+            <div style="width: 40px; height: 40px; background: rgba(59,130,246,0.2); border-radius: 8px; display: flex; align-items: center; justify-content: center; flex-shrink: 0;">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#60a5fa" stroke-width="2"><path d="M13 10V3L4 14h7v7l9-11h-7z"/></svg>
+            </div>
+            <span style="font-size: 15px; color: #e2e8f0;">安装顺序指导</span>
+          </div>
+          <div style="display: flex; align-items: center; gap: 12px;">
+            <div style="width: 40px; height: 40px; background: rgba(59,130,246,0.2); border-radius: 8px; display: flex; align-items: center; justify-content: center; flex-shrink: 0;">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#60a5fa" stroke-width="2"><path d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z"/></svg>
+            </div>
+            <span style="font-size: 15px; color: #e2e8f0;">与当地施工队技术协调</span>
+          </div>
+        </div>
+        <div style="display: flex; gap: 16px; flex-wrap: wrap;">
+          <a href="#quote" style="display: inline-flex; align-items: center; gap: 8px; background: #2563eb; color: white; padding: 14px 28px; border-radius: 8px; font-weight: 600; text-decoration: none; font-size: 15px;">沟通您的项目安装方案</a>
+          <a href="/zh/engineering-design/" style="display: inline-flex; align-items: center; gap: 8px; background: transparent; color: #93c5fd; padding: 14px 28px; border-radius: 8px; font-weight: 600; text-decoration: none; font-size: 15px; border: 1px solid rgba(147,197,253,0.3);">提交项目图纸</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Project Chain -->
+  <section class="section" style="padding: 70px 0; background: #f8fafc;">
+    <div class="container">
+      <div class="section-heading reveal">
+        <div>
+          <p class="section-index">项目闭环</p>
+          <h2>从设计到现场拼装</h2>
+        </div>
+        <div>
+          <p>中赛自有设计、制造和交付团队在整个项目周期中协同工作。安装指导不是事后补充——它从设计、深化、包装、交付到现场拼装全程融入。</p>
+        </div>
+      </div>
+      <div style="display: grid; grid-template-columns: repeat(5, 1fr); gap: 12px; margin-top: 40px;" class="project-chain-grid">
+        {projectChain.map((item, i) => (
+          <div style="padding: 16px; background: white; border-radius: 10px; border-left: 3px solid #2563eb; box-shadow: 0 1px 3px rgba(0,0,0,0.05);" class={`reveal reveal-delay-${(i % 4) + 1}`}>
+            <div style="font-size: 11px; color: #2563eb; font-weight: 700; margin-bottom: 6px;">第 {String(i + 1).padStart(2, '0')} 步</div>
+            <h4 style="font-size: 14px; font-weight: 600; color: #0f172a; margin-bottom: 6px;">{item.title}</h4>
+            <p style="font-size: 12px; color: #64748b; line-height: 1.5; margin: 0;">{item.desc}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- Before Shipment -->
+  <section class="section" style="padding: 70px 0;">
+    <div class="container">
+      <div class="section-heading reveal">
+        <div>
+          <p class="section-index">发运前规划</p>
+          <h2>发运前的安装规划</h2>
+        </div>
+        <div>
+          <p>安装挑战在设计、深化和包装阶段就已解决——而不是等钢材到达现场后才处理。中赛在整个项目中融入安装考虑，确保现场拼装顺利。</p>
+        </div>
+      </div>
+      <div style="display: grid; grid-template-columns: repeat(4, 1fr); gap: 20px; margin-top: 40px;" class="before-shipment-grid">
+        {beforeShipment.map((item, i) => (
+          <div style="padding: 24px; background: white; border-radius: 12px; border: 1px solid #e2e8f0;" class={`reveal reveal-delay-${(i % 4) + 1}`}>
+            <div style="width: 40px; height: 40px; background: #eff6ff; border-radius: 8px; display: flex; align-items: center; justify-content: center; margin-bottom: 16px;">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#2563eb" stroke-width="2"><path d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2m-6 9l2 2 4-4"/></svg>
+            </div>
+            <h4 style="font-size: 16px; font-weight: 600; color: #0f172a; margin-bottom: 8px;">{item.title}</h4>
+            <p style="font-size: 13px; color: #64748b; line-height: 1.6; margin: 0;">{item.desc}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- Component Identification -->
+  <section class="section" style="padding: 70px 0; background: #f8fafc;">
+    <div class="container">
+      <div class="section-heading reveal">
+        <div>
+          <p class="section-index">构件识别</p>
+          <h2>现场构件识别系统</h2>
+        </div>
+        <div>
+          <p>每个钢构件都有系统的识别方式，帮助当地施工团队准确定位、定向和安装每个构件。识别系统将实物构件与安装图纸和装箱清单关联起来。</p>
+        </div>
+      </div>
+      <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; margin-top: 40px;" class="component-id-grid">
+        {componentIdMethods.map((item, i) => (
+          <div style="padding: 28px; background: white; border-radius: 12px; border: 1px solid #e2e8f0;" class={`reveal reveal-delay-${(i % 3) + 1}`}>
+            <div style="font-size: 28px; font-weight: 700; color: #dbeafe; margin-bottom: 12px;">{String(i + 1).padStart(2, '0')}</div>
+            <h4 style="font-size: 17px; font-weight: 600; color: #0f172a; margin-bottom: 10px;">{item.title}</h4>
+            <p style="font-size: 14px; color: #64748b; line-height: 1.7; margin: 0;">{item.desc}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- Erection Drawings -->
+  <section class="section" style="padding: 70px 0;">
+    <div class="container">
+      <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 48px; align-items: start;" class="erection-drawings-grid">
+        <div class="reveal">
+          <p class="section-index">安装图纸</p>
+          <h2 style="font-size: 32px; font-weight: 700; color: #0f172a; margin: 12px 0 20px;">安装图纸与装配信息</h2>
+          <p style="font-size: 15px; color: #475569; line-height: 1.8; margin-bottom: 24px;">安装图纸为当地施工团队提供正确定位、连接和装配钢构件所需的信息。这些图纸在深化阶段编制，并与制造资料协调一致。</p>
+          <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 12px;">
+            {erectionDrawingContents.map((item, i) => (
+              <div key={i} style="display: flex; align-items: flex-start; gap: 10px; padding: 12px; background: #f8fafc; border-radius: 8px;">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#2563eb" stroke-width="2" style="flex-shrink: 0; margin-top: 2px;"><path d="M5 13l4 4L19 7"/></svg>
+                <span style="font-size: 13px; color: #334155; line-height: 1.5;">{item}</span>
+              </div>
+            ))}
+          </div>
+          <p style="font-size: 12px; color: #94a3b8; margin-top: 16px; font-style: italic;">具体图纸交付内容按项目范围确认。客户敏感信息按项目协议处理。</p>
+        </div>
+        <div class="reveal reveal-delay-2">
+          <div style="position: relative; border-radius: 12px; overflow: hidden; box-shadow: 0 4px 20px rgba(0,0,0,0.1);">
+            <img src="/images/manufacturing/real/factory-overview-9819.jpg" alt="钢结构制造与安装准备" style="width: 100%; height: auto; display: block;" width="600" height="400" loading="lazy">
+          </div>
+          <div style="margin-top: 20px; padding: 20px; background: #eff6ff; border-radius: 12px; border: 1px solid #bfdbfe;">
+            <h4 style="font-size: 16px; color: #1e40af; margin-bottom: 8px;">图纸与制造协调</h4>
+            <p style="font-size: 13px; color: #1e3a5f; line-height: 1.7; margin: 0;">安装图纸与加工图协调，确保构件编号、连接参考和装配顺序在所有项目资料中保持一致。</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Installation Sequence -->
+  <section class="section" style="padding: 70px 0; background: #f8fafc;">
+    <div class="container">
+      <div class="section-heading reveal">
+        <div>
+          <p class="section-index">安装顺序</p>
+          <h2>典型安装顺序</h2>
+        </div>
+        <div>
+          <p>以下为典型钢结构安装顺序参考。实际安装方法、顺序和安全要求由项目结构体系、当地承包商施工方法和项目工程师要求确定。</p>
+        </div>
+      </div>
+      <div style="display: grid; grid-template-columns: repeat(4, 1fr); gap: 16px; margin-top: 40px;" class="sequence-grid">
+        {installationSequence.map((item, i) => (
+          <div style="position: relative; padding: 24px; background: white; border-radius: 12px; border: 1px solid #e2e8f0; overflow: hidden;" class={`reveal reveal-delay-${(i % 4) + 1}`}>
+            <div style="position: absolute; top: 0; right: 0; font-size: 48px; font-weight: 800; color: #f1f5f9; line-height: 1;">{item.step}</div>
+            <div style="position: relative; z-index: 1;">
+              <h4 style="font-size: 15px; font-weight: 600; color: #0f172a; margin-bottom: 8px; padding-right: 40px;">{item.title}</h4>
+              <p style="font-size: 12px; color: #64748b; line-height: 1.6; margin: 0;">{item.desc}</p>
+            </div>
+          </div>
+        ))}
+      </div>
+      <div style="margin-top: 24px; padding: 16px 20px; background: #fffbeb; border-left: 4px solid #f59e0b; border-radius: 0 8px 8px 0;" class="reveal">
+        <p style="margin: 0; color: #92400e; font-size: 13px; line-height: 1.7;"><strong>说明：</strong>以上为通用参考顺序。实际安装方法、顺序、临时稳定措施和安全要求必须由当地承包商和项目工程师根据具体结构体系和现场条件确定。</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Foundation & Bolt Connections -->
+  <section class="section" style="padding: 70px 0;">
+    <div class="container">
+      <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 48px;" class="foundation-bolt-grid">
+        <div class="reveal">
+          <p class="section-index">基础接口</p>
+          <h2 style="font-size: 28px; font-weight: 700; color: #0f172a; margin: 12px 0 20px;">基础与锚栓接口</h2>
+          <p style="font-size: 15px; color: #475569; line-height: 1.8; margin-bottom: 20px;">正确的基础准备是钢结构顺利安装的关键。中赛提供钢与基础接口资料，基础施工通常由当地承包商完成。</p>
+          <div style="display: flex; flex-direction: column; gap: 12px;">
+            <div style="padding: 16px; background: #f8fafc; border-radius: 8px; border-left: 3px solid #2563eb;">
+              <h4 style="font-size: 14px; font-weight: 600; color: #0f172a; margin-bottom: 4px;">锚栓位置</h4>
+              <p style="font-size: 13px; color: #64748b; margin: 0;">基础接口图纸提供锚栓位置和轴线尺寸。</p>
+            </div>
+            <div style="padding: 16px; background: #f8fafc; border-radius: 8px; border-left: 3px solid #2563eb;">
+              <h4 style="font-size: 14px; font-weight: 600; color: #0f172a; margin-bottom: 4px;">柱底板接口</h4>
+              <p style="font-size: 13px; color: #64748b; margin: 0;">每根柱的柱底板尺寸、孔型和调平要求。</p>
+            </div>
+            <div style="padding: 16px; background: #f8fafc; border-radius: 8px; border-left: 3px solid #2563eb;">
+              <h4 style="font-size: 14px; font-weight: 600; color: #0f172a; margin-bottom: 4px;">基础精度</h4>
+              <p style="font-size: 13px; color: #64748b; margin: 0;">提供安装前基础公差和核验清单。</p>
+            </div>
+          </div>
+          <div style="margin-top: 16px; padding: 14px; background: #fef2f2; border-radius: 8px; border: 1px solid #fecaca;">
+            <p style="font-size: 12px; color: #991b1b; margin: 0; line-height: 1.6;"><strong>范围说明：</strong>基础和土建工程通常由当地承包商施工。中赛提供接口资料和技术指导，但不默认承担当地基础施工。</p>
+          </div>
+        </div>
+        <div class="reveal reveal-delay-2">
+          <p class="section-index">螺栓连接</p>
+          <h2 style="font-size: 28px; font-weight: 700; color: #0f172a; margin: 12px 0 20px;">现场拼装螺栓连接</h2>
+          <p style="font-size: 15px; color: #475569; line-height: 1.8; margin-bottom: 20px;">大多数现场连接设计为螺栓连接，实现高效装配而无需现场焊接。连接细节、螺栓表和装配要求记录在批准图纸中。</p>
+          <div style="display: flex; flex-direction: column; gap: 12px;">
+            <div style="padding: 16px; background: #f8fafc; border-radius: 8px; border-left: 3px solid #059669;">
+              <h4 style="font-size: 14px; font-weight: 600; color: #0f172a; margin-bottom: 4px;">螺栓识别</h4>
+              <p style="font-size: 13px; color: #64748b; margin: 0;">螺栓按连接组包装，标识与螺栓表对应。</p>
+            </div>
+            <div style="padding: 16px; background: #f8fafc; border-radius: 8px; border-left: 3px solid #059669;">
+              <h4 style="font-size: 14px; font-weight: 600; color: #0f172a; margin-bottom: 4px;">连接板</h4>
+              <p style="font-size: 13px; color: #64748b; margin: 0;">连接板和节点板预制完成，按图纸标识。</p>
+            </div>
+            <div style="padding: 16px; background: #f8fafc; border-radius: 8px; border-left: 3px solid #059669;">
+              <h4 style="font-size: 14px; font-weight: 600; color: #0f172a; margin-bottom: 4px;">拼接连接</h4>
+              <p style="font-size: 13px; color: #64748b; margin: 0;">为运输拆分的长构件采用螺栓拼接连接。</p>
+            </div>
+            <div style="padding: 16px; background: #f8fafc; border-radius: 8px; border-left: 3px solid #059669;">
+              <h4 style="font-size: 14px; font-weight: 600; color: #0f172a; margin-bottom: 4px;">紧固要求</h4>
+              <p style="font-size: 13px; color: #64748b; margin: 0;">螺栓等级、紧固方法和扭矩值按批准图纸和项目标准执行。</p>
+            </div>
+          </div>
+          <div style="margin-top: 16px; padding: 14px; background: #f0fdf4; border-radius: 8px; border: 1px solid #bbf7d0;">
+            <p style="font-size: 12px; color: #166534; margin: 0; line-height: 1.6;"><strong>说明：</strong>具体螺栓等级、扭矩值和紧固程序由批准的项目图纸和适用标准确定。未经技术批准，不得更换螺栓等级或修改连接。</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- In-House Teams Support -->
+  <section class="section" style="padding: 70px 0; background: #f8fafc;">
+    <div class="container">
+      <div class="section-heading reveal">
+        <div>
+          <p class="section-index">自有团队支持</p>
+          <h2>中赛自有团队的安装支持</h2>
+        </div>
+        <div>
+          <p>中赛自有设计和交付团队在安装阶段持续参与，提供技术澄清和项目协调。这是与单纯材料贸易商的重要区别。</p>
+        </div>
+      </div>
+      <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 32px; margin-top: 40px;" class="inhouse-support-grid">
+        <div style="padding: 32px; background: white; border-radius: 16px; border: 1px solid #e2e8f0;" class="reveal">
+          <div style="width: 56px; height: 56px; background: linear-gradient(135deg, #1e40af, #3b82f6); border-radius: 12px; display: flex; align-items: center; justify-content: center; margin-bottom: 20px;">
+            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2"><path d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"/></svg>
+          </div>
+          <h3 style="font-size: 22px; font-weight: 700; color: #0f172a; margin-bottom: 12px;">自有设计团队</h3>
+          <p style="font-size: 14px; color: #64748b; line-height: 1.7; margin-bottom: 20px;">为您项目出图的设计团队在安装期间持续提供技术澄清。</p>
+          <div style="display: flex; flex-direction: column; gap: 10px;">
+            <div style="display: flex; align-items: flex-start; gap: 10px;">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#2563eb" stroke-width="2" style="flex-shrink: 0; margin-top: 2px;"><path d="M5 13l4 4L19 7"/></svg>
+              <span style="font-size: 13px; color: #334155;">图纸澄清和解释</span>
+            </div>
+            <div style="display: flex; align-items: flex-start; gap: 10px;">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#2563eb" stroke-width="2" style="flex-shrink: 0; margin-top: 2px;"><path d="M5 13l4 4L19 7"/></svg>
+              <span style="font-size: 13px; color: #334155;">连接节点问题和指导</span>
+            </div>
+            <div style="display: flex; align-items: flex-start; gap: 10px;">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#2563eb" stroke-width="2" style="flex-shrink: 0; margin-top: 2px;"><path d="M5 13l4 4L19 7"/></svg>
+              <span style="font-size: 13px; color: #334155;">构件识别和定位查询</span>
+            </div>
+            <div style="display: flex; align-items: flex-start; gap: 10px;">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#2563eb" stroke-width="2" style="flex-shrink: 0; margin-top: 2px;"><path d="M5 13l4 4L19 7"/></svg>
+              <span style="font-size: 13px; color: #334155;">接口问题解决和协调</span>
+            </div>
+            <div style="display: flex; align-items: flex-start; gap: 10px;">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#2563eb" stroke-width="2" style="flex-shrink: 0; margin-top: 2px;"><path d="M5 13l4 4L19 7"/></svg>
+              <span style="font-size: 13px; color: #334155;">项目专属技术问题</span>
+            </div>
+          </div>
+        </div>
+        <div style="padding: 32px; background: white; border-radius: 16px; border: 1px solid #e2e8f0;" class="reveal reveal-delay-2">
+          <div style="width: 56px; height: 56px; background: linear-gradient(135deg, #059669, #10b981); border-radius: 12px; display: flex; align-items: center; justify-content: center; margin-bottom: 20px;">
+            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2"><path d="M20 7l-8-4-8 4m16 0l-8 4m8-4v10l-8 4m0-10L4 7m8 4v10M4 7v10l8 4"/></svg>
+          </div>
+          <h3 style="font-size: 22px; font-weight: 700; color: #0f172a; margin-bottom: 12px;">自有交付团队</h3>
+          <p style="font-size: 14px; color: #64748b; line-height: 1.7; margin-bottom: 20px;">交付团队确保所有项目信息、资料和构件完整交付到现场安装。</p>
+          <div style="display: flex; flex-direction: column; gap: 10px;">
+            <div style="display: flex; align-items: flex-start; gap: 10px;">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#059669" stroke-width="2" style="flex-shrink: 0; margin-top: 2px;"><path d="M5 13l4 4L19 7"/></svg>
+              <span style="font-size: 13px; color: #334155;">发运信息和跟踪</span>
+            </div>
+            <div style="display: flex; align-items: flex-start; gap: 10px;">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#059669" stroke-width="2" style="flex-shrink: 0; margin-top: 2px;"><path d="M5 13l4 4L19 7"/></svg>
+              <span style="font-size: 13px; color: #334155;">装箱单和构件交接</span>
+            </div>
+            <div style="display: flex; align-items: flex-start; gap: 10px;">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#059669" stroke-width="2" style="flex-shrink: 0; margin-top: 2px;"><path d="M5 13l4 4L19 7"/></svg>
+              <span style="font-size: 13px; color: #334155;">资料交接和协调</span>
+            </div>
+            <div style="display: flex; align-items: flex-start; gap: 10px;">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#059669" stroke-width="2" style="flex-shrink: 0; margin-top: 2px;"><path d="M5 13l4 4L19 7"/></svg>
+              <span style="font-size: 13px; color: #334155;">交付和安装信息交接</span>
+            </div>
+            <div style="display: flex; align-items: flex-start; gap: 10px;">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#059669" stroke-width="2" style="flex-shrink: 0; margin-top: 2px;"><path d="M5 13l4 4L19 7"/></svg>
+              <span style="font-size: 13px; color: #334155;">构件损伤报告和处理</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Local Contractor Coordination & On-Site Support -->
+  <section class="section" style="padding: 70px 0;">
+    <div class="container">
+      <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 48px;" class="local-onsite-grid">
+        <div class="reveal">
+          <p class="section-index">当地协调</p>
+          <h2 style="font-size: 28px; font-weight: 700; color: #0f172a; margin: 12px 0 20px;">与当地施工团队协作</h2>
+          <p style="font-size: 15px; color: #475569; line-height: 1.8; margin-bottom: 24px;">客户通常使用自有施工资源进行当地安装。中赛提供技术资料和支持，帮助当地团队正确安装钢结构。</p>
+          <div style="padding: 20px; background: #f8fafc; border-radius: 12px; margin-bottom: 16px;">
+            <h4 style="font-size: 15px; font-weight: 600; color: #0f172a; margin-bottom: 12px;">客户可选择：</h4>
+            <ul style="list-style: none; padding: 0; margin: 0; display: flex; flex-direction: column; gap: 8px;">
+              <li style="display: flex; align-items: center; gap: 10px; font-size: 14px; color: #334155;">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#2563eb" stroke-width="2"><path d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0z"/></svg>
+                自有施工团队
+              </li>
+              <li style="display: flex; align-items: center; gap: 10px; font-size: 14px; color: #334155;">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#2563eb" stroke-width="2"><path d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4"/></svg>
+                当地钢结构安装公司
+              </li>
+              <li style="display: flex; align-items: center; gap: 10px; font-size: 14px; color: #334155;">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#2563eb" stroke-width="2"><path d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2"/></svg>
+                项目总包安排的安装团队
+              </li>
+            </ul>
+          </div>
+          <div style="padding: 20px; background: #eff6ff; border-radius: 12px; border: 1px solid #bfdbfe;">
+            <h4 style="font-size: 15px; font-weight: 600; color: #1e40af; margin-bottom: 12px;">中赛提供：</h4>
+            <ul style="list-style: none; padding: 0; margin: 0; display: flex; flex-direction: column; gap: 8px;">
+              <li style="font-size: 14px; color: #1e3a5f;">技术资料和安装图纸</li>
+              <li style="font-size: 14px; color: #1e3a5f;">图纸澄清和节点指导</li>
+              <li style="font-size: 14px; color: #1e3a5f;">安装顺序信息</li>
+              <li style="font-size: 14px; color: #1e3a5f;">项目协调和技术支持</li>
+            </ul>
+          </div>
+        </div>
+        <div class="reveal reveal-delay-2">
+          <p class="section-index">现场支持</p>
+          <h2 style="font-size: 28px; font-weight: 700; color: #0f172a; margin: 12px 0 20px;">现场技术支持</h2>
+          <p style="font-size: 15px; color: #475569; line-height: 1.8; margin-bottom: 24px;">所有项目均提供远程技术支持和图纸澄清。对复杂、重要或有需要的海外项目，中赛可安排工程师赴现场指导安装。</p>
+          <div style="padding: 24px; background: linear-gradient(135deg, #fef3c7, #fde68a); border-radius: 12px; margin-bottom: 20px;">
+            <h4 style="font-size: 16px; font-weight: 600; color: #92400e; margin-bottom: 10px;">现场支持可安排于：</h4>
+            <p style="font-size: 14px; color: #78350f; line-height: 1.7; margin: 0;">工程师可赴项目现场进行安装指导、技术交底和节点协调。具体安排视项目范围、地点、签证要求、工期和商务协议而定，根据项目需求单独确认。</p>
+          </div>
+          <div style="display: flex; flex-direction: column; gap: 12px;">
+            <div style="padding: 16px; background: #f8fafc; border-radius: 8px; display: flex; gap: 12px; align-items: flex-start;">
+              <div style="width: 36px; height: 36px; background: #dbeafe; border-radius: 8px; display: flex; align-items: center; justify-content: center; flex-shrink: 0;">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#2563eb" stroke-width="2"><path d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"/></svg>
+              </div>
+              <div>
+                <h5 style="font-size: 14px; font-weight: 600; color: #0f172a; margin: 0 0 4px;">远程技术支持</h5>
+                <p style="font-size: 12px; color: #64748b; margin: 0;">所有项目均提供邮件、电话和视频咨询。</p>
+              </div>
+            </div>
+            <div style="padding: 16px; background: #f8fafc; border-radius: 8px; display: flex; gap: 12px; align-items: flex-start;">
+              <div style="width: 36px; height: 36px; background: #dcfce7; border-radius: 8px; display: flex; align-items: center; justify-content: center; flex-shrink: 0;">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#16a34a" stroke-width="2"><path d="M15 10l4.553-2.276A1 1 0 0121 8.618v6.764a1 1 0 01-1.447.894L15 14M5 18h8a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v8a2 2 0 002 2z"/></svg>
+              </div>
+              <div>
+                <h5 style="font-size: 14px; font-weight: 600; color: #0f172a; margin: 0 0 4px;">视频会议咨询</h5>
+                <p style="font-size: 12px; color: #64748b; margin: 0;">图纸审查和节点澄清视频会议。</p>
+              </div>
+            </div>
+            <div style="padding: 16px; background: #f8fafc; border-radius: 8px; display: flex; gap: 12px; align-items: flex-start;">
+              <div style="width: 36px; height: 36px; background: #fef3c7; border-radius: 8px; display: flex; align-items: center; justify-content: center; flex-shrink: 0;">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#d97706" stroke-width="2"><path d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"/><path d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"/></svg>
+              </div>
+              <div>
+                <h5 style="font-size: 14px; font-weight: 600; color: #0f172a; margin: 0 0 4px;">现场支持（选定项目）</h5>
+                <p style="font-size: 12px; color: #64748b; margin: 0;">视范围、地点、签证、工期和商务条款安排。</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Quality Checklist & Common Site Questions -->
+  <section class="section" style="padding: 70px 0; background: #f8fafc;">
+    <div class="container">
+      <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 48px;" class="quality-questions-grid">
+        <div class="reveal">
+          <p class="section-index">质量检查</p>
+          <h2 style="font-size: 28px; font-weight: 700; color: #0f172a; margin: 12px 0 20px;">典型安装质量检查</h2>
+          <p style="font-size: 15px; color: #475569; line-height: 1.8; margin-bottom: 24px;">以下为钢结构安装期间和完成后通常进行的质量检查。所有验收标准基于批准图纸和适用项目标准。</p>
+          <div style="display: flex; flex-direction: column; gap: 12px;">
+            {qualityChecks.map((item, i) => (
+              <div key={i} style="padding: 16px 20px; background: white; border-radius: 10px; border: 1px solid #e2e8f0; display: flex; align-items: center; gap: 16px;">
+                <div style="width: 32px; height: 32px; background: #dbeafe; border-radius: 50%; display: flex; align-items: center; justify-content: center; flex-shrink: 0;">
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#2563eb" stroke-width="2"><path d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+                </div>
+                <div>
+                  <h5 style="font-size: 14px; font-weight: 600; color: #0f172a; margin: 0 0 2px;">{item.title}</h5>
+                  <p style="font-size: 12px; color: #64748b; margin: 0;">{item.desc}</p>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+        <div class="reveal reveal-delay-2">
+          <p class="section-index">常见问题</p>
+          <h2 style="font-size: 28px; font-weight: 700; color: #0f172a; margin: 12px 0 20px;">现场常见问题解答</h2>
+          <p style="font-size: 15px; color: #475569; line-height: 1.8; margin-bottom: 24px;">钢结构现场安装中常见问题的解答。</p>
+          <div style="display: flex; flex-direction: column; gap: 12px;">
+            {siteQuestions.map((item, i) => (
+              <details key={i} style="background: white; border-radius: 10px; border: 1px solid #e2e8f0; overflow: hidden;">
+                <summary style="padding: 16px 20px; cursor: pointer; font-size: 14px; font-weight: 600; color: #0f172a; list-style: none; display: flex; justify-content: space-between; align-items: center;">
+                  <span>{item.q}</span>
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#64748b" stroke-width="2"><path d="M19 9l-7 7-7-7"/></svg>
+                </summary>
+                <div style="padding: 0 20px 16px; border-top: 1px solid #f1f5f9;">
+                  <p style="font-size: 13px; color: #475569; line-height: 1.7; margin: 12px 0 0;">{item.a}</p>
+                </div>
+              </details>
+            ))}
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Scope of Installation Support -->
+  <section class="section" style="padding: 70px 0;">
+    <div class="container">
+      <div class="section-heading reveal">
+        <div>
+          <p class="section-index">服务范围</p>
+          <h2>安装技术支持服务范围</h2>
+        </div>
+        <div>
+          <p>清晰的范围定义帮助客户规划当地施工资源，准确了解中赛提供什么与什么由当地负责。</p>
+        </div>
+      </div>
+      <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 32px; margin-top: 40px;" class="scope-grid">
+        <div style="padding: 32px; background: linear-gradient(135deg, #eff6ff, #dbeafe); border-radius: 16px; border: 1px solid #bfdbfe;" class="reveal">
+          <div style="display: flex; align-items: center; gap: 12px; margin-bottom: 24px;">
+            <div style="width: 44px; height: 44px; background: #2563eb; border-radius: 10px; display: flex; align-items: center; justify-content: center;">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2"><path d="M5 13l4 4L19 7"/></svg>
+            </div>
+            <h3 style="font-size: 20px; font-weight: 700; color: #1e3a8a; margin: 0;">中赛提供</h3>
+          </div>
+          <ul style="list-style: none; padding: 0; margin: 0; display: flex; flex-direction: column; gap: 14px;">
+            <li style="display: flex; align-items: flex-start; gap: 10px; font-size: 14px; color: #1e3a5f; line-height: 1.6;">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#2563eb" stroke-width="2" style="flex-shrink: 0; margin-top: 1px;"><path d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"/></svg>
+              <span><strong>安装图纸</strong>和装配资料</span>
+            </li>
+            <li style="display: flex; align-items: flex-start; gap: 10px; font-size: 14px; color: #1e3a5f; line-height: 1.6;">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#2563eb" stroke-width="2" style="flex-shrink: 0; margin-top: 1px;"><path d="M8.228 9c.549-1.165 2.03-2 3.772-2 2.21 0 4 1.343 4 3 0 1.4-1.278 2.575-3.006 2.907-.542.104-.994.54-.994 1.093m0 3h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+              <span><strong>技术澄清</strong>和图纸解释</span>
+            </li>
+            <li style="display: flex; align-items: flex-start; gap: 10px; font-size: 14px; color: #1e3a5f; line-height: 1.6;">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#2563eb" stroke-width="2" style="flex-shrink: 0; margin-top: 1px;"><path d="M7 7h.01M7 3h5c.512 0 1.024.195 1.414.586l7 7a2 2 0 010 2.828l-7 7a2 2 0 01-2.828 0l-7-7A1.994 1.994 0 013 12V7a4 4 0 014-4z"/></svg>
+              <span><strong>构件识别</strong>和定位指导</span>
+            </li>
+            <li style="display: flex; align-items: flex-start; gap: 10px; font-size: 14px; color: #1e3a5f; line-height: 1.6;">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#2563eb" stroke-width="2" style="flex-shrink: 0; margin-top: 1px;"><path d="M13 10V3L4 14h7v7l9-11h-7z"/></svg>
+              <span><strong>安装顺序</strong>信息和参考</span>
+            </li>
+            <li style="display: flex; align-items: flex-start; gap: 10px; font-size: 14px; color: #1e3a5f; line-height: 1.6;">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#2563eb" stroke-width="2" style="flex-shrink: 0; margin-top: 1px;"><path d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z"/></svg>
+              <span><strong>项目协调</strong>（设计、交付、现场）</span>
+            </li>
+            <li style="display: flex; align-items: flex-start; gap: 10px; font-size: 14px; color: #1e3a5f; line-height: 1.6;">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#2563eb" stroke-width="2" style="flex-shrink: 0; margin-top: 1px;"><path d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z"/></svg>
+              <span><strong>技术指导</strong>（连接和装配问题）</span>
+            </li>
+          </ul>
+        </div>
+        <div style="padding: 32px; background: linear-gradient(135deg, #fef2f2, #fee2e2); border-radius: 16px; border: 1px solid #fecaca;" class="reveal reveal-delay-2">
+          <div style="display: flex; align-items: center; gap: 12px; margin-bottom: 24px;">
+            <div style="width: 44px; height: 44px; background: #dc2626; border-radius: 10px; display: flex; align-items: center; justify-content: center;">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2"><path d="M6 18L18 6M6 6l12 12"/></svg>
+            </div>
+            <h3 style="font-size: 20px; font-weight: 700; color: #991b1b; margin: 0;">通常由当地负责</h3>
+          </div>
+          <ul style="list-style: none; padding: 0; margin: 0; display: flex; flex-direction: column; gap: 14px;">
+            <li style="display: flex; align-items: flex-start; gap: 10px; font-size: 14px; color: #7f1d1d; line-height: 1.6;">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#dc2626" stroke-width="2" style="flex-shrink: 0; margin-top: 1px;"><path d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4"/></svg>
+              <span><strong>基础</strong>和土建工程施工</span>
+            </li>
+            <li style="display: flex; align-items: flex-start; gap: 10px; font-size: 14px; color: #7f1d1d; line-height: 1.6;">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#dc2626" stroke-width="2" style="flex-shrink: 0; margin-top: 1px;"><path d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z"/></svg>
+              <span><strong>当地人工</strong>和施工队伍</span>
+            </li>
+            <li style="display: flex; align-items: flex-start; gap: 10px; font-size: 14px; color: #7f1d1d; line-height: 1.6;">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#dc2626" stroke-width="2" style="flex-shrink: 0; margin-top: 1px;"><path d="M5 3v4M3 5h4M6 17v4m-2-2h4m5-16l2.286 6.857L21 12l-5.714 2.143L13 21l-2.286-6.857L5 12l5.714-2.143L13 3z"/></svg>
+              <span><strong>起重设备</strong>和安装机械</span>
+            </li>
+            <li style="display: flex; align-items: flex-start; gap: 10px; font-size: 14px; color: #7f1d1d; line-height: 1.6;">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#dc2626" stroke-width="2" style="flex-shrink: 0; margin-top: 1px;"><path d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"/></svg>
+              <span><strong>现场安全管理</strong>和施工安全</span>
+            </li>
+            <li style="display: flex; align-items: flex-start; gap: 10px; font-size: 14px; color: #7f1d1d; line-height: 1.6;">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#dc2626" stroke-width="2" style="flex-shrink: 0; margin-top: 1px;"><path d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"/></svg>
+              <span><strong>当地许可</strong>和施工审批</span>
+            </li>
+            <li style="display: flex; align-items: flex-start; gap: 10px; font-size: 14px; color: #7f1d1d; line-height: 1.6;">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#dc2626" stroke-width="2" style="flex-shrink: 0; margin-top: 1px;"><path d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4"/></svg>
+              <span><strong>实际安装</strong>（除非另行约定）</span>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ Section -->
+  <section class="section" style="padding: 70px 0; background: #f8fafc;">
+    <div class="container">
+      <div class="section-heading reveal">
+        <div>
+          <p class="section-index">常见问题</p>
+          <h2>常见问题解答</h2>
+        </div>
+        <div>
+          <p>关于钢结构安装技术指导、技术支持和项目范围的常见问题。</p>
+        </div>
+      </div>
+      <div style="max-width: 900px; margin: 40px auto 0; display: flex; flex-direction: column; gap: 12px;">
+        {faqs.map((item, i) => (
+          <details key={i} style="background: white; border-radius: 12px; border: 1px solid #e2e8f0; overflow: hidden;" class={`reveal reveal-delay-${(i % 4) + 1}`}>
+            <summary style="padding: 20px 24px; cursor: pointer; font-size: 16px; font-weight: 600; color: #0f172a; list-style: none; display: flex; justify-content: space-between; align-items: center; gap: 16px;">
+              <span>{item.q}</span>
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#64748b" stroke-width="2" style="flex-shrink: 0;"><path d="M19 9l-7 7-7-7"/></svg>
+            </summary>
+            <div style="padding: 0 24px 20px; border-top: 1px solid #f1f5f9;">
+              <p style="font-size: 14px; color: #475569; line-height: 1.8; margin: 16px 0 0;">{item.a}</p>
+            </div>
+          </details>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- Related Links -->
+  <section class="section" style="padding: 70px 0;">
+    <div class="container">
+      <div class="section-heading reveal">
+        <div>
+          <p class="section-index">相关链接</p>
+          <h2>相关能力与项目类型</h2>
+        </div>
+        <div>
+          <p>安装指导与中赛工程、制造和出口交付能力在所有项目类型中深度融合。</p>
+        </div>
+      </div>
+      <div style="display: grid; grid-template-columns: repeat(4, 1fr); gap: 20px; margin-top: 40px;" class="related-links-grid">
+        <a href="/zh/engineering-design/" style="padding: 24px; background: white; border-radius: 12px; border: 1px solid #e2e8f0; text-decoration: none; transition: all 0.2s;" class="reveal">
+          <h4 style="font-size: 16px; font-weight: 600; color: #0f172a; margin-bottom: 8px;">工程设计与深化</h4>
+          <p style="font-size: 13px; color: #64748b; line-height: 1.6; margin: 0 0 12px;">结构设计配合、加工图深化和节点开发。</p>
+          <span style="font-size: 13px; color: #2563eb; font-weight: 600;">了解更多 →</span>
+        </a>
+        <a href="/zh/manufacturing-quality/" style="padding: 24px; background: white; border-radius: 12px; border: 1px solid #e2e8f0; text-decoration: none; transition: all 0.2s;" class="reveal reveal-delay-2">
+          <h4 style="font-size: 16px; font-weight: 600; color: #0f172a; margin-bottom: 8px;">制造与质量控制</h4>
+          <p style="font-size: 13px; color: #64748b; line-height: 1.6; margin: 0 0 12px;">钢结构加工、质量控制和生产证据。</p>
+          <span style="font-size: 13px; color: #2563eb; font-weight: 600;">了解更多 →</span>
+        </a>
+        <a href="/zh/export-delivery/" style="padding: 24px; background: white; border-radius: 12px; border: 1px solid #e2e8f0; text-decoration: none; transition: all 0.2s;" class="reveal reveal-delay-3">
+          <h4 style="font-size: 16px; font-weight: 600; color: #0f172a; margin-bottom: 8px;">出口交付</h4>
+          <p style="font-size: 13px; color: #64748b; line-height: 1.6; margin: 0 0 12px;">包装、装柜、出口资料和交付协调。</p>
+          <span style="font-size: 13px; color: #2563eb; font-weight: 600;">了解更多 →</span>
+        </a>
+        <a href="/zh/projects/" style="padding: 24px; background: white; border-radius: 12px; border: 1px solid #e2e8f0; text-decoration: none; transition: all 0.2s;" class="reveal reveal-delay-4">
+          <h4 style="font-size: 16px; font-weight: 600; color: #0f172a; margin-bottom: 8px;">项目案例</h4>
+          <p style="font-size: 13px; color: #64748b; line-height: 1.6; margin: 0 0 12px;">真实项目案例，含制造、交付和范围详情。</p>
+          <span style="font-size: 13px; color: #2563eb; font-weight: 600;">查看项目 →</span>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA Section -->
+  <section id="quote" style="background: linear-gradient(135deg, #0f172a 0%, #1e3a5f 100%); padding: 80px 0; color: white;">
+    <div class="container">
+      <div style="max-width: 700px; margin: 0 auto; text-align: center;">
+        <h2 style="font-size: 36px; font-weight: 700; margin-bottom: 16px;">规划您的项目安装</h2>
+        <p style="font-size: 17px; color: #cbd5e1; line-height: 1.7; margin-bottom: 32px;">与中赛工程和交付团队沟通您的项目安装需求。我们提供技术资料和支持，帮助您的当地施工团队顺利完成安装。</p>
+        <div style="display: flex; gap: 16px; justify-content: center; flex-wrap: wrap;">
+          <a href="/zh/contact/" style="display: inline-flex; align-items: center; gap: 8px; background: #2563eb; color: white; padding: 16px 32px; border-radius: 8px; font-weight: 600; text-decoration: none; font-size: 16px;">沟通您的安装方案</a>
+          <a href="/zh/engineering-design/" style="display: inline-flex; align-items: center; gap: 8px; background: transparent; color: #93c5fd; padding: 16px 32px; border-radius: 8px; font-weight: 600; text-decoration: none; font-size: 16px; border: 1px solid rgba(147,197,253,0.3);">提交项目图纸</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <style>
+    .section-index {
+      font-size: 13px;
+      font-weight: 700;
+      color: #2563eb;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      margin-bottom: 8px;
+    }
+    .section-heading {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 40px;
+      align-items: start;
+      margin-bottom: 12px;
+    }
+    .section-heading h2 {
+      font-size: 32px;
+      font-weight: 700;
+      color: #0f172a;
+      line-height: 1.2;
+      margin: 0;
+    }
+    .section-heading p {
+      font-size: 15px;
+      color: #64748b;
+      line-height: 1.8;
+      margin: 0;
+    }
+    details summary::-webkit-details-marker {
+      display: none;
+    }
+    details[open] summary svg {
+      transform: rotate(180deg);
+    }
+    details summary svg {
+      transition: transform 0.2s;
+    }
+    @media (max-width: 1024px) {
+      .section-heading { grid-template-columns: 1fr; gap: 20px; }
+      .project-chain-grid { grid-template-columns: repeat(3, 1fr) !important; }
+      .before-shipment-grid { grid-template-columns: repeat(2, 1fr) !important; }
+      .component-id-grid { grid-template-columns: repeat(2, 1fr) !important; }
+      .erection-drawings-grid, .foundation-bolt-grid, .inhouse-support-grid, .local-onsite-grid, .quality-questions-grid, .scope-grid { grid-template-columns: 1fr !important; }
+      .sequence-grid { grid-template-columns: repeat(2, 1fr) !important; }
+      .related-links-grid { grid-template-columns: repeat(2, 1fr) !important; }
+    }
+    @media (max-width: 768px) {
+      .project-chain-grid { grid-template-columns: repeat(2, 1fr) !important; }
+      .before-shipment-grid, .component-id-grid, .sequence-grid, .related-links-grid { grid-template-columns: 1fr !important; }
+      .section-heading h2 { font-size: 26px; }
+    }
+  </style>
+</BaseLayout>

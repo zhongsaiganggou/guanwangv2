@@ -47,6 +47,23 @@ const heroTypeLabel = project.heroImageType === 'rendering'
     </div>
   </section>
 
+  {/* ZhongSai Scope Banner - prominent display */}
+  <section class="project-scope-banner">
+    <div class="container">
+      <div class="scope-banner-inner">
+        <div class="scope-label">
+          <span class="scope-icon">{lang === 'zh' ? '中赛参与范围' : 'ZhongSai Scope'}</span>
+        </div>
+        <div class="scope-content">
+          <h2>{project.zhongSaiScope ? t(project.zhongSaiScope) : (lang === 'zh' ? '钢结构制造与加工供应' : 'Steel Structure Fabrication & Supply')}</h2>
+          <p>{lang === 'zh'
+            ? '本项目中赛钢构的具体参与范围以上述标注为准，项目实际供货及技术服务范围以双方确认的合同和技术文件为准。'
+            : 'ZhongSai\'s participation scope for this project is as indicated above. Actual supply and technical service scope is subject to the mutually confirmed contract and technical documentation.'}</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
   {/* Project Overview */}
   <section class="project-section">
     <div class="container project-two-col">
@@ -54,13 +71,18 @@ const heroTypeLabel = project.heroImageType === 'rendering'
         <h2>{lang === 'zh' ? '项目概述' : 'Project Overview'}</h2>
         <p>{t(project.overview)}</p>
 
-        {/* Manufacturing Participation */}
+        {/* Scope Details */}
         <div class="manufacturing-participation">
-          <h3>{lang === 'zh' ? '中赛参与范围' : 'ZhongSai Participation'}</h3>
+          <h3>{lang === 'zh' ? '中赛参与范围说明' : 'ZhongSai Scope Details'}</h3>
           <p>
+            {project.zhongSaiScope
+              ? t(project.zhongSaiScope)
+              : (lang === 'zh' ? '中赛钢构参与该项目钢结构制造与加工供应。' : 'ZhongSai Steel Structure participated in structural steel fabrication and supply for this project.')}
+          </p>
+          <p class="scope-note">
             {lang === 'zh'
-              ? '中赛钢构参与该项目钢结构制造 / 加工。具体供货范围以项目实际确认的资料为准。'
-              : 'ZhongSai Steel Structure participated in structural steel manufacturing / fabrication for this project. Specific supply scope is subject to confirmed project documentation.'}
+              ? '注：中赛钢构提供设计深化、制造、出口供应及安装技术指导；当地土建和实际施工通常由当地承包商完成。'
+              : 'Note: ZhongSai provides detailing, fabrication, export supply and technical installation guidance; local civil works and physical construction are normally handled by local contractors.'}
           </p>
         </div>
 
@@ -99,26 +121,59 @@ const heroTypeLabel = project.heroImageType === 'rendering'
     </div>
   </section>
 
-  {/* Project Gallery - Multi-image with type labels */}
+  {/* Project Evidence Gallery - Grouped by evidence type */}
   <section class="project-section project-gallery-section">
     <div class="container">
-      <h2>{lang === 'zh' ? '项目图片' : 'Project Images'}</h2>
-      <div class={`project-gallery-grid gallery-count-${Math.min(project.galleryImages.length, 6)}`}>
-        {project.galleryImages.map((img, idx) => (
-          <figure class={`gallery-item ${idx === 0 ? 'gallery-first' : ''}`}>
-            <div class="gallery-image-wrap">
-              <img
-                src={img.src}
-                alt={`${t(project.name)} - ${t(img.label)}`}
-                width="800"
-                height="600"
-                loading={idx === 0 ? 'eager' : 'lazy'}
-              />
-              <span class="gallery-type-tag">{t(img.label)}</span>
+      <h2>{lang === 'zh' ? '项目证据' : 'Project Evidence'}</h2>
+      <p style="color: var(--color-gray-600); margin-bottom: 24px; max-width: 700px;">
+        {lang === 'zh'
+          ? '以下图片展示该项目的效果图、现场实景及钢结构构件细节，用于说明中赛钢构在本项目中的制造与供货范围。'
+          : 'The following images show project renderings, site views and steel component details, illustrating ZhongSai\'s fabrication and supply scope for this project.'}
+      </p>
+
+      {(() => {
+        const groups = {
+          rendering: {
+            title: lang === 'zh' ? '工程效果图与结构资料' : 'Engineering Renderings & Structural Drawings',
+            images: []
+          },
+          site: {
+            title: lang === 'zh' ? '项目现场与完工实景' : 'Project Site & Completed Views',
+            images: []
+          },
+          component: {
+            title: lang === 'zh' ? '钢结构构件与制造细节' : 'Steel Components & Fabrication Details',
+            images: []
+          }
+        };
+        project.galleryImages.forEach((img, idx) => {
+          const g = groups[img.type] || groups.rendering;
+          g.images.push({ ...img, idx });
+        });
+        return Object.entries(groups).map(([key, group]) =>
+          group.images.length > 0 ? (
+            <div class="evidence-group">
+              <h3 class="evidence-group-title">{group.title}</h3>
+              <div class="project-gallery-grid gallery-count-{Math.min(group.images.length, 3)}">
+                {group.images.map((img) => (
+                  <figure class={`gallery-item ${img.idx === 0 ? 'gallery-first' : ''}`}>
+                    <div class="gallery-image-wrap">
+                      <img
+                        src={img.src}
+                        alt={`${t(project.name)} - ${t(img.label)}`}
+                        width="800"
+                        height="600"
+                        loading={img.idx === 0 ? 'eager' : 'lazy'}
+                      />
+                      <span class="gallery-type-tag">{t(img.label)}</span>
+                    </div>
+                  </figure>
+                ))}
+              </div>
             </div>
-          </figure>
-        ))}
-      </div>
+          ) : null
+        );
+      })()}
     </div>
   </section>
 
@@ -154,6 +209,53 @@ const heroTypeLabel = project.heroImageType === 'rendering'
 <style>
 .project-detail {
   padding-bottom: 0;
+}
+/* Scope Banner */
+.project-scope-banner {
+  background: linear-gradient(135deg, #0a3d62 0%, #0d4f7a 100%);
+  padding: 28px 0;
+  margin-top: -1px;
+}
+.scope-banner-inner {
+  display: flex;
+  align-items: center;
+  gap: 32px;
+}
+.scope-label {
+  flex-shrink: 0;
+}
+.scope-icon {
+  display: inline-block;
+  background: rgba(255,255,255,0.15);
+  color: #fff;
+  padding: 10px 20px;
+  border-radius: 6px;
+  font-size: 0.9rem;
+  font-weight: 600;
+  border: 1px solid rgba(255,255,255,0.25);
+  white-space: nowrap;
+}
+.scope-content {
+  flex: 1;
+}
+.scope-content h2 {
+  color: #fff;
+  font-size: 1.35rem;
+  margin: 0 0 6px;
+  line-height: 1.4;
+}
+.scope-content p {
+  color: rgba(255,255,255,0.75);
+  font-size: 0.82rem;
+  margin: 0;
+  line-height: 1.6;
+}
+.scope-note {
+  font-size: 0.82rem !important;
+  color: #666 !important;
+  margin-top: 10px !important;
+  padding-top: 10px;
+  border-top: 1px dashed rgba(0,0,0,0.1);
 }
 .project-breadcrumb {
   padding: 20px 0;
@@ -436,6 +538,14 @@ const heroTypeLabel = project.heroImageType === 'rendering'
   .gallery-count-5 .gallery-first,
   .gallery-count-6 .gallery-first {
     grid-column: span 2;
+  }
+  .scope-banner-inner {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 16px;
+  }
+  .scope-content h2 {
+    font-size: 1.15rem;
   }
 }
 @media (max-width: 640px) {

@@ -18,6 +18,10 @@ const t = (obj: { zh: string; en: string }) => obj[lang];
   </div>
   <div class="project-card-content">
     <h3>{t(project.name)}</h3>
+    <p class="project-card-location">{t(project.location)}</p>
+    {project.zhongSaiScope && (
+      <span class="project-card-scope">{t(project.zhongSaiScope)}</span>
+    )}
     <div class="project-card-params">
       {project.params.slice(0, 3).map(param => (
         <div class="project-card-param">
@@ -85,8 +89,19 @@ const t = (obj: { zh: string; en: string }) => obj[lang];
 }
 .project-card-location {
   color: #888;
-  font-size: 0.85rem;
-  margin: 0 0 14px;
+  font-size: 0.82rem;
+  margin: 0 0 10px;
+}
+.project-card-scope {
+  display: inline-block;
+  background: #e8f0f7;
+  color: #0a3d62;
+  padding: 4px 10px;
+  border-radius: 4px;
+  font-size: 0.75rem;
+  font-weight: 500;
+  margin-bottom: 12px;
+  line-height: 1.4;
 }
 .project-card-params {
   display: flex;

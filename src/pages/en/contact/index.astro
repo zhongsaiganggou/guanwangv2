@@ -1,41 +1,40 @@
----
+﻿---
 // ZhongSai V2 - English Contact / Project Inquiry Page
 import BaseLayout from '../../../layouts/BaseLayout.astro';
 import QuoteForm from '../../../components/QuoteForm.astro';
 import '../../../styles/hub.css';
 
 const lang = 'en';
-const title = 'Contact ZhongSai Steel Structure | Project Inquiry & Quote';
-const description = 'Send drawings, BOQ or steel structure project requirements to ZhongSai Steel Structure for an initial project review and supply quotation discussion.';
+const title = 'Steel Structure Project Inquiry | Send Drawings to ZhongSai';
+const description = 'Discuss your steel structure project with ZhongSai. Upload drawings or submit project requirements for an initial engineering review by our in-house design and delivery teams.';
 
 const inquiryPaths = [
   {
-    title: 'Have Drawings / BOQ?',
-    desc: 'Submit available project documents for an initial project review.',
+    title: 'I Have Drawings',
+    desc: 'I have architectural, structural, BOQ or preliminary drawings.',
     items: [
       'Structural drawings',
       'Architectural drawings',
-      'Steel shop drawings',
       'BOQ / material list',
       'Project specifications',
       'Reference drawings or project files'
     ],
     fileTypes: 'PDF, DWG, DXF, JPG, PNG, XLS, XLSX',
-    cta: 'Upload Project Files'
+    cta: 'Upload Project Drawings'
   },
   {
-    title: 'No Drawings Yet?',
-    desc: 'Start with the project information you currently have.',
+    title: 'I Don\'t Have Complete Drawings Yet',
+    desc: 'I have a project concept, dimensions or construction requirements.',
     items: [
       'Project Country',
       'Building Type',
       'Intended Use',
-      'Available Length / Width / Height',
-      'Crane Requirement if applicable',
+      'Approximate Dimensions',
+      'Crane / Equipment Requirements',
       'Other project requirements'
     ],
-    note: 'You do not need to prepare information that is not yet available.',
-    cta: 'Fill Project Information'
+    note: 'You do not need to prepare information that is not yet available. Our engineering team can help clarify requirements.',
+    cta: 'Tell Us About Your Project'
   }
 ];
 
@@ -70,9 +69,9 @@ const supportItems = [
           <a href="/en/">Home</a><span>/</span><span>Contact</span>
         </div>
         <p class="eyebrow">PROJECT INQUIRY</p>
-        <h1>Send Your Steel Structure Project Requirements</h1>
-        <p class="contact-hero-desc">Have drawings or a BOQ? Send the available project documents. No drawings yet? Provide the project country, building type, intended use and available dimensions so we can understand the requirement first.</p>
-        <a href="#quote-form" class="btn btn-primary btn-large">Send Project Requirements</a>
+        <h1>Discuss Your Steel Structure Project</h1>
+        <p class="contact-hero-desc">Whether you already have drawings or are still at the planning stage, ZhongSai's in-house design and delivery teams can review your project requirements and coordinate the next steps.</p>
+        <a href="#inquiry-paths" class="btn btn-primary btn-large">Start Your Project Inquiry</a>
       </div>
       <div class="contact-hero-visual">
         <img src="/images/manufacturing/real/factory-overview-9819.jpg" alt="ZhongSai steel structure manufacturing facility" width="600" height="450" loading="eager">
@@ -81,10 +80,9 @@ const supportItems = [
   </section>
 
   <!-- Section 02: Two Inquiry Paths -->
-  <section class="hub-section">
+  <section class="hub-section" id="inquiry-paths">
     <div class="container">
       <div class="hub-section-head">
-        <p class="section-num">01</p>
         <h2>Two Ways to Start Your Project Inquiry</h2>
       </div>
       <div class="inquiry-paths">
@@ -110,7 +108,6 @@ const supportItems = [
   <section class="hub-section hub-section-light">
     <div class="container">
       <div class="hub-section-head">
-        <p class="section-num">02</p>
         <h2>Information That Helps Us Understand Your Project</h2>
       </div>
       <div class="checklist-grid">
@@ -129,7 +126,6 @@ const supportItems = [
   <section class="hub-section">
     <div class="container">
       <div class="hub-section-head">
-        <p class="section-num">03</p>
         <h2>What ZhongSai Can Support</h2>
       </div>
       <div class="support-grid">
@@ -148,7 +144,7 @@ const supportItems = [
 
       <!-- Contact Cards -->
       <div class="contact-cards">
-        <a href="https://wa.me/8613192007378" target="_blank" rel="noopener" class="contact-card">
+        <a href="https://wa.me/8613192007378?text=Hi%20ZhongSai%2C%20I%20have%20a%20steel%20structure%20project%20and%20would%20like%20to%20discuss%20the%20requirements." target="_blank" rel="noopener" class="contact-card">
           <div class="contact-card-icon"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.91.34 1.85.57 2.81.7A2 2 0 0 1 22 16.92z"/></svg></div>
           <div class="contact-card-info">
             <small>WHATSAPP / PHONE</small>
@@ -173,11 +169,169 @@ const supportItems = [
     </div>
   </section>
 
+  <!-- Section 04b: Contact FAQ -->
+  <section class="hub-section hub-section-light">
+    <div class="container">
+      <div class="hub-section-head">
+        <h2>Frequently Asked Questions Before Contacting</h2>
+      </div>
+      <div class="faq-list">
+        <details class="faq-item">
+          <summary>Is ZhongSai a manufacturer or trading company?</summary>
+          <p>ZhongSai is a steel structure project supplier with an in-house design/detailing team, Guangdong manufacturing bases and a project delivery team. We handle export, project management and manufacturing coordination. Steel components are fabricated at our Guangdong production bases.</p>
+        </details>
+        <details class="faq-item">
+          <summary>Can I request a quote without drawings?</summary>
+          <p>Yes. Please provide the project country, building type, intended use, available dimensions (length/width/height) and other known requirements. ZhongSai can conduct an initial project assessment based on basic information, with detailed materials supplemented during follow-up communication.</p>
+        </details>
+        <details class="faq-item">
+          <summary>How long does it take to get a quote?</summary>
+          <p>For projects with complete drawings and BOQ, we typically provide an initial quote within 1-3 business days. For projects with only basic parameters, structural scheme confirmation is required first, and the timeline depends on project complexity.</p>
+        </details>
+        <details class="faq-item">
+          <summary>Can I visit the factory?</summary>
+          <p>Qualified project clients can schedule visits to ZhongSai's Guangdong production bases for manufacturing capability and quality control verification. Please contact our project team in advance to arrange a visit.</p>
+        </details>
+        <details class="faq-item">
+          <summary>Does ZhongSai provide local construction and installation?</summary>
+          <p>ZhongSai provides design/detailing, fabrication, export supply and installation technical guidance. Local civil works, physical construction and on-site erection are normally handled by the client or local contractors. On-site technical personnel can be arranged for specific projects subject to contract scope.</p>
+        </details>
+        <details class="faq-item">
+          <summary>What is the fastest way to contact ZhongSai?</summary>
+          <p>WeChat is ZhongSai's primary contact channel — add us and send drawings and project requirements directly. You can also reach us via WhatsApp (+86 131 9200 7378) or email (zhongsaiganggou@gmail.com).</p>
+        </details>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- Section 04b: What Our Engineering Team Reviews -->
+  <section class="hub-section">
+    <div class="container">
+      <div class="hub-section-head">
+        <h2>What Our Engineering Team Reviews</h2>
+        <p class="section-subtitle">Your project information goes through an initial engineering review, not just a sales inbox.</p>
+      </div>
+      <div class="review-grid">
+        <div class="review-item">
+          <div class="review-icon">
+            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+          </div>
+          <h3>Project Location</h3>
+          <p>Country, city and local design code requirements that affect structural design.</p>
+        </div>
+        <div class="review-item">
+          <div class="review-icon">
+            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
+          </div>
+          <h3>Building Use & Type</h3>
+          <p>Industrial, warehouse, mining, commercial, agricultural or infrastructure application.</p>
+        </div>
+        <div class="review-item">
+          <div class="review-icon">
+            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/></svg>
+          </div>
+          <h3>Dimensions & Layout</h3>
+          <p>Span, length, eave height, bay spacing and equipment layout requirements.</p>
+        </div>
+        <div class="review-item">
+          <div class="review-icon">
+            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/></svg>
+          </div>
+          <h3>Structural Drawings</h3>
+          <p>Architectural, structural drawings, BOQ and project specifications for detailed review.</p>
+        </div>
+        <div class="review-item">
+          <div class="review-icon">
+            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1 0 2.83 2 2 0 0 1-2.83 0l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-2 2 2 2 0 0 1-2-2v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83 0 2 2 0 0 1 0-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1-2-2 2 2 0 0 1 2-2h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 0-2.83 2 2 0 0 1 2.83 0l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 2-2 2 2 0 0 1 2 2v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 0 2 2 0 0 1 0 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 2 2 2 2 0 0 1-2 2h-.09a1.65 1.65 0 0 0-1.51 1z"/></svg>
+          </div>
+          <h3>Crane & Equipment Loads</h3>
+          <p>Overhead crane capacity, equipment loads, dynamic loads and vibration requirements.</p>
+        </div>
+        <div class="review-item">
+          <div class="review-icon">
+            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="1" y="3" width="15" height="13"/><polygon points="16 8 20 8 23 11 23 16 16 16 16 8"/><circle cx="5.5" cy="18.5" r="2.5"/><circle cx="18.5" cy="18.5" r="2.5"/></svg>
+          </div>
+          <h3>Shipping & Assembly</h3>
+          <p>Container loading feasibility, member segmentation and site assembly considerations.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Section 04c: What Happens After You Submit -->
+  <section class="hub-section hub-section-light">
+    <div class="container">
+      <div class="hub-section-head">
+        <h2>What Happens After You Submit?</h2>
+        <p class="section-subtitle">A clear process from initial submission to project proposal.</p>
+      </div>
+      <div class="process-steps">
+        <div class="process-step">
+          <div class="step-num">01</div>
+          <h3>Project Information Received</h3>
+          <p>Your drawings and project requirements are received and logged in our project tracking system.</p>
+        </div>
+        <div class="process-step">
+          <div class="step-num">02</div>
+          <h3>Initial Engineering Review</h3>
+          <p>Our in-house design team reviews structural feasibility, loads, dimensions and manufacturing requirements.</p>
+        </div>
+        <div class="process-step">
+          <div class="step-num">03</div>
+          <h3>Missing Information Clarification</h3>
+          <p>If additional details are needed, we contact you via WeChat or email to clarify project requirements.</p>
+        </div>
+        <div class="process-step">
+          <div class="step-num">04</div>
+          <h3>Technical & Commercial Discussion</h3>
+          <p>We discuss structural solutions, manufacturing scope, delivery timeline and project coordination details.</p>
+        </div>
+        <div class="process-step">
+          <div class="step-num">05</div>
+          <h3>Proposal Based on Confirmed Scope</h3>
+          <p>A formal project proposal and quotation is provided based on confirmed drawings, scope and requirements.</p>
+        </div>
+      </div>
+      <p class="process-note">We aim to respond to qualified project inquiries within 24 hours. Complex projects may require additional engineering review time.</p>
+    </div>
+  </section>
+
+  <!-- Section 04d: Trust Evidence -->
+  <section class="hub-section">
+    <div class="container">
+      <div class="hub-section-head">
+        <h2>Why Project Owners Choose ZhongSai</h2>
+      </div>
+      <div class="trust-grid">
+        <div class="trust-item">
+          <div class="trust-num">In-house</div>
+          <h3>Design & Detailing Team</h3>
+          <p>Our own engineering team handles structural coordination, shop detailing and connection development.</p>
+        </div>
+        <div class="trust-item">
+          <div class="trust-num">In-house</div>
+          <h3>Project Delivery Team</h3>
+          <p>Dedicated delivery team coordinates production, packing, container loading and export documentation.</p>
+        </div>
+        <div class="trust-item">
+          <div class="trust-num">~100,000 m²</div>
+          <h3>Manufacturing Base</h3>
+          <p>Guangdong production facilities with controlled fabrication, inspection and quality management.</p>
+        </div>
+        <div class="trust-item">
+          <div class="trust-num">60+</div>
+          <h3>Export Countries</h3>
+          <p>Project delivery experience across Southeast Asia, Middle East, Africa, South America and other regions.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
   <!-- Section 05: Quote Form -->
   <section class="hub-section hub-section-dark">
     <div class="container">
       <div class="hub-section-head">
-        <p class="section-num">04</p>
         <h2>Project Inquiry Form</h2>
       </div>
       <div class="form-intro">
@@ -220,7 +374,7 @@ const supportItems = [
 }
 .inquiry-paths {
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: repeat(2, 1fr);
   gap: 32px;
   margin-top: 32px;
 }
@@ -433,4 +587,128 @@ const supportItems = [
     padding: 24px;
   }
 }
+
+.review-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+  margin-top: 32px;
+}
+.review-item {
+  padding: 28px;
+  background: #fff;
+  border-radius: 12px;
+  border: 1px solid rgba(0,0,0,0.06);
+}
+.review-icon {
+  color: var(--primary, #0a3d62);
+  margin-bottom: 16px;
+}
+.review-item h3 {
+  font-size: 1.1rem;
+  margin-bottom: 8px;
+  color: var(--primary, #0a3d62);
+}
+.review-item p {
+  font-size: 0.9rem;
+  color: var(--text-secondary, #666);
+  line-height: 1.6;
+  margin: 0;
+}
+.section-subtitle {
+  color: var(--text-secondary, #666);
+  margin-top: 8px;
+  font-size: 1rem;
+}
+.process-steps {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 20px;
+  margin-top: 32px;
+}
+.process-step {
+  padding: 24px;
+  background: #fff;
+  border-radius: 10px;
+  border: 1px solid rgba(0,0,0,0.06);
+  position: relative;
+}
+.step-num {
+  font-size: 1.5rem;
+  font-weight: 800;
+  color: var(--primary, #0a3d62);
+  margin-bottom: 12px;
+  opacity: 0.3;
+}
+.process-step h3 {
+  font-size: 1rem;
+  margin-bottom: 8px;
+  color: var(--primary, #0a3d62);
+}
+.process-step p {
+  font-size: 0.85rem;
+  color: var(--text-secondary, #666);
+  line-height: 1.6;
+  margin: 0;
+}
+.process-note {
+  text-align: center;
+  margin-top: 24px;
+  font-style: italic;
+  color: var(--text-secondary, #666);
+  font-size: 0.9rem;
+}
+.trust-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 24px;
+  margin-top: 32px;
+}
+.trust-item {
+  padding: 28px;
+  background: var(--bg-light, #f8f9fa);
+  border-radius: 12px;
+  text-align: center;
+}
+.trust-num {
+  font-size: 1.4rem;
+  font-weight: 800;
+  color: var(--primary, #0a3d62);
+  margin-bottom: 12px;
+}
+.trust-item h3 {
+  font-size: 1.05rem;
+  margin-bottom: 8px;
+  color: var(--primary, #0a3d62);
+}
+.trust-item p {
+  font-size: 0.88rem;
+  color: var(--text-secondary, #666);
+  line-height: 1.6;
+  margin: 0;
+}
+@media (max-width: 1024px) {
+  .review-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .process-steps {
+    grid-template-columns: repeat(3, 1fr);
+  }
+  .trust-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+@media (max-width: 768px) {
+  .process-steps {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+@media (max-width: 480px) {
+  .review-grid,
+  .process-steps,
+  .trust-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
 </style>

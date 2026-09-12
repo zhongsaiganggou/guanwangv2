@@ -1,5 +1,5 @@
-﻿---
-// ZhongSai V2 - Chinese Manufacturing & Quality Page
+---
+// ZhongSai V2 - 中文 制造与质量控制页面（升级版）
 import BaseLayout from '../../../layouts/BaseLayout.astro';
 import QuoteForm from '../../../components/QuoteForm.astro';
 import ExportDeliveryCTA from '../../../components/ExportDeliveryCTA.astro';
@@ -7,73 +7,136 @@ import '../../../styles/hub.css';
 import '../../../styles/manufacturing.css';
 
 const lang = 'zh';
-const title = '钢结构制造与质量控制｜中赛钢构';
-const description = '中赛钢构钢结构制造流程：原材料核验、CNC切割、组立焊接、矫正钻孔、异形构件加工、表面处理、质量检验、编号包装，支持按图加工与出口交付。';
+const title = '钢结构制造与质量控制｜中赛钢构生产基地';
+const description = '中赛钢构为海外项目提供按图加工的钢结构制造服务：原材料控制、数控切割、装配焊接、尺寸检验、表面处理、构件编号、包装装柜与出口交付。受控生产与质量控制体系。';
 
-const eightSteps = [
+const manufacturingSteps = [
   {
     num: '01',
-    title: '原材料准备',
-    titleEn: 'Raw Material Preparation',
-    desc: '钢材及配套材料按项目规格与要求进场、分类堆放与备料。',
-    img: '/images/company/factory-yard-gantry-crane.jpg'
+    title: '图纸审核与深化',
+    desc: '对项目图纸和加工图进行审核，确认关键尺寸、连接节点和制造要求后再开始生产。',
+    img: '/images/manufacturing/process/01-drawing-review.jpg'
   },
   {
     num: '02',
-    title: 'CNC切割',
-    titleEn: 'CNC Cutting',
-    desc: '使用数控切割设备按深化图进行钢板切割，控制尺寸精度与切割面质量。',
-    img: '/images/manufacturing/real/cutting-prep-9809.jpg'
+    title: '材料准备',
+    desc: '钢板、型钢及配套材料按项目规格和材质要求进场、标识并准备，确保材料符合项目要求。',
+    img: '/images/company/factory-yard-gantry-crane.jpg'
   },
   {
     num: '03',
-    title: '组立焊接',
-    titleEn: 'Assembly & Welding',
-    desc: 'H型钢组立与焊接，按项目图纸与焊接工艺要求组织施工，控制焊接变形。',
-    img: '/images/manufacturing/real/assembly-welding-9821.jpg'
+    title: '数控切割与钻孔',
+    desc: '采用数控切割和钻孔设备按加工图加工钢板和型钢，控制尺寸精度和孔位准确性。',
+    img: '/images/manufacturing/real/cutting-prep-9809.jpg'
   },
   {
     num: '04',
-    title: '钻孔与构件成型',
-    titleEn: 'Drilling & Member Finishing',
-    desc: '钻孔、端板加工与构件成型按深化图组织，控制孔位精度与构件尺寸。',
-    img: '/images/components/finished-steel-beams-columns.jpg'
+    title: '装配与焊接',
+    desc: '构件按批准图纸和焊接工艺要求进行装配和焊接，控制装配精度和焊接变形。',
+    img: '/images/manufacturing/real/assembly-welding-9821.jpg'
   },
   {
     num: '05',
-    title: '异形构件加工',
-    titleEn: 'Custom Component Fabrication',
-    desc: '箱型构件、桁架、节点板等异形构件加工，按项目图纸组织深化与制造。',
-    img: '/images/company/factory-steel-beam-fabrication.jpg'
+    title: '尺寸检验',
+    desc: '成品构件按项目图纸检验长度、孔位、对角线、直线度和连接接口尺寸。',
+    img: '/images/manufacturing/real/qc-inspection.jpg'
   },
   {
     num: '06',
-    title: '表面处理与涂装',
-    titleEn: 'Surface Preparation & Coating',
-    desc: '可根据项目要求安排表面清理、抛丸及涂层处理，具体处理方式和规格以项目技术要求为准。',
-    img: '/images/components/finished-coated-components.jpg'
+    title: '表面处理',
+    desc: '根据项目环境、腐蚀等级和客户规范，可安排表面清理、抛丸、喷漆或热浸镀锌。',
+    img: '/images/manufacturing/real/painting.jpg'
   },
   {
     num: '07',
-    title: '成品检查与交付准备',
-    titleEn: 'Finished Member Check & Delivery Preparation',
-    desc: '成品构件根据确认的加工要求进行检查、整理，并进入包装与交付准备环节。',
-    img: '/images/components/finished-steel-members-stacked.jpg'
+    title: '构件编号',
+    desc: '构件按加工图和安装顺序要求进行编号标识，便于海外现场识别和吊装。',
+    img: '/images/manufacturing/real/component-marking.jpg'
   },
   {
     num: '08',
-    title: '编号、包装与装柜',
-    titleEn: 'Marking, Packing & Loading',
-    desc: '可根据深化图和项目要求进行构件标识与编号，按构件类型、装柜顺序及出口运输要求组织包装。',
+    title: '包装与装柜',
+    desc: '构件按类型、装柜顺序和出口运输要求分组、包装并装入集装箱，附带装箱清单。',
     img: '/images/container-loading.jpg'
   }
 ];
 
+const qualityStages = [
+  { stage: '材料', control: '材质确认、质保书核验、材料标识追溯' },
+  { stage: '切割', control: '尺寸核验、切割面质量、孔位精度' },
+  { stage: '装配', control: '几何尺寸核验、装配间隙检查、对齐控制' },
+  { stage: '焊接', control: '外观检验、焊接工艺合规、项目要求的无损检测（如指定）' },
+  { stage: '表面', control: '表面处理质量、涂层厚度、镀锌检验（如适用）' },
+  { stage: '成品', control: '尺寸核验、编号检查、装箱清单复核' }
+];
+
 const evidenceImages = [
-  '/images/manufacturing/real/factory-overview-9819.jpg',
-  '/images/manufacturing/real/cutting-prep-9809.jpg',
-  '/images/manufacturing/real/welding-9820.jpg',
-  '/images/manufacturing/real/assembly-welding-9821.jpg'
+  { src: '/images/manufacturing/real/factory-overview-9819.jpg', alt: '中赛钢构生产基地全景', caption: '生产基地全景' },
+  { src: '/images/manufacturing/real/cnc-cutting.jpg', alt: '数控切割下料', caption: '数控切割下料' },
+  { src: '/images/manufacturing/real/shot-blasting.jpg', alt: '抛丸除锈处理', caption: '抛丸除锈处理' },
+  { src: '/images/manufacturing/real/qc-inspection.jpg', alt: 'QC尺寸检验', caption: 'QC尺寸检验' },
+  { src: '/images/manufacturing/real/cutting-prep-9809.jpg', alt: '中赛工厂数控切割与材料准备', caption: '数控切割与准备' },
+  { src: '/images/manufacturing/real/welding-9820.jpg', alt: '中赛生产基地钢结构焊接工序', caption: '装配与焊接' },
+  { src: '/images/manufacturing/real/assembly-welding-9821.jpg', alt: 'H型钢装配焊接生产线', caption: 'H型钢装配线' },
+  { src: '/images/company/factory-steel-beam-fabrication.jpg', alt: '中赛生产基地钢梁加工', caption: '钢梁加工' },
+  { src: '/images/components/finished-coated-components.jpg', alt: '成品表面处理后的钢结构构件', caption: '表面处理构件' },
+  { src: '/images/container-loading.jpg', alt: '钢结构构件装入出口集装箱', caption: '出口装柜' },
+  { src: '/images/company/factory-yard-gantry-crane.jpg', alt: '工厂堆场龙门吊钢材存放区', caption: '材料堆场' }
+];
+
+const projectTypes = [
+  { name: '工业厂房', href: '/zh/steel-workshop/' },
+  { name: '仓储物流', href: '/zh/steel-warehouse/' },
+  { name: '矿业与重工业', href: '/zh/steel-mining-factory/' },
+  { name: '钢平台', href: '/zh/components/' },
+  { name: '输送廊道', href: '/zh/components/' },
+  { name: '管廊架', href: '/zh/components/' },
+  { name: '公共与基础设施', href: '/zh/transportation-infrastructure-steel/' },
+  { name: '特种钢结构', href: '/zh/special-custom-steel-structures/' }
+];
+
+const certifications = [
+  { name: 'ISO 9001', desc: '质量管理体系认证', holder: '惠州制造基地', img: '/images/certifications/iso-9001-quality.jpg', valid: '2025-2028' },
+  { name: 'ISO 14001', desc: '环境管理体系认证', holder: '惠州制造基地', img: '/images/certifications/iso-14001-environmental.jpg', valid: '2025-2028' },
+  { name: 'ISO 45001', desc: '职业健康安全管理体系', holder: '惠州制造基地', img: '/images/certifications/iso-45001-occupational.jpg', valid: '2025-2028' },
+  { name: 'ISO 3834-2', desc: '熔焊质量综合要求', holder: '东莞制造基地', img: '/images/certifications/iso-3834-welding.jpg', valid: '2024-2027' },
+  { name: 'EN 1090 EXC2', desc: '钢结构构件CE/CPR认证', holder: '东莞制造基地', img: '/images/certifications/en-1090-ce.jpg', valid: '2024起' },
+  { name: 'CIDB IBS', desc: '马来西亚工业化建筑系统认证', holder: '马来西亚合作方/惠州工厂', img: '/images/certifications/malaysia-cidb-ibs.jpg', valid: '2026-2027' },
+];
+
+const faqs = [
+  {
+    q: '中赛可以按客户提供的图纸进行制造吗？',
+    a: '可以。中赛可以根据客户提供的结构图、建筑图和加工图进行钢结构制造。如有需要，我们也可以在生产前配合进行加工图深化。所有制造均以批准的图纸和项目技术规格为准。'
+  },
+  {
+    q: '生产前可以配合加工图深化吗？',
+    a: '可以。中赛可以在项目范围内配合结构深化和加工图编制，包括节点深化、构件清单和制造图准备。具体深化责任范围根据项目合同和图纸要求确定。'
+  },
+  {
+    q: '中赛如何控制钢结构制造质量？',
+    a: '质量控制按制造阶段组织：进场材料进行材质和质保书核验；切割后检查尺寸和孔位；装配时核验几何尺寸和装配间隙；焊接过程进行外观检验和项目要求的无损检测；表面处理后检查处理质量和涂层；成品出厂前进行尺寸和编号核验。具体检验方法和验收标准按项目技术规格执行。'
+  },
+  {
+    q: '复杂钢结构可以在发货前进行预拼装吗？',
+    a: '对于复杂桁架、钢平台、特殊节点、基础设施结构等复杂项目，可以根据项目要求安排试拼装或局部预拼。并非所有项目都需要全尺寸试拼装，是否需要及预拼范围根据项目复杂度、客户要求和合同规格确定。'
+  },
+  {
+    q: '构件如何编号以便海外安装？',
+    a: '构件按加工图、安装顺序和项目标识系统进行编号。每个构件标注其图纸编号、构件ID和包装组号，帮助海外安装团队按安装顺序正确识别、定位和吊装构件，减少现场混乱和错误。'
+  },
+  {
+    q: '可以提供哪些防腐处理方案？',
+    a: '表面处理方案包括喷漆体系、热浸镀锌（如适用）以及项目定制涂层体系。具体防腐方案根据项目环境、腐蚀等级、客户规范、当地标准和设计寿命要求确定。我们不对所有项目采用统一涂层方案，也不承诺未经项目工程分析的固定防腐寿命。'
+  },
+  {
+    q: '钢结构如何包装装入集装箱？',
+    a: '构件按类型、重量、装柜顺序和出口运输要求分组包装。超长构件可根据需要拆分以适应集装箱尺寸，采用螺栓拼接节点便于现场组装。每批发货附带装箱清单，构件在运输过程中采取保护措施防止损坏。优化装柜可以在合适项目中降低运费，但实际节省幅度因项目尺寸、构件规格和运输路线而异。'
+  },
+  {
+    q: '中赛提供当地施工服务吗？',
+    a: '中赛提供设计/深化配合、钢结构制造、出口供货和安装技术指导。当地土建施工、基础施工、现场人工安装和当地政府审批通常由当地承包商或业主指定的施工团队负责。具体范围按项目合同确定。'
+  }
 ];
 ---
 
@@ -84,52 +147,74 @@ const evidenceImages = [
     <div class="hub-hero-overlay"></div>
     <div class="container hub-hero-content">
       <div class="hub-breadcrumb">
-        <a href="/zh/">首页</a><span>/</span><span>制造能力</span>
+        <a href="/zh/">首页</a><span>/</span><span>制造与质量</span>
       </div>
-      <p class="eyebrow">MANUFACTURING · 从图纸到交付</p>
-      <h1>钢结构制造与<br>质量控制</h1>
-      <p class="lead">中赛钢构把项目图纸转化为可出口交付的钢结构构件——8步制造流程，覆盖原材料核验到编号包装。</p>
+      <p class="eyebrow">制造实力 · 从图纸到出口交付</p>
+      <h1>海外钢结构项目<br>制造与质量控制</h1>
+      <p class="lead">中赛为工业厂房、仓储物流、矿业能源、基础设施等海外钢结构项目提供按图加工制造服务，涵盖受控生产、检验、编号、包装与出口交付。</p>
+      <div class="hero-stats">
+        <div class="hero-stat">
+          <span class="stat-number">约10万㎡</span>
+          <span class="stat-label">生产基地面积</span>
+        </div>
+        <div class="hero-stat">
+          <span class="stat-number">约10万吨</span>
+          <span class="stat-label">年产能</span>
+        </div>
+        <div class="hero-stat">
+          <span class="stat-number">300+</span>
+          <span class="stat-label">一线生产工人</span>
+        </div>
+        <div class="hero-stat">
+          <span class="stat-number">按项目</span>
+          <span class="stat-label">定制制造与出口</span>
+        </div>
+      </div>
+      <div class="hero-cta-group">
+        <a href="#quote" class="btn btn-primary">提交项目图纸进行制造评审</a>
+        <a href="/zh/projects/" class="btn btn-secondary">查看项目案例</a>
+      </div>
     </div>
   </section>
 
-  <!-- 01 制造能力概览 -->
+  <!-- 01 制造概述 -->
   <section class="section" style="padding: 70px 0;">
     <div class="container">
       <div class="section-heading reveal">
         <div>
-          <p class="section-index">01 / 制造能力概览</p>
-          <h2>从图纸到可出口交付的构件</h2>
+          <p class="section-index">概述</p>
+          <h2>从批准图纸到出口成品构件</h2>
         </div>
         <div>
-          <p>中赛钢构提供钢结构制造加工服务，覆盖设计深化、材料准备、切割、组立焊接、矫正钻孔、异形构件加工、表面处理、质量检验、构件编号与包装装柜等关键环节。</p>
-          <p style="margin-top: 12px;">制造与检验根据项目图纸、深化图、项目技术规范及适用项目要求进行。具体材料、焊接、表面处理和检验参数按项目要求确定。</p>
+          <p>中赛提供按项目定制的钢结构制造服务，涵盖图纸审核、深化配合、材料准备、数控切割、装配焊接、尺寸检验、表面处理、构件编号、包装与装柜出口。</p>
+          <p style="margin-top: 12px;">制造与检验按批准的项目图纸、加工图、项目技术规格和适用要求执行。具体材料、焊接工艺、表面处理和检验参数按项目要求和合同条款确定。</p>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- 02 8步制造流程 -->
+  <!-- 02 八步制造流程 -->
   <section class="manufacturing-process-section">
     <div class="container">
       <div class="section-heading reveal" style="margin-bottom: 40px;">
         <div>
-          <p class="section-index">02 / 制造流程</p>
-          <h2>8步制造流程</h2>
+          <p class="section-index">流程</p>
+          <h2>从图纸到制造：八步生产流程</h2>
         </div>
         <div>
-          <p>从原材料核验到编号包装，每一步按项目图纸与技术要求组织实施。</p>
+          <p>每一步均按批准的项目图纸和技术要求组织，质量控制贯穿每个制造阶段。</p>
         </div>
       </div>
+      <p style="font-size:13px;color:#16a34a;margin-bottom:16px;">以下制造环节均在中赛东莞/惠州制造基地实际完成</p>
       <div class="process-grid">
-        {eightSteps.map((step, i) => (
+        {manufacturingSteps.map((step, i) => (
           <div class={`process-card reveal reveal-delay-${(i % 4) + 1}`}>
             <div class="process-card-img">
-              <img src={step.img} alt={step.num === "07" ? "中赛钢构制造现场" : step.title} loading="lazy">
-              <span class="process-card-num">STEP {step.num}</span>
+              <img src={step.img} alt={step.title} loading={i < 2 ? "eager" : "lazy"} width="400" height="250">
+              <span class="process-card-num">第 {step.num} 步</span>
             </div>
             <div class="process-card-body">
               <h3>{step.title}</h3>
-              <p class="process-card-en">{step.titleEn}</p>
               <p>{step.desc}</p>
             </div>
           </div>
@@ -138,138 +223,659 @@ const evidenceImages = [
     </div>
   </section>
 
-  <!-- 03 真实制造现场 -->
+  <!-- 03 原材料控制 -->
   <section class="section" style="padding: 70px 0; background: #f8fafc;">
     <div class="container">
-      <div class="section-heading reveal" style="margin-bottom: 36px;">
+      <div class="section-heading reveal">
         <div>
-          <p class="section-index">03 / 制造现场</p>
-          <h2>真实制造现场</h2>
+          <p class="section-index">材料</p>
+          <h2>原材料检验与追溯</h2>
         </div>
         <div>
-          <p>中赛钢构生产基地，覆盖切割、组立焊接、表面处理、质量检验与包装装柜等环节。</p>
+          <p>材料控制从进场检验开始，贯穿整个生产过程，确保钢材材质和性能符合项目要求。</p>
         </div>
       </div>
-      <div class="evidence-grid">
+      <div class="quality-grid">
+        <div class="quality-item reveal reveal-delay-1">
+          <h4>材质确认</h4>
+          <p>钢板和型钢进场时按项目指定的材质等级和标准进行核验，确认无误后进入生产。</p>
+        </div>
+        <div class="quality-item reveal reveal-delay-2">
+          <h4>质保书核验</h4>
+          <p>按项目规格和客户要求收集并核验进场材料的钢厂质保书和材质证明文件。</p>
+        </div>
+        <div class="quality-item reveal reveal-delay-3">
+          <h4>材料标识</h4>
+          <p>钢板和型钢在生产过程中进行标识和跟踪，保持从进场材料到成品构件的可追溯性。</p>
+        </div>
+        <div class="quality-item reveal reveal-delay-4">
+          <h4>进场检验</h4>
+          <p>对进场材料进行外观和尺寸检查，按项目要求核验表面质量、截面尺寸和钢板厚度。</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 04 切割装配焊接 -->
+  <section class="section" style="padding: 70px 0;">
+    <div class="container">
+      <div class="section-heading reveal">
+        <div>
+          <p class="section-index">生产</p>
+          <h2>数控切割、装配与焊接</h2>
+        </div>
+        <div>
+          <p>核心生产工序按批准图纸和焊接工艺要求组织，每个阶段控制尺寸精度和焊接质量。</p>
+        </div>
+      </div>
+            <div class="dual-path-grid" style="grid-template-columns: repeat(3, 1fr); gap: 24px; margin-top: 40px;">
+        <div class="dual-path-card reveal reveal-delay-1" style="padding: 0; overflow: hidden;">
+          <div style="width: 100%; height: 180px; overflow: hidden; background: #e2e8f0;">
+            <img src="/images/manufacturing/real/cutting-prep-9809.jpg" alt="数控切割与材料准备" style="width: 100%; height: 100%; object-fit: cover;" loading="lazy" width="400" height="180">
+          </div>
+          <div style="padding: 24px 28px;">
+            <div class="path-icon" style="width: 48px; height: 48px; font-size: 16px; font-weight: 700; color:#fff; margin-bottom: 16px; display:flex; align-items:center; justify-content:center; background: #1e40af; border-radius: 8px;">01</div>
+            <h3 style="font-size: 20px; margin-bottom: 12px; color: #0f172a;">数控切割与钻孔</h3>
+            <ul style="margin: 0; padding-left: 18px; color: #475569; font-size: 14px; line-height: 1.8;">
+            <li>按加工图进行钢板切割</li>
+            <li>型钢切割与端部加工</li>
+            <li>螺栓连接节点数控钻孔</li>
+            <li>孔位精度控制</li>
+            <li>构件装配前准备</li>
+            </ul>
+          </div>
+        </div>
+        <div class="dual-path-card reveal reveal-delay-2" style="padding: 0; overflow: hidden;">
+          <div style="width: 100%; height: 180px; overflow: hidden; background: #e2e8f0;">
+            <img src="/images/manufacturing/real/assembly-welding-9821.jpg" alt="H型钢装配与组对" style="width: 100%; height: 100%; object-fit: cover;" loading="lazy" width="400" height="180">
+          </div>
+          <div style="padding: 24px 28px;">
+            <div class="path-icon" style="width: 48px; height: 48px; font-size: 16px; font-weight: 700; color:#fff; margin-bottom: 16px; display:flex; align-items:center; justify-content:center; background: #1e40af; border-radius: 8px;">02</div>
+            <h3 style="font-size: 20px; margin-bottom: 12px; color: #0f172a;">装配与组对</h3>
+            <ul style="margin: 0; padding-left: 18px; color: #475569; font-size: 14px; line-height: 1.8;">
+            <li>H型钢装配与对齐</li>
+            <li>按图纸进行构件组对</li>
+            <li>连接接口尺寸核验</li>
+            <li>几何尺寸控制</li>
+            <li>焊接准备与顺序安排</li>
+            </ul>
+          </div>
+        </div>
+        <div class="dual-path-card reveal reveal-delay-3" style="padding: 0; overflow: hidden;">
+          <div style="width: 100%; height: 180px; overflow: hidden; background: #e2e8f0;">
+            <img src="/images/manufacturing/real/welding-9820.jpg" alt="钢结构焊接质量控制" style="width: 100%; height: 100%; object-fit: cover;" loading="lazy" width="400" height="180">
+          </div>
+          <div style="padding: 24px 28px;">
+            <div class="path-icon" style="width: 48px; height: 48px; font-size: 16px; font-weight: 700; color:#fff; margin-bottom: 16px; display:flex; align-items:center; justify-content:center; background: #1e40af; border-radius: 8px;">03</div>
+            <h3 style="font-size: 20px; margin-bottom: 12px; color: #0f172a;">焊接质量</h3>
+            <ul style="margin: 0; padding-left: 18px; color: #475569; font-size: 14px; line-height: 1.8;">
+            <li>按批准的WPS焊接（如适用）</li>
+            <li>焊接顺序与变形控制</li>
+            <li>所有焊缝外观检验</li>
+            <li>项目要求的无损检测（UT/MT/PT）</li>
+            <li>焊工资质按项目要求确认</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+  </section>
+
+  <!-- 05 尺寸检验与预拼装 -->
+  <section class="section" style="padding: 70px 0; background: #f8fafc;">
+    <div class="container">
+      <div class="section-heading reveal">
+        <div>
+          <p class="section-index">检验</p>
+          <h2>尺寸检验与预拼装</h2>
+        </div>
+        <div>
+          <p>成品检验确保构件尺寸、连接接口和编号与项目图纸一致，支持海外现场正确安装。</p>
+        </div>
+      </div>
+      <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 40px; margin-top: 40px;" class="inspection-grid">
+        <div class="reveal reveal-delay-1">
+          <h3 style="font-size: 22px; margin-bottom: 20px; color: #0f172a;">尺寸检验</h3>
+          <div class="quality-grid" style="grid-template-columns: 1fr 1fr; gap: 16px;">
+            <div class="quality-item" style="padding: 20px;">
+              <h4 style="font-size: 15px;">长度与直线度</h4>
+              <p style="font-size: 13px;">构件长度和直线度按图纸公差要求核验。</p>
+            </div>
+            <div class="quality-item" style="padding: 20px;">
+              <h4 style="font-size: 15px;">孔位精度</h4>
+              <p style="font-size: 13px;">螺栓孔位置和间距检查，确保连接匹配。</p>
+            </div>
+            <div class="quality-item" style="padding: 20px;">
+              <h4 style="font-size: 15px;">对角线与几何</h4>
+              <p style="font-size: 13px;">对角线测量和装配几何尺寸核验，确保方正。</p>
+            </div>
+            <div class="quality-item" style="padding: 20px;">
+              <h4 style="font-size: 15px;">连接接口</h4>
+              <p style="font-size: 13px;">连接板、端板和接口尺寸检查，确保现场配合。</p>
+            </div>
+          </div>
+        </div>
+        <div class="reveal reveal-delay-2">
+          <h3 style="font-size: 22px; margin-bottom: 20px; color: #0f172a;">按需预拼装</h3>
+          <p style="color: #475569; line-height: 1.8; margin-bottom: 20px;">对于复杂桁架、钢平台、特殊节点、基础设施结构等复杂项目，可根据项目要求安排试拼装或局部预拼。</p>
+          <p style="color: #475569; line-height: 1.8; margin-bottom: 20px;">并非所有项目都需要全尺寸试拼装。是否需要及预拼范围根据以下因素确定：</p>
+          <ul style="color: #475569; line-height: 2; padding-left: 20px;">
+            <li>项目复杂度和连接类型</li>
+            <li>客户要求和合同规格</li>
+            <li>海外现场安装条件限制</li>
+            <li>构件尺寸和运输拆分方式</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 06 表面处理 -->
+  <section class="section" style="padding: 70px 0;">
+    <div class="container">
+      <div class="section-heading reveal">
+        <div>
+          <p class="section-index">防腐</p>
+          <h2>表面处理与防腐保护</h2>
+        </div>
+        <div>
+          <p>表面保护方案根据项目环境、腐蚀等级、客户规范和设计寿命要求选择。</p>
+        </div>
+      </div>
+      <div class="quality-grid" style="margin-top: 40px;">
+        <div class="quality-item reveal reveal-delay-1">
+          <h4>表面清理</h4>
+          <p>涂层前对钢材表面进行清理和预处理，按项目要求去除锈蚀、氧化皮和污染物。</p>
+        </div>
+        <div class="quality-item reveal reveal-delay-2">
+          <h4>抛丸处理</h4>
+          <p>按项目规格要求可安排抛丸或喷砂处理，达到要求的表面清洁度和粗糙度。</p>
+        </div>
+        <div class="quality-item reveal reveal-delay-3">
+          <h4>喷漆体系</h4>
+          <p>按项目规格可施工底漆、中间漆和面漆体系，必要时核验涂层厚度和附着力。</p>
+        </div>
+        <div class="quality-item reveal reveal-delay-4">
+          <h4>热浸镀锌</h4>
+          <p>对适用构件可按项目要求安排热浸镀锌，为合适应用场景提供防腐保护。</p>
+        </div>
+      </div>
+      <div style="margin-top: 32px; padding: 24px; background: #fffbeb; border-left: 4px solid #f59e0b; border-radius: 0 8px 8px 0;" class="reveal">
+        <p style="margin: 0; color: #92400e; font-size: 14px; line-height: 1.7;"><strong>重要说明：</strong>具体防腐保护体系根据项目环境、腐蚀等级、客户规范、当地标准和设计寿命要求确定。我们不对所有项目采用统一涂层方案，也不承诺未经项目工程分析的固定防腐寿命。</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- 07 构件编号 -->
+  <section class="dual-path-section">
+    <div class="container">
+      <div class="section-heading reveal" style="color: white; text-align: center; display: block; margin-bottom: 36px;">
+        <p class="section-index" style="color: #f59e0b;">编号</p>
+        <h2 style="color: white; margin-bottom: 10px;">面向海外安装的构件编号</h2>
+        <p style="color: rgba(255,255,255,0.65); max-width: 750px; margin: 0 auto;">清晰的构件编号和标识减少海外现场安装混乱，帮助当地承包商按安装顺序正确识别、定位和吊装每个构件。</p>
+      </div>
+      <div class="dual-path-grid" style="grid-template-columns: repeat(3, 1fr); gap: 20px;" class="marking-grid">
+        <div class="dual-path-card reveal reveal-delay-1" style="padding: 28px 24px;">
+          <div class="path-icon" style="width: 44px; height: 44px; font-size: 15px; font-weight: 700; color:#fff; margin-bottom: 14px;">01</div>
+          <h3 style="font-size: 18px; margin-bottom: 8px;">构件编号</h3>
+          <p style="font-size: 14px; margin-bottom: 0;">每个构件标注唯一识别编号，对应其在加工图和吊装顺序中的位置。</p>
+        </div>
+        <div class="dual-path-card reveal reveal-delay-2" style="padding: 28px 24px;">
+          <div class="path-icon" style="width: 44px; height: 44px; font-size: 15px; font-weight: 700; color:#fff; margin-bottom: 14px;">02</div>
+          <h3 style="font-size: 18px; margin-bottom: 8px;">图纸对应</h3>
+          <p style="font-size: 14px; margin-bottom: 0;">编号包含图纸图号和构件标记，便于现场团队对照安装图纸核对构件。</p>
+        </div>
+        <div class="dual-path-card reveal reveal-delay-3" style="padding: 28px 24px;">
+          <div class="path-icon" style="width: 44px; height: 44px; font-size: 15px; font-weight: 700; color:#fff; margin-bottom: 14px;">03</div>
+          <h3 style="font-size: 18px; margin-bottom: 8px;">包装分组</h3>
+          <p style="font-size: 14px; margin-bottom: 0;">构件按包装单元和集装箱分组，装箱清单标明每个包装和集装箱内的构件。</p>
+        </div>
+        <div class="dual-path-card reveal reveal-delay-4" style="padding: 28px 24px;">
+          <div class="path-icon" style="width: 44px; height: 44px; font-size: 15px; font-weight: 700; color:#fff; margin-bottom: 14px;">04</div>
+          <h3 style="font-size: 18px; margin-bottom: 8px;">安装顺序</h3>
+          <p style="font-size: 14px; margin-bottom: 0;">按项目需要，编号可包含吊装顺序参考，支持现场有序组装，减少安装错误。</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 08 包装与装柜 -->
+  <section class="section" style="padding: 70px 0; background: #f8fafc;">
+    <div class="container">
+      <div class="section-heading reveal">
+        <div>
+          <p class="section-index">出口</p>
+          <h2>包装与集装箱装柜</h2>
+        </div>
+        <div>
+          <p>构件包装和装柜以防止运输损坏和优化集装箱空间为目标，支持高效海外交付。</p>
+        </div>
+      </div>
+      <div style="display: grid; grid-template-columns: 1.2fr 1fr; gap: 48px; align-items: start; margin-top: 40px;" class="packing-grid">
+        <div class="reveal reveal-delay-1">
+          <div class="quality-grid" style="grid-template-columns: 1fr 1fr; gap: 16px;">
+            <div class="quality-item" style="padding: 20px;">
+              <h4 style="font-size: 15px;">构件分组</h4>
+              <p style="font-size: 13px;">按类型、重量和安装顺序分组，便于高效包装和现场卸货。</p>
+            </div>
+            <div class="quality-item" style="padding: 20px;">
+              <h4 style="font-size: 15px;">装箱清单</h4>
+              <p style="font-size: 13px;">每批发货附带详细装箱清单，标明构件、数量和包装编号。</p>
+            </div>
+            <div class="quality-item" style="padding: 20px;">
+              <h4 style="font-size: 15px;">运输保护</h4>
+              <p style="font-size: 13px;">海运过程中采取保护措施防止构件损坏，包括边角保护和固定。</p>
+            </div>
+            <div class="quality-item" style="padding: 20px;">
+              <h4 style="font-size: 15px;">长构件拆分</h4>
+              <p style="font-size: 13px;">超大超长构件按需要拆分以适应标准集装箱尺寸，采用螺栓拼接节点。</p>
+            </div>
+            <div class="quality-item" style="padding: 20px;">
+              <h4 style="font-size: 15px;">装柜规划</h4>
+              <p style="font-size: 13px;">规划集装箱装载以优化空间利用和重量分布，装柜顺序配合现场卸货。</p>
+            </div>
+            <div class="quality-item" style="padding: 20px;">
+              <h4 style="font-size: 15px;">出口单证</h4>
+              <p style="font-size: 13px;">提供出口单证支持，包括装箱单、商业发票和目的港要求的其他文件。</p>
+            </div>
+          </div>
+        </div>
+        <div class="reveal reveal-delay-2">
+          <div style="position: relative; border-radius: 12px; overflow: hidden; margin-bottom: 24px;">
+            <img src="/images/container-loading.jpg" alt="钢结构构件装入出口集装箱" style="width: 100%; height: auto; display: block;" width="500" height="350">
+          </div>
+          <div style="padding: 24px; background: #eff6ff; border-radius: 12px; border: 1px solid #bfdbfe;">
+            <h4 style="font-size: 17px; color: #1e40af; margin-bottom: 12px;">优化装柜</h4>
+            <p style="font-size: 14px; color: #1e3a5f; line-height: 1.7; margin: 0;">优化集装箱装柜可以在合适项目中降低运费。实际节省幅度因项目尺寸、构件规格、集装箱类型和运输路线而异。我们规划装载以最大化空间利用，同时确保构件保护和安全装卸。</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 09 分阶段质量控制表 -->
+  <section class="section" style="padding: 70px 0;">
+    <div class="container">
+      <div class="section-heading reveal">
+        <div>
+          <p class="section-index">质量表</p>
+          <h2>分制造阶段质量控制</h2>
+        </div>
+        <div>
+          <p>质量控制贯穿每个制造阶段，具体检验活动按项目技术规格和合同条款组织。</p>
+        </div>
+      </div>
+      <div style="margin-top: 40px; overflow-x: auto;" class="quality-table-wrap reveal">
+        <table style="width: 100%; border-collapse: collapse; background: white; border-radius: 12px; overflow: hidden; box-shadow: 0 1px 3px rgba(0,0,0,0.1);" class="quality-table">
+          <thead>
+            <tr style="background: #1e3a5f; color: white;">
+              <th style="padding: 16px 20px; text-align: left; font-size: 15px; font-weight: 600;">制造阶段</th>
+              <th style="padding: 16px 20px; text-align: left; font-size: 15px; font-weight: 600;">典型质量控制活动</th>
+            </tr>
+          </thead>
+          <tbody>
+            {qualityStages.map((item, i) => (
+              <tr style={i % 2 === 0 ? 'background: #f8fafc;' : 'background: white;'}>
+                <td style="padding: 14px 20px; font-weight: 600; color: #0f172a; border-bottom: 1px solid #e2e8f0; font-size: 14px;">{item.stage}</td>
+                <td style="padding: 14px 20px; color: #475569; border-bottom: 1px solid #e2e8f0; font-size: 14px; line-height: 1.6;">{item.control}</td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
+      </div>
+      <p style="margin-top: 16px; font-size: 13px; color: #64748b; font-style: italic;">具体检验方法、验收标准和检测要求按项目技术规格和合同条款确定。并非所有项目都需要全部列出的检验活动。</p>
+    </div>
+  </section>
+
+  <!-- 10 项目型制造 -->
+  <section class="section" style="padding: 70px 0; background: #f8fafc;">
+    <div class="container">
+      <div class="section-heading reveal">
+        <div>
+          <p class="section-index">项目类型</p>
+          <h2>按项目定制的钢结构制造</h2>
+        </div>
+        <div>
+          <p>中赛不是标准SKU钢材供应商。我们按项目图纸和技术要求制造钢结构，覆盖多种项目类型和结构体系。</p>
+        </div>
+      </div>
+      <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; margin-top: 40px;" class="project-types-grid">
+        {projectTypes.map((pt, i) => (
+          <a href={pt.href} class={`reveal reveal-delay-${(i % 4) + 1}`} style="display: block; padding: 20px; background: white; border-radius: 10px; border: 1px solid #e2e8f0; text-decoration: none; color: #0f172a; font-weight: 500; font-size: 14px; transition: all 0.2s; text-align: center;">
+            {pt.name}
+          </a>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- 11 制造证据 -->
+  <section class="section" style="padding: 70px 0;">
+    <div class="container">
+      <div class="section-heading reveal">
+        <div>
+          <p class="section-index">证据</p>
+          <h2>真实制造证据</h2>
+        </div>
+        <div>
+          <p>中赛生产基地、生产工序、质量控制和出口准备的实拍照片。这些是真实工厂和生产照片，非AI生成效果图。</p>
+        </div>
+      </div>
+      <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; margin-top: 40px;" class="evidence-grid-upgraded">
         {evidenceImages.map((img, i) => (
-          <div class={`evidence-item reveal reveal-delay-${(i % 4) + 1}`}>
-            <img src={img} alt="中赛钢构制造现场" loading="lazy">
+          <div class={`reveal reveal-delay-${(i % 4) + 1}`} style="position: relative; border-radius: 10px; overflow: hidden; background: #f1f5f9;">
+            <img src={img.src} alt={img.alt} loading={i < 4 ? "eager" : "lazy"} style="width: 100%; height: 180px; object-fit: cover; display: block;" width="300" height="180">
+            <div style="position: absolute; bottom: 0; left: 0; right: 0; padding: 8px 12px; background: linear-gradient(transparent, rgba(0,0,0,0.7)); color: white; font-size: 12px;">{img.caption}</div>
           </div>
         ))}
       </div>
     </div>
   </section>
 
-  <!-- 04 质量与项目要求 -->
+  <!-- 12 认证资质 -->
+  <section class="section" style="padding: 70px 0; background: #f8fafc;">
+    <div class="container">
+      <div class="section-heading reveal">
+        <div>
+          <p class="section-index">认证</p>
+          <h2>认证与制造标准</h2>
+        </div>
+        <div>
+          <p>中赛遵循既定的质量管理和制造标准。具体认证适用于相关制造主体和证书标明的范围。</p>
+        </div>
+      </div>
+      <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; margin-top: 40px;" class="cert-grid">
+        {certifications.map((cert, i) => (
+          <div class={`reveal reveal-delay-${(i % 3) + 1}`} style="background: white; border-radius: 12px; overflow: hidden; border: 1px solid #e2e8f0;">
+            <div style="height: 160px; overflow: hidden; background: #f8fafc;">
+              <img src={cert.img} alt={cert.name} style="width: 100%; height: 100%; object-fit: contain;" loading="lazy">
+            </div>
+            <div style="padding: 20px; text-align: center;">
+              <h4 style="font-size: 15px; font-weight: 600; color: #0f172a; margin-bottom: 6px;">{cert.name}</h4>
+              <p style="font-size: 12.5px; color: #64748b; line-height: 1.5; margin: 0 0 8px;">{cert.desc}</p>
+              <p style="font-size: 11px; color: #94a3b8; margin: 0;">持证：{cert.holder} · {cert.valid}</p>
+            </div>
+          </div>
+        ))}
+      </div>
+      <div style="margin-top: 32px; padding: 20px; background: #fffbeb; border-left: 4px solid #f59e0b; border-radius: 0 8px 8px 0;" class="reveal">
+        <p style="margin: 0; color: #92400e; font-size: 13px; line-height: 1.7;"><strong>说明：</strong>证书主体、证书编号、有效期和适用范围应以原始证书文件为准。如证书由关联生产基地或制造实体持有而非出口公司本体，将明确说明主体关系。我们不主张不适用于相关主体或范围的认证。</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- 13 FAQ -->
   <section class="section" style="padding: 70px 0;">
     <div class="container">
       <div class="section-heading reveal">
         <div>
-          <p class="section-index">04 / 质量控制</p>
-          <h2>质量与项目要求</h2>
+          <p class="section-index">常见问题</p>
+          <h2>常见问题解答</h2>
         </div>
         <div>
-          <p>制造与检验根据项目图纸、深化图、项目技术规范及适用项目要求进行。中赛钢构执行ISO 9001质量管理体系要求。</p>
-          <p style="margin-top: 12px;">具体焊接工艺、检验比例、检测方法及验收标准按项目技术要求与合同约定执行。</p>
+          <p>关于中赛钢结构制造、质量控制和出口交付的常见问题。</p>
         </div>
       </div>
-      <div class="quality-grid">
-        <div class="quality-item reveal reveal-delay-1">
-          <h4>图纸与深化</h4>
-          <p>按项目图纸与深化图组织制造，关键尺寸与节点按图核对。</p>
-        </div>
-        <div class="quality-item reveal reveal-delay-2">
-          <h4>过程检验</h4>
-          <p>制造过程中按项目要求进行尺寸、焊接与外观检查与记录。</p>
-        </div>
-        <div class="quality-item reveal reveal-delay-3">
-          <h4>成品检验</h4>
-          <p>成品检验根据项目技术要求组织，具体检查项目和验收要求以项目要求为准。</p>
-        </div>
-        <div class="quality-item reveal reveal-delay-4">
-          <h4>ISO 9001</h4>
-          <p>中赛钢构执行ISO 9001质量管理体系要求。</p>
-        </div>
+      <div style="max-width: 900px; margin: 40px auto 0;" class="faq-container">
+        {faqs.map((faq, i) => (
+          <details class={`reveal reveal-delay-${(i % 4) + 1}`} style="margin-bottom: 12px; background: white; border: 1px solid #e2e8f0; border-radius: 10px; overflow: hidden;">
+            <summary style="padding: 18px 24px; cursor: pointer; font-weight: 600; color: #0f172a; font-size: 15px; list-style: none; display: flex; justify-content: space-between; align-items: center;">
+              <span>{faq.q}</span>
+              <span style="color: #1e40af; font-size: 20px; flex-shrink: 0; margin-left: 16px;">+</span>
+            </summary>
+            <div style="padding: 0 24px 20px; color: #475569; font-size: 14px; line-height: 1.8;">
+              {faq.a}
+            </div>
+          </details>
+        ))}
       </div>
     </div>
   </section>
 
-  <!-- 05 编号包装与出口准备 -->
-  <section class="dual-path-section">
+  <!-- 14 相关链接 -->
+  <section class="section" style="padding: 70px 0; background: #f8fafc;">
     <div class="container">
-      <div class="section-heading reveal" style="color: white; text-align: center; display: block; margin-bottom: 36px;">
-        <p class="section-index" style="color: #f59e0b;">05 / 出口准备</p>
-        <h2 style="color: white; margin-bottom: 10px;">编号、包装与出口准备</h2>
-        <p style="color: rgba(255,255,255,0.65); max-width: 700px; margin: 0 auto;">可根据深化图和项目要求进行构件标识与编号，按构件类型、装柜顺序及出口运输要求组织包装，支持集装箱装柜与出口单证准备。</p>
-      </div>
-      <div class="dual-path-grid" style="grid-template-columns: repeat(3, 1fr); gap: 20px;">
-        <div class="dual-path-card reveal reveal-delay-1" style="padding: 28px 24px;">
-          <div class="path-icon" style="width: 44px; height: 44px; font-size: 15px; font-weight: 700; color:#fff; margin-bottom: 14px;">01</div>
-          <h3 style="font-size: 18px; margin-bottom: 8px;">构件编号</h3>
-          <p style="font-size: 14px; margin-bottom: 0;">可根据深化图和项目要求进行构件标识，便于现场安装识别与核对。</p>
-        </div>
-        <div class="dual-path-card reveal reveal-delay-2" style="padding: 28px 24px;">
-          <div class="path-icon" style="width: 44px; height: 44px; font-size: 15px; font-weight: 700; color:#fff; margin-bottom: 14px;">02</div>
-          <h3 style="font-size: 18px; margin-bottom: 8px;">包装组织</h3>
-          <p style="font-size: 14px; margin-bottom: 0;">按构件类型、装柜顺序及出口运输要求组织包装，附装箱清单。</p>
-        </div>
-        <div class="dual-path-card reveal reveal-delay-3" style="padding: 28px 24px;">
-          <div class="path-icon" style="width: 44px; height: 44px; font-size: 15px; font-weight: 700; color:#fff; margin-bottom: 14px;">03</div>
-          <h3 style="font-size: 18px; margin-bottom: 8px;">出口准备</h3>
-          <p style="font-size: 14px; margin-bottom: 0;">支持集装箱装柜、出口单证支持与物流协调，配合项目交付安排。</p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- 06 相关能力 -->
-  <section class="section" style="padding: 70px 0;">
-    <div class="container">
-      <div class="section-heading reveal" style="margin-bottom: 36px;">
+      <div class="section-heading reveal">
         <div>
-          <p class="section-index">06 / 相关能力</p>
-          <h2>相关能力与产品</h2>
+          <p class="section-index">相关</p>
+          <h2>相关能力与项目证据</h2>
         </div>
         <div>
-          <p>了解中赛钢构的构件供应、围护系统及产品分类。</p>
+          <p>了解中赛支撑制造业务的工程能力、项目类型和出口交付服务。</p>
         </div>
       </div>
-      <div class="related-grid">
-        <a href="/zh/components/" class="related-card reveal reveal-delay-1">
-          <h4>构件与材料</h4>
-          <p>钢梁、钢柱、桁架、檩条及围护系统，按图纸定制加工。</p>
+      <div class="related-grid" style="margin-top: 40px;">
+        <a href="/zh/engineering-design/" class="related-card reveal reveal-delay-1">
+          <h4>工程设计与深化</h4>
+          <p>结构设计配合、加工图深化和节点工程，支撑制造生产。</p>
+          <span class="related-cta">查看工程能力 →</span>
+        </a>
+        <a href="/zh/steel-workshop/" class="related-card reveal reveal-delay-2">
+          <h4>钢结构厂房</h4>
+          <p>工业厂房和制造工厂钢结构，按项目图纸加工制造。</p>
+          <span class="related-cta">查看厂房 →</span>
+        </a>
+        <a href="/zh/steel-warehouse/" class="related-card reveal reveal-delay-3">
+          <h4>钢结构仓库</h4>
+          <p>物流仓储建筑钢结构，具备大跨度和高净空制造能力。</p>
+          <span class="related-cta">查看仓库 →</span>
+        </a>
+        <a href="/zh/export-delivery/" class="related-card reveal reveal-delay-4">
+          <h4>出口交付</h4>
+          <p>集装箱装柜、出口单证和物流协调，支持海外项目交付。</p>
+          <span class="related-cta">查看出口 →</span>
+        </a>
+        <a href="/zh/projects/" class="related-card reveal reveal-delay-1">
+          <h4>项目案例</h4>
+          <p>真实项目案例，展示中赛制造和出口交付能力。</p>
+          <span class="related-cta">查看项目 →</span>
+        </a>
+        <a href="/zh/components/" class="related-card reveal reveal-delay-2">
+          <h4>钢构件</h4>
+          <p>钢梁、钢柱、钢桁架、钢平台等加工钢结构构件。</p>
           <span class="related-cta">查看构件 →</span>
         </a>
-        <a href="/zh/components/fabricated-steel-beams-columns/" class="related-card reveal reveal-delay-2">
-          <h4>钢梁钢柱</h4>
-          <p>H型钢梁、钢柱、箱型构件，按项目图纸与荷载要求加工。</p>
-          <span class="related-cta">查看详情 →</span>
+        <a href="/zh/steel-mining-factory/" class="related-card reveal reveal-delay-3">
+          <h4>矿业与重工业</h4>
+          <p>矿业、能源和加工厂应用的重型钢结构。</p>
+          <span class="related-cta">查看矿业 →</span>
         </a>
-        <a href="/zh/components/roof-wall-cladding-systems/" class="related-card reveal reveal-delay-3">
-          <h4>围护系统</h4>
-          <p>屋面板、墙面板、夹芯板及配套配件，可与钢结构配套供应。</p>
-          <span class="related-cta">查看详情 →</span>
-        </a>
-        <a href="/zh/commercial-public-steel-buildings/" class="related-card reveal reveal-delay-4">
-          <h4>商业与公共建筑</h4>
-          <p>商业、公共、展厅及民用钢结构建筑，按图纸定制加工。</p>
-          <span class="related-cta">查看方案 →</span>
+        <a href="/zh/contact/" class="related-card reveal reveal-delay-4">
+          <h4>联系与报价</h4>
+          <p>提交项目图纸和技术要求，进行制造评审和报价。</p>
+          <span class="related-cta">立即开始 →</span>
         </a>
       </div>
     </div>
   </section>
 
-  <!-- 07 Quote CTA -->
-  <section class="quote-cta-section" id="quote">
+  <!-- 15 报价CTA -->
+  
+  <!-- Related Projects -->
+  <section class="related-projects-section">
     <div class="container">
-      <ExportDeliveryCTA lang="zh" />
-
-      <div class="quote-cta-header reveal">
-        <p class="section-index" style="color: #f59e0b;">07 / 获取报价</p>
-        <h2>提交图纸，获取制造报价</h2>
-        <p>上传结构图纸或BOQ清单，中赛钢构将根据您的项目需求提供制造加工与出口交付报价。</p>
+      <div class="rp-heading">
+        <h2>经过该制造流程的真实项目</h2>
+        <p>以下项目的钢结构构件经过中赛制造流程加工、检验和交付。</p>
       </div>
-      <QuoteForm lang={lang} />
+      <div class="rp-grid">
+        <a href="/zh/projects/guangzhou-high-end-equipment-base/" class="related-project-card">
+          <div class="rpc-image">
+            <img src="/images/projects/guangzhou-gongkong-high-end-equipment-base-aerial-rendering.jpg" alt="广州高端装备研发生产基地" loading="lazy">
+          </div>
+          <div class="rpc-content">
+            <span class="rpc-category">工业制造</span>
+            <h4>广州高端装备研发生产基地</h4>
+            <p class="rpc-location">广东广州</p>
+            <p class="rpc-data">60米跨度 · 约9,800吨</p>
+            <p class="rpc-scope"><span>中赛范围:</span> 钢结构制造与加工供应</p>
+          </div>
+        </a>
+        <a href="/zh/projects/zhanjiang-logistics-port/" class="related-project-card">
+          <div class="rpc-image">
+            <img src="/images/projects/shenzhen-international-zhanjiang-logistics-port-aerial-rendering.jpg" alt="湛江综合物流港" loading="lazy">
+          </div>
+          <div class="rpc-content">
+            <span class="rpc-category">物流仓储</span>
+            <h4>湛江综合物流港</h4>
+            <p class="rpc-location">广东湛江</p>
+            <p class="rpc-data">约10万㎡ · 约3,160吨</p>
+            <p class="rpc-scope"><span>中赛范围:</span> 钢结构制造与加工供应</p>
+          </div>
+        </a>
+        <a href="/zh/projects/singapore-airport-t2-connect/" class="related-project-card">
+          <div class="rpc-image">
+            <img src="/images/projects/overseas/singapore-airport-t2-connect.jpg" alt="新加坡樟宜机场T2连接" loading="lazy">
+          </div>
+          <div class="rpc-content">
+            <span class="rpc-category">海外项目</span>
+            <h4>新加坡樟宜机场T2连接</h4>
+            <p class="rpc-location">新加坡</p>
+            <p class="rpc-data">约4,600吨 · 209支Kingpost</p>
+            <p class="rpc-scope"><span>中赛范围:</span> 钢结构设计深化、制造与出口供应</p>
+          </div>
+        </a>
+      </div>
+      <div class="rp-more">
+        <a href="/zh/projects/" class="btn btn-outline">查看全部项目 →</a>
+      </div>
+    </div>
+  </section>
+
+<ExportDeliveryCTA lang="zh" />
+
+<section class="quote-cta-section" id="quote">
+    <div class="container">
+      <div class="quote-cta-header reveal">
+        <p class="section-index" style="color: #f59e0b;">项目询盘</p>
+        <h2>有项目图纸准备好？</h2>
+        <p>发送您的图纸、项目地点和技术要求进行制造评审。中赛将根据您的项目规格提供制造和出口交付报价。</p>
+      </div>
+      <div style="display: flex; gap: 16px; margin-bottom: 32px; flex-wrap: wrap;" class="quote-cta-buttons reveal">
+        <a href="#quote-form" class="btn btn-primary" style="font-size: 16px; padding: 14px 32px;">提交项目图纸</a>
+        <a href="/zh/contact/" class="btn btn-secondary" style="font-size: 16px; padding: 14px 32px;">申请技术评审</a>
+      </div>
+      <div id="quote-form">
+        <QuoteForm lang={lang} />
+      </div>
     </div>
   </section>
 </BaseLayout>
+
+<style>
+.hero-stats {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+  margin: 32px 0;
+}
+.hero-stat {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+.stat-number {
+  font-size: 24px;
+  font-weight: 700;
+  color: #f59e0b;
+}
+.stat-label {
+  font-size: 13px;
+  color: rgba(255,255,255,0.7);
+}
+.hero-cta-group {
+  display: flex;
+  gap: 16px;
+  flex-wrap: wrap;
+  margin-top: 8px;
+}
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 12px 28px;
+  border-radius: 8px;
+  font-weight: 600;
+  font-size: 15px;
+  text-decoration: none;
+  transition: all 0.2s;
+  border: none;
+  cursor: pointer;
+}
+.btn-primary {
+  background: #f59e0b;
+  color: #0f172a;
+}
+.btn-primary:hover {
+  background: #d97706;
+}
+.btn-secondary {
+  background: rgba(255,255,255,0.1);
+  color: white;
+  border: 1px solid rgba(255,255,255,0.3);
+}
+.btn-secondary:hover {
+  background: rgba(255,255,255,0.2);
+}
+details summary::-webkit-details-marker {
+  display: none;
+}
+details[open] summary span:last-child {
+  transform: rotate(45deg);
+}
+details summary span:last-child {
+  transition: transform 0.2s;
+}
+@media (max-width: 1024px) {
+  .hero-stats {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .inspection-grid {
+    grid-template-columns: 1fr !important;
+  }
+  .packing-grid {
+    grid-template-columns: 1fr !important;
+  }
+  .marking-grid {
+    grid-template-columns: repeat(2, 1fr) !important;
+  }
+  .project-types-grid {
+    grid-template-columns: repeat(2, 1fr) !important;
+  }
+  .cert-grid {
+    grid-template-columns: repeat(2, 1fr) !important;
+  }
+  .evidence-grid-upgraded {
+    grid-template-columns: repeat(2, 1fr) !important;
+  }
+}
+@media (max-width: 768px) {
+  .hero-stats {
+    grid-template-columns: 1fr 1fr;
+    gap: 16px;
+  }
+  .stat-number {
+    font-size: 20px;
+  }
+  .marking-grid {
+    grid-template-columns: 1fr !important;
+  }
+  .project-types-grid {
+    grid-template-columns: 1fr 1fr !important;
+  }
+  .cert-grid {
+    grid-template-columns: 1fr 1fr !important;
+  }
+  .evidence-grid-upgraded {
+    grid-template-columns: 1fr 1fr !important;
+  }
+  .quality-grid {
+    grid-template-columns: 1fr !important;
+  }
+  .hero-cta-group {
+    flex-direction: column;
+  }
+  .hero-cta-group .btn {
+    width: 100%;
+  }
+}
+</style>

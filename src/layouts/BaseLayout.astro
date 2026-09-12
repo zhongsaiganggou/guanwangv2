@@ -5,6 +5,7 @@ import Header from '../components/Header.astro';
 import Footer from '../components/Footer.astro';
 import Analytics from '../components/Analytics.astro';
 import FloatingButtons from '../components/FloatingButtons.astro';
+import MobileCTA from '../components/MobileCTA.astro';
 import { buildOrganizationJsonLd, buildBreadcrumbJsonLd } from '../data/seo-structure';
 import '../styles/global.css';
 
@@ -40,5 +41,6 @@ const crumbLd = !isHome && !noindex ? buildBreadcrumbJsonLd(currentPath) : null;
   </main>
   <Footer lang={lang} />
   <FloatingButtons />
+  <MobileCTA lang={lang} />
 </body>
 </html>

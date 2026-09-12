@@ -1,0 +1,76 @@
+---
+import BaseLayout from '../../../layouts/BaseLayout.astro';
+const title = 'Global Markets & Export Steel Structure Projects | ZhongSai';
+const description = 'ZhongSai supplies steel structures to 60+ countries worldwide, with key markets in Southeast Asia, Middle East and Africa. Explore our project experience by region.';
+const lang = 'en';
+---
+
+<BaseLayout title={title} description={description} lang={lang}>
+  <section class="detail-hero" style="min-height: 50vh;">
+    <div class="detail-hero-bg" style="background-image: url('/images/company/factory-aerial-panorama.jpg');"></div>
+    <div class="container">
+      <div class="detail-hero-content">
+        <h1>Global Steel Structure Export Markets</h1>
+        <p>ZhongSai provides steel structure design, detailing, fabrication, export delivery and installation guidance to projects in 60+ countries.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="detail-section">
+    <div class="container">
+      <div class="section-heading">
+        <p class="section-index">Key Markets</p>
+        <h2>Markets We Serve</h2>
+      </div>
+      <div class="project-grid">
+        <a href="/en/markets/singapore/" class="project-card">
+          <div class="project-img" style="background-image: url('/images/projects/overseas/singapore-cr101-depot.jpg');"></div>
+          <div class="project-body">
+            <span class="project-type">Southeast Asia</span>
+            <h3>Singapore</h3>
+            <p class="project-scope">LTA MRT stations, Changi Airport cargo centre. Experienced with Singapore codes and quality requirements.</p>
+          </div>
+        </a>
+      </div>
+      <div style="margin-top: 32px; padding: 24px; background: #f8fafc; border-radius: 8px;">
+        <h3>Other Markets</h3>
+        <p style="color: #666; margin-top: 8px;">ZhongSai also serves projects in other Southeast Asian countries, the Middle East, Africa and more. Contact us for specific market experience.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="detail-section alt">
+    <div class="container">
+      <div class="section-heading">
+        <p class="section-index">Delivery</p>
+        <h2>From China Factory to Overseas Project Site</h2>
+      </div>
+      <div class="capability-grid">
+        <div class="cap-card">
+          <h3>Design & Detailing</h3>
+          <p>In-house team details steelwork per project drawings and local codes.</p>
+        </div>
+        <div class="cap-card">
+          <h3>Fabrication & Inspection</h3>
+          <p>100,000 m² base with RTO stationed and third-party inspection support.</p>
+        </div>
+        <div class="cap-card">
+          <h3>Export & Delivery</h3>
+          <p>Optimized loading, component marking, export docs and port coordination.</p>
+        </div>
+        <div class="cap-card">
+          <h3>Installation Guidance</h3>
+          <p>Erection drawings and technical clarification for local contractors.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="detail-section quote-cta-section">
+    <div class="container" style="text-align: center;">
+      <h2>Which Country Is Your Project In?</h2>
+      <p style="margin: 16px 0 24px; color: #666;">Tell us your project location and requirements for a tailored technical and delivery proposal.</p>
+      <a href="/en/contact/#quote-form" class="btn btn-primary btn-large">Inquire About Your Project</a>
+    </div>
+  </section>
+</BaseLayout>

@@ -112,6 +112,12 @@ const footerCols = lang === 'zh' ? [
             ? '中国钢结构设计、深化、制造与出口供应商，服务全球工业厂房、仓库、矿业及商业建筑项目。'
             : 'China-based steel structure design, detailing, fabrication and export supplier serving global industrial, warehouse, mining and commercial building projects.'}
         </p>
+        <div class="footer-entity">
+          <p><strong>{lang === 'zh' ? '法定公司：' : 'Legal Entity:'}</strong>{lang === 'zh' ? '深圳市中赛钢结构进出口有限公司' : 'Shenzhen ZhongSai Steel Structure Import & Export Co., Ltd.'}</p>
+          <p><strong>{lang === 'zh' ? '地址：' : 'Location:'}</strong>{lang === 'zh' ? '中国广东省' : 'Guangdong, China'}</p>
+          <p><strong>Email:</strong> <a href="mailto:zhongsaiganggou@gmail.com">zhongsaiganggou@gmail.com</a></p>
+          <p><strong>WhatsApp:</strong> <a href={lang === 'zh' ? 'https://wa.me/8613192007378?text=您好中赛钢构，我有一个钢结构项目，想沟通项目需求。' : 'https://wa.me/8613192007378?text=Hi%20ZhongSai%2C%20I%20have%20a%20steel%20structure%20project%20and%20would%20like%20to%20discuss%20the%20requirements.'} target="_blank" rel="noopener">+86 131 9200 7378</a></p>
+        </div>
         <div class="footer-social">
           {socialLinks.map(social => (
             <a href={social.href} target="_blank" rel="noopener noreferrer" aria-label={social.name} class="footer-social-link">
@@ -140,6 +146,23 @@ const footerCols = lang === 'zh' ? [
 </footer>
 
 <style>
+.footer-entity {
+  margin-top: 16px;
+  font-size: 0.8rem;
+  color: rgba(255,255,255,0.6);
+  line-height: 1.8;
+}
+.footer-entity p {
+  margin: 0;
+}
+.footer-entity a {
+  color: rgba(255,255,255,0.7);
+  text-decoration: none;
+}
+.footer-entity a:hover {
+  color: #fff;
+  text-decoration: underline;
+}
 .footer-social {
   display: flex;
   gap: 8px;

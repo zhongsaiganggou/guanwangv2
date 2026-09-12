@@ -8,7 +8,7 @@ import { projects } from '../../../data/projects-data';
 
 const lang = 'en';
 const title = 'Selected Steel Structure Projects | ZhongSai Manufacturing References';
-const description = 'Explore selected ZhongSai Steel Structure project references across logistics, industrial manufacturing, commercial, public and energy-related steel structure applications.';
+const description = 'Explore selected ZhongSai Steel Structure project references across logistics, industrial manufacturing, commercial, public and energy-related steel...';
 ---
 
 <BaseLayout title={title} description={description} lang={lang}>
@@ -28,14 +28,28 @@ const description = 'Explore selected ZhongSai Steel Structure project reference
   <section class="projects-grid-section">
     <div class="container">
       <div class="country-filter">
-        <span class="filter-label">Filter by Region:</span>
-        <a href="/en/projects/singapore/" class="filter-link">Singapore (5 projects)</a>
+        <span class="filter-label">By Region:</span>
+        <a href="/en/projects/singapore/" class="filter-link">Singapore</a>
         <span class="filter-current">All Projects</span>
       </div>
-      <div class="projects-grid">
+      <div class="category-filter" id="categoryFilter">
+        <span class="filter-label">By Application:</span>
+        <button class="filter-btn active" data-category="all">All</button>
+        <button class="filter-btn" data-category="Logistics & Warehousing">Logistics</button>
+        <button class="filter-btn" data-category="Industrial Manufacturing">Industrial</button>
+        <button class="filter-btn" data-category="Commercial & Public">Commercial</button>
+        <button class="filter-btn" data-category="Energy & Petrochemical">Energy</button>
+        <button class="filter-btn" data-category="Overseas Projects">Overseas</button>
+      </div>
+      <div class="projects-grid" id="projectsGrid">
         {projects.map(project => (
-          <ProjectCard project={project} lang={lang} />
+          <div class="project-card-wrapper" data-category={project.category.en}>
+            <ProjectCard project={project} lang={lang} />
+          </div>
         ))}
+      </div>
+      <div class="no-projects" id="noProjects" style="display:none;">
+        <p>No projects in this category</p>
       </div>
     </div>
   </section>
@@ -58,6 +72,32 @@ const description = 'Explore selected ZhongSai Steel Structure project reference
       <QuoteForm lang={lang} />
     </div>
   </section>
+<script is:inline>
+document.addEventListener('DOMContentLoaded', function() {
+  const filterBtns = document.querySelectorAll('.filter-btn');
+  const cards = document.querySelectorAll('.project-card-wrapper');
+  const noProjects = document.getElementById('noProjects');
+  filterBtns.forEach(btn => {
+    btn.addEventListener('click', function() {
+      filterBtns.forEach(b => b.classList.remove('active'));
+      this.classList.add('active');
+      const category = this.getAttribute('data-category');
+      let visibleCount = 0;
+      cards.forEach(card => {
+        if (category === 'all' || card.getAttribute('data-category') === category) {
+          card.style.display = '';
+          visibleCount++;
+        } else {
+          card.style.display = 'none';
+        }
+      });
+      if (noProjects) {
+        noProjects.style.display = visibleCount === 0 ? 'block' : 'none';
+      }
+    });
+  });
+});
+</script>
 </BaseLayout>
 
 <style>
@@ -165,6 +205,52 @@ const description = 'Explore selected ZhongSai Steel Structure project reference
   }
   .quote-intro h2 {
     font-size: 1.4rem;
+  }
+}
+
+.category-filter {
+  margin-bottom: 24px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+.filter-btn {
+  padding: 6px 16px;
+  background: #fff;
+  border: 1px solid #ddd;
+  border-radius: 20px;
+  font-size: 0.85rem;
+  color: #555;
+  cursor: pointer;
+  transition: all 0.2s;
+  font-family: inherit;
+}
+.filter-btn:hover {
+  border-color: #0a3d62;
+  color: #0a3d62;
+}
+.filter-btn.active {
+  background: #0a3d62;
+  color: #fff;
+  border-color: #0a3d62;
+}
+.project-card-wrapper {
+  display: block;
+}
+.no-projects {
+  text-align: center;
+  padding: 60px 20px;
+  color: #999;
+  font-size: 1rem;
+}
+@media (max-width: 640px) {
+  .category-filter {
+    gap: 8px;
+  }
+  .filter-btn {
+    padding: 5px 12px;
+    font-size: 0.8rem;
   }
 }
 </style>

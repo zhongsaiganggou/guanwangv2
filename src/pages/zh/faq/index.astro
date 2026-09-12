@@ -1,5 +1,22 @@
----
-import Placeholder from '../../../components/Placeholder.astro';
+﻿---
+import BaseLayout from '../../../layouts/BaseLayout.astro';
+
+const title = '常见问题 | 中赛钢构';
+const description = '中赛钢构常见问题解答，包括钢结构设计、制造、出口、安装等方面的问题。';
+const lang = 'zh';
+const canonical = 'https://zhongsai-steelstructure.com/zh/resources/';
 ---
 
-<Placeholder lang="zh" title="常见问题" />
+<BaseLayout title={title} description={description} lang={lang} canonical={canonical}>
+  <section style="padding: 80px 0; text-align: center; background: #f8f9fa;">
+    <div class="container">
+      <h1 style="font-size: 1.8rem; color: #0a3d62; margin-bottom: 16px;">常见问题</h1>
+      <p style="font-size: 1.05rem; color: #555; margin-bottom: 32px; max-width: 600px; margin-left: auto; margin-right: auto;">
+        关于钢结构设计、制造、出口交付和安装技术支持的常见问题，请访问技术资源中心获取详细解答。
+      </p>
+      <a href="/zh/resources/" class="btn btn-primary" style="display: inline-block; padding: 14px 32px; font-size: 1rem;">
+        访问技术资源中心 →
+      </a>
+    </div>
+  </section>
+</BaseLayout>

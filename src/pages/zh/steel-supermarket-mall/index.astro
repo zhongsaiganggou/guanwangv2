@@ -1,5 +1,22 @@
----
-import Placeholder from '../../../components/Placeholder.astro';
+﻿---
+import BaseLayout from '../../../layouts/BaseLayout.astro';
+
+const title = '超市与商场钢结构 | 中赛钢构';
+const description = '超市与商场钢结构属于商业与公共建筑类别。中赛钢构提供大跨度、灵活布局的商业钢结构解决方案。';
+const lang = 'zh';
+const canonical = 'https://zhongsai-steelstructure.com/zh/commercial-public-steel-buildings/';
 ---
 
-<Placeholder lang="zh" title="商业与公共建筑" />
+<BaseLayout title={title} description={description} lang={lang} canonical={canonical}>
+  <section style="padding: 80px 0; text-align: center; background: #f8f9fa;">
+    <div class="container">
+      <h1 style="font-size: 1.8rem; color: #0a3d62; margin-bottom: 16px;">超市与商场钢结构</h1>
+      <p style="font-size: 1.05rem; color: #555; margin-bottom: 32px; max-width: 600px; margin-left: auto; margin-right: auto;">
+        超市、购物中心和商场钢结构属于商业与公共建筑类别。请访问商业与公共建筑页面了解完整的工程参数、应用场景和项目案例。
+      </p>
+      <a href="/zh/commercial-public-steel-buildings/" class="btn btn-primary" style="display: inline-block; padding: 14px 32px; font-size: 1rem;">
+        查看商业与公共建筑解决方案 →
+      </a>
+    </div>
+  </section>
+</BaseLayout>

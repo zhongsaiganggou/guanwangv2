@@ -25,6 +25,7 @@ export interface ProjectData {
   // href 为语言根相对路径（不含 /en/ 或 /zh/ 前缀），由组件按当前 lang 拼接 `/${lang}/${href}`
   relatedLinks: { href: string; label: { zh: string; en: string } }[];
   capabilities: { zh: string; en: string }[];
+  zhongSaiScope: { zh: string; en: string };
 }
 
 const P = '/images/projects/';
@@ -59,6 +60,10 @@ export const projects: ProjectData[] = [
       { zh: '重型钢结构加工', en: 'Heavy Structural Steel Fabrication' },
       { zh: '工业钢结构供货能力', en: 'Industrial Steel Structure Supply' },
     ],
+  zhongSaiScope: {
+    zh: '钢结构制造与加工供应',
+    en: 'Steel Structure Fabrication & Supply'
+  },
     relatedLinks: [
       { href: 'steel-warehouse/', label: { zh: '钢结构仓库', en: 'Steel Warehouse' } },
       { href: 'manufacturing-quality/', label: { zh: '制造能力', en: 'Manufacturing' } },
@@ -94,6 +99,10 @@ export const projects: ProjectData[] = [
       { zh: '重型钢结构加工', en: 'Heavy Structural Steel Fabrication' },
       { zh: '钢结构深化配合', en: 'Structural Detailing Coordination' },
     ],
+  zhongSaiScope: {
+    zh: '指定钢结构构件制造与加工',
+    en: 'Designated Structural Steel Component Fabrication'
+  },
     relatedLinks: [
       { href: 'manufacturing-quality/', label: { zh: '制造能力', en: 'Manufacturing' } },
       { href: 'components/fabricated-steel-beams-columns/', label: { zh: '钢梁钢柱', en: 'Beams & Columns' } },
@@ -128,6 +137,10 @@ export const projects: ProjectData[] = [
       { zh: '工业钢结构供货能力', en: 'Industrial Steel Structure Supply' },
       { zh: '按项目图纸加工', en: 'Fabrication to Project Drawings' },
     ],
+  zhongSaiScope: {
+    zh: '钢结构制造与加工供应',
+    en: 'Steel Structure Fabrication & Supply'
+  },
     relatedLinks: [
       { href: 'steel-workshop/', label: { zh: '工业厂房', en: 'Steel Workshop' } },
       { href: 'manufacturing-quality/', label: { zh: '制造能力', en: 'Manufacturing' } },
@@ -160,6 +173,10 @@ export const projects: ProjectData[] = [
       { zh: '重型钢结构加工', en: 'Heavy Structural Steel Fabrication' },
       { zh: '工业钢结构供货能力', en: 'Industrial Steel Structure Supply' },
     ],
+  zhongSaiScope: {
+    zh: '钢结构制造与加工供应',
+    en: 'Steel Structure Fabrication & Supply'
+  },
     relatedLinks: [
       { href: 'steel-workshop/', label: { zh: '工业厂房', en: 'Steel Workshop' } },
       { href: 'products/custom-engineering/', label: { zh: '定制加工', en: 'Custom Engineering' } },
@@ -190,6 +207,10 @@ export const projects: ProjectData[] = [
       { zh: '大跨度钢结构加工', en: 'Large-Span Steel Fabrication' },
       { zh: '钢结构深化配合', en: 'Structural Detailing Coordination' },
     ],
+  zhongSaiScope: {
+    zh: '钢结构制造与加工供应',
+    en: 'Steel Structure Fabrication & Supply'
+  },
     relatedLinks: [
       { href: 'steel-workshop/', label: { zh: '工业厂房', en: 'Steel Workshop' } },
       { href: 'manufacturing-quality/', label: { zh: '制造能力', en: 'Manufacturing' } },
@@ -223,6 +244,10 @@ export const projects: ProjectData[] = [
       { zh: '工业钢结构供货能力', en: 'Industrial Steel Structure Supply' },
       { zh: '按项目图纸加工', en: 'Fabrication to Project Drawings' },
     ],
+  zhongSaiScope: {
+    zh: '钢结构制造与加工供应',
+    en: 'Steel Structure Fabrication & Supply'
+  },
     relatedLinks: [
       { href: 'steel-warehouse/', label: { zh: '钢结构仓库', en: 'Steel Warehouse' } },
       { href: 'components/', label: { zh: '构件与材料', en: 'Components' } },
@@ -257,6 +282,10 @@ export const projects: ProjectData[] = [
       { zh: '复杂钢构件加工', en: 'Complex Component Fabrication' },
       { zh: '钢结构深化配合', en: 'Structural Detailing Coordination' },
     ],
+  zhongSaiScope: {
+    zh: '钢结构制造与加工供应',
+    en: 'Steel Structure Fabrication & Supply'
+  },
     relatedLinks: [
       { href: 'steel-workshop/', label: { zh: '工业厂房', en: 'Steel Workshop' } },
       { href: 'manufacturing-quality/', label: { zh: '制造能力', en: 'Manufacturing' } },
@@ -291,6 +320,10 @@ export const projects: ProjectData[] = [
       { zh: '复杂钢构件加工', en: 'Complex Component Fabrication' },
       { zh: '复杂连接节点加工', en: 'Complex Connection Fabrication' },
     ],
+  zhongSaiScope: {
+    zh: '石化设备钢结构框架与平台制造',
+    en: 'Petrochemical Equipment Steel Frame & Platform Fabrication'
+  },
     relatedLinks: [
       { href: 'products/custom-engineering/', label: { zh: '定制加工', en: 'Custom Engineering' } },
       { href: 'components/fabricated-steel-beams-columns/', label: { zh: '钢梁钢柱', en: 'Beams & Columns' } },
@@ -325,6 +358,10 @@ export const projects: ProjectData[] = [
       { zh: '复杂钢构件加工', en: 'Complex Component Fabrication' },
       { zh: '复杂连接节点加工', en: 'Complex Connection Fabrication' },
     ],
+  zhongSaiScope: {
+    zh: '石化设备钢结构框架与平台制造',
+    en: 'Petrochemical Equipment Steel Frame & Platform Fabrication'
+  },
     relatedLinks: [
       { href: 'products/custom-engineering/', label: { zh: '定制加工', en: 'Custom Engineering' } },
       { href: 'components/fabricated-steel-beams-columns/', label: { zh: '钢梁钢柱', en: 'Beams & Columns' } },
@@ -355,6 +392,10 @@ export const projects: ProjectData[] = [
       { zh: '大跨度钢结构加工', en: 'Large-Span Steel Fabrication' },
       { zh: '按项目图纸加工', en: 'Fabrication to Project Drawings' },
     ],
+  zhongSaiScope: {
+    zh: '钢结构制造与加工供应',
+    en: 'Steel Structure Fabrication & Supply'
+  },
     relatedLinks: [
       { href: 'steel-workshop/', label: { zh: '工业厂房', en: 'Steel Workshop' } },
       { href: 'manufacturing-quality/', label: { zh: '制造能力', en: 'Manufacturing' } },
@@ -385,6 +426,10 @@ export const projects: ProjectData[] = [
       { zh: '复杂钢构件加工', en: 'Complex Component Fabrication' },
       { zh: '复杂连接节点加工', en: 'Complex Connection Fabrication' },
     ],
+  zhongSaiScope: {
+    zh: '钢结构连廊制造与加工',
+    en: 'Steel Skybridge Fabrication & Supply'
+  },
     relatedLinks: [
       { href: 'products/custom-engineering/', label: { zh: '定制加工', en: 'Custom Engineering' } },
       { href: 'components/fabricated-steel-beams-columns/', label: { zh: '钢梁钢柱', en: 'Beams & Columns' } },
@@ -419,6 +464,10 @@ export const projects: ProjectData[] = [
       { zh: '重型钢结构加工', en: 'Heavy Structural Steel Fabrication' },
       { zh: '复杂连接节点加工', en: 'Complex Connection Fabrication' },
     ],
+  zhongSaiScope: {
+    zh: '管廊钢结构框架制造与加工',
+    en: 'Pipe Rack Steel Structure Fabrication & Supply'
+  },
     relatedLinks: [
       { href: 'products/custom-engineering/', label: { zh: '定制加工', en: 'Custom Engineering' } },
       { href: 'components/fabricated-steel-beams-columns/', label: { zh: '钢梁钢柱', en: 'Beams & Columns' } },
@@ -451,6 +500,10 @@ export const projects: ProjectData[] = [
       { zh: '高精度尺寸控制', en: 'High-Precision Dimension Control' },
       { zh: '钢结构深化配合', en: 'Structural Detailing Coordination' },
     ],
+  zhongSaiScope: {
+    zh: '钢结构设计深化、制造与出口供应',
+    en: 'Steel Structure Detailing, Fabrication & Export Supply'
+  },
     relatedLinks: [
       { href: 'manufacturing-quality/', label: { zh: '制造能力', en: 'Manufacturing' } },
       { href: 'components/steel-trusses/', label: { zh: '钢桁架', en: 'Steel Trusses' } },
@@ -481,6 +534,10 @@ export const projects: ProjectData[] = [
       { zh: '重型钢结构加工', en: 'Heavy Structural Steel Fabrication' },
       { zh: '按项目图纸加工', en: 'Fabrication to Project Drawings' },
     ],
+  zhongSaiScope: {
+    zh: '钢结构设计深化、制造与出口供应',
+    en: 'Steel Structure Detailing, Fabrication & Export Supply'
+  },
     relatedLinks: [
       { href: 'manufacturing-quality/', label: { zh: '制造能力', en: 'Manufacturing' } },
       { href: 'components/fabricated-steel-beams-columns/', label: { zh: '钢梁钢柱', en: 'Beams & Columns' } },
@@ -511,6 +568,10 @@ export const projects: ProjectData[] = [
       { zh: '高精度尺寸控制', en: 'High-Precision Dimension Control' },
       { zh: '异形钢结构加工', en: 'Irregular Steel Structure Fabrication' },
     ],
+  zhongSaiScope: {
+    zh: '钢结构设计深化、制造与供应',
+    en: 'Steel Structure Detailing, Fabrication & Supply'
+  },
     relatedLinks: [
       { href: 'manufacturing-quality/', label: { zh: '制造能力', en: 'Manufacturing' } },
       { href: 'components/steel-trusses/', label: { zh: '钢桁架', en: 'Steel Trusses' } },
@@ -541,6 +602,10 @@ export const projects: ProjectData[] = [
       { zh: '高精度三维测量', en: 'High-Precision 3D Measurement' },
       { zh: '异形钢结构加工', en: 'Irregular Steel Structure Fabrication' },
     ],
+  zhongSaiScope: {
+    zh: '钢结构设计深化、制造与供应',
+    en: 'Steel Structure Detailing, Fabrication & Supply'
+  },
     relatedLinks: [
       { href: 'manufacturing-quality/', label: { zh: '制造能力', en: 'Manufacturing' } },
       { href: 'components/steel-trusses/', label: { zh: '钢桁架', en: 'Steel Trusses' } },
@@ -571,6 +636,10 @@ export const projects: ProjectData[] = [
       { zh: '工业钢结构供货能力', en: 'Industrial Steel Structure Supply' },
       { zh: '按项目图纸加工', en: 'Fabrication to Project Drawings' },
     ],
+  zhongSaiScope: {
+    zh: '钢结构设计深化、制造与出口供应',
+    en: 'Steel Structure Detailing, Fabrication & Export Supply'
+  },
     relatedLinks: [
       { href: 'manufacturing-quality/', label: { zh: '制造能力', en: 'Manufacturing' } },
       { href: 'export-delivery/', label: { zh: '出口交付', en: 'Export Delivery' } },
@@ -601,6 +670,10 @@ export const projects: ProjectData[] = [
       { zh: '工业钢结构供货能力', en: 'Industrial Steel Structure Supply' },
       { zh: '按项目图纸加工', en: 'Fabrication to Project Drawings' },
     ],
+  zhongSaiScope: {
+    zh: '钢结构设计深化、制造与出口供应',
+    en: 'Steel Structure Detailing, Fabrication & Export Supply'
+  },
     relatedLinks: [
       { href: 'manufacturing-quality/', label: { zh: '制造能力', en: 'Manufacturing' } },
       { href: 'components/fabricated-steel-beams-columns/', label: { zh: '钢梁钢柱', en: 'Beams & Columns' } },
@@ -633,6 +706,10 @@ export const projects: ProjectData[] = [
       { zh: '复杂连接节点加工', en: 'Complex Connection Fabrication' },
       { zh: '高精度尺寸控制', en: 'High-Precision Dimension Control' },
     ],
+  zhongSaiScope: {
+    zh: '钢结构设计深化、制造与出口供应',
+    en: 'Steel Structure Detailing, Fabrication & Export Supply'
+  },
     relatedLinks: [
       { href: 'manufacturing-quality/', label: { zh: '制造能力', en: 'Manufacturing' } },
       { href: 'components/fabricated-steel-beams-columns/', label: { zh: '钢梁钢柱', en: 'Beams & Columns' } },

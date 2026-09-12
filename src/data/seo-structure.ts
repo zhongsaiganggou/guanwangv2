@@ -1,4 +1,4 @@
-// seo-structure.ts - 技术SEO集中配置（Organization / BreadcrumbList / Sitemap）
+﻿// seo-structure.ts - 技术SEO集中配置（Organization / BreadcrumbList / Sitemap）
 // 正式生产域名唯一来源。Preview (*.pages.dev) 不得进入 canonical / sitemap / schema。
 import { projects } from './projects-data';
 
@@ -124,6 +124,303 @@ const STATIC_BREADCRUMBS: Record<string, { en: Crumb[]; zh: Crumb[] }> = {
     en: [{ name: 'Home', href: '/en/' }, { name: 'Projects' }],
     zh: [{ name: '首页', href: '/zh/' }, { name: '项目案例' }],
   },
+
+  'steel-mining-factory': {
+    en:
+    [
+      { name: 'Home', href: '/en/' },
+      { name: 'Products', href: '/en/products/' },
+      { name: 'Mining & Heavy Industry' },
+    ],
+    zh:
+    [
+      { name: '首页', href: '/zh/' },
+      { name: '产品', href: '/zh/products/' },
+      { name: '矿业与重工业' },
+    ],
+  },
+  'agricultural-steel-buildings': {
+    en:
+    [
+      { name: 'Home', href: '/en/' },
+      { name: 'Products', href: '/en/products/' },
+      { name: 'Agriculture & Livestock' },
+    ],
+    zh:
+    [
+      { name: '首页', href: '/zh/' },
+      { name: '产品', href: '/zh/products/' },
+      { name: '农业与养殖' },
+    ],
+  },
+  'commercial-public-steel-buildings': {
+    en:
+    [
+      { name: 'Home', href: '/en/' },
+      { name: 'Products', href: '/en/products/' },
+      { name: 'Commercial & Public Buildings' },
+    ],
+    zh:
+    [
+      { name: '首页', href: '/zh/' },
+      { name: '产品', href: '/zh/products/' },
+      { name: '商业与公共建筑' },
+    ],
+  },
+  'transportation-infrastructure-steel': {
+    en:
+    [
+      { name: 'Home', href: '/en/' },
+      { name: 'Products', href: '/en/products/' },
+      { name: 'Transportation & Infrastructure' },
+    ],
+    zh:
+    [
+      { name: '首页', href: '/zh/' },
+      { name: '产品', href: '/zh/products/' },
+      { name: '交通与基础设施' },
+    ],
+  },
+  'special-custom-steel-structures': {
+    en:
+    [
+      { name: 'Home', href: '/en/' },
+      { name: 'Products', href: '/en/products/' },
+      { name: 'Special & Custom Structures' },
+    ],
+    zh:
+    [
+      { name: '首页', href: '/zh/' },
+      { name: '产品', href: '/zh/products/' },
+      { name: '特殊与定制钢结构' },
+    ],
+  },
+  'installation-guidance': {
+    en:
+    [
+      { name: 'Home', href: '/en/' },
+      { name: 'Installation Guidance' },
+    ],
+    zh:
+    [
+      { name: '首页', href: '/zh/' },
+      { name: '安装技术指导' },
+    ],
+  },
+  resources: {
+    en:
+    [
+      { name: 'Home', href: '/en/' },
+      { name: 'Resources' },
+    ],
+    zh:
+    [
+      { name: '首页', href: '/zh/' },
+      { name: '技术资源' },
+    ],
+  },
+  blog: {
+    en:
+    [
+      { name: 'Home', href: '/en/' },
+      { name: 'Resources', href: '/en/resources/' },
+      { name: 'Blog' },
+    ],
+    zh:
+    [
+      { name: '首页', href: '/zh/' },
+      { name: '技术资源', href: '/zh/resources/' },
+      { name: '博客' },
+    ],
+  },
+  'components/steel-trusses': {
+    en:
+    [
+      { name: 'Home', href: '/en/' },
+      { name: 'Components', href: '/en/components/' },
+      { name: 'Steel Trusses' },
+    ],
+    zh:
+    [
+      { name: '首页', href: '/zh/' },
+      { name: '构件与材料', href: '/zh/components/' },
+      { name: '钢桁架' },
+    ],
+  },
+  'components/steel-purlins': {
+    en:
+    [
+      { name: 'Home', href: '/en/' },
+      { name: 'Components', href: '/en/components/' },
+      { name: 'Steel Purlins' },
+    ],
+    zh:
+    [
+      { name: '首页', href: '/zh/' },
+      { name: '构件与材料', href: '/zh/components/' },
+      { name: '钢檩条' },
+    ],
+  },
+  'blog/how-to-choose-steel-structure-supplier': {
+    en:
+    [
+      { name: 'Home', href: '/en/' },
+      { name: 'Resources', href: '/en/resources/' },
+      { name: 'How to Choose a Steel Structure Supplier' },
+    ],
+    zh:
+    [
+      { name: '首页', href: '/zh/' },
+      { name: '技术资源', href: '/zh/resources/' },
+      { name: '如何选择钢结构供应商' },
+    ],
+  },
+  'blog/how-to-import-steel-structure-from-china-complete-guide': {
+    en:
+    [
+      { name: 'Home', href: '/en/' },
+      { name: 'Resources', href: '/en/resources/' },
+      { name: 'Import Steel Structure from China' },
+    ],
+    zh:
+    [
+      { name: '首页', href: '/zh/' },
+      { name: '技术资源', href: '/zh/resources/' },
+      { name: '从中国进口钢结构' },
+    ],
+  },
+  'blog/how-to-import-steel-structure-from-china-to-africa': {
+    en:
+    [
+      { name: 'Home', href: '/en/' },
+      { name: 'Resources', href: '/en/resources/' },
+      { name: 'Import Steel Structure to Africa' },
+    ],
+    zh:
+    [
+      { name: '首页', href: '/zh/' },
+      { name: '技术资源', href: '/zh/resources/' },
+      { name: '出口非洲钢结构' },
+    ],
+  },
+  'blog/shipping-cost-steel-structure-from-china': {
+    en:
+    [
+      { name: 'Home', href: '/en/' },
+      { name: 'Resources', href: '/en/resources/' },
+      { name: 'Shipping Cost Guide' },
+    ],
+    zh:
+    [
+      { name: '首页', href: '/zh/' },
+      { name: '技术资源', href: '/zh/resources/' },
+      { name: '运输成本指南' },
+    ],
+  },
+  'blog/steel-structure-container-loading-guide': {
+    en:
+    [
+      { name: 'Home', href: '/en/' },
+      { name: 'Resources', href: '/en/resources/' },
+      { name: 'Container Loading Guide' },
+    ],
+    zh:
+    [
+      { name: '首页', href: '/zh/' },
+      { name: '技术资源', href: '/zh/resources/' },
+      { name: '装柜指南' },
+    ],
+  },
+  'blog/steel-structure-installation-mistakes': {
+    en:
+    [
+      { name: 'Home', href: '/en/' },
+      { name: 'Resources', href: '/en/resources/' },
+      { name: 'Installation Mistakes' },
+    ],
+    zh:
+    [
+      { name: '首页', href: '/zh/' },
+      { name: '技术资源', href: '/zh/resources/' },
+      { name: '安装常见错误' },
+    ],
+  },
+  'blog/steel-structure-installation-process-guide': {
+    en:
+    [
+      { name: 'Home', href: '/en/' },
+      { name: 'Resources', href: '/en/resources/' },
+      { name: 'Installation Process Guide' },
+    ],
+    zh:
+    [
+      { name: '首页', href: '/zh/' },
+      { name: '技术资源', href: '/zh/resources/' },
+      { name: '安装流程指南' },
+    ],
+  },
+  'blog/steel-warehouse-cost-complete-guide': {
+    en:
+    [
+      { name: 'Home', href: '/en/' },
+      { name: 'Resources', href: '/en/resources/' },
+      { name: 'Steel Warehouse Cost Guide' },
+    ],
+    zh:
+    [
+      { name: '首页', href: '/zh/' },
+      { name: '技术资源', href: '/zh/resources/' },
+      { name: '钢结构仓库成本指南' },
+    ],
+  },
+  'blog/gangjiegou-changfang-zaojia-zhinan': {
+    en:
+    [
+      { name: 'Home', href: '/en/' },
+      { name: 'Resources', href: '/en/resources/' },
+      { name: 'Steel Workshop Cost Guide' },
+    ],
+    zh:
+    [
+      { name: '首页', href: '/zh/' },
+      { name: '技术资源', href: '/zh/resources/' },
+      { name: '钢结构厂房造价指南' },
+    ],
+  },
+  'blog/gangjiegou-gongchang-xuanze-zhinan': {
+    en:
+    [
+      { name: 'Home', href: '/en/' },
+      { name: 'Resources', href: '/en/resources/' },
+      { name: 'Steel Factory Selection Guide' },
+    ],
+    zh:
+    [
+      { name: '首页', href: '/zh/' },
+      { name: '技术资源', href: '/zh/resources/' },
+      { name: '钢结构厂家选择指南' },
+    ],
+  },
+  faq: {
+    en: [{ name: 'Home', href: '/en/' }, { name: 'FAQ' }],
+    zh: [{ name: '首页', href: '/zh/' }, { name: '常见问题' }],
+  },
+  solutions: {
+    en: [{ name: 'Home', href: '/en/' }, { name: 'Solutions' }],
+    zh: [{ name: '首页', href: '/zh/' }, { name: '解决方案' }],
+  },
+  'steel-supermarket-mall': {
+    en: [
+      { name: 'Home', href: '/en/' },
+      { name: 'Products', href: '/en/products/' },
+      { name: 'Commercial & Public Buildings' },
+    ],
+    zh: [
+      { name: '首页', href: '/zh/' },
+      { name: '产品', href: '/zh/products/' },
+      { name: '商业与公共建筑' },
+    ],
+  },
 };
 
 // 根据当前路径返回面包屑（与可见面包屑一致）；首页/未知页返回 null
@@ -179,6 +476,7 @@ export function buildOrganizationJsonLd() {
   return {
     '@context': 'https://schema.org',
     '@type': 'Organization',
+    '@id': `${SITE_URL}/#organization`,
     name: 'ZhongSai Steel Structure',
     legalName: '深圳市中赛钢结构进出口有限公司',
     url: `${SITE_URL}/`,
@@ -210,11 +508,17 @@ const SITEMAP_SECTIONS = [
   'steel-workshop',
   'steel-warehouse',
   'steel-mining-factory',
-  'services/structural-steel-detailing',
+  'agricultural-steel-buildings',
+  'commercial-public-steel-buildings',
+  'transportation-infrastructure-steel',
+  'special-custom-steel-structures',
+  'installation-guidance',
   'engineering-design',
+  'export-delivery',
   'about',
   'contact',
-  'export-delivery',
+  'resources',
+  'blog',
   'privacy',
   'terms',
   'projects',

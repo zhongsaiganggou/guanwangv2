@@ -3,8 +3,8 @@ title: "How To Steel Structure Cost: Complete Guide for Buyers"
 language: "en"
 category: "Cost & Planning"
 status: "published"
-seoTitle: "How To Steel Structure Cost | Complete Guide | ZhongSai Steel Structure"
-metaDescription: "Complete guide to how to steel structure cost. Learn everything buyers need to know about how to steel structure cost, including key factors, best practices, and expert tips."
+seoTitle: "How To Steel Structure Cost | Guide | ZhongSai"
+metaDescription: "Complete guide to how to steel structure cost. Learn everything buyers need to know about how to steel structure cost, including key factors, best..."
 h1: "How To Steel Structure Cost: Complete Guide for Buyers"
 excerpt: "A comprehensive guide to how to steel structure cost for overseas buyers, covering key considerations, best practices, common mistakes, and expert recommendations."
 coverImage: "/images/blog/how-to-steel-structure-cost/cover.jpg"
@@ -14,8 +14,6 @@ ctaType: "send-project-requirements"
 noindex: false
 author: "ZhongSai Steel Structure Editorial Team"
 ---
-
-# How To Steel Structure Cost: Complete Guide for Buyers
 
 When sourcing steel structures for your project, understanding how to steel structure cost is essential for making informed decisions. This guide covers everything you need to know, from key considerations to best practices and common pitfalls to avoid.
 

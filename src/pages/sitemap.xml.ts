@@ -19,20 +19,30 @@ export const GET: APIRoute = async () => {
     return data.status === 'published' && data.noindex !== true;
   });
   
-  // 2.1 过滤掉id格式错误的文章（包含/en/、/zh/或.md后缀）
-  // 这些是CMS后台创建时id格式不正确导致的，实际URL应该是/{lang}/blog/{slug}/
-  const validBlogPosts = blogPosts.filter((post) => {
-    const id = post.id || '';
-    // 排除包含语言前缀或.md后缀的错误id
-    if (id.startsWith('en/') || id.startsWith('zh/') || id.endsWith('.md')) {
-      return false;
+  // 2.1 从id中提取slug（去掉en/或zh/前缀）
+  // Astro content collection中，blog/en/post.md的id是"en/post"
+  // 需要提取"post"作为slug，并用post.data.language构建URL
+  const validBlogPosts = blogPosts.map((post) => {
+    let slug = post.id || '';
+    // 去掉语言前缀
+    if (slug.startsWith('en/')) {
+      slug = slug.substring(3);
+    } else if (slug.startsWith('zh/')) {
+      slug = slug.substring(3);
     }
-    return true;
+    // 去掉.md后缀（如果有）
+    if (slug.endsWith('.md')) {
+      slug = slug.slice(0, -3);
+    }
+    return { ...post, slug };
+  }).filter((post) => {
+    // 排除空slug和测试文章
+    return post.slug && post.slug !== 'cms-publishing-test';
   });
   
   // 3. 构建CMS文章URL列表
   const cmsUrls = validBlogPosts.map((post) => ({
-    path: `/${post.data.language}/blog/${post.id}/`,
+    path: `/${post.data.language}/blog/${post.slug}/`,
     language: post.data.language,
     translationKey: post.data.translationKey,
     lastmod: post.data.updatedAt || post.data.publishedAt || new Date().toISOString().slice(0, 10),

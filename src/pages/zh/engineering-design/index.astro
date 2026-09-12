@@ -1,444 +1,888 @@
-﻿---
+---
+// ZhongSai V2 - 中文 工程设计与深化页面（升级版）
 import BaseLayout from '../../../layouts/BaseLayout.astro';
 import QuoteForm from '../../../components/QuoteForm.astro';
-import EngineeringServiceGuide from '../../../components/EngineeringServiceGuide.astro';
-import '../../../styles/detail.css';
+import ExportDeliveryCTA from '../../../components/ExportDeliveryCTA.astro';
+import '../../../styles/hub.css';
+import '../../../styles/manufacturing.css';
 
-const title = '钢结构建筑设计与制造衔接服务 | 中赛钢构';
-const description = '中赛钢构提供钢结构建筑设计与工程协调服务，将结构设计与深化设计、制造加工和出口供应紧密连接，为海外钢结构项目提供高效的设计到制造衔接。';
 const lang = 'zh';
+const title = '钢结构设计与深化｜加工图、节点深化与工程技术支持｜中赛钢构';
+const description = '中赛钢构为海外钢结构项目提供工程技术支持：图纸审核、结构协调、加工图深化、节点开发、制造文档和现场技术支持。';
 const canonical = 'https://zhongsai-steelstructure.com/zh/engineering-design/';
+
+const engineeringSteps = [
+  {
+    num: '01',
+    image: '/images/engineering/workflow/step-01-document-review.jpg',
+    title: '项目资料审核',
+    desc: '审核建筑图、结构图、总布置图、设备布置图和项目要求，确定工程技术配合范围。',
+    icon: 'M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z'
+  },
+  {
+    num: '02',
+    image: '/images/engineering/workflow/step-02-design-criteria.jpg',
+    title: '设计条件确认',
+    desc: '确认建筑用途、跨度、高度、设计荷载、风/雪/抗震要求、吊车荷载、腐蚀环境和适用设计规范。',
+    icon: 'M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2m-6 9l2 2 4-4'
+  },
+  {
+    num: '03',
+    image: '/images/engineering/workflow/step-03-structural-coordination.jpg',
+    title: '结构协调',
+    desc: '协调结构体系布置、柱网、框架布置、支撑系统和荷载传递路径，与建筑和机电要求协调。',
+    icon: 'M4 5a1 1 0 011-1h14a1 1 0 011 1v2a1 1 0 01-1 1H5a1 1 0 01-1-1V5zM4 13a1 1 0 011-1h6a1 1 0 011 1v6a1 1 0 01-1 1H5a1 1 0 01-1-1v-6zM16 13a1 1 0 011-1h2a1 1 0 011 1v6a1 1 0 01-1 1h-2a1 1 0 01-1-1v-6z'
+  },
+  {
+    num: '04',
+    image: '/images/engineering/workflow/step-04-connection-development.jpg',
+    title: '构件与节点开发',
+    desc: '根据结构分析开发构件截面、连接节点、梁柱节点、柱脚、桁架节点、拼接节点和吊车牛腿。',
+    icon: 'M13.828 10.172a4 4 0 00-5.656 0l-4 4a4 4 0 105.656 5.656l1.102-1.101m-.758-4.899a4 4 0 005.656 0l4-4a4 4 0 00-5.656-5.656l-1.1 1.1'
+  },
+  {
+    num: '05',
+    image: '/images/engineering/workflow/step-05-shop-detailing.jpg',
+    title: '加工图深化',
+    desc: '编制可直接用于制造的加工图，包括构件尺寸、板件尺寸、孔位、焊接信息、螺栓连接、零件编号和装配说明。',
+    icon: 'M11 5H6a2 2 0 00-2 2v11a2 2 0 002 2h11a2 2 0 002-2v-5m-1.414-9.414a2 2 0 112.828 2.828L11.828 15H9v-2.828l8.586-8.586z'
+  },
+  {
+    num: '06',
+    image: '/images/engineering/workflow/step-06-drawing-approval.jpg',
+    title: '图纸审核与批准',
+    desc: '内部审核加工图的准确性、可制造性和协调性，然后提交客户/工程师审核批准后再放行制造。',
+    icon: 'M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z'
+  },
+  {
+    num: '07',
+    image: '/images/engineering/workflow/step-07-fabrication-release.jpg',
+    title: '制造放行',
+    desc: '将批准的图纸和制造文档放行到生产部门，包括材料清单、切割清单、装配说明和质量控制要求。',
+    icon: 'M13 10V3L4 14h7v7l9-11h-7z'
+  },
+  {
+    num: '08',
+    image: '/images/engineering/workflow/step-08-site-support.jpg',
+    title: '现场技术支持',
+    desc: '在现场安装期间提供技术支持，包括图纸澄清、连接指导、安装顺序协调和技术问题解决。',
+    icon: 'M18.364 5.636l-3.536 3.536m0 5.656l3.536 3.536M9.172 9.172L5.636 5.636m3.536 9.192l-3.536 3.536M21 12a9 9 0 11-18 0 9 9 0 0118 0zm-5 0a4 4 0 11-8 0 4 4 0 018 0z'
+  }
+];
+
+const designInputs = [
+  { name: '建筑用途', desc: '工业、仓储、商业、农业、矿业、基础设施或特殊用途结构' },
+  { name: '跨度与高度', desc: '所需净跨度、檐口高度、柱距和建筑尺寸' },
+  { name: '风荷载', desc: '项目所在地风速、暴露类别和适用风荷载要求' },
+  { name: '雪荷载', desc: '地面雪荷载、屋面雪荷载和积雪漂移考虑（如适用）' },
+  { name: '抗震', desc: '抗震设计类别、场地类别和适用抗震要求' },
+  { name: '吊车荷载', desc: '吊车吨位、跨度、工作级别和吊车梁要求（如适用）' },
+  { name: '设备荷载', desc: '集中设备荷载、动力荷载和振动考虑' },
+  { name: '腐蚀环境', desc: '环境暴露类别、湿度、化学暴露和涂层要求' },
+  { name: '防火要求', desc: '耐火极限要求和被动防火保护规格' },
+  { name: '当地规范', desc: '适用建筑规范、设计标准和项目技术规格书' }
+];
+
+const designStandards = [
+  { code: 'GB', desc: '中国国家标准，结构设计与制造规范' },
+  { code: 'AISC / ASCE', desc: '美国钢结构学会和ASCE标准' },
+  { code: 'Eurocode', desc: '欧洲钢结构设计标准（EN 1990-1993）' },
+  { code: 'Australian', desc: '澳大利亚钢结构标准（AS 4100, AS/NZS 1170）' },
+  { code: '其他', desc: '其他项目指定标准，需经技术评审和协调' }
+];
+
+const shopDrawingContents = [
+  '构件尺寸和截面',
+  '板件尺寸和厚度',
+  '孔位和螺栓排列',
+  '焊脚尺寸和焊接信息',
+  '螺栓连接节点',
+  '零件编号和材料标识',
+  '装配顺序信息',
+  '制造说明和公差',
+  '表面处理要求',
+  '安装和吊装参考'
+];
+
+const connectionTypes = [
+  { name: '梁柱连接节点', desc: '刚接、铰接和半刚性梁柱节点，具备适当的弯矩和剪力传递能力' },
+  { name: '柱脚节点', desc: '柱底板设计、锚栓布置、调平和灌浆细节' },
+  { name: '桁架连接节点', desc: '节点板连接、弦杆与腹杆连接节点和拼接细节' },
+  { name: '拼接节点', desc: '柱拼接、梁拼接和现场螺栓连接节点，用于运输分段' },
+  { name: '支撑连接节点', desc: '交叉支撑、门架支撑和抗侧力体系连接节点' },
+  { name: '吊车牛腿', desc: '吊车梁支撑、牛腿、加劲肋和荷载传递节点' },
+  { name: '设备接口节点', desc: '设备支撑连接、平台接口和动力荷载传递节点' },
+  { name: '屋面墙面连接', desc: '檩条连接、墙梁连接、围护支撑和洞口加强' }
+];
+
+const faqs = [
+  {
+    q: '中赛可以根据建筑图进行工作吗？',
+    a: '可以。中赛可以根据建筑图、方案图、总布置图或初步结构图开始工程技术配合。所需的工程协调和深化深度取决于所提供资料的完整程度。如果只有建筑图，可能需要在约定的项目范围内进行额外的结构协调和设计输入。'
+  },
+  {
+    q: '可以提供用于制造的加工图吗？',
+    a: '可以。中赛提供可直接用于制造的加工图，包括构件尺寸、板件尺寸、孔位、焊接信息、螺栓连接、零件编号、装配说明和制造注释。加工图与制造流程直接协调，确保能够直接指导生产和现场安装。'
+  },
+  {
+    q: '可以按AISC或Eurocode规范进行项目工作吗？',
+    a: '项目设计和深化可以根据项目指定的适用规范进行协调，包括AISC/ASCE、Eurocode、GB、澳大利亚标准或其他项目指定标准，需经技术评审。我们不宣称普遍符合所有国际标准；适用规范根据客户要求和当地法规按项目确认。'
+  },
+  {
+    q: '可以深化带吊车的钢结构建筑吗？',
+    a: '可以。中赛有带吊车工业建筑的深化经验，包括吊车梁支撑、牛腿、加劲肋、柱加强和荷载传递节点。吊车吨位、跨度、工作级别和吊车梁要求在深化开始前作为设计条件的一部分进行确认。'
+  },
+  {
+    q: '图纸如何与制造协调？',
+    a: '工程和深化与制造团队直接协调。加工图包含制造相关信息，如材料清单、切割清单、装配顺序、焊接细节和质量控制要求。批准的图纸随清晰文档放行到制造部门，工程团队在生产期间可随时提供技术澄清。'
+  },
+  {
+    q: '钢构件可以为集装箱运输进行优化吗？',
+    a: '可以。作为出口运输设计的一部分，构件长度和连接位置可以协调以适应标准集装箱尺寸。长构件可以采用螺栓拼接节点分段运输，构件编号与包装和吊装顺序协调。具体分段方式根据项目尺寸、集装箱类型和现场安装要求确定。'
+  },
+  {
+    q: '中赛提供当地注册工程师签章吗？',
+    a: '中赛在约定的项目范围内提供结构工程技术支持、深化和制造文档。当地许可、法定审批和注册工程师签章（如当地法规要求）仍由项目业主或其指定的当地持牌工程师负责。中赛不宣称在所有司法管辖区提供持牌专业工程服务；具体责任分配根据项目合同和当地法规要求确认。'
+  }
+];
+
+const relatedLinks = [
+  { name: '制造与质量控制', href: '/zh/manufacturing-quality/', desc: '工厂制造、质量控制和生产证据' },
+  { name: '钢结构厂房', href: '/zh/steel-workshop/', desc: '工业厂房和制造工厂钢结构' },
+  { name: '钢结构仓库', href: '/zh/steel-warehouse/', desc: '物流仓储建筑钢结构' },
+  { name: '矿业与重工业', href: '/zh/steel-mining-factory/', desc: '矿业和能源重型钢结构' },
+  { name: '特种钢结构', href: '/zh/special-custom-steel-structures/', desc: '定制和特殊用途钢结构工程' },
+  { name: '项目案例', href: '/zh/projects/', desc: '真实项目案例，含工程和制造范围' },
+  { name: '出口交付', href: '/zh/export-delivery/', desc: '集装箱装柜、出口单证和物流' },
+  { name: '联系与报价', href: '/zh/contact/', desc: '提交图纸进行工程评审和报价' }
+];
 ---
 
 <BaseLayout title={title} description={description} lang={lang}>
   <!-- Hero -->
-  <section class="detail-hero">
-    <div class="detail-hero-bg" style="background-image: url('/images/company/factory-aerial-panorama.jpg');"></div>
-    <div class="detail-hero-overlay"></div>
-    <div class="detail-hero-content">
-      <span class="eyebrow">工程设计 · 结构规划 · 制造衔接</span>
-      <h1>钢结构建筑设计与制造衔接服务</h1>
-      <p class="lead">中赛钢构基于建筑用途、项目尺寸、场地信息和约定的技术要求，为制造和出口导向的钢结构项目提供建筑设计与工程协调服务。我们将结构设计与深化设计、制造加工和出口供应紧密连接，有助于工程决策支持高效制造和海外交付。</p>
-      <div class="detail-hero-actions">
-        <a href="#quote" class="btn btn-primary">提交项目需求</a>
-        <a href="/zh/services/structural-steel-detailing/" class="btn btn-outline">查看深化设计服务</a>
+  <section class="hub-hero">
+    <div class="hub-hero-bg" style="background-image: url('/images/company/factory-aerial-panorama.jpg')"></div>
+    <div class="hub-hero-overlay"></div>
+    <div class="container hub-hero-content">
+      <div class="hub-breadcrumb">
+        <a href="/zh/">首页</a><span>/</span><span>工程设计与深化</span>
+      </div>
+      <p class="eyebrow">工程技术 · 从图纸到制造</p>
+      <h1>钢结构设计、深化<br>与工程技术支持</h1>
+      <p class="lead">中赛为海外钢结构项目提供工程技术支持，包括图纸审核、结构协调、加工图深化、节点开发和制造文档编制。</p>
+      <div class="hero-stats">
+        <div class="hero-stat">
+          <span class="stat-number">图纸审核</span>
+          <span class="stat-label">建筑图与结构图</span>
+        </div>
+        <div class="hero-stat">
+          <span class="stat-number">加工图深化</span>
+          <span class="stat-label">可直接用于制造</span>
+        </div>
+        <div class="hero-stat">
+          <span class="stat-number">节点开发</span>
+          <span class="stat-label">连接与节点处理</span>
+        </div>
+        <div class="hero-stat">
+          <span class="stat-number">现场支持</span>
+          <span class="stat-label">技术协调与指导</span>
+        </div>
+      </div>
+      <div class="hero-cta-group">
+        <a href="#quote" class="btn btn-primary">提交图纸进行工程评审</a>
+        <a href="/zh/projects/" class="btn btn-secondary">查看项目案例</a>
       </div>
     </div>
   </section>
 
-  <!-- Breadcrumb -->
-  <nav class="detail-breadcrumb">
-    <div class="container">
-      <a href="/zh/">首页</a>
-      <span class="sep">/</span>
-      <span class="current">工程设计</span>
-    </div>
-  </nav>
-
-  <EngineeringServiceGuide lang="zh" current="engineering-design" />
-
-  <!-- 01 从项目需求到结构方案 -->
-  <section class="detail-section">
+  <!-- 01 起始资料 -->
+  <section class="section" style="padding: 70px 0;">
     <div class="container">
       <div class="section-heading reveal">
-        <p class="section-index">01 / 项目需求</p>
-        <h2>从项目需求到结构方案</h2>
-        <p>每个钢结构项目都始于对建筑用途和必须满足条件的清晰理解。中赛钢构审核项目需求，开发支持建筑功能并与制造高效衔接的结构方案。</p>
+        <div>
+          <p class="section-index">起始资料</p>
+          <h2>可以从哪些项目资料开始工作？</h2>
+        </div>
+        <div>
+          <p>中赛可以从不同完整程度的项目文档开始工程技术配合。工作范围根据是否有完整结构图或仅有建筑方案图而有所不同。</p>
+        </div>
       </div>
-      <div class="requirement-grid">
-        <div class="requirement-card reveal reveal-delay-1">
-          <h3>建筑用途</h3>
-          <p>建筑将用于什么？工业生产、仓储物流、商业、农业或特种用途结构各有不同的结构方案。</p>
+      <div class="quality-grid" style="margin-top: 40px;">
+        <div class="quality-item reveal reveal-delay-1">
+          <h4>建筑图纸</h4>
+          <p>建筑平面图、立面图、剖面图和建筑方案图，展示布局、尺寸和功能要求。</p>
         </div>
-        <div class="requirement-card reveal reveal-delay-2">
-          <h3>项目所在地</h3>
-          <p>项目位于哪里？场地条件、当地气候和适用项目要求影响结构规划决策。</p>
+        <div class="quality-item reveal reveal-delay-2">
+          <h4>结构图纸</h4>
+          <p>现有结构图、框架布置图、构件表和连接节点，可深化为制造加工图。</p>
         </div>
-        <div class="requirement-card reveal reveal-delay-3">
-          <h3>项目尺寸</h3>
-          <p>所需的长度、宽度和高度是多少？尺寸影响结构配置、柱网布置和净空规划。</p>
+        <div class="quality-item reveal reveal-delay-3">
+          <h4>方案图纸</h4>
+          <p>初步方案草图、3D模型或布局方案，需要进行结构开发和工程协调。</p>
         </div>
-        <div class="requirement-card reveal reveal-delay-4">
-          <h3>设备与行车需求</h3>
-          <p>是否有设备布置或行车需求？这些影响结构配置、荷载考虑和柱网布置（如适用）。</p>
+        <div class="quality-item reveal reveal-delay-4">
+          <h4>总布置图</h4>
+          <p>GA图纸展示建筑总体布局、柱网、框架布置和主要尺寸要求。</p>
         </div>
-        <div class="requirement-card reveal reveal-delay-5">
-          <h3>屋面、墙面与开洞需求</h3>
-          <p>是否有特殊的屋面、墙面、门或开洞需求？这些与结构方案和建筑围护规划协调。</p>
+        <div class="quality-item reveal reveal-delay-1">
+          <h4>设备布置图</h4>
+          <p>工业项目的设备布置图、吊车布置、工艺流程图和荷载要求。</p>
         </div>
-        <div class="requirement-card reveal reveal-delay-6">
-          <h3>项目技术规格</h3>
-          <p>适用的项目技术规格、技术要求和约定标准指导结构方案开发和制造协调。</p>
+        <div class="quality-item reveal reveal-delay-2">
+          <h4>项目尺寸</h4>
+          <p>建筑长度、宽度、高度、跨度要求、檐口高度和柱距规格。</p>
+        </div>
+        <div class="quality-item reveal reveal-delay-3">
+          <h4>设计荷载</h4>
+          <p>风荷载、雪荷载、抗震要求、吊车荷载、设备荷载和其他设计条件。</p>
+        </div>
+        <div class="quality-item reveal reveal-delay-4">
+          <h4>当地设计规范</h4>
+          <p>适用建筑规范、设计标准、项目技术规格书和客户要求。</p>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- 02 结构规划 -->
-  <section class="detail-section alt">
+  <!-- 02 工程流程 -->
+  <section class="manufacturing-process-section">
+    <div class="container">
+      <div class="section-heading reveal" style="margin-bottom: 40px;">
+        <div>
+          <p class="section-index">工作流程</p>
+          <h2>工程设计与深化工作流程</h2>
+        </div>
+        <div>
+          <p>从项目资料审核到制造放行和现场技术支持的八步工程流程，每个阶段都有质量控制。</p>
+        </div>
+      </div>
+      <div class="process-grid">
+        {engineeringSteps.map((step, i) => (
+          <div class={`process-card reveal reveal-delay-${(i % 4) + 1}`}>
+            <div class="process-card-img" style="position: relative; min-height: 180px; overflow: hidden;">
+              <img src={step.image} alt={step.title} style="width: 100%; height: 100%; object-fit: cover; position: absolute; top: 0; left: 0;" width="400" height="200" loading="lazy">
+              <div style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: linear-gradient(135deg, rgba(15,23,42,0.65) 0%, rgba(30,64,175,0.55) 100%);"></div>
+              <div style="position: relative; z-index: 1; display: flex; align-items: center; justify-content: center; min-height: 180px; flex-direction: column; gap: 8px;">
+                <svg width="44" height="44" viewBox="0 0 24 24" fill="none" stroke="rgba(255,255,255,0.95)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                  <path d={step.icon} />
+                </svg>
+              </div>
+              <span class="process-card-num" style="position: absolute; top: 12px; left: 12px; z-index: 2;">{step.num}</span>
+            </div>
+            <div class="process-card-body">
+              <h3>{step.title}</h3>
+              <p>{step.desc}</p>
+            </div>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- 03 设计条件 -->
+  <section class="section" style="padding: 70px 0; background: #f8fafc;">
     <div class="container">
       <div class="section-heading reveal">
-        <p class="section-index">02 / 结构规划</p>
-        <h2>钢结构建筑结构规划</h2>
-        <p>结构规划将项目需求转化为可建造的钢结构建筑配置。中赛钢构协调建筑布局、结构体系和功能要求，支持高效制造和清晰的可用空间。</p>
-      </div>
-      <div class="image-text-block">
-        <div class="itb-image">
-          <img src="/images/products/01-industrial.jpg" alt="钢结构工业项目结构规划" loading="lazy">
+        <div>
+          <p class="section-index">设计输入</p>
+          <h2>设计条件与项目输入</h2>
         </div>
-        <div class="itb-content">
-          <h3>结构配置考虑因素</h3>
-          <p>结构规划基于项目要求和适用技术规格进行开发。</p>
-          <ul>
-            <li>基于功能要求的建筑布局和柱网布置</li>
-            <li>清晰的工作空间和生产动线协调</li>
-            <li>屋面配置和排水协调</li>
-            <li>门、窗和开洞与结构布局的协调</li>
-            <li>设备和行车需求协调（如适用）</li>
-            <li>未来扩建考虑（与项目范围相关时）</li>
+        <div>
+          <p>结构设计和深化基于项目特定的设计条件。这些输入在项目开始时确认，指导所有工程决策。</p>
+        </div>
+      </div>
+      <div style="display: grid; grid-template-columns: repeat(5, 1fr); gap: 16px; margin-top: 40px;" class="design-inputs-grid">
+        {designInputs.map((input, i) => (
+          <div class={`reveal reveal-delay-${(i % 4) + 1}`} style="padding: 20px; background: white; border-radius: 10px; border: 1px solid #e2e8f0;">
+            <h4 style="font-size: 14px; font-weight: 600; color: #1e3a5f; margin-bottom: 8px;">{input.name}</h4>
+            <p style="font-size: 12px; color: #64748b; line-height: 1.6; margin: 0;">{input.desc}</p>
+          </div>
+        ))}
+      </div>
+      <div style="margin-top: 24px; padding: 20px; background: #fffbeb; border-left: 4px solid #f59e0b; border-radius: 0 8px 8px 0;" class="reveal">
+        <p style="margin: 0; color: #92400e; font-size: 13px; line-height: 1.7;"><strong>说明：</strong>设计参数不是所有项目统一标准。风荷载、雪荷载、抗震要求和其他条件因项目位置和适用规范而异。所有设计输入根据客户提供的信息和当地法规要求按项目确认。</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- 04 设计标准 -->
+  <section class="section" style="padding: 70px 0;">
+    <div class="container">
+      <div class="section-heading reveal">
+        <div>
+          <p class="section-index">设计标准</p>
+          <h2>设计标准</h2>
+        </div>
+        <div>
+          <p>项目设计和深化可以根据项目指定的适用规范进行协调，需经技术评审。我们不宣称普遍符合所有国际标准。</p>
+        </div>
+      </div>
+      <div style="display: grid; grid-template-columns: repeat(5, 1fr); gap: 20px; margin-top: 40px;" class="standards-grid">
+        {designStandards.map((std, i) => (
+          <div class={`reveal reveal-delay-${(i % 4) + 1}`} style="padding: 28px 24px; background: white; border-radius: 12px; border: 1px solid #e2e8f0; text-align: center;">
+            <div style="width: 56px; height: 56px; margin: 0 auto 16px; background: #eff6ff; border-radius: 50%; display: flex; align-items: center; justify-content: center;">
+              <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#1e40af" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
+              </svg>
+            </div>
+            <h4 style="font-size: 16px; font-weight: 600; color: #0f172a; margin-bottom: 8px;">{std.code}</h4>
+            <p style="font-size: 13px; color: #64748b; line-height: 1.6; margin: 0;">{std.desc}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- 05 加工图 -->
+  <section class="section" style="padding: 70px 0; background: #f8fafc;">
+    <div class="container">
+      <div class="section-heading reveal">
+        <div>
+          <p class="section-index">加工图</p>
+          <h2>用于制造的加工图</h2>
+        </div>
+        <div>
+          <p>加工图是工程与制造之间的直接桥梁。它们包含制造、装配和现场安装所需的全部信息。</p>
+        </div>
+      </div>
+      <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 48px; align-items: start; margin-top: 40px;" class="shop-drawings-grid">
+        <div class="reveal reveal-delay-1">
+          <h3 style="font-size: 22px; margin-bottom: 20px; color: #0f172a;">加工图内容</h3>
+          <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 12px;">
+            {shopDrawingContents.map((item, i) => (
+              <div key={i} style="display: flex; align-items: flex-start; gap: 10px; padding: 12px; background: white; border-radius: 8px; border: 1px solid #e2e8f0;">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#1e40af" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="flex-shrink: 0; margin-top: 2px;">
+                  <path d="M5 13l4 4L19 7" />
+                </svg>
+                <span style="font-size: 13px; color: #334155; line-height: 1.5;">{item}</span>
+              </div>
+            ))}
+          </div>
+        </div>
+        <div class="reveal reveal-delay-2">
+          <div style="position: relative; border-radius: 12px; overflow: hidden; margin-bottom: 24px; box-shadow: 0 4px 12px rgba(0,0,0,0.1);">
+            <img src="/images/engineering/tekla-model.jpg" alt="Tekla BIM三维钢结构模型，展示梁柱桁架节点关系" style="width: 100%; height: auto; display: block;" width="500" height="300">
+            <p style="font-size:12px;color:#64748b;margin:8px 0 0;">Tekla/BIM三维模型示意 · 实际模型根据项目建立</p>
+          </div>
+          <div style="padding: 24px; background: #eff6ff; border-radius: 12px; border: 1px solid #bfdbfe;">
+            <h4 style="font-size: 17px; color: #1e40af; margin-bottom: 12px;">可直接用于制造的文档</h4>
+            <p style="font-size: 14px; color: #1e3a5f; line-height: 1.7; margin: 0;">加工图与制造团队直接协调，确保包含生产所需的全部信息。图纸经过内部审核和客户/工程师批准后放行制造，确保准确性和可制造性。</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 06 节点深化 -->
+  <section class="section" style="padding: 70px 0;">
+    <div class="container">
+      <div class="section-heading reveal">
+        <div>
+          <p class="section-index">节点处理</p>
+          <h2>连接与节点深化</h2>
+        </div>
+        <div>
+          <p>节点深化对结构性能、制造效率和现场安装至关重要。所有连接根据结构分析和批准图纸开发。</p>
+        </div>
+      </div>
+      <div class="quality-grid" style="margin-top: 40px;">
+        {connectionTypes.map((conn, i) => (
+          <div class={`quality-item reveal reveal-delay-${(i % 4) + 1}`}>
+            <h4>{conn.name}</h4>
+            <p>{conn.desc}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- 07 面向制造的设计 -->
+  <section class="section" style="padding: 70px 0; background: #f8fafc;">
+    <div class="container">
+      <div class="section-heading reveal">
+        <div>
+          <p class="section-index">可制造性</p>
+          <h2>面向制造的设计</h2>
+        </div>
+        <div>
+          <p>工程不脱离制造。中赛将设计和深化与制造能力协调，确保构件能够高效生产、装配和质量控制。</p>
+        </div>
+      </div>
+      <div style="display: grid; grid-template-columns: repeat(4, 1fr); gap: 20px; margin-top: 40px;" class="dfm-grid">
+        <div class="reveal reveal-delay-1" style="padding: 28px 24px; background: white; border-radius: 12px; border: 1px solid #e2e8f0;">
+          <div style="width: 44px; height: 44px; background: #eff6ff; border-radius: 8px; display: flex; align-items: center; justify-content: center; margin-bottom: 16px;">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#1e40af" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M14.7 6.3a1 1 0 000 1.4l1.6 1.6a1 1 0 001.4 0l3.77-3.77a6 6 0 01-7.94 7.94l-6.91 6.91a2.12 2.12 0 01-3-3l6.91-6.91a6 6 0 017.94-7.94l-3.76 3.76z" />
+            </svg>
+          </div>
+          <h3 style="font-size: 17px; margin-bottom: 10px; color: #0f172a;">可制造性</h3>
+          <p style="font-size: 13px; color: #64748b; line-height: 1.7; margin: 0;">连接和构件细节开发为可使用现有制造设备和工艺进行生产。</p>
+        </div>
+        <div class="reveal reveal-delay-2" style="padding: 28px 24px; background: white; border-radius: 12px; border: 1px solid #e2e8f0;">
+          <div style="width: 44px; height: 44px; background: #eff6ff; border-radius: 8px; display: flex; align-items: center; justify-content: center; margin-bottom: 16px;">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#1e40af" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M13 10V3L4 14h7v7l9-11h-7z" />
+            </svg>
+          </div>
+          <h3 style="font-size: 17px; margin-bottom: 10px; color: #0f172a;">焊接可达性</h3>
+          <p style="font-size: 13px; color: #64748b; line-height: 1.7; margin: 0;">连接构造审核确保制造期间有足够的焊接操作空间和质量控制条件。</p>
+        </div>
+        <div class="reveal reveal-delay-3" style="padding: 28px 24px; background: white; border-radius: 12px; border: 1px solid #e2e8f0;">
+          <div style="width: 44px; height: 44px; background: #eff6ff; border-radius: 8px; display: flex; align-items: center; justify-content: center; margin-bottom: 16px;">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#1e40af" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M4 8V4m0 0h4M4 4l5 5m11-1V4m0 0h-4m4 0l-5 5M4 16v4m0 0h4m-4 0l5-5m11 5l-5-5m5 5v-4m0 4h-4" />
+            </svg>
+          </div>
+          <h3 style="font-size: 17px; margin-bottom: 10px; color: #0f172a;">板材优化</h3>
+          <p style="font-size: 13px; color: #64748b; line-height: 1.7; margin: 0;">构件和板件尺寸与标准材料尺寸协调，优化材料利用率，减少浪费。</p>
+        </div>
+        <div class="reveal reveal-delay-4" style="padding: 28px 24px; background: white; border-radius: 12px; border: 1px solid #e2e8f0;">
+          <div style="width: 44px; height: 44px; background: #eff6ff; border-radius: 8px; display: flex; align-items: center; justify-content: center; margin-bottom: 16px;">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#1e40af" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M8 7h12m0 0l-4-4m4 4l-4 4m0 6H4m0 0l4 4m-4-4l4-4" />
+            </svg>
+          </div>
+          <h3 style="font-size: 17px; margin-bottom: 10px; color: #0f172a;">构件分段</h3>
+          <p style="font-size: 13px; color: #64748b; line-height: 1.7; margin: 0;">长构件在适当位置采用螺栓拼接节点分段，便于运输和现场组装。</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 08 面向出口运输和现场安装的设计 -->
+  <section class="dual-path-section">
+    <div class="container">
+      <div class="section-heading reveal" style="color: white; text-align: center; display: block; margin-bottom: 36px;">
+        <p class="section-index" style="color: #f59e0b;">出口设计</p>
+        <h2 style="color: white; margin-bottom: 10px;">面向出口运输和现场安装的设计</h2>
+        <p style="color: rgba(255,255,255,0.65); max-width: 750px; margin: 0 auto;">对于海外项目，工程协调不仅限于制造，还包括集装箱运输优化、构件编号和现场吊装顺序规划。</p>
+      </div>
+      <div class="dual-path-grid" style="grid-template-columns: repeat(3, 1fr); gap: 20px;">
+        <div class="dual-path-card reveal reveal-delay-1" style="padding: 28px 24px;">
+          <div class="path-icon" style="width: 44px; height: 44px; font-size: 15px; font-weight: 700; color:#fff; margin-bottom: 14px;">01</div>
+          <h3 style="font-size: 18px; margin-bottom: 8px;">集装箱尺寸限制</h3>
+          <p style="font-size: 14px; margin-bottom: 0;">构件长度和连接位置协调以适应标准集装箱尺寸（40GP、40HQ、45HQ，如适用）。</p>
+        </div>
+        <div class="dual-path-card reveal reveal-delay-2" style="padding: 28px 24px;">
+          <div class="path-icon" style="width: 44px; height: 44px; font-size: 15px; font-weight: 700; color:#fff; margin-bottom: 14px;">02</div>
+          <h3 style="font-size: 18px; margin-bottom: 8px;">长构件分段</h3>
+          <p style="font-size: 14px; margin-bottom: 0;">超过集装箱长度的构件采用螺栓拼接节点在结构适当位置分段，用于运输和现场组装。</p>
+        </div>
+        <div class="dual-path-card reveal reveal-delay-3" style="padding: 28px 24px;">
+          <div class="path-icon" style="width: 44px; height: 44px; font-size: 15px; font-weight: 700; color:#fff; margin-bottom: 14px;">03</div>
+          <h3 style="font-size: 18px; margin-bottom: 8px;">螺栓拼接位置</h3>
+          <p style="font-size: 14px; margin-bottom: 0;">拼接位置选择避开高弯矩区域，便于现场螺栓操作，连接节点协调现场操作空间。</p>
+        </div>
+        <div class="dual-path-card reveal reveal-delay-1" style="padding: 28px 24px;">
+          <div class="path-icon" style="width: 44px; height: 44px; font-size: 15px; font-weight: 700; color:#fff; margin-bottom: 14px;">04</div>
+          <h3 style="font-size: 18px; margin-bottom: 8px;">构件编号</h3>
+          <p style="font-size: 14px; margin-bottom: 0;">每个构件编号对应加工图、装箱单和吊装顺序，减少现场识别错误。</p>
+        </div>
+        <div class="dual-path-card reveal reveal-delay-2" style="padding: 28px 24px;">
+          <div class="path-icon" style="width: 44px; height: 44px; font-size: 15px; font-weight: 700; color:#fff; margin-bottom: 14px;">05</div>
+          <h3 style="font-size: 18px; margin-bottom: 8px;">包装顺序</h3>
+          <p style="font-size: 14px; margin-bottom: 0;">构件按吊装顺序分组包装，使现场团队能够按逻辑顺序卸货和安装。</p>
+        </div>
+        <div class="dual-path-card reveal reveal-delay-3" style="padding: 28px 24px;">
+          <div class="path-icon" style="width: 44px; height: 44px; font-size: 15px; font-weight: 700; color:#fff; margin-bottom: 14px;">06</div>
+          <h3 style="font-size: 18px; margin-bottom: 8px;">现场吊装顺序</h3>
+          <p style="font-size: 14px; margin-bottom: 0;">图纸包包含吊装顺序参考和安装指导，支持当地承包商有序现场组装。</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 09 技术协调 -->
+  <section class="section" style="padding: 70px 0;">
+    <div class="container">
+      <div class="section-heading reveal">
+        <div>
+          <p class="section-index">技术协调</p>
+          <h2>与业主、承包商和当地工程师的协调</h2>
+        </div>
+        <div>
+          <p>中赛根据不同项目参与方的角色和要求，提供相应程度的工程技术协调支持。</p>
+        </div>
+      </div>
+      <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; margin-top: 40px;" class="coordination-grid">
+        <div class="reveal reveal-delay-1" style="padding: 32px 28px; background: white; border-radius: 12px; border: 1px solid #e2e8f0;">
+          <div style="width: 48px; height: 48px; background: #eff6ff; border-radius: 10px; display: flex; align-items: center; justify-content: center; margin-bottom: 16px;">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#1e40af" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M16 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2" />
+              <circle cx="8.5" cy="7" r="4" />
+              <path d="M20 8v6M23 11h-6" />
+            </svg>
+          </div>
+          <h3 style="font-size: 19px; margin-bottom: 12px; color: #0f172a;">业主 / 投资方</h3>
+          <ul style="margin: 0; padding-left: 18px; color: #475569; font-size: 14px; line-height: 2;">
+            <li>帮助梳理项目技术需求</li>
+            <li>配合图纸和报价资料</li>
+            <li>提供结构方案选项和建议</li>
+            <li>支持项目规划和可行性评估</li>
+          </ul>
+        </div>
+        <div class="reveal reveal-delay-2" style="padding: 32px 28px; background: white; border-radius: 12px; border: 1px solid #e2e8f0;">
+          <div style="width: 48px; height: 48px; background: #eff6ff; border-radius: 10px; display: flex; align-items: center; justify-content: center; margin-bottom: 16px;">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#1e40af" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4" />
+            </svg>
+          </div>
+          <h3 style="font-size: 19px; margin-bottom: 12px; color: #0f172a;">工程公司 / 承包商</h3>
+          <ul style="margin: 0; padding-left: 18px; color: #475569; font-size: 14px; line-height: 2;">
+            <li>根据既有结构图进行深化</li>
+            <li>协调连接节点和接口</li>
+            <li>编制可直接用于制造的加工图</li>
+            <li>解决制造和安装期间的技术问题</li>
+          </ul>
+        </div>
+        <div class="reveal reveal-delay-3" style="padding: 32px 28px; background: white; border-radius: 12px; border: 1px solid #e2e8f0;">
+          <div style="width: 48px; height: 48px; background: #eff6ff; border-radius: 10px; display: flex; align-items: center; justify-content: center; margin-bottom: 16px;">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#1e40af" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
+            </svg>
+          </div>
+          <h3 style="font-size: 19px; margin-bottom: 12px; color: #0f172a;">当地工程师</h3>
+          <ul style="margin: 0; padding-left: 18px; color: #475569; font-size: 14px; line-height: 2;">
+            <li>按当地规范和项目要求协调</li>
+            <li>提供制造所需技术文档</li>
+            <li>支持图纸审核和批准流程</li>
+            <li>不替代当地持牌工程师责任</li>
           </ul>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- 03 设计输入资料 -->
-  <section class="detail-section">
+  <!-- 10 服务边界 -->
+  <section class="section" style="padding: 70px 0; background: #f8fafc;">
     <div class="container">
       <div class="section-heading reveal">
-        <p class="section-index">03 / 设计输入</p>
-        <h2>开始需要提供哪些资料？</h2>
-        <p>您可以提交目前已有的项目信息。中赛钢构将审核现有信息，并确认工程设计、深化设计和报价可能需要补充的其他数据。并非所有资料都需要在初步审核前全部提供。</p>
+        <div>
+          <p class="section-index">责任边界</p>
+          <h2>工程责任与当地合规</h2>
+        </div>
+        <div>
+          <p>海外项目必须明确工程责任划分。中赛在约定项目范围内提供工程技术支持，而当地法规责任由适当的当地主体承担。</p>
+        </div>
       </div>
-      <div class="requirement-grid">
-        <div class="requirement-card reveal reveal-delay-1">
-          <h3>项目所在国家</h3>
-          <p>项目位置和适用项目要求。</p>
+      <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 32px; margin-top: 40px;" class="boundary-grid">
+        <div class="reveal reveal-delay-1" style="padding: 32px; background: #ecfdf5; border-radius: 12px; border: 1px solid #a7f3d0;">
+          <h3 style="font-size: 19px; color: #065f46; margin-bottom: 16px; display: flex; align-items: center; gap: 10px;">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#059669" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M5 13l4 4L19 7" />
+            </svg>
+            中赛提供
+          </h3>
+          <ul style="margin: 0; padding-left: 20px; color: #065f46; font-size: 14px; line-height: 2;">
+            <li>结构工程技术支持和协调</li>
+            <li>图纸审核和结构协调</li>
+            <li>加工图深化和制造文档</li>
+            <li>连接节点开发和节点深化</li>
+            <li>面向制造和运输的设计优化</li>
+            <li>制造和安装期间的技术支持</li>
+            <li>按项目指定设计规范协调</li>
+          </ul>
         </div>
-        <div class="requirement-card reveal reveal-delay-2">
-          <h3>建筑用途</h3>
-          <p>钢结构建筑的预期用途。</p>
+        <div class="reveal reveal-delay-2" style="padding: 32px; background: #fef2f2; border-radius: 12px; border: 1px solid #fecaca;">
+          <h3 style="font-size: 19px; color: #991b1b; margin-bottom: 16px; display: flex; align-items: center; gap: 10px;">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#dc2626" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <circle cx="12" cy="12" r="10" />
+              <line x1="12" y1="8" x2="12" y2="12" />
+              <line x1="12" y1="16" x2="12.01" y2="16" />
+            </svg>
+            仍属当地责任
+          </h3>
+          <ul style="margin: 0; padding-left: 20px; color: #991b1b; font-size: 14px; line-height: 2;">
+            <li>当地许可和法定审批</li>
+            <li>注册工程师签章（如要求）</li>
+            <li>当地持牌工程师设计责任</li>
+            <li>现场土建和基础施工</li>
+            <li>当地人工安装和吊装</li>
+            <li>当地机电协调和安装</li>
+            <li>当地政府法规合规</li>
+          </ul>
         </div>
-        <div class="requirement-card reveal reveal-delay-3">
-          <h3>长度 / 宽度 / 高度</h3>
-          <p>基本项目尺寸（如有）。</p>
-        </div>
-        <div class="requirement-card reveal reveal-delay-4">
-          <h3>建筑图纸</h3>
-          <p>建筑图纸（如有，用于协调）。</p>
-        </div>
-        <div class="requirement-card reveal reveal-delay-5">
-          <h3>结构要求</h3>
-          <p>结构要求和技术规格。</p>
-        </div>
-        <div class="requirement-card reveal reveal-delay-6">
-          <h3>设备与行车布置</h3>
-          <p>设备布置和行车需求（如相关）。</p>
-        </div>
-        <div class="requirement-card reveal reveal-delay-1">
-          <h3>门 / 开洞需求</h3>
-          <p>门、窗和开洞要求。</p>
-        </div>
-        <div class="requirement-card reveal reveal-delay-2">
-          <h3>屋面 / 墙面需求</h3>
-          <p>屋面和墙面系统要求（如指定）。</p>
-        </div>
+      </div>
+      <div style="margin-top: 24px; padding: 20px; background: #fffbeb; border-left: 4px solid #f59e0b; border-radius: 0 8px 8px 0;" class="reveal">
+        <p style="margin: 0; color: #92400e; font-size: 14px; line-height: 1.7;"><strong>重要说明：</strong>中赛在约定的项目范围内提供结构工程技术支持、深化和制造文档。当地许可、法定审批和注册工程师签章（如当地法规要求）仍受当地法规和项目责任约束。具体工程责任分配根据项目合同和当地法规要求确认。</p>
       </div>
     </div>
   </section>
 
-  <!-- 04 面向制造的设计 -->
-  <section class="detail-section alt">
+  <!-- 11 所需资料 -->
+  <section class="section" style="padding: 70px 0;">
     <div class="container">
       <div class="section-heading reveal">
-        <p class="section-index">04 / 面向制造的设计</p>
-        <h2>与制造协调的工程设计</h2>
-        <p>与中赛钢构合作的一个关键优势是，工程设计从一开始就与深化设计和制造要求协调。这有助于结构决策支持高效制造、清晰的构件识别和直接的出口准备。</p>
-      </div>
-      <div class="process-flow">
-        <div class="process-step reveal">
-          <div class="step-num">1</div>
-          <h4>结构设计</h4>
-          <p>基于项目要求开发结构方案。</p>
+        <div>
+          <p class="section-index">提交资料</p>
+          <h2>工程评审所需资料</h2>
         </div>
-        <div class="process-step reveal reveal-delay-1">
-          <div class="step-num">2</div>
-          <h4>深化设计协调</h4>
-          <p>协调设计与加工图和制造要求。</p>
-        </div>
-        <div class="process-step reveal reveal-delay-2">
-          <div class="step-num">3</div>
-          <h4>加工图</h4>
-          <p>开发可制造的图纸信息。</p>
-        </div>
-        <div class="process-step reveal reveal-delay-3">
-          <div class="step-num">4</div>
-          <h4>制造加工</h4>
-          <p>制造加工根据确认图纸和项目要求组织。</p>
+        <div>
+          <p>在项目开始时提供完整的项目信息有助于确保准确的工程评审、高效的深化和可靠的报价。信息越完整，工程范围和定价越精确。</p>
         </div>
       </div>
-      <div class="related-links" style="margin-top: 48px;">
-        <h3>相关服务与能力</h3>
-        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 16px; margin-top: 24px;">
-          <a href="/zh/services/structural-steel-detailing/" class="related-link-card reveal reveal-delay-1">
-            <h4>钢结构深化设计</h4>
-            <p>加工图、制造图纸和图纸审核</p>
-            <span class="rl-arrow">查看详情 →</span>
-          </a>
-          <a href="/zh/products/custom-engineering/" class="related-link-card reveal reveal-delay-2">
-            <h4>定制工程与加工</h4>
-            <p>基于项目图纸和BOQ的钢结构加工</p>
-            <span class="rl-arrow">查看详情 →</span>
-          </a>
-          <a href="/zh/manufacturing-quality/" class="related-link-card reveal reveal-delay-3">
-            <h4>制造与质量控制</h4>
-            <p>8步制造流程和质量控制</p>
-            <span class="rl-arrow">查看详情 →</span>
-          </a>
-          <a href="/zh/transportation-infrastructure-steel/" class="related-link-card reveal reveal-delay-4">
-            <h4>交通与基础设施</h4>
-            <p>桥梁、车站、码头与基础设施钢结构</p>
-            <span class="rl-arrow">查看方案 →</span>
-          </a>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- 05 按建筑类型的设计支持 -->
-  <section class="detail-section">
-    <div class="container">
-      <div class="section-heading reveal">
-        <p class="section-index">05 / 建筑类型</p>
-        <h2>按建筑类型的设计支持</h2>
-        <p>不同建筑类型有不同的结构和功能要求。中赛钢构根据具体用途协调工程设计，有助于结构方案支持建筑的预期功能和制造效率。</p>
-      </div>
-      <div class="requirement-grid">
-        <div class="requirement-card reveal reveal-delay-1">
-          <h3>工业厂房</h3>
-          <p>生产空间、设备布置、行车需求、通风和清晰工作空间协调。</p>
-          <a href="/zh/steel-workshop/" style="color: #1e40af; font-weight: 600; font-size: 14px;">查看厂房 →</a>
-        </div>
-        <div class="requirement-card reveal reveal-delay-2">
-          <h3>仓库与物流</h3>
-          <p>仓储布局、货架协调、净高、装卸通道和物流动线规划。</p>
-          <a href="/zh/steel-warehouse/" style="color: #1e40af; font-weight: 600; font-size: 14px;">查看仓库 →</a>
-        </div>
-        <div class="requirement-card reveal reveal-delay-3">
-          <h3>商业 / 公共建筑</h3>
-          <p>开放空间规划、建筑协调、公共动线和立面协调。</p>
-        </div>
-        <div class="requirement-card reveal reveal-delay-4">
-          <h3>农业 / 特种建筑</h3>
-          <p>特种用途建筑要求、通风、潮湿环境和大开放空间协调。</p>
-        </div>
-        <div class="requirement-card reveal reveal-delay-5">
-          <h3>定制工程</h3>
-          <p>复杂结构配置、定制构件、设备平台和特殊制造要求。</p>
-          <a href="/zh/products/custom-engineering/" style="color: #1e40af; font-weight: 600; font-size: 14px;">查看定制工程 →</a>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- 06 中赛可以提供的支持 -->
-  <section class="detail-section alt">
-    <div class="container">
-      <div class="section-heading reveal">
-        <p class="section-index">06 / 中赛支持</p>
-        <h2>中赛钢构可以提供的支持</h2>
-        <p>中赛钢构为钢结构建筑项目提供工程设计协调和面向制造的支持。设计工作基于约定的项目范围、现有项目信息和适用技术要求进行开发。</p>
-      </div>
-      <div class="requirement-grid">
-        <div class="requirement-card reveal reveal-delay-1">
-          <h3>初步结构规划</h3>
-          <p>基于项目要求和建筑用途的初始结构方案开发。</p>
-        </div>
-        <div class="requirement-card reveal reveal-delay-2">
-          <h3>钢结构建筑设计协调</h3>
-          <p>为制造和出口导向的钢结构建筑项目提供工程设计协调。</p>
-        </div>
-        <div class="requirement-card reveal reveal-delay-3">
-          <h3>结构图纸开发/支持</h3>
-          <p>基于项目要求和约定范围的结构图纸开发和支持。</p>
-        </div>
-        <div class="requirement-card reveal reveal-delay-4">
-          <h3>设计到深化设计协调</h3>
-          <p>工程设计与钢结构深化设计之间的协调，有助于制造准备。</p>
-        </div>
-        <div class="requirement-card reveal reveal-delay-5">
-          <h3>面向制造的工程协调</h3>
-          <p>工程决策与制造、编号、包装和出口要求协调。</p>
-        </div>
-        <div class="requirement-card reveal reveal-delay-6">
-          <h3>屋面 / 墙面系统协调</h3>
-          <p>作为结构方案的一部分，与屋面和墙面围护系统协调。</p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- 07 设计责任与当地要求 -->
-  <section class="detail-section">
-    <div class="container">
-      <div class="section-heading reveal">
-        <p class="section-index">07 / 设计责任</p>
-        <h2>设计责任与当地要求</h2>
-        <p>中赛钢构的工程工作根据约定的项目范围、现有项目信息和适用技术要求进行开发。当地工程审核、法定审批和施工审批根据项目所在地要求和合同范围处理。中赛钢构提供制造、出口供应和海外安装技术指导；当地安装和施工由客户或当地项目团队完成。</p>
-      </div>
-    </div>
-  </section>
-
-  <!-- 08 从设计到出口供应 -->
-  <section class="detail-section alt">
-    <div class="container">
-      <div class="section-heading reveal">
-        <p class="section-index">08 / 设计到出口</p>
-        <h2>从设计到出口供应</h2>
-        <p>中赛钢构将工程设计与制造和出口准备连接起来，提供从项目需求到海外交付的协调路径。</p>
-      </div>
-      <div class="process-flow">
-        <div class="process-step reveal">
-          <div class="step-num">1</div>
-          <h4>项目需求</h4>
-          <p>提交建筑用途、尺寸和项目信息。</p>
-        </div>
-        <div class="process-step reveal reveal-delay-1">
-          <div class="step-num">2</div>
-          <h4>工程设计</h4>
-          <p>开发结构方案和设计协调。</p>
-        </div>
-        <div class="process-step reveal reveal-delay-2">
-          <div class="step-num">3</div>
-          <h4>深化设计</h4>
-          <p>协调加工图和制造图纸。</p>
-        </div>
-        <div class="process-step reveal reveal-delay-3">
-          <div class="step-num">4</div>
-          <h4>图纸确认</h4>
-          <p>确认可制造的图纸信息。</p>
-        </div>
-        <div class="process-step reveal reveal-delay-4">
-          <div class="step-num">5</div>
-          <h4>制造加工</h4>
-          <p>制造加工根据确认图纸和项目要求组织。</p>
-        </div>
-        <div class="process-step reveal reveal-delay-5">
-          <div class="step-num">6</div>
-          <h4>编号与包装</h4>
-          <p>构件标识与包装根据确认图纸和项目要求进行组织。</p>
-        </div>
-        <div class="process-step reveal reveal-delay-6">
-          <div class="step-num">7</div>
-          <h4>装柜</h4>
-          <p>协调装柜以便海外交付。</p>
-        </div>
-        <div class="process-step reveal reveal-delay-7">
-          <div class="step-num">8</div>
-          <h4>出口准备</h4>
-          <p>出口单证支持和物流协调。</p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- 09 FAQ -->
-  <section class="detail-section">
-    <div class="container">
-      <div class="section-heading reveal">
-        <p class="section-index">09 / 常见问题</p>
-        <h2>常见问题</h2>
-      </div>
-      <div class="faq-list">
-        <div class="faq-item">
-          <button class="faq-question" aria-expanded="false" aria-controls="faq-engdesign-zh-01">
-            <span>中赛可以在没有完整图纸的情况下开始钢结构建筑设计吗？</span>
-            <span class="faq-icon">+</span>
-          </button>
-          <div class="faq-answer" id="faq-engdesign-zh-01" hidden>
-            <div class="faq-answer-inner">
-              <p>可以。您可以提交目前已有的项目信息，如建筑用途、基本尺寸、项目所在国家和任何现有图纸或规格。中赛钢构可以审核现有信息，并确认工程设计、深化设计和报价可能需要补充的其他数据。</p>
-            </div>
+      <div style="display: grid; grid-template-columns: repeat(4, 1fr); gap: 16px; margin-top: 40px;" class="info-grid">
+        {[
+          '项目国家/城市',
+          '建筑用途和功能',
+          '建筑图纸',
+          '结构图纸（如有）',
+          '建筑尺寸（长×宽×高）',
+          '设计荷载（风/雪/抗震）',
+          '吊车/设备要求',
+          '适用设计规范',
+          '材料要求',
+          '交付计划'
+        ].map((item, i) => (
+          <div key={i} class={`reveal reveal-delay-${(i % 4) + 1}`} style="padding: 16px; background: #f8fafc; border-radius: 8px; border: 1px solid #e2e8f0; display: flex; align-items: center; gap: 10px;">
+            <span style="width: 24px; height: 24px; background: #1e40af; color: white; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 11px; font-weight: 600; flex-shrink: 0;">{i + 1}</span>
+            <span style="font-size: 13px; color: #334155; line-height: 1.4;">{item}</span>
           </div>
-        </div>
-        <div class="faq-item">
-          <button class="faq-question" aria-expanded="false" aria-controls="faq-engdesign-zh-02">
-            <span>开始需要提供哪些资料？</span>
-            <span class="faq-icon">+</span>
-          </button>
-          <div class="faq-answer" id="faq-engdesign-zh-02" hidden>
-            <div class="faq-answer-inner">
-              <p>有帮助的信息包括项目所在国家、建筑用途、长度/宽度/高度、建筑图纸（如有）、结构要求、设备布置、行车需求、门/开洞需求和屋面/墙面需求。并非所有资料都需要在初步审核前全部提供。</p>
-            </div>
-          </div>
-        </div>
-        <div class="faq-item">
-          <button class="faq-question" aria-expanded="false" aria-controls="faq-engdesign-zh-03">
-            <span>工程设计和钢结构深化设计有什么区别？</span>
-            <span class="faq-icon">+</span>
-          </button>
-          <div class="faq-answer" id="faq-engdesign-zh-03" hidden>
-            <div class="faq-answer-inner">
-              <p>工程设计确定钢结构建筑的结构体系、建筑配置、柱网布置、尺寸和功能要求。钢结构深化设计将已确认的结构设计信息转化为详细的加工图、制造图纸、构件详图、连接节点详图和编号信息，制造团队可以依据这些图纸进行钢构件的制造。</p>
-            </div>
-          </div>
-        </div>
-        <div class="faq-item">
-          <button class="faq-question" aria-expanded="false" aria-controls="faq-engdesign-zh-04">
-            <span>设计可以与中赛的制造直接协调吗？</span>
-            <span class="faq-icon">+</span>
-          </button>
-          <div class="faq-answer" id="faq-engdesign-zh-04" hidden>
-            <div class="faq-answer-inner">
-              <p>可以。与中赛钢构合作的一个关键优势是，工程设计从一开始就与深化设计和制造要求协调。这有助于结构决策支持高效制造、清晰的构件识别、包装和出口准备。</p>
-            </div>
-          </div>
-        </div>
+        ))}
       </div>
     </div>
   </section>
 
-  <!-- 10 Quote CTA + QuoteForm -->
-  <section class="detail-section dark" id="quote">
+  <!-- 12 相关链接 -->
+  <section class="section" style="padding: 70px 0; background: #f8fafc;">
     <div class="container">
-      <div class="section-heading reveal" style="text-align: center;">
-        <p class="section-index" style="justify-content: center; color: #f59e0b;">10 / 获取报价</p>
-        <h2 style="color: #fff;">正在规划钢结构项目？提交您的项目需求</h2>
-        <p style="margin: 0 auto; color: rgba(255,255,255,0.75);">提交您的项目需求、建筑用途、尺寸和任何可用图纸。中赛钢构将进行初步审核，并确认工程设计、深化设计和制造所需信息。</p>
+      <div class="section-heading reveal">
+        <div>
+          <p class="section-index">相关</p>
+          <h2>相关能力与项目证据</h2>
+        </div>
+        <div>
+          <p>工程和深化工作与制造、质量控制、项目交付和具体产品类型紧密集成。</p>
+        </div>
       </div>
-      <QuoteForm lang="zh" />
+      <div class="related-grid" style="margin-top: 40px;">
+        {relatedLinks.map((link, i) => (
+          <a href={link.href} class={`related-card reveal reveal-delay-${(i % 4) + 1}`}>
+            <h4>{link.name}</h4>
+            <p>{link.desc}</p>
+            <span class="related-cta">了解更多 →</span>
+          </a>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- 13 FAQ -->
+  <section class="section" style="padding: 70px 0;">
+    <div class="container">
+      <div class="section-heading reveal">
+        <div>
+          <p class="section-index">常见问题</p>
+          <h2>常见问题解答</h2>
+        </div>
+        <div>
+          <p>关于中赛工程、设计和深化服务的常见问题。</p>
+        </div>
+      </div>
+      <div style="max-width: 900px; margin: 40px auto 0;" class="faq-container">
+        {faqs.map((faq, i) => (
+          <details class={`reveal reveal-delay-${(i % 4) + 1}`} style="margin-bottom: 12px; background: white; border: 1px solid #e2e8f0; border-radius: 10px; overflow: hidden;">
+            <summary style="padding: 18px 24px; cursor: pointer; font-weight: 600; color: #0f172a; font-size: 15px; list-style: none; display: flex; justify-content: space-between; align-items: center;">
+              <span>{faq.q}</span>
+              <span style="color: #1e40af; font-size: 20px; flex-shrink: 0; margin-left: 16px;">+</span>
+            </summary>
+            <div style="padding: 0 24px 20px; color: #475569; font-size: 14px; line-height: 1.8;">
+              {faq.a}
+            </div>
+          </details>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- 14 报价CTA -->
+  
+  <!-- Related Projects -->
+  <section class="related-projects-section">
+    <div class="container">
+      <div class="rp-heading">
+        <h2>包含设计深化配合的真实项目</h2>
+        <p>以下项目包含中赛设计团队的结构深化、节点处理和制造图配合。</p>
+      </div>
+      <div class="rp-grid">
+        <a href="/zh/projects/macau-city-of-dreams-phase2/" class="related-project-card">
+          <div class="rpc-image">
+            <img src="/images/projects/overseas/macau-city-of-dreams.jpg" alt="澳门新濠影汇二期" loading="lazy">
+          </div>
+          <div class="rpc-content">
+            <span class="rpc-category">海外项目</span>
+            <h4>澳门新濠影汇二期</h4>
+            <p class="rpc-location">中国澳门</p>
+            <p class="rpc-data">约5,000吨 · 40+复杂相贯节点</p>
+            <p class="rpc-scope"><span>中赛范围:</span> 钢结构设计深化、制造与供应</p>
+          </div>
+        </a>
+        <a href="/zh/projects/singapore-j102-mrt-station/" class="related-project-card">
+          <div class="rpc-image">
+            <img src="/images/projects/overseas/singapore-cr101-depot.jpg" alt="新加坡LTA J102地铁站" loading="lazy">
+          </div>
+          <div class="rpc-content">
+            <span class="rpc-category">海外项目</span>
+            <h4>新加坡LTA J102地铁站</h4>
+            <p class="rpc-location">新加坡</p>
+            <p class="rpc-data">约1,900吨 · 15,000个法兰</p>
+            <p class="rpc-scope"><span>中赛范围:</span> 钢结构设计深化、制造与出口供应</p>
+          </div>
+        </a>
+        <a href="/zh/projects/macau-londoner/" class="related-project-card">
+          <div class="rpc-image">
+            <img src="/images/projects/overseas/macau-londoner.jpg" alt="澳门伦敦人" loading="lazy">
+          </div>
+          <div class="rpc-content">
+            <span class="rpc-category">海外项目</span>
+            <h4>澳门伦敦人</h4>
+            <p class="rpc-location">中国澳门</p>
+            <p class="rpc-data">约8,000吨 · 复杂异形结构</p>
+            <p class="rpc-scope"><span>中赛范围:</span> 钢结构设计深化、制造与供应</p>
+          </div>
+        </a>
+      </div>
+      <div class="rp-more">
+        <a href="/zh/projects/" class="btn btn-outline">查看全部项目 →</a>
+      </div>
+    </div>
+  </section>
+
+<section class="quote-cta-section" id="quote">
+    <div class="container">
+      <ExportDeliveryCTA lang="zh" />
+
+      <div class="quote-cta-header reveal">
+        <p class="section-index" style="color: #f59e0b;">开始合作</p>
+        <h2>有图纸或初步项目方案？</h2>
+        <p>发送您的项目地点、图纸和结构要求进行工程评审。中赛将评估工程范围，提供技术协调选项，并根据您的项目规格准备制造和出口交付报价。</p>
+      </div>
+      <div style="display: flex; gap: 16px; margin-bottom: 32px; flex-wrap: wrap;" class="quote-cta-buttons reveal">
+        <a href="#quote-form" class="btn btn-primary" style="font-size: 16px; padding: 14px 32px;">提交项目图纸</a>
+        <a href="/zh/contact/" class="btn btn-secondary" style="font-size: 16px; padding: 14px 32px;">申请工程评审</a>
+      </div>
+      <div id="quote-form">
+        <QuoteForm lang={lang} />
+      </div>
     </div>
   </section>
 </BaseLayout>
 
-<script>
-  // FAQ toggle
-  document.querySelectorAll('.faq-question').forEach(btn => {
-    btn.addEventListener('click', () => {
-      const item = btn.closest('.faq-item');
-      const isOpen = item.classList.contains('open');
-      item.classList.toggle('open');
-      btn.setAttribute('aria-expanded', !isOpen);
-    });
-  });
-
-  // Scroll reveal
-  const revealElements = document.querySelectorAll('.reveal');
-  if ('IntersectionObserver' in window) {
-    const observer = new IntersectionObserver((entries) => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting) {
-          entry.target.style.opacity = '1';
-          entry.target.style.transform = 'translateY(0)';
-          observer.unobserve(entry.target);
-        }
-      });
-    }, { threshold: 0.1 });
-    revealElements.forEach(el => {
-      el.style.opacity = '0';
-      el.style.transform = 'translateY(24px)';
-      el.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
-      observer.observe(el);
-    });
+<style>
+.hero-stats {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 20px;
+  margin: 32px 0;
+}
+.hero-stat {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+.stat-number {
+  font-size: 18px;
+  font-weight: 700;
+  color: #f59e0b;
+}
+.stat-label {
+  font-size: 12px;
+  color: rgba(255,255,255,0.7);
+}
+.hero-cta-group {
+  display: flex;
+  gap: 16px;
+  flex-wrap: wrap;
+  margin-top: 8px;
+}
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 12px 28px;
+  border-radius: 8px;
+  font-weight: 600;
+  font-size: 15px;
+  text-decoration: none;
+  transition: all 0.2s;
+  border: none;
+  cursor: pointer;
+}
+.btn-primary {
+  background: #f59e0b;
+  color: #0f172a;
+}
+.btn-primary:hover {
+  background: #d97706;
+}
+.btn-secondary {
+  background: rgba(255,255,255,0.1);
+  color: white;
+  border: 1px solid rgba(255,255,255,0.3);
+}
+.btn-secondary:hover {
+  background: rgba(255,255,255,0.2);
+}
+details summary::-webkit-details-marker {
+  display: none;
+}
+details[open] summary span:last-child {
+  transform: rotate(45deg);
+}
+details summary span:last-child {
+  transition: transform 0.2s;
+}
+.related-grid {
+    grid-template-columns: repeat(4, 1fr) !important;
   }
-</script>
+  @media (max-width: 1024px) {
+  .hero-stats {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .design-inputs-grid, .standards-grid {
+    grid-template-columns: repeat(3, 1fr) !important;
+  }
+  .info-grid {
+    grid-template-columns: repeat(2, 1fr) !important;
+  }
+  .dfm-grid {
+    grid-template-columns: repeat(2, 1fr) !important;
+  }
+  .coordination-grid {
+    grid-template-columns: repeat(3, 1fr) !important;
+  }
+  .shop-drawings-grid, .boundary-grid {
+    grid-template-columns: 1fr !important;
+  }
+  .related-grid {
+    grid-template-columns: repeat(2, 1fr) !important;
+  }
+}
+@media (max-width: 768px) {
+  .hero-stats {
+    grid-template-columns: 1fr 1fr;
+    gap: 16px;
+  }
+  .stat-number {
+    font-size: 16px;
+  }
+  .design-inputs-grid, .standards-grid, .info-grid {
+    grid-template-columns: 1fr 1fr !important;
+  }
+  .dfm-grid, .coordination-grid {
+    grid-template-columns: 1fr !important;
+  }
+  .hero-cta-group {
+    flex-direction: column;
+  }
+  .related-grid {
+    grid-template-columns: 1fr !important;
+  }
+  .coordination-grid {
+    grid-template-columns: 1fr !important;
+  }
+  .hero-cta-group .btn {
+    width: 100%;
+  }
+}
+</style>
