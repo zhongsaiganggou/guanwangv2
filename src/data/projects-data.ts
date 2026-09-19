@@ -61,8 +61,8 @@ export const projects: ProjectData[] = [
       { zh: '工业钢结构供货能力', en: 'Industrial Steel Structure Supply' },
     ],
   zhongSaiScope: {
-    zh: '钢结构制造与加工供应',
-    en: 'Steel Structure Fabrication & Supply'
+    zh: '设计深化、制造与供货',
+    en: 'Design Detailing, Fabrication & Supply'
   },
     relatedLinks: [
       { href: 'steel-warehouse/', label: { zh: '钢结构仓库', en: 'Steel Warehouse' } },
@@ -138,8 +138,8 @@ export const projects: ProjectData[] = [
       { zh: '按项目图纸加工', en: 'Fabrication to Project Drawings' },
     ],
   zhongSaiScope: {
-    zh: '钢结构制造与加工供应',
-    en: 'Steel Structure Fabrication & Supply'
+    zh: '设计深化、制造与供货',
+    en: 'Design Detailing, Fabrication & Supply'
   },
     relatedLinks: [
       { href: 'steel-workshop/', label: { zh: '工业厂房', en: 'Steel Workshop' } },
@@ -174,8 +174,8 @@ export const projects: ProjectData[] = [
       { zh: '工业钢结构供货能力', en: 'Industrial Steel Structure Supply' },
     ],
   zhongSaiScope: {
-    zh: '钢结构制造与加工供应',
-    en: 'Steel Structure Fabrication & Supply'
+    zh: '设计深化、制造与供货',
+    en: 'Design Detailing, Fabrication & Supply'
   },
     relatedLinks: [
       { href: 'steel-workshop/', label: { zh: '工业厂房', en: 'Steel Workshop' } },
@@ -208,8 +208,8 @@ export const projects: ProjectData[] = [
       { zh: '钢结构深化配合', en: 'Structural Detailing Coordination' },
     ],
   zhongSaiScope: {
-    zh: '钢结构制造与加工供应',
-    en: 'Steel Structure Fabrication & Supply'
+    zh: '设计深化、制造与供货',
+    en: 'Design Detailing, Fabrication & Supply'
   },
     relatedLinks: [
       { href: 'steel-workshop/', label: { zh: '工业厂房', en: 'Steel Workshop' } },
@@ -245,8 +245,8 @@ export const projects: ProjectData[] = [
       { zh: '按项目图纸加工', en: 'Fabrication to Project Drawings' },
     ],
   zhongSaiScope: {
-    zh: '钢结构制造与加工供应',
-    en: 'Steel Structure Fabrication & Supply'
+    zh: '设计深化、制造与供货',
+    en: 'Design Detailing, Fabrication & Supply'
   },
     relatedLinks: [
       { href: 'steel-warehouse/', label: { zh: '钢结构仓库', en: 'Steel Warehouse' } },
@@ -283,8 +283,8 @@ export const projects: ProjectData[] = [
       { zh: '钢结构深化配合', en: 'Structural Detailing Coordination' },
     ],
   zhongSaiScope: {
-    zh: '钢结构制造与加工供应',
-    en: 'Steel Structure Fabrication & Supply'
+    zh: '设计深化、制造与供货',
+    en: 'Design Detailing, Fabrication & Supply'
   },
     relatedLinks: [
       { href: 'steel-workshop/', label: { zh: '工业厂房', en: 'Steel Workshop' } },
@@ -393,8 +393,8 @@ export const projects: ProjectData[] = [
       { zh: '按项目图纸加工', en: 'Fabrication to Project Drawings' },
     ],
   zhongSaiScope: {
-    zh: '钢结构制造与加工供应',
-    en: 'Steel Structure Fabrication & Supply'
+    zh: '设计深化、制造与供货',
+    en: 'Design Detailing, Fabrication & Supply'
   },
     relatedLinks: [
       { href: 'steel-workshop/', label: { zh: '工业厂房', en: 'Steel Workshop' } },

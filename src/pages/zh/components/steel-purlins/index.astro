@@ -6,14 +6,16 @@ import FAQ from '../../../../components/FAQ.astro';
 import '../../../../styles/hub.css';
 
 const lang = 'zh';
-const title = '钢檩条｜C型钢檩条与Z型钢檩条冷弯成型｜中赛钢构';
-const description = '中赛钢构供应冷弯C型钢檩条与Z型钢檩条，用于屋面墙面次结构。预制连接孔，镀锌或彩涂，构件编号包装出口。';
+const title = 'C/Z型钢檩条｜钢结构屋面与墙面支撑构件｜中赛钢构';
+const description = 'C/Z型钢檩条是什么？用于钢结构什么位置？本文说明C型与Z型檩条的区别、如何按项目荷载确定规格，以及中赛如何配套制造与出口。';
 
 const faqItems = [
   { question: 'C型钢檩条和Z型钢檩条有什么区别？', answer: 'C型钢檩条截面为C形，支座处采用简单搭接，适用于中等跨度与常规荷载。Z型钢檩条截面为Z形，翼缘可重叠实现连续搭接连接，具有更好的连续梁抗弯性能，适用于大间距屋面、大跨度与较重荷载。Z型钢檩条通常更适合大跨度和重载场景。' },
   { question: '钢檩条的规格和间距如何确定？', answer: '檩条规格与间距由以下因素确定：屋面坡度、雪载/风载、檩条跨度（主刚架间距）、围护板类型与厚度、适用设计规范。常见规格C100-C300、Z140-Z300，典型间距1.0m-1.5m。具体规格应由结构设计图纸指定。' },
   { question: '檩条有哪些表面处理方式？', answer: '常见表面处理包括：热镀锌（适用于外露或潮湿环境的防腐）、预涂/彩涂（适用于可见部位及附加防腐）、裸材/原色（适用于室内或有保护的环境）。处理方式根据项目环境、涂装体系与建筑要求确定。' },
-  { question: '檩条可以预制连接孔吗？', answer: '可以。中赛根据加工图提供预制连接孔的檩条，包括檩条与刚架连接孔、拉杆连接孔、搭接连接孔。预制孔可减少现场钻孔工作量，提高安装精度。请提供檩条布置图与连接详图以确定孔位。' }
+  { question: '檩条可以预制连接孔吗？', answer: '可以。中赛根据加工图提供预制连接孔的檩条，包括檩条与刚架连接孔、拉杆连接孔、搭接连接孔。预制孔可减少现场钻孔工作量，提高安装精度。请提供檩条布置图与连接详图以确定孔位。' },
+  { question: '檩条规格如何确定？', answer: '檩条规格由结构设计根据以下条件确定：屋面坡度、雪载与风载、檩条跨度（主刚架间距）、围护板类型与厚度、适用设计规范。常见规格C100-C300、Z140-Z300，典型间距1.0m-1.5m。具体截面和厚度应以项目结构图纸为准。' },
+  { question: '中赛如何供应檩条？', answer: '中赛将檩条作为完整钢结构项目的配套构件供应：按加工图冷弯成型、预制连接孔、镀锌或彩涂表面处理、构件编号后包装出口。檩条与主钢架、支撑系统、围护板协调配套，减少现场错漏。' }
 ];
 ---
 
@@ -28,6 +30,21 @@ const faqItems = [
       <p class="eyebrow">构件 · 钢檩条</p>
       <h1>C型钢与Z型钢檩条<br>按项目规格冷弯成型</h1>
       <p class="lead">冷弯C型钢与Z型钢檩条，用于屋面墙面次结构——预制连接孔，镀锌或彩涂，构件编号包装出口。<strong>请选择下方檩条类型查看详情。</strong>查看其它钢构件，请前往 <a href="/zh/components/" style="color:rgba(255,255,255,0.92);text-decoration:underline;">全部构件</a>。</p>
+    </div>
+  </section>
+
+  <!-- GEO Direct Answer -->
+  <section class="section" style="padding: 30px 0 10px;">
+    <div class="container">
+      <div class="geo-answer reveal" style="background: var(--color-gray-50); padding: 28px 32px; border-radius: 12px; border-left: 4px solid var(--color-primary);">
+        <h2 style="font-size: 1.2rem; margin-bottom: 12px;">C/Z型钢檩条是什么？</h2>
+        <p style="font-size: 1rem; line-height: 1.8; color: var(--color-gray-700); margin-bottom: 12px;">
+          C/Z型钢檩条是钢结构屋面和墙面系统的次结构构件，由镀锌钢卷冷弯成型。C型檩条截面为C形，适用于中等跨度；Z型檩条截面为Z形，翼缘可重叠实现连续搭接，适用于大跨度和重载场景。
+        </p>
+        <p style="font-size: 1rem; line-height: 1.8; color: var(--color-gray-700); margin-bottom: 0;">
+          檩条的截面规格、厚度、钢材等级、间距、连接方式及防腐要求，应根据项目图纸、屋面荷载、跨度、适用规范及围护系统要求确定。中赛将檩条作为完整钢结构项目的一部分，按加工图制造、预制孔、构件编号并包装出口。
+        </p>
+      </div>
     </div>
   </section>
 
@@ -214,8 +231,11 @@ const faqItems = [
         <a href="/zh/components/roof-wall-cladding-systems/" class="related-card">
           <h4>围护系统</h4><p>屋面板、墙面板、夹芯板。</p><span>查看 →</span>
         </a>
-        <a href="/zh/products/custom-engineering/" class="related-card">
-          <h4>定制工程</h4><p>复杂与特殊用途钢结构。</p><span>查看 →</span>
+        <a href="/zh/engineering-design/" class="related-card">
+          <h4>工程设计与深化</h4><p>檩条布置与连接设计。</p><span>查看 →</span>
+        </a>
+        <a href="/zh/manufacturing-quality/" class="related-card">
+          <h4>制造与质量</h4><p>冷弯成型与QC流程。</p><span>查看 →</span>
         </a>
       </div>
     </div>

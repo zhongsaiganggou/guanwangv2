@@ -1,0 +1,9 @@
+source_url,target_url,status_code,subpath_matching,preserve_query_string,source_type,reason
+https://zhongsai-steelstructure.com/en/projects.html,https://zhongsai-steelstructure.com/en/projects/,301,false,false,legacy-exact,Old project listing .html to new /projects/
+https://zhongsai-steelstructure.com/en/steel-warehouse-logistics.html,https://zhongsai-steelstructure.com/en/steel-warehouse/,301,false,false,legacy-exact,Old warehouse .html to canonical warehouse page
+https://zhongsai-steelstructure.com/en/products/materials/cz-purlin.html,https://zhongsai-steelstructure.com/en/components/steel-purlins/,301,false,false,legacy-exact,Old C/Z purlin .html to components path
+https://zhongsai-steelstructure.com/en/blog/steel-structure-supplier-thailand-guide/,https://zhongsai-steelstructure.com/en/markets/thailand/,301,false,false,legacy-exact,Thailand guide to Thailand market page
+https://zhongsai-steelstructure.com/en/blog/steel-structure-corrosion-protection-guide/,https://zhongsai-steelstructure.com/en/blog/steel-structure-corrosion-protection-coating-guide/,301,false,false,legacy-exact,Corrosion guide to coating guide canonical
+https://zhongsai-steelstructure.com/en/blog/steel-structure-supplier-malaysia-guide/,https://zhongsai-steelstructure.com/en/markets/malaysia/,301,false,false,legacy-exact,Malaysia guide to Malaysia market page
+https://zhongsai-steelstructure.com/en/products/materials/sandwich-panel.html,https://zhongsai-steelstructure.com/en/components/roof-wall-cladding-systems/,301,false,false,legacy-exact,Old sandwich panel .html to cladding systems
+https://zhongsai-steelstructure.com/zh/products/materials/cz-purlin,https://zhongsai-steelstructure.com/zh/components/steel-purlins/,301,false,false,legacy-exact,Chinese old C/Z purlin path to components path

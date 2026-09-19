@@ -55,7 +55,7 @@ export async function onRequestGet(context) {
     });
 
   } catch (error) {
-    console.error('Lead file download error:', error.message);
+    console.error(JSON.stringify({route: '/api/lead-file', stage: 'R2_DOWNLOAD', error: error.message}));
     return new Response(JSON.stringify({ error: 'Internal server error' }), {
       status: 500,
       headers: { 'Content-Type': 'application/json' },

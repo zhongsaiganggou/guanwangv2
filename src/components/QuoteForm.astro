@@ -29,8 +29,8 @@ const texts = lang === 'zh' ? {
   length: '长度 (m)',
   width: '宽度 (m)',
   height: '高度 (m)',
-  intendedUse: '项目用途',
-  intendedUsePlaceholder: '例如：生产车间、仓储、办公等',
+  intendedUse: '项目简述（可选）',
+  intendedUsePlaceholder: '其他需要说明的项目信息',
   crane: '是否需要行车 / 吊车',
   craneOptions: ['请选择', '是 (Yes)', '否 (No)', '不确定 (Not Sure)'],
   message: '项目说明 / 特殊要求',
@@ -86,8 +86,8 @@ const texts = lang === 'zh' ? {
   length: 'Length (m)',
   width: 'Width (m)',
   height: 'Height (m)',
-  intendedUse: 'Intended Use',
-  intendedUsePlaceholder: 'e.g. production, warehousing, office',
+  intendedUse: 'Project Notes (optional)',
+  intendedUsePlaceholder: 'Additional project details',
   crane: 'Crane Requirement',
   craneOptions: ['Please select', 'Yes', 'No', 'Not Sure'],
   message: 'Project Description / Special Requirements',
@@ -168,6 +168,14 @@ const phoneCodes = [
       <div class="form-success" id={`${id}-success`} role="alert" aria-live="polite"></div>
       <div class="form-error" id={`${id}-error`} role="alert" aria-live="polite"></div>
 
+      <div class="form-field">
+        <label for={`${id}-building-type`}>{texts.buildingType}</label>
+        <select id={`${id}-building-type`} name="projectType">
+          {texts.buildingTypeOptions.map((opt, i) => <option value={i === 0 ? '' : opt}>{opt}</option>)}
+        </select>
+        <span class="field-error" data-error-for="projectType"></span>
+      </div>
+
       <div class="form-path-switch" role="tablist">
         <button type="button" class="form-path-btn active" data-path="drawings" role="tab" aria-selected="true">
           <span class="path-icon">01</span>
@@ -248,13 +256,6 @@ const phoneCodes = [
       </div>
 
       <div class="form-path-panel" data-panel="nodrawings">
-        <div class="form-field">
-          <label for={`${id}-building-type`}>{texts.buildingType} <span class="req">*</span></label>
-          <select id={`${id}-building-type`} name="projectType" required>
-            {texts.buildingTypeOptions.map((opt, i) => <option value={i === 0 ? '' : opt}>{opt}</option>)}
-          </select>
-          <span class="field-error" data-error-for="projectType"></span>
-        </div>
         <div class="form-grid form-grid-3">
           <div class="form-field">
             <label for={`${id}-length`}>{texts.length}</label>
@@ -271,10 +272,9 @@ const phoneCodes = [
         </div>
         <div class="form-grid form-grid-2">
           <div class="form-field">
-            <label for={`${id}-intended-use`}>{texts.intendedUse} <span class="req">*</span></label>
-            <input type="text" id={`${id}-intended-use`} name="intendedUse" required placeholder={texts.intendedUsePlaceholder} />
-            <span class="field-error" data-error-for="intendedUse"></span>
-          </div>
+            <label for={`${id}-intended-use`}>{texts.intendedUse}</label>
+            <input type="text" id={`${id}-intended-use`} name="intendedUse" placeholder={texts.intendedUsePlaceholder} />
+                      </div>
           <div class="form-field">
             <label for={`${id}-crane`}>{texts.crane}</label>
             <select id={`${id}-crane`} name="hasCrane">
@@ -353,6 +353,14 @@ const phoneCodes = [
       <div class="form-success" id={`${id}-success`} role="alert" aria-live="polite"></div>
       <div class="form-error" id={`${id}-error`} role="alert" aria-live="polite"></div>
 
+      <div class="form-field">
+        <label for={`${id}-building-type`}>{texts.buildingType}</label>
+        <select id={`${id}-building-type`} name="projectType">
+          {texts.buildingTypeOptions.map((opt, i) => <option value={i === 0 ? '' : opt}>{opt}</option>)}
+        </select>
+        <span class="field-error" data-error-for="projectType"></span>
+      </div>
+
       <div class="form-path-switch" role="tablist">
         <button type="button" class="form-path-btn active" data-path="drawings" role="tab" aria-selected="true">
           <span class="path-icon">01</span>
@@ -433,13 +441,6 @@ const phoneCodes = [
       </div>
 
       <div class="form-path-panel" data-panel="nodrawings">
-        <div class="form-field">
-          <label for={`${id}-building-type`}>{texts.buildingType} <span class="req">*</span></label>
-          <select id={`${id}-building-type`} name="projectType" required>
-            {texts.buildingTypeOptions.map((opt, i) => <option value={i === 0 ? '' : opt}>{opt}</option>)}
-          </select>
-          <span class="field-error" data-error-for="projectType"></span>
-        </div>
         <div class="form-grid form-grid-3">
           <div class="form-field">
             <label for={`${id}-length`}>{texts.length}</label>
@@ -456,10 +457,9 @@ const phoneCodes = [
         </div>
         <div class="form-grid form-grid-2">
           <div class="form-field">
-            <label for={`${id}-intended-use`}>{texts.intendedUse} <span class="req">*</span></label>
-            <input type="text" id={`${id}-intended-use`} name="intendedUse" required placeholder={texts.intendedUsePlaceholder} />
-            <span class="field-error" data-error-for="intendedUse"></span>
-          </div>
+            <label for={`${id}-intended-use`}>{texts.intendedUse}</label>
+            <input type="text" id={`${id}-intended-use`} name="intendedUse" placeholder={texts.intendedUsePlaceholder} />
+                      </div>
           <div class="form-field">
             <label for={`${id}-crane`}>{texts.crane}</label>
             <select id={`${id}-crane`} name="hasCrane">
@@ -597,6 +597,7 @@ const phoneCodes = [
       const pathBtns = form.querySelectorAll('.form-path-btn');
       const panels = form.querySelectorAll('.form-path-panel');
       const submitBtn = form.querySelector('.btn-submit-full');
+      let fileInput = form.querySelector('input[type=file]');
       const successEl = form.querySelector('.form-success');
       const errorEl = form.querySelector('.form-error');
 
@@ -618,14 +619,43 @@ const phoneCodes = [
           form.querySelectorAll('.field-error').forEach(e => e.textContent = '');
           form.querySelectorAll('.form-field.error').forEach(f => f.classList.remove('error'));
           if (errorEl) { errorEl.textContent = ''; errorEl.classList.remove('show'); }
+
+          // Track form start when user actively switches path
+          if (!form._formStartTracked) {
+            form._formStartTracked = true;
+            if (typeof window.trackEvent === 'function') {
+              window.trackEvent('project_form_start', {
+                form_variant: path === 'drawings' ? 'have_drawings' : 'no_drawings',
+                page_path: window.location.pathname,
+              });
+            }
+          }
         });
       });
 
+      // Also track first input/focus on form fields
+      let formStartFired = false;
+      function fireFormStart() {
+        if (formStartFired) return;
+        formStartFired = true;
+        if (typeof window.trackEvent === 'function') {
+          const ap = form.querySelector('input[name="active_path"]');
+          window.trackEvent('project_form_start', {
+            form_variant: ap && ap.value === 'drawings' ? 'have_drawings' : 'no_drawings',
+            page_path: window.location.pathname,
+          });
+        }
+      }
+      form.querySelectorAll('input, select, textarea').forEach(function(el) {
+        el.addEventListener('focus', fireFormStart, { once: true });
+        el.addEventListener('input', fireFormStart, { once: true });
+      });
+
       // File upload
-      const uploadArea = form.querySelector('.upload-area');
-      const fileInput = form.querySelector('input[type="file"]');
-      if (uploadArea && fileInput) {
-        uploadArea.addEventListener('click', () => fileInput.click());
+      const uploadAreas = form.querySelectorAll('.upload-area');
+      uploadAreas.forEach((uploadArea) => {
+        const fileInput = uploadArea.querySelector('input[type="file"]');
+        if (!fileInput) return;
         uploadArea.addEventListener('dragover', (e) => { e.preventDefault(); uploadArea.classList.add('dragover'); });
         uploadArea.addEventListener('dragleave', () => uploadArea.classList.remove('dragover'));
         uploadArea.addEventListener('drop', (e) => {
@@ -640,12 +670,20 @@ const phoneCodes = [
 
         function updateUploadText() {
           const placeholder = uploadArea.querySelector('.upload-text');
-          if (placeholder && fileInput.files.length) {
+          if (!placeholder) return;
+          if (fileInput.files.length) {
             const names = Array.from(fileInput.files).map(f => f.name).join(', ');
             placeholder.textContent = names.length > 60 ? names.substring(0, 60) + '...' : names;
+            uploadArea.classList.add('has-files');
+          } else {
+            placeholder.textContent = uploadArea.dataset.defaultText || '';
+            uploadArea.classList.remove('has-files');
           }
         }
-      }
+        // Store default text
+        const ph = uploadArea.querySelector('.upload-text');
+        if (ph) uploadArea.dataset.defaultText = ph.textContent;
+      });
 
       // Validate
       function validate() {
@@ -682,22 +720,7 @@ const phoneCodes = [
           }
         }
 
-        if (activePath === 'nodrawings') {
-          const buildingType = form.querySelector('[name="projectType"]');
-          if (buildingType && !buildingType.value) {
-            isValid = false;
-            const errorEl = form.querySelector('[data-error-for="projectType"]');
-            if (errorEl) errorEl.textContent = isZh ? '请选择项目类型' : 'Please select project type';
-            buildingType.closest('.form-field')?.classList.add('error');
-          }
-          const intendedUse = form.querySelector('[name="intendedUse"]');
-          if (intendedUse && !intendedUse.value.trim()) {
-            isValid = false;
-            const errorEl = form.querySelector('[data-error-for="intendedUse"]');
-            if (errorEl) errorEl.textContent = isZh ? '请输入项目用途' : 'Please enter intended use';
-            intendedUse.closest('.form-field')?.classList.add('error');
-          }
-        }
+        // projectType and intendedUse are now optional
 
         if (!isValid) {
           const firstError = form.querySelector('.form-field.error');
@@ -937,7 +960,7 @@ const phoneCodes = [
     background: rgba(26, 86, 219, 0.03);
   }
   .form-upload .upload-area input[type="file"] {
-    position: absolute; top: 0; left: 0; width: 100%; height: 100%; opacity: 0; cursor: pointer;
+    position: absolute; top: 0; left: 0; width: 100%; height: 100%; opacity: 0; cursor: pointer; z-index: 1;
   }
   .form-upload .upload-placeholder {
     display: flex; flex-direction: column; align-items: center; gap: 8px; pointer-events: none;

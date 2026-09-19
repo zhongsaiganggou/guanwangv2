@@ -6,7 +6,10 @@
     "dev": "astro dev",
     "build": "astro build",
     "preview": "astro preview",
-    "astro": "astro"
+    "astro": "astro",
+    "seo:check:sitemap": "node tools/seo-audit/check_sitemap_hreflang.mjs",
+    "seo:check:redirects": "node tools/seo-audit/check_redirect_shadows.mjs",
+    "seo:check": "npm run seo:check:sitemap && npm run seo:check:redirects"
   },
   "dependencies": {
     "astro": "^4.16.0"

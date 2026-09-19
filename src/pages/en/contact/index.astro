@@ -5,8 +5,8 @@ import QuoteForm from '../../../components/QuoteForm.astro';
 import '../../../styles/hub.css';
 
 const lang = 'en';
-const title = 'Steel Structure Project Inquiry | Send Drawings to ZhongSai';
-const description = 'Discuss your steel structure project with ZhongSai. Upload drawings or submit project requirements for an initial engineering review by our in-house design and delivery teams.';
+const title = 'Steel Structure Inquiry | Send Drawings to ZhongSai Steel Structure';
+const description = 'Send your steel structure drawings or project requirements to ZhongSai. Our in-house engineering team reviews drawings, then supports fabrication, packing and export delivery from our Dongguan and Huizhou bases.';
 
 const inquiryPaths = [
   {
@@ -85,7 +85,7 @@ const supportItems = [
       <div class="hub-section-head">
         <h2>Two Ways to Start Your Project Inquiry</h2>
       </div>
-      <div class="inquiry-paths">
+      <div class="inquiry-paths" id="inquiry-paths">
         {inquiryPaths.map((path, i) => (
           <div class={`inquiry-card ${i === 0 ? 'inquiry-card-primary' : ''}`}>
             <h3>{path.title}</h3>
@@ -712,3 +712,4 @@ const supportItems = [
 }
 
 </style>
+

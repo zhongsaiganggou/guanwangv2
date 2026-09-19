@@ -1,95 +1,85 @@
-# ============================================
-# ZhongSai Steel Structure - URL Redirects
-# 102 GSC 404s mapped individually
-# ============================================
-
-# ====== A. Double language prefixes (wildcard) ======
-/zh/zh/*  /zh/:splat  301
-/en/zh/*  /zh/:splat  301
-/zh/en/*  /en/:splat  301
-/en/en/*  /en/:splat  301
-
-# ====== B. Old countries -> markets hub (no per-country pages exist) ======
-/countries/*.html                          /en/markets/                    301
-/countries/index.html                      /en/markets/                    301
-/countries/en/index.html                   /en/markets/                    301
-/en/countries/*                             /en/markets/                    301
-/zh/countries/*                             /zh/markets/                    301
-/countries/sitemap.xml                      /sitemap.xml                   404
-
-# ====== C. Old product .html pages ======
-/products/steel-warehouse.html              /en/steel-warehouse/           301
-/products/steel-workshop.html              /en/steel-workshop/            301
-/products/steel-equipment-platform.html     /en/products/custom-engineering/ 301
-/products/steel-school-building.html        /en/commercial-public-steel-buildings/ 301
-/products/commercial-public.html            /en/commercial-public-steel-buildings/ 301
-/products/steel-office-building.html        /en/commercial-public-steel-buildings/ 301
-/products/steel-sports-arena.html          /en/commercial-public-steel-buildings/ 301
-/products/structural-steel-components.html /en/components/                 301
-/products/custom-engineering.html           /en/products/custom-engineering/ 301
-/products/materials.html                    /en/manufacturing-quality/     301
-/products/materials/privacy.html            /en/privacy/                   301
-/products/materials/cz-purlin.html          /en/components/steel-purlins/  301
-/products/materials/coating-system          /en/manufacturing-quality/     301
-/products/materials/coating-system.html     /en/manufacturing-quality/     301
-/products/materials/terms.html              /en/terms/                     301
-/en/products/privacy.html                   /en/privacy/                   301
-/en/products/materials/privacy.html        /en/privacy/                   301
-/en/products/materials/terms.html          /en/terms/                     301
-/en/products/terms.html                     /en/terms/                     301
-/en/products/about.html                      /en/about/                     301
-/en/products/zh/shipments.html             /en/export-delivery/           301
-/zh/products/materials/privacy.html         /zh/privacy/                   301
-/zh/products/materials/terms.html            /zh/terms/                     301
-/zh/products/materials/coating-system      /zh/manufacturing-quality/     301
-/en/zh/steel-equipment-platform.html        /en/products/custom-engineering/ 301
-/en/zh/steel-workshop-processing.html       /en/steel-workshop/            301
-/en/zh/products.html                        /en/products/                  301
-/en/zh/projects.html                        /en/projects/                  301
-
-# ====== D. Old solutions / steel-building-solutions ======
-/steel-buildings.html                       /en/solutions/                 301
-/en/steel-buildings.html                   /en/solutions/                 301
-/zh/steel-buildings.html                    /zh/solutions/                 301
-/solutions/agriculture.html                /en/agricultural-steel-buildings/ 301
-/zh/solutions/agriculture.html              /zh/agricultural-steel-buildings/ 301
-/solutions/commercial.html                  /en/commercial-public-steel-buildings/ 301
-/solutions/mining.html                      /en/steel-mining-factory/      301
-/steel-building-solutions/*.html           /en/solutions/                 301
-/zh/steel-building-solutions/*.html        /zh/solutions/                 301
-/zh/steel-building-solutions/blog/index.html  /zh/resources/              301
-
-# ====== E. Old services ======
-/services/steel-structure-export.html      /en/export-delivery/           301
-/services/structural-steel-detailing.html   /en/services/structural-steel-detailing/ 301
-
-# ====== F. Old projects ======
-/projects/vietnam-logistics-center.html     /en/projects/                  301
-/projects/china-huarun-center.html          /en/projects/dongguan-huarun-center/ 301
-/projects/ethiopia-textile-factory.html     /en/projects/                  301
-/projects/nigeria-logistics-warehouse.html  /en/projects/                  301
-/en/projects/vietnam-logistics-center        /en/projects/                  301
-/en/projects/South-Africa-mining-steel-structure.html  /en/steel-mining-factory/ 301
-/en/projects/Philippines-mining-steel-structure.html   /en/steel-mining-factory/ 301
-/en/projects/Mexico-mining-steel-structure.html        /en/steel-mining-factory/ 301
-/zh/projects/privacy.html                    /zh/privacy/                   301
-/zh/projects/terms.html                     /zh/terms/                     301
-/zh/projects/contact.html                    /zh/contact/                   301
-
-# ====== G. Old blog articles ======
-/blog/*.html                                /en/resources/                 301
-/en/blog/*.html                             /en/resources/                 301
-/zh/blog/*.html                             /zh/resources/                 301
-/en/blog/products/*.html                    /en/resources/                 301
-/zh/blog/products/*.html                    /zh/resources/                 301
-
-# Specific blog redirects (known content)
-/en/blog/gangjiegou-chukou-feizhou-quanliucheng  /en/blog/how-to-import-steel-structure-from-china-to-africa/ 301
-/en/blog/gangjiegou-anzhuang-zhinan-haiwai        /en/blog/steel-structure-installation-process-guide/ 301
-/en/blog/gangjiegou-changfang-zaojia-zhinan.html  /en/blog/steel-warehouse-cost-complete-guide/ 301
-/en/blog/zhongguo-gangjiegou-changjia-paiming.html /en/blog/how-to-choose-steel-structure-supplier/ 301
-/zh/blog/prefab-steel-building-installation-guide          /zh/blog/steel-structure-installation-process-guide/ 301
-/zh/blog/steel-structure-export-packaging-container-loading-guide  /en/blog/steel-structure-container-loading-guide/ 301
-/zh/blog/steel-structure-vs-concrete-comparison            /zh/resources/                301
+# ZhongSai redirects
+# A. Double language prefixes
+/zh/zh/* /zh/:splat 301
+/en/zh/* /zh/:splat 301
+/zh/en/* /en/:splat 301
+/en/en/* /en/:splat 301
+# B. Old countries
+/countries/*.html /en/markets/ 301
+/countries/index.html /en/markets/ 301
+/countries/en/index.html /en/markets/ 301
+/en/countries/* /en/markets/ 301
+/zh/countries/* /zh/markets/ 301
+/countries/sitemap.xml /sitemap.xml 404
+# C. Old product .html
+/products/materials.html /en/manufacturing-quality/ 301
+/products/materials/privacy.html /en/privacy/ 301
+/products/materials/coating-system /en/manufacturing-quality/ 301
+/products/materials/coating-system.html /en/manufacturing-quality/ 301
+/products/materials/terms.html /en/terms/ 301
+/en/products/privacy.html /en/privacy/ 301
+/en/products/materials/privacy.html /en/privacy/ 301
+/en/products/materials/terms.html /en/terms/ 301
+/en/products/terms.html /en/terms/ 301
+/en/products/zh/shipments.html /en/export-delivery/ 301
+/zh/products/materials/privacy.html /zh/privacy/ 301
+/zh/products/materials/terms.html /zh/terms/ 301
+/zh/products/materials/coating-system /zh/manufacturing-quality/ 301
+# D. Old solutions
+/solutions/commercial.html /en/commercial-public-steel-buildings/ 301
+/steel-building-solutions/*.html /en/solutions/ 301
+/zh/steel-building-solutions/*.html /zh/solutions/ 301
+/zh/steel-building-solutions/blog/index.html /zh/resources/ 301
+# E. Old services
+# F. Old projects
+/projects/vietnam-logistics-center.html /en/projects/ 301
+/projects/ethiopia-textile-factory.html /en/projects/ 301
+/projects/nigeria-logistics-warehouse.html /en/projects/ 301
+/en/projects/vietnam-logistics-center /en/projects/ 301
+/en/projects/South-Africa-mining-steel-structure.html /en/steel-mining-factory/ 301
+/en/projects/Philippines-mining-steel-structure.html /en/steel-mining-factory/ 301
+/en/projects/Mexico-mining-steel-structure.html /en/steel-mining-factory/ 301
+/zh/projects/privacy.html /zh/privacy/ 301
+/zh/projects/terms.html /zh/terms/ 301
+/zh/projects/contact.html /zh/contact/ 301
+# Restored legacy blog .html -> clean directory URL (must precede the wildcard below; first match wins)
+/en/blog/steel-workshop-cost-factory-building-price.html /en/blog/steel-workshop-cost-factory-building-price/ 301
+# G. Old blog wildcard
+/blog/*.html /en/resources/ 301
+/en/blog/*.html /en/resources/ 301
+/zh/blog/*.html /zh/resources/ 301
+/en/blog/products/*.html /en/resources/ 301
+/zh/blog/products/*.html /zh/resources/ 301
+# Specific blog redirects
+/en/blog/gangjiegou-chukou-feizhou-quanliucheng /en/blog/how-to-import-steel-structure-from-china-to-africa/ 301
+/en/blog/gangjiegou-anzhuang-zhinan-haiwai /en/blog/steel-structure-installation-process-guide/ 301
+/zh/blog/prefab-steel-building-installation-guide /zh/blog/steel-structure-installation-process-guide/ 301
+/zh/blog/steel-structure-export-packaging-container-loading-guide /en/blog/steel-structure-container-loading-guide/ 301
+/zh/blog/steel-structure-vs-concrete-comparison /zh/resources/ 301
 /zh/blog/how-to-import-steel-structure-from-china-to-africa /zh/blog/steel-structure-installation-process-guide/ 301
-/zh/blog/prefab-steel-building-roof-systems-comparison     /zh/resources/                301
+/zh/blog/prefab-steel-building-roof-systems-comparison /zh/resources/ 301
+# H. GSC 404 fixes
+/en/blog/prefab-steel-factory-building-cost-guide/ /en/blog/how-to-steel-structure-cost/ 301
+/zh/blog/steel-structure-design-standards-guide/ /zh/engineering-design/ 301
+/en/products/materials/fasteners/ /en/components/ 301
+/zh/blog/steel-structure-supplier-saudi-arabia-guide/ /zh/resources/ 301
+/en/products.html /en/ 301
+# I. Chinese blog 404s
+/zh/blog/gangjiegou-cangku-zaojia-duoshaoqian/ /zh/blog/gangjiegou-changfang-zaojia-zhinan/ 301
+/zh/blog/steel-structure-cost-per-square-meter/ /zh/blog/gangjiegou-changfang-zaojia-zhinan/ 301
+/zh/blog/steel-workshop-cost-factory-building-price/ /zh/blog/gangjiegou-changfang-zaojia-zhinan/ 301
+/zh/blog/gangjiegou-vs-hunningtu-chengben-duibi/ /zh/resources/ 301
+/zh/blog/top-10-steel-structure-manufacturers-in-china/ /zh/blog/steel-structure-rfq-quotation-checklist/ 301
+/zh/blog/zhongguo-gangjiegou-changjia-paiming/ /zh/blog/steel-structure-rfq-quotation-checklist/ 301
+/zh/blog/how-to-buy-steel-buildings-from-china/ /zh/blog/steel-structure-rfq-quotation-checklist/ 301
+/zh/blog/steel-structure-supplier-philippines-guide/ /zh/markets/ 301
+/zh/blog/steel-structure-container-loading-guide/ /zh/export-delivery/ 301
+/zh/blog/shipping-cost-steel-structure-from-china/ /zh/export-delivery/ 301
+/zh/blog/how-to-verify-china-steel-structure-manufacturer-audit-checklist/ /zh/blog/steel-structure-rfq-quotation-checklist/ 301
+/zh/blog/how-to-import-steel-structure-from-china-complete-guide/ /zh/export-delivery/ 301
+/zh/blog/steel-structure-installation-cost-overseas/ /zh/installation-guidance/ 301
+/zh/blog/steel-structure-corrosion-protection-guide/ /zh/blog/steel-structure-corrosion-protection-coating-guide/ 301
+# J. Old product path
+/zh/products/steel-workshop /zh/steel-workshop/ 301
+/en/products/steel-workshop /en/steel-workshop/ 301
+# K. Exact match 301s

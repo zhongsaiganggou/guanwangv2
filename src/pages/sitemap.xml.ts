@@ -60,23 +60,33 @@ export const GET: APIRoute = async () => {
   
   const today = new Date().toISOString().slice(0, 10);
   
-  // 5. 生成固定页面XML（保持原有逻辑）
+  // 5. 生成固定页面XML
+  // 存在性感知（existence-aware）：仅当对应语言版本真实存在于固定路由清单时，
+  // 才输出跨语言 alternate，避免对 EN-only / ZH-only 页面机械生成指向
+  // 404 / 301 / 非等价页面的 hreflang。x-default 策略本轮保持不变（固定页不输出）。
+  const fixedPathSet = new Set(fixedPaths);
   const fixedUrlsXml = fixedPaths
     .map((path) => {
       const loc = `${SITE_URL}${path}`;
-      const altPath = path.startsWith('/en/')
+      const isEn = path.startsWith('/en/');
+      const altPath = isEn
         ? path.replace('/en/', '/zh/')
         : path.replace('/zh/', '/en/');
-      const enHref = path.startsWith('/en/') ? loc : `${SITE_URL}${altPath}`;
-      const zhHref = path.startsWith('/zh/') ? loc : `${SITE_URL}${altPath}`;
-      return [
+      const enPath = isEn ? path : altPath;
+      const zhPath = isEn ? altPath : path;
+      const lines = [
         '  <url>',
         `    <loc>${escapeXml(loc)}</loc>`,
-        `    <xhtml:link rel="alternate" hreflang="en" href="${escapeXml(enHref)}"/>`,
-        `    <xhtml:link rel="alternate" hreflang="zh-CN" href="${escapeXml(zhHref)}"/>`,
-        `    <lastmod>${today}</lastmod>`,
-        '  </url>',
-      ].join('\n');
+      ];
+      if (fixedPathSet.has(enPath)) {
+        lines.push(`    <xhtml:link rel="alternate" hreflang="en" href="${escapeXml(`${SITE_URL}${enPath}`)}"/>`);
+      }
+      if (fixedPathSet.has(zhPath)) {
+        lines.push(`    <xhtml:link rel="alternate" hreflang="zh-CN" href="${escapeXml(`${SITE_URL}${zhPath}`)}"/>`);
+      }
+      lines.push(`    <lastmod>${today}</lastmod>`);
+      lines.push('  </url>');
+      return lines.join('\n');
     })
     .join('\n');
   

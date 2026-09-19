@@ -1,7 +1,5 @@
 ---
-// Analytics.astro - GA4 Google Analytics component
-// Measurement ID from PUBLIC_GA_MEASUREMENT_ID env var
-// Only loads if env var is set
+// Analytics.astro - GA4 + Meta Pixel
 const measurementId = import.meta.env.PUBLIC_GA_MEASUREMENT_ID || '';
 const enabled = !!measurementId;
 ---
@@ -12,7 +10,7 @@ const enabled = !!measurementId;
     <script async src={`https://www.googletagmanager.com/gtag/js?id=${measurementId}`}></script>
     <script is:inline define:vars={{ measurementId }}>
       window.dataLayer = window.dataLayer || [];
-      function gtag(){dataLayer.push(arguments);}
+      window.gtag = function(){window.dataLayer.push(arguments);};
       gtag('js', new Date());
       gtag('config', measurementId, {
         anonymize_ip: true,
@@ -22,30 +20,85 @@ const enabled = !!measurementId;
   </>
 )}
 
+<!-- Meta Pixel Code -->
+<script is:inline>
+  !function(f,b,e,v,n,t,s)
+  {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+  n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+  if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+  n.queue=[];t=b.createElement(e);t.async=!0;
+  t.src=v;s=b.getElementsByTagName(e)[0];
+  s.parentNode.insertBefore(t,s)}(window, document,'script',
+  'https://connect.facebook.net/en_US/fbevents.js');
+  fbq('init', '1268080202055777');
+  fbq('track', 'PageView');
+</script>
+<noscript><img height="1" width="1" style="display:none"
+src="https://www.facebook.com/tr?id=1268080202055777&ev=PageView&noscript=1"
+/></noscript>
+<!-- End Meta Pixel Code -->
+
 <script>
+  // Unified GA4 event helper — no PII
+  window.trackEvent = function(name, params) {
+    if (typeof gtag !== 'function') return;
+    const p = params || {};
+    p.page_path = p.page_path || location.pathname;
+    gtag('event', name, p);
+  };
+
   // GA4 generate_lead conversion helper
-  // Must ONLY be called after server returns success=true
   window.trackLeadConversion = function(params) {
     if (typeof gtag !== 'function') return;
     if (!params || !params.lead_id) return;
 
-    // Prevent duplicate events for same lead
     if (window._trackedLeadIds && window._trackedLeadIds.has(params.lead_id)) return;
     window._trackedLeadIds = window._trackedLeadIds || new Set();
     window._trackedLeadIds.add(params.lead_id);
 
-    // Send generate_lead event - NO PII
-    gtag('event', 'generate_lead', {
-      currency: 'USD',
-      value: 0,
+    const baseParams = {
       language: params.language || 'en',
       form_variant: params.form_variant || 'unknown',
-      source_page: params.source_page || '',
-      utm_source: params.utm_source || '',
-      utm_medium: params.utm_medium || '',
-      utm_campaign: params.utm_campaign || '',
-      has_file: params.has_file === true,
-      // Explicitly NOT sending: name, phone, whatsapp, wechat, email, file names
-    });
+      page_path: params.source_page || location.pathname,
+      has_drawing: params.has_file === true,
+    };
+
+    // Standard GA4 recommended event (maps to Lead conversion)
+    gtag('event', 'generate_lead', Object.assign({
+      currency: 'USD',
+      value: 0,
+    }, baseParams));
+
+    // Custom business event for funnel analysis
+    gtag('event', 'project_form_submit', baseParams);
+
+    // Drawing upload tracked as secondary event
+    if (params.has_file === true) {
+      gtag('event', 'drawing_upload', baseParams);
+    }
+
+    // Meta Pixel lead event
+    if (typeof fbq === 'function') {
+      fbq('track', 'Lead', {
+        content_name: params.source_page || 'contact_form',
+      });
+    }
   };
+
+  // Global outbound click tracking — WhatsApp, Email, WeChat
+  document.addEventListener('click', function(e) {
+    const link = e.target.closest('a');
+    if (!link || !link.href) return;
+    const href = link.href;
+
+    if (href.indexOf('wa.me/') !== -1 || href.indexOf('whatsapp:') === 0 || href.indexOf('api.whatsapp.com') !== -1) {
+      window.trackEvent('whatsapp_click', {
+        cta_location: link.closest('footer') ? 'footer' : (link.closest('.floating-social') ? 'floating' : 'contact_page'),
+      });
+    } else if (href.indexOf('mailto:') === 0) {
+      window.trackEvent('email_click', {
+        cta_location: link.closest('footer') ? 'footer' : 'contact_page',
+      });
+    }
+  }, true);
 </script>

@@ -1,0 +1,8 @@
+# Acknowledged / deferred SHADOWED_WRONG_TARGET sources for check_redirect_shadows.mjs
+# One source path per line. Entries here are reported as ACKNOWLEDGED_SHADOW
+# and do not fail the check. Add a reason + date for every entry.
+#
+# L32 — old ZH solutions blog index. Wildcard L31 sends it to /zh/solutions/
+# instead of /zh/resources/. Hub-to-hub, low value; explicitly OUT OF SCOPE for
+# Technical SEO Fix Phase 2A (2026-09-18). Revisit in a later redirect batch.
+/zh/steel-building-solutions/blog/index.html

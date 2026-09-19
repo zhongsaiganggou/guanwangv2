@@ -84,17 +84,14 @@ function validateLead(data) {
     errors.email = 'Invalid email format';
   }
 
-  // No-drawings path required fields
-  if (!hasDrawings) {
-    if (!data.project_type || !data.project_type.trim()) errors.project_type = 'Project type is required';
-    if (!data.intended_use || !data.intended_use.trim()) errors.intended_use = 'Intended use is required';
-  }
+  // project_type is optional for all paths
 
   return { errors, hasDrawings };
 }
 
 export async function onRequestPost(context) {
-  const { request, env } = context;
+  const { request, env, waitUntil } = context;
+  const requestId = (typeof crypto !== 'undefined' && crypto.randomUUID) ? crypto.randomUUID() : 'req-' + Date.now();
 
   try {
     const contentType = request.headers.get('content-type') || '';
@@ -128,6 +125,11 @@ export async function onRequestPost(context) {
     fields.crane_requirement = fields.crane_requirement || fields.hasCrane || '';
     fields.form_path = fields.form_path || fields.active_path || '';
     fields.source_page = fields.source_page || fields.submission_page || '';
+    fields.wind_load = fields.wind_load || fields.windLoad || '';
+    fields.snow_load = fields.snow_load || fields.snowLoad || '';
+    fields.seismic_requirement = fields.seismic_requirement || fields.seismicRequirement || '';
+    fields.crane_capacity = fields.crane_capacity || fields.craneCapacity || '';
+    fields.equipment_load = fields.equipment_load || fields.equipmentLoad || '';
 
     // Honeypot check
     if (fields.website || fields.company_hp || fields.hp_field) {
@@ -198,8 +200,8 @@ export async function onRequestPost(context) {
           name, project_country, calling_code, phone_whatsapp, wechat, email,
           project_type, intended_use, dimensions, crane_requirement, message,
           utm_source, utm_medium, utm_campaign, utm_content, utm_term,
-          referrer, landing_page, turnstile_verified, submission_status, test_record
-        ) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
+          referrer, landing_page, wind_load, snow_load, seismic_requirement, crane_capacity, equipment_load, turnstile_verified, submission_status, test_record
+        ) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
       `).bind(
         leadId,
         language,
@@ -224,12 +226,17 @@ export async function onRequestPost(context) {
         sanitizeText(fields.utm_term, 200),
         sanitizeText(fields.referrer, 500),
         sanitizeText(fields.landing_page, 500),
+        sanitizeText(fields.wind_load, 100),
+        sanitizeText(fields.snow_load, 100),
+        sanitizeText(fields.seismic_requirement, 100),
+        sanitizeText(fields.crane_capacity, 100),
+        sanitizeText(fields.equipment_load, 100),
         1,
         'received',
         isTest
       ).run();
     } catch (dbErr) {
-      console.error('D1 insert error:', dbErr.message);
+      console.error(JSON.stringify({requestId, stage: 'D1_INSERT', error: dbErr.message}));
       return jsonResponse({ success: false, code: 'DATABASE_ERROR', message: 'Failed to save inquiry' }, 500);
     }
 
@@ -239,7 +246,7 @@ export async function onRequestPost(context) {
     if (files.length > 0) {
       if (!env.LEAD_FILES) {
         failedFiles = files.length;
-        console.error(`R2 binding missing for lead ${leadId}`);
+        console.error(JSON.stringify({requestId, stage: "R2_UPLOAD", error: "R2 binding missing"}));
       } else {
         for (const { file } of files) {
           const timestamp = Date.now();
@@ -262,7 +269,7 @@ export async function onRequestPost(context) {
             savedFiles.push({ name: file.name, size: file.size, fileKey });
           } catch (fileErr) {
             failedFiles += 1;
-            console.error('File upload error:', fileErr.message);
+            console.error(JSON.stringify({requestId, stage: 'R2_UPLOAD', error: fileErr.message}));
             try { await env.LEAD_FILES.delete(fileKey); } catch { /* best-effort orphan cleanup */ }
           }
         }
@@ -274,7 +281,7 @@ export async function onRequestPost(context) {
       await env.LEADS_DB.prepare('UPDATE leads SET submission_status = ? WHERE id = ?')
         .bind(submissionStatus, leadId).run();
     } catch (statusErr) {
-      console.error('Lead status update error:', statusErr.message);
+      console.error(JSON.stringify({requestId, stage: 'STATUS_UPDATE', error: statusErr.message}));
     }
 
     // Generate download URLs for saved files using /api/lead-file endpoint
@@ -295,7 +302,27 @@ export async function onRequestPost(context) {
       filesWithDownloadUrls.push(...savedFiles.map(f => ({ ...f, download_url: null })));
     }
 
-    // Optional webhook forwarding (don't fail lead if webhook fails)
+    // Return success immediately; send webhook + WeCom asynchronously
+    const response = jsonResponse({
+      success: true,
+      lead_id: leadId,
+      language,
+      files_saved: savedFiles.length,
+      files_failed: failedFiles,
+      submission_status: submissionStatus,
+      partial_success: failedFiles > 0,
+      test_record: isTest === 1,
+      message: failedFiles > 0
+        ? (language === 'zh'
+          ? '项目需求已收到，但附件未能完整保存。我们将通过您填写的联系方式跟进。'
+          : 'Project inquiry received, but the attachments could not be fully saved. We will follow up using your contact details.')
+        : (language === 'zh'
+          ? '项目需求已提交。感谢您的提交。中赛钢构将根据您提供的项目资料进行审核，并通过您填写的联系方式进行后续沟通。'
+          : 'Project inquiry received. Thank you. ZhongSai will review the project information and follow up using the contact details you provided.'),
+    }, 201);
+
+    // Background: send webhook + WeCom notification
+    waitUntil((async () => {
     let webhookStatus = 'not_configured';
     let webhookError = null;
     if (env.LEAD_WEBHOOK_URL) {
@@ -317,6 +344,13 @@ export async function onRequestPost(context) {
           intended_use: sanitizeText(fields.intended_use, 500),
           dimensions,
           crane_requirement: sanitizeText(fields.crane_requirement, 50),
+          customer_type: sanitizeText(fields.customerType || fields.customer_type, 100),
+          project_stage: sanitizeText(fields.projectStage || fields.project_stage, 100),
+          wind_load: sanitizeText(fields.wind_load, 100),
+          snow_load: sanitizeText(fields.snow_load, 100),
+          seismic_requirement: sanitizeText(fields.seismic_requirement, 100),
+          crane_capacity: sanitizeText(fields.crane_capacity, 100),
+          equipment_load: sanitizeText(fields.equipment_load, 100),
           message: sanitizeText(fields.message, 5000),
           utm_source: sanitizeText(fields.utm_source, 200),
           utm_medium: sanitizeText(fields.utm_medium, 200),
@@ -367,33 +401,56 @@ export async function onRequestPost(context) {
       wecomStatus = 'attempted';
       try {
         const isTestText = isTest === 1 ? '（测试）' : '';
-        const hasDrawingsText = hasDrawings ? '有' : '无';
-        const projectInfo = hasDrawings ? '有图纸/BOQ' : sanitizeText(fields.project_type, 80);
+        const hasDrawingsText = hasDrawings ? '有图纸' : '无图纸';
+        const projectInfo = sanitizeText(fields.project_type, 80) || '未选择';
+        const useInfo = sanitizeText(fields.intended_use, 100) || '';
+        const dimsInfo = dimensions || '';
+        const craneInfo = fields.crane_requirement ? sanitizeText(fields.crane_requirement, 30) : '';
+        const customerTypeInfo = sanitizeText(fields.customer_type, 60) || '';
+        const projectStageInfo = sanitizeText(fields.project_stage, 60) || '';
+        const msgPreview = fields.message ? sanitizeText(fields.message, 200) : '';
+
+        // Advanced options
+        const advLines = [];
+        if (fields.wind_load && String(fields.wind_load).trim()) advLines.push('风荷载: ' + sanitizeText(fields.wind_load, 50));
+        if (fields.snow_load && String(fields.snow_load).trim()) advLines.push('雪荷载: ' + sanitizeText(fields.snow_load, 50));
+        if (fields.seismic_requirement && String(fields.seismic_requirement).trim()) advLines.push('抗震: ' + sanitizeText(fields.seismic_requirement, 50));
+        if (fields.crane_capacity && String(fields.crane_capacity).trim()) advLines.push('吊车吨位: ' + sanitizeText(fields.crane_capacity, 50));
+        if (fields.equipment_load && String(fields.equipment_load).trim()) advLines.push('设备荷载: ' + sanitizeText(fields.equipment_load, 50));
 
         const mdLines = [
-          `**网站新线索${isTestText}**`,
+          '**新网站线索' + isTestText + '**',
+          new Date().toLocaleString('zh-CN', {timeZone: 'Asia/Shanghai'}),
           '',
-          `**姓名**: ${sanitizeText(fields.name, 100)}`,
-          `**国家**: ${sanitizeText(fields.project_country, 80)}`,
-          `**电话**: ${sanitizeText(fields.calling_code, 20)} ${sanitizeText(fields.phone, 50)}`,
-          `**微信**: ${sanitizeText(fields.wechat, 80)}`,
-          `**有无图纸**: ${hasDrawingsText}`,
-          `**项目**: ${projectInfo}`,
-          `**来源**: ${sanitizeText(fields.source_page, 120)}`,
+          '姓名: ' + sanitizeText(fields.name, 100),
+          '国家: ' + sanitizeText(fields.project_country, 80),
+          'WhatsApp: ' + sanitizeText(fields.calling_code, 20) + ' ' + sanitizeText(fields.phone, 50),
+          '微信: ' + sanitizeText(fields.wechat, 80),
         ];
+        if (fields.email) mdLines.push('邮箱: ' + sanitizeText(fields.email, 80));
+        mdLines.push('');
+        mdLines.push('路径: ' + hasDrawingsText + ' | 类型: ' + projectInfo);
+        if (customerTypeInfo) mdLines.push('身份: ' + customerTypeInfo);
+        if (projectStageInfo) mdLines.push('阶段: ' + projectStageInfo);
+        if (useInfo) mdLines.push('简述: ' + useInfo);
+        if (dimsInfo) mdLines.push('尺寸: ' + dimsInfo);
+        if (craneInfo) mdLines.push('吊车: ' + craneInfo);
+        if (advLines.length) mdLines.push('高级参数: ' + advLines.join(' | '));
+        if (msgPreview) mdLines.push('备注: ' + msgPreview);
+        mdLines.push('来源: ' + sanitizeText(fields.source_page, 100));
 
         if (filesWithDownloadUrls.length > 0) {
-          mdLines.push(`**附件**: ${filesWithDownloadUrls.length}个文件`);
+          mdLines.push('');
+          mdLines.push('附件 ' + filesWithDownloadUrls.length + ' 个:');
           for (const f of filesWithDownloadUrls) {
             const fileName = f.original_filename || f.name || '未知文件';
-            const fileSize = f.size ? `(${(f.size / 1024).toFixed(1)}KB)` : '';
+            const fileSize = f.size ? ' (' + (f.size / 1024 / 1024).toFixed(1) + 'MB)' : '';
             if (f.download_url) {
-              mdLines.push(`- [${fileName}${fileSize}](${f.download_url})`);
+              mdLines.push('[' + fileName + fileSize + '](' + f.download_url + ')');
             } else {
-              mdLines.push(`- ${fileName}${fileSize}`);
+              mdLines.push(fileName + fileSize);
             }
           }
-          mdLines.push('> 国内下载慢时，建议客户通过微信/WhatsApp直接发送图纸');
         }
 
         const wecomPayload = {
@@ -427,28 +484,66 @@ export async function onRequestPost(context) {
       }
     }
 
-    // Success response - no PII in response
-    return jsonResponse({
-      success: true,
-      lead_id: leadId,
-      language,
-      files_saved: savedFiles.length,
-      files_failed: failedFiles,
-      submission_status: submissionStatus,
-      partial_success: failedFiles > 0,
-      webhook_status: webhookStatus,
-      test_record: isTest === 1,
-      message: failedFiles > 0
-        ? (language === 'zh'
-          ? '项目需求已收到，但附件未能完整保存。我们将通过您填写的联系方式跟进。'
-          : 'Project inquiry received, but the attachments could not be fully saved. We will follow up using your contact details.')
-        : (language === 'zh'
-          ? '项目需求已提交。感谢您的提交。中赛钢构将根据您提供的项目资料进行审核，并通过您填写的联系方式进行后续沟通。'
-          : 'Project inquiry received. Thank you. ZhongSai will review the project information and follow up using the contact details you provided.'),
-    }, 201);
+    // Meta Conversions API — server-side Lead event (non-blocking)
+    if (env.FB_CAPI_ACCESS_TOKEN && !isTest) {
+      try {
+        const pixelId = '1268080202055777';
+        const eventTime = Math.floor(Date.now() / 1000);
+        const sourceUrl = sanitizeText(fields.landing_page || fields.source_page, 500) || 'https://zhongsai-steelstructure.com/';
+
+        async function sha256(str) {
+          const buf = await crypto.subtle.digest('SHA-256', new TextEncoder().encode(str.trim().toLowerCase()));
+          return Array.from(new Uint8Array(buf)).map(b => b.toString(16).padStart(2, '0')).join('');
+        }
+
+        const userData = {};
+        if (fields.email && fields.email.trim()) userData.em = [await sha256(fields.email.trim())];
+        if (fields.phone && fields.phone.trim()) {
+          const fullPhone = (fields.calling_code || '') + fields.phone.trim();
+          userData.ph = [await sha256(fullPhone.replace(/[^0-9]/g, ''))];
+        }
+        userData.client_ip_address = remoteIp;
+        const userAgent = request.headers.get('user-agent') || '';
+        if (userAgent) userData.client_user_agent = userAgent;
+
+        const capiPayload = {
+          data: [{
+            event_name: 'Lead',
+            event_time: eventTime,
+            event_source_url: sourceUrl,
+            action_source: 'website',
+            user_data: userData,
+            custom_data: {
+              content_name: sanitizeText(fields.project_type, 100) || 'inquiry',
+              project_country: sanitizeText(fields.project_country, 100),
+              language: language,
+              form_path: sanitizeText(fields.form_path, 100),
+            },
+          }],
+        };
+
+        if (env.FB_CAPI_TEST_CODE) {
+          capiPayload.test_event_code = env.FB_CAPI_TEST_CODE;
+        }
+
+        const capiResp = await fetch('https://graph.facebook.com/v18.0/' + pixelId + '/events?access_token=' + env.FB_CAPI_ACCESS_TOKEN, {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify(capiPayload),
+        });
+
+        const capiResult = await capiResp.json();
+        console.error(JSON.stringify({requestId: requestId, stage: 'META_CAPI', status: capiResp.status, result: capiResult}));
+      } catch (capiErr) {
+        console.error(JSON.stringify({requestId: requestId, stage: 'META_CAPI', error: capiErr.message}));
+      }
+    }
+    })());
+
+    return response;
 
   } catch (err) {
-    console.error('API error:', err.message, err.stack);
+    console.error(JSON.stringify({requestId, stage: 'UNKNOWN', error: err.message, stack: (err.stack||'').substring(0,500)}));
     return jsonResponse({
       success: false,
       code: 'INTERNAL_ERROR',

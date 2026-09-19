@@ -373,6 +373,20 @@ const STATIC_BREADCRUMBS: Record<string, { en: Crumb[]; zh: Crumb[] }> = {
       { name: '钢结构仓库成本指南' },
     ],
   },
+  'blog/steel-workshop-cost-factory-building-price': {
+    en:
+    [
+      { name: 'Home', href: '/en/' },
+      { name: 'Resources', href: '/en/resources/' },
+      { name: 'Steel Workshop Cost Guide' },
+    ],
+    zh:
+    [
+      { name: '首页', href: '/zh/' },
+      { name: '技术资源', href: '/zh/resources/' },
+      { name: '钢结构厂房造价指南' },
+    ],
+  },
   'blog/gangjiegou-changfang-zaojia-zhinan': {
     en:
     [
@@ -531,6 +545,7 @@ const SITEMAP_EN_ONLY = [
   'blog/shipping-cost-steel-structure-from-china',
   'blog/steel-structure-container-loading-guide',
   'blog/steel-warehouse-cost-complete-guide',
+  'blog/steel-workshop-cost-factory-building-price',
   'blog/how-to-choose-steel-structure-supplier',
 ];
 
@@ -538,6 +553,11 @@ const SITEMAP_EN_ONLY = [
 const SITEMAP_ZH_ONLY = [
   'blog/gangjiegou-changfang-zaojia-zhinan',
   'blog/gangjiegou-gongchang-xuanze-zhinan',
+];
+
+// 双语市场页：仅当 EN + ZH 页面同时存在时才加入（其他 market 页暂不进 sitemap）
+const SITEMAP_MARKETS_BILINGUAL = [
+  'markets/uae',
 ];
 
 export function buildSitemapPaths(): string[] {
@@ -551,6 +571,10 @@ export function buildSitemapPaths(): string[] {
     }
     // Country/region pages
     urls.push(`/${lang}/projects/singapore/`);
+    // Bilingual market pages (only where both EN + ZH pages exist)
+    for (const market of SITEMAP_MARKETS_BILINGUAL) {
+      urls.push(`/${lang}/${market}/`);
+    }
   }
   for (const blog of SITEMAP_EN_ONLY) {
     urls.push(`/en/${blog}/`);

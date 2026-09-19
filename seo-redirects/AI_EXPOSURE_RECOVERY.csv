@@ -1,0 +1,16 @@
+date,legacy_url,ai_impressions,old_status,new_target,action,verification,reason,source
+2026-09-18,/en/blog/steel-structure-supplier-thailand-guide,3,404,/en/markets/thailand/,301 Bulk Redirect,PASS,Thailand supplier guide to existing Thailand market page,GSC Generative AI Exposure
+2026-09-18,/en/blog/steel-structure-supplier-saudi-arabia-guide,1,404,/en/markets/saudi-arabia/,301 Bulk Redirect,PASS,Saudi supplier guide to existing Saudi market page,GSC Generative AI Exposure
+2026-09-18,/en/blog/prefab-steel-building-roof-systems-comparison,2,404,/en/components/roof-wall-cladding-systems/,301 Bulk Redirect,PASS,Roof systems comparison to existing cladding components page,GSC Generative AI Exposure
+2026-09-18,/blog/how-to-import-steel-structure-from-china-to-africa,1,404,/en/blog/how-to-import-steel-structure-from-china-to-africa/,301 Bulk Redirect,PASS,Legacy no-language-prefix URL to canonical EN Africa import guide,GSC Generative AI Exposure
+2026-09-18,/en/blog/steel-structure-export-packaging-container-loading-guide,1,404,/en/blog/how-steel-structures-packed-loaded-export/,301 Bulk Redirect,PASS,Old packaging guide slug to current packed-loaded export article,GSC Generative AI Exposure
+2026-09-18,/en/blog/steel-structure-project-timeline-guide,1,404,/en/blog/steel-structure-project-timeline-drawing-to-delivery/,301 Bulk Redirect,PASS,Old timeline guide slug to current timeline article,GSC Generative AI Exposure
+2026-09-18,/en/steel-building-solutions/agriculture.html,1,404,/en/agricultural-steel-buildings/,301 Bulk Redirect,PASS,Legacy agriculture .html to current agricultural buildings page,GSC Generative AI Exposure
+2026-09-18,/products,1,404,/en/products/,301 Bulk Redirect,PASS,No-language-prefix products URL to canonical EN products,GSC Generative AI Exposure
+
+2026-09-18,/en/blog/steel-structure-supplier-uae-dubai-guide,4,404,/en/markets/uae/,301 Bulk Redirect,PASS,UAE Dubai supplier guide to new UAE market page EN same-language,GSC Generative AI Exposure + UAE Market Replacement
+2026-09-18,/en/blog/steel-structure-supplier-uae-dubai-guide/,,404,/en/markets/uae/,301 Bulk Redirect,PASS,UAE Dubai supplier guide trailing-slash variant to UAE market page EN,GSC Generative AI Exposure + UAE Market Replacement
+2026-09-18,/en/blog/steel-structure-supplier-uae-dubai-guide.html,,"301 to /en/resources/ via wildcard (wrong)",/en/markets/uae/,301 Bulk Redirect,PASS,UAE Dubai supplier guide .html was misrouted to resources now edge exact to UAE market page EN,GSC Generative AI Exposure + UAE Market Replacement
+2026-09-18,/zh/blog/steel-structure-supplier-uae-dubai-guide,1,404,/zh/markets/uae/,301 Bulk Redirect,PASS,UAE Dubai supplier guide to new UAE market page ZH same-language,GSC Generative AI Exposure + UAE Market Replacement
+2026-09-18,/zh/blog/steel-structure-supplier-uae-dubai-guide/,,404,/zh/markets/uae/,301 Bulk Redirect,PASS,UAE Dubai supplier guide trailing-slash variant to UAE market page ZH,GSC Generative AI Exposure + UAE Market Replacement
+2026-09-18,/zh/blog/steel-structure-supplier-uae-dubai-guide.html,,"301 to /zh/resources/ via wildcard (wrong)",/zh/markets/uae/,301 Bulk Redirect,PASS,UAE Dubai supplier guide .html was misrouted to resources now edge exact to UAE market page ZH,GSC Generative AI Exposure + UAE Market Replacement

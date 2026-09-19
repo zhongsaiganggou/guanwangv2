@@ -6,7 +6,6 @@ const GONE_URLS = new Set([
   // Only keep URLs that should return 410 (permanently removed, no redirect target)
   // Old project URLs now have 301 redirects in _redirects, so they are removed from here
   "/en/blog/how-much-does-steel-structure-warehouse-cost/",
-  "/en/blog/steel-workshop-cost-factory-building-price/",
   "/zh/blog/gangjiegou-cangku-zaojia-2026/",
   "/zh/projects/china-cnooc-pipe-rack/",
   "/zh/projects/china-huarun-center/",
@@ -70,5 +69,22 @@ export async function onRequest(context) {
     });
   }
 
-  return next();
+  const response = await next();
+
+  // Preview safety: Cloudflare Pages preview domains (*.pages.dev) must not be indexed.
+  // Only applies to HTML navigations on preview hosts; the production custom domain
+  // (zhongsai-steelstructure.com) does not end with .pages.dev and is unaffected.
+  const host = request.headers.get('host') || '';
+  const isPreviewHost = host.endsWith('.pages.dev');
+  const isHtmlNavigation =
+    request.method === 'GET' &&
+    !pathname.startsWith('/api/') &&
+    !pathname.includes('.');
+  if (isPreviewHost && isHtmlNavigation) {
+    const previewResponse = new Response(response.body, response);
+    previewResponse.headers.set('X-Robots-Tag', 'noindex, nofollow');
+    return previewResponse;
+  }
+
+  return response;
 }
