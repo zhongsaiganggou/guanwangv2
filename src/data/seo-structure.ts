@@ -423,6 +423,18 @@ const STATIC_BREADCRUMBS: Record<string, { en: Crumb[]; zh: Crumb[] }> = {
     en: [{ name: 'Home', href: '/en/' }, { name: 'Solutions' }],
     zh: [{ name: '首页', href: '/zh/' }, { name: '解决方案' }],
   },
+  'markets/uae': {
+    en: [
+      { name: 'Home', href: '/en/' },
+      { name: 'Markets', href: '/en/markets/' },
+      { name: 'United Arab Emirates' },
+    ],
+    zh: [
+      { name: '首页', href: '/zh/' },
+      { name: '市场', href: '/zh/markets/' },
+      { name: '阿联酋' },
+    ],
+  },
   'steel-supermarket-mall': {
     en: [
       { name: 'Home', href: '/en/' },

@@ -20,9 +20,9 @@ interface Props {
 const { title, description, lang, noindex = false, singleLanguage = false } = Astro.props;
 const currentPath = Astro.url.pathname;
 
-// 首页输出 Organization（每页至多 1 个）；正式内容页输出 BreadcrumbList；占位页不输出
+// 首页/内容页都输出 Organization 实体（语言无关，每页至多 1 个）；正式内容页另输出 BreadcrumbList；占位页不输出
 const isHome = currentPath === `/${lang}/` || currentPath === `/${lang}`;
-const orgLd = isHome && !noindex ? buildOrganizationJsonLd() : null;
+const orgLd = !noindex ? buildOrganizationJsonLd() : null;
 const crumbLd = !isHome && !noindex ? buildBreadcrumbJsonLd(currentPath) : null;
 ---
 
