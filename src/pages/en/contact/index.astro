@@ -97,7 +97,7 @@ const supportItems = [
             </ul>
             {path.fileTypes && <p class="inquiry-filetypes">Supported files: {path.fileTypes}</p>}
             {path.note && <p class="inquiry-note">{path.note}</p>}
-            <a href="#quote-form" class="btn {i === 0 ? 'btn-primary' : 'btn-outline'}">{path.cta}</a>
+            <a href={i === 0 ? '#quote-form' : '?path=nodrawings#quote-form'} class="btn {i === 0 ? 'btn-primary' : 'btn-outline'}">{path.cta}</a>
           </div>
         ))}
       </div>

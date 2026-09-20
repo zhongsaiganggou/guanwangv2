@@ -633,6 +633,16 @@ const phoneCodes = [
         });
       });
 
+      // Deep-link: honor ?path=nodrawings (or #...nodrawings) so "暂无图纸" entry opens on the no-drawings tab
+      (function initDeepLinkedPath() {
+        let desired = new URLSearchParams(window.location.search).get('path');
+        if (!desired && location.hash && location.hash.indexOf('nodrawings') !== -1) desired = 'nodrawings';
+        if (desired === 'nodrawings') {
+          const ndBtn = form.querySelector('.form-path-btn[data-path="nodrawings"]');
+          if (ndBtn) ndBtn.click();
+        }
+      })();
+
       // Also track first input/focus on form fields
       let formStartFired = false;
       function fireFormStart() {
