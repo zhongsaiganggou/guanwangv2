@@ -718,6 +718,59 @@ const relatedLinks = [
     </div>
   </section>
 
+  <!-- 包装装柜真实证据 -->
+  <section class="section" style="padding: 70px 0; background: #f8fafc;">
+    <div class="container">
+      <div class="section-heading reveal">
+        <div>
+          <p class="section-index">真实证据</p>
+          <h2>包装、编号与装柜现场</h2>
+        </div>
+        <div>
+          <p>构件在出厂前完成编号、分类和包装，按项目装载计划装入集装箱。以下为中赛制造与出口交付现场的真实记录。</p>
+        </div>
+      </div>
+      <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; margin-top: 40px;" class="loading-evidence-grid">
+        <div class="reveal reveal-delay-1">
+          <div style="border-radius: 4px; overflow: hidden; aspect-ratio: 4/3; background: #0f172a;">
+            <img src="/images/manufacturing/real/component-marking.jpg" alt="钢构件编号标识现场" loading="lazy" style="width: 100%; height: 100%; object-fit: cover; display: block;">
+          </div>
+          <h3 style="font-size: 15px; margin: 12px 0 4px; color: #0f172a;">构件编号标识</h3>
+          <p style="font-size: 12px; color: #64748b; line-height: 1.6; margin: 0;">每根构件标注唯一编号，与加工图和安装图对应，便于现场识别和吊装顺序。</p>
+        </div>
+        <div class="reveal reveal-delay-2">
+          <div style="border-radius: 4px; overflow: hidden; aspect-ratio: 4/3; background: #0f172a;">
+            <img src="/images/export/container-loading-256_web.jpg" alt="钢结构构件集装箱装柜现场" loading="lazy" style="width: 100%; height: 100%; object-fit: cover; display: block;">
+          </div>
+          <h3 style="font-size: 15px; margin: 12px 0 4px; color: #0f172a;">集装箱装柜</h3>
+          <p style="font-size: 12px; color: #64748b; line-height: 1.6; margin: 0;">按装载计划将构件有序装入标准集装箱，合理利用空间并保护涂层和构件端部。</p>
+        </div>
+        <div class="reveal reveal-delay-3">
+          <div style="border-radius: 4px; overflow: hidden; aspect-ratio: 4/3; background: #0f172a;">
+            <img src="/images/export/loading-truck_web.jpg" alt="钢结构构件装车发运现场" loading="lazy" style="width: 100%; height: 100%; object-fit: cover; display: block;">
+          </div>
+          <h3 style="font-size: 15px; margin: 12px 0 4px; color: #0f172a;">装车与发运</h3>
+          <p style="font-size: 12px; color: #64748b; line-height: 1.6; margin: 0;">超长或超重构件采用专用车辆运输至港口，配合出口文件和装箱单完成发运。</p>
+        </div>
+      </div>
+      <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 20px; margin-top: 20px;" class="loading-evidence-grid-2">
+        <div class="reveal reveal-delay-1">
+          <div style="border-radius: 4px; overflow: hidden; aspect-ratio: 16/9; background: #0f172a;">
+            <img src="/images/container-loading.jpg" alt="大型钢结构构件装柜作业" loading="lazy" style="width: 100%; height: 100%; object-fit: cover; display: block;">
+          </div>
+          <h3 style="font-size: 15px; margin: 12px 0 4px; color: #0f172a;">大型构件装柜作业</h3>
+          <p style="font-size: 12px; color: #64748b; line-height: 1.6; margin: 0;">门式刚架、吊车梁等大型构件按重量和尺寸规划装载顺序，确保运输安全和卸货便利。</p>
+        </div>
+        <div class="reveal reveal-delay-2">
+          <div style="border-radius: 4px; overflow: hidden; aspect-ratio: 16/9; background: #0f172a;">
+            <img src="/images/export/container-loading-310_web.jpg" alt="钢结构出口集装箱装载" loading="lazy" style="width: 100%; height: 100%; object-fit: cover; display: block;">
+          </div>
+          <h3 style="font-size: 15px; margin: 12px 0 4px; color: #0f172a;">出口集装箱装载</h3>
+          <p style="font-size: 12px; color: #64748b; line-height: 1.6; margin: 0;">配套装箱单和出口文件，确保目的港清关和现场接收时构件可追溯、可核对。</p>
+        </div>
+      </div>
+    </div>
+  </section>
 <section class="quote-cta-section" id="quote">
     <div class="container">
       <ExportDeliveryCTA lang="zh" />
@@ -736,6 +789,13 @@ const relatedLinks = [
       </div>
     </div>
   </section>
+
+<style>
+.loading-evidence-grid { grid-template-columns: repeat(3, 1fr); }
+.loading-evidence-grid-2 { grid-template-columns: 1fr 1fr; }
+@media (max-width: 900px) { .loading-evidence-grid { grid-template-columns: repeat(2, 1fr) !important; } }
+@media (max-width: 600px) { .loading-evidence-grid, .loading-evidence-grid-2 { grid-template-columns: 1fr !important; } }
+</style>
 </BaseLayout>
 
 <style>

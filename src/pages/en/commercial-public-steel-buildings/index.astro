@@ -212,7 +212,54 @@ const canonical = 'https://zhongsai-steelstructure.com/en/commercial-public-stee
     </div>
   </section>
 
-  <!-- 05 / Fabrication & Export Supply -->
+    <!-- 04b / Roof Wall Finished Exterior — real evidence -->
+  <section class="detail-section" style="background: #f8fafc;">
+    <div class="container">
+      <div class="section-heading reveal">
+        <p class="section-index">Envelope Completion</p>
+        <h2>Roof, Wall &amp; Finished Building Envelope</h2>
+        <p>The structural frame must be coordinated with the selected roof and wall systems, openings, insulation and ventilation requirements. Below are reference examples of steel enclosure systems and finished building appearance.</p>
+      </div>
+      <div style="display: grid; grid-template-columns: 2fr 1fr; gap: 16px; margin-top: 36px;" class="envelope-grid">
+        <div class="reveal" style="border-radius: 4px; overflow: hidden; aspect-ratio: 16/10; background: #0f172a;">
+          <img src="/images/products/commercial/facade-enclosure-finished.jpg" alt="Commercial building facade enclosure finished exterior" loading="lazy" style="width: 100%; height: 100%; object-fit: cover; display: block;">
+        </div>
+        <div style="display: flex; flex-direction: column; gap: 16px;">
+          <div class="reveal reveal-delay-1" style="border-radius: 4px; overflow: hidden; aspect-ratio: 4/3; background: #0f172a;">
+            <img src="/images/products/commercial/cladding-roof-wall-panels.jpg" alt="Roof and wall cladding panel system" loading="lazy" style="width: 100%; height: 100%; object-fit: cover; display: block;">
+          </div>
+          <div class="reveal reveal-delay-2" style="border-radius: 4px; overflow: hidden; aspect-ratio: 4/3; background: #0f172a;">
+            <img src="/images/components/roof-ventilation-skylight.jpg" alt="Roof ventilation and skylight" loading="lazy" style="width: 100%; height: 100%; object-fit: cover; display: block;">
+          </div>
+        </div>
+      </div>
+      <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; margin-top: 16px;" class="envelope-grid-3">
+        <div class="reveal reveal-delay-1">
+          <div style="border-radius: 4px; overflow: hidden; aspect-ratio: 4/3; background: #0f172a;">
+            <img src="/images/products/commercial/curtainwall-support-framing.jpg" alt="Curtain wall support steel framing" loading="lazy" style="width: 100%; height: 100%; object-fit: cover; display: block;">
+          </div>
+          <h3 style="font-size: 14px; margin: 10px 0 4px; color: #0f172a;">Curtain Wall Support</h3>
+          <p style="font-size: 12px; color: #64748b; line-height: 1.6; margin: 0;">Primary and secondary framing for glass curtain walls, coordinated with facade design.</p>
+        </div>
+        <div class="reveal reveal-delay-2">
+          <div style="border-radius: 4px; overflow: hidden; aspect-ratio: 4/3; background: #0f172a;">
+            <img src="/images/products/commercial/roof-insulation-drainage-detail.jpg" alt="Roof insulation and drainage detail" loading="lazy" style="width: 100%; height: 100%; object-fit: cover; display: block;">
+          </div>
+          <h3 style="font-size: 14px; margin: 10px 0 4px; color: #0f172a;">Roof Insulation &amp; Drainage</h3>
+          <p style="font-size: 12px; color: #64748b; line-height: 1.6; margin: 0;">Insulation, vapour barrier and organised drainage designed for the project climate.</p>
+        </div>
+        <div class="reveal reveal-delay-3">
+          <div style="border-radius: 4px; overflow: hidden; aspect-ratio: 4/3; background: #0f172a;">
+            <img src="/images/projects/huarun-center-commercial-residential-completed-building.jpg" alt="Completed commercial building exterior" loading="lazy" style="width: 100%; height: 100%; object-fit: cover; display: block;">
+          </div>
+          <h3 style="font-size: 14px; margin: 10px 0 4px; color: #0f172a;">Commercial Complex Exterior (Rendering)</h3>
+          <p style="font-size: 12px; color: #64748b; line-height: 1.6; margin: 0;">Overall building appearance after structural frame and enclosure completion.</p>
+        </div>
+      </div>
+      <p style="font-size: 12px; color: #94a3b8; margin-top: 20px; text-align: center;">Reference examples of steel enclosure systems and finished building appearance. Specific roof/wall selection, insulation rating and ventilation are determined by project climate, function and local codes.</p>
+    </div>
+  </section>
+<!-- 05 / Fabrication & Export Supply -->
   <section class="detail-section">
     <div class="container">
       <div class="section-heading reveal">
@@ -371,4 +418,11 @@ const canonical = 'https://zhongsai-steelstructure.com/en/commercial-public-stee
 .params-table td:first-child { font-weight: 600; color: #0a3d62; width: 30%; }
 </style>
 
+
+<style>
+.envelope-grid { grid-template-columns: 2fr 1fr; }
+.envelope-grid-3 { grid-template-columns: repeat(3, 1fr); }
+@media (max-width: 900px) { .envelope-grid, .envelope-grid-3 { grid-template-columns: 1fr 1fr !important; } }
+@media (max-width: 600px) { .envelope-grid, .envelope-grid-3 { grid-template-columns: 1fr !important; } }
+</style>
 </BaseLayout>

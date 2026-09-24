@@ -747,6 +747,65 @@ const relatedLinks = [
     </div>
   </section>
 
+  <!-- Engineering Deliverables — real evidence -->
+  <section class="section" style="padding: 70px 0; background: #f8fafc;">
+    <div class="container">
+      <div class="section-heading reveal">
+        <div>
+          <p class="section-index">Deliverables</p>
+          <h2>Engineering Deliverable Samples</h2>
+        </div>
+        <div>
+          <p>From structural scheme to shop drawings, connection details and erection drawings, ZhongSai engineering team delivers complete documentation at each project stage. Samples below have client and project-sensitive information redacted for confidentiality.</p>
+        </div>
+      </div>
+      <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; margin-top: 40px;" class="deliverables-grid">
+        <div class="reveal reveal-delay-1">
+          <div style="background: #0f172a; border-radius: 4px; overflow: hidden; aspect-ratio: 4/3;">
+            <img src="/images/engineering/tekla-model.jpg" alt="Tekla 3D structural model sample" loading="lazy" style="width: 100%; height: 100%; object-fit: cover; display: block;">
+          </div>
+          <h3 style="font-size: 16px; margin: 14px 0 6px; color: #0f172a;">Tekla 3D Model</h3>
+          <p style="font-size: 13px; color: #64748b; line-height: 1.7; margin: 0;">3D solid model in Tekla Structures for clash detection, material take-off and automated shop drawing generation.</p>
+        </div>
+        <div class="reveal reveal-delay-2">
+          <div style="background: #0f172a; border-radius: 4px; overflow: hidden; aspect-ratio: 4/3;">
+            <img src="/images/engineering/workflow/step-05-shop-detailing.jpg" alt="Shop drawing and member detail sample" loading="lazy" style="width: 100%; height: 100%; object-fit: cover; display: block;">
+          </div>
+          <h3 style="font-size: 16px; margin: 14px 0 6px; color: #0f172a;">Shop &amp; Member Drawings</h3>
+          <p style="font-size: 13px; color: #64748b; line-height: 1.7; margin: 0;">Part drawings, assembly drawings and weld call-outs for every member, directly guiding cutting, assembly and welding.</p>
+        </div>
+        <div class="reveal reveal-delay-3">
+          <div style="background: #0f172a; border-radius: 4px; overflow: hidden; aspect-ratio: 4/3;">
+            <img src="/images/engineering/workflow/step-04-connection-development.jpg" alt="Connection detail development sample" loading="lazy" style="width: 100%; height: 100%; object-fit: cover; display: block;">
+          </div>
+          <h3 style="font-size: 16px; margin: 14px 0 6px; color: #0f172a;">Connection Detailing</h3>
+          <p style="font-size: 13px; color: #64748b; line-height: 1.7; margin: 0;">Beam-to-column, bracing and splice connection design with bolt specifications, weld sizes and stiffener layout.</p>
+        </div>
+        <div class="reveal reveal-delay-1">
+          <div style="background: #0f172a; border-radius: 4px; overflow: hidden; aspect-ratio: 4/3;">
+            <img src="/images/manufacturing/process/01-drawing-review.jpg" alt="Drawing review and fabrication handover" loading="lazy" style="width: 100%; height: 100%; object-fit: cover; display: block;">
+          </div>
+          <h3 style="font-size: 16px; margin: 14px 0 6px; color: #0f172a;">Drawing Review &amp; Handover</h3>
+          <p style="font-size: 13px; color: #64748b; line-height: 1.7; margin: 0;">Joint review by engineering, production and QC before fabrication to confirm constructability and quality control points.</p>
+        </div>
+        <div class="reveal reveal-delay-2">
+          <div style="background: #0f172a; border-radius: 4px; overflow: hidden; aspect-ratio: 4/3;">
+            <img src="/images/blog/overhead-crane-workshop-design/crane-column-detail.jpg" alt="Crane beam and column connection detail" loading="lazy" style="width: 100%; height: 100%; object-fit: cover; display: block;">
+          </div>
+          <h3 style="font-size: 16px; margin: 14px 0 6px; color: #0f172a;">Crane System Detailing</h3>
+          <p style="font-size: 13px; color: #64748b; line-height: 1.7; margin: 0;">Projects with cranes require dedicated design of crane girders, bracing systems and column-top connections for safe operation.</p>
+        </div>
+        <div class="reveal reveal-delay-3">
+          <div style="background: #0f172a; border-radius: 4px; overflow: hidden; aspect-ratio: 4/3;">
+            <img src="/images/engineering/workflow/step-06-drawing-approval.jpg" alt="Drawing approval process" loading="lazy" style="width: 100%; height: 100%; object-fit: cover; display: block;">
+          </div>
+          <h3 style="font-size: 16px; margin: 14px 0 6px; color: #0f172a;">Drawing Approval</h3>
+          <p style="font-size: 13px; color: #64748b; line-height: 1.7; margin: 0;">Submitted to client or consultant for approval before cutting, ensuring design intent is accurately transferred to fabrication.</p>
+        </div>
+      </div>
+      <p style="text-align: center; font-size: 12px; color: #94a3b8; margin-top: 24px;">Engineering deliverable samples — client and project-sensitive information redacted for confidentiality.</p>
+    </div>
+  </section>
 <section class="quote-cta-section" id="quote">
     <div class="container">
       <ExportDeliveryCTA lang="en" />
@@ -765,6 +824,12 @@ const relatedLinks = [
       </div>
     </div>
   </section>
+
+<style>
+.deliverables-grid { grid-template-columns: repeat(3, 1fr); }
+@media (max-width: 900px) { .deliverables-grid { grid-template-columns: repeat(2, 1fr) !important; } }
+@media (max-width: 560px) { .deliverables-grid { grid-template-columns: 1fr !important; } }
+</style>
 </BaseLayout>
 
 <style>

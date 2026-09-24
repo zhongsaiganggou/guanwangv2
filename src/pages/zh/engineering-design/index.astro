@@ -748,6 +748,65 @@ const relatedLinks = [
     </div>
   </section>
 
+  <!-- 工程交付物 — 真实证据 -->
+  <section class="section" style="padding: 70px 0; background: #f8fafc;">
+    <div class="container">
+      <div class="section-heading reveal">
+        <div>
+          <p class="section-index">交付物</p>
+          <h2>工程交付物样例</h2>
+        </div>
+        <div>
+          <p>从结构方案到加工图、节点详图和安装图，中赛工程团队按项目阶段输出完整图纸资料。以下为工程交付样例，客户及项目敏感信息已脱敏处理。</p>
+        </div>
+      </div>
+      <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; margin-top: 40px;" class="deliverables-grid">
+        <div class="reveal reveal-delay-1">
+          <div style="background: #0f172a; border-radius: 4px; overflow: hidden; aspect-ratio: 4/3;">
+            <img src="/images/engineering/tekla-model.jpg" alt="Tekla 三维结构模型样例" loading="lazy" style="width: 100%; height: 100%; object-fit: cover; display: block;">
+          </div>
+          <h3 style="font-size: 16px; margin: 14px 0 6px; color: #0f172a;">Tekla 三维模型</h3>
+          <p style="font-size: 13px; color: #64748b; line-height: 1.7; margin: 0;">基于 Tekla Structures 建立的三维实体模型，用于碰撞检查、材料统计和加工图自动生成。</p>
+        </div>
+        <div class="reveal reveal-delay-2">
+          <div style="background: #0f172a; border-radius: 4px; overflow: hidden; aspect-ratio: 4/3;">
+            <img src="/images/engineering/workflow/step-05-shop-detailing.jpg" alt="加工图与构件详图样例" loading="lazy" style="width: 100%; height: 100%; object-fit: cover; display: block;">
+          </div>
+          <h3 style="font-size: 16px; margin: 14px 0 6px; color: #0f172a;">加工图与构件详图</h3>
+          <p style="font-size: 13px; color: #64748b; line-height: 1.7; margin: 0;">每根构件的零件图、装配图和焊缝标注，直接指导工厂切割、装配和焊接。</p>
+        </div>
+        <div class="reveal reveal-delay-3">
+          <div style="background: #0f172a; border-radius: 4px; overflow: hidden; aspect-ratio: 4/3;">
+            <img src="/images/engineering/workflow/step-04-connection-development.jpg" alt="连接节点深化设计样例" loading="lazy" style="width: 100%; height: 100%; object-fit: cover; display: block;">
+          </div>
+          <h3 style="font-size: 16px; margin: 14px 0 6px; color: #0f172a;">连接节点深化</h3>
+          <p style="font-size: 13px; color: #64748b; line-height: 1.7; margin: 0;">梁柱节点、支撑节点和拼接节点的详细设计，含螺栓规格、焊缝尺寸和加劲板布置。</p>
+        </div>
+        <div class="reveal reveal-delay-1">
+          <div style="background: #0f172a; border-radius: 4px; overflow: hidden; aspect-ratio: 4/3;">
+            <img src="/images/manufacturing/process/01-drawing-review.jpg" alt="图纸评审与加工交底" loading="lazy" style="width: 100%; height: 100%; object-fit: cover; display: block;">
+          </div>
+          <h3 style="font-size: 16px; margin: 14px 0 6px; color: #0f172a;">图纸评审与加工交底</h3>
+          <p style="font-size: 13px; color: #64748b; line-height: 1.7; margin: 0;">加工前由工程、生产和质检共同评审图纸，确认工艺可行性和质量控制点。</p>
+        </div>
+        <div class="reveal reveal-delay-2">
+          <div style="background: #0f172a; border-radius: 4px; overflow: hidden; aspect-ratio: 4/3;">
+            <img src="/images/blog/overhead-crane-workshop-design/crane-column-detail.jpg" alt="吊车梁与柱节点详图" loading="lazy" style="width: 100%; height: 100%; object-fit: cover; display: block;">
+          </div>
+          <h3 style="font-size: 16px; margin: 14px 0 6px; color: #0f172a;">吊车梁系统详图</h3>
+          <p style="font-size: 13px; color: #64748b; line-height: 1.7; margin: 0;">含吊车的项目需专项设计吊车梁、制动结构和柱顶连接，确保运行安全。</p>
+        </div>
+        <div class="reveal reveal-delay-3">
+          <div style="background: #0f172a; border-radius: 4px; overflow: hidden; aspect-ratio: 4/3;">
+            <img src="/images/engineering/workflow/step-06-drawing-approval.jpg" alt="图纸确认与批准流程" loading="lazy" style="width: 100%; height: 100%; object-fit: cover; display: block;">
+          </div>
+          <h3 style="font-size: 16px; margin: 14px 0 6px; color: #0f172a;">图纸确认与批准</h3>
+          <p style="font-size: 13px; color: #64748b; line-height: 1.7; margin: 0;">加工前提交客户或顾问确认，批准后方可下料生产，确保设计意图准确传递。</p>
+        </div>
+      </div>
+      <p style="text-align: center; font-size: 12px; color: #94a3b8; margin-top: 24px;">以上为工程交付样例，客户及项目敏感信息已脱敏处理。</p>
+    </div>
+  </section>
 <section class="quote-cta-section" id="quote">
     <div class="container">
       <ExportDeliveryCTA lang="zh" />
@@ -766,6 +825,12 @@ const relatedLinks = [
       </div>
     </div>
   </section>
+
+<style>
+.deliverables-grid { grid-template-columns: repeat(3, 1fr); }
+@media (max-width: 900px) { .deliverables-grid { grid-template-columns: repeat(2, 1fr) !important; } }
+@media (max-width: 560px) { .deliverables-grid { grid-template-columns: 1fr !important; } }
+</style>
 </BaseLayout>
 
 <style>

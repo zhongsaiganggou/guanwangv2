@@ -215,7 +215,54 @@ const canonical = 'https://zhongsai-steelstructure.com/zh/commercial-public-stee
     </div>
   </section>
 
-  <!-- 05 / 制造与出口供应 -->
+    <!-- 04b / 屋面外墙完工效果 — 真实证据 -->
+  <section class="detail-section" style="background: #f8fafc;">
+    <div class="container">
+      <div class="section-heading reveal">
+        <p class="section-index">围护完成</p>
+        <h2>屋面、外墙与建筑围护完成效果</h2>
+        <p>钢结构框架必须与所选屋面、墙面系统、门窗洞口、保温隔热和通风要求协同设计。以下为钢结构围护系统与建筑完工效果参考。</p>
+      </div>
+      <div style="display: grid; grid-template-columns: 2fr 1fr; gap: 16px; margin-top: 36px;" class="envelope-grid">
+        <div class="reveal" style="border-radius: 4px; overflow: hidden; aspect-ratio: 16/10; background: #0f172a;">
+          <img src="/images/products/commercial/facade-enclosure-finished.jpg" alt="商业建筑外墙围护完工效果" loading="lazy" style="width: 100%; height: 100%; object-fit: cover; display: block;">
+        </div>
+        <div style="display: flex; flex-direction: column; gap: 16px;">
+          <div class="reveal reveal-delay-1" style="border-radius: 4px; overflow: hidden; aspect-ratio: 4/3; background: #0f172a;">
+            <img src="/images/products/commercial/cladding-roof-wall-panels.jpg" alt="屋面墙面压型板系统" loading="lazy" style="width: 100%; height: 100%; object-fit: cover; display: block;">
+          </div>
+          <div class="reveal reveal-delay-2" style="border-radius: 4px; overflow: hidden; aspect-ratio: 4/3; background: #0f172a;">
+            <img src="/images/components/roof-ventilation-skylight.jpg" alt="屋面通风与采光天窗" loading="lazy" style="width: 100%; height: 100%; object-fit: cover; display: block;">
+          </div>
+        </div>
+      </div>
+      <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; margin-top: 16px;" class="envelope-grid-3">
+        <div class="reveal reveal-delay-1">
+          <div style="border-radius: 4px; overflow: hidden; aspect-ratio: 4/3; background: #0f172a;">
+            <img src="/images/products/commercial/curtainwall-support-framing.jpg" alt="幕墙支撑钢结构" loading="lazy" style="width: 100%; height: 100%; object-fit: cover; display: block;">
+          </div>
+          <h3 style="font-size: 14px; margin: 10px 0 4px; color: #0f172a;">幕墙支撑结构</h3>
+          <p style="font-size: 12px; color: #64748b; line-height: 1.6; margin: 0;">玻璃幕墙的主次龙骨和连接件，与建筑立面设计协同。</p>
+        </div>
+        <div class="reveal reveal-delay-2">
+          <div style="border-radius: 4px; overflow: hidden; aspect-ratio: 4/3; background: #0f172a;">
+            <img src="/images/products/commercial/roof-insulation-drainage-detail.jpg" alt="屋面保温与排水节点" loading="lazy" style="width: 100%; height: 100%; object-fit: cover; display: block;">
+          </div>
+          <h3 style="font-size: 14px; margin: 10px 0 4px; color: #0f172a;">屋面保温与排水</h3>
+          <p style="font-size: 12px; color: #64748b; line-height: 1.6; margin: 0;">保温层、隔汽层和有组织排水设计，适应项目所在地气候条件。</p>
+        </div>
+        <div class="reveal reveal-delay-3">
+          <div style="border-radius: 4px; overflow: hidden; aspect-ratio: 4/3; background: #0f172a;">
+            <img src="/images/projects/huarun-center-commercial-residential-completed-building.jpg" alt="商业建筑完工外观" loading="lazy" style="width: 100%; height: 100%; object-fit: cover; display: block;">
+          </div>
+          <h3 style="font-size: 14px; margin: 10px 0 4px; color: #0f172a;">商业综合体建筑外观（效果图）</h3>
+          <p style="font-size: 12px; color: #64748b; line-height: 1.6; margin: 0;">钢结构框架与围护系统完成后的整体建筑效果。</p>
+        </div>
+      </div>
+      <p style="font-size: 12px; color: #94a3b8; margin-top: 20px; text-align: center;">以上为钢结构围护系统与建筑完工效果参考。屋面和墙面系统的具体选型、保温等级和通风方案根据项目所在地气候、使用功能和当地规范确定。</p>
+    </div>
+  </section>
+<!-- 05 / 制造与出口供应 -->
   <section class="detail-section">
     <div class="container">
       <div class="section-heading reveal">
@@ -483,4 +530,11 @@ const canonical = 'https://zhongsai-steelstructure.com/zh/commercial-public-stee
 }
 </style>
 
+
+<style>
+.envelope-grid { grid-template-columns: 2fr 1fr; }
+.envelope-grid-3 { grid-template-columns: repeat(3, 1fr); }
+@media (max-width: 900px) { .envelope-grid, .envelope-grid-3 { grid-template-columns: 1fr 1fr !important; } }
+@media (max-width: 600px) { .envelope-grid, .envelope-grid-3 { grid-template-columns: 1fr !important; } }
+</style>
 </BaseLayout>
