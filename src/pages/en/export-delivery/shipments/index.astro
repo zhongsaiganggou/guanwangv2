@@ -1,0 +1,275 @@
+---
+// ZhongSai V2 - English Recent Shipments & Container Loading Hub (YouTube Playlist)
+import BaseLayout from '../../../../layouts/BaseLayout.astro';
+import ExportDeliveryCTA from '../../../../components/ExportDeliveryCTA.astro';
+import '../../../../styles/hub.css';
+
+const lang = 'en';
+const title = 'Recent Steel Structure Shipments & Container Loading | ZhongSai';
+const description = 'First-party video records of ZhongSai structural steel shipments: component marking, packing, container loading and export preparation for overseas projects.';
+const canonical = 'https://zhongsai-steelstructure.com/en/export-delivery/shipments/';
+const PLAYLIST_ID = 'PLFxcBbXO5kK4';
+---
+
+<BaseLayout title={title} description={description} lang={lang} canonical={canonical}>
+
+  <!-- Hero -->
+  <section class="hub-hero">
+    <div class="container">
+      <p class="eyebrow">Export Delivery · First-Party Video Evidence</p>
+      <h1>Recent Steel Structure Shipments &amp; Container Loading</h1>
+      <p class="hub-hero__lead">
+        ZhongSai regularly documents the marking, packing, container loading and export preparation of structural steel components for overseas projects. This page presents recent shipment activity through first-party loading and delivery videos.
+      </p>
+    </div>
+  </section>
+
+  <!-- Direct Answer / GEO Block -->
+  <section class="section">
+    <div class="container container--narrow">
+      <div class="direct-answer">
+        <h2>What you are watching</h2>
+        <p>
+          The video playlist below shows how ZhongSai prepares structural steel for export: <strong>component marking</strong> (each part receives a project-specific ID matching shop drawings), <strong>packing and bundling</strong> (components grouped by installation sequence with surface protection), <strong>container loading</strong> (space-optimized with weight distribution and unloading order planned), and <strong>export preparation</strong> (packing lists, commercial documents and shipping coordination).
+        </p>
+        <p>
+          New shipment videos are added to the YouTube playlist continuously. No customer names, project details, or confidential documents are visible in the shipment footage.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- YouTube Playlist — click-to-load for performance -->
+  <section class="section section-gray">
+    <div class="container">
+      <div class="section-heading">
+        <p class="eyebrow">Shipment Videos</p>
+        <h2>Recent Container Loading &amp; Export Records</h2>
+      </div>
+
+      <div class="yt-playlist-wrapper" id="yt-playlist">
+        <div class="yt-playlist-poster" id="yt-poster">
+          <div class="yt-playlist-play">
+            <svg width="64" height="64" viewBox="0 0 24 24" fill="white"><path d="M8 5v14l11-7z"/></svg>
+          </div>
+          <p class="yt-playlist-label">Play Shipment Playlist</p>
+          <p class="yt-playlist-sub">ZhongSai Steel Structure · Loading &amp; Container Records</p>
+        </div>
+        <div class="yt-playlist-frame" id="yt-frame" hidden>
+          <iframe
+            src=""
+            title="ZhongSai Steel Structure Shipments & Container Loading"
+            loading="lazy"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+            allowfullscreen>
+          </iframe>
+        </div>
+      </div>
+
+      <noscript>
+        <div style="text-align:center;padding:20px">
+          <a href={`https://www.youtube.com/playlist?list=${PLAYLIST_ID}`} target="_blank" rel="noopener">
+            View the shipment playlist on YouTube →
+          </a>
+        </div>
+      </noscript>
+    </div>
+  </section>
+
+  <!-- Packing & Loading Process -->
+  <section class="section">
+    <div class="container">
+      <div class="section-heading">
+        <p class="eyebrow">Process</p>
+        <h2>What Happens Before a Container is Sealed</h2>
+      </div>
+      <div class="process-grid">
+        <div class="process-item">
+          <div class="process-num">01</div>
+          <h3>Component Marking</h3>
+          <p>Each steel component receives a project-specific identification label matching the shop drawing number, erection sequence and packing list. This allows site teams to identify and locate every part without guesswork.</p>
+        </div>
+        <div class="process-item">
+          <div class="process-num">02</div>
+          <h3>Packing &amp; Bundling</h3>
+          <p>Components are grouped by installation sequence. Surfaces are protected against transit damage. Small parts and fasteners are packed in labelled bundles or crates with quantity records.</p>
+        </div>
+        <div class="process-item">
+          <div class="process-num">03</div>
+          <h3>Container Loading</h3>
+          <p>Containers are loaded optimizing space utilization, weight distribution and unloading order. Heavy members are secured against movement. The loading plan supports logical site erection sequence.</p>
+        </div>
+        <div class="process-item">
+          <div class="process-num">04</div>
+          <h3>Export Preparation</h3>
+          <p>Packing lists, commercial documents and export paperwork are prepared and coordinated. Shipment status and document handover are communicated to the client and destination team.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- GEO FAQ -->
+  <section class="section section-gray">
+    <div class="container container--narrow">
+      <div class="section-heading">
+        <p class="eyebrow">FAQ</p>
+        <h2>Shipment &amp; Loading Questions</h2>
+      </div>
+
+      <details class="faq-item">
+        <summary>How does ZhongSai prepare structural steel for export?</summary>
+        <p>ZhongSai coordinates component marking, packing, bundling, container loading and export documentation. Each component receives a project-specific ID, is grouped by installation sequence, surface-protected, and loaded according to a loading plan that optimizes space, weight distribution and unloading order.</p>
+      </details>
+
+      <details class="faq-item">
+        <summary>How are steel components marked before shipment?</summary>
+        <p>Every structural steel component receives a label that corresponds to its shop drawing number, erection sequence and the packing list. This allows the receiving team to identify and locate each member on site without ambiguity.</p>
+      </details>
+
+      <details class="faq-item">
+        <summary>How are structural steel components loaded into containers?</summary>
+        <p>Loading is planned before components leave the fabrication shop. Heavy members are placed first and secured; lighter pieces and bundled small parts fill remaining space. The sequence supports logical unloading and erection at the destination site.</p>
+      </details>
+
+      <details class="faq-item">
+        <summary>Why does loading sequence matter?</summary>
+        <p>A well-planned loading sequence reduces unloading time, prevents component damage, and supports the erection order on site. Members needed first are placed where they can be unloaded first, avoiding re-handling.</p>
+      </details>
+
+      <details class="faq-item">
+        <summary>What information affects packing and container planning?</summary>
+        <p>Dimensions of the largest and heaviest members, total steel tonnage, number of containers, destination port, and the site erection sequence all affect how components are packed and loaded.</p>
+      </details>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <ExportDeliveryCTA lang={lang} />
+
+</BaseLayout>
+
+<style>
+  .process-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    gap: 28px;
+  }
+  .process-item {
+    border-left: 3px solid #2563eb;
+    padding-left: 20px;
+  }
+  .process-num {
+    font-size: 13px;
+    font-weight: 700;
+    color: #2563eb;
+    letter-spacing: 1px;
+    margin-bottom: 6px;
+  }
+  .process-item h3 {
+    font-size: 16px;
+    margin: 0 0 8px;
+  }
+  .process-item p {
+    font-size: 14px;
+    line-height: 1.6;
+    color: #4b5563;
+    margin: 0;
+  }
+  .direct-answer h2 {
+    font-size: 22px;
+    margin-bottom: 12px;
+  }
+  .direct-answer p {
+    font-size: 15px;
+    line-height: 1.7;
+    color: #374151;
+    margin-bottom: 12px;
+  }
+
+  /* YouTube playlist click-to-load */
+  .yt-playlist-wrapper {
+    position: relative;
+    width: 100%;
+    max-width: 420px;
+    margin: 0 auto;
+    aspect-ratio: 9 / 16;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 4px 24px rgba(0,0,0,.12);
+  }
+  .yt-playlist-poster {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(135deg, #1a1a2e 0%, #16213e 50%, #0f3460 100%);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: background .2s;
+  }
+  .yt-playlist-poster:hover {
+    background: linear-gradient(135deg, #1a1a2e 0%, #1a2a5e 50%, #1a4a80 100%);
+  }
+  .yt-playlist-play {
+    width: 80px;
+    height: 80px;
+    background: #ff0000;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 16px;
+    box-shadow: 0 4px 20px rgba(255,0,0,.4);
+  }
+  .yt-playlist-label {
+    color: #fff;
+    font-size: 18px;
+    font-weight: 600;
+    margin: 0;
+  }
+  .yt-playlist-sub {
+    color: rgba(255,255,255,.6);
+    font-size: 13px;
+    margin: 4px 0 0;
+  }
+  .yt-playlist-frame {
+    position: absolute;
+    inset: 0;
+  }
+  .yt-playlist-frame iframe {
+    width: 100%;
+    height: 100%;
+    border: 0;
+  }
+
+  .faq-item {
+    border: 1px solid #e5e7eb;
+    border-radius: 6px;
+    padding: 16px 20px;
+    margin-bottom: 12px;
+    background: #fff;
+  }
+  .faq-item summary {
+    font-weight: 600;
+    cursor: pointer;
+    font-size: 15px;
+  }
+  .faq-item p {
+    margin: 12px 0 0;
+    font-size: 14px;
+    line-height: 1.7;
+    color: #4b5563;
+  }
+</style>
+
+<script>
+  const poster = document.getElementById('yt-poster');
+  const frame = document.getElementById('yt-frame');
+  const iframe = frame?.querySelector('iframe');
+  const PLAYLIST_ID = 'PLFxcBbXO5kK4';
+
+  poster?.addEventListener('click', () => {
+    window.open('https://www.youtube.com/playlist?list=' + PLAYLIST_ID, '_blank');
+  });
+</script>

@@ -33,7 +33,7 @@
 .detail-hero-content {
   position: relative;
   z-index: 2;
-  max-width: 1200px;
+  max-width: 1320px;
   margin: 0 auto;
   padding: 100px 32px 80px;
   width: 100%;
@@ -83,7 +83,7 @@
 }
 
 .detail-breadcrumb .container {
-  max-width: 1200px;
+  max-width: 1320px;
   margin: 0 auto;
   display: flex;
   align-items: center;
@@ -133,7 +133,7 @@
 }
 
 .detail-section .container {
-  max-width: 1200px;
+  max-width: 1320px;
   margin: 0 auto;
 }
 
@@ -624,6 +624,64 @@
   color: #94a3b8;
   font-style: italic;
   margin-top: 16px;
+}
+
+/* ---------- Params / Specification Table ---------- */
+.params-table-wrapper {
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+}
+.params-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 14px;
+  background: #ffffff;
+  border: 1px solid #e2e8f0;
+}
+.params-table thead th {
+  background: #1e3a5f;
+  color: #ffffff;
+  font-weight: 600;
+  text-align: left;
+  padding: 14px 20px;
+  font-size: 13px;
+  letter-spacing: 0.3px;
+  white-space: nowrap;
+}
+.params-table tbody td {
+  padding: 12px 20px;
+  border-bottom: 1px solid #e2e8f0;
+  color: #334155;
+  line-height: 1.5;
+  vertical-align: top;
+}
+.params-table tbody tr:nth-child(even) {
+  background: #f8fafc;
+}
+.params-table tbody tr:last-child td {
+  border-bottom: none;
+}
+.params-table tbody td:first-child {
+  font-weight: 600;
+  color: #0f172a;
+  white-space: nowrap;
+  width: 160px;
+  border-right: 1px solid #e2e8f0;
+}
+.params-note {
+  margin-top: 16px;
+  font-size: 13px;
+  color: #64748b;
+  line-height: 1.7;
+  padding: 14px 18px;
+  background: #f1f5f9;
+  border-left: 3px solid #f59e0b;
+}
+.params-note strong { color: #334155; }
+@media (max-width: 640px) {
+  .params-table { font-size: 13px; }
+  .params-table thead th, .params-table tbody td { padding: 10px 14px; }
+  .params-table tbody td:first-child { width: 120px; }
 }
 
 /* ---------- FAQ (复用hub风格) ---------- */

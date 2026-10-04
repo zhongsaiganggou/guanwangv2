@@ -1,4 +1,4 @@
-﻿// seo-structure.ts - 技术SEO集中配置（Organization / BreadcrumbList / Sitemap）
+// seo-structure.ts - 技术SEO集中配置（Organization / BreadcrumbList / Sitemap）
 // 正式生产域名唯一来源。Preview (*.pages.dev) 不得进入 canonical / sitemap / schema。
 import { projects } from './projects-data';
 
@@ -111,6 +111,10 @@ const STATIC_BREADCRUMBS: Record<string, { en: Crumb[]; zh: Crumb[] }> = {
   'export-delivery': {
     en: [{ name: 'Home', href: '/en/' }, { name: 'Export Delivery' }],
     zh: [{ name: '首页', href: '/zh/' }, { name: '出口交付' }],
+  },
+  'export-delivery/shipments': {
+    en: [{ name: 'Home', href: '/en/' }, { name: 'Export Delivery', href: '/en/export-delivery/' }, { name: 'Recent Shipments' }],
+    zh: [{ name: '首页', href: '/zh/' }, { name: '出口交付', href: '/zh/export-delivery/' }, { name: '近期发货记录' }],
   },
   privacy: {
     en: [{ name: 'Home', href: '/en/' }, { name: 'Privacy Policy' }],
@@ -541,6 +545,7 @@ const SITEMAP_SECTIONS = [
   'installation-guidance',
   'engineering-design',
   'export-delivery',
+  'export-delivery/shipments',
   'about',
   'contact',
   'resources',

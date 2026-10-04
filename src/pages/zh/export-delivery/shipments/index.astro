@@ -1,0 +1,275 @@
+---
+// ZhongSai V2 - Chinese Recent Shipments & Container Loading Hub (YouTube Playlist)
+import BaseLayout from '../../../../layouts/BaseLayout.astro';
+import ExportDeliveryCTA from '../../../../components/ExportDeliveryCTA.astro';
+import '../../../../styles/hub.css';
+
+const lang = 'zh';
+const title = '钢结构近期发货与装柜记录 | 中赛钢构';
+const description = '中赛钢结构出口发货第一方视频记录：构件编号、打包、集装箱装柜及出口准备过程。';
+const canonical = 'https://zhongsai-steelstructure.com/zh/export-delivery/shipments/';
+const PLAYLIST_ID = 'PLFxcBbXO5kK4';
+---
+
+<BaseLayout title={title} description={description} lang={lang} canonical={canonical}>
+
+  <!-- Hero -->
+  <section class="hub-hero">
+    <div class="container">
+      <p class="eyebrow">出口交付 · 第一方视频证据</p>
+      <h1>近期钢结构发货与装柜记录</h1>
+      <p class="hub-hero__lead">
+        中赛持续记录钢结构构件的编号、打包、装柜及出口准备过程。本页面通过真实发货与装柜视频展示近期交付活动。
+      </p>
+    </div>
+  </section>
+
+  <!-- Direct Answer / GEO Block -->
+  <section class="section">
+    <div class="container container--narrow">
+      <div class="direct-answer">
+        <h2>您正在观看的内容</h2>
+        <p>
+          以下播放列表展示中赛如何为出口准备钢结构：<strong>构件编号</strong>（每个构件标注与加工图一致的项目编号）、<strong>打包与捆扎</strong>（按安装顺序分组并做好表面防护）、<strong>集装箱装柜</strong>（优化空间利用率、重量分布和卸货顺序）、以及<strong>出口准备</strong>（装箱单、商业文件和发运协调）。
+        </p>
+        <p>
+          新的发货视频会持续添加到 YouTube 播放列表中。发货画面中不显示客户名称、项目细节或机密文件。
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- YouTube Playlist — click-to-load for performance -->
+  <section class="section section-gray">
+    <div class="container">
+      <div class="section-heading">
+        <p class="eyebrow">发货视频</p>
+        <h2>近期装柜与出口记录</h2>
+      </div>
+
+      <div class="yt-playlist-wrapper" id="yt-playlist">
+        <div class="yt-playlist-poster" id="yt-poster">
+          <div class="yt-playlist-play">
+            <svg width="64" height="64" viewBox="0 0 24 24" fill="white"><path d="M8 5v14l11-7z"/></svg>
+          </div>
+          <p class="yt-playlist-label">播放发货视频列表</p>
+          <p class="yt-playlist-sub">中赛钢构 · 装柜与发运记录</p>
+        </div>
+        <div class="yt-playlist-frame" id="yt-frame" hidden>
+          <iframe
+            src=""
+            title="中赛钢构发货与装柜记录"
+            loading="lazy"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+            allowfullscreen>
+          </iframe>
+        </div>
+      </div>
+
+      <noscript>
+        <div style="text-align:center;padding:20px">
+          <a href={`https://www.youtube.com/playlist?list=${PLAYLIST_ID}`} target="_blank" rel="noopener">
+            在 YouTube 上查看发货播放列表 →
+          </a>
+        </div>
+      </noscript>
+    </div>
+  </section>
+
+  <!-- Packing & Loading Process -->
+  <section class="section">
+    <div class="container">
+      <div class="section-heading">
+        <p class="eyebrow">流程</p>
+        <h2>集装箱封箱前发生了什么</h2>
+      </div>
+      <div class="process-grid">
+        <div class="process-item">
+          <div class="process-num">01</div>
+          <h3>构件编号</h3>
+          <p>每个钢构件标注项目专属识别标签，与加工图编号、安装顺序和装箱单对应。使现场团队无需猜测即可识别和定位每个构件。</p>
+        </div>
+        <div class="process-item">
+          <div class="process-num">02</div>
+          <h3>打包与捆扎</h3>
+          <p>构件按安装顺序分组。表面做好运输防护。小件和紧固件装入标注清楚的捆包或箱内，并记录数量。</p>
+        </div>
+        <div class="process-item">
+          <div class="process-num">03</div>
+          <h3>集装箱装柜</h3>
+          <p>装柜时优化空间利用率、重量分布和卸货顺序。重型构件加固防止移位。装柜方案支持现场按逻辑顺序安装。</p>
+        </div>
+        <div class="process-item">
+          <div class="process-num">04</div>
+          <h3>出口准备</h3>
+          <p>装箱单、商业文件和出口单证同步准备和协调。发货状态和文件交接及时通知客户和目的地团队。</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- GEO FAQ -->
+  <section class="section section-gray">
+    <div class="container container--narrow">
+      <div class="section-heading">
+        <p class="eyebrow">常见问题</p>
+        <h2>发货与装柜相关问题</h2>
+      </div>
+
+      <details class="faq-item">
+        <summary>中赛如何为出口准备钢结构？</summary>
+        <p>中赛协调构件编号、打包、捆扎、集装箱装柜和出口文件。每个构件标注项目专属编号，按安装顺序分组，做好表面防护，并按照优化空间、重量分布和卸货顺序的装柜方案装载。</p>
+      </details>
+
+      <details class="faq-item">
+        <summary>钢构件发货前如何编号？</summary>
+        <p>每个结构钢构件标注与加工图编号、安装顺序和装箱单对应的标签。使收货方在现场可以无歧义地识别和定位每个构件。</p>
+      </details>
+
+      <details class="faq-item">
+        <summary>钢结构构件如何装入集装箱？</summary>
+        <p>装柜方案在构件出厂前制定。重型构件先装入并加固，较轻构件和捆扎小件填充剩余空间。装载顺序支持目的地现场的逻辑卸货和安装。</p>
+      </details>
+
+      <details class="faq-item">
+        <summary>装柜顺序为什么重要？</summary>
+        <p>合理的装柜顺序减少卸货时间、防止构件损坏，并支持现场安装顺序。最先需要的构件放在最先卸下的位置，避免二次倒运。</p>
+      </details>
+
+      <details class="faq-item">
+        <summary>哪些信息影响打包和装柜计划？</summary>
+        <p>最大和最重构件的尺寸、总用钢量、集装箱数量、目的港和现场安装顺序都会影响构件的打包和装载方式。</p>
+      </details>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <ExportDeliveryCTA lang={lang} />
+
+</BaseLayout>
+
+<style>
+  .process-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    gap: 28px;
+  }
+  .process-item {
+    border-left: 3px solid #2563eb;
+    padding-left: 20px;
+  }
+  .process-num {
+    font-size: 13px;
+    font-weight: 700;
+    color: #2563eb;
+    letter-spacing: 1px;
+    margin-bottom: 6px;
+  }
+  .process-item h3 {
+    font-size: 16px;
+    margin: 0 0 8px;
+  }
+  .process-item p {
+    font-size: 14px;
+    line-height: 1.6;
+    color: #4b5563;
+    margin: 0;
+  }
+  .direct-answer h2 {
+    font-size: 22px;
+    margin-bottom: 12px;
+  }
+  .direct-answer p {
+    font-size: 15px;
+    line-height: 1.7;
+    color: #374151;
+    margin-bottom: 12px;
+  }
+
+  /* YouTube playlist click-to-load */
+  .yt-playlist-wrapper {
+    position: relative;
+    width: 100%;
+    max-width: 420px;
+    margin: 0 auto;
+    aspect-ratio: 9 / 16;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 4px 24px rgba(0,0,0,.12);
+  }
+  .yt-playlist-poster {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(135deg, #1a1a2e 0%, #16213e 50%, #0f3460 100%);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: background .2s;
+  }
+  .yt-playlist-poster:hover {
+    background: linear-gradient(135deg, #1a1a2e 0%, #1a2a5e 50%, #1a4a80 100%);
+  }
+  .yt-playlist-play {
+    width: 80px;
+    height: 80px;
+    background: #ff0000;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 16px;
+    box-shadow: 0 4px 20px rgba(255,0,0,.4);
+  }
+  .yt-playlist-label {
+    color: #fff;
+    font-size: 18px;
+    font-weight: 600;
+    margin: 0;
+  }
+  .yt-playlist-sub {
+    color: rgba(255,255,255,.6);
+    font-size: 13px;
+    margin: 4px 0 0;
+  }
+  .yt-playlist-frame {
+    position: absolute;
+    inset: 0;
+  }
+  .yt-playlist-frame iframe {
+    width: 100%;
+    height: 100%;
+    border: 0;
+  }
+
+  .faq-item {
+    border: 1px solid #e5e7eb;
+    border-radius: 6px;
+    padding: 16px 20px;
+    margin-bottom: 12px;
+    background: #fff;
+  }
+  .faq-item summary {
+    font-weight: 600;
+    cursor: pointer;
+    font-size: 15px;
+  }
+  .faq-item p {
+    margin: 12px 0 0;
+    font-size: 14px;
+    line-height: 1.7;
+    color: #4b5563;
+  }
+</style>
+
+<script>
+  const poster = document.getElementById('yt-poster');
+  const frame = document.getElementById('yt-frame');
+  const iframe = frame?.querySelector('iframe');
+  const PLAYLIST_ID = 'PLFxcBbXO5kK4';
+
+  poster?.addEventListener('click', () => {
+    window.open('https://www.youtube.com/playlist?list=' + PLAYLIST_ID, '_blank');
+  });
+</script>

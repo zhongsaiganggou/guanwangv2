@@ -4,6 +4,8 @@ import BaseLayout from '../../layouts/BaseLayout.astro';
 import QuoteForm from '../../components/QuoteForm.astro';
 import '../../styles/home.css';
 import '../../styles/home-v3.css';
+import { getLatestPlaylistVideos, formatVideoDate } from '../../data/youtubePlaylist';
+const shipmentVideos = await getLatestPlaylistVideos(4);
 
 const lang = 'zh';
 const title = '中赛钢构｜钢结构设计、深化、制造与出口交付';
@@ -53,7 +55,7 @@ const description = '中赛钢构是钢结构出口制造商，提供结构设�
 
   <!-- 3. Solutions -->
   <section class="section section-gray">
-    <div class="container">
+    <div class="container container-xwide">
       <div class="section-heading">
         <p class="eyebrow">解决方案</p>
         <h2>按项目场景选择</h2>
@@ -71,7 +73,7 @@ const description = '中赛钢构是钢结构出口制造商，提供结构设�
 
   <!-- 4. Engineering & Manufacturing -->
   <section class="section">
-    <div class="container">
+    <div class="container container-xwide">
       <div class="section-heading">
         <p class="eyebrow">工程与制造</p>
         <h2>设计到装柜的证据链</h2>
@@ -96,7 +98,7 @@ const description = '中赛钢构是钢结构出口制造商，提供结构设�
 
   <!-- 5. Selected Projects -->
   <section class="section section-gray">
-    <div class="container">
+    <div class="container container-xwide">
       <div class="section-heading">
         <p class="eyebrow">项目案例</p>
         <h2>代表项目</h2>
@@ -125,22 +127,53 @@ const description = '中赛钢构是钢结构出口制造商，提供结构设�
     </div>
   </section>
 
+  <!-- 5b. 近期装柜与出口发货 -->
+  <section class="section">
+    <div class="container container-xwide">
+      <div class="section-heading" style="display:flex;justify-content:space-between;align-items:flex-end;flex-wrap:wrap;gap:16px;">
+        <div>
+          <p class="eyebrow">出口交付</p>
+          <h2>近期装柜与出口发货</h2>
+          <p style="margin-top:8px;max-width:560px;">中赛持续记录钢结构构件的包装、装柜及出口准备过程。以下为近期真实发货与装柜视频记录。</p>
+        </div>
+        <a href="/zh/export-delivery/shipments/" class="btn btn-outline">查看全部发货视频 &rarr;</a>
+      </div>
+      {shipmentVideos.length > 0 && (
+      <div class="shipment-video-row">
+        {shipmentVideos.map((v) => (
+          <div class="ship-video-card" data-video-id={v.videoId}>
+            <div class="ship-thumb">
+              <img src={v.thumbnail} alt={v.title} loading="lazy" width="180" height="320" />
+              <div class="ship-play-btn"><svg width="28" height="28" viewBox="0 0 24 24" fill="white"><path d="M8 5v14l11-7z"/></svg></div>
+            </div>
+            <div class="ship-meta">
+              <p class="ship-title">{v.title}</p>
+              <p class="ship-date">{formatVideoDate(v.publishedAt, "zh")}</p>
+            </div>
+          </div>
+        ))}
+      </div>
+      )}
+    </div>
+  </section>
+
   <!-- 6. Delivery Process -->
   <section class="section">
     <div class="container">
-      <div class="section-heading">
+      <div class="section-heading section-heading-center">
         <p class="eyebrow">交付流程</p>
         <h2>项目如何推进</h2>
       </div>
-      <div class="process-list">
-        <div class="process-item"><b>01</b><span><strong>项目评审</strong>确认地点、用途、尺寸和图纸需求</span></div>
-        <div class="process-item"><b>02</b><span><strong>工程深化</strong>结构设计、节点深化和构件图</span></div>
-        <div class="process-item"><b>03</b><span><strong>制造与质检</strong>切割焊接、尺寸检验和表面处理</span></div>
-        <div class="process-item"><b>04</b><span><strong>包装装柜</strong>构件编号、装箱清单和出口装柜</span></div>
-        <div class="process-item"><b>05</b><span><strong>安装指导</strong>提供安装图和现场技术支持</span></div>
+      <div class="process-grid">
+        <div class="process-step"><b>01</b><strong>项目评审</strong><span>确认地点、用途、尺寸和图纸需求</span></div>
+        <div class="process-step"><b>02</b><strong>工程深化</strong><span>结构设计、节点深化和构件图</span></div>
+        <div class="process-step"><b>03</b><strong>制造与质检</strong><span>切割焊接、尺寸检验和表面处理</span></div>
+        <div class="process-step"><b>04</b><strong>包装装柜</strong><span>构件编号、装箱清单和出口装柜</span></div>
+        <div class="process-step"><b>05</b><strong>安装指导</strong><span>提供安装图和现场技术支持</span></div>
       </div>
     </div>
   </section>
+
 
   <!-- 7. Project Inquiry -->
   <section class="cta-final" id="quote">
@@ -157,3 +190,127 @@ const description = '中赛钢构是钢结构出口制造商，提供结构设�
   </section>
 
 </BaseLayout>
+
+<style>
+.container-wide { max-width: 1320px; }
+@media (max-width: 1360px) { .container-wide { max-width: calc(100% - 48px); } }
+@media (max-width: 768px) { .container-wide { max-width: calc(100% - 40px); } }
+@media (max-width: 480px) { .container-wide { max-width: calc(100% - 32px); } }
+.shipment-video-row {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 20px;
+}
+.ship-video-card { cursor: pointer; touch-action: manipulation; display: block; text-decoration: none; color: inherit; }
+.ship-more-thumb {
+  background: #1f2937;
+  display: flex; align-items: center; justify-content: center;
+}
+.ship-more-thumb span { color: #fff; font-size: 14px; font-weight: 600; }
+.ship-thumb {
+  position: relative;
+  aspect-ratio: 9/16;
+  border-radius: 6px;
+  overflow: hidden;
+  background: #1a1a2e;
+}
+.ship-thumb img { width: 100%; height: 100%; object-fit: cover; display: block; }
+.ship-play-btn {
+  position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%);
+  width: 48px; height: 48px; background: rgba(255,0,0,.9); border-radius: 50%;
+  display: flex; align-items: center; justify-content: center; transition: transform .15s;
+}
+.ship-video-card:hover .ship-play-btn { transform: translate(-50%, -50%) scale(1.1); }
+.ship-meta { padding: 10px 2px 0; }
+.ship-title {
+  font-size: 13px; font-weight: 600; line-height: 1.4; margin: 0 0 4px;
+  display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden;
+}
+.ship-date { font-size: 12px; color: #6b7280; margin: 0; }
+@media (max-width: 1024px) { .shipment-video-row { grid-template-columns: repeat(2, 1fr); } }
+@media (max-width: 640px) {
+  .shipment-video-row {
+    display: flex; overflow-x: auto; gap: 14px;
+    -webkit-overflow-scrolling: touch; scroll-snap-type: x mandatory; padding-bottom: 8px;
+  }
+  .ship-video-card { flex: 0 0 85%; scroll-snap-align: start; }
+}
+<style>
+.section-heading-left { grid-template-columns: 1fr !important; align-items: start !important; }
+.section-heading-left h2 { margin-top: 8px; }
+.section-heading-center {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: 8px;
+}
+.section-heading-center .eyebrow { margin-bottom: 0; }
+.process-grid {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 0;
+  border-top: 2px solid #1a56db;
+}
+.process-step {
+  padding: 28px 20px 24px;
+  border-right: 1px solid #e5e7eb;
+  position: relative;
+}
+.process-step:last-child { border-right: none; }
+.process-step::before {
+  content: '';
+  position: absolute;
+  top: -2px; left: 0;
+  width: 12px; height: 2px;
+  background: #f59e0b;
+}
+.process-step b {
+  display: block;
+  font-size: 13px;
+  color: #1a56db;
+  font-weight: 700;
+  margin-bottom: 12px;
+  letter-spacing: 1px;
+}
+.process-step strong {
+  display: block;
+  font-size: 16px;
+  color: #111;
+  margin-bottom: 8px;
+  line-height: 1.4;
+}
+.process-step span {
+  font-size: 13px;
+  color: #6b7280;
+  line-height: 1.6;
+  display: block;
+}
+@media (max-width: 1024px) {
+  .process-grid { grid-template-columns: repeat(3, 1fr); }
+  .process-step:nth-child(3) { border-right: none; }
+  .process-step:nth-child(4), .process-step:nth-child(5) { border-top: 1px solid #e5e7eb; }
+}
+@media (max-width: 640px) {
+  .process-grid { grid-template-columns: 1fr; border-top: none; }
+  .process-step { border-right: none; border-bottom: 1px solid #e5e7eb; border-left: 3px solid #1a56db; }
+  .process-step::before { display: none; }
+}
+</style></style>
+<script>
+document.querySelectorAll('.ship-video-card').forEach(function(card) {
+  card.addEventListener('click', function() {
+    var vid = this.getAttribute('data-video-id');
+    var thumb = this.querySelector('.ship-thumb');
+    if (!vid || !thumb) return;
+    if (thumb.querySelector('iframe')) return;
+    var iframe = document.createElement('iframe');
+    iframe.src = 'https://www.youtube.com/embed/' + vid + '?autoplay=1&rel=0&modestbranding=1&playsinline=1';
+    iframe.setAttribute('allow', 'accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture');
+    iframe.setAttribute('allowfullscreen', '');
+    iframe.style.cssText = 'position:absolute;inset:0;width:100%;height:100%;border:0;';
+    thumb.innerHTML = '';
+    thumb.appendChild(iframe);
+  });
+});
+</script>
