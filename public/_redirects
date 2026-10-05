@@ -10,7 +10,6 @@
 /countries/en/index.html /en/markets/ 301
 /en/countries/* /en/markets/ 301
 /zh/countries/* /zh/markets/ 301
-/countries/sitemap.xml /sitemap.xml 404
 # C. Old product .html
 /products/materials.html /en/manufacturing-quality/ 301
 /products/materials/privacy.html /en/privacy/ 301
@@ -83,3 +82,16 @@
 /zh/products/steel-workshop /zh/steel-workshop/ 301
 /en/products/steel-workshop /en/steel-workshop/ 301
 # K. Exact match 301s
+# L. Product .html wildcard safety nets
+# Real product/component pages are extensionless directories; these only catch legacy .html URLs.
+# More specific materials rules precede the broad product rules (first match wins).
+/products/materials/*.html /en/components/ 301
+/en/products/materials/*.html /en/components/ 301
+/zh/products/materials/*.html /zh/components/ 301
+/en/products/index.html /en/products/ 301
+/zh/products/index.html /zh/products/ 301
+/products/*.html /en/solutions/ 301
+/en/products/*.html /en/solutions/ 301
+/zh/products/*.html /zh/solutions/ 301
+# M. Root countries fallback: any other legacy /countries path (extensionless, sitemap, etc.) -> markets
+/countries/* /en/markets/ 301
