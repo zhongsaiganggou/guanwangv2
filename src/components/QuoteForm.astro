@@ -53,6 +53,11 @@ const texts = lang === 'zh' ? {
   requiredIntendedUse: '请输入项目用途',
   requiredWeChat: '请输入微信号',
   requiredPhoneCode: '请选择国家区号',
+  requiredContact: '请至少填写微信或电话号码，方便我们联系您。',
+  requiredCodeWithPhone: '请输入国家/地区区号。',
+  hintWechat: '与电话至少填一项',
+  hintPhone: '与微信至少填一项',
+  hintCode: '填电话时必填',
   privacyNote: '提交即表示您同意我们的隐私政策，我们不会分享您的信息。',
   optionalLabel: '可选',
   customerType: '您的身份',
@@ -110,6 +115,11 @@ const texts = lang === 'zh' ? {
   requiredIntendedUse: 'Please enter intended use',
   requiredWeChat: 'Please enter WeChat ID',
   requiredPhoneCode: 'Please select country / calling code',
+  requiredContact: 'Please provide either a WeChat ID or phone number so we can contact you.',
+  requiredCodeWithPhone: 'Please select a country/region code.',
+  hintWechat: 'phone or WeChat required',
+  hintPhone: 'phone or WeChat required',
+  hintCode: 'required with phone',
   privacyNote: 'By submitting, you agree to our privacy policy. We will not share your information.',
   optionalLabel: 'Optional',
   customerType: 'I am a',
@@ -202,20 +212,20 @@ const phoneCodes = [
 
       <div class="form-grid form-grid-3">
         <div class="form-field">
-          <label for={`${id}-phone-code`}>{texts.phoneCode} <span class="optional">{texts.optionalLabel}</span></label>
+          <label for={`${id}-phone-code`}>{texts.phoneCode} <span class="cond-hint">{texts.hintCode}</span></label>
           <select id={`${id}-phone-code`} name="phone_code">
             {phoneCodes.map(c => <option value={c.code}>{c.name}</option>)}
           </select>
           <span class="field-error" data-error-for="phone_code"></span>
         </div>
         <div class="form-field">
-          <label for={`${id}-phone`}>{texts.phone} <span class="optional">{texts.optionalLabel}</span></label>
+          <label for={`${id}-phone`}>{texts.phone} <span class="cond-hint">{texts.hintPhone}</span></label>
           <input type="tel" id={`${id}-phone`} name="phone" autocomplete="tel" />
           <span class="field-error" data-error-for="phone"></span>
         </div>
         <div class="form-field">
-          <label for={`${id}-wechat`}>{texts.wechat} <span class="req">*</span></label>
-          <input type="text" id={`${id}-wechat`} name="wechat" required placeholder={texts.wechatPlaceholder} />
+          <label for={`${id}-wechat`}>{texts.wechat} <span class="cond-hint">{texts.hintWechat}</span></label>
+          <input type="text" id={`${id}-wechat`} name="wechat" placeholder={texts.wechatPlaceholder} />
           <span class="field-error" data-error-for="wechat"></span>
         </div>
       </div>
@@ -387,20 +397,20 @@ const phoneCodes = [
 
       <div class="form-grid form-grid-3">
         <div class="form-field">
-          <label for={`${id}-phone-code`}>{texts.phoneCode} <span class="optional">{texts.optionalLabel}</span></label>
+          <label for={`${id}-phone-code`}>{texts.phoneCode} <span class="cond-hint">{texts.hintCode}</span></label>
           <select id={`${id}-phone-code`} name="phone_code">
             {phoneCodes.map(c => <option value={c.code}>{c.name}</option>)}
           </select>
           <span class="field-error" data-error-for="phone_code"></span>
         </div>
         <div class="form-field">
-          <label for={`${id}-phone`}>{texts.phone} <span class="optional">{texts.optionalLabel}</span></label>
+          <label for={`${id}-phone`}>{texts.phone} <span class="cond-hint">{texts.hintPhone}</span></label>
           <input type="tel" id={`${id}-phone`} name="phone" autocomplete="tel" />
           <span class="field-error" data-error-for="phone"></span>
         </div>
         <div class="form-field">
-          <label for={`${id}-wechat`}>{texts.wechat} <span class="req">*</span></label>
-          <input type="text" id={`${id}-wechat`} name="wechat" required placeholder={texts.wechatPlaceholder} />
+          <label for={`${id}-wechat`}>{texts.wechat} <span class="cond-hint">{texts.hintWechat}</span></label>
+          <input type="text" id={`${id}-wechat`} name="wechat" placeholder={texts.wechatPlaceholder} />
           <span class="field-error" data-error-for="wechat"></span>
         </div>
       </div>
@@ -698,39 +708,53 @@ const phoneCodes = [
       // Validate
       function validate() {
         let isValid = true;
-        const activePath = form.querySelector('.form-path-panel.active').dataset.panel;
 
         form.querySelectorAll('.field-error').forEach(e => e.textContent = '');
         form.querySelectorAll('.form-field').forEach(f => f.classList.remove('error'));
 
-        const requiredFields = [
-          { name: 'name', msg: isZh ? '请输入姓名' : 'Please enter your name' },
-          { name: 'wechat', msg: isZh ? '请输入微信号' : 'Please enter WeChat ID' },
-          { name: 'country', msg: isZh ? '请输入项目所在国家' : 'Please enter the project country' },
-        ];
-
-        requiredFields.forEach(field => {
-          const input = form.querySelector(`[name="${field.name}"]`);
-          if (!input) return;
-          if (!input.value.trim()) {
-            isValid = false;
-            const errorEl = form.querySelector(`[data-error-for="${field.name}"]`);
-            if (errorEl) errorEl.textContent = field.msg;
-            input.closest('.form-field')?.classList.add('error');
-          }
-        });
-
-        const emailInput = form.querySelector('[name="email"]');
-        if (emailInput && emailInput.value.trim()) {
-          if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(emailInput.value)) {
-            isValid = false;
-            const errorEl = form.querySelector('[data-error-for="email"]');
-            if (errorEl) errorEl.textContent = isZh ? '请输入有效邮箱' : 'Please enter a valid email';
-            emailInput.closest('.form-field')?.classList.add('error');
-          }
+        function markField(fieldName, msg) {
+          const input = form.querySelector(`[name="${fieldName}"]`);
+          const errSpan = form.querySelector(`[data-error-for="${fieldName}"]`);
+          if (errSpan) errSpan.textContent = msg;
+          input?.closest('.form-field')?.classList.add('error');
         }
 
-        // projectType and intendedUse are now optional
+        // Unconditional required: name + project country
+        if (!form.querySelector('[name="name"]').value.trim()) {
+          isValid = false;
+          markField('name', isZh ? '请输入姓名' : 'Please enter your name');
+        }
+        if (!form.querySelector('[name="country"]').value.trim()) {
+          isValid = false;
+          markField('country', isZh ? '请输入项目所在国家' : 'Please enter the project country');
+        }
+
+        // Contact rule: WeChat OR phone — at least one
+        const wechatVal = form.querySelector('[name="wechat"]').value.trim();
+        const phoneVal = form.querySelector('[name="phone"]').value.trim();
+        const codeVal = form.querySelector('[name="phone_code"]').value.trim();
+
+        if (!wechatVal && !phoneVal) {
+          isValid = false;
+          const contactMsg = isZh
+            ? '请至少填写微信或电话号码，方便我们联系您。'
+            : 'Please provide either a WeChat ID or phone number so we can contact you.';
+          markField('wechat', contactMsg);
+          markField('phone', contactMsg);
+        }
+
+        // Phone provided without a country / calling code
+        if (phoneVal && !codeVal) {
+          isValid = false;
+          markField('phone_code', isZh ? '请输入国家/地区区号。' : 'Please select a country/region code.');
+        }
+
+        // Email optional — validate format only if filled
+        const emailInput = form.querySelector('[name="email"]');
+        if (emailInput.value.trim() && !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(emailInput.value)) {
+          isValid = false;
+          markField('email', isZh ? '请输入有效邮箱' : 'Please enter a valid email');
+        }
 
         if (!isValid) {
           const firstError = form.querySelector('.form-field.error');
@@ -852,10 +876,51 @@ const phoneCodes = [
           } else {
             // Failure
             let msg = isZh ? '提交失败，请稍后重试。' : 'Submission failed. Please try again.';
-            if (result.code === 'TURNSTILE_FAILED') msg = isZh ? '验证失败，请重新提交。' : 'Verification failed. Please try again.';
-            else if (result.code === 'VALIDATION_ERROR') msg = isZh ? '请检查必填字段。' : 'Please check required fields.';
-            else if (result.message) msg = result.message;
-            showError(msg);
+            if (result.code === 'TURNSTILE_FAILED') {
+              msg = isZh ? '验证失败，请重新提交。' : 'Verification failed. Please try again.';
+              showError(msg);
+            } else if (result.code === 'VALIDATION_ERROR') {
+              // Map server-side field errors onto the correct fields (localized)
+              const serverFieldText = {
+                name: isZh ? '请输入姓名' : 'Please enter your name',
+                project_country: isZh ? '请输入项目所在国家' : 'Please enter the project country',
+                calling_code: isZh ? '请输入国家/地区区号。' : 'Please select a country/region code.',
+                email: isZh ? '请输入有效邮箱' : 'Please enter a valid email',
+              };
+              const fieldToInput = { name: 'name', project_country: 'country', calling_code: 'phone_code', email: 'email' };
+
+              function markServerField(inputName, text) {
+                const errSpan = form.querySelector(`[data-error-for="${inputName}"]`);
+                if (errSpan) errSpan.textContent = text;
+                const inp = form.querySelector(`[name="${inputName}"]`);
+                inp?.closest('.form-field')?.classList.add('error');
+              }
+
+              let hasFieldError = false;
+              Object.keys(result.errors || {}).forEach(k => {
+                if (k === 'contact') {
+                  const contactMsg = isZh
+                    ? '请至少填写微信或电话号码，方便我们联系您。'
+                    : 'Please provide either a WeChat ID or phone number so we can contact you.';
+                  markServerField('wechat', contactMsg);
+                  markServerField('phone', contactMsg);
+                  hasFieldError = true;
+                } else if (serverFieldText[k]) {
+                  markServerField(fieldToInput[k], serverFieldText[k]);
+                  hasFieldError = true;
+                }
+              });
+
+              if (hasFieldError) {
+                form.querySelector('.form-field.error')?.scrollIntoView({ behavior: 'smooth', block: 'center' });
+              } else {
+                showError(isZh ? '请检查必填字段。' : 'Please check required fields.');
+              }
+            } else if (result.message) {
+              showError(result.message);
+            } else {
+              showError(msg);
+            }
 
             // Reset Turnstile
             if (window.turnstile && turnstileWidget?.dataset.widgetId) {
@@ -928,6 +993,13 @@ const phoneCodes = [
     font-size: 0.875rem;
     font-weight: 600;
     color: var(--color-gray-700);
+  }
+  .form-field label .cond-hint {
+    display: block;
+    font-weight: 400;
+    font-size: 0.72rem;
+    color: var(--color-gray-500);
+    margin-top: 1px;
   }
   .form-field .req { color: #dc2626; }
   .form-field input, .form-field select, .form-field textarea {

@@ -72,19 +72,28 @@ function validateLead(data) {
   const errors = {};
   const hasDrawings = data.has_drawings === true || data.has_drawings === 'true' || data.has_drawings === '1' || data.active_path === 'drawings';
 
+  const wechat = (data.wechat || '').trim();
+  const phone = (data.phone || '').trim();
+  const callingCode = (data.calling_code || '').trim();
+
   // Required fields
-  if (!data.name || !data.name.trim()) errors.name = 'Name is required';
-  if (!data.project_country || !data.project_country.trim()) errors.project_country = 'Project country is required';
-  if (!data.calling_code || !data.calling_code.trim()) errors.calling_code = 'Country / calling code is required';
-  if (!data.phone || !data.phone.trim()) errors.phone = 'WhatsApp / phone is required';
-  if (!data.wechat || !data.wechat.trim()) errors.wechat = 'WeChat ID is required';
+  if (!(data.name || '').trim()) errors.name = 'Name is required';
+  if (!(data.project_country || '').trim()) errors.project_country = 'Project country is required';
+
+  // Contact rule: WeChat OR phone — at least one is required
+  if (!wechat && !phone) {
+    errors.contact = 'Provide either a WeChat ID or a phone number';
+  }
+
+  // If a phone number is provided, the country / calling code is required
+  if (phone && !callingCode) {
+    errors.calling_code = 'Country / calling code is required';
+  }
 
   // Email optional but validate format if provided
   if (data.email && data.email.trim() && !isValidEmail(data.email.trim())) {
     errors.email = 'Invalid email format';
   }
-
-  // project_type is optional for all paths
 
   return { errors, hasDrawings };
 }
