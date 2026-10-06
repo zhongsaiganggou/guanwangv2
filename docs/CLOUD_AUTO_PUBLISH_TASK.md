@@ -65,16 +65,21 @@ export PUBLIC_TURNSTILE_SITE_KEY="0x4AAAAAAEqsUE0gIcgV1fbT"
 5. 建造/施工类画面必须符合真实工程逻辑（有工人、吊车、机械操作，不得穿模/漂浮）。
 6. 图片设置合理尺寸/比例，ALT 描述实际内容、不堆砌关键词。
 
-## 4A. Facebook 公共主页发帖素材包（每篇必带，EN）
+## 4A. Facebook 公共主页发帖素材（每篇必带，EN，越简单越好）
 
-每篇文章完成后，**同时生成一个可直接复制到 FB 公共主页的英文发帖包**，保存到 `docs/social/fb/[slug].md`：
+目标：用户**不打开任何文件**，在本次运行的**最终简报里直接复制就能发 FB**。
 
-- **Post copy（英文，2–4 句）**：用买家视角的钩子开头（点出一个真实痛点或问题），给一句关键结论，最后用明确 CTA 引导点击官网；**不要把整篇长文搬过去**。
-- **文章链接**：正式域 EN 文章 URL（`https://zhongsai-steelstructure.com/en/blog/[slug]/`）。
-- **建议配图 1–3 张**：直接引用本次 `public/images/blog/[slug]/` 里的图并写明文件名，封面用 16:9。
-- 末尾可加 2–3 个相关话题标签（如 #SteelStructure #SteelBuilding #PrefabBuilding），克制、不堆砌。
-- 语气专业、真实、不夸张；不写 world-class/leading/No.1，不编造数字与承诺。
-- 本阶段**只生成可复制素材，不调用 Graph API 自动发布**，发布动作由人工在公共主页完成。
+在最终简报中输出一个独立区块，标题为「===== FACEBOOK 帖子 · 整段复制 =====」，区块内是**一整段**已合并好的英文文本：
+
+- 2–4 句：买家视角钩子开头（点出真实痛点或问题）+ 一句关键结论 + 引导查看；
+- 官网 EN 文章链接 `https://zhongsai-steelstructure.com/en/blog/[slug]/` 直接接在文案最后；
+- 链接后可附 2–3 个话题标签（#SteelStructure #SteelBuilding #PrefabBuilding）；
+- 以上全部连成一段，用户**一次复制**即可，无需分别拼文案和链接。
+
+紧接该区块**直接展示 1 张建议封面图**（用本次生成的封面，16:9），用户保存后上传 FB；如需要，再点名第 2–3 张图的文件名。
+
+- 不搬整篇长文、不调用 Graph API、不自动发布；语气真实不夸张，不写 world-class/leading/No.1，不编造数字。
+- 同样内容另存档到 `docs/social/fb/[slug].md`，仅备查、用户无需打开。
 
 ## 5. 构建与检查
 
@@ -113,7 +118,7 @@ git push https://x-access-token:${GITHUB_TOKEN}@github.com/zhongsaiganggou/guanw
 - EN/ZH URL、Title、Meta、H1
 - IMAGE MAP（图片清单与对应章节）、表格、FAQ、GEO Answer Blocks、内链
 - build 结果、seo:check 结果、Cloudflare 部署 URL、GitHub commit
-- Facebook 发帖素材包路径，以及可直接复制的英文 Post copy
+- 「===== FACEBOOK 帖子 · 整段复制 =====」区块：一整段已含链接的英文文案，并直接展示 1 张封面图，用户当场复制、保存图即可发 FB（详见 4A）
 - 若为 NO NEW ARTICLE TODAY：说明原因 + 建议更新的现有页面清单
 - 遗留风险与后续观察点
 
