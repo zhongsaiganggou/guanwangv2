@@ -61,10 +61,8 @@
 /zh/blog/steel-structure-supplier-saudi-arabia-guide/ /zh/resources/ 301
 /en/products.html /en/ 301
 # I. Chinese blog 404s
-/zh/blog/gangjiegou-cangku-zaojia-duoshaoqian/ /zh/blog/gangjiegou-changfang-zaojia-zhinan/ 301
-/zh/blog/steel-structure-cost-per-square-meter/ /zh/blog/gangjiegou-changfang-zaojia-zhinan/ 301
-/zh/blog/steel-workshop-cost-factory-building-price/ /zh/blog/gangjiegou-changfang-zaojia-zhinan/ 301
-/zh/blog/gangjiegou-vs-hunningtu-chengben-duibi/ /zh/resources/ 301
+# ZH cost cluster (cangku price, per-sqm cost, workshop cost, vs-concrete) is
+# handled authoritatively by the EXACT map in functions/_middleware.js.
 /zh/blog/top-10-steel-structure-manufacturers-in-china/ /zh/blog/steel-structure-rfq-quotation-checklist/ 301
 /zh/blog/zhongguo-gangjiegou-changjia-paiming/ /zh/blog/steel-structure-rfq-quotation-checklist/ 301
 /zh/blog/how-to-buy-steel-buildings-from-china/ /zh/blog/steel-structure-rfq-quotation-checklist/ 301

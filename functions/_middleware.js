@@ -75,6 +75,13 @@ const EXACT = new Map([
     '/zh/blog/steel-structure-installation-process-guide/'],
   ['/zh/blog/steel-structure-cost-per-square-meter/',
     '/zh/blog/gangjiegou-changfang-zaojia-zhinan/'],
+  // SEO Growth Sprint — cost cluster: correct generic Resources fallback (2026-10)
+  ['/zh/blog/steel-workshop-cost-factory-building-price/',
+    '/zh/blog/gangjiegou-changfang-zaojia-zhinan/'],
+  ['/zh/blog/gangjiegou-cangku-zaojia-duoshaoqian/',
+    '/zh/blog/steel-warehouse-cost-guide/'],
+  ['/zh/blog/gangjiegou-vs-hunningtu-chengben-duibi/',
+    '/zh/blog/gangjiegou-changfang-zaojia-zhinan/'],
   ['/zh/blog/steel-structure-supplier-indonesia-guide/', '/zh/markets/indonesia/'],
   ['/zh/blog/steel-structure-supplier-mexico-guide/', '/zh/markets/'],
   ['/zh/products/materials/fasteners/', '/zh/components/'],
