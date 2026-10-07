@@ -214,6 +214,11 @@ export async function onRequest(context) {
   if (raw === '/en/sitemap.xml' || raw === '/zh/sitemap.xml') {
     return redirect('/sitemap.xml');
   }
+  // Root domain -> English home. Real edge-level HTTP 301, replacing the previous
+  // client-side redirect (meta refresh + window.location) from src/pages/index.astro.
+  if (raw === '/' || raw === '/index.html') {
+    return redirect('/en/');
+  }
 
   const hasDot = raw.includes('.');
 
