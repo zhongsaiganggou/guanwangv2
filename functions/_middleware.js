@@ -23,10 +23,18 @@ const GONE_URLS = new Set([
   '/zh/projects/china-qianhai-dreamfactory/',
 ]);
 
+// URLs that must stay a real 404 (no generic /zh/blog/ -> /zh/resources/ fallback,
+// no weak hub redirect). Revisit only when an approved same-language equivalent
+// page exists. Added 2026-10-07 (GSC 404 P1 recovery).
+const KEEP_404_URLS = new Set([
+  '/zh/blog/how-to-import-steel-structure-from-china-to-africa/',
+]);
+
 // Exact legacy redirects, keyed by NORMALIZED path (extensionless paths and
 // `.html` paths both resolve to a directory form ending with '/').
 // A value may be a string or an ordered candidate array (first real route wins).
 const EXACT = new Map([
+  // Root (no language prefix) -> English defaults
   // Root (no language prefix) -> English defaults
   ['/about/', '/en/about/'],
   ['/contact/', '/en/contact/'],
@@ -35,6 +43,9 @@ const EXACT = new Map([
   ['/privacy/', '/en/privacy/'],
   ['/terms/', '/en/terms/'],
   ['/projects/', '/en/projects/'],
+  ['/solutions/', '/en/solutions/'],
+  ['/blog/how-to-choose-steel-structure-manufacturer-china/',
+    '/en/blog/how-to-choose-steel-structure-manufacturer-china/'],
   ['/steel-buildings/', '/en/solutions/'],
   ['/services/steel-structure-export/', '/en/export-delivery/'],
   ['/services/structural-steel-detailing/', '/en/services/structural-steel-detailing/'],
@@ -81,6 +92,8 @@ const EXACT = new Map([
   ['/zh/blog/gangjiegou-cangku-zaojia-duoshaoqian/',
     '/zh/blog/steel-warehouse-cost-guide/'],
   ['/zh/blog/gangjiegou-vs-hunningtu-chengben-duibi/',
+    '/zh/blog/gangjiegou-changfang-zaojia-zhinan/'],
+  ['/zh/blog/steel-structure-vs-concrete-comparison/',
     '/zh/blog/gangjiegou-changfang-zaojia-zhinan/'],
   ['/zh/blog/steel-structure-supplier-indonesia-guide/', '/zh/markets/indonesia/'],
   ['/zh/blog/steel-structure-supplier-mexico-guide/', '/zh/markets/'],
@@ -243,6 +256,16 @@ export async function onRequest(context) {
   // 2) Permanently removed.
   if (GONE_URLS.has(norm)) {
     return gone();
+  }
+
+  // 2b) Keep a real 404 for URLs with no approved same-language equivalent.
+  // Explicit 404 (not next()) so the static _redirects weak fallback can never
+  // catch these. Added 2026-10-07 (GSC 404 P1 recovery).
+  if (KEEP_404_URLS.has(norm)) {
+    return new Response(null, {
+      status: 404,
+      headers: { 'Cache-Control': 'public, max-age=3600' },
+    });
   }
 
   // 3) Exact legacy redirect.

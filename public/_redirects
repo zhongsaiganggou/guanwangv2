@@ -54,8 +54,8 @@
 /en/blog/gangjiegou-anzhuang-zhinan-haiwai /en/blog/steel-structure-installation-process-guide/ 301
 /zh/blog/prefab-steel-building-installation-guide /zh/blog/steel-structure-installation-process-guide/ 301
 /zh/blog/steel-structure-export-packaging-container-loading-guide /en/blog/steel-structure-container-loading-guide/ 301
-/zh/blog/steel-structure-vs-concrete-comparison /zh/resources/ 301
-/zh/blog/how-to-import-steel-structure-from-china-to-africa /zh/blog/steel-structure-installation-process-guide/ 301
+# vs-concrete + how-to-import-africa are owned by functions/_middleware.js
+# (exact 301 -> cost authority page / real 404, no weak fallback).
 # H. GSC 404 fixes
 /en/products/materials/fasteners/ /en/components/ 301
 /zh/blog/steel-structure-supplier-saudi-arabia-guide/ /zh/resources/ 301
