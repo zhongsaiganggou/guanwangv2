@@ -16,7 +16,11 @@ const description = '中赛钢构是钢结构出口制造商，提供结构设�
 
   <!-- 1. Hero -->
   <section class="hero-home">
-    <div class="hero-home-bg" style="background-image: url('/images/company/factory-aerial-panorama.jpg')"></div>
+    <picture class="hero-home-bg">
+      <source type="image/avif" sizes="100vw" srcset="/images/optimized/home/hero-768.avif 768w, /images/optimized/home/hero-1280.avif 1280w, /images/optimized/home/hero-1920.avif 1920w">
+      <source type="image/webp" sizes="100vw" srcset="/images/optimized/home/hero-768.webp 768w, /images/optimized/home/hero-1280.webp 1280w, /images/optimized/home/hero-1920.webp 1920w">
+      <img src="/images/optimized/home/hero-1280.jpg" sizes="100vw" srcset="/images/optimized/home/hero-768.jpg 768w, /images/optimized/home/hero-1280.jpg 1280w, /images/optimized/home/hero-1920.jpg 1920w" width="1920" height="1084" alt="中赛钢结构制造基地航拍全景" fetchpriority="high" decoding="async">
+    </picture>
     <div class="hero-home-overlay"></div>
     <div class="container hero-home-content">
       <p class="eyebrow">钢结构工程 · 设计制造 · 全球交付</p>
@@ -61,12 +65,66 @@ const description = '中赛钢构是钢结构出口制造商，提供结构设�
         <h2>按项目场景选择</h2>
       </div>
       <div class="solutions-grid">
-        <a href="/zh/steel-workshop/" class="solution-card"><div class="solution-img" style="background-image:url('/images/products/app-industrial-workshop-hero.jpg')"></div><h3>工业与制造</h3></a>
-        <a href="/zh/steel-warehouse/" class="solution-card"><div class="solution-img" style="background-image:url('/images/products/app-warehouse-logistics-hero.jpg')"></div><h3>仓储与物流</h3></a>
-        <a href="/zh/steel-mining-factory/" class="solution-card"><div class="solution-img" style="background-image:url('/images/products/app-mining-energy-hero.jpg')"></div><h3>矿业与能源</h3></a>
-        <a href="/zh/agricultural-steel-buildings/" class="solution-card"><div class="solution-img" style="background-image:url('/images/products/app-agriculture-livestock.jpg')"></div><h3>农业与养殖</h3></a>
-        <a href="/zh/commercial-public-steel-buildings/" class="solution-card"><div class="solution-img" style="background-image:url('/images/products/app-commercial-public-building.jpg')"></div><h3>商业与公共</h3></a>
-        <a href="/zh/transportation-infrastructure-steel/" class="solution-card"><div class="solution-img" style="background-image:url('/images/products/app-transport-infrastructure.jpg')"></div><h3>交通与基础设施</h3></a>
+        <a href="/zh/steel-workshop/" class="solution-card">
+          <div class="solution-img">
+            <picture>
+              <source type="image/avif" srcset="/images/optimized/home/sol-industrial-720.avif">
+              <source type="image/webp" srcset="/images/optimized/home/sol-industrial-720.webp">
+              <img src="/images/optimized/home/sol-industrial-720.jpg" width="720" height="405" loading="lazy" decoding="async" alt="工业与制造钢结构厂房">
+            </picture>
+          </div>
+          <h3>工业与制造</h3>
+        </a>
+        <a href="/zh/steel-warehouse/" class="solution-card">
+          <div class="solution-img">
+            <picture>
+              <source type="image/avif" srcset="/images/optimized/home/sol-warehouse-720.avif">
+              <source type="image/webp" srcset="/images/optimized/home/sol-warehouse-720.webp">
+              <img src="/images/optimized/home/sol-warehouse-720.jpg" width="720" height="405" loading="lazy" decoding="async" alt="仓储与物流钢结构仓库">
+            </picture>
+          </div>
+          <h3>仓储与物流</h3>
+        </a>
+        <a href="/zh/steel-mining-factory/" class="solution-card">
+          <div class="solution-img">
+            <picture>
+              <source type="image/avif" srcset="/images/optimized/home/sol-mining-720.avif">
+              <source type="image/webp" srcset="/images/optimized/home/sol-mining-720.webp">
+              <img src="/images/optimized/home/sol-mining-720.jpg" width="720" height="405" loading="lazy" decoding="async" alt="矿业与能源钢结构及料仓">
+            </picture>
+          </div>
+          <h3>矿业与能源</h3>
+        </a>
+        <a href="/zh/agricultural-steel-buildings/" class="solution-card">
+          <div class="solution-img">
+            <picture>
+              <source type="image/avif" srcset="/images/optimized/home/sol-agriculture-720.avif">
+              <source type="image/webp" srcset="/images/optimized/home/sol-agriculture-720.webp">
+              <img src="/images/optimized/home/sol-agriculture-720.jpg" width="720" height="405" loading="lazy" decoding="async" alt="农业与养殖钢结构建筑">
+            </picture>
+          </div>
+          <h3>农业与养殖</h3>
+        </a>
+        <a href="/zh/commercial-public-steel-buildings/" class="solution-card">
+          <div class="solution-img">
+            <picture>
+              <source type="image/avif" srcset="/images/optimized/home/sol-commercial-720.avif">
+              <source type="image/webp" srcset="/images/optimized/home/sol-commercial-720.webp">
+              <img src="/images/optimized/home/sol-commercial-720.jpg" width="720" height="405" loading="lazy" decoding="async" alt="商业与公共钢结构建筑">
+            </picture>
+          </div>
+          <h3>商业与公共</h3>
+        </a>
+        <a href="/zh/transportation-infrastructure-steel/" class="solution-card">
+          <div class="solution-img">
+            <picture>
+              <source type="image/avif" srcset="/images/optimized/home/sol-transport-720.avif">
+              <source type="image/webp" srcset="/images/optimized/home/sol-transport-720.webp">
+              <img src="/images/optimized/home/sol-transport-720.jpg" width="720" height="405" loading="lazy" decoding="async" alt="交通与基础设施钢结构">
+            </picture>
+          </div>
+          <h3>交通与基础设施</h3>
+        </a>
       </div>
     </div>
   </section>
@@ -105,19 +163,43 @@ const description = '中赛钢构是钢结构出口制造商，提供结构设�
       </div>
       <div class="projects-grid">
         <a href="/zh/projects/singapore-airport-t2-connect/" class="project-card">
-          <div class="project-img" style="background-image:url('/images/projects/overseas/singapore-airport-t2-connect.jpg')"></div>
+          <div class="project-img">
+            <picture>
+              <source type="image/avif" srcset="/images/optimized/home/proj-singapore-640.avif">
+              <source type="image/webp" srcset="/images/optimized/home/proj-singapore-640.webp">
+              <img src="/images/optimized/home/proj-singapore-640.jpg" width="640" height="421" loading="lazy" decoding="async" alt="新加坡樟宜机场T2连接项目">
+            </picture>
+          </div>
           <div class="project-info"><h3>新加坡樟宜机场T2</h3><p>新加坡 · 交通基础设施</p></div>
         </a>
         <a href="/zh/projects/macau-londoner/" class="project-card">
-          <div class="project-img" style="background-image:url('/images/projects/overseas/macau-londoner.jpg')"></div>
+          <div class="project-img">
+            <picture>
+              <source type="image/avif" srcset="/images/optimized/home/proj-macau-640.avif">
+              <source type="image/webp" srcset="/images/optimized/home/proj-macau-640.webp">
+              <img src="/images/optimized/home/proj-macau-640.jpg" width="640" height="421" loading="lazy" decoding="async" alt="澳门伦敦人商业综合项目">
+            </picture>
+          </div>
           <div class="project-info"><h3>澳门伦敦人</h3><p>澳门 · 商业公共建筑</p></div>
         </a>
         <a href="/zh/projects/shantou-luxshare-electronics-center/" class="project-card">
-          <div class="project-img" style="background-image:url('/images/projects/shantou-luxshare-precision-electronics-aerial-rendering.jpg')"></div>
+          <div class="project-img">
+            <picture>
+              <source type="image/avif" srcset="/images/optimized/home/proj-shantou-640.avif">
+              <source type="image/webp" srcset="/images/optimized/home/proj-shantou-640.webp">
+              <img src="/images/optimized/home/proj-shantou-640.jpg" width="640" height="421" loading="lazy" decoding="async" alt="汕头立讯精密电子厂房项目">
+            </picture>
+          </div>
           <div class="project-info"><h3>汕头立讯电子中心</h3><p>广东 · 工业制造</p></div>
         </a>
         <a href="/zh/projects/cnpc-cracking-furnace/" class="project-card">
-          <div class="project-img" style="background-image:url('/images/projects/cnpc-sixth-construction-cracking-furnace-aerial-view.jpg')"></div>
+          <div class="project-img">
+            <picture>
+              <source type="image/avif" srcset="/images/optimized/home/proj-cnpc-640.avif">
+              <source type="image/webp" srcset="/images/optimized/home/proj-cnpc-640.webp">
+              <img src="/images/optimized/home/proj-cnpc-640.jpg" width="640" height="421" loading="lazy" decoding="async" alt="中石油第六建设公司裂解炉项目">
+            </picture>
+          </div>
           <div class="project-info"><h3>中石油裂解炉项目</h3><p>能源 · 重工业</p></div>
         </a>
       </div>

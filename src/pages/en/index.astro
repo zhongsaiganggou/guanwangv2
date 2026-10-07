@@ -16,7 +16,11 @@ const description = 'Integrated structural steel design, detailing, fabrication 
 
   <!-- 1. Hero -->
   <section class="hero-home">
-    <div class="hero-home-bg" style="background-image: url('/images/company/factory-aerial-panorama.jpg')"></div>
+    <picture class="hero-home-bg">
+      <source type="image/avif" sizes="100vw" srcset="/images/optimized/home/hero-768.avif 768w, /images/optimized/home/hero-1280.avif 1280w, /images/optimized/home/hero-1920.avif 1920w">
+      <source type="image/webp" sizes="100vw" srcset="/images/optimized/home/hero-768.webp 768w, /images/optimized/home/hero-1280.webp 1280w, /images/optimized/home/hero-1920.webp 1920w">
+      <img src="/images/optimized/home/hero-1280.jpg" sizes="100vw" srcset="/images/optimized/home/hero-768.jpg 768w, /images/optimized/home/hero-1280.jpg 1280w, /images/optimized/home/hero-1920.jpg 1920w" width="1920" height="1084" alt="ZhongSai steel structure manufacturing base aerial panorama" fetchpriority="high" decoding="async">
+    </picture>
     <div class="hero-home-overlay"></div>
     <div class="container hero-home-content">
       <p class="eyebrow">Steel Engineering · Manufacturing · Global Delivery</p>
@@ -61,12 +65,66 @@ const description = 'Integrated structural steel design, detailing, fabrication 
         <h2>By Project Application</h2>
       </div>
       <div class="solutions-grid">
-        <a href="/en/steel-workshop/" class="solution-card"><div class="solution-img" style="background-image:url('/images/products/app-industrial-workshop-hero.jpg')"></div><h3>Industrial & Manufacturing</h3></a>
-        <a href="/en/steel-warehouse/" class="solution-card"><div class="solution-img" style="background-image:url('/images/products/app-warehouse-logistics-hero.jpg')"></div><h3>Warehousing & Logistics</h3></a>
-        <a href="/en/steel-mining-factory/" class="solution-card"><div class="solution-img" style="background-image:url('/images/products/app-mining-energy-hero.jpg')"></div><h3>Mining & Energy</h3></a>
-        <a href="/en/agricultural-steel-buildings/" class="solution-card"><div class="solution-img" style="background-image:url('/images/products/app-agriculture-livestock.jpg')"></div><h3>Agriculture & Livestock</h3></a>
-        <a href="/en/commercial-public-steel-buildings/" class="solution-card"><div class="solution-img" style="background-image:url('/images/products/app-commercial-public-building.jpg')"></div><h3>Commercial & Public</h3></a>
-        <a href="/en/transportation-infrastructure-steel/" class="solution-card"><div class="solution-img" style="background-image:url('/images/products/app-transport-infrastructure.jpg')"></div><h3>Infrastructure</h3></a>
+        <a href="/en/steel-workshop/" class="solution-card">
+          <div class="solution-img">
+            <picture>
+              <source type="image/avif" srcset="/images/optimized/home/sol-industrial-720.avif">
+              <source type="image/webp" srcset="/images/optimized/home/sol-industrial-720.webp">
+              <img src="/images/optimized/home/sol-industrial-720.jpg" width="720" height="405" loading="lazy" decoding="async" alt="Industrial and manufacturing steel workshop">
+            </picture>
+          </div>
+          <h3>Industrial & Manufacturing</h3>
+        </a>
+        <a href="/en/steel-warehouse/" class="solution-card">
+          <div class="solution-img">
+            <picture>
+              <source type="image/avif" srcset="/images/optimized/home/sol-warehouse-720.avif">
+              <source type="image/webp" srcset="/images/optimized/home/sol-warehouse-720.webp">
+              <img src="/images/optimized/home/sol-warehouse-720.jpg" width="720" height="405" loading="lazy" decoding="async" alt="Warehousing and logistics steel warehouse">
+            </picture>
+          </div>
+          <h3>Warehousing & Logistics</h3>
+        </a>
+        <a href="/en/steel-mining-factory/" class="solution-card">
+          <div class="solution-img">
+            <picture>
+              <source type="image/avif" srcset="/images/optimized/home/sol-mining-720.avif">
+              <source type="image/webp" srcset="/images/optimized/home/sol-mining-720.webp">
+              <img src="/images/optimized/home/sol-mining-720.jpg" width="720" height="405" loading="lazy" decoding="async" alt="Mining and energy steel structure and bins">
+            </picture>
+          </div>
+          <h3>Mining & Energy</h3>
+        </a>
+        <a href="/en/agricultural-steel-buildings/" class="solution-card">
+          <div class="solution-img">
+            <picture>
+              <source type="image/avif" srcset="/images/optimized/home/sol-agriculture-720.avif">
+              <source type="image/webp" srcset="/images/optimized/home/sol-agriculture-720.webp">
+              <img src="/images/optimized/home/sol-agriculture-720.jpg" width="720" height="405" loading="lazy" decoding="async" alt="Agriculture and livestock steel building">
+            </picture>
+          </div>
+          <h3>Agriculture & Livestock</h3>
+        </a>
+        <a href="/en/commercial-public-steel-buildings/" class="solution-card">
+          <div class="solution-img">
+            <picture>
+              <source type="image/avif" srcset="/images/optimized/home/sol-commercial-720.avif">
+              <source type="image/webp" srcset="/images/optimized/home/sol-commercial-720.webp">
+              <img src="/images/optimized/home/sol-commercial-720.jpg" width="720" height="405" loading="lazy" decoding="async" alt="Commercial and public steel building">
+            </picture>
+          </div>
+          <h3>Commercial & Public</h3>
+        </a>
+        <a href="/en/transportation-infrastructure-steel/" class="solution-card">
+          <div class="solution-img">
+            <picture>
+              <source type="image/avif" srcset="/images/optimized/home/sol-transport-720.avif">
+              <source type="image/webp" srcset="/images/optimized/home/sol-transport-720.webp">
+              <img src="/images/optimized/home/sol-transport-720.jpg" width="720" height="405" loading="lazy" decoding="async" alt="Transportation and infrastructure steel structure">
+            </picture>
+          </div>
+          <h3>Infrastructure</h3>
+        </a>
       </div>
     </div>
   </section>
@@ -105,19 +163,43 @@ const description = 'Integrated structural steel design, detailing, fabrication 
       </div>
       <div class="projects-grid">
         <a href="/en/projects/singapore-airport-t2-connect/" class="project-card">
-          <div class="project-img" style="background-image:url('/images/projects/overseas/singapore-airport-t2-connect.jpg')"></div>
+          <div class="project-img">
+            <picture>
+              <source type="image/avif" srcset="/images/optimized/home/proj-singapore-640.avif">
+              <source type="image/webp" srcset="/images/optimized/home/proj-singapore-640.webp">
+              <img src="/images/optimized/home/proj-singapore-640.jpg" width="640" height="421" loading="lazy" decoding="async" alt="Singapore Changi Airport T2 Connect project">
+            </picture>
+          </div>
           <div class="project-info"><h3>Changi Airport T2</h3><p>Singapore · Transportation</p></div>
         </a>
         <a href="/en/projects/macau-londoner/" class="project-card">
-          <div class="project-img" style="background-image:url('/images/projects/overseas/macau-londoner.jpg')"></div>
+          <div class="project-img">
+            <picture>
+              <source type="image/avif" srcset="/images/optimized/home/proj-macau-640.avif">
+              <source type="image/webp" srcset="/images/optimized/home/proj-macau-640.webp">
+              <img src="/images/optimized/home/proj-macau-640.jpg" width="640" height="421" loading="lazy" decoding="async" alt="Macau Londoner commercial complex project">
+            </picture>
+          </div>
           <div class="project-info"><h3>Macau Londoner</h3><p>Macau · Commercial</p></div>
         </a>
         <a href="/en/projects/shantou-luxshare-electronics-center/" class="project-card">
-          <div class="project-img" style="background-image:url('/images/projects/shantou-luxshare-precision-electronics-aerial-rendering.jpg')"></div>
+          <div class="project-img">
+            <picture>
+              <source type="image/avif" srcset="/images/optimized/home/proj-shantou-640.avif">
+              <source type="image/webp" srcset="/images/optimized/home/proj-shantou-640.webp">
+              <img src="/images/optimized/home/proj-shantou-640.jpg" width="640" height="421" loading="lazy" decoding="async" alt="Shantou Luxshare Precision electronics factory project">
+            </picture>
+          </div>
           <div class="project-info"><h3>Luxshare Electronics</h3><p>Guangdong · Manufacturing</p></div>
         </a>
         <a href="/en/projects/cnpc-cracking-furnace/" class="project-card">
-          <div class="project-img" style="background-image:url('/images/projects/cnpc-sixth-construction-cracking-furnace-aerial-view.jpg')"></div>
+          <div class="project-img">
+            <picture>
+              <source type="image/avif" srcset="/images/optimized/home/proj-cnpc-640.avif">
+              <source type="image/webp" srcset="/images/optimized/home/proj-cnpc-640.webp">
+              <img src="/images/optimized/home/proj-cnpc-640.jpg" width="640" height="421" loading="lazy" decoding="async" alt="CNPC Sixth Construction cracking furnace project">
+            </picture>
+          </div>
           <div class="project-info"><h3>CNPC Cracking Furnace</h3><p>Energy · Heavy Industry</p></div>
         </a>
       </div>

@@ -29,6 +29,9 @@ __pycache__/
 tools/image-audit/thumbs/
 tools/image-audit/source-thumbs/
 
+# Build-time generated responsive homepage images (recreated on every build)
+/public/images/optimized/
+
 # Old website snapshots & scrape artifacts (local reference only)
 old_project_html/
 old_projects_page.html

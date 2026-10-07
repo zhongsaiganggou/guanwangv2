@@ -4,7 +4,7 @@
   "version": "0.1.0",
   "scripts": {
     "dev": "astro dev",
-    "build": "astro build && node tools/generate-routes.mjs",
+    "build": "node tools/optimize-home-images.mjs && astro build && node tools/generate-routes.mjs",
     "preview": "astro preview",
     "astro": "astro",
     "seo:check:sitemap": "node tools/seo-audit/check_sitemap_hreflang.mjs",
