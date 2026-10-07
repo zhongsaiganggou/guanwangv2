@@ -25,7 +25,7 @@ const texts = lang === 'zh' ? {
   drawingUpload: '上传图纸 / BOQ',
   drawingHint: '支持 PDF、DWG、DXF、JPG、PNG、XLS、XLSX，单文件最大25MB',
   buildingType: '项目类型',
-  buildingTypeOptions: ['请选择', '工业厂房与车间', '仓库与物流', '矿业与能源设施', '商业与公共建筑', '农业与特种设施', '定制钢结构工程', '其他'],
+  buildingTypeOptions: ['请选择', '工业厂房与车间', '仓库与物流', '矿业与能源设施', '商业与公共建筑', '农业与特种设施', { value: '定制钢结构工程', label: '钢结构夹层 / 二层平台 / 特种钢结构' }, '其他'],
   length: '长度 (m)',
   width: '宽度 (m)',
   height: '高度 (m)',
@@ -87,7 +87,7 @@ const texts = lang === 'zh' ? {
   drawingUpload: 'Upload Drawings / BOQ',
   drawingHint: 'PDF, DWG, DXF, JPG, PNG, XLS, XLSX — max 25MB per file',
   buildingType: 'Project Type',
-  buildingTypeOptions: ['Please select', 'Industrial Factory & Workshop', 'Warehouse & Logistics', 'Mining & Energy', 'Commercial & Public', 'Agriculture & Special', 'Custom Steel Structure', 'Other'],
+  buildingTypeOptions: ['Please select', 'Industrial Factory & Workshop', 'Warehouse & Logistics', 'Mining & Energy', 'Commercial & Public', 'Agriculture & Special', { value: 'Custom Steel Structure', label: 'Mezzanines, Platforms & Special Structures' }, 'Other'],
   length: 'Length (m)',
   width: 'Width (m)',
   height: 'Height (m)',
@@ -181,7 +181,11 @@ const phoneCodes = [
       <div class="form-field">
         <label for={`${id}-building-type`}>{texts.buildingType}</label>
         <select id={`${id}-building-type`} name="projectType">
-          {texts.buildingTypeOptions.map((opt, i) => <option value={i === 0 ? '' : opt}>{opt}</option>)}
+          {texts.buildingTypeOptions.map((opt, i) => {
+            const val = typeof opt === 'string' ? opt : opt.value;
+            const lab = typeof opt === 'string' ? opt : opt.label;
+            return <option value={i === 0 ? '' : val}>{lab}</option>;
+          })}
         </select>
         <span class="field-error" data-error-for="projectType"></span>
       </div>
@@ -366,7 +370,11 @@ const phoneCodes = [
       <div class="form-field">
         <label for={`${id}-building-type`}>{texts.buildingType}</label>
         <select id={`${id}-building-type`} name="projectType">
-          {texts.buildingTypeOptions.map((opt, i) => <option value={i === 0 ? '' : opt}>{opt}</option>)}
+          {texts.buildingTypeOptions.map((opt, i) => {
+            const val = typeof opt === 'string' ? opt : opt.value;
+            const lab = typeof opt === 'string' ? opt : opt.label;
+            return <option value={i === 0 ? '' : val}>{lab}</option>;
+          })}
         </select>
         <span class="field-error" data-error-for="projectType"></span>
       </div>
