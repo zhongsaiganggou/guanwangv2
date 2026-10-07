@@ -99,6 +99,10 @@ src="https://www.facebook.com/tr?id=1268080202055777&ev=PageView&noscript=1"
       window.trackEvent('email_click', {
         cta_location: link.closest('footer') ? 'footer' : 'contact_page',
       });
+    } else if (href.indexOf('tel:') === 0) {
+      window.trackEvent('phone_click', {
+        cta_location: link.closest('footer') ? 'footer' : (link.closest('.floating-social') ? 'floating' : 'contact_page'),
+      });
     }
   }, true);
 </script>
