@@ -106,6 +106,20 @@ const description = 'Project-specific steel truss structures for industrial buil
           <p>Building transfer girders and transfer trusses for mixed-use buildings with changing column grids between floors.</p>
         </div>
       </div>
+      <div class="evidence-strip">
+        <figure class="evidence-item reveal">
+          <img src="/images/components/application-industrial-workshop-frame.jpg" alt="Large industrial workshop interior with truss roof and column-free production space" loading="lazy">
+          <figcaption>Truss roofs provide column-free production space in industrial workshops</figcaption>
+        </figure>
+        <figure class="evidence-item reveal reveal-delay-1">
+          <img src="/images/blog/portal-frame-vs-truss-steel-building/2-truss.jpg" alt="Truss-frame steel structure under construction with tower crane lifting truss girders" loading="lazy">
+          <figcaption>Truss frames used for long-span structure erection</figcaption>
+        </figure>
+        <figure class="evidence-item reveal reveal-delay-2">
+          <img src="/images/projects/shenzhen-international-zhanjiang-logistics-port.jpg" alt="Steel frame structure of a logistics warehouse project" loading="lazy">
+          <figcaption>Logistics and warehousing projects applying long-span truss systems</figcaption>
+        </figure>
+      </div>
     </div>
   </section>
 
@@ -275,6 +289,20 @@ const description = 'Project-specific steel truss structures for industrial buil
       <div style="text-align: center; margin-top: 30px;">
         <a href="/en/manufacturing-quality/" class="btn btn-outline">View Manufacturing & Quality →</a>
       </div>
+      <div class="evidence-strip">
+        <figure class="evidence-item reveal">
+          <img src="/images/components/steel-truss-fabrication.jpg" alt="Welders welding a large steel truss member in the factory with overhead crane support" loading="lazy">
+          <figcaption>Truss member welding and fabrication</figcaption>
+        </figure>
+        <figure class="evidence-item reveal reveal-delay-1">
+          <img src="/images/components/finished-steel-members-stacked.jpg" alt="Finished steel members stacked in the yard with part numbering" loading="lazy">
+          <figcaption>Finished member storage and numbering control</figcaption>
+        </figure>
+        <figure class="evidence-item reveal reveal-delay-2">
+          <img src="/images/components/finished-coated-components.jpg" alt="Coated steel structure members with hand-written markings" loading="lazy">
+          <figcaption>Surface-coated completed members</figcaption>
+        </figure>
+      </div>
     </div>
   </section>
 
@@ -379,6 +407,20 @@ const description = 'Project-specific steel truss structures for industrial buil
       </div>
       <div style="text-align: center; margin-top: 30px;">
         <a href="/en/export-delivery/" class="btn btn-outline">View Export & Delivery →</a>
+      </div>
+      <div class="evidence-strip">
+        <figure class="evidence-item reveal">
+          <img src="/images/blog/packing-loading-steel-export/loading.jpg" alt="Forklift loading bundled galvanized members into a shipping container" loading="lazy">
+          <figcaption>Member packing and container loading</figcaption>
+        </figure>
+        <figure class="evidence-item reveal reveal-delay-1">
+          <img src="/images/blog/packing-loading-steel-export/packing.jpg" alt="Labeled packing boxes for bolted connections and hardware" loading="lazy">
+          <figcaption>Connections and hardware packed with labeled kits</figcaption>
+        </figure>
+        <figure class="evidence-item reveal reveal-delay-2">
+          <img src="/images/projects/site-erection.jpg" alt="Mobile cranes erecting steel structure members on site" loading="lazy">
+          <figcaption>On-site erection and installation coordination</figcaption>
+        </figure>
       </div>
     </div>
   </section>
@@ -722,9 +764,40 @@ const description = 'Project-specific steel truss structures for industrial buil
   font-size: 0.85rem;
   line-height: 1.5;
 }
+.evidence-strip {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 16px;
+  margin-top: 24px;
+}
+.evidence-item {
+  margin: 0;
+  background: #fff;
+  border-radius: 10px;
+  overflow: hidden;
+  border: 1px solid #e5e7eb;
+}
+.evidence-item img {
+  width: 100%;
+  height: 190px;
+  object-fit: cover;
+  display: block;
+}
+.evidence-item figcaption {
+  padding: 12px 14px;
+  color: #374151;
+  font-size: 0.83rem;
+  line-height: 1.5;
+}
 @media (max-width: 768px) {
   .application-grid, .process-grid, .connection-grid, .surface-grid, .export-grid, .related-grid {
     grid-template-columns: 1fr;
+  }
+  .evidence-strip {
+    grid-template-columns: 1fr;
+  }
+  .evidence-item img {
+    height: 220px;
   }
 }
 </style>
