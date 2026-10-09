@@ -1,118 +1,66 @@
 ---
-// ZhongSai V2 - English Engineering & Detailing Page (Upgraded)
+// ZhongSai V2 - English Engineering & Detailing Page (UX / Evidence / CRO Optimized)
 import BaseLayout from '../../../layouts/BaseLayout.astro';
 import QuoteForm from '../../../components/QuoteForm.astro';
-import ExportDeliveryCTA from '../../../components/ExportDeliveryCTA.astro';
-import '../../../styles/hub.css';
-import '../../../styles/manufacturing.css';
+import '../../../styles/detail.css';
 
 const lang = 'en';
 const title = 'Steel Structure Design & Detailing | ZhongSai';
 const description = 'Engineering and detailing support for overseas steel structure projects: drawing review, structural coordination, shop detailing, connection...';
 const canonical = 'https://zhongsai-steelstructure.com/en/engineering-design/';
 
-const engineeringSteps = [
-  {
-    num: '01',
-    image: '/images/engineering/workflow/step-01-document-review.jpg',
-    title: 'Project Information Review',
-    desc: 'Review architectural drawings, structural drawings, general arrangement drawings, equipment layouts and project requirements to establish the engineering scope.',
-    icon: 'M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z'
-  },
-  {
-    num: '02',
-    image: '/images/engineering/workflow/step-02-design-criteria.jpg',
-    title: 'Design Criteria Confirmation',
-    desc: 'Confirm building use, spans, heights, design loads, wind/snow/seismic requirements, crane loads, corrosion environment and applicable design code.',
-    icon: 'M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2m-6 9l2 2 4-4'
-  },
-  {
-    num: '03',
-    image: '/images/engineering/workflow/step-03-structural-coordination.jpg',
-    title: 'Structural Coordination',
-    desc: 'Coordinate structural system layout, column grid, framing arrangement, bracing system and load path with architectural and MEP requirements.',
-    icon: 'M4 5a1 1 0 011-1h14a1 1 0 011 1v2a1 1 0 01-1 1H5a1 1 0 01-1-1V5zM4 13a1 1 0 011-1h6a1 1 0 011 1v6a1 1 0 01-1 1H5a1 1 0 01-1-1v-6zM16 13a1 1 0 011-1h2a1 1 0 011 1v6a1 1 0 01-1 1h-2a1 1 0 01-1-1v-6z'
-  },
-  {
-    num: '04',
-    image: '/images/engineering/workflow/step-04-connection-development.jpg',
-    title: 'Member & Connection Development',
-    desc: 'Develop member sizes, connection details, beam-column joints, column bases, truss connections, splice joints and crane brackets based on structural analysis.',
-    icon: 'M13.828 10.172a4 4 0 00-5.656 0l-4 4a4 4 0 105.656 5.656l1.102-1.101m-.758-4.899a4 4 0 005.656 0l4-4a4 4 0 00-5.656-5.656l-1.1 1.1'
-  },
-  {
-    num: '05',
-    image: '/images/engineering/workflow/step-05-shop-detailing.jpg',
-    title: 'Shop Detailing',
-    desc: 'Produce fabrication-ready shop drawings including member dimensions, plate sizes, hole positions, weld information, bolt connections, part numbering and assembly details.',
-    icon: 'M11 5H6a2 2 0 00-2 2v11a2 2 0 002 2h11a2 2 0 002-2v-5m-1.414-9.414a2 2 0 112.828 2.828L11.828 15H9v-2.828l8.586-8.586z'
-  },
-  {
-    num: '06',
-    image: '/images/engineering/workflow/step-06-drawing-approval.jpg',
-    title: 'Drawing Review & Approval',
-    desc: 'Internal review of shop drawings for accuracy, constructability and coordination, followed by client/engineer review and approval before fabrication release.',
-    icon: 'M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z'
-  },
-  {
-    num: '07',
-    image: '/images/engineering/workflow/step-07-fabrication-release.jpg',
-    title: 'Fabrication Release',
-    desc: 'Release approved drawings and fabrication documentation to manufacturing, including material lists, cutting lists, assembly instructions and quality control requirements.',
-    icon: 'M13 10V3L4 14h7v7l9-11h-7z'
-  },
-  {
-    num: '08',
-    image: '/images/engineering/workflow/step-08-site-support.jpg',
-    title: 'Site Technical Support',
-    desc: 'Provide technical support during site erection, including drawing clarification, connection guidance, installation sequence coordination and technical issue resolution.',
-    icon: 'M18.364 5.636l-3.536 3.536m0 5.656l3.536 3.536M9.172 9.172L5.636 5.636m3.536 9.192l-3.536 3.536M21 12a9 9 0 11-18 0 9 9 0 0118 0zm-5 0a4 4 0 11-8 0 4 4 0 018 0z'
-  }
+const engSteps = [
+  { num: '01', title: 'Project Information Review', desc: 'Review architectural, structural, GA, equipment layout drawings and project requirements to establish the engineering scope.' },
+  { num: '02', title: 'Design Criteria & Structural Coordination', desc: 'Confirm use, spans, heights, loads, crane and applicable codes; coordinate column grid, framing and load paths.' },
+  { num: '03', title: 'Shop Detailing & Drawings', desc: 'Develop member sizes, connection details and fabrication-ready shop drawings with holes, welds, bolts and part numbering.' },
+  { num: '04', title: 'Drawing Review & Approval', desc: 'Internal review for accuracy and constructability, followed by client/engineer approval before fabrication release.' },
+  { num: '05', title: 'Fabrication Release & Interface', desc: 'Release approved drawings, material lists, assembly instructions and QC requirements to production.' },
+  { num: '06', title: 'Site Technical Support', desc: 'Provide drawing clarification, connection guidance, erection sequence coordination and issue resolution during installation.' }
 ];
 
 const designInputs = [
-  { name: 'Building Use', desc: 'Industrial, warehouse, commercial, agricultural, mining, infrastructure or special-purpose structure' },
-  { name: 'Span & Height', desc: 'Required clear span, eave height, bay spacing and building dimensions' },
-  { name: 'Wind Load', desc: 'Project location wind speed, exposure category and applicable wind load requirements' },
-  { name: 'Snow Load', desc: 'Ground snow load, roof snow load and drift considerations where applicable' },
-  { name: 'Seismic', desc: 'Seismic design category, site class and applicable seismic requirements' },
-  { name: 'Crane Loads', desc: 'Crane capacity, span, duty cycle and runway beam requirements where applicable' },
-  { name: 'Equipment Loads', desc: 'Concentrated equipment loads, dynamic loads and vibration considerations' },
-  { name: 'Corrosion Environment', desc: 'Environmental exposure category, humidity, chemical exposure and coating requirements' },
-  { name: 'Fire Protection', desc: 'Fire resistance rating requirements and passive fire protection specifications' },
-  { name: 'Local Code', desc: 'Applicable building code, design standard and project-specific technical specifications' }
+  { name: 'Span & Column Grid', desc: 'Clear span, bay spacing, eave height, building dimensions and support locations' },
+  { name: 'Design Loads', desc: 'Dead, live, wind, snow and seismic requirements confirmed per project location and applicable code' },
+  { name: 'Crane & Equipment Loads', desc: 'Crane capacity, span, duty cycle, equipment weight and dynamic loads where applicable' },
+  { name: 'Connections & Joints', desc: 'High-strength bolting, welding, field splice conditions and node detailing scope' },
+  { name: 'Corrosion & Environment', desc: 'Exposure category, humidity, chemical exposure and coating requirements' },
+  { name: 'Fire Protection', desc: 'Fire resistance ratings and passive fire protection specifications' },
+  { name: 'Transport & Segmentation', desc: 'Container dimensions, over-length segmentation, packing and site lifting conditions' },
+  { name: 'Applicable Codes', desc: 'Design, material and construction standards per project location and client specification' }
 ];
 
-const designStandards = [
+const deliverables = [
+  { name: 'GA Drawings', desc: 'Overall arrangement, column grid, framing and key dimensions' },
+  { name: 'Shop Drawings', desc: 'Member sizes, plates, hole positions, welds and bolting information' },
+  { name: 'Connection Details', desc: 'Joints, column bases, splices and stiffener details' },
+  { name: 'BOM / Material List', desc: 'Material take-off, part numbering and procurement reference' },
+  { name: 'Erection Drawings', desc: 'Lifting sequence, installation reference and site coordination' }
+];
+
+const nodeTypes = [
+  'Beam-column connections',
+  'Column bases & anchor bolts',
+  'Truss & intersecting nodes',
+  'Splice joints',
+  'Bracing & lateral system connections',
+  'Crane brackets & equipment interfaces'
+];
+
+const mfPoints = [
+  { name: 'Fabricability', desc: 'Member details developed for existing manufacturing equipment and processes.' },
+  { name: 'Welding Access', desc: 'Connection configurations ensure welding access and quality control conditions.' },
+  { name: 'Plate Optimization', desc: 'Member and plate sizes coordinated with standard material dimensions to reduce waste.' },
+  { name: 'Member Segmentation', desc: 'Long members segmented at appropriate locations for transport and site assembly.' }
+];
+
+const exportSteps = ['Transport Design', 'Segmentation', 'Numbering', 'Packing', 'Container Loading', 'Site Assembly Support'];
+
+const standards = [
   { code: 'GB', desc: 'Chinese national standards for structural design and fabrication' },
   { code: 'AISC / ASCE', desc: 'American Institute of Steel Construction and ASCE standards' },
   { code: 'Eurocode', desc: 'European standards for structural steel design (EN 1990-1993)' },
   { code: 'Australian', desc: 'Australian standards for steel structures (AS 4100, AS/NZS 1170)' },
   { code: 'Other', desc: 'Other project-specified standards subject to technical review and coordination' }
-];
-
-const shopDrawingContents = [
-  'Member dimensions and profiles',
-  'Plate sizes and thicknesses',
-  'Hole positions and bolt patterns',
-  'Weld sizes and weld information',
-  'Bolt connection details',
-  'Part numbering and material identification',
-  'Assembly sequence information',
-  'Fabrication notes and tolerances',
-  'Surface treatment requirements',
-  'Erection and installation references'
-];
-
-const connectionTypes = [
-  { name: 'Beam-Column Connections', desc: 'Rigid, pinned and semi-rigid beam-to-column joints with appropriate moment and shear transfer' },
-  { name: 'Column Bases', desc: 'Base plate design, anchor bolt arrangements, leveling and grouting details' },
-  { name: 'Truss Connections', desc: 'Gusset plate connections, chord-to-web member joints and splice details' },
-  { name: 'Splice Joints', desc: 'Column splices, beam splices and field-bolted connection details for transport segmentation' },
-  { name: 'Bracing Connections', desc: 'Cross bracing, portal bracing and lateral force resisting system connections' },
-  { name: 'Crane Brackets', desc: 'Crane runway beam supports, brackets, stiffeners and load transfer details' },
-  { name: 'Equipment Interfaces', desc: 'Equipment support connections, platform interfaces and dynamic load transfer details' },
-  { name: 'Roof & Wall Connections', desc: 'Purlin connections, girt connections, cladding support and opening reinforcement' }
 ];
 
 const faqs = [
@@ -164,177 +112,254 @@ const relatedLinks = [
 
 <BaseLayout title={title} description={description} lang={lang}>
   <!-- Hero -->
-  <section class="hub-hero">
-    <div class="hub-hero-bg" style="background-image: url('/images/company/factory-aerial-panorama.jpg')"></div>
-    <div class="hub-hero-overlay"></div>
-    <div class="container hub-hero-content">
-      <div class="hub-breadcrumb">
-        <a href="/en/">Home</a><span>/</span><span>Engineering & Detailing</span>
-      </div>
-      <p class="eyebrow">ENGINEERING · From Drawings to Fabrication</p>
+  <section class="detail-hero">
+    <div class="detail-hero-bg" style="background-image: url('/images/company/factory-aerial-panorama.jpg');"></div>
+    <div class="detail-hero-overlay"></div>
+    <div class="detail-hero-content">
+      <span class="eyebrow">ENGINEERING · From Drawings to Fabrication</span>
       <h1>Steel Structure Design,<br>Detailing and Engineering Support</h1>
-      <p class="lead">Engineering and detailing support for overseas steel structure projects, including drawing review, structural coordination, shop detailing, connection development and fabrication documentation.</p>
-      <div class="hero-stats">
-        <div class="hero-stat">
-          <span class="stat-number">Drawing Review</span>
-          <span class="stat-label">Architectural & Structural</span>
-        </div>
-        <div class="hero-stat">
-          <span class="stat-number">Shop Detailing</span>
-          <span class="stat-label">Fabrication-Ready Drawings</span>
-        </div>
-        <div class="hero-stat">
-          <span class="stat-number">Connection Dev.</span>
-          <span class="stat-label">Nodes & Joints</span>
-        </div>
-        <div class="hero-stat">
-          <span class="stat-number">Site Support</span>
-          <span class="stat-label">Technical Coordination</span>
-        </div>
-      </div>
-      <div class="hero-cta-group">
+      <p class="lead">Engineering and detailing support for overseas steel structure projects — drawing review, structural coordination, shop detailing, connection development and fabrication documentation, coordinated with manufacturing and export delivery.</p>
+      <div class="detail-hero-actions">
         <a href="#quote" class="btn btn-primary">Send Drawings for Engineering Review</a>
-        <a href="/en/projects/" class="btn btn-secondary">View Project Evidence</a>
+        <a href="/en/projects/" class="btn btn-outline">View Project Evidence</a>
       </div>
     </div>
   </section>
 
-  <!-- 01 Starting Point -->
-  <section class="section" style="padding: 70px 0;">
+  <!-- Hero Evidence Strip -->
+  <section class="detail-section" style="padding-top: 0;">
+    <div class="container">
+      <div class="hero-strip">
+        <span>Drawing Review</span>
+        <span>Structural Coordination</span>
+        <span>Shop Detailing</span>
+        <span>Fabrication Interface</span>
+        <span>Export Delivery</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- Breadcrumb -->
+  <nav class="detail-breadcrumb">
+    <div class="container">
+      <a href="/en/">Home</a>
+      <span class="sep">/</span>
+      <span class="current">Engineering & Detailing</span>
+    </div>
+  </nav>
+
+  <!-- 01 / Starting the Project: What We Need -->
+  <section class="detail-section alt">
     <div class="container">
       <div class="section-heading reveal">
-        <div>
-          <p class="section-index">Starting Point</p>
-          <h2>What Project Information Can We Start From?</h2>
+        <p class="section-index">Project Information</p>
+        <h2>Starting a Steel Structure Project: What Do We Need?</h2>
+        <p>ZhongSai can begin engineering coordination from various levels of project documentation. The more complete the project files, the more accurate the technical review and fabrication plan. If some information is not yet confirmed, submit what you have — the engineering team will confirm what else is needed.</p>
+      </div>
+      <div class="quote-info-grid">
+        <div class="quote-info-card drawing reveal">
+          <h4>With Project Drawings</h4>
+          <ul>
+            <li>Architectural / concept / GA drawings</li>
+            <li>Structural drawings (if available)</li>
+            <li>Design data and load information</li>
+            <li>BOQ / member schedule (if available)</li>
+          </ul>
         </div>
-        <div>
-          <p>ZhongSai can begin engineering coordination from various levels of project documentation. The scope of work differs depending on whether complete structural drawings are available or only architectural concept drawings are provided.</p>
+        <div class="quote-info-card no-drawing reveal reveal-delay-1">
+          <h4>Without Complete Drawings</h4>
+          <ul>
+            <li>Project country / city</li>
+            <li>Building use and function</li>
+            <li>Length / width / height</li>
+            <li>Expected span and crane / equipment conditions</li>
+            <li>Applicable design code (if known)</li>
+            <li>Destination port</li>
+          </ul>
         </div>
       </div>
-      <div class="quality-grid" style="margin-top: 40px;">
-        <div class="quality-item reveal reveal-delay-1">
-          <h4>Architectural Drawings</h4>
-          <p>Building plans, elevations, sections and architectural concept drawings showing layout, dimensions and functional requirements.</p>
-        </div>
-        <div class="quality-item reveal reveal-delay-2">
-          <h4>Structural Drawings</h4>
-          <p>Existing structural drawings, framing plans, member schedules and connection details that can be developed into fabrication drawings.</p>
-        </div>
-        <div class="quality-item reveal reveal-delay-3">
-          <h4>Concept Drawings</h4>
-          <p>Preliminary concept sketches, 3D models or layout proposals that require structural development and engineering coordination.</p>
-        </div>
-        <div class="quality-item reveal reveal-delay-4">
-          <h4>General Arrangement</h4>
-          <p>GA drawings showing overall building layout, column grid, framing arrangement and major dimensional requirements.</p>
-        </div>
-        <div class="quality-item reveal reveal-delay-1">
-          <h4>Equipment Layout</h4>
-          <p>Equipment placement drawings, crane layouts, process flow diagrams and load requirements for industrial projects.</p>
-        </div>
-        <div class="quality-item reveal reveal-delay-2">
-          <h4>Project Dimensions</h4>
-          <p>Building length, width, height, span requirements, eave height and bay spacing specifications.</p>
-        </div>
-        <div class="quality-item reveal reveal-delay-3">
-          <h4>Design Loads</h4>
-          <p>Wind load, snow load, seismic requirements, crane loads, equipment loads and other design criteria.</p>
-        </div>
-        <div class="quality-item reveal reveal-delay-4">
-          <h4>Local Design Code</h4>
-          <p>Applicable building code, design standard, project technical specifications and client requirements.</p>
-        </div>
+      <p class="quote-note reveal">You can inquire without complete drawings. Submit the information you have to start the technical review — the engineering team will confirm what else is needed.</p>
+      <div style="text-align: center; margin-top: 30px;">
+        <a href="#quote" class="btn btn-primary">Submit Current Project Information</a>
       </div>
     </div>
   </section>
 
-  <!-- 02 Engineering Workflow -->
-  <section class="manufacturing-process-section">
+  <!-- 02 / From Project Drawings to Fabrication-Ready Members — Real Engineering Evidence -->
+  <section class="detail-section">
     <div class="container">
-      <div class="section-heading reveal" style="margin-bottom: 40px;">
-        <div>
-          <p class="section-index">Workflow</p>
-          <h2>Engineering and Detailing Workflow</h2>
-        </div>
-        <div>
-          <p>An 8-step engineering process from project information review through fabrication release and site technical support, with quality control at every stage.</p>
-        </div>
+      <div class="section-heading reveal">
+        <p class="section-index">Engineering Evidence</p>
+        <h2>From Project Drawings to Fabrication-Ready Members</h2>
+        <p>ZhongSai\u2019s engineering team develops details in Tekla / BIM models, outputs shop drawings, connection details and fabrication documentation, and coordinates directly with shop cutting, assembly and welding. Samples below have client and project-sensitive information redacted.</p>
       </div>
-      <div class="process-grid">
-        {engineeringSteps.map((step, i) => (
-          <div class={`process-card reveal reveal-delay-${(i % 4) + 1}`}>
-            <div class="process-card-img" style="position: relative; min-height: 180px; overflow: hidden;">
-              <img src={step.image} alt={step.title} style="width: 100%; height: 100%; object-fit: cover; position: absolute; top: 0; left: 0;" width="400" height="200" loading="lazy">
-              <div style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: linear-gradient(135deg, rgba(15,23,42,0.65) 0%, rgba(30,64,175,0.55) 100%);"></div>
-              <div style="position: relative; z-index: 1; display: flex; align-items: center; justify-content: center; min-height: 180px; flex-direction: column; gap: 8px;">
-                <svg width="44" height="44" viewBox="0 0 24 24" fill="none" stroke="rgba(255,255,255,0.95)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
-                  <path d={step.icon} />
-                </svg>
-              </div>
-              <span class="process-card-num" style="position: absolute; top: 12px; left: 12px; z-index: 2;">{step.num}</span>
-            </div>
-            <div class="process-card-body">
-              <h3>{step.title}</h3>
-              <p>{step.desc}</p>
-            </div>
+      <div class="evidence-strip">
+        <figure class="evidence-item reveal">
+          <img src="/images/engineering/tekla-model.jpg" alt="Tekla 3D structural model showing beam, column and truss joint relationships" loading="lazy">
+          <figcaption>Tekla / BIM 3D model · model built per project</figcaption>
+        </figure>
+        <figure class="evidence-item reveal reveal-delay-1">
+          <img src="/images/manufacturing/process/01-drawing-review.jpg" alt="Engineers checking project drawings and fabrication information in the workshop" loading="lazy">
+          <figcaption>Drawing review and fabrication handover</figcaption>
+        </figure>
+        <figure class="evidence-item reveal reveal-delay-2">
+          <img src="/images/engineering/workflow/step-06-drawing-approval.jpg" alt="Drawing confirmation and approval process" loading="lazy">
+          <figcaption>Drawing confirmation and approval before fabrication</figcaption>
+        </figure>
+      </div>
+      <p class="params-note reveal"><strong>Scope note:</strong> ZhongSai provides structural engineering support, detailing and fabrication documentation within the agreed project scope. Structural design responsibility is determined by the project contract, approved drawings and applicable professional requirements; local approvals and professional engineer stamping remain the responsibility of the project owner or their appointed local licensed engineer.</p>
+    </div>
+  </section>
+
+  <!-- 03 / Engineering and Detailing Workflow -->
+  <section class="detail-section alt">
+    <div class="container">
+      <div class="section-heading reveal">
+        <p class="section-index">Workflow</p>
+        <h2>Engineering and Detailing Workflow</h2>
+        <p>From project information review through fabrication release and site technical support, every stage includes quality control and review gates to ensure accurate, fabricable drawings that coordinate with site conditions.</p>
+      </div>
+      <div class="eng-flow">
+        {engSteps.map((step, i) => (
+          <div class={`process-step reveal reveal-delay-${(i % 3) + 1}`}>
+            <div class="step-num">{step.num}</div>
+            <h4>{step.title}</h4>
+            <p>{step.desc}</p>
           </div>
         ))}
       </div>
     </div>
   </section>
 
-  <!-- 03 Design Criteria -->
-  <section class="section" style="padding: 70px 0; background: #f8fafc;">
+  <!-- 04 / Engineering Inputs and Design Criteria -->
+  <section class="detail-section">
     <div class="container">
       <div class="section-heading reveal">
-        <div>
-          <p class="section-index">Design Inputs</p>
-          <h2>Design Criteria and Project Inputs</h2>
-        </div>
-        <div>
-          <p>Structural design and detailing are based on project-specific design criteria. These inputs are confirmed at the beginning of the project and guide all engineering decisions.</p>
-        </div>
+        <p class="section-index">Design Inputs</p>
+        <h2>Engineering Inputs and Design Criteria</h2>
+        <p>Structural design and detailing are based on project-specific design conditions confirmed at project start. Actual values, load combinations and safety factors are determined by project drawings, approved technical specifications and applicable local design codes.</p>
       </div>
-      <div style="display: grid; grid-template-columns: repeat(5, 1fr); gap: 16px; margin-top: 40px;" class="design-inputs-grid">
-        {designInputs.map((input, i) => (
-          <div class={`reveal reveal-delay-${(i % 4) + 1}`} style="padding: 20px; background: white; border-radius: 10px; border: 1px solid #e2e8f0;">
-            <h4 style="font-size: 14px; font-weight: 600; color: #1e3a5f; margin-bottom: 8px;">{input.name}</h4>
-            <p style="font-size: 12px; color: #64748b; line-height: 1.6; margin: 0;">{input.desc}</p>
-          </div>
-        ))}
+      <div class="params-table-wrapper reveal">
+        <table class="params-table">
+          <thead>
+            <tr>
+              <th>Project Condition</th>
+              <th>What We Need to Confirm</th>
+            </tr>
+          </thead>
+          <tbody>
+            {designInputs.map(row => (
+              <tr>
+                <td>{row.name}</td>
+                <td>{row.desc}</td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
       </div>
-      <div style="margin-top: 24px; padding: 20px; background: #fffbeb; border-left: 4px solid #f59e0b; border-radius: 0 8px 8px 0;" class="reveal">
-        <p style="margin: 0; color: #92400e; font-size: 13px; line-height: 1.7;"><strong>Note:</strong> Design parameters are not standardized across all projects. Wind loads, snow loads, seismic requirements and other criteria vary by project location and applicable code. All design inputs are confirmed per project based on client-provided information and local regulatory requirements.</p>
+      <p class="params-note reveal">These are general confirmation items. Wind, snow, seismic and other conditions vary by project location and applicable code; all design inputs are confirmed per project based on client-provided information and local regulatory requirements.</p>
+    </div>
+  </section>
+
+  <!-- 05 / Design & Detailing Deliverables -->
+  <section class="detail-section alt">
+    <div class="container">
+      <div class="section-heading reveal">
+        <p class="section-index">Deliverables</p>
+        <h2>Design & Detailing Deliverables</h2>
+        <p>From structural scheme to shop drawings, connection details and erection drawings, ZhongSai\u2019s engineering team delivers complete documentation at each project stage, coordinated directly with factory fabrication.</p>
+      </div>
+      <div class="media-gallery media-gallery--feature3">
+        <figure class="media-tile reveal">
+          <img src="/images/engineering/workflow/step-05-shop-detailing.jpg" alt="Detailing engineers developing member shop drawings" loading="lazy">
+          <figcaption>Shop drawing and member detail development</figcaption>
+        </figure>
+        <figure class="media-tile reveal reveal-delay-1">
+          <img src="/images/engineering/workflow/step-04-connection-development.jpg" alt="Connection node detailing sample" loading="lazy">
+          <figcaption>Connection node detailing</figcaption>
+        </figure>
+        <figure class="media-tile reveal reveal-delay-2">
+          <img src="/images/blog/overhead-crane-workshop-design/crane-column-detail.jpg" alt="Crane runway beam and column connection detail" loading="lazy">
+          <figcaption>Crane runway system details</figcaption>
+        </figure>
+      </div>
+      <div class="deliverables-two-col">
+        <div class="reveal">
+          <h3 class="col-title">Drawing Deliverables</h3>
+          <ul class="check-list">
+            {deliverables.map(item => (
+              <li><strong>{item.name}</strong> — {item.desc}</li>
+            ))}
+          </ul>
+        </div>
+        <div class="reveal reveal-delay-1">
+          <h3 class="col-title">Node Detailing Types</h3>
+          <ul class="check-list">
+            {nodeTypes.map(item => (
+              <li>{item}</li>
+            ))}
+          </ul>
+        </div>
       </div>
     </div>
   </section>
 
-  <!-- 04 Design Standards -->
-  <section class="section" style="padding: 70px 0;">
+  <!-- 06 / Design for Manufacturing & Export Shipping -->
+  <section class="detail-section">
     <div class="container">
       <div class="section-heading reveal">
-        <div>
-          <p class="section-index">Standards</p>
-          <h2>Design Standards</h2>
-        </div>
-        <div>
-          <p>Project design and detailing can be coordinated according to the applicable code specified for the project, subject to technical review. We do not claim universal compliance with all international standards.</p>
-        </div>
+        <p class="section-index">Fabrication & Export</p>
+        <h2>Design for Manufacturing and Export Shipping</h2>
+        <p>Engineering is not separated from manufacturing or shipping. ZhongSai coordinates design and detailing with fabrication capabilities and plans segmentation, numbering, packing and container loading to support export delivery and site assembly.</p>
       </div>
-      <div style="display: grid; grid-template-columns: repeat(5, 1fr); gap: 20px; margin-top: 40px;" class="standards-grid">
-        {designStandards.map((std, i) => (
-          <div class={`reveal reveal-delay-${(i % 4) + 1}`} style="padding: 28px 24px; background: white; border-radius: 12px; border: 1px solid #e2e8f0; text-align: center;">
-            <div style="width: 56px; height: 56px; margin: 0 auto 16px; background: #eff6ff; border-radius: 50%; display: flex; align-items: center; justify-content: center;">
-              <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#1e40af" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                <path d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
-              </svg>
-            </div>
-            <h4 style="font-size: 16px; font-weight: 600; color: #0f172a; margin-bottom: 8px;">{std.code}</h4>
-            <p style="font-size: 13px; color: #64748b; line-height: 1.6; margin: 0;">{std.desc}</p>
+      <div class="mf-points">
+        {mfPoints.map((point, i) => (
+          <div class={`mf-point reveal reveal-delay-${(i % 4) + 1}`}>
+            <h4>{point.name}</h4>
+            <p>{point.desc}</p>
           </div>
         ))}
       </div>
-      <div style="margin-top: 28px; padding: 20px 24px; background: #eff6ff; border: 1px solid #bfdbfe; border-radius: 12px; display: flex; gap: 16px; align-items: flex-start;" class="reveal">
+      <div class="export-chain">
+        {exportSteps.map((step, i) => (
+          <>
+            {i > 0 && <span class="chain-arrow reveal">→</span>}
+            <span class="chain-step reveal"><span class="chain-num">0{i + 1}</span>{step}</span>
+          </>
+        ))}
+      </div>
+      <div class="evidence-strip">
+        <figure class="evidence-item reveal">
+          <img src="/images/blog/packing-loading-steel-export/loading.jpg" alt="Forklift loading bundled steel members into a container" loading="lazy">
+          <figcaption>Member packing and container loading</figcaption>
+        </figure>
+        <figure class="evidence-item reveal reveal-delay-1">
+          <img src="/images/blog/packing-loading-steel-export/packing.jpg" alt="Labelled boxes of bolted connection components" loading="lazy">
+          <figcaption>Connection and hardware packed by label</figcaption>
+        </figure>
+        <figure class="evidence-item reveal reveal-delay-2">
+          <img src="/images/projects/site-erection.jpg" alt="Mobile crane erecting steel structure members on site" loading="lazy">
+          <figcaption>Site erection and installation coordination</figcaption>
+        </figure>
+      </div>
+      <p class="params-note reveal"><strong>Responsibility boundary:</strong> ZhongSai provides installation technical guidance and engineering coordination, including component numbering, assembly instructions and remote technical support where needed; local construction is normally carried out by local contractors.</p>
+    </div>
+  </section>
+
+  <!-- 07 / Design Standards & Compliance -->
+  <section class="detail-section alt">
+    <div class="container">
+      <div class="section-heading reveal">
+        <p class="section-index">Design Standards</p>
+        <h2>Design Standards & Compliance</h2>
+        <p>Project design and detailing can be coordinated according to the applicable code specified for the project, subject to technical review. We do not claim compliance with all international standards universally.</p>
+      </div>
+      <div class="standards-tags reveal">
+        {standards.map(std => (
+          <span class="std-tag"><strong>{std.code}</strong>{std.desc}</span>
+        ))}
+      </div>
+      <div style="margin-top: 28px; padding: 20px 24px; background: #eff6ff; border: 1px solid #bfdbfe; border-radius: 2px; display: flex; gap: 16px; align-items: flex-start;" class="reveal">
         <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#1e40af" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="flex-shrink: 0; margin-top: 2px;"><path d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" /></svg>
         <div>
           <strong style="color: #1e40af; font-size: 15px; display: block; margin-bottom: 4px;">Malaysia CIDB IBS Certification Coordination</strong>
@@ -344,246 +369,35 @@ const relatedLinks = [
     </div>
   </section>
 
-  <!-- 05 Shop Drawings -->
-  <section class="section" style="padding: 70px 0; background: #f8fafc;">
+  <!-- 08 / Responsibility Boundary & Local Compliance -->
+  <section class="detail-section">
     <div class="container">
       <div class="section-heading reveal">
-        <div>
-          <p class="section-index">Shop Drawings</p>
-          <h2>Shop Drawings for Fabrication</h2>
-        </div>
-        <div>
-          <p>Shop drawings are the direct link between engineering and manufacturing. They contain all information required for fabrication, assembly and site installation.</p>
-        </div>
+        <p class="section-index">Responsibility</p>
+        <h2>Engineering Responsibility and Local Compliance</h2>
+        <p>Clear definition of engineering responsibilities is essential for overseas projects. ZhongSai provides engineering support within the agreed project scope, while local regulatory responsibilities remain with the appropriate local parties.</p>
       </div>
-      <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 48px; align-items: start; margin-top: 40px;" class="shop-drawings-grid">
+      <div class="coord-grid">
+        <div class="reveal">
+          <h4>Owner / Investor</h4>
+          <p>Help clarify project technical requirements, coordinate drawings and quotation documentation, and support project planning and feasibility assessment.</p>
+        </div>
         <div class="reveal reveal-delay-1">
-          <h3 style="font-size: 22px; margin-bottom: 20px; color: #0f172a;">Shop Drawing Contents</h3>
-          <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 12px;">
-            {shopDrawingContents.map((item, i) => (
-              <div key={i} style="display: flex; align-items: flex-start; gap: 10px; padding: 12px; background: white; border-radius: 8px; border: 1px solid #e2e8f0;">
-                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#1e40af" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="flex-shrink: 0; margin-top: 2px;">
-                  <path d="M5 13l4 4L19 7" />
-                </svg>
-                <span style="font-size: 13px; color: #334155; line-height: 1.5;">{item}</span>
-              </div>
-            ))}
-          </div>
+          <h4>Engineering Company / Contractor</h4>
+          <p>Detail from existing structural drawings, coordinate connection details and interfaces, produce fabrication-ready shop drawings and resolve technical issues during fabrication and erection.</p>
         </div>
         <div class="reveal reveal-delay-2">
-          <div style="position: relative; border-radius: 12px; overflow: hidden; margin-bottom: 24px; box-shadow: 0 4px 12px rgba(0,0,0,0.1);">
-            <img src="/images/manufacturing/real/factory-overview-9819.jpg" alt="Steel structure fabrication based on approved shop drawings" style="width: 100%; height: auto; display: block;" width="500" height="300">
-          </div>
-          <div style="padding: 24px; background: #eff6ff; border-radius: 12px; border: 1px solid #bfdbfe;">
-            <h4 style="font-size: 17px; color: #1e40af; margin-bottom: 12px;">Fabrication-Ready Documentation</h4>
-            <p style="font-size: 14px; color: #1e3a5f; line-height: 1.7; margin: 0;">Shop drawings are coordinated directly with the manufacturing team to ensure they contain all information required for production. Drawings are reviewed internally and approved by the client/engineer before fabrication release, ensuring accuracy and constructability.</p>
-          </div>
+          <h4>Local Engineer</h4>
+          <p>Coordinate per local code and project requirements, provide fabrication-required documentation and support drawing review and approval. ZhongSai does not replace local licensed engineer responsibilities.</p>
         </div>
       </div>
-    </div>
-  </section>
-
-  <!-- 06 Connection Detailing -->
-  <section class="section" style="padding: 70px 0;">
-    <div class="container">
-      <div class="section-heading reveal">
-        <div>
-          <p class="section-index">Connections</p>
-          <h2>Connection and Node Detailing</h2>
-        </div>
-        <div>
-          <p>Connection detailing is critical for structural performance, fabrication efficiency and site assembly. All connections are developed based on structural analysis and approved drawings.</p>
-        </div>
-      </div>
-      <div class="quality-grid" style="margin-top: 40px;">
-        {connectionTypes.map((conn, i) => (
-          <div class={`quality-item reveal reveal-delay-${(i % 4) + 1}`}>
-            <h4>{conn.name}</h4>
-            <p>{conn.desc}</p>
-          </div>
-        ))}
-      </div>
-    </div>
-  </section>
-
-  <!-- 07 Design for Manufacturing -->
-  <section class="section" style="padding: 70px 0; background: #f8fafc;">
-    <div class="container">
-      <div class="section-heading reveal">
-        <div>
-          <p class="section-index">DFM</p>
-          <h2>Design for Manufacturing</h2>
-        </div>
-        <div>
-          <p>Engineering is not separated from manufacturing. ZhongSai coordinates design and detailing with fabrication capabilities to ensure components can be efficiently produced, assembled and quality-controlled.</p>
-        </div>
-      </div>
-      <div style="display: grid; grid-template-columns: repeat(4, 1fr); gap: 20px; margin-top: 40px;" class="dfm-grid">
-        <div class="reveal reveal-delay-1" style="padding: 28px 24px; background: white; border-radius: 12px; border: 1px solid #e2e8f0;">
-          <div style="width: 44px; height: 44px; background: #eff6ff; border-radius: 8px; display: flex; align-items: center; justify-content: center; margin-bottom: 16px;">
-            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#1e40af" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-              <path d="M14.7 6.3a1 1 0 000 1.4l1.6 1.6a1 1 0 001.4 0l3.77-3.77a6 6 0 01-7.94 7.94l-6.91 6.91a2.12 2.12 0 01-3-3l6.91-6.91a6 6 0 017.94-7.94l-3.76 3.76z" />
-            </svg>
-          </div>
-          <h3 style="font-size: 17px; margin-bottom: 10px; color: #0f172a;">Fabricability</h3>
-          <p style="font-size: 13px; color: #64748b; line-height: 1.7; margin: 0;">Connections and member details are developed to be producible with available manufacturing equipment and processes.</p>
-        </div>
-        <div class="reveal reveal-delay-2" style="padding: 28px 24px; background: white; border-radius: 12px; border: 1px solid #e2e8f0;">
-          <div style="width: 44px; height: 44px; background: #eff6ff; border-radius: 8px; display: flex; align-items: center; justify-content: center; margin-bottom: 16px;">
-            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#1e40af" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-              <path d="M13 10V3L4 14h7v7l9-11h-7z" />
-            </svg>
-          </div>
-          <h3 style="font-size: 17px; margin-bottom: 10px; color: #0f172a;">Welding Access</h3>
-          <p style="font-size: 13px; color: #64748b; line-height: 1.7; margin: 0;">Connection configurations are reviewed to ensure adequate welding access and quality control during fabrication.</p>
-        </div>
-        <div class="reveal reveal-delay-3" style="padding: 28px 24px; background: white; border-radius: 12px; border: 1px solid #e2e8f0;">
-          <div style="width: 44px; height: 44px; background: #eff6ff; border-radius: 8px; display: flex; align-items: center; justify-content: center; margin-bottom: 16px;">
-            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#1e40af" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-              <path d="M4 8V4m0 0h4M4 4l5 5m11-1V4m0 0h-4m4 0l-5 5M4 16v4m0 0h4m-4 0l5-5m11 5l-5-5m5 5v-4m0 4h-4" />
-            </svg>
-          </div>
-          <h3 style="font-size: 17px; margin-bottom: 10px; color: #0f172a;">Plate Optimization</h3>
-          <p style="font-size: 13px; color: #64748b; line-height: 1.7; margin: 0;">Member and plate sizes are coordinated with standard material dimensions to optimize material utilization and reduce waste.</p>
-        </div>
-        <div class="reveal reveal-delay-4" style="padding: 28px 24px; background: white; border-radius: 12px; border: 1px solid #e2e8f0;">
-          <div style="width: 44px; height: 44px; background: #eff6ff; border-radius: 8px; display: flex; align-items: center; justify-content: center; margin-bottom: 16px;">
-            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#1e40af" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-              <path d="M8 7h12m0 0l-4-4m4 4l-4 4m0 6H4m0 0l4 4m-4-4l4-4" />
-            </svg>
-          </div>
-          <h3 style="font-size: 17px; margin-bottom: 10px; color: #0f172a;">Member Segmentation</h3>
-          <p style="font-size: 13px; color: #64748b; line-height: 1.7; margin: 0;">Long members are segmented at appropriate locations with bolted splices to facilitate transport and site assembly.</p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- 08 Design for Shipping & Site Assembly -->
-  <section class="dual-path-section">
-    <div class="container">
-      <div class="section-heading reveal" style="color: white; text-align: center; display: block; margin-bottom: 36px;">
-        <p class="section-index" style="color: #f59e0b;">Export Design</p>
-        <h2 style="color: white; margin-bottom: 10px;">Design for Export Shipping and Site Assembly</h2>
-        <p style="color: rgba(255,255,255,0.65); max-width: 750px; margin: 0 auto;">For overseas projects, engineering coordination extends beyond fabrication to include container shipping optimization, component numbering and site erection sequence planning.</p>
-      </div>
-      <div class="dual-path-grid" style="grid-template-columns: repeat(3, 1fr); gap: 20px;">
-        <div class="dual-path-card reveal reveal-delay-1" style="padding: 28px 24px;">
-          <div class="path-icon" style="width: 44px; height: 44px; font-size: 15px; font-weight: 700; color:#fff; margin-bottom: 14px;">01</div>
-          <h3 style="font-size: 18px; margin-bottom: 8px;">Container Size Constraints</h3>
-          <p style="font-size: 14px; margin-bottom: 0;">Member lengths and connection locations are coordinated to fit standard container dimensions (40GP, 40HQ, 45HQ) where applicable.</p>
-        </div>
-        <div class="dual-path-card reveal reveal-delay-2" style="padding: 28px 24px;">
-          <div class="path-icon" style="width: 44px; height: 44px; font-size: 15px; font-weight: 700; color:#fff; margin-bottom: 14px;">02</div>
-          <h3 style="font-size: 18px; margin-bottom: 8px;">Long Member Segmentation</h3>
-          <p style="font-size: 14px; margin-bottom: 0;">Members exceeding container length are segmented with bolted splice joints at structurally appropriate locations for transport and field assembly.</p>
-        </div>
-        <div class="dual-path-card reveal reveal-delay-3" style="padding: 28px 24px;">
-          <div class="path-icon" style="width: 44px; height: 44px; font-size: 15px; font-weight: 700; color:#fff; margin-bottom: 14px;">03</div>
-          <h3 style="font-size: 18px; margin-bottom: 8px;">Bolt Splice Locations</h3>
-          <p style="font-size: 14px; margin-bottom: 0;">Splice locations are selected to avoid high-moment regions and facilitate site bolting, with connection details coordinated for field access.</p>
-        </div>
-        <div class="dual-path-card reveal reveal-delay-1" style="padding: 28px 24px;">
-          <div class="path-icon" style="width: 44px; height: 44px; font-size: 15px; font-weight: 700; color:#fff; margin-bottom: 14px;">04</div>
-          <h3 style="font-size: 18px; margin-bottom: 8px;">Component Numbering</h3>
-          <p style="font-size: 14px; margin-bottom: 0;">Each component is numbered to correspond with shop drawings, packing lists and erection sequence, reducing site identification errors.</p>
-        </div>
-        <div class="dual-path-card reveal reveal-delay-2" style="padding: 28px 24px;">
-          <div class="path-icon" style="width: 44px; height: 44px; font-size: 15px; font-weight: 700; color:#fff; margin-bottom: 14px;">05</div>
-          <h3 style="font-size: 18px; margin-bottom: 8px;">Packing Sequence</h3>
-          <p style="font-size: 14px; margin-bottom: 0;">Components are grouped and packed in coordination with erection sequence, allowing site teams to unload and install in logical order.</p>
-        </div>
-        <div class="dual-path-card reveal reveal-delay-3" style="padding: 28px 24px;">
-          <div class="path-icon" style="width: 44px; height: 44px; font-size: 15px; font-weight: 700; color:#fff; margin-bottom: 14px;">06</div>
-          <h3 style="font-size: 18px; margin-bottom: 8px;">Site Erection Sequence</h3>
-          <p style="font-size: 14px; margin-bottom: 0;">Drawing packages include erection sequence references and installation guidance to support organized site assembly by local contractors.</p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- 09 Technical Coordination -->
-  <section class="section" style="padding: 70px 0;">
-    <div class="container">
-      <div class="section-heading reveal">
-        <div>
-          <p class="section-index">Coordination</p>
-          <h2>Coordination with Owners, Contractors and Local Engineers</h2>
-        </div>
-        <div>
-          <p>ZhongSai coordinates engineering work with different project stakeholders, providing the appropriate level of support based on each party\'s role and requirements.</p>
-        </div>
-      </div>
-      <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; margin-top: 40px;" class="coordination-grid">
-        <div class="reveal reveal-delay-1" style="padding: 32px 28px; background: white; border-radius: 12px; border: 1px solid #e2e8f0;">
-          <div style="width: 48px; height: 48px; background: #eff6ff; border-radius: 10px; display: flex; align-items: center; justify-content: center; margin-bottom: 16px;">
-            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#1e40af" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-              <path d="M16 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2" />
-              <circle cx="8.5" cy="7" r="4" />
-              <path d="M20 8v6M23 11h-6" />
-            </svg>
-          </div>
-          <h3 style="font-size: 19px; margin-bottom: 12px; color: #0f172a;">Owner / Investor</h3>
-          <ul style="margin: 0; padding-left: 18px; color: #475569; font-size: 14px; line-height: 2;">
-            <li>Help clarify project technical requirements</li>
-            <li>Coordinate drawings and quotation documentation</li>
-            <li>Provide structural scheme options and recommendations</li>
-            <li>Support project planning and feasibility assessment</li>
-          </ul>
-        </div>
-        <div class="reveal reveal-delay-2" style="padding: 32px 28px; background: white; border-radius: 12px; border: 1px solid #e2e8f0;">
-          <div style="width: 48px; height: 48px; background: #eff6ff; border-radius: 10px; display: flex; align-items: center; justify-content: center; margin-bottom: 16px;">
-            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#1e40af" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-              <path d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4" />
-            </svg>
-          </div>
-          <h3 style="font-size: 19px; margin-bottom: 12px; color: #0f172a;">Engineering Company / Contractor</h3>
-          <ul style="margin: 0; padding-left: 18px; color: #475569; font-size: 14px; line-height: 2;">
-            <li>Detail from existing structural drawings</li>
-            <li>Coordinate connection details and interfaces</li>
-            <li>Produce fabrication-ready shop drawings</li>
-            <li>Resolve technical issues during fabrication and erection</li>
-          </ul>
-        </div>
-        <div class="reveal reveal-delay-3" style="padding: 32px 28px; background: white; border-radius: 12px; border: 1px solid #e2e8f0;">
-          <div style="width: 48px; height: 48px; background: #eff6ff; border-radius: 10px; display: flex; align-items: center; justify-content: center; margin-bottom: 16px;">
-            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#1e40af" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-              <path d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
-            </svg>
-          </div>
-          <h3 style="font-size: 19px; margin-bottom: 12px; color: #0f172a;">Local Engineer</h3>
-          <ul style="margin: 0; padding-left: 18px; color: #475569; font-size: 14px; line-height: 2;">
-            <li>Coordinate per local code and project requirements</li>
-            <li>Provide fabrication-required technical documentation</li>
-            <li>Support drawing review and approval process</li>
-            <li>Do not replace local licensed engineer responsibilities</li>
-          </ul>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- 10 Service Boundary -->
-  <section class="section" style="padding: 70px 0; background: #f8fafc;">
-    <div class="container">
-      <div class="section-heading reveal">
-        <div>
-          <p class="section-index">Responsibility</p>
-          <h2>Engineering Responsibility and Local Compliance</h2>
-        </div>
-        <div>
-          <p>Clear definition of engineering responsibilities is essential for overseas projects. ZhongSai provides engineering support within the agreed project scope, while local regulatory responsibilities remain with the appropriate local parties.</p>
-        </div>
-      </div>
-      <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 32px; margin-top: 40px;" class="boundary-grid">
-        <div class="reveal reveal-delay-1" style="padding: 32px; background: #ecfdf5; border-radius: 12px; border: 1px solid #a7f3d0;">
-          <h3 style="font-size: 19px; color: #065f46; margin-bottom: 16px; display: flex; align-items: center; gap: 10px;">
-            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#059669" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-              <path d="M5 13l4 4L19 7" />
-            </svg>
+      <div class="boundary-grid">
+        <div class="reveal" style="padding: 28px 30px; background: #ecfdf5; border: 1px solid #a7f3d0;">
+          <h3 style="font-size: 17px; color: #065f46; margin: 0 0 14px; display: flex; align-items: center; gap: 10px;">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#059669" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 13l4 4L19 7" /></svg>
             ZhongSai Provides
           </h3>
-          <ul style="margin: 0; padding-left: 20px; color: #065f46; font-size: 14px; line-height: 2;">
+          <ul style="margin: 0; padding-left: 20px; color: #065f46; font-size: 13.5px; line-height: 2;">
             <li>Structural engineering support and coordination</li>
             <li>Drawing review and structural coordination</li>
             <li>Shop detailing and fabrication documentation</li>
@@ -593,16 +407,12 @@ const relatedLinks = [
             <li>Coordination with project-specified design codes</li>
           </ul>
         </div>
-        <div class="reveal reveal-delay-2" style="padding: 32px; background: #fef2f2; border-radius: 12px; border: 1px solid #fecaca;">
-          <h3 style="font-size: 19px; color: #991b1b; margin-bottom: 16px; display: flex; align-items: center; gap: 10px;">
-            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#dc2626" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-              <circle cx="12" cy="12" r="10" />
-              <line x1="12" y1="8" x2="12" y2="12" />
-              <line x1="12" y1="16" x2="12.01" y2="16" />
-            </svg>
+        <div class="reveal reveal-delay-1" style="padding: 28px 30px; background: #fef2f2; border: 1px solid #fecaca;">
+          <h3 style="font-size: 17px; color: #991b1b; margin: 0 0 14px; display: flex; align-items: center; gap: 10px;">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#dc2626" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10" /><line x1="12" y1="8" x2="12" y2="12" /><line x1="12" y1="16" x2="12.01" y2="16" /></svg>
             Remains Local Responsibility
           </h3>
-          <ul style="margin: 0; padding-left: 20px; color: #991b1b; font-size: 14px; line-height: 2;">
+          <ul style="margin: 0; padding-left: 20px; color: #991b1b; font-size: 13.5px; line-height: 2;">
             <li>Local permitting and statutory approval</li>
             <li>Professional engineer stamping where required</li>
             <li>Local licensed engineer design responsibility</li>
@@ -613,109 +423,36 @@ const relatedLinks = [
           </ul>
         </div>
       </div>
-      <div style="margin-top: 24px; padding: 20px; background: #fffbeb; border-left: 4px solid #f59e0b; border-radius: 0 8px 8px 0;" class="reveal">
-        <p style="margin: 0; color: #92400e; font-size: 14px; line-height: 1.7;"><strong>Important:</strong> ZhongSai provides structural engineering support, detailing and fabrication documentation within the agreed project scope. Local permitting, statutory approval and professional engineer stamping, where required, remain subject to local regulations and project responsibilities. The specific allocation of engineering responsibilities is confirmed per project contract and local regulatory requirements.</p>
+      <div style="margin-top: 24px; padding: 18px 20px; background: #fffbeb; border-left: 4px solid #f59e0b; border-radius: 0 8px 8px 0;" class="reveal">
+        <p style="margin: 0; color: #92400e; font-size: 13.5px; line-height: 1.7;"><strong>Important:</strong> ZhongSai provides structural engineering support, detailing and fabrication documentation within the agreed project scope. Local permitting, statutory approval and professional engineer stamping, where required, remain subject to local regulations and project responsibilities. The specific allocation of engineering responsibilities is confirmed per project contract and local regulatory requirements.</p>
       </div>
     </div>
   </section>
 
-  <!-- 11 Information Required -->
-  <section class="section" style="padding: 70px 0;">
+  <!-- 09 / Related Capabilities & Project Evidence -->
+  <section class="detail-section alt">
     <div class="container">
       <div class="section-heading reveal">
-        <div>
-          <p class="section-index">Submit</p>
-          <h2>Information Required for Engineering Review</h2>
-        </div>
-        <div>
-          <p>Providing complete project information at the beginning helps ensure accurate engineering review, efficient detailing and reliable quotation. The more complete the information, the more precise the engineering scope and pricing.</p>
-        </div>
+        <p class="section-index">Related Capabilities</p>
+        <h2>Related Capabilities and Project Evidence</h2>
+        <p>Engineering and detailing work is closely integrated with manufacturing, quality control, project delivery and specific product types.</p>
       </div>
-      <div style="display: grid; grid-template-columns: repeat(4, 1fr); gap: 16px; margin-top: 40px;" class="info-grid">
-        {[
-          'Project country / city',
-          'Building use and function',
-          'Architectural drawings',
-          'Structural drawings (if available)',
-          'Building dimensions (L×W×H)',
-          'Design loads (wind/snow/seismic)',
-          'Crane / equipment requirements',
-          'Applicable design code',
-          'Material requirements',
-          'Delivery schedule'
-        ].map((item, i) => (
-          <div key={i} class={`reveal reveal-delay-${(i % 4) + 1}`} style="padding: 16px; background: #f8fafc; border-radius: 8px; border: 1px solid #e2e8f0; display: flex; align-items: center; gap: 10px;">
-            <span style="width: 24px; height: 24px; background: #1e40af; color: white; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 11px; font-weight: 600; flex-shrink: 0;">{i + 1}</span>
-            <span style="font-size: 13px; color: #334155; line-height: 1.4;">{item}</span>
-          </div>
-        ))}
-      </div>
-    </div>
-  </section>
-
-  <!-- 12 Related Links -->
-  <section class="section" style="padding: 70px 0; background: #f8fafc;">
-    <div class="container">
-      <div class="section-heading reveal">
-        <div>
-          <p class="section-index">Related</p>
-          <h2>Related Capabilities and Project Evidence</h2>
-        </div>
-        <div>
-          <p>Engineering and detailing work is closely integrated with manufacturing, quality control, project delivery and specific product types.</p>
-        </div>
-      </div>
-      <div class="related-grid" style="margin-top: 40px;">
+      <div class="related-links related-4col">
         {relatedLinks.map((link, i) => (
-          <a href={link.href} class={`related-card reveal reveal-delay-${(i % 4) + 1}`}>
+          <a href={link.href} class={`related-link-card reveal reveal-delay-${(i % 4) + 1}`}>
             <h4>{link.name}</h4>
             <p>{link.desc}</p>
-            <span class="related-cta">Learn More →</span>
+            <span class="rl-arrow">Learn More →</span>
           </a>
         ))}
       </div>
-    </div>
-  </section>
-
-  <!-- 13 FAQ -->
-  <section class="section" style="padding: 70px 0;">
-    <div class="container">
-      <div class="section-heading reveal">
-        <div>
-          <p class="section-index">FAQ</p>
-          <h2>Frequently Asked Questions</h2>
-        </div>
-        <div>
-          <p>Common questions about ZhongSai engineering, design and detailing services for overseas steel structure projects.</p>
-        </div>
-      </div>
-      <div style="max-width: 900px; margin: 40px auto 0;" class="faq-container">
-        {faqs.map((faq, i) => (
-          <details class={`reveal reveal-delay-${(i % 4) + 1}`} style="margin-bottom: 12px; background: white; border: 1px solid #e2e8f0; border-radius: 10px; overflow: hidden;">
-            <summary style="padding: 18px 24px; cursor: pointer; font-weight: 600; color: #0f172a; font-size: 15px; list-style: none; display: flex; justify-content: space-between; align-items: center;">
-              <span>{faq.q}</span>
-              <span style="color: #1e40af; font-size: 20px; flex-shrink: 0; margin-left: 16px;">+</span>
-            </summary>
-            <div style="padding: 0 24px 20px; color: #475569; font-size: 14px; line-height: 1.8;">
-              {faq.a}
-            </div>
-          </details>
-        ))}
-      </div>
-    </div>
-  </section>
-
-  <!-- 14 Quote CTA -->
-  
-  <!-- Related Projects -->
-  <section class="related-projects-section">
-    <div class="container container-xwide">
-      <div class="rp-heading">
+      <div class="section-heading reveal" style="margin-top: 56px;">
+        <p class="section-index">Real Projects</p>
         <h2>Real Projects with Detailing Support</h2>
         <p>The following projects include structural detailing, connection development and fabrication documentation from ZhongSai's engineering team.</p>
       </div>
       <div class="rp-grid">
-        <a href="/en/projects/macau-city-of-dreams-phase2/" class="related-project-card">
+        <a href="/en/projects/macau-city-of-dreams-phase2/" class="related-project-card reveal">
           <div class="rpc-image">
             <img src="/images/projects/overseas/macau-city-of-dreams.jpg" alt="Macau City of Dreams Phase 2" loading="lazy">
           </div>
@@ -727,7 +464,7 @@ const relatedLinks = [
             <p class="rpc-scope"><span>ZhongSai Scope:</span> Detailing, Fabrication & Supply</p>
           </div>
         </a>
-        <a href="/en/projects/singapore-j102-mrt-station/" class="related-project-card">
+        <a href="/en/projects/singapore-j102-mrt-station/" class="related-project-card reveal reveal-delay-1">
           <div class="rpc-image">
             <img src="/images/projects/overseas/singapore-cr101-depot.jpg" alt="Singapore LTA J102 MRT Station" loading="lazy">
           </div>
@@ -739,7 +476,7 @@ const relatedLinks = [
             <p class="rpc-scope"><span>ZhongSai Scope:</span> Detailing, Fabrication & Export Supply</p>
           </div>
         </a>
-        <a href="/en/projects/macau-londoner/" class="related-project-card">
+        <a href="/en/projects/macau-londoner/" class="related-project-card reveal reveal-delay-2">
           <div class="rpc-image">
             <img src="/images/projects/overseas/macau-londoner.jpg" alt="Macau Londoner" loading="lazy">
           </div>
@@ -752,212 +489,419 @@ const relatedLinks = [
           </div>
         </a>
       </div>
-      <div class="rp-more">
-        <a href="/en/projects/" class="btn btn-outline">View All Projects →</a>
-      </div>
     </div>
   </section>
 
-  <!-- Engineering Deliverables — real evidence -->
-  <section class="section" style="padding: 70px 0; background: #f8fafc;">
+  <!-- 10 / FAQ -->
+  <section class="detail-section">
     <div class="container">
       <div class="section-heading reveal">
-        <div>
-          <p class="section-index">Deliverables</p>
-          <h2>Engineering Deliverable Samples</h2>
-        </div>
-        <div>
-          <p>From structural scheme to shop drawings, connection details and erection drawings, ZhongSai engineering team delivers complete documentation at each project stage. Samples below have client and project-sensitive information redacted for confidentiality.</p>
-        </div>
+        <p class="section-index">FAQ</p>
+        <h2>Frequently Asked Questions</h2>
+        <p>Common questions about ZhongSai engineering, design and detailing services for overseas steel structure projects.</p>
       </div>
-      <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; margin-top: 40px;" class="deliverables-grid">
-        <div class="reveal reveal-delay-1">
-          <div style="background: #0f172a; border-radius: 4px; overflow: hidden; aspect-ratio: 4/3;">
-            <img src="/images/engineering/tekla-model.jpg" alt="Tekla 3D structural model sample" loading="lazy" style="width: 100%; height: 100%; object-fit: cover; display: block;">
+      <div class="detail-faq">
+        {faqs.map((faq, i) => (
+          <div class={`faq-item reveal reveal-delay-${(i % 4) + 1}`}>
+            <button class="faq-question" aria-expanded="false">
+              {faq.q}
+              <span class="faq-icon">+</span>
+            </button>
+            <div class="faq-answer">
+              <div class="faq-answer-inner">{faq.a}</div>
+            </div>
           </div>
-          <h3 style="font-size: 16px; margin: 14px 0 6px; color: #0f172a;">Tekla 3D Model</h3>
-          <p style="font-size: 13px; color: #64748b; line-height: 1.7; margin: 0;">3D solid model in Tekla Structures for clash detection, material take-off and automated shop drawing generation.</p>
-        </div>
-        <div class="reveal reveal-delay-2">
-          <div style="background: #0f172a; border-radius: 4px; overflow: hidden; aspect-ratio: 4/3;">
-            <img src="/images/engineering/workflow/step-05-shop-detailing.jpg" alt="Shop drawing and member detail sample" loading="lazy" style="width: 100%; height: 100%; object-fit: cover; display: block;">
-          </div>
-          <h3 style="font-size: 16px; margin: 14px 0 6px; color: #0f172a;">Shop &amp; Member Drawings</h3>
-          <p style="font-size: 13px; color: #64748b; line-height: 1.7; margin: 0;">Part drawings, assembly drawings and weld call-outs for every member, directly guiding cutting, assembly and welding.</p>
-        </div>
-        <div class="reveal reveal-delay-3">
-          <div style="background: #0f172a; border-radius: 4px; overflow: hidden; aspect-ratio: 4/3;">
-            <img src="/images/engineering/workflow/step-04-connection-development.jpg" alt="Connection detail development sample" loading="lazy" style="width: 100%; height: 100%; object-fit: cover; display: block;">
-          </div>
-          <h3 style="font-size: 16px; margin: 14px 0 6px; color: #0f172a;">Connection Detailing</h3>
-          <p style="font-size: 13px; color: #64748b; line-height: 1.7; margin: 0;">Beam-to-column, bracing and splice connection design with bolt specifications, weld sizes and stiffener layout.</p>
-        </div>
-        <div class="reveal reveal-delay-1">
-          <div style="background: #0f172a; border-radius: 4px; overflow: hidden; aspect-ratio: 4/3;">
-            <img src="/images/manufacturing/process/01-drawing-review.jpg" alt="Drawing review and fabrication handover" loading="lazy" style="width: 100%; height: 100%; object-fit: cover; display: block;">
-          </div>
-          <h3 style="font-size: 16px; margin: 14px 0 6px; color: #0f172a;">Drawing Review &amp; Handover</h3>
-          <p style="font-size: 13px; color: #64748b; line-height: 1.7; margin: 0;">Joint review by engineering, production and QC before fabrication to confirm constructability and quality control points.</p>
-        </div>
-        <div class="reveal reveal-delay-2">
-          <div style="background: #0f172a; border-radius: 4px; overflow: hidden; aspect-ratio: 4/3;">
-            <img src="/images/blog/overhead-crane-workshop-design/crane-column-detail.jpg" alt="Crane beam and column connection detail" loading="lazy" style="width: 100%; height: 100%; object-fit: cover; display: block;">
-          </div>
-          <h3 style="font-size: 16px; margin: 14px 0 6px; color: #0f172a;">Crane System Detailing</h3>
-          <p style="font-size: 13px; color: #64748b; line-height: 1.7; margin: 0;">Projects with cranes require dedicated design of crane girders, bracing systems and column-top connections for safe operation.</p>
-        </div>
-        <div class="reveal reveal-delay-3">
-          <div style="background: #0f172a; border-radius: 4px; overflow: hidden; aspect-ratio: 4/3;">
-            <img src="/images/engineering/workflow/step-06-drawing-approval.jpg" alt="Drawing approval process" loading="lazy" style="width: 100%; height: 100%; object-fit: cover; display: block;">
-          </div>
-          <h3 style="font-size: 16px; margin: 14px 0 6px; color: #0f172a;">Drawing Approval</h3>
-          <p style="font-size: 13px; color: #64748b; line-height: 1.7; margin: 0;">Submitted to client or consultant for approval before cutting, ensuring design intent is accurately transferred to fabrication.</p>
-        </div>
+        ))}
       </div>
-      <p style="text-align: center; font-size: 12px; color: #94a3b8; margin-top: 24px;">Engineering deliverable samples — client and project-sensitive information redacted for confidentiality.</p>
     </div>
   </section>
-<section class="quote-cta-section" id="quote">
+
+  <!-- 11 / Quote Form -->
+  <section id="quote" class="detail-section alt">
     <div class="container">
-      <ExportDeliveryCTA lang="en" />
-
-      <div class="quote-cta-header reveal">
-        <p class="section-index" style="color: #f59e0b;">Get Started</p>
-        <h2>Have Drawings or an Initial Project Concept?</h2>
-        <p>Send your project location, drawings and structural requirements for engineering review. ZhongSai will assess the engineering scope, provide technical coordination options and prepare a fabrication and export delivery quotation based on your project specifications.</p>
+      <div class="section-heading reveal">
+        <p class="section-index">Start a Project</p>
+        <h2>Have Drawings or a Preliminary Project Scheme? Submit for Technical Review</h2>
+        <p>Send your project location, drawings and structural requirements for engineering review. ZhongSai will assess the engineering scope, provide technical coordination options and prepare a fabrication and export delivery quotation per your project specification.</p>
       </div>
-      <div style="display: flex; gap: 16px; margin-bottom: 32px; flex-wrap: wrap;" class="quote-cta-buttons reveal">
-        <a href="#quote-form" class="btn btn-primary" style="font-size: 16px; padding: 14px 32px;">Send Project Drawings</a>
-        <a href="/en/contact/" class="btn btn-secondary" style="font-size: 16px; padding: 14px 32px;">Request Engineering Review</a>
-      </div>
-      <div id="quote-form">
-        <QuoteForm lang={lang} />
-      </div>
+      <QuoteForm lang={lang} />
     </div>
   </section>
-
-<style>
-.deliverables-grid { grid-template-columns: repeat(3, 1fr); }
-@media (max-width: 900px) { .deliverables-grid { grid-template-columns: repeat(2, 1fr) !important; } }
-@media (max-width: 560px) { .deliverables-grid { grid-template-columns: 1fr !important; } }
-</style>
 </BaseLayout>
 
 <style>
-.hero-stats {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: 20px;
-  margin: 32px 0;
+/* Outline button for dark hero */
+.btn-outline {
+  background: transparent;
+  color: #ffffff;
+  border: 1px solid rgba(255,255,255,0.45);
 }
-.hero-stat {
+.btn-outline:hover {
+  border-color: #ffffff;
+  background: rgba(255,255,255,0.12);
+  text-decoration: none;
+}
+
+/* Hero evidence strip */
+.hero-strip {
   display: flex;
-  flex-direction: column;
-  gap: 4px;
-}
-.stat-number {
-  font-size: 18px;
-  font-weight: 700;
-  color: #f59e0b;
-}
-.stat-label {
-  font-size: 12px;
-  color: rgba(255,255,255,0.7);
-}
-.hero-cta-group {
-  display: flex;
-  gap: 16px;
   flex-wrap: wrap;
-  margin-top: 8px;
+  gap: 10px 32px;
+  justify-content: center;
+  padding: 18px 0 4px;
 }
-.btn {
+.hero-strip span {
+  font-size: 13px;
+  font-weight: 600;
+  color: #475569;
+  letter-spacing: 0.4px;
+  position: relative;
+  padding-left: 16px;
+}
+.hero-strip span::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 50%;
+  width: 8px;
+  height: 8px;
+  border-radius: 2px;
+  background: #f59e0b;
+  transform: translateY(-50%);
+}
+
+/* Engineering flow */
+.eng-flow {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 16px;
+  margin: 32px 0 24px;
+}
+.eng-flow .step-num {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  padding: 12px 28px;
-  border-radius: 8px;
-  font-weight: 600;
-  font-size: 15px;
-  text-decoration: none;
-  transition: all 0.2s;
-  border: none;
-  cursor: pointer;
+  width: 34px;
+  height: 34px;
+  border-radius: 2px;
+  background: #1e3a5f;
+  color: #ffffff;
+  font-size: 13px;
+  font-weight: 700;
+  margin-bottom: 14px;
 }
-.btn-primary {
-  background: #f59e0b;
+.eng-flow .process-step h4 {
+  font-size: 16px;
+  font-weight: 700;
   color: #0f172a;
+  margin: 0 0 8px;
 }
-.btn-primary:hover {
-  background: #d97706;
+.eng-flow .process-step p {
+  font-size: 13.5px;
+  line-height: 1.7;
+  color: #475569;
+  margin: 0;
 }
-.btn-secondary {
-  background: rgba(255,255,255,0.1);
-  color: white;
-  border: 1px solid rgba(255,255,255,0.3);
+
+/* Evidence strip */
+.evidence-strip {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 16px;
+  margin-top: 28px;
 }
-.btn-secondary:hover {
-  background: rgba(255,255,255,0.2);
+.evidence-item {
+  margin: 0;
+  background: #ffffff;
+  border-radius: 2px;
+  overflow: hidden;
+  border: 1px solid #e2e8f0;
 }
-details summary::-webkit-details-marker {
-  display: none;
+.evidence-item img {
+  width: 100%;
+  height: 190px;
+  object-fit: cover;
+  display: block;
 }
-details[open] summary span:last-child {
-  transform: rotate(45deg);
+.evidence-item figcaption {
+  padding: 12px 14px;
+  color: #374151;
+  font-size: 0.83rem;
+  line-height: 1.5;
 }
-details summary span:last-child {
-  transition: transform 0.2s;
+
+/* Deliverables two columns */
+.deliverables-two-col {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 40px;
+  margin-top: 32px;
 }
-.related-grid {
-    grid-template-columns: repeat(4, 1fr) !important;
-  }
-  @media (max-width: 1024px) {
-  .hero-stats {
-    grid-template-columns: repeat(2, 1fr);
-  }
-  .design-inputs-grid, .standards-grid {
-    grid-template-columns: repeat(3, 1fr) !important;
-  }
-  .info-grid {
-    grid-template-columns: repeat(2, 1fr) !important;
-  }
-  .dfm-grid {
-    grid-template-columns: repeat(2, 1fr) !important;
-  }
-  .coordination-grid {
-    grid-template-columns: repeat(3, 1fr) !important;
-  }
-  .shop-drawings-grid, .boundary-grid {
-    grid-template-columns: 1fr !important;
-  }
-  .related-grid {
-    grid-template-columns: repeat(2, 1fr) !important;
-  }
+.col-title {
+  font-size: 16px;
+  font-weight: 700;
+  color: #0f172a;
+  margin: 0 0 14px;
+}
+.check-list {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+.check-list li {
+  position: relative;
+  padding: 8px 0 8px 26px;
+  font-size: 13.5px;
+  line-height: 1.6;
+  color: #334155;
+  border-bottom: 1px solid #eef2f7;
+}
+.check-list li:last-child { border-bottom: none; }
+.check-list li::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 15px;
+  width: 10px;
+  height: 10px;
+  border-radius: 2px;
+  background: #f59e0b;
+}
+
+/* Manufacturing points */
+.mf-points {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 14px;
+  margin: 32px 0 28px;
+}
+.mf-point {
+  background: #ffffff;
+  border: 1px solid #e2e8f0;
+  border-radius: 2px;
+  padding: 20px 20px;
+}
+.mf-point h4 {
+  font-size: 14.5px;
+  font-weight: 700;
+  color: #0f172a;
+  margin: 0 0 6px;
+}
+.mf-point p {
+  font-size: 12.5px;
+  line-height: 1.6;
+  color: #64748b;
+  margin: 0;
+}
+
+/* Export chain */
+.export-chain {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 10px;
+  justify-content: center;
+  margin: 8px 0 28px;
+}
+.chain-step {
+  background: #ffffff;
+  border: 1px solid #e2e8f0;
+  border-radius: 2px;
+  padding: 14px 18px;
+  font-size: 14px;
+  font-weight: 600;
+  color: #0f172a;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+.chain-num {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 22px;
+  height: 22px;
+  border-radius: 2px;
+  background: #1e3a5f;
+  color: #ffffff;
+  font-size: 12px;
+  font-weight: 700;
+}
+.chain-arrow {
+  font-size: 16px;
+  color: #f59e0b;
+  font-weight: 700;
+}
+
+/* Standards tags */
+.standards-tags {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 14px;
+  margin-top: 32px;
+}
+.std-tag {
+  background: #ffffff;
+  border: 1px solid #e2e8f0;
+  border-radius: 2px;
+  padding: 20px 18px;
+  font-size: 12.5px;
+  line-height: 1.6;
+  color: #475569;
+  display: block;
+}
+.std-tag strong {
+  display: block;
+  font-size: 15px;
+  color: #1e3a5f;
+  margin-bottom: 6px;
+}
+
+/* Coordination 3-col */
+.coord-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 16px;
+  margin: 32px 0 28px;
+}
+.coord-grid > div {
+  background: #ffffff;
+  border: 1px solid #e2e8f0;
+  border-radius: 2px;
+  padding: 24px 24px;
+}
+.coord-grid h4 {
+  font-size: 16px;
+  font-weight: 700;
+  color: #0f172a;
+  margin: 0 0 10px;
+}
+.coord-grid p {
+  font-size: 13.5px;
+  line-height: 1.7;
+  color: #475569;
+  margin: 0;
+}
+
+/* Boundary 2-col */
+.boundary-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+}
+
+/* Related 4-col override */
+.related-4col {
+  grid-template-columns: repeat(4, 1fr);
+}
+
+/* Related projects (rp-*) — restyled for detail system */
+.related-project-card {
+  display: flex;
+  flex-direction: column;
+  background: #fff;
+  border-radius: 2px;
+  overflow: hidden;
+  text-decoration: none;
+  color: inherit;
+  border: 1px solid rgba(0,0,0,0.06);
+  transition: transform 0.25s, border-color 0.25s;
+}
+.related-project-card:hover { transform: translateY(-4px); }
+.rpc-image {
+  aspect-ratio: 16/10;
+  overflow: hidden;
+  background: #f0f0f0;
+}
+.rpc-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+.rpc-content {
+  padding: 18px;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+.rpc-category {
+  display: inline-block;
+  background: #e8f0f7;
+  color: #1e3a5f;
+  padding: 3px 10px;
+  border-radius: 2px;
+  font-size: 0.72rem;
+  font-weight: 600;
+  margin-bottom: 10px;
+  align-self: flex-start;
+}
+.rpc-content h4 {
+  font-size: 1rem;
+  color: #0f172a;
+  margin: 0 0 6px;
+  line-height: 1.4;
+}
+.rpc-location { color: #888; font-size: 0.82rem; margin: 0 0 8px; }
+.rpc-data { color: #333; font-size: 0.85rem; font-weight: 600; margin: 0 0 10px; }
+.rpc-scope {
+  color: #666;
+  font-size: 0.78rem;
+  margin: 0;
+  line-height: 1.5;
+  padding-top: 10px;
+  border-top: 1px dashed rgba(0,0,0,0.08);
+}
+.rpc-scope span { color: #1e3a5f; font-weight: 600; }
+
+@media (max-width: 1024px) {
+  .related-4col { grid-template-columns: repeat(2, 1fr); }
+  .eng-flow { grid-template-columns: repeat(2, 1fr); }
+  .mf-points { grid-template-columns: repeat(2, 1fr); }
+  .standards-tags { grid-template-columns: repeat(3, 1fr); }
+  .coord-grid { grid-template-columns: repeat(3, 1fr); }
+  .rp-grid { grid-template-columns: repeat(2, 1fr); }
 }
 @media (max-width: 768px) {
-  .hero-stats {
-    grid-template-columns: 1fr 1fr;
-    gap: 16px;
-  }
-  .stat-number {
-    font-size: 16px;
-  }
-  .design-inputs-grid, .standards-grid, .info-grid {
-    grid-template-columns: 1fr 1fr !important;
-  }
-  .dfm-grid, .coordination-grid {
-    grid-template-columns: 1fr !important;
-  }
-  .hero-cta-group {
-    flex-direction: column;
-  }
-  .related-grid {
-    grid-template-columns: 1fr !important;
-  }
-  .coordination-grid {
-    grid-template-columns: 1fr !important;
-  }
-  .hero-cta-group .btn {
-    width: 100%;
-  }
+  .eng-flow, .mf-points, .coord-grid { grid-template-columns: 1fr; }
+  .standards-tags { grid-template-columns: 1fr 1fr; }
+  .related-4col { grid-template-columns: 1fr; }
+  .evidence-strip { grid-template-columns: 1fr; }
+  .evidence-item img { height: 220px; }
+  .deliverables-two-col, .boundary-grid { grid-template-columns: 1fr; }
+  .hero-strip { gap: 8px 20px; }
+  .rp-grid { grid-template-columns: 1fr; }
 }
 </style>
+
+<script>
+  // FAQ toggle
+  document.querySelectorAll('.faq-question').forEach(btn => {
+    btn.addEventListener('click', () => {
+      const item = btn.closest('.faq-item');
+      const isOpen = item.classList.contains('open');
+      item.classList.toggle('open');
+      btn.setAttribute('aria-expanded', !isOpen);
+    });
+  });
+
+  // Scroll reveal
+  const revealElements = document.querySelectorAll('.reveal');
+  if ('IntersectionObserver' in window) {
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.style.opacity = '1';
+          entry.target.style.transform = 'translateY(0)';
+          observer.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.1 });
+    revealElements.forEach(el => {
+      el.style.opacity = '0';
+      el.style.transform = 'translateY(24px)';
+      el.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+      observer.observe(el);
+    });
+  }
+</script>
