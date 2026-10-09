@@ -1026,3 +1026,66 @@
 .project-detail-hero-light { padding: 64px 0 48px; background: #fff; }
 .project-detail-hero-light .project-hero-image { display: none; }
 .project-detail-hero-light .project-hero-content { position: static; padding: 0; }
+
+/* ============================================
+   Chain Evidence Strip (V2-09A)
+   From drawings to finished members
+   ============================================ */
+.chain-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 16px;
+}
+.chain-item {
+  margin: 0;
+  background: #fff;
+  border-radius: 10px;
+  overflow: hidden;
+  border: 1px solid #e5e7eb;
+}
+.chain-item img {
+  width: 100%;
+  height: 170px;
+  object-fit: cover;
+  display: block;
+}
+.chain-item figcaption {
+  padding: 10px 12px;
+  color: #374151;
+  font-size: 0.8rem;
+  line-height: 1.5;
+}
+.chain-step {
+  display: block;
+  font-weight: 700;
+  color: #2563eb;
+  margin-bottom: 2px;
+  font-size: 0.78rem;
+  letter-spacing: 0.02em;
+}
+@media (max-width: 768px) {
+  .chain-grid {
+    grid-template-columns: 1fr;
+  }
+  .chain-item img {
+    height: 210px;
+  }
+}
+
+/* Chain inside image-text-block left column: vertical flow */
+.itb-image .chain-grid {
+  grid-template-columns: 1fr;
+  gap: 12px;
+}
+.itb-image .chain-item img {
+  height: 150px;
+}
+.itb-image .chain-item figcaption {
+  font-size: 0.75rem;
+  padding: 8px 10px;
+}
+@media (max-width: 768px) {
+  .itb-image .chain-item img {
+    height: 210px;
+  }
+}
