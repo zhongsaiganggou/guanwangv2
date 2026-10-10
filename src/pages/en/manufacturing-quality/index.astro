@@ -189,6 +189,10 @@ const relatedLinks = [
         <h2>From Approved Drawings to Export-Ready Components</h2>
         <p>ZhongSai provides project-based steel structure fabrication services. Fabrication and inspection are conducted according to approved project drawings, shop drawings, project technical specifications and applicable project requirements. Specific materials, welding procedures, surface treatment and inspection parameters are determined per project requirements and contract terms.</p>
       </div>
+      <figure class="office-evidence reveal">
+        <img src="/images/engineering/design-office/design-office-drafting-chain.webp" alt="Design office team coordinating drawings at CAD workstations before fabrication" loading="lazy" width="1000" height="750">
+        <figcaption>Design office drawing coordination — approved drawings handed over to fabrication</figcaption>
+      </figure>
       <div class="export-chain" style="margin-top: 28px;">
         {flowSteps.map((step, i) => (
           <>{i > 0 && <span class="chain-arrow reveal">→</span>}<span class="chain-step reveal"><span class="chain-num">0{i + 1}</span>{step}</span></>
@@ -675,6 +679,25 @@ const relatedLinks = [
   display: block;
 }
 .evidence-item figcaption {
+  padding: 12px 14px;
+  color: #374151;
+  font-size: 0.83rem;
+  line-height: 1.5;
+}
+.office-evidence {
+  margin: 28px auto 0;
+  background: #ffffff;
+  border-radius: 2px;
+  overflow: hidden;
+  border: 1px solid #e2e8f0;
+  max-width: 860px;
+}
+.office-evidence img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+.office-evidence figcaption {
   padding: 12px 14px;
   color: #374151;
   font-size: 0.83rem;

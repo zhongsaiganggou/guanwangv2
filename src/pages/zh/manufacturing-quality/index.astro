@@ -189,6 +189,10 @@ const relatedLinks = [
         <h2>从批准图纸到出口成品构件</h2>
         <p>中赛提供按项目定制的钢结构制造服务，制造与检验按批准的项目图纸、加工图、项目技术规格和适用要求执行。具体材料、焊接工艺、表面处理和检验参数按项目要求和合同条款确定。</p>
       </div>
+      <figure class="office-evidence reveal">
+        <img src="/images/engineering/design-office/design-office-drafting-chain.webp" alt="设计部团队在 CAD 工作区进行图纸协调，批准图纸随后进入工厂制造" loading="lazy" width="1000" height="750">
+        <figcaption>设计部图纸协调 — 批准图纸经设计部衔接后进入工厂制造</figcaption>
+      </figure>
       <div class="export-chain" style="margin-top: 28px;">
         {flowSteps.map((step, i) => (
           <>{i > 0 && <span class="chain-arrow reveal">→</span>}<span class="chain-step reveal"><span class="chain-num">0{i + 1}</span>{step}</span></>
@@ -675,6 +679,25 @@ const relatedLinks = [
   display: block;
 }
 .evidence-item figcaption {
+  padding: 12px 14px;
+  color: #374151;
+  font-size: 0.83rem;
+  line-height: 1.5;
+}
+.office-evidence {
+  margin: 28px auto 0;
+  background: #ffffff;
+  border-radius: 2px;
+  overflow: hidden;
+  border: 1px solid #e2e8f0;
+  max-width: 860px;
+}
+.office-evidence img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+.office-evidence figcaption {
   padding: 12px 14px;
   color: #374151;
   font-size: 0.83rem;
