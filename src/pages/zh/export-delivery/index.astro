@@ -1,56 +1,33 @@
 ---
-// ZhongSai V2 - 中文 出口交付页面（升级版）
+// ZhongSai V2 - 中文 出口交付页面（detail 体系重构版）
 import BaseLayout from '../../../layouts/BaseLayout.astro';
 import QuoteForm from '../../../components/QuoteForm.astro';
-import ExportDeliveryCTA from '../../../components/ExportDeliveryCTA.astro';
-import '../../../styles/hub.css';
-import '../../../styles/manufacturing.css';
+import '../../../styles/detail.css';
 
 const lang = 'zh';
 const title = '钢结构出口交付、科学装柜与海外运输协调｜中赛钢构';
 const description = '从设计和制造规划到构件编号、包装、科学装柜和海外交付协调，中赛自有设计团队和交付团队协同支持钢结构项目从工厂到目的地的完整链路。';
 const canonical = 'https://zhongsai-steelstructure.com/zh/export-delivery/';
 
-// 完整设计到交付流程（13步）
-const fullProcess = [
-  { num: '01', title: '项目评审', desc: '审核项目要求、图纸、交付地点和时间计划。' },
-  { num: '02', title: '结构设计', desc: '协调结构设计，同时考虑制造、运输和现场安装。' },
-  { num: '03', title: '深化与加工图', desc: '编制可直接用于制造的加工图，含构件编号和连接节点。' },
-  { num: '04', title: '制造规划', desc: '规划生产顺序、材料准备和制造进度。' },
-  { num: '05', title: '工厂制造', desc: '按批准图纸和项目规格制造钢结构构件。' },
-  { num: '06', title: '质量检验', desc: '检验尺寸、焊接、表面处理和装配精度。' },
-  { num: '07', title: '构件编号', desc: '为每个构件分配项目专属编号，对应图纸和装箱单。' },
-  { num: '08', title: '包装', desc: '按安装顺序分组构件，保护表面，包装配件。' },
-  { num: '09', title: '科学装柜', desc: '优化集装箱空间利用、重量分布和卸货顺序。' },
-  { num: '10', title: '出口资料', desc: '准备商业发票、装箱单、出口报关和运输文件。' },
-  { num: '11', title: '海运发运', desc: '协调订舱、港口交货和海运安排。' },
-  { num: '12', title: '交付协调', desc: '协调运输状态、文件交接和目的地交付。' },
-  { num: '13', title: '安装技术支持', desc: '提供安装图纸、构件识别和远程技术指导。' }
+// 交付链（7 步）
+const deliveryChain = [
+  { num: '01', title: '交付规划', desc: '按项目要求、图纸、交付地点和时间计划确定交付方案。' },
+  { num: '02', title: '构件分段', desc: '按集装箱尺寸与运输限制规划构件分段与拼接位置。' },
+  { num: '03', title: '构件编号', desc: '为每个构件分配项目专属编号，对应图纸、装箱单与安装顺序。' },
+  { num: '04', title: '包装', desc: '按安装顺序分组构件、保护表面，并对配件分类标识。' },
+  { num: '05', title: '装柜', desc: '优化集装箱空间利用、重量分布与现场卸货顺序。' },
+  { num: '06', title: '出口资料协调', desc: '准备商业发票、装箱单、出口报关与运输文件。' },
+  { num: '07', title: '到货衔接与安装支持', desc: '协调运输状态与文件交接，提供安装图纸与技术指导。' }
 ];
 
-// 设计团队职责
-const designTeamItems = [
-  { title: '构件尺寸优化', desc: '协调构件尺寸，同时考虑制造和运输限制。' },
-  { title: '运输限制规划', desc: '根据集装箱尺寸和运输约束规划构件分段。' },
-  { title: '集装箱尺寸协调', desc: '确保构件长度适配标准集装箱，或规划适当分段。' },
-  { title: '构件分段设计', desc: '在结构适当位置设计螺栓拼接节点，便于运输。' },
-  { title: '螺栓拼接位置', desc: '协调拼接位置避开高弯矩区域，便于现场拼装。' },
-  { title: '现场安装接口', desc: '设计连接接口，实现高效准确的现场螺栓拼装。' },
+// 设计阶段即考虑运输（6 点）
+const shipDesignItems = [
+  { title: '构件尺寸与集装箱匹配', desc: '协调构件长度和截面与标准集装箱内部尺寸匹配。' },
+  { title: '运输分段规划', desc: '在结构适当位置设计螺栓拼接节点，便于集装箱运输。' },
+  { title: '拼接位置协调', desc: '拼接位置避开高弯矩区域，便于现场螺栓拼装。' },
   { title: '构件编号体系', desc: '开发编号系统，将构件与图纸、装箱单和吊装顺序关联。' },
-  { title: '安装顺序规划', desc: '协调包装和装柜顺序与逻辑现场吊装顺序一致。' }
-];
-
-// 交付团队职责
-const deliveryTeamItems = [
-  { title: '生产进度跟踪', desc: '监控制造进度，协调生产完成状态。' },
-  { title: '包装方案制定', desc: '根据构件类型和安装顺序制定项目专属包装方案。' },
-  { title: '装柜方案规划', desc: '规划集装箱装柜，优化空间、重量分布和卸货便利性。' },
-  { title: '装箱单编制', desc: '编制详细装箱单，关联构件、包装和集装箱信息。' },
-  { title: '构件识别协调', desc: '确保编号系统正确应用并与文档一致。' },
-  { title: '运输进度协调', desc: '协调生产完成与订舱和装柜日期的衔接。' },
-  { title: '出口文件准备', desc: '准备和协调商业发票、装箱单、出口报关和证书。' },
-  { title: '港口与发运', desc: '协调港口交货、集装箱装柜和海运安排。' },
-  { title: '客户与承包商交接', desc: '协调文件交接、运输状态沟通和目的地交付支持。' }
+  { title: '安装接口设计', desc: '设计连接接口，实现高效准确的现场螺栓拼装。' },
+  { title: '包装与吊装顺序', desc: '协调包装和装柜顺序与现场逻辑吊装顺序一致。' }
 ];
 
 // 装柜优化因素
@@ -59,7 +36,6 @@ const loadingFactors = [
   { title: '集装箱尺寸', desc: '根据40GP、40HQ、45HQ或项目特定集装箱类型规划。' },
   { title: '重量分布', desc: '在集装箱内均匀分布重量，确保安全运输和装卸。' },
   { title: '装柜顺序', desc: '组织装柜顺序，支持现场逻辑卸货和吊装顺序。' },
-  { title: '空间利用', desc: '优化包装减少集装箱空间浪费，同时保持构件保护。' },
   { title: '防移动保护', desc: '用适当支撑固定构件，防止海运期间移动。' },
   { title: '卸货便利性', desc: '规划装柜使构件可按逻辑顺序卸货，无需重复搬运。' }
 ];
@@ -71,7 +47,7 @@ const exportDocs = [
   { title: '出口报关文件', desc: '根据中国出口法规支持出口报关文件准备。' },
   { title: '证书相关文件', desc: '根据项目要求协调证书文件（如适用）。' },
   { title: '提单协调', desc: '与货代和船公司协调提单信息。' },
-  { title: '项目/产品文件', desc: '按要求提供安装图纸、材料证书和检验记录。' }
+  { title: '项目 / 产品文件', desc: '按要求提供安装图纸、材料证书和检验记录。' }
 ];
 
 // 支持的项目类型
@@ -93,31 +69,23 @@ const faqs = [
   },
   {
     q: '大型钢构件能装进海运集装箱吗？',
-    a: '大多数标准钢构件设计为可装入标准海运集装箱（通常40GP或40HQ）。对于超过标准集装箱长度的构件，中赛自有设计团队可以规划螺栓拼接位置，将长构件分段以便集装箱运输。在特殊情况下，可根据构件尺寸、港口条件和物流方案考虑开顶柜、框架柜或项目特定物流方式。'
+    a: '大多数标准钢构件设计为可装入标准海运集装箱（通常40GP或40HQ）。对于超过标准集装箱长度的构件，中赛设计团队可以规划螺栓拼接位置，将长构件分段以便集装箱运输。在特殊情况下，可根据构件尺寸、港口条件和物流方案考虑开顶柜、框架柜或项目特定物流方式。'
   },
   {
     q: '如何识别构件以便现场安装？',
     a: '每个钢构件都有项目专属识别编号，与批准的加工图对应。装箱单将每个构件编号与其包装、集装箱和安装顺序参考关联。该系统帮助当地安装团队在项目现场正确识别和组装构件，减少错误，提高吊装效率。'
   },
   {
-    q: '中赛可以为集装箱运输优化结构吗？',
-    a: '可以。中赛自有设计团队在结构设计和深化阶段就考虑集装箱尺寸、运输限制和现场安装要求。这包括规划构件分段、螺栓拼接位置、构件编号和包装顺序。通过设计与交付的协同，可以优化集装箱空间利用，在适合的项目中通过高效装柜安排帮助降低运输成本。'
+    q: '构件如何包装？',
+    a: '构件按结构系统和安装顺序分组包装，保护油漆与涂层表面；螺栓、螺母、垫圈和连接板按装配分组标识，防止丢失。防潮保护根据构件类型和航程时间按需应用。详细装箱单将每个构件与其包装、集装箱和安装参考关联。'
   },
   {
-    q: '可以支持哪些出口文件？',
-    a: '中赛可以支持准备商业发票、详细装箱单、出口报关文件，并协调提单信息。材料证书、检验记录和安装图纸按项目要求提供。具体证书文件可根据目的地国家要求协调。我们不替代客户或其指定的报关行进行目的地国家清关。'
+    q: '中赛可以提供哪些出口文件？',
+    a: '中赛支持准备商业发票、详细装箱单、出口报关文件，并协调提单信息。材料证书、检验记录和安装图纸按项目要求提供。目的地国家清关通常由客户或其指定的报关行处理，中赛提供所需文件和信息支持客户的清关流程，但不担任进口商或目的地报关行。'
   },
   {
-    q: '可以协调运送到项目所在国吗？',
-    a: '可以。中赛自有项目交付团队协调生产完成、包装方案、集装箱装柜、出口文件、订舱和港口交货。我们与货代和船公司合作安排至目的港的海运。在整个交付过程中，向客户沟通运输状态和文件交接。'
-  },
-  {
-    q: '提供清关服务吗？',
-    a: '中赛准备和协调中国出口文件，支持出口报关。对于目的地国家清关，通常由客户或其指定的报关行处理进口申报和海关手续。我们可以提供所需文件和信息支持客户目的地清关流程，但我们不担任进口商或目的地国家的报关行。'
-  },
-  {
-    q: '交付后提供安装服务吗？',
-    a: '中赛提供安装技术指导，包括安装图纸、构件识别参考、吊装顺序信息和远程技术答疑。当地土建、基础施工、现场人工和实际吊装通常由客户或其指定的当地施工团队完成。在特定项目中，可根据约定的项目范围安排现场技术指导，但中赛不担任当地施工承包商或EPC总承包商。'
+    q: '到货以后谁负责安装？',
+    a: '中赛提供安装技术指导，包括安装图纸、构件识别参考、吊装顺序信息和远程技术答疑。当地卸货、吊装、现场施工和劳务通常由客户或其指定的当地施工团队完成。在特定项目中可根据约定范围安排现场技术指导，但中赛不担任当地施工承包商或EPC总承包商。'
   }
 ];
 
@@ -136,71 +104,96 @@ const relatedLinks = [
 
 <BaseLayout title={title} description={description} lang={lang}>
   <!-- Hero -->
-  <section class="hub-hero">
-    <div class="hub-hero-bg" style="background-image: url('/images/export/loading-truck_web.jpg')"></div>
-    <div class="hub-hero-overlay"></div>
-    <div class="container hub-hero-content">
-      <div class="hub-breadcrumb">
+  <section class="detail-hero">
+    <div class="detail-hero-bg" style="background-image: url('/images/export/loading-truck_web.jpg')"></div>
+    <div class="detail-hero-overlay"></div>
+    <div class="detail-hero-content">
+      <div class="detail-breadcrumb">
         <a href="/zh/">首页</a><span>/</span><span>出口交付</span>
       </div>
       <p class="eyebrow">出口交付 · 从工厂到目的地</p>
       <h1>钢结构出口<br>与海外项目交付</h1>
       <p class="lead">从设计和制造规划到构件编号、包装、科学装柜和海外交付协调，中赛自有设计团队和交付团队协同支持钢结构项目从工厂到目的地的完整链路。</p>
-      <div class="hero-capabilities">
-        <div class="cap-item">
-          <span class="cap-icon">◆</span>
-          <div>
-            <span class="cap-title">自有设计团队</span>
-            <span class="cap-desc">面向制造、运输和现场安装的设计</span>
-          </div>
-        </div>
-        <div class="cap-item">
-          <span class="cap-icon">◆</span>
-          <div>
-            <span class="cap-title">自有交付团队</span>
-            <span class="cap-desc">包装、装柜、文件和发运协调</span>
-          </div>
-        </div>
-        <div class="cap-item">
-          <span class="cap-icon">◆</span>
-          <div>
-            <span class="cap-title">项目专属包装</span>
-            <span class="cap-desc">构件编号与安装顺序包装</span>
-          </div>
-        </div>
-        <div class="cap-item">
-          <span class="cap-icon">◆</span>
-          <div>
-            <span class="cap-title">出口文件支持</span>
-            <span class="cap-desc">商业发票、装箱单和出口支持</span>
-          </div>
-        </div>
+      <div class="detail-hero-actions">
+        <a href="#quote" class="btn btn-primary">提交图纸进行交付评估</a>
+        <a href="/zh/manufacturing-quality/" class="btn btn-outline">查看制造与质量控制</a>
       </div>
-      <div class="hero-cta-group">
-        <a href="#quote" class="btn btn-primary">获取项目方案</a>
-        <a href="#delivery-process" class="btn btn-secondary">沟通交付需求</a>
+      <div class="hero-strip">
+        <span>设计即考虑运输</span>
+        <span>构件分段</span>
+        <span>科学装柜</span>
+        <span>构件编号与包装</span>
+        <span>出口资料协调</span>
+        <span>安装技术衔接</span>
       </div>
     </div>
   </section>
 
-  <!-- 01: 从设计到交付 -->
-  <section class="section" id="delivery-process" style="padding: 70px 0;">
+  <!-- Overview: 制造完成 → 出口交付 -->
+  <section class="detail-section alt">
     <div class="container">
-      <div class="section-heading reveal">
-        <div>
-          <p class="section-index">完整流程</p>
-          <h2>从设计到海外交付</h2>
-        </div>
-        <div>
-          <p>中赛自有设计团队和交付团队在整个项目中协同工作。设计不是图纸发布就结束，交付也不是制造完成才开始。两个团队从项目早期阶段就围绕制造、运输和现场安装进行协调。</p>
-        </div>
+      <div class="section-heading">
+        <p class="section-index">出口交付</p>
+        <h2>从制造完成到项目目的地的完整衔接</h2>
+        <p>中赛不仅制造钢结构构件，还负责从制造完成到出口交付之间的构件编号、包装、装柜、出口资料协调、运输衔接与安装技术支持。交付规划在设计阶段即可开始，而不是等制造完成后才开始。</p>
       </div>
-      <div class="process-timeline">
-        {fullProcess.map((step, i) => (
-          <div class={`timeline-item reveal reveal-delay-${(i % 4) + 1}`}>
-            <div class="timeline-num">{step.num}</div>
-            <div class="timeline-content">
-              <h3>{step.title}</h3>
+      <div class="export-chain">
+        <span class="chain-step"><span class="chain-num">M</span>制造完成</span>
+        <span class="chain-arrow">→</span>
+        <span class="chain-step"><span class="chain-num">1</span>构件编号</span>
+        <span class="chain-arrow">→</span>
+        <span class="chain-step"><span class="chain-num">2</span>包装</span>
+        <span class="chain-arrow">→</span>
+        <span class="chain-step"><span class="chain-num">3</span>装柜</span>
+        <span class="chain-arrow">→</span>
+        <span class="chain-step"><span class="chain-num">4</span>出口资料协调</span>
+        <span class="chain-arrow">→</span>
+        <span class="chain-step"><span class="chain-num">5</span>海运发运</span>
+        <span class="chain-arrow">→</span>
+        <span class="chain-step"><span class="chain-num">6</span>到货衔接与安装支持</span>
+      </div>
+      <p class="params-note">制造、检查、表面处理、编号、包装与出口交付准备在中赛东莞和惠州制造基地完成；当地卸货、吊装与现场施工由客户或其指定的当地施工团队负责。</p>
+    </div>
+  </section>
+
+  <!-- Design for Shipping -->
+  <section class="detail-section">
+    <div class="container">
+      <div class="section-heading">
+        <p class="section-index">01 · 设计即考虑运输</p>
+        <h2>Design for Shipping：钢结构不是生产完成后才考虑运输</h2>
+        <p>中赛自有设计团队在结构设计和深化阶段就考虑制造、集装箱运输和现场安装要求。通过设计与交付的协同，减少不必要的运输空间浪费，提高现场吊装效率——这正是拥有既懂结构工程又懂出口交付的自有设计团队的价值所在。</p>
+      </div>
+      <div class="ship-design-grid">
+        {shipDesignItems.map((item, i) => (
+          <div class="ship-design-card">
+            <span class="sd-num">{String(i + 1).padStart(2, '0')}</span>
+            <h4>{item.title}</h4>
+            <p>{item.desc}</p>
+          </div>
+        ))}
+      </div>
+      <div class="blue-note">
+        <strong>两类项目入口：</strong>
+        如果您已有完整结构图，中赛设计团队审核图纸的制造可行性、集装箱运输兼容性和现场安装效率，识别需要分段的构件并规划运输用螺栓拼接位置；如果您只有建筑图或项目需求，中赛可以在结构方案开发阶段就考虑构件分段、运输限制和现场安装要求。提交现有资料即可开始技术评审。
+      </div>
+    </div>
+  </section>
+
+  <!-- Delivery Chain -->
+  <section class="detail-section alt">
+    <div class="container">
+      <div class="section-heading">
+        <p class="section-index">02 · 交付流程</p>
+        <h2>从制造完成到目的地的交付链路</h2>
+        <p>中赛项目交付团队协调从制造完成到海外发运和目的地交付的过渡。以下为钢结构出口交付的主要环节。</p>
+      </div>
+      <div class="mfg-grid">
+        {deliveryChain.map((step) => (
+          <div class="mfg-card">
+            <div class="mfg-body">
+              <span class="mfg-num">{step.num}</span>
+              <h4>{step.title}</h4>
               <p>{step.desc}</p>
             </div>
           </div>
@@ -209,255 +202,83 @@ const relatedLinks = [
     </div>
   </section>
 
-  <!-- 02: 自有设计团队 -->
-  <section class="section" style="padding: 70px 0; background: #f8fafc;">
+  <!-- Real Packing & Loading Evidence -->
+  <section class="detail-section">
     <div class="container">
-      <div class="section-heading reveal">
-        <div>
-          <p class="section-index">设计团队</p>
-          <h2>面向制造、运输和现场安装的设计</h2>
-        </div>
-        <div>
-          <p>钢结构设计不仅要考虑结构受力性能，还要考虑构件能否制造、能否装柜、能否海运运输、能否在现场高效拼装。中赛自有设计团队从结构设计阶段就整合这些考虑因素。</p>
-        </div>
+      <div class="section-heading">
+        <p class="section-index">03 · 第一方证据</p>
+        <h2>包装、编号与装柜现场</h2>
+        <p>构件在出厂前完成编号、分类和包装，按项目装载计划装入集装箱。以下为中赛制造与出口交付现场的真实记录。</p>
       </div>
-      <div class="quality-grid" style="margin-top: 40px;">
-        {designTeamItems.map((item, i) => (
-          <div class={`quality-item reveal reveal-delay-${(i % 4) + 1}`}>
-            <h4>{item.title}</h4>
-            <p>{item.desc}</p>
-          </div>
-        ))}
-      </div>
-      <div style="margin-top: 24px; padding: 20px; background: #eff6ff; border-left: 4px solid #1e40af; border-radius: 0 8px 8px 0;" class="reveal">
-        <p style="margin: 0; color: #1e3a5f; font-size: 14px; line-height: 1.7;"><strong>核心优势：</strong>通过将结构设计与集装箱尺寸、运输限制和现场安装要求协调，中赛可以减少不必要的运输空间浪费，提高现场吊装效率。这正是拥有既懂结构工程又懂出口交付的自有设计团队的价值所在。</p>
-      </div>
-    </div>
-  </section>
-
-  <!-- 03: 自有交付团队 -->
-  <section class="section" style="padding: 70px 0;">
-    <div class="container">
-      <div class="section-heading reveal">
-        <div>
-          <p class="section-index">交付团队</p>
-          <h2>自有项目交付团队</h2>
+      <div class="evidence-strip">
+        <div class="evidence-item">
+          <img src="/images/manufacturing/real/component-marking.jpg" alt="钢构件编号标识现场" loading="lazy">
+          <h4>构件编号标识</h4>
+          <p>每根构件标注唯一编号，与加工图和安装图对应，便于现场识别和吊装顺序。</p>
         </div>
-        <div>
-          <p>中赛项目交付团队协调从制造完成到海外发运和目的地交付的过渡。这不是第三方货代服务，而是内部项目协调职能，确保包装、装柜、文件和发运按照项目要求组织。</p>
+        <div class="evidence-item">
+          <img src="/images/export/container-loading-310_web.jpg" alt="带识别编号的钢构件装入海运集装箱" loading="lazy">
+          <h4>集装箱装柜</h4>
+          <p>按装载计划将构件有序装入标准集装箱，合理利用空间并保护涂层和构件端部。</p>
         </div>
-      </div>
-      <div class="quality-grid" style="margin-top: 40px;">
-        {deliveryTeamItems.map((item, i) => (
-          <div class={`quality-item reveal reveal-delay-${(i % 4) + 1}`}>
-            <h4>{item.title}</h4>
-            <p>{item.desc}</p>
-          </div>
-        ))}
-      </div>
-    </div>
-  </section>
-
-  <!-- 04: 早期交付规划 -->
-  <section class="section" style="padding: 70px 0; background: #f8fafc;">
-    <div class="container">
-      <div class="section-heading reveal">
-        <div>
-          <p class="section-index">早期规划</p>
-          <h2>早期交付规划从设计开始</h2>
+        <div class="evidence-item">
+          <img src="/images/export/loading-truck_web.jpg" alt="钢结构构件装车发运现场" loading="lazy">
+          <h4>装车与发运</h4>
+          <p>超长或超重构件采用专用车辆运输至港口，配合出口文件和装箱单完成发运。</p>
         </div>
-        <div>
-          <p>中赛"自有设计团队 + 自有交付团队"的优势在于，交付规划可以在设计阶段就开始，而不是等制造完成后才开始。</p>
+        <div class="evidence-item">
+          <img src="/images/container-loading.jpg" alt="大型钢结构构件装柜作业" loading="lazy">
+          <h4>大型构件装柜作业</h4>
+          <p>门式刚架、吊车梁等大型构件按重量和尺寸规划装载顺序，确保运输安全和卸货便利。</p>
         </div>
-      </div>
-      <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 32px; margin-top: 40px;" class="planning-grid">
-        <div class="reveal reveal-delay-1" style="padding: 32px; background: white; border-radius: 12px; border: 1px solid #e2e8f0;">
-          <div style="display: flex; align-items: center; gap: 12px; margin-bottom: 16px;">
-            <div style="width: 40px; height: 40px; background: #1e40af; border-radius: 8px; display: flex; align-items: center; justify-content: center; color: white; font-weight: 700;">A</div>
-            <h3 style="font-size: 18px; margin: 0; color: #0f172a;">如果您已有完整结构图</h3>
-          </div>
-          <p style="color: #475569; font-size: 14px; line-height: 1.8; margin: 0 0 16px;">中赛自有设计团队审核图纸的制造可行性、集装箱运输兼容性和现场安装效率。</p>
-          <ul style="margin: 0; padding-left: 20px; color: #475569; font-size: 14px; line-height: 2;">
-            <li>审核构件尺寸与集装箱限制匹配</li>
-            <li>识别需要分段的构件</li>
-            <li>规划运输用螺栓拼接位置</li>
-            <li>协调包装和装柜顺序</li>
-            <li>开发构件编号体系</li>
-          </ul>
-        </div>
-        <div class="reveal reveal-delay-2" style="padding: 32px; background: white; border-radius: 12px; border: 1px solid #e2e8f0;">
-          <div style="display: flex; align-items: center; gap: 12px; margin-bottom: 16px;">
-            <div style="width: 40px; height: 40px; background: #f59e0b; border-radius: 8px; display: flex; align-items: center; justify-content: center; color: white; font-weight: 700;">B</div>
-            <h3 style="font-size: 18px; margin: 0; color: #0f172a;">如果您只有建筑图或项目需求</h3>
-          </div>
-          <p style="color: #475569; font-size: 14px; line-height: 1.8; margin: 0 0 16px;">中赛设计团队可以在结构方案开发阶段就考虑构件分段、运输限制和现场安装要求。</p>
-          <ul style="margin: 0; padding-left: 20px; color: #475569; font-size: 14px; line-height: 2;">
-            <li>协调柱距与集装箱尺寸匹配</li>
-            <li>规划构件长度以高效装柜</li>
-            <li>设计运输和安装用拼接位置</li>
-            <li>优化结构以利于制造和交付</li>
-            <li>从一开始规划包装和吊装顺序</li>
-          </ul>
+        <div class="evidence-item">
+          <img src="/images/export/container-loading-256_web.jpg" alt="已装柜集装箱准备出口发运" loading="lazy">
+          <h4>出口集装箱装载</h4>
+          <p>配套装箱单和出口文件，支持目的港清关资料核对，并便于现场接收时对构件进行追溯与核对。</p>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- 05: 构件编号 -->
-  <section class="section" style="padding: 70px 0;">
+  <!-- Container Loading Strategy -->
+  <section class="detail-section alt">
     <div class="container">
-      <div class="section-heading reveal">
-        <div>
-          <p class="section-index">构件编号</p>
-          <h2>构件编号与识别</h2>
-        </div>
-        <div>
-          <p>清晰的构件识别对海外项目交付至关重要。每个钢构件必须从制造、包装、运输、卸货到现场安装全程可追溯。</p>
-        </div>
+      <div class="section-heading">
+        <p class="section-index">04 · 科学装柜</p>
+        <h2>集装箱装载规划</h2>
+        <p>装柜规划优化空间利用、重量分布和卸货便利性。通过合理的构件分段、排柜和科学装载，在适合的项目中可以降低运输成本。</p>
       </div>
-      <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 48px; align-items: center; margin-top: 40px;" class="marking-grid">
-        <div class="reveal reveal-delay-1">
-          <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 16px;">
-            <div style="padding: 20px; background: #f8fafc; border-radius: 10px; border: 1px solid #e2e8f0;">
-              <h4 style="font-size: 14px; color: #1e3a5f; margin-bottom: 8px;">项目专属编号</h4>
-              <p style="font-size: 12px; color: #64748b; line-height: 1.6; margin: 0;">每个构件分配唯一的项目识别编号。</p>
-            </div>
-            <div style="padding: 20px; background: #f8fafc; border-radius: 10px; border: 1px solid #e2e8f0;">
-              <h4 style="font-size: 14px; color: #1e3a5f; margin-bottom: 8px;">图纸对应</h4>
-              <p style="font-size: 12px; color: #64748b; line-height: 1.6; margin: 0;">编号与批准的加工图参考对应。</p>
-            </div>
-            <div style="padding: 20px; background: #f8fafc; border-radius: 10px; border: 1px solid #e2e8f0;">
-              <h4 style="font-size: 14px; color: #1e3a5f; margin-bottom: 8px;">装箱单关联</h4>
-              <p style="font-size: 12px; color: #64748b; line-height: 1.6; margin: 0;">构件与包装、集装箱和重量关联。</p>
-            </div>
-            <div style="padding: 20px; background: #f8fafc; border-radius: 10px; border: 1px solid #e2e8f0;">
-              <h4 style="font-size: 14px; color: #1e3a5f; margin-bottom: 8px;">现场安装支持</h4>
-              <p style="font-size: 12px; color: #64748b; line-height: 1.6; margin: 0;">识别支持高效的海外现场吊装。</p>
-            </div>
-          </div>
-        </div>
-        <div class="reveal reveal-delay-2">
-          <div style="position: relative; border-radius: 12px; overflow: hidden; box-shadow: 0 4px 12px rgba(0,0,0,0.1); aspect-ratio: 4 / 3;">
-            <img src="/images/export/container-loading-310_web.jpg" alt="带识别编号的钢构件装入海运集装箱" style="width: 100%; height: 100%; object-fit: cover; object-position: center 50%; display: block;" width="500" height="375" loading="lazy">
-          </div>
-          <p style="text-align: center; font-size: 12px; color: #94a3b8; margin-top: 12px; font-style: italic;">钢构件准备装柜，带项目专属识别编号。</p>
-        </div>
+      <div class="params-table-wrapper">
+        <table class="params-table">
+          <thead>
+            <tr><th>装柜考虑因素</th><th>说明</th></tr>
+          </thead>
+          <tbody>
+            {loadingFactors.map((f) => (
+              <tr><td>{f.title}</td><td>{f.desc}</td></tr>
+            ))}
+          </tbody>
+        </table>
+      </div>
+      <div class="blue-note">
+        <strong>运费成本优化：</strong>
+        通过合理的构件分段、排柜规划和科学装载，在适合的项目中可实现约 <strong>20%的运费成本节省</strong>。实际节省比例取决于项目构件尺寸、重量、运输路线和装柜条件。这不是每个项目都能保证的固定节省比例。
       </div>
     </div>
   </section>
 
-  <!-- 06: 包装 -->
-  <section class="section" style="padding: 70px 0; background: #f8fafc;">
+  <!-- Oversized Members -->
+  <section class="detail-section">
     <div class="container">
-      <div class="section-heading reveal">
-        <div>
-          <p class="section-index">包装</p>
-          <h2>海外钢结构项目包装</h2>
-        </div>
-        <div>
-          <p>包装方式根据构件类型、尺寸、表面处理和运输要求确定。目标是在海运期间保护构件，同时支持高效卸货和现场安装。</p>
-        </div>
+      <div class="section-heading">
+        <p class="section-index">05 · 超长构件</p>
+        <h2>长构件和超大型钢构件处理</h2>
+        <p>部分钢构件可能超过标准海运集装箱尺寸。中赛设计团队在设计阶段规划分段和运输方案，解决超长构件的挑战。</p>
       </div>
-      <div style="display: grid; grid-template-columns: repeat(4, 1fr); gap: 20px; margin-top: 40px;" class="packing-grid">
-        <div class="reveal reveal-delay-1" style="padding: 24px; background: white; border-radius: 10px; border: 1px solid #e2e8f0;">
-          <h4 style="font-size: 15px; color: #0f172a; margin-bottom: 10px;">按结构分组</h4>
-          <p style="font-size: 13px; color: #64748b; line-height: 1.6; margin: 0;">按结构系统和安装顺序分组，便于现场逻辑处理。</p>
-        </div>
-        <div class="reveal reveal-delay-2" style="padding: 24px; background: white; border-radius: 10px; border: 1px solid #e2e8f0;">
-          <h4 style="font-size: 15px; color: #0f172a; margin-bottom: 10px;">表面保护</h4>
-          <p style="font-size: 13px; color: #64748b; line-height: 1.6; margin: 0;">油漆和涂层表面保护，防止运输期间磨损和损坏。</p>
-        </div>
-        <div class="reveal reveal-delay-3" style="padding: 24px; background: white; border-radius: 10px; border: 1px solid #e2e8f0;">
-          <h4 style="font-size: 15px; color: #0f172a; margin-bottom: 10px;">螺栓配件包装</h4>
-          <p style="font-size: 13px; color: #64748b; line-height: 1.6; margin: 0;">螺栓、螺母、垫圈和连接板按每个装配分组并标识。</p>
-        </div>
-        <div class="reveal reveal-delay-4" style="padding: 24px; background: white; border-radius: 10px; border: 1px solid #e2e8f0;">
-          <h4 style="font-size: 15px; color: #0f172a; margin-bottom: 10px;">小件识别</h4>
-          <p style="font-size: 13px; color: #64748b; line-height: 1.6; margin: 0;">小组件和配件清晰标注，防止丢失并确保可追溯。</p>
-        </div>
-        <div class="reveal reveal-delay-1" style="padding: 24px; background: white; border-radius: 10px; border: 1px solid #e2e8f0;">
-          <h4 style="font-size: 15px; color: #0f172a; margin-bottom: 10px;">防潮保护</h4>
-          <p style="font-size: 13px; color: #64748b; line-height: 1.6; margin: 0;">根据构件类型和航程时间，在需要时应用防潮和运输保护。</p>
-        </div>
-        <div class="reveal reveal-delay-2" style="padding: 24px; background: white; border-radius: 10px; border: 1px solid #e2e8f0;">
-          <h4 style="font-size: 15px; color: #0f172a; margin-bottom: 10px;">装箱单编制</h4>
-          <p style="font-size: 13px; color: #64748b; line-height: 1.6; margin: 0;">编制详细装箱单，将每个构件与其包装、集装箱和安装参考关联。</p>
-        </div>
-        <div class="reveal reveal-delay-3" style="padding: 24px; background: white; border-radius: 10px; border: 1px solid #e2e8f0;">
-          <h4 style="font-size: 15px; color: #0f172a; margin-bottom: 10px;">钢梁包装</h4>
-          <p style="font-size: 13px; color: #64748b; line-height: 1.6; margin: 0;">钢梁和钢柱根据尺寸、重量和表面处理进行捆扎和保护。</p>
-        </div>
-        <div class="reveal reveal-delay-4" style="padding: 24px; background: white; border-radius: 10px; border: 1px solid #e2e8f0;">
-          <h4 style="font-size: 15px; color: #0f172a; margin-bottom: 10px;">桁架特殊包装</h4>
-          <p style="font-size: 13px; color: #64748b; line-height: 1.6; margin: 0;">桁架和特殊构件用适当支撑和保护包装，应对复杂几何形状。</p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- 07: 科学装柜 -->
-  <section class="section" style="padding: 70px 0;">
-    <div class="container">
-      <div class="section-heading reveal">
-        <div>
-          <p class="section-index">科学装柜</p>
-          <h2>优化集装箱装载</h2>
-        </div>
-        <div>
-          <p>装柜规划优化空间利用、重量分布和卸货便利性。通过合理的构件分段、排柜和科学装载，在适合的项目中可以降低运输成本。</p>
-        </div>
-      </div>
-      <div class="quality-grid" style="margin-top: 40px;">
-        {loadingFactors.map((factor, i) => (
-          <div class={`quality-item reveal reveal-delay-${(i % 4) + 1}`}>
-            <h4>{factor.title}</h4>
-            <p>{factor.desc}</p>
-          </div>
-        ))}
-      </div>
-      <div style="margin-top: 32px; padding: 24px; background: linear-gradient(135deg, #eff6ff 0%, #dbeafe 100%); border-radius: 12px; border: 1px solid #bfdbfe;" class="reveal">
-        <div style="display: flex; align-items: flex-start; gap: 16px;">
-          <div style="width: 48px; height: 48px; background: #1e40af; border-radius: 50%; display: flex; align-items: center; justify-content: center; color: white; font-size: 20px; flex-shrink: 0;">💡</div>
-          <div>
-            <h4 style="font-size: 17px; color: #1e3a5f; margin-bottom: 8px;">运费成本优化</h4>
-            <p style="font-size: 14px; color: #1e3a5f; line-height: 1.7; margin: 0;">通过合理的构件分段、排柜规划和科学装载，在适合的项目中可实现约 <strong>20%的运费成本节省</strong>。实际节省比例取决于项目构件尺寸、重量、运输路线和装柜条件。这不是每个项目都能保证的固定节省比例。</p>
-          </div>
-        </div>
-      </div>
-      <!-- 装柜证据图片 -->
-      <div style="display: grid; grid-template-columns: repeat(4, 1fr); gap: 16px; margin-top: 32px;" class="loading-evidence-grid">
-        <div class="reveal reveal-delay-1" style="border-radius: 10px; overflow: hidden;">
-          <img src="/images/components/finished-steel-members-stacked.jpg" alt="成品钢构件准备装柜" style="width: 100%; height: 180px; object-fit: cover; display: block;" width="300" height="180" loading="lazy">
-        </div>
-        <div class="reveal reveal-delay-2" style="border-radius: 10px; overflow: hidden;">
-          <img src="/images/export/heavy-member-prep-308_web.jpg" alt="重型钢构件准备装车" style="width: 100%; height: 180px; object-fit: cover; display: block;" width="300" height="180" loading="lazy">
-        </div>
-        <div class="reveal reveal-delay-3" style="border-radius: 10px; overflow: hidden;">
-          <img src="/images/export/container-loading-310_web.jpg" alt="钢构件装入海运集装箱" style="width: 100%; height: 180px; object-fit: cover; display: block;" width="300" height="180" loading="lazy">
-        </div>
-        <div class="reveal reveal-delay-4" style="border-radius: 10px; overflow: hidden;">
-          <img src="/images/export/container-loading-256_web.jpg" alt="已装柜集装箱准备出口发运" style="width: 100%; height: 180px; object-fit: cover; display: block;" width="300" height="180" loading="lazy">
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- 08: 超长构件 -->
-  <section class="section" style="padding: 70px 0; background: #f8fafc;">
-    <div class="container">
-      <div class="section-heading reveal">
-        <div>
-          <p class="section-index">超长构件</p>
-          <h2>长构件和超大型钢构件处理</h2>
-        </div>
-        <div>
-          <p>部分钢构件可能超过标准海运集装箱尺寸。中赛自有设计团队在设计阶段规划分段和运输方案，解决超长构件的挑战。</p>
-        </div>
-      </div>
-      <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 32px; margin-top: 40px;" class="oversized-grid">
-        <div class="reveal reveal-delay-1" style="padding: 28px; background: white; border-radius: 12px; border: 1px solid #e2e8f0;">
-          <h3 style="font-size: 18px; color: #0f172a; margin-bottom: 16px;">标准集装箱方案</h3>
-          <ul style="margin: 0; padding-left: 20px; color: #475569; font-size: 14px; line-height: 2;">
+      <div class="plan-grid">
+        <div class="plan-col">
+          <h4>标准集装箱方案</h4>
+          <ul>
             <li>大多数构件设计为适配40GP/40HQ集装箱</li>
             <li>长构件用螺栓拼接节点分段</li>
             <li>拼接位置规划在结构适当位置</li>
@@ -465,9 +286,9 @@ const relatedLinks = [
             <li>构件编号确保正确的现场组装</li>
           </ul>
         </div>
-        <div class="reveal reveal-delay-2" style="padding: 28px; background: white; border-radius: 12px; border: 1px solid #e2e8f0;">
-          <h3 style="font-size: 18px; color: #0f172a; margin-bottom: 16px;">特殊物流考虑</h3>
-          <ul style="margin: 0; padding-left: 20px; color: #475569; font-size: 14px; line-height: 2;">
+        <div class="plan-col">
+          <h4>特殊物流考虑</h4>
+          <ul>
             <li>高度受限构件可考虑开顶柜</li>
             <li>超宽或超重构件可用框架柜</li>
             <li>非标准超大构件的项目特定物流</li>
@@ -476,213 +297,96 @@ const relatedLinks = [
           </ul>
         </div>
       </div>
-      <div style="margin-top: 24px; padding: 16px 20px; background: #fffbeb; border-left: 4px solid #f59e0b; border-radius: 0 8px 8px 0;" class="reveal">
-        <p style="margin: 0; color: #92400e; font-size: 13px; line-height: 1.7;"><strong>说明：</strong>超长构件的具体运输方式根据项目构件尺寸、重量、港口条件、目的地国家公路法规和物流安排逐项目确定。中赛设计团队可以在设计阶段提供分段方案建议。</p>
+      <p class="params-note">超长构件的具体运输方式根据项目构件尺寸、重量、港口条件、目的地国家公路法规和物流安排逐项目确定。中赛设计团队可以在设计阶段提供分段方案建议。</p>
+    </div>
+  </section>
+
+  <!-- Export Documents -->
+  <section class="detail-section alt">
+    <div class="container">
+      <div class="section-heading">
+        <p class="section-index">06 · 出口资料</p>
+        <h2>出口文件与协调</h2>
+        <p>中赛根据项目要求支持准备和协调出口文件。当地进口许可、税费和目的地清关责任按 Incoterms、合同与项目约定执行，中赛不替代客户或其指定的报关行进行目的地国家清关。</p>
+      </div>
+      <div class="params-table-wrapper">
+        <table class="params-table">
+          <thead>
+            <tr><th>文件</th><th>说明</th></tr>
+          </thead>
+          <tbody>
+            {exportDocs.map((d) => (
+              <tr><td>{d.title}</td><td>{d.desc}</td></tr>
+            ))}
+          </tbody>
+        </table>
       </div>
     </div>
   </section>
 
-  <!-- 09: 出口文件 -->
-  <section class="section" style="padding: 70px 0;">
+  <!-- Responsibility Boundary -->
+  <section class="detail-section">
     <div class="container">
-      <div class="section-heading reveal">
-        <div>
-          <p class="section-index">出口资料</p>
-          <h2>出口文件支持</h2>
-        </div>
-        <div>
-          <p>中赛根据项目要求支持准备和协调出口文件。我们不替代客户或其指定的报关行进行目的地国家清关。</p>
-        </div>
+      <div class="section-heading">
+        <p class="section-index">07 · 责任边界</p>
+        <h2>中赛与当地项目团队的分工</h2>
+        <p>钢结构出口交付是多方协作的过程。中赛负责工厂内的工作与出口衔接，当地卸货、吊装、施工与法定审批由客户或其当地团队按项目约定负责。</p>
       </div>
-      <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; margin-top: 40px;" class="docs-grid">
-        {exportDocs.map((doc, i) => (
-          <div class={`reveal reveal-delay-${(i % 4) + 1}`} style="padding: 24px; background: #f8fafc; border-radius: 10px; border: 1px solid #e2e8f0;">
-            <h4 style="font-size: 15px; color: #1e3a5f; margin-bottom: 10px;">{doc.title}</h4>
-            <p style="font-size: 13px; color: #64748b; line-height: 1.6; margin: 0;">{doc.desc}</p>
-          </div>
-        ))}
-      </div>
-    </div>
-  </section>
-
-  <!-- 10: 交付协调 -->
-  <section class="section" style="padding: 70px 0; background: #f8fafc;">
-    <div class="container">
-      <div class="section-heading reveal">
-        <div>
-          <p class="section-index">交付协调</p>
-          <h2>海外交付协调</h2>
-        </div>
-        <div>
-          <p>中赛自有交付团队协调从生产完成到发运和目的地交接的完整交付过程。确保制造、包装、装柜和发运与项目时间计划对齐。</p>
-        </div>
-      </div>
-      <div style="display: grid; grid-template-columns: repeat(4, 1fr); gap: 20px; margin-top: 40px;" class="delivery-grid">
-        <div class="reveal reveal-delay-1" style="padding: 24px; background: white; border-radius: 10px; border: 1px solid #e2e8f0; text-align: center;">
-          <div style="width: 44px; height: 44px; background: #eff6ff; border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 12px;">
-            <span style="color: #1e40af; font-weight: 700; font-size: 16px;">01</span>
-          </div>
-          <h4 style="font-size: 14px; color: #0f172a; margin-bottom: 8px;">生产进度</h4>
-          <p style="font-size: 12px; color: #64748b; line-height: 1.6; margin: 0;">协调生产完成与包装和装柜进度。</p>
-        </div>
-        <div class="reveal reveal-delay-2" style="padding: 24px; background: white; border-radius: 10px; border: 1px solid #e2e8f0; text-align: center;">
-          <div style="width: 44px; height: 44px; background: #eff6ff; border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 12px;">
-            <span style="color: #1e40af; font-weight: 700; font-size: 16px;">02</span>
-          </div>
-          <h4 style="font-size: 14px; color: #0f172a; margin-bottom: 8px;">订舱协调</h4>
-          <p style="font-size: 12px; color: #64748b; line-height: 1.6; margin: 0;">与货代和船公司协调集装箱订舱。</p>
-        </div>
-        <div class="reveal reveal-delay-3" style="padding: 24px; background: white; border-radius: 10px; border: 1px solid #e2e8f0; text-align: center;">
-          <div style="width: 44px; height: 44px; background: #eff6ff; border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 12px;">
-            <span style="color: #1e40af; font-weight: 700; font-size: 16px;">03</span>
-          </div>
-          <h4 style="font-size: 14px; color: #0f172a; margin-bottom: 8px;">装柜与港口</h4>
-          <p style="font-size: 12px; color: #64748b; line-height: 1.6; margin: 0;">协调装柜日期、卡车运输和港口交货出口。</p>
-        </div>
-        <div class="reveal reveal-delay-4" style="padding: 24px; background: white; border-radius: 10px; border: 1px solid #e2e8f0; text-align: center;">
-          <div style="width: 44px; height: 44px; background: #eff6ff; border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 12px;">
-            <span style="color: #1e40af; font-weight: 700; font-size: 16px;">04</span>
-          </div>
-          <h4 style="font-size: 14px; color: #0f172a; margin-bottom: 8px;">发运与交接</h4>
-          <p style="font-size: 12px; color: #64748b; line-height: 1.6; margin: 0;">跟踪运输状态，协调文件交接和目的地交付。</p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- 11: 安装衔接 -->
-  <section class="section" style="padding: 70px 0;">
-    <div class="container">
-      <div class="section-heading reveal">
-        <div>
-          <p class="section-index">安装衔接</p>
-          <h2>海外安装交接</h2>
-        </div>
-        <div>
-          <p>交付后，中赛提供文件和技术支持，帮助当地安装团队正确组装钢结构。当地土建和实际施工通常由客户或其指定的当地施工团队完成。</p>
-        </div>
-      </div>
-      <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 32px; margin-top: 40px;" class="handover-grid">
-        <div class="reveal reveal-delay-1" style="padding: 32px; background: #ecfdf5; border-radius: 12px; border: 1px solid #a7f3d0;">
-          <h3 style="font-size: 18px; color: #065f46; margin-bottom: 16px;">中赛提供</h3>
-          <ul style="margin: 0; padding-left: 20px; color: #065f46; font-size: 14px; line-height: 2;">
-            <li>构件识别参考</li>
-            <li>安装图纸和吊装方案</li>
-            <li>含集装箱参考的详细装箱单</li>
-            <li>安装顺序信息</li>
-            <li>技术答疑和远程指导</li>
-            <li>按约定的项目特定技术支持</li>
+      <div class="boundary-grid">
+        <div class="boundary-box boundary-ok">
+          <h4>中赛负责</h4>
+          <ul>
+            <li>制造、检查、表面处理与构件编号</li>
+            <li>包装方案与集装箱装载规划</li>
+            <li>商业发票、装箱单与出口报关支持</li>
+            <li>按项目约定协助订舱、港口交货与海运协调</li>
+            <li>安装图纸、构件识别与远程技术指导</li>
           </ul>
         </div>
-        <div class="reveal reveal-delay-2" style="padding: 32px; background: #fef2f2; border-radius: 12px; border: 1px solid #fecaca;">
-          <h3 style="font-size: 18px; color: #991b1b; margin-bottom: 16px;">当地项目团队负责</h3>
-          <ul style="margin: 0; padding-left: 20px; color: #991b1b; font-size: 14px; line-height: 2;">
-            <li>当地卸货和现场物流</li>
+        <div class="boundary-box boundary-local">
+          <h4>当地项目团队负责</h4>
+          <ul>
+            <li>当地卸货与现场物流</li>
             <li>基础和土建施工</li>
             <li>现场人工和吊装队伍</li>
             <li>实际钢结构吊装安装</li>
-            <li>现场安全管理和监督</li>
-            <li>当地许可和法定审批</li>
+            <li>当地许可、法定审批与注册工程师签章</li>
           </ul>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- 12: 项目类型 -->
-  <section class="section" style="padding: 70px 0; background: #f8fafc;">
+  <!-- Shipment Videos Entry -->
+  <section class="detail-section alt">
     <div class="container">
-      <div class="section-heading reveal">
-        <div>
-          <p class="section-index">项目类型</p>
-          <h2>支持出口交付的项目类型</h2>
-        </div>
-        <div>
-          <p>中赛出口交付能力支持多种钢结构项目类型，每种都有特定的包装、装柜和交付要求。</p>
-        </div>
+      <div class="section-heading">
+        <p class="section-index">08 · 发货记录</p>
+        <h2>观看近期装柜与出口记录</h2>
+        <p>第一方视频证据：构件编号、打包、吊装和集装箱准备过程。视频在单独页面查看，不占用本页首屏加载。</p>
       </div>
-      <div class="related-grid" style="margin-top: 40px;">
-        {projectTypes.map((pt, i) => (
-          <a href={pt.href} class={`related-card reveal reveal-delay-${(i % 4) + 1}`}>
-            <h4>{pt.name}</h4>
-            <p>{pt.desc}</p>
-            <span class="related-cta">了解更多 →</span>
-          </a>
-        ))}
+      <div class="shipment-entry">
+        <a href="/zh/export-delivery/shipments/" class="btn btn-primary">查看发货视频 &rarr;</a>
       </div>
     </div>
   </section>
 
-  <!-- 13: 相关链接 -->
-  <section class="section" style="padding: 70px 0;">
+  <!-- Related Capabilities & Projects -->
+  <section class="detail-section">
     <div class="container">
-      <div class="section-heading reveal">
-        <div>
-          <p class="section-index">相关能力</p>
-          <h2>相关能力与项目证据</h2>
-        </div>
-        <div>
-          <p>出口交付与中赛工程、制造和项目能力集成。</p>
-        </div>
+      <div class="section-heading">
+        <p class="section-index">相关能力</p>
+        <h2>相关能力与项目证据</h2>
+        <p>出口交付与中赛工程、制造和项目能力集成。以下项目展示中赛在工程、制造与项目交付方面的相关能力。</p>
       </div>
-      <div class="related-grid" style="margin-top: 40px;">
-        {relatedLinks.map((link, i) => (
-          <a href={link.href} class={`related-card reveal reveal-delay-${(i % 4) + 1}`}>
+      <div class="related-links">
+        {relatedLinks.map((link) => (
+          <a href={link.href} class="related-link-card">
             <h4>{link.name}</h4>
             <p>{link.desc}</p>
-            <span class="related-cta">了解更多 →</span>
+            <span class="rl-arrow">→</span>
           </a>
         ))}
-      </div>
-    </div>
-  </section>
-
-  <!-- 13b: Watch Shipment Videos -->
-  <section class="section" style="padding: 70px 0;">
-    <div class="container">
-      <p class="eyebrow">发货视频</p>
-      <h2>观看近期装柜与出口记录</h2>
-      <p style="max-width:640px;margin-bottom:20px;">第一方视频证据：构件编号、打包、吊装和集装箱准备过程。</p>
-      <a href="/zh/export-delivery/shipments/" class="btn btn-outline">查看发货视频 &rarr;</a>
-    </div>
-  </section>
-
-  <!-- 14: FAQ -->
-  <section class="section" style="padding: 70px 0; background: #f8fafc;">
-    <div class="container">
-      <div class="section-heading reveal">
-        <div>
-          <p class="section-index">常见问题</p>
-          <h2>常见问题解答</h2>
-        </div>
-        <div>
-          <p>关于钢结构出口交付、科学装柜和海外项目协调的常见问题。</p>
-        </div>
-      </div>
-      <div style="max-width: 900px; margin: 40px auto 0;" class="faq-container">
-        {faqs.map((faq, i) => (
-          <details class={`reveal reveal-delay-${(i % 4) + 1}`} style="margin-bottom: 12px; background: white; border: 1px solid #e2e8f0; border-radius: 10px; overflow: hidden;">
-            <summary style="padding: 18px 24px; cursor: pointer; font-weight: 600; color: #0f172a; font-size: 15px; list-style: none; display: flex; justify-content: space-between; align-items: center;">
-              <span>{faq.q}</span>
-              <span style="color: #1e40af; font-size: 20px; flex-shrink: 0; margin-left: 16px;">+</span>
-            </summary>
-            <div style="padding: 0 24px 20px; color: #475569; font-size: 14px; line-height: 1.8;">
-              {faq.a}
-            </div>
-          </details>
-        ))}
-      </div>
-    </div>
-  </section>
-
-  <!-- 15: 报价CTA -->
-  
-  <!-- Related Projects -->
-  <section class="related-projects-section">
-    <div class="container container-xwide">
-      <div class="rp-heading">
-        <h2>有出口交付记录的真实项目</h2>
-        <p>以下项目的钢结构构件经过中赛交付团队的编号、包装、装柜和出口协调。</p>
       </div>
       <div class="rp-grid">
         <a href="/zh/projects/singapore-airport-t2-connect/" class="related-project-card">
@@ -728,244 +432,432 @@ const relatedLinks = [
     </div>
   </section>
 
-  <!-- 包装装柜真实证据 -->
-  <section class="section" style="padding: 70px 0; background: #f8fafc;">
+  <!-- FAQ -->
+  <section class="detail-section alt">
     <div class="container">
-      <div class="section-heading reveal">
-        <div>
-          <p class="section-index">真实证据</p>
-          <h2>包装、编号与装柜现场</h2>
-        </div>
-        <div>
-          <p>构件在出厂前完成编号、分类和包装，按项目装载计划装入集装箱。以下为中赛制造与出口交付现场的真实记录。</p>
-        </div>
+      <div class="section-heading">
+        <p class="section-index">常见问题</p>
+        <h2>钢结构出口交付常见问题</h2>
+        <p>关于钢结构出口交付、科学装柜和海外项目协调的常见问题。</p>
       </div>
-      <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; margin-top: 40px;" class="loading-evidence-grid">
-        <div class="reveal reveal-delay-1">
-          <div style="border-radius: 4px; overflow: hidden; aspect-ratio: 4/3; background: #0f172a;">
-            <img src="/images/manufacturing/real/component-marking.jpg" alt="钢构件编号标识现场" loading="lazy" style="width: 100%; height: 100%; object-fit: cover; display: block;">
+      <div class="detail-faq">
+        {faqs.map((faq) => (
+          <div class="faq-item">
+            <button type="button" class="faq-question" aria-expanded="false">
+              <span>{faq.q}</span>
+              <span class="faq-icon">+</span>
+            </button>
+            <div class="faq-answer">
+              <div class="faq-answer-inner">{faq.a}</div>
+            </div>
           </div>
-          <h3 style="font-size: 15px; margin: 12px 0 4px; color: #0f172a;">构件编号标识</h3>
-          <p style="font-size: 12px; color: #64748b; line-height: 1.6; margin: 0;">每根构件标注唯一编号，与加工图和安装图对应，便于现场识别和吊装顺序。</p>
-        </div>
-        <div class="reveal reveal-delay-2">
-          <div style="border-radius: 4px; overflow: hidden; aspect-ratio: 4/3; background: #0f172a;">
-            <img src="/images/export/container-loading-256_web.jpg" alt="钢结构构件集装箱装柜现场" loading="lazy" style="width: 100%; height: 100%; object-fit: cover; display: block;">
-          </div>
-          <h3 style="font-size: 15px; margin: 12px 0 4px; color: #0f172a;">集装箱装柜</h3>
-          <p style="font-size: 12px; color: #64748b; line-height: 1.6; margin: 0;">按装载计划将构件有序装入标准集装箱，合理利用空间并保护涂层和构件端部。</p>
-        </div>
-        <div class="reveal reveal-delay-3">
-          <div style="border-radius: 4px; overflow: hidden; aspect-ratio: 4/3; background: #0f172a;">
-            <img src="/images/export/loading-truck_web.jpg" alt="钢结构构件装车发运现场" loading="lazy" style="width: 100%; height: 100%; object-fit: cover; display: block;">
-          </div>
-          <h3 style="font-size: 15px; margin: 12px 0 4px; color: #0f172a;">装车与发运</h3>
-          <p style="font-size: 12px; color: #64748b; line-height: 1.6; margin: 0;">超长或超重构件采用专用车辆运输至港口，配合出口文件和装箱单完成发运。</p>
-        </div>
-      </div>
-      <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 20px; margin-top: 20px;" class="loading-evidence-grid-2">
-        <div class="reveal reveal-delay-1">
-          <div style="border-radius: 4px; overflow: hidden; aspect-ratio: 16/9; background: #0f172a;">
-            <img src="/images/container-loading.jpg" alt="大型钢结构构件装柜作业" loading="lazy" style="width: 100%; height: 100%; object-fit: cover; display: block;">
-          </div>
-          <h3 style="font-size: 15px; margin: 12px 0 4px; color: #0f172a;">大型构件装柜作业</h3>
-          <p style="font-size: 12px; color: #64748b; line-height: 1.6; margin: 0;">门式刚架、吊车梁等大型构件按重量和尺寸规划装载顺序，确保运输安全和卸货便利。</p>
-        </div>
-        <div class="reveal reveal-delay-2">
-          <div style="border-radius: 4px; overflow: hidden; aspect-ratio: 16/9; background: #0f172a;">
-            <img src="/images/export/container-loading-310_web.jpg" alt="钢结构出口集装箱装载" loading="lazy" style="width: 100%; height: 100%; object-fit: cover; display: block;">
-          </div>
-          <h3 style="font-size: 15px; margin: 12px 0 4px; color: #0f172a;">出口集装箱装载</h3>
-          <p style="font-size: 12px; color: #64748b; line-height: 1.6; margin: 0;">配套装箱单和出口文件，确保目的港清关和现场接收时构件可追溯、可核对。</p>
-        </div>
+        ))}
       </div>
     </div>
   </section>
-<section class="quote-cta-section" id="quote">
-    <div class="container">
-      <ExportDeliveryCTA lang="zh" />
 
-      <div class="quote-cta-header reveal">
-        <p class="section-index" style="color: #f59e0b;">开始合作</p>
+  <!-- Quote -->
+  <section class="detail-section" id="quote">
+    <div class="container">
+      <div class="section-heading">
+        <p class="section-index">项目询盘</p>
         <h2>有钢结构项目需要出口交付？</h2>
         <p>发送您的项目图纸、交付地点和技术要求。中赛自有设计和交付团队将审核制造和交付可行性，并准备项目专属报价，涵盖制造、包装、科学装柜和出口交付协调。</p>
       </div>
-      <div style="display: flex; gap: 16px; margin-bottom: 32px; flex-wrap: wrap;" class="quote-cta-buttons reveal">
-        <a href="#quote-form" class="btn btn-primary" style="font-size: 16px; padding: 14px 32px;">获取项目方案</a>
-        <a href="/zh/contact/" class="btn btn-secondary" style="font-size: 16px; padding: 14px 32px;">沟通交付需求</a>
-      </div>
-      <div id="quote-form">
-        <QuoteForm lang={lang} />
-      </div>
+      <QuoteForm lang={lang} />
     </div>
   </section>
-
-<style>
-.loading-evidence-grid { grid-template-columns: repeat(3, 1fr); }
-.loading-evidence-grid-2 { grid-template-columns: 1fr 1fr; }
-@media (max-width: 900px) { .loading-evidence-grid { grid-template-columns: repeat(2, 1fr) !important; } }
-@media (max-width: 600px) { .loading-evidence-grid, .loading-evidence-grid-2 { grid-template-columns: 1fr !important; } }
-</style>
 </BaseLayout>
 
 <style>
-.hero-capabilities {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 16px;
-  margin: 28px 0;
+/* Outline button for dark hero */
+.btn-outline {
+  background: transparent;
+  color: #ffffff;
+  border: 1px solid rgba(255,255,255,0.45);
 }
-.cap-item {
+.btn-outline:hover {
+  border-color: #ffffff;
+  background: rgba(255,255,255,0.12);
+  text-decoration: none;
+}
+
+/* Hero evidence strip */
+.hero-strip {
   display: flex;
-  align-items: flex-start;
-  gap: 12px;
-  padding: 14px 16px;
-  background: rgba(255,255,255,0.08);
-  border-radius: 10px;
-  border: 1px solid rgba(255,255,255,0.15);
+  flex-wrap: wrap;
+  gap: 10px 32px;
+  justify-content: center;
+  padding: 18px 0 4px;
 }
-.cap-icon {
-  color: #f59e0b;
-  font-size: 14px;
-  margin-top: 2px;
-  flex-shrink: 0;
+.hero-strip span {
+  font-size: 13px;
+  font-weight: 600;
+  color: #475569;
+  letter-spacing: 0.4px;
+  position: relative;
+  padding-left: 16px;
 }
-.cap-title {
-  display: block;
+.hero-strip span::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 50%;
+  width: 8px;
+  height: 8px;
+  border-radius: 2px;
+  background: #f59e0b;
+  transform: translateY(-50%);
+}
+
+/* Export chain */
+.export-chain {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 10px;
+  justify-content: center;
+  margin: 8px 0 28px;
+}
+.chain-step {
+  background: #ffffff;
+  border: 1px solid #e2e8f0;
+  border-radius: 2px;
+  padding: 14px 18px;
   font-size: 14px;
   font-weight: 600;
-  color: white;
-  margin-bottom: 2px;
-}
-.cap-desc {
-  display: block;
-  font-size: 12px;
-  color: rgba(255,255,255,0.65);
-}
-.hero-cta-group {
+  color: #0f172a;
   display: flex;
-  gap: 16px;
-  flex-wrap: wrap;
-  margin-top: 8px;
+  align-items: center;
+  gap: 8px;
 }
-.btn {
+.chain-num {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  padding: 12px 28px;
-  border-radius: 8px;
-  font-weight: 600;
-  font-size: 15px;
-  text-decoration: none;
-  transition: all 0.2s;
-  border: none;
-  cursor: pointer;
+  width: 22px;
+  height: 22px;
+  border-radius: 2px;
+  background: #1e3a5f;
+  color: #ffffff;
+  font-size: 12px;
+  font-weight: 700;
 }
-.btn-primary {
-  background: #f59e0b;
-  color: #0f172a;
+.chain-arrow {
+  font-size: 16px;
+  color: #f59e0b;
+  font-weight: 700;
 }
-.btn-primary:hover {
-  background: #d97706;
-}
-.btn-secondary {
-  background: rgba(255,255,255,0.1);
-  color: white;
-  border: 1px solid rgba(255,255,255,0.3);
-}
-.btn-secondary:hover {
-  background: rgba(255,255,255,0.2);
-}
-.process-timeline {
+
+/* Ship design grid (6 points) */
+.ship-design-grid {
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: 20px;
-  margin-top: 40px;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 16px;
+  margin-top: 30px;
 }
-.timeline-item {
-  padding: 20px;
-  background: white;
-  border-radius: 10px;
+.ship-design-card {
+  background: #ffffff;
   border: 1px solid #e2e8f0;
-  position: relative;
+  border-radius: 2px;
+  padding: 20px;
 }
-.timeline-num {
+.sd-num {
   display: inline-block;
   font-size: 12px;
   font-weight: 700;
   color: #1e40af;
   background: #eff6ff;
-  padding: 4px 10px;
-  border-radius: 4px;
+  padding: 3px 8px;
+  border-radius: 2px;
   margin-bottom: 10px;
 }
-.timeline-content h3 {
+.ship-design-card h4 {
   font-size: 15px;
+  font-weight: 700;
   color: #0f172a;
-  margin-bottom: 6px;
+  margin: 0 0 8px;
 }
-.timeline-content p {
-  font-size: 12px;
-  color: #64748b;
-  line-height: 1.6;
+.ship-design-card p {
+  font-size: 13px;
+  line-height: 1.65;
+  color: #475569;
   margin: 0;
 }
-details summary::-webkit-details-marker {
-  display: none;
-}
-details[open] summary span:last-child {
-  transform: rotate(45deg);
-}
-details summary span:last-child {
-  transition: transform 0.2s;
-}
-@media (max-width: 1024px) {
-  .hero-capabilities {
-    grid-template-columns: 1fr;
-  }
-  .process-timeline {
-    grid-template-columns: repeat(2, 1fr);
-  }
-  .marking-grid, .planning-grid, .oversized-grid, .handover-grid {
-    grid-template-columns: 1fr !important;
-  }
-  .packing-grid, .delivery-grid {
-    grid-template-columns: repeat(2, 1fr) !important;
-  }
-  .docs-grid {
-    grid-template-columns: repeat(2, 1fr) !important;
-  }
-  .loading-evidence-grid {
-    grid-template-columns: repeat(2, 1fr) !important;
-  }
-}
-@media (max-width: 768px) {
-  .process-timeline {
-    grid-template-columns: 1fr;
-  }
-  .packing-grid, .delivery-grid, .docs-grid {
-    grid-template-columns: 1fr !important;
-  }
-  .loading-evidence-grid {
-    grid-template-columns: 1fr 1fr !important;
-  }
-  .hero-cta-group {
-    flex-direction: column;
-  }
-  .hero-cta-group .btn {
-    width: 100%;
-  }
-}
-</style>
 
-<style>
-.shipment-grid-export {
+/* Blue note (kept claim-safe) */
+.blue-note {
+  margin-top: 28px;
+  padding: 20px;
+  background: #eff6ff;
+  border-left: 4px solid #1e40af;
+  border-radius: 0 2px 2px 0;
+  font-size: 14px;
+  line-height: 1.75;
+  color: #1e3a5f;
+}
+
+/* Manufacturing process grid (reused) */
+.mfg-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 16px;
+  margin-top: 30px;
+}
+.mfg-card {
+  background: #ffffff;
+  border: 1px solid #e2e8f0;
+  border-radius: 2px;
+  overflow: hidden;
+  transition: transform 0.25s, border-color 0.25s;
+}
+.mfg-card:hover { transform: translateY(-3px); }
+.mfg-num {
+  display: inline-block;
+  background: #1e3a5f;
+  color: #ffffff;
+  font-size: 12px;
+  font-weight: 700;
+  padding: 4px 10px;
+  border-radius: 2px;
+  letter-spacing: 1px;
+  margin-bottom: 10px;
+}
+.mfg-body {
+  padding: 18px 20px 20px;
+}
+.mfg-body h4 {
+  font-size: 15.5px;
+  font-weight: 700;
+  color: #0f172a;
+  margin: 0 0 8px;
+}
+.mfg-body p {
+  font-size: 13px;
+  line-height: 1.65;
+  color: #475569;
+  margin: 0;
+}
+
+/* Evidence strip */
+.evidence-strip {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 20px;
-  margin-top: 40px;
+  margin-top: 30px;
 }
-@media (max-width: 900px) {
-  .shipment-grid-export { grid-template-columns: 1fr; }
+.evidence-item {
+  background: #ffffff;
+  border: 1px solid #e2e8f0;
+  border-radius: 2px;
+  overflow: hidden;
+}
+.evidence-item img {
+  width: 100%;
+  aspect-ratio: 4/3;
+  object-fit: cover;
+  display: block;
+}
+.evidence-item h4 {
+  font-size: 15px;
+  font-weight: 700;
+  color: #0f172a;
+  margin: 14px 18px 6px;
+}
+.evidence-item p {
+  font-size: 13px;
+  line-height: 1.65;
+  color: #475569;
+  margin: 0 18px 18px;
+}
+
+/* Plan grid (oversized) */
+.plan-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+  margin-top: 30px;
+}
+.plan-col {
+  background: #ffffff;
+  border: 1px solid #e2e8f0;
+  border-radius: 2px;
+  padding: 24px;
+}
+.plan-col h4 {
+  font-size: 16px;
+  font-weight: 700;
+  color: #0f172a;
+  margin: 0 0 14px;
+}
+.plan-col ul {
+  margin: 0;
+  padding-left: 20px;
+  color: #475569;
+  font-size: 14px;
+  line-height: 2;
+}
+
+/* Boundary */
+.boundary-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+  margin-top: 28px;
+}
+.boundary-box {
+  border-radius: 2px;
+  padding: 28px;
+}
+.boundary-box h4 {
+  font-size: 17px;
+  font-weight: 700;
+  margin: 0 0 14px;
+}
+.boundary-box ul {
+  margin: 0;
+  padding-left: 20px;
+  font-size: 14px;
+  line-height: 2;
+}
+.boundary-ok {
+  background: #ecfdf5;
+  border: 1px solid #a7f3d0;
+}
+.boundary-ok h4 { color: #065f46; }
+.boundary-ok ul { color: #065f46; }
+.boundary-local {
+  background: #fef2f2;
+  border: 1px solid #fecaca;
+}
+.boundary-local h4 { color: #991b1b; }
+.boundary-local ul { color: #991b1b; }
+
+/* Shipment entry */
+.shipment-entry {
+  display: flex;
+  justify-content: center;
+  margin-top: 12px;
+}
+
+/* Related projects */
+.rp-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+  margin-top: 28px;
+}
+.related-project-card {
+  display: flex;
+  flex-direction: column;
+  background: #fff;
+  border-radius: 2px;
+  overflow: hidden;
+  text-decoration: none;
+  color: inherit;
+  border: 1px solid rgba(0,0,0,0.06);
+  transition: transform 0.25s, border-color 0.25s;
+}
+.related-project-card:hover { transform: translateY(-4px); }
+.rpc-image {
+  aspect-ratio: 16/10;
+  overflow: hidden;
+  background: #f0f0f0;
+}
+.rpc-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+.rpc-content {
+  padding: 18px;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+.rpc-category {
+  display: inline-block;
+  background: #e8f0f7;
+  color: #1e3a5f;
+  padding: 3px 10px;
+  border-radius: 2px;
+  font-size: 0.72rem;
+  font-weight: 600;
+  margin-bottom: 10px;
+  align-self: flex-start;
+}
+.rpc-content h4 {
+  font-size: 1rem;
+  color: #0f172a;
+  margin: 0 0 6px;
+  line-height: 1.4;
+}
+.rpc-location { color: #888; font-size: 0.82rem; margin: 0 0 8px; }
+.rpc-data { color: #333; font-size: 0.85rem; font-weight: 600; margin: 0 0 10px; }
+.rpc-scope {
+  color: #666;
+  font-size: 0.78rem;
+  margin: 0;
+  line-height: 1.5;
+  padding-top: 10px;
+  border-top: 1px dashed rgba(0,0,0,0.08);
+}
+.rpc-scope span { color: #1e3a5f; font-weight: 600; }
+.rp-more {
+  text-align: center;
+  margin-top: 28px;
+}
+.rp-more .btn-outline {
+  color: #1e3a5f;
+  border-color: #1e3a5f;
+}
+.rp-more .btn-outline:hover {
+  background: #f1f5f9;
+}
+
+@media (max-width: 1024px) {
+  .ship-design-grid { grid-template-columns: repeat(2, 1fr); }
+  .mfg-grid { grid-template-columns: repeat(2, 1fr); }
+  .evidence-strip { grid-template-columns: repeat(2, 1fr); }
+  .rp-grid { grid-template-columns: repeat(2, 1fr); }
+}
+@media (max-width: 768px) {
+  .ship-design-grid, .mfg-grid, .evidence-strip, .plan-grid, .boundary-grid { grid-template-columns: 1fr; }
+  .evidence-item img { height: 220px; }
+  .hero-strip { gap: 8px 20px; }
+  .rp-grid { grid-template-columns: 1fr; }
 }
 </style>
+
+<script>
+  // FAQ toggle
+  document.querySelectorAll('.faq-question').forEach(btn => {
+    btn.addEventListener('click', () => {
+      const item = btn.closest('.faq-item');
+      const isOpen = item.classList.contains('open');
+      item.classList.toggle('open');
+      btn.setAttribute('aria-expanded', !isOpen);
+    });
+  });
+
+  // Scroll reveal
+  const revealElements = document.querySelectorAll('.reveal');
+  if ('IntersectionObserver' in window) {
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.style.opacity = '1';
+          entry.target.style.transform = 'translateY(0)';
+          observer.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.1 });
+    revealElements.forEach(el => {
+      el.style.opacity = '0';
+      el.style.transform = 'translateY(24px)';
+      el.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+      observer.observe(el);
+    });
+  }
+</script>
