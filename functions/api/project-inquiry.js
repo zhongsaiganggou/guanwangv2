@@ -196,7 +196,12 @@ export async function onRequestPost(context) {
     // Generate lead ID
     const leadId = generateId();
     const language = fields.language === 'zh' ? 'zh' : 'en';
-    const isTest = fields.name && (fields.name.toLowerCase().includes('v2 qa test') || fields.name.toLowerCase().includes('test_record')) ? 1 : 0;
+    // QA/test submissions are identified by a deliberately specific internal
+    // marker in the name field ("v2 qa test"). Ordinary client names cannot
+    // match this marker. A client-supplied test_record flag is never used as
+    // the decision input here — it is only recorded for audit purposes.
+    const QA_MARKER = 'v2 qa test';
+    const isTest = fields.name && fields.name.toLowerCase().includes(QA_MARKER) ? 1 : 0;
 
     // Build dimensions string
     const dimensions = [fields.length, fields.width, fields.height].filter(Boolean).join('x') || '';
@@ -326,8 +331,8 @@ export async function onRequestPost(context) {
           ? '项目需求已收到，但附件未能完整保存。我们将通过您填写的联系方式跟进。'
           : 'Project inquiry received, but the attachments could not be fully saved. We will follow up using your contact details.')
         : (language === 'zh'
-          ? '项目需求已提交。感谢您的提交。中赛钢构将根据您提供的项目资料进行审核，并通过您填写的联系方式进行后续沟通。'
-          : 'Project inquiry received. Thank you. ZhongSai will review the project information and follow up using the contact details you provided.'),
+          ? '项目需求已提交。感谢您的提交。中赛钢构将根据您提供的项目资料进行审核，并通过您填写的联系方式进行后续沟通。如需补充资料，工程团队会通过微信或邮件与您联系确认。'
+          : 'Project inquiry received. Thank you. ZhongSai will review the project information and follow up using the contact details you provided. We will reach out via WeChat or email if any further details are needed.'),
     }, 201);
 
     // Background: send webhook + WeCom notification

@@ -12,7 +12,7 @@ const { lang = 'zh', id = 'quote-form', embed = false } = Astro.props;
 
 const texts = lang === 'zh' ? {
   title: '获取项目方案与报价',
-  subtitle: '已有图纸可直接上传；暂无完整图纸，也可以提交项目基本需求。',
+  subtitle: '已有图纸可直接上传；暂无完整图纸，也可以提交项目基本需求。尚未确定的信息可留待后续沟通。',
   tabDrawings: '已有图纸 / BOQ',
   tabNoDrawings: '暂无完整图纸',
   name: '姓名 / 称呼',
@@ -39,7 +39,7 @@ const texts = lang === 'zh' ? {
   submitNoDrawings: '提交项目需求',
   submitting: '提交中...',
   successTitle: '项目需求已提交',
-  successMsg: '感谢您的提交。中赛钢构将根据您提供的项目资料进行审核，并通过您填写的联系方式进行后续沟通。',
+  successMsg: '感谢您的提交。中赛钢构将根据您提供的项目资料进行审核，并通过您填写的联系方式进行后续沟通。如需补充资料，工程团队会通过微信或邮件与您联系确认。',
   errorTurnstile: '验证失败，请重新提交。',
   errorValidation: '请检查必填字段。',
   errorNetwork: '网络错误，请稍后重试。',
@@ -55,7 +55,7 @@ const texts = lang === 'zh' ? {
   requiredPhoneCode: '请选择国家区号',
   requiredContact: '请至少填写微信或电话号码，方便我们联系您。',
   requiredCodeWithPhone: '请输入国家/地区区号。',
-  hintWechat: '与电话至少填一项',
+  hintWechat: '推荐填写，方便工程团队沟通',
   hintPhone: '与微信至少填一项',
   hintCode: '填电话时必填',
   privacyNote: '提交即表示您同意我们的隐私政策，我们不会分享您的信息。',
@@ -74,7 +74,7 @@ const texts = lang === 'zh' ? {
   notSure: '不确定',
 } : {
   title: 'Get Project Solution & Quote',
-  subtitle: 'Upload drawings if you have them; or submit basic project requirements if not.',
+  subtitle: 'Upload drawings if you have them; or submit basic project requirements if not. Leave any uncertain details for later discussion.',
   tabDrawings: 'Have Drawings / BOQ',
   tabNoDrawings: 'No Complete Drawings Yet',
   name: 'Name',
@@ -101,7 +101,7 @@ const texts = lang === 'zh' ? {
   submitNoDrawings: 'Submit Project Requirements',
   submitting: 'Submitting...',
   successTitle: 'Project inquiry received',
-  successMsg: 'Thank you. ZhongSai will review the project information and follow up using the contact details you provided.',
+  successMsg: 'Thank you. ZhongSai will review the project information and follow up using the contact details you provided. We will reach out via WeChat or email if any further details are needed.',
   errorTurnstile: 'Verification failed. Please try again.',
   errorValidation: 'Please check required fields.',
   errorNetwork: 'Network error. Please try again.',
@@ -117,7 +117,7 @@ const texts = lang === 'zh' ? {
   requiredPhoneCode: 'Please select country / calling code',
   requiredContact: 'Please provide either a WeChat ID or phone number so we can contact you.',
   requiredCodeWithPhone: 'Please select a country/region code.',
-  hintWechat: 'phone or WeChat required',
+  hintWechat: 'Recommended — our team follows up here',
   hintPhone: 'phone or WeChat required',
   hintCode: 'required with phone',
   privacyNote: 'By submitting, you agree to our privacy policy. We will not share your information.',
@@ -854,9 +854,24 @@ const phoneCodes = [
           const result = await response.json();
 
           if (result.success && result.lead_id && result.lead_id !== 'filtered') {
-            // Success - trigger GA4 generate_lead (NO PII)
+            // Success
             const activePath = form.querySelector('input[name="active_path"]').value;
-            if (typeof window.trackLeadConversion === 'function') {
+
+            // QA / test isolation: submissions the server marked as test_record=1
+            // must NOT fire formal conversion events (generate_lead / project_form_submit
+            // / drawing_upload / Meta Lead). They emit a separate qa_form_submit event
+            // so QA work stays visible without polluting real lead data.
+            const isQa = result.test_record === true;
+            if (isQa) {
+              if (typeof window.trackEvent === 'function') {
+                window.trackEvent('qa_form_submit', {
+                  lead_id: result.lead_id,
+                  language: lang,
+                  form_variant: activePath === 'drawings' ? 'have_drawings' : 'no_drawings',
+                  page_path: window.location.pathname,
+                });
+              }
+            } else if (typeof window.trackLeadConversion === 'function') {
               window.trackLeadConversion({
                 lead_id: result.lead_id,
                 language: lang,
@@ -872,8 +887,8 @@ const phoneCodes = [
             showSuccess(
               isZh ? '项目需求已提交' : 'Project inquiry received',
               result.message || (isZh
-                ? '感谢您的提交。中赛钢构将根据您提供的项目资料进行审核，并通过您填写的联系方式进行后续沟通。'
-                : 'Thank you. ZhongSai will review the project information and follow up using the contact details you provided.')
+                ? '感谢您的提交。中赛钢构将根据您提供的项目资料进行审核，并通过您填写的联系方式进行后续沟通。如需补充资料，工程团队会通过微信或邮件与您联系确认。'
+                : 'Thank you. ZhongSai will review the project information and follow up using the contact details you provided. We will reach out via WeChat or email if any further details are needed.')
             );
           } else if (result.success && result.lead_id === 'filtered') {
             // Honeypot filtered - silently show success (don't reveal it's a filter)
