@@ -1,22 +1,590 @@
 ﻿---
 import BaseLayout from '../../../layouts/BaseLayout.astro';
+import QuoteForm from '../../../components/QuoteForm.astro';
+import '../../../styles/detail.css';
 
 const title = 'Solutions | ZhongSai Steel Structure';
 const description = 'ZhongSai provides steel structure solutions for industrial, commercial, agricultural, mining, infrastructure and other industries.';
 const lang = 'en';
-const canonical = 'https://zhongsai-steelstructure.com/en/products/';
+
+const apps = [
+  {
+    href: '/en/steel-workshop/',
+    img: '/images/optimized/home/sol-industrial-720.jpg',
+    alt: 'Industrial steel structure workshop building',
+    name: 'Industrial & Manufacturing',
+    need: 'Factory buildings, production workshops and industrial buildings with cranes',
+    tags: ['Production Plants', 'Workshops', 'Crane Buildings'],
+  },
+  {
+    href: '/en/steel-warehouse/',
+    img: '/images/optimized/home/sol-warehouse-720.jpg',
+    alt: 'Warehouse and logistics steel structure',
+    name: 'Warehousing & Logistics',
+    need: 'Logistics warehouses, sorting and distribution with high space efficiency',
+    tags: ['Logistics Warehouses', 'Sorting Centers', 'Bonded Warehouses'],
+  },
+  {
+    href: '/en/steel-mining-factory/',
+    img: '/images/optimized/home/sol-mining-720.jpg',
+    alt: 'Mining and energy steel structures and silos',
+    name: 'Mining & Energy',
+    need: 'Heavy steel structures for processing plants, storage silos and energy facilities',
+    tags: ['Processing Plants', 'Silos & Gantries', 'Energy Support'],
+  },
+  {
+    href: '/en/agricultural-steel-buildings/',
+    img: '/images/optimized/home/sol-agriculture-720.jpg',
+    alt: 'Agricultural and livestock steel building',
+    name: 'Agriculture & Livestock',
+    need: 'Buildings for livestock, planting and agricultural support facilities',
+    tags: ['Livestock Farms', 'Greenhouses', 'Farm Storage'],
+  },
+  {
+    href: '/en/commercial-public-steel-buildings/',
+    img: '/images/optimized/home/sol-commercial-720.jpg',
+    alt: 'Commercial and public steel building',
+    name: 'Commercial & Public',
+    need: 'Commercial complexes, venues and public buildings',
+    tags: ['Commercial Complexes', 'Sports Venues', 'Public Buildings'],
+  },
+  {
+    href: '/en/transportation-infrastructure-steel/',
+    img: '/images/optimized/home/sol-transport-720.jpg',
+    alt: 'Transportation and infrastructure steel structure',
+    name: 'Transportation & Infrastructure',
+    need: 'Stations, airport support and transport infrastructure',
+    tags: ['Stations', 'Airport Support', 'Transport Facilities'],
+  },
+  {
+    href: '/en/special-custom-steel-structures/',
+    img: '/images/products/special/platform-mezzanine-large.jpg',
+    alt: 'Steel mezzanine and second-floor platform',
+    name: 'Special & Custom Steel Structures',
+    need: 'Mezzanines, second-floor platforms, equipment platforms and non-standard custom structures',
+    tags: ['Mezzanines / Platforms', 'Steel Platforms', 'Equipment Platforms', 'Special Shapes'],
+  },
+];
+
+const needs = [
+  {
+    href: '/en/engineering-design/',
+    name: 'Engineering & Detailing',
+    desc: 'You have land and building dimensions, but no complete drawings yet',
+  },
+  {
+    href: '/en/manufacturing-quality/',
+    name: 'Manufacturing & Quality',
+    desc: 'You have drawings / BOQ and need fabrication with quality control',
+  },
+  {
+    href: '/en/export-delivery/',
+    name: 'Export Delivery',
+    desc: 'You need member marking, packing, container loading and export documentation',
+  },
+  {
+    href: '/en/special-custom-steel-structures/',
+    name: 'Special & Custom Steel Structures',
+    desc: 'You have an existing building and need to add a mezzanine or second-floor platform',
+  },
+  {
+    href: '/en/components/steel-trusses/',
+    name: 'Steel Trusses',
+    desc: 'You need long-span, column-free space or roof structure solutions',
+  },
+  {
+    href: '/en/installation-guidance/',
+    name: 'Installation Technical Support',
+    desc: 'You need erection drawings, member marks and on-site technical coordination',
+  },
+];
+
+const chain = [
+  {
+    step: '01',
+    name: 'Engineering & Detailing',
+    desc: 'Coordinate structure and connections against approved drawings, deliver fabrication-ready detailing.',
+    href: '/en/engineering-design/',
+  },
+  {
+    step: '02',
+    name: 'Manufacturing & Quality',
+    desc: 'Cutting, fit-up, welding, dimensional inspection, surface treatment and member marking.',
+    href: '/en/manufacturing-quality/',
+  },
+  {
+    step: '03',
+    name: 'Export Delivery',
+    desc: 'Member segmentation, packing, container loading and export documentation coordination.',
+    href: '/en/export-delivery/',
+  },
+  {
+    step: '04',
+    name: 'Installation Technical Support',
+    desc: 'Erection drawings, member marks and technical coordination. Local erection is usually carried out by the local team.',
+    href: '/en/installation-guidance/',
+  },
+];
+
+const featuredProjects = [
+  {
+    href: '/en/projects/zhanjiang-logistics-port/',
+    name: 'Shenzhen International Zhanjiang Logistics Port Project',
+    where: 'Zhanjiang, Guangdong · Logistics & Warehousing',
+  },
+  {
+    href: '/en/projects/xiegang-aviation-manufacturing/',
+    name: 'Xiegang General Aviation Manufacturing & Supply Chain Project',
+    where: 'Dongguan, Guangdong · Industrial Manufacturing',
+  },
+  {
+    href: '/en/projects/dongguan-huarun-center/',
+    name: 'Dongguan Huarun Land Center Commercial & Residential Project',
+    where: 'Dongguan, Guangdong · Commercial & Public',
+  },
+  {
+    href: '/en/projects/cnpc-cracking-furnace/',
+    name: 'CNPC Cracking Furnace Project',
+    where: 'Energy · Heavy Industry',
+  },
+];
+
+const faqs = [
+  {
+    q: 'Which steel structure solution should I choose?',
+    a: 'It mainly depends on the building purpose and requirements: manufacturing and production projects go to "Industrial & Manufacturing", warehousing and logistics projects go to "Warehousing & Logistics", and so on. If you are not sure which category your project belongs to, you can submit your project requirements directly and the engineering team will help identify the right entry point based on use, dimensions and site conditions.',
+  },
+  {
+    q: 'Can I start without complete drawings?',
+    a: 'Yes. You can first provide the project country / region, building purpose, length, width, height, estimated span and crane / equipment requirements, and the engineering team will carry out an initial assessment. Providing complete drawings and a BOQ makes quotation and detailing more accurate.',
+  },
+  {
+    q: 'Can you fabricate according to the client’s drawings?',
+    a: 'Yes. ZhongSai provides detailing coordination and fabrication according to the client’s approved architectural drawings, structural drawings and BOQ. The engineering team reviews the project information, equipment layout and applicable local codes, then issues fabrication drawings. Final structural design should be confirmed by a qualified engineer under the applicable local regulations.',
+  },
+  {
+    q: 'Does ZhongSai carry out overseas local construction?',
+    a: 'ZhongSai provides fabrication, export delivery, erection drawings and installation technical guidance. Local erection, construction and site labour for overseas projects are usually carried out by the local construction team or the client’s contractor; a more specific division of responsibility can be confirmed under the project contract.',
+  },
+  {
+    q: 'How do I start a quotation or technical review?',
+    a: 'Submit your project information through the form below (drawings can be uploaded directly; basic requirements can also be submitted without complete drawings). The engineering team will review the information and contact you through the WeChat, phone or email you provide to confirm any additional information needed and continue the technical coordination.',
+  },
+];
 ---
 
-<BaseLayout title={title} description={description} lang={lang} canonical={canonical}>
-  <section style="padding: 80px 0; text-align: center; background: #f8f9fa;">
+<BaseLayout title={title} description={description} lang={lang}>
+  <!-- Hero -->
+  <section class="detail-hero">
+    <div class="detail-hero-bg" style="background-image: url('/images/optimized/home/hero-1280.jpg');"></div>
+    <div class="detail-hero-overlay"></div>
+    <div class="detail-hero-content">
+      <span class="eyebrow">Project Solutions</span>
+      <h1>Steel Structure Solutions</h1>
+      <p class="lead">ZhongSai provides steel structure supply support — from engineering coordination and detailing, fabrication and quality control, to export delivery — for industrial plants, warehousing & logistics, mining & energy, agriculture & livestock, commercial & public, transportation infrastructure and special structure projects.</p>
+      <div class="hero-capabilities">
+        <div class="cap-item"><span class="cap-icon">📐</span><span>Engineering & Detailing</span></div>
+        <div class="cap-item"><span class="cap-icon">🏭</span><span>Manufacturing & Quality</span></div>
+        <div class="cap-item"><span class="cap-icon">🚢</span><span>Export Delivery</span></div>
+        <div class="cap-item"><span class="cap-icon">🔧</span><span>Installation Technical Support</span></div>
+      </div>
+      <div class="detail-hero-actions">
+        <a href="#applications" class="btn btn-primary">Choose Project Type</a>
+        <a href="#quote" class="btn btn-outline">Submit Project Requirements</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Breadcrumb -->
+  <nav class="detail-breadcrumb">
     <div class="container">
-      <h1 style="font-size: 1.8rem; color: #0a3d62; margin-bottom: 16px;">Steel Structure Solutions</h1>
-      <p style="font-size: 1.05rem; color: #555; margin-bottom: 32px; max-width: 600px; margin-left: auto; margin-right: auto;">
-        ZhongSai provides complete steel structure solutions for industrial workshops, warehousing & logistics, commercial & public buildings, agriculture, mining & energy, transportation infrastructure and more.
-      </p>
-      <a href="/en/products/" class="btn btn-primary" style="display: inline-block; padding: 14px 32px; font-size: 1rem;">
-        View All Products & Solutions →
-      </a>
+      <a href="/en/">Home</a>
+      <span class="sep">/</span>
+      <a href="/en/solutions/">Solutions</a>
+      <span class="sep">/</span>
+      <span class="current">Steel Structure Solutions</span>
+    </div>
+  </nav>
+
+  <!-- 01 Choose by application -->
+  <section class="detail-section" id="applications">
+    <div class="container">
+      <div class="section-heading reveal">
+        <p class="section-index">By Application</p>
+        <h2>Choose a Steel Structure Solution by Application</h2>
+        <p>Start by matching your building use to the relevant solution page to review typical applications, engineering considerations and scope of supply.</p>
+      </div>
+      <div class="sol-app-grid">
+        {apps.map((app, i) => (
+          <a href={app.href} class:list={['sol-app-card', { 'sol-app-wide': i === apps.length - 1 }, 'reveal']}>
+            <img src={app.img} alt={app.alt} width="720" height="405" loading="lazy" decoding="async" />
+            <div class="sol-app-body">
+              <h3>{app.name}</h3>
+              <p>{app.need}</p>
+              <div class="sol-app-tags">
+                {app.tags.map(tag => <span>{tag}</span>)}
+              </div>
+              <span class="sol-app-link">View Full Solution →</span>
+            </div>
+          </a>
+        ))}
+      </div>
+      <p class="sol-note">Need to add a mezzanine or second-floor platform to an existing building? Enter through "Special &amp; Custom Steel Structures" — no need to rebuild the building.</p>
+    </div>
+  </section>
+
+  <!-- 02 Choose by requirement -->
+  <section class="detail-section alt">
+    <div class="container">
+      <div class="section-heading reveal">
+        <p class="section-index">By Requirement</p>
+        <h2>Choose by Project Requirement</h2>
+        <p>Not sure where to start? Choose based on the information you have and what you need to do next.</p>
+      </div>
+      <div class="sol-need-grid">
+        {needs.map((n, i) => (
+          <a href={n.href} class:list={['sol-need-card', 'reveal', `reveal-delay-${(i % 3) + 1}`]}>
+            <span class="sol-need-arrow">→</span>
+            <div>
+              <h3>{n.name}</h3>
+              <p>{n.desc}</p>
+            </div>
+          </a>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- 03 Capability chain -->
+  <section class="detail-section">
+    <div class="container">
+      <div class="section-heading reveal">
+        <p class="section-index">Project Support Chain</p>
+        <h2>How ZhongSai Supports a Project, from Engineering to Export Delivery</h2>
+        <p>A steel structure project usually passes through the following four stages. ZhongSai provides the corresponding support at each stage.</p>
+      </div>
+      <div class="sol-chain">
+        {chain.map((c, i) => (
+          <div class:list={['sol-chain-step', 'reveal', `reveal-delay-${(i % 3) + 1}`]}>
+            <span class="sol-chain-step-no">{c.step}</span>
+            <h3>{c.name}</h3>
+            <p>{c.desc}</p>
+            <a href={c.href} class="sol-chain-link">Learn More →</a>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- 04 Related projects -->
+  <section class="detail-section alt">
+    <div class="container">
+      <div class="section-heading reveal">
+        <p class="section-index">Related Projects</p>
+        <h2>Related Steel Structure Projects</h2>
+        <p>The following projects demonstrate ZhongSai’s related capabilities in engineering, fabrication and project delivery.</p>
+      </div>
+      <div class="sol-project-grid">
+        {featuredProjects.map((p, i) => (
+          <a href={p.href} class:list={['sol-project-card', 'reveal', `reveal-delay-${(i % 3) + 1}`]}>
+            <h3>{p.name}</h3>
+            <p>{p.where}</p>
+            <span class="sol-app-link">View Project →</span>
+          </a>
+        ))}
+      </div>
+      <p class="sol-more-link"><a href="/en/projects/">View All Projects →</a></p>
+    </div>
+  </section>
+
+  <!-- 05 FAQ -->
+  <section class="detail-section">
+    <div class="container">
+      <div class="section-heading reveal" style="text-align: center;">
+        <p class="section-index" style="justify-content: center;">FAQ</p>
+        <h2>Steel Structure Solutions FAQ</h2>
+      </div>
+      <div class="detail-faq">
+        {faqs.map(f => (
+          <div class="faq-item">
+            <button class="faq-question" aria-expanded="false">
+              <span>{f.q}</span>
+              <span class="faq-icon">+</span>
+            </button>
+            <div class="faq-answer" hidden>
+              <div class="faq-answer-inner">
+                {f.a}
+              </div>
+            </div>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- 06 Inquiry form -->
+  <section class="detail-section dark" id="quote">
+    <div class="container">
+      <div class="section-heading reveal" style="text-align: center;">
+        <p class="section-index" style="justify-content: center; color: #f59e0b;">Project Inquiry</p>
+        <h2 style="color: #fff;">Not Sure Which Category Your Project Belongs To?</h2>
+        <p style="margin: 0 auto; color: rgba(255,255,255,0.75);">You can upload drawings directly, or submit the country, purpose, dimensions and equipment requirements first. The engineering team will help identify the right solution and follow up.</p>
+      </div>
+      <QuoteForm lang="en" />
     </div>
   </section>
 </BaseLayout>
+
+<style>
+.sol-app-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 22px;
+  margin-top: 36px;
+}
+.sol-app-card {
+  display: block;
+  background: #fff;
+  border-radius: 12px;
+  overflow: hidden;
+  border: 1px solid #e5e7eb;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  text-decoration: none;
+  color: inherit;
+}
+.sol-app-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 10px 26px rgba(0,0,0,0.1);
+}
+.sol-app-wide {
+  grid-column: 1 / -1;
+  display: grid;
+  grid-template-columns: 320px 1fr;
+  align-items: stretch;
+}
+.sol-app-wide img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.sol-app-card img {
+  width: 100%;
+  height: 190px;
+  object-fit: cover;
+  display: block;
+}
+.sol-app-wide img {
+  height: 220px;
+}
+.sol-app-body {
+  padding: 20px 22px 22px;
+}
+.sol-app-body h3 {
+  color: #0a3d62;
+  font-size: 1.15rem;
+  margin-bottom: 8px;
+}
+.sol-app-body p {
+  color: #555;
+  font-size: 0.92rem;
+  line-height: 1.6;
+  margin-bottom: 10px;
+}
+.sol-app-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-bottom: 12px;
+}
+.sol-app-tags span {
+  font-size: 0.78rem;
+  color: #0a3d62;
+  background: #eef4fa;
+  border-radius: 14px;
+  padding: 4px 10px;
+}
+.sol-app-link {
+  color: #b45309;
+  font-size: 0.9rem;
+  font-weight: 600;
+}
+.sol-note {
+  margin-top: 20px;
+  font-size: 0.92rem;
+  color: #555;
+  background: #fff8ec;
+  border: 1px solid #fde8c8;
+  border-radius: 10px;
+  padding: 14px 18px;
+  line-height: 1.7;
+}
+.sol-need-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 16px;
+  margin-top: 36px;
+}
+.sol-need-card {
+  display: flex;
+  align-items: flex-start;
+  gap: 14px;
+  background: #fff;
+  border: 1px solid #e5e7eb;
+  border-radius: 12px;
+  padding: 20px 22px;
+  text-decoration: none;
+  color: inherit;
+  transition: border-color 0.3s ease, transform 0.3s ease;
+}
+.sol-need-card:hover {
+  border-color: #0a3d62;
+  transform: translateY(-3px);
+}
+.sol-need-arrow {
+  color: #b45309;
+  font-weight: 700;
+  font-size: 1.1rem;
+  line-height: 1.4;
+}
+.sol-need-card h3 {
+  color: #0a3d62;
+  font-size: 1rem;
+  margin-bottom: 4px;
+}
+.sol-need-card p {
+  color: #666;
+  font-size: 0.88rem;
+  line-height: 1.6;
+}
+.sol-chain {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 20px;
+  margin-top: 36px;
+}
+.sol-chain-step {
+  position: relative;
+  background: #fff;
+  border: 1px solid #e5e7eb;
+  border-radius: 12px;
+  padding: 26px 22px;
+  border-top: 4px solid #0a3d62;
+}
+.sol-chain-step-no {
+  display: inline-block;
+  font-size: 0.82rem;
+  font-weight: 700;
+  color: #fff;
+  background: #0a3d62;
+  border-radius: 16px;
+  padding: 4px 12px;
+  margin-bottom: 12px;
+}
+.sol-chain-step h3 {
+  color: #0a3d62;
+  font-size: 1.05rem;
+  margin-bottom: 8px;
+}
+.sol-chain-step p {
+  color: #555;
+  font-size: 0.9rem;
+  line-height: 1.65;
+  margin-bottom: 12px;
+}
+.sol-chain-link {
+  color: #b45309;
+  font-size: 0.9rem;
+  font-weight: 600;
+  text-decoration: none;
+}
+.sol-project-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 18px;
+  margin-top: 36px;
+}
+.sol-project-card {
+  display: block;
+  background: #fff;
+  border: 1px solid #e5e7eb;
+  border-radius: 12px;
+  padding: 22px 24px;
+  text-decoration: none;
+  color: inherit;
+  transition: border-color 0.3s ease, transform 0.3s ease;
+}
+.sol-project-card:hover {
+  border-color: #0a3d62;
+  transform: translateY(-3px);
+}
+.sol-project-card h3 {
+  color: #0a3d62;
+  font-size: 1rem;
+  margin-bottom: 6px;
+  line-height: 1.5;
+}
+.sol-project-card p {
+  color: #666;
+  font-size: 0.88rem;
+  margin-bottom: 12px;
+}
+.sol-more-link {
+  margin-top: 22px;
+  text-align: center;
+}
+.sol-more-link a {
+  color: #b45309;
+  font-weight: 600;
+  text-decoration: none;
+}
+.sol-more-link a:hover {
+  text-decoration: underline;
+}
+
+@media (max-width: 640px) {
+  .sol-app-wide {
+    grid-template-columns: 1fr;
+  }
+  .sol-app-card img {
+    height: 160px;
+  }
+  .sol-app-wide img {
+    height: 160px;
+  }
+}
+</style>
+
+<script>
+  // FAQ toggle
+  document.querySelectorAll('.faq-question').forEach(btn => {
+    btn.addEventListener('click', () => {
+      const item = btn.closest('.faq-item');
+      const isOpen = item.classList.contains('open');
+      item.classList.toggle('open');
+      btn.setAttribute('aria-expanded', !isOpen);
+      const answer = item.querySelector('.faq-answer');
+      if (answer) answer.hidden = !answer.hidden;
+    });
+  });
+
+  // Scroll reveal
+  const revealElements = document.querySelectorAll('.reveal');
+  if ('IntersectionObserver' in window) {
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.style.opacity = '1';
+          entry.target.style.transform = 'translateY(0)';
+          observer.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.1 });
+    revealElements.forEach(el => {
+      el.style.opacity = '0';
+      el.style.transform = 'translateY(24px)';
+      el.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+      observer.observe(el);
+    });
+  }
+</script>

@@ -1,22 +1,590 @@
 ﻿---
 import BaseLayout from '../../../layouts/BaseLayout.astro';
+import QuoteForm from '../../../components/QuoteForm.astro';
+import '../../../styles/detail.css';
 
 const title = '解决方案 | 中赛钢构';
 const description = '中赛钢构为工业、商业、农业、矿业、基础设施等行业提供钢结构解决方案。';
 const lang = 'zh';
-const canonical = 'https://zhongsai-steelstructure.com/zh/products/';
+
+const apps = [
+  {
+    href: '/zh/steel-workshop/',
+    img: '/images/optimized/home/sol-industrial-720.jpg',
+    alt: '工业与制造钢结构厂房',
+    name: '工业与制造',
+    need: '制造工厂、生产车间与带行车工业建筑',
+    tags: ['生产厂房', '加工车间', '带行车厂房'],
+  },
+  {
+    href: '/zh/steel-warehouse/',
+    img: '/images/optimized/home/sol-warehouse-720.jpg',
+    alt: '仓储与物流钢结构仓库',
+    name: '仓储与物流',
+    need: '物流仓库、分拣配送与高空间利用率仓储',
+    tags: ['物流仓库', '分拣中心', '保税仓'],
+  },
+  {
+    href: '/zh/steel-mining-factory/',
+    img: '/images/optimized/home/sol-mining-720.jpg',
+    alt: '矿业与能源钢结构及料仓',
+    name: '矿业与能源',
+    need: '选矿厂房、料仓与能源设施的重型钢结构',
+    tags: ['选矿厂房', '料仓栈桥', '能源配套'],
+  },
+  {
+    href: '/zh/agricultural-steel-buildings/',
+    img: '/images/optimized/home/sol-agriculture-720.jpg',
+    alt: '农业与养殖钢结构建筑',
+    name: '农业与养殖',
+    need: '养殖、种植与农业配套建筑',
+    tags: ['养殖场', '温室', '农机仓储'],
+  },
+  {
+    href: '/zh/commercial-public-steel-buildings/',
+    img: '/images/optimized/home/sol-commercial-720.jpg',
+    alt: '商业与公共钢结构建筑',
+    name: '商业与公共',
+    need: '商业综合体、场馆与公共建筑',
+    tags: ['商业综合体', '体育场馆', '公共建筑'],
+  },
+  {
+    href: '/zh/transportation-infrastructure-steel/',
+    img: '/images/optimized/home/sol-transport-720.jpg',
+    alt: '交通与基础设施钢结构',
+    name: '交通与基础设施',
+    need: '车站、机场配套与交通基础设施',
+    tags: ['车站', '机场配套', '交通设施'],
+  },
+  {
+    href: '/zh/special-custom-steel-structures/',
+    img: '/images/products/special/platform-mezzanine-large.jpg',
+    alt: '钢结构夹层与二层平台',
+    name: '特种与定制钢结构',
+    need: '夹层、二层平台、设备平台与非标定制结构',
+    tags: ['夹层 / 二层平台', '钢平台', '设备平台', '异形结构'],
+  },
+];
+
+const needs = [
+  {
+    href: '/zh/engineering-design/',
+    name: '工程设计与深化',
+    desc: '有土地和建筑尺寸，但还没有完整图纸',
+  },
+  {
+    href: '/zh/manufacturing-quality/',
+    name: '制造与质量控制',
+    desc: '已有图纸 / BOQ，需要按图制造与质量控制',
+  },
+  {
+    href: '/zh/export-delivery/',
+    name: '出口交付',
+    desc: '需要构件编号、包装、装柜与出口资料协调',
+  },
+  {
+    href: '/zh/special-custom-steel-structures/',
+    name: '特种与定制钢结构',
+    desc: '已有厂房，需要增加夹层或二层平台',
+  },
+  {
+    href: '/zh/components/steel-trusses/',
+    name: '钢桁架',
+    desc: '大跨度、无柱空间或屋面结构需求',
+  },
+  {
+    href: '/zh/installation-guidance/',
+    name: '安装技术支持',
+    desc: '需要安装图纸、构件编号与现场技术衔接',
+  },
+];
+
+const chain = [
+  {
+    step: '01',
+    name: '工程设计与深化',
+    desc: '按批准图纸协调结构与节点，输出可制造深化图。',
+    href: '/zh/engineering-design/',
+  },
+  {
+    step: '02',
+    name: '制造与质量控制',
+    desc: '下料、组立、焊接、尺寸检查、表面处理与构件编号。',
+    href: '/zh/manufacturing-quality/',
+  },
+  {
+    step: '03',
+    name: '出口交付',
+    desc: '构件分段、包装、装柜与出口资料协调。',
+    href: '/zh/export-delivery/',
+  },
+  {
+    step: '04',
+    name: '安装技术指导',
+    desc: '安装图纸、构件编号与现场技术衔接。当地施工通常由当地团队负责。',
+    href: '/zh/installation-guidance/',
+  },
+];
+
+const featuredProjects = [
+  {
+    href: '/zh/projects/zhanjiang-logistics-port/',
+    name: '深国际湛江综合物流港项目',
+    where: '广东湛江 · 物流仓储',
+  },
+  {
+    href: '/zh/projects/xiegang-aviation-manufacturing/',
+    name: '谢岗通用航空制造及供应链项目',
+    where: '广东东莞 · 工业制造',
+  },
+  {
+    href: '/zh/projects/dongguan-huarun-center/',
+    name: '东莞华润置地中心商业、住宅楼项目',
+    where: '广东东莞 · 商业公共',
+  },
+  {
+    href: '/zh/projects/cnpc-cracking-furnace/',
+    name: '中石油裂解炉项目',
+    where: '能源 · 重工业',
+  },
+];
+
+const faqs = [
+  {
+    q: '我应该选择哪个钢结构解决方案？',
+    a: '主要取决于项目用途和建筑需求：制造生产类进入「工业与制造」，仓储物流类进入「仓储与物流」，以此类推。如果您不确定项目属于哪一类，可以直接提交项目需求，工程团队会根据用途、尺寸和现场条件协助判断合适的方案入口。',
+  },
+  {
+    q: '没有完整图纸可以开始吗？',
+    a: '可以。您可以先提交项目国家 / 地区、建筑用途、长度、宽度、高度、预计跨度和吊车 / 设备需求，工程团队会先做需求评估。提供完整图纸和工程量清单（BOQ）可以让报价和深化更准确。',
+  },
+  {
+    q: '可以根据客户图纸制造吗？',
+    a: '可以。中赛钢构按客户批准的建筑图纸、结构图纸和 BOQ 进行深化配合与制造。工程团队会审核项目资料、设备布局和适用的当地规范，再输出用于制作的加工图。最终结构设计应由具备资质的工程师根据项目当地法规确认。',
+  },
+  {
+    q: '中赛是否负责海外当地施工？',
+    a: '中赛提供制造、出口交付、安装图纸与安装技术指导。海外项目当地的吊装、施工和现场劳务通常由当地施工团队或客户施工方负责；如需更具体的责任划分，可按项目合同约定确认。',
+  },
+  {
+    q: '如何开始报价或技术评审？',
+    a: '通过页面下方表单提交项目资料（有图纸可直接上传，暂无完整图纸也可提交基本需求）。工程团队审核后会通过您填写的微信、电话或邮箱与您联系，确认所需补充资料并进行下一步技术协调。',
+  },
+];
 ---
 
-<BaseLayout title={title} description={description} lang={lang} canonical={canonical}>
-  <section style="padding: 80px 0; text-align: center; background: #f8f9fa;">
+<BaseLayout title={title} description={description} lang={lang}>
+  <!-- Hero -->
+  <section class="detail-hero">
+    <div class="detail-hero-bg" style="background-image: url('/images/optimized/home/hero-1280.jpg');"></div>
+    <div class="detail-hero-overlay"></div>
+    <div class="detail-hero-content">
+      <span class="eyebrow">项目解决方案</span>
+      <h1>钢结构解决方案</h1>
+      <p class="lead">中赛钢构为工业厂房、仓库物流、矿业能源、农业养殖、商业公共、交通基础设施及特殊结构项目，提供从工程协调与深化、制造与质量控制到出口交付的钢结构供应支持。</p>
+      <div class="hero-capabilities">
+        <div class="cap-item"><span class="cap-icon">📐</span><span>工程协调与深化</span></div>
+        <div class="cap-item"><span class="cap-icon">🏭</span><span>制造与质量控制</span></div>
+        <div class="cap-item"><span class="cap-icon">🚢</span><span>出口交付</span></div>
+        <div class="cap-item"><span class="cap-icon">🔧</span><span>安装技术指导</span></div>
+      </div>
+      <div class="detail-hero-actions">
+        <a href="#applications" class="btn btn-primary">选择项目类型</a>
+        <a href="#quote" class="btn btn-outline">提交项目需求</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Breadcrumb -->
+  <nav class="detail-breadcrumb">
     <div class="container">
-      <h1 style="font-size: 1.8rem; color: #0a3d62; margin-bottom: 16px;">钢结构解决方案</h1>
-      <p style="font-size: 1.05rem; color: #555; margin-bottom: 32px; max-width: 600px; margin-left: auto; margin-right: auto;">
-        中赛钢构为工业厂房、仓储物流、商业公共、农业养殖、矿业能源、交通基础设施等行业提供完整的钢结构解决方案。
-      </p>
-      <a href="/zh/products/" class="btn btn-primary" style="display: inline-block; padding: 14px 32px; font-size: 1rem;">
-        查看全部产品与解决方案 →
-      </a>
+      <a href="/zh/">首页</a>
+      <span class="sep">/</span>
+      <a href="/zh/solutions/">解决方案</a>
+      <span class="sep">/</span>
+      <span class="current">钢结构解决方案</span>
+    </div>
+  </nav>
+
+  <!-- 01 按项目应用选择 -->
+  <section class="detail-section" id="applications">
+    <div class="container">
+      <div class="section-heading reveal">
+        <p class="section-index">按应用选择</p>
+        <h2>按项目应用选择钢结构方案</h2>
+        <p>先按建筑用途找到对应的解决方案页面，查看典型应用、工程考虑与供货范围。</p>
+      </div>
+      <div class="sol-app-grid">
+        {apps.map((app, i) => (
+          <a href={app.href} class:list={['sol-app-card', { 'sol-app-wide': i === apps.length - 1 }, 'reveal']}>
+            <img src={app.img} alt={app.alt} width="720" height="405" loading="lazy" decoding="async" />
+            <div class="sol-app-body">
+              <h3>{app.name}</h3>
+              <p>{app.need}</p>
+              <div class="sol-app-tags">
+                {app.tags.map(tag => <span>{tag}</span>)}
+              </div>
+              <span class="sol-app-link">进入完整方案 →</span>
+            </div>
+          </a>
+        ))}
+      </div>
+      <p class="sol-note">需要给既有厂房增加夹层或二层平台？直接从「特种与定制钢结构」入口进入，不需要重建厂房。</p>
+    </div>
+  </section>
+
+  <!-- 02 按项目需求选择 -->
+  <section class="detail-section alt">
+    <div class="container">
+      <div class="section-heading reveal">
+        <p class="section-index">按需求选择</p>
+        <h2>按项目需求选择</h2>
+        <p>不确定从哪个页面开始？根据你现在手上的资料和下一步要做的事选择。</p>
+      </div>
+      <div class="sol-need-grid">
+        {needs.map((n, i) => (
+          <a href={n.href} class:list={['sol-need-card', 'reveal', `reveal-delay-${(i % 3) + 1}`]}>
+            <span class="sol-need-arrow">→</span>
+            <div>
+              <h3>{n.name}</h3>
+              <p>{n.desc}</p>
+            </div>
+          </a>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- 03 从工程到出口交付 -->
+  <section class="detail-section">
+    <div class="container">
+      <div class="section-heading reveal">
+        <p class="section-index">项目支持链路</p>
+        <h2>从工程到出口交付，中赛如何支持项目</h2>
+        <p>钢结构项目从图纸到交付，通常经过以下四个环节。中赛在其中提供对应支持。</p>
+      </div>
+      <div class="sol-chain">
+        {chain.map((c, i) => (
+          <div class:list={['sol-chain-step', 'reveal', `reveal-delay-${(i % 3) + 1}`]}>
+            <span class="sol-chain-step-no">{c.step}</span>
+            <h3>{c.name}</h3>
+            <p>{c.desc}</p>
+            <a href={c.href} class="sol-chain-link">了解详情 →</a>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- 04 相关项目 -->
+  <section class="detail-section alt">
+    <div class="container">
+      <div class="section-heading reveal">
+        <p class="section-index">相关项目</p>
+        <h2>相关钢结构项目</h2>
+        <p>以下项目展示中赛在工程、制造与项目交付方面的相关能力。</p>
+      </div>
+      <div class="sol-project-grid">
+        {featuredProjects.map((p, i) => (
+          <a href={p.href} class:list={['sol-project-card', 'reveal', `reveal-delay-${(i % 3) + 1}`]}>
+            <h3>{p.name}</h3>
+            <p>{p.where}</p>
+            <span class="sol-app-link">查看项目 →</span>
+          </a>
+        ))}
+      </div>
+      <p class="sol-more-link"><a href="/zh/projects/">查看全部项目 →</a></p>
+    </div>
+  </section>
+
+  <!-- 05 常见问题 -->
+  <section class="detail-section">
+    <div class="container">
+      <div class="section-heading reveal" style="text-align: center;">
+        <p class="section-index" style="justify-content: center;">常见问题</p>
+        <h2>钢结构解决方案常见问题</h2>
+      </div>
+      <div class="detail-faq">
+        {faqs.map(f => (
+          <div class="faq-item">
+            <button class="faq-question" aria-expanded="false">
+              <span>{f.q}</span>
+              <span class="faq-icon">+</span>
+            </button>
+            <div class="faq-answer" hidden>
+              <div class="faq-answer-inner">
+                {f.a}
+              </div>
+            </div>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- 06 询盘表单 -->
+  <section class="detail-section dark" id="quote">
+    <div class="container">
+      <div class="section-heading reveal" style="text-align: center;">
+        <p class="section-index" style="justify-content: center; color: #f59e0b;">项目询盘</p>
+        <h2 style="color: #fff;">不确定属于哪类项目？</h2>
+        <p style="margin: 0 auto; color: rgba(255,255,255,0.75);">有图纸可直接上传，暂无完整图纸也可先提交国家、用途、尺寸与设备需求。工程团队会协助判断合适的方案并继续跟进。</p>
+      </div>
+      <QuoteForm lang="zh" />
     </div>
   </section>
 </BaseLayout>
+
+<style>
+.sol-app-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 22px;
+  margin-top: 36px;
+}
+.sol-app-card {
+  display: block;
+  background: #fff;
+  border-radius: 12px;
+  overflow: hidden;
+  border: 1px solid #e5e7eb;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  text-decoration: none;
+  color: inherit;
+}
+.sol-app-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 10px 26px rgba(0,0,0,0.1);
+}
+.sol-app-wide {
+  grid-column: 1 / -1;
+  display: grid;
+  grid-template-columns: 320px 1fr;
+  align-items: stretch;
+}
+.sol-app-wide img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.sol-app-card img {
+  width: 100%;
+  height: 190px;
+  object-fit: cover;
+  display: block;
+}
+.sol-app-wide img {
+  height: 220px;
+}
+.sol-app-body {
+  padding: 20px 22px 22px;
+}
+.sol-app-body h3 {
+  color: #0a3d62;
+  font-size: 1.15rem;
+  margin-bottom: 8px;
+}
+.sol-app-body p {
+  color: #555;
+  font-size: 0.92rem;
+  line-height: 1.6;
+  margin-bottom: 10px;
+}
+.sol-app-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-bottom: 12px;
+}
+.sol-app-tags span {
+  font-size: 0.78rem;
+  color: #0a3d62;
+  background: #eef4fa;
+  border-radius: 14px;
+  padding: 4px 10px;
+}
+.sol-app-link {
+  color: #b45309;
+  font-size: 0.9rem;
+  font-weight: 600;
+}
+.sol-note {
+  margin-top: 20px;
+  font-size: 0.92rem;
+  color: #555;
+  background: #fff8ec;
+  border: 1px solid #fde8c8;
+  border-radius: 10px;
+  padding: 14px 18px;
+  line-height: 1.7;
+}
+.sol-need-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 16px;
+  margin-top: 36px;
+}
+.sol-need-card {
+  display: flex;
+  align-items: flex-start;
+  gap: 14px;
+  background: #fff;
+  border: 1px solid #e5e7eb;
+  border-radius: 12px;
+  padding: 20px 22px;
+  text-decoration: none;
+  color: inherit;
+  transition: border-color 0.3s ease, transform 0.3s ease;
+}
+.sol-need-card:hover {
+  border-color: #0a3d62;
+  transform: translateY(-3px);
+}
+.sol-need-arrow {
+  color: #b45309;
+  font-weight: 700;
+  font-size: 1.1rem;
+  line-height: 1.4;
+}
+.sol-need-card h3 {
+  color: #0a3d62;
+  font-size: 1rem;
+  margin-bottom: 4px;
+}
+.sol-need-card p {
+  color: #666;
+  font-size: 0.88rem;
+  line-height: 1.6;
+}
+.sol-chain {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 20px;
+  margin-top: 36px;
+}
+.sol-chain-step {
+  position: relative;
+  background: #fff;
+  border: 1px solid #e5e7eb;
+  border-radius: 12px;
+  padding: 26px 22px;
+  border-top: 4px solid #0a3d62;
+}
+.sol-chain-step-no {
+  display: inline-block;
+  font-size: 0.82rem;
+  font-weight: 700;
+  color: #fff;
+  background: #0a3d62;
+  border-radius: 16px;
+  padding: 4px 12px;
+  margin-bottom: 12px;
+}
+.sol-chain-step h3 {
+  color: #0a3d62;
+  font-size: 1.05rem;
+  margin-bottom: 8px;
+}
+.sol-chain-step p {
+  color: #555;
+  font-size: 0.9rem;
+  line-height: 1.65;
+  margin-bottom: 12px;
+}
+.sol-chain-link {
+  color: #b45309;
+  font-size: 0.9rem;
+  font-weight: 600;
+  text-decoration: none;
+}
+.sol-project-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 18px;
+  margin-top: 36px;
+}
+.sol-project-card {
+  display: block;
+  background: #fff;
+  border: 1px solid #e5e7eb;
+  border-radius: 12px;
+  padding: 22px 24px;
+  text-decoration: none;
+  color: inherit;
+  transition: border-color 0.3s ease, transform 0.3s ease;
+}
+.sol-project-card:hover {
+  border-color: #0a3d62;
+  transform: translateY(-3px);
+}
+.sol-project-card h3 {
+  color: #0a3d62;
+  font-size: 1rem;
+  margin-bottom: 6px;
+  line-height: 1.5;
+}
+.sol-project-card p {
+  color: #666;
+  font-size: 0.88rem;
+  margin-bottom: 12px;
+}
+.sol-more-link {
+  margin-top: 22px;
+  text-align: center;
+}
+.sol-more-link a {
+  color: #b45309;
+  font-weight: 600;
+  text-decoration: none;
+}
+.sol-more-link a:hover {
+  text-decoration: underline;
+}
+
+@media (max-width: 640px) {
+  .sol-app-wide {
+    grid-template-columns: 1fr;
+  }
+  .sol-app-card img {
+    height: 160px;
+  }
+  .sol-app-wide img {
+    height: 160px;
+  }
+}
+</style>
+
+<script>
+  // FAQ toggle
+  document.querySelectorAll('.faq-question').forEach(btn => {
+    btn.addEventListener('click', () => {
+      const item = btn.closest('.faq-item');
+      const isOpen = item.classList.contains('open');
+      item.classList.toggle('open');
+      btn.setAttribute('aria-expanded', !isOpen);
+      const answer = item.querySelector('.faq-answer');
+      if (answer) answer.hidden = !answer.hidden;
+    });
+  });
+
+  // Scroll reveal
+  const revealElements = document.querySelectorAll('.reveal');
+  if ('IntersectionObserver' in window) {
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.style.opacity = '1';
+          entry.target.style.transform = 'translateY(0)';
+          observer.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.1 });
+    revealElements.forEach(el => {
+      el.style.opacity = '0';
+      el.style.transform = 'translateY(24px)';
+      el.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+      observer.observe(el);
+    });
+  }
+</script>
