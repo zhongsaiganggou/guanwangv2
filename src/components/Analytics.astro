@@ -85,24 +85,54 @@ src="https://www.facebook.com/tr?id=1268080202055777&ev=PageView&noscript=1"
     }
   };
 
-  // Global outbound click tracking — WhatsApp, Email, WeChat
+  // Global outbound click tracking — WhatsApp (contact_whatsapp_click), WeChat,
+  // Email, Phone. One event per click; source/medium is left to GA4 session
+  // attribution (never fabricated client-side).
   document.addEventListener('click', function(e) {
     const link = e.target.closest('a');
     if (!link || !link.href) return;
     const href = link.href;
 
-    if (href.indexOf('wa.me/') !== -1 || href.indexOf('whatsapp:') === 0 || href.indexOf('api.whatsapp.com') !== -1) {
-      window.trackEvent('whatsapp_click', {
-        cta_location: link.closest('footer') ? 'footer' : (link.closest('.floating-social') ? 'floating' : 'contact_page'),
-      });
+    const isWA = href.indexOf('wa.me/') !== -1 || href.indexOf('whatsapp:') === 0 || href.indexOf('api.whatsapp.com') !== -1;
+    const isWX = href.indexOf('weixin.qq.com') !== -1 || href.indexOf('weixin://') === 0 || href.indexOf('wechat') !== -1;
+
+    // Resolve where the click happened from actual DOM context.
+    let ctaLocation = 'other';
+    if (link.closest('footer')) ctaLocation = 'footer';
+    else if (link.closest('.floating-social') || link.closest('.floating-buttons') || link.closest('[class*="floating"]')) ctaLocation = 'floating';
+    else if (link.closest('.contact-card')) ctaLocation = 'contact_card';
+    else if (link.closest('.hero') || link.closest('.hub-hero') || link.closest('.page-hero')) ctaLocation = 'hero';
+    else if (link.closest('.related-card') || link.closest('.related-grid') || link.closest('.legacy-related')) ctaLocation = 'related';
+    else if (link.closest('.trust-item') || link.closest('.contact-method')) ctaLocation = 'trust';
+    else if (location.pathname.indexOf('thank-you') !== -1) ctaLocation = 'thank_you';
+    else if (link.closest('.contact-cards') || link.closest('.contact-page')) ctaLocation = 'contact_page';
+
+    const base = {
+      cta_location: ctaLocation,
+      page_language: document.documentElement.lang || 'en',
+      page_location: location.href,
+    };
+
+    if (isWA) {
+      window.trackEvent('contact_whatsapp_click', Object.assign({}, base, {
+        cta_text: (link.textContent || '').trim().replace(/\s+/g, ' ').slice(0, 80) || 'WhatsApp',
+        destination: href.indexOf('api.whatsapp.com') !== -1 ? 'api.whatsapp.com' : 'wa.me',
+      }));
+    } else if (isWX) {
+      window.trackEvent('contact_wechat_click', Object.assign({}, base, {
+        cta_text: (link.textContent || '').trim().replace(/\s+/g, ' ').slice(0, 80) || 'WeChat',
+        destination: 'weixin',
+      }));
     } else if (href.indexOf('mailto:') === 0) {
-      window.trackEvent('email_click', {
-        cta_location: link.closest('footer') ? 'footer' : 'contact_page',
-      });
+      window.trackEvent('email_click', Object.assign({}, base, {
+        cta_text: (link.textContent || '').trim().replace(/\s+/g, ' ').slice(0, 80) || 'Email',
+        destination: 'mailto',
+      }));
     } else if (href.indexOf('tel:') === 0) {
-      window.trackEvent('phone_click', {
-        cta_location: link.closest('footer') ? 'footer' : (link.closest('.floating-social') ? 'floating' : 'contact_page'),
-      });
+      window.trackEvent('phone_click', Object.assign({}, base, {
+        cta_text: (link.textContent || '').trim().replace(/\s+/g, ' ').slice(0, 80) || 'Phone',
+        destination: 'tel',
+      }));
     }
   }, true);
 </script>

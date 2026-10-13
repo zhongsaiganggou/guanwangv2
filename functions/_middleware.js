@@ -97,6 +97,10 @@ const EXACT = new Map([
     '/zh/blog/gangjiegou-changfang-zaojia-zhinan/'],
   ['/zh/blog/steel-structure-supplier-indonesia-guide/', '/zh/markets/indonesia/'],
   ['/zh/blog/steel-structure-supplier-mexico-guide/', '/zh/markets/'],
+  // P1-1B Container Loading — ZH legacy blog URL belongs to the ZH export-delivery
+  // page (mirrors static _redirects intent; EXACT outranks the /zh/blog/ pattern
+  // fallback so users land on real packing/loading content, not the generic hub).
+  ['/zh/blog/steel-structure-container-loading-guide/', '/zh/export-delivery/'],
   ['/zh/products/materials/fasteners/', '/zh/components/'],
   // P1 Lead Stop-Loss — high-value exact redirects (audit §19, 2026-10)
   ['/zh/blog/steel-structure-corrosion-protection-guide/',
