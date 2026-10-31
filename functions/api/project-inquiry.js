@@ -80,14 +80,15 @@ function validateLead(data) {
   if (!(data.name || '').trim()) errors.name = 'Name is required';
   if (!(data.project_country || '').trim()) errors.project_country = 'Project country is required';
 
-  // Contact rule: WeChat OR phone — at least one is required
-  if (!wechat && !phone) {
-    errors.contact = 'Provide either a WeChat ID or a phone number';
+  // Contact rule: WeChat is REQUIRED. Phone/WhatsApp is optional.
+  // If phone is provided, calling code is required.
+  if (!wechat) {
+    errors.wechat = 'WeChat ID is required';
   }
 
   // If a phone number is provided, the country / calling code is required
   if (phone && !callingCode) {
-    errors.calling_code = 'Country / calling code is required';
+    errors.calling_code = 'Country / calling code is required when a phone number is provided';
   }
 
   // Email optional but validate format if provided
@@ -200,8 +201,15 @@ export async function onRequestPost(context) {
     // marker in the name field ("v2 qa test"). Ordinary client names cannot
     // match this marker. A client-supplied test_record flag is never used as
     // the decision input here — it is only recorded for audit purposes.
+    //
+    // Additionally, PREVIEW_MODE=true (set only in Cloudflare Pages Preview
+    // environment) forces every submission to be treated as test, regardless
+    // of name. This guarantees Preview never sends real webhook / WeCom /
+    // Meta CAPI events, and the frontend emits qa_form_submit instead of
+    // generate_lead. Production never sets this variable.
     const QA_MARKER = 'v2 qa test';
-    const isTest = fields.name && fields.name.toLowerCase().includes(QA_MARKER) ? 1 : 0;
+    const isPreviewEnv = env.PREVIEW_MODE === 'true';
+    const isTest = (isPreviewEnv || (fields.name && fields.name.toLowerCase().includes(QA_MARKER))) ? 1 : 0;
 
     // Build dimensions string
     const dimensions = [fields.length, fields.width, fields.height].filter(Boolean).join('x') || '';
@@ -214,8 +222,9 @@ export async function onRequestPost(context) {
           name, project_country, calling_code, phone_whatsapp, wechat, email,
           project_type, intended_use, dimensions, crane_requirement, message,
           utm_source, utm_medium, utm_campaign, utm_content, utm_term,
+          gclid, gbraid, wbraid,
           referrer, landing_page, wind_load, snow_load, seismic_requirement, crane_capacity, equipment_load, turnstile_verified, submission_status, test_record
-        ) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
+        ) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
       `).bind(
         leadId,
         language,
@@ -238,6 +247,9 @@ export async function onRequestPost(context) {
         sanitizeText(fields.utm_campaign, 200),
         sanitizeText(fields.utm_content, 200),
         sanitizeText(fields.utm_term, 200),
+        sanitizeText(fields.gclid, 200),
+        sanitizeText(fields.gbraid, 200),
+        sanitizeText(fields.wbraid, 200),
         sanitizeText(fields.referrer, 500),
         sanitizeText(fields.landing_page, 500),
         sanitizeText(fields.wind_load, 100),
@@ -339,7 +351,7 @@ export async function onRequestPost(context) {
     waitUntil((async () => {
     let webhookStatus = 'not_configured';
     let webhookError = null;
-    if (env.LEAD_WEBHOOK_URL) {
+    if (!isPreviewEnv && env.LEAD_WEBHOOK_URL) {
       webhookStatus = 'attempted';
       try {
         const webhookPayload = {
@@ -371,6 +383,9 @@ export async function onRequestPost(context) {
           utm_campaign: sanitizeText(fields.utm_campaign, 200),
           utm_content: sanitizeText(fields.utm_content, 200),
           utm_term: sanitizeText(fields.utm_term, 200),
+          gclid: sanitizeText(fields.gclid, 200),
+          gbraid: sanitizeText(fields.gbraid, 200),
+          wbraid: sanitizeText(fields.wbraid, 200),
           referrer: sanitizeText(fields.referrer, 500),
           source_page: sanitizeText(fields.source_page, 500),
           landing_page: sanitizeText(fields.landing_page, 500),
@@ -411,7 +426,7 @@ export async function onRequestPost(context) {
 
     // WeCom (企业微信) group bot notification - don't fail lead if this fails
     let wecomStatus = 'not_configured';
-    if (env.WECHAT_WORK_WEBHOOK_URL) {
+    if (!isPreviewEnv && env.WECHAT_WORK_WEBHOOK_URL) {
       wecomStatus = 'attempted';
       try {
         const isTestText = isTest === 1 ? '（测试）' : '';
@@ -452,6 +467,13 @@ export async function onRequestPost(context) {
         if (advLines.length) mdLines.push('高级参数: ' + advLines.join(' | '));
         if (msgPreview) mdLines.push('备注: ' + msgPreview);
         mdLines.push('来源: ' + sanitizeText(fields.source_page, 100));
+
+        // Ad click attribution (only when present — natural traffic has none)
+        const clickIdParts = [];
+        if (fields.gclid && String(fields.gclid).trim()) clickIdParts.push('gclid=' + sanitizeText(fields.gclid, 100));
+        if (fields.gbraid && String(fields.gbraid).trim()) clickIdParts.push('gbraid=' + sanitizeText(fields.gbraid, 100));
+        if (fields.wbraid && String(fields.wbraid).trim()) clickIdParts.push('wbraid=' + sanitizeText(fields.wbraid, 100));
+        if (clickIdParts.length) mdLines.push('广告点击: ' + clickIdParts.join(' | '));
 
         if (filesWithDownloadUrls.length > 0) {
           mdLines.push('');
@@ -499,7 +521,7 @@ export async function onRequestPost(context) {
     }
 
     // Meta Conversions API — server-side Lead event (non-blocking)
-    if (env.FB_CAPI_ACCESS_TOKEN && !isTest) {
+    if (!isPreviewEnv && env.FB_CAPI_ACCESS_TOKEN && !isTest) {
       try {
         const pixelId = '1268080202055777';
         const eventTime = Math.floor(Date.now() / 1000);

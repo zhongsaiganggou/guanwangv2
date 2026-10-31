@@ -136,38 +136,29 @@ const texts = lang === 'zh' ? {
   notSure: 'Not Sure',
 };
 
-const phoneCodes = [
-  { code: '', name: lang === 'zh' ? '请选择国家区号' : 'Select country code' },
-  { code: '+86', name: 'China +86' },
-  { code: '+1', name: 'USA/Canada +1' },
-  { code: '+44', name: 'UK +44' },
-  { code: '+61', name: 'Australia +61' },
-  { code: '+65', name: 'Singapore +65' },
-  { code: '+60', name: 'Malaysia +60' },
-  { code: '+62', name: 'Indonesia +62' },
-  { code: '+66', name: 'Thailand +66' },
-  { code: '+84', name: 'Vietnam +84' },
-  { code: '+91', name: 'India +91' },
-  { code: '+971', name: 'UAE +971' },
-  { code: '+966', name: 'Saudi Arabia +966' },
-  { code: '+234', name: 'Nigeria +234' },
-  { code: '+254', name: 'Kenya +254' },
-  { code: '+52', name: 'Mexico +52' },
-  { code: '+55', name: 'Brazil +55' },
-  { code: '+49', name: 'Germany +49' },
-  { code: '+33', name: 'France +33' },
-  { code: '+81', name: 'Japan +81' },
-  { code: '+82', name: 'South Korea +82' },
-  { code: '+7', name: 'Russia +7' },
-  { code: '+27', name: 'South Africa +27' },
-  { code: '+20', name: 'Egypt +20' },
-  { code: '+90', name: 'Turkey +90' },
-  { code: '+92', name: 'Pakistan +92' },
-  { code: '+63', name: 'Philippines +63' },
-  { code: '+855', name: 'Cambodia +855' },
-  { code: '+95', name: 'Myanmar +95' },
-  { code: '+other', name: 'Other' },
+// Global country calling codes. Each entry: [iso2, name_en, name_zh, calling_code].
+// Shared +1 territories (US, Canada, Caribbean) are listed separately per ITU E.164.
+const COUNTRY_CODES = [
+  ["CN","China","中国","+86"],["HK","Hong Kong SAR","中国香港特别行政区","+852"],["MO","Macau SAR","中国澳门特别行政区","+853"],["TW","Taiwan Region","中国台湾地区","+886"],
+  ["US","United States","美国","+1"],["CA","Canada","加拿大","+1"],
+  ["BS","Bahamas","巴哈马","+1 242"],["BB","Barbados","巴巴多斯","+1 246"],["AG","Antigua and Barbuda","安提瓜和巴布达","+1 268"],["AI","Anguilla","安圭拉","+1 264"],["VI","US Virgin Islands","美属维尔京群岛","+1 340"],["VG","British Virgin Islands","英属维尔京群岛","+1 284"],["MS","Montserrat","蒙特塞拉特","+1 664"],["KN","St. Kitts and Nevis","圣基茨和尼维斯","+1 869"],["DM","Dominica","多米尼克","+1 767"],["LC","St. Lucia","圣卢西亚","+1 758"],["VC","St. Vincent and the Grenadines","圣文森特和格林纳丁斯","+1 784"],["GD","Grenada","格林纳达","+1 473"],["TT","Trinidad and Tobago","特立尼达和多巴哥","+1 868"],["MS","Montserrat","蒙特塞拉特","+1 664"],["PR","Puerto Rico","波多黎各","+1 787"],["JM","Jamaica","牙买加","+1 876"],["KY","Cayman Islands","开曼群岛","+1 345"],["TC","Turks and Caicos Islands","特克斯和凯科斯群岛","+1 649"],["BM","Bermuda","百慕大","+1 441"],["GL","Greenland","格陵兰","+299"],
+  ["GB","United Kingdom","英国","+44"],["IE","Ireland","爱尔兰","+353"],["FR","France","法国","+33"],["DE","Germany","德国","+49"],["IT","Italy","意大利","+39"],["ES","Spain","西班牙","+34"],["PT","Portugal","葡萄牙","+351"],["NL","Netherlands","荷兰","+31"],["BE","Belgium","比利时","+32"],["LU","Luxembourg","卢森堡","+352"],["CH","Switzerland","瑞士","+41"],["AT","Austria","奥地利","+43"],["SE","Sweden","瑞典","+46"],["NO","Norway","挪威","+47"],["DK","Denmark","丹麦","+45"],["FI","Finland","芬兰","+358"],["IS","Iceland","冰岛","+354"],["PL","Poland","波兰","+48"],["CZ","Czechia","捷克","+420"],["SK","Slovakia","斯洛伐克","+421"],["HU","Hungary","匈牙利","+36"],["RO","Romania","罗马尼亚","+40"],["BG","Bulgaria","保加利亚","+359"],["GR","Greece","希腊","+30"],["HR","Croatia","克罗地亚","+385"],["SI","Slovenia","斯洛文尼亚","+386"],["RS","Serbia","塞尔维亚","+381"],["BA","Bosnia and Herzegovina","波黑","+387"],["ME","Montenegro","黑山","+382"],["MK","North Macedonia","北马其顿","+389"],["AL","Albania","阿尔巴尼亚","+355"],["UA","Ukraine","乌克兰","+380"],["BY","Belarus","白俄罗斯","+375"],["MD","Moldova","摩尔多瓦","+373"],["LT","Lithuania","立陶宛","+370"],["LV","Latvia","拉脱维亚","+371"],["EE","Estonia","爱沙尼亚","+372"],["RU","Russia","俄罗斯","+7"],
+  ["JP","Japan","日本","+81"],["KR","South Korea","韩国","+82"],["MN","Mongolia","蒙古","+976"],
+  ["SG","Singapore","新加坡","+65"],["MY","Malaysia","马来西亚","+60"],["TH","Thailand","泰国","+66"],["VN","Vietnam","越南","+84"],["ID","Indonesia","印度尼西亚","+62"],["PH","Philippines","菲律宾","+63"],["MM","Myanmar","缅甸","+95"],["KH","Cambodia","柬埔寨","+855"],["LA","Laos","老挝","+856"],["BN","Brunei","文莱","+673"],
+  ["IN","India","印度","+91"],["PK","Pakistan","巴基斯坦","+92"],["BD","Bangladesh","孟加拉国","+880"],["LK","Sri Lanka","斯里兰卡","+94"],["NP","Nepal","尼泊尔","+977"],["BT","Bhutan","不丹","+975"],["MV","Maldives","马尔代夫","+960"],["AF","Afghanistan","阿富汗","+93"],
+  ["AE","United Arab Emirates","阿联酋","+971"],["SA","Saudi Arabia","沙特阿拉伯","+966"],["QA","Qatar","卡塔尔","+974"],["KW","Kuwait","科威特","+965"],["BH","Bahrain","巴林","+973"],["OM","Oman","阿曼","+968"],["IL","Israel","以色列","+972"],["PS","Palestine","巴勒斯坦","+970"],["JO","Jordan","约旦","+962"],["LB","Lebanon","黎巴嫩","+961"],["IQ","Iraq","伊拉克","+964"],["IR","Iran","伊朗","+98"],["TR","Türkiye","土耳其","+90"],["YE","Yemen","也门","+967"],["SY","Syria","叙利亚","+963"],
+  ["AU","Australia","澳大利亚","+61"],["NZ","New Zealand","新西兰","+64"],["FJ","Fiji","斐济","+679"],["PG","Papua New Guinea","巴布亚新几内亚","+675"],["SB","Solomon Islands","所罗门群岛","+677"],["VU","Vanuatu","瓦努阿图","+678"],["WS","Samoa","萨摩亚","+685"],["TO","Tonga","汤加","+676"],["KI","Kiribati","基里巴斯","+686"],["FM","Micronesia","密克罗尼西亚","+691"],["MH","Marshall Islands","马绍尔群岛","+692"],["PW","Palau","帕劳","+680"],["NC","New Caledonia","新喀里多尼亚","+687"],["PF","French Polynesia","法属波利尼西亚","+689"],
+  ["EG","Egypt","埃及","+20"],["ZA","South Africa","南非","+27"],["NG","Nigeria","尼日利亚","+234"],["KE","Kenya","肯尼亚","+254"],["GH","Ghana","加纳","+233"],["ET","Ethiopia","埃塞俄比亚","+251"],["TZ","Tanzania","坦桑尼亚","+255"],["UG","Uganda","乌干达","+256"],["DZ","Algeria","阿尔及利亚","+213"],["MA","Morocco","摩洛哥","+212"],["TN","Tunisia","突尼斯","+216"],["LY","Libya","利比亚","+218"],["SD","Sudan","苏丹","+249"],["AO","Angola","安哥拉","+244"],["MZ","Mozambique","莫桑比克","+258"],["ZM","Zambia","赞比亚","+260"],["ZW","Zimbabwe","津巴布韦","+263"],["BW","Botswana","博茨瓦纳","+267"],["NA","Namibia","纳米比亚","+264"],["MU","Mauritius","毛里求斯","+230"],["SN","Senegal","塞内加尔","+221"],["CI","Côte d'Ivoire","科特迪瓦","+225"],["CM","Cameroon","喀麦隆","+237"],["GH","Ghana","加纳","+233"],["ML","Mali","马里","+223"],["BF","Burkina Faso","布基纳法索","+226"],["NE","Niger","尼日尔","+227"],["TD","Chad","乍得","+235"],["CF","Central African Rep.","中非","+236"],["CG","Congo","刚果(布)","+242"],["CD","DR Congo","刚果(金)","+243"],["GA","Gabon","加蓬","+241"],["GN","Guinea","几内亚","+224"],["BJ","Benin","贝宁","+229"],["TG","Togo","多哥","+228"],["SL","Sierra Leone","塞拉利昂","+232"],["LR","Liberia","利比里亚","+231"],["GW","Guinea-Bissau","几内亚比绍","+245"],["GM","Gambia","冈比亚","+220"],["CV","Cape Verde","佛得角","+238"],["ST","São Tomé and Príncipe","圣多美和普林西比","+239"],["ER","Eritrea","厄立特里亚","+291"],["DJ","Djibouti","吉布提","+253"],["SO","Somalia","索马里","+252"],["SS","South Sudan","南苏丹","+211"],["MW","Malawi","马拉维","+265"],["RW","Rwanda","卢旺达","+250"],["BI","Burundi","布隆迪","+257"],["KM","Comoros","科摩罗","+269"],["SC","Seychelles","塞舌尔","+248"],["SZ","Eswatini","斯威士兰","+268"],["LS","Lesotho","莱索托","+266"],
+  ["MX","Mexico","墨西哥","+52"],["BR","Brazil","巴西","+55"],["AR","Argentina","阿根廷","+54"],["CL","Chile","智利","+56"],["CO","Colombia","哥伦比亚","+57"],["PE","Peru","秘鲁","+51"],["VE","Venezuela","委内瑞拉","+58"],["EC","Ecuador","厄瓜多尔","+593"],["BO","Bolivia","玻利维亚","+591"],["PY","Paraguay","巴拉圭","+595"],["UY","Uruguay","乌拉圭","+598"],["CR","Costa Rica","哥斯达黎加","+506"],["PA","Panama","巴拿马","+507"],["GT","Guatemala","危地马拉","+502"],["HN","Honduras","洪都拉斯","+504"],["SV","El Salvador","萨尔瓦多","+503"],["NI","Nicaragua","尼加拉瓜","+505"],["CU","Cuba","古巴","+53"],["DO","Dominican Republic","多米尼加共和国","+1 809"],["HT","Haiti","海地","+509"],["BZ","Belize","伯利兹","+501"],
+  ["KZ","Kazakhstan","哈萨克斯坦","+7"],["UZ","Uzbekistan","乌兹别克斯坦","+998"],["KG","Kyrgyzstan","吉尔吉斯斯坦","+996"],["TJ","Tajikistan","塔吉克斯坦","+992"],["TM","Turkmenistan","土库曼斯坦","+993"],["GE","Georgia","格鲁吉亚","+995"],["AM","Armenia","亚美尼亚","+374"],["AZ","Azerbaijan","阿塞拜疆","+994"],
+  ["KP","North Korea","朝鲜","+850"],
 ];
+// Dedup by iso2 (last write wins; hand-curated list above is already unique).
+const _seenIso = new Set();
+const COUNTRIES = COUNTRY_CODES.filter(([iso]) => {
+  if (_seenIso.has(iso)) return false;
+  _seenIso.add(iso); return true;
+}).map(([iso2, name_en, name_zh, calling_code]) => ({ iso2, name_en, name_zh, calling_code }));
 ---
 
 {embed ? (
@@ -217,9 +208,17 @@ const phoneCodes = [
       <div class="form-grid form-grid-3">
         <div class="form-field">
           <label for={`${id}-phone-code`}>{texts.phoneCode} <span class="cond-hint">{texts.hintCode}</span></label>
-          <select id={`${id}-phone-code`} name="phone_code">
-            {phoneCodes.map(c => <option value={c.code}>{c.name}</option>)}
-          </select>
+          <div class="country-select" data-country-select>
+            <input type="hidden" name="phone_code" value="" data-country-value />
+            <button type="button" class="country-select-trigger" data-country-trigger aria-haspopup="listbox" aria-expanded="false">
+              <span class="country-select-label" data-country-label>{lang === 'zh' ? '请选择国家区号' : 'Select country code'}</span>
+              <svg class="country-select-caret" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg>
+            </button>
+            <div class="country-select-dropdown" data-country-dropdown hidden>
+              <input type="text" class="country-select-search" data-country-search placeholder={lang === 'zh' ? '搜索国家或区号' : 'Search country or code'} aria-label="Search" />
+              <ul class="country-select-list" data-country-list role="listbox"></ul>
+            </div>
+          </div>
           <span class="field-error" data-error-for="phone_code"></span>
         </div>
         <div class="form-field">
@@ -228,8 +227,8 @@ const phoneCodes = [
           <span class="field-error" data-error-for="phone"></span>
         </div>
         <div class="form-field">
-          <label for={`${id}-wechat`}>{texts.wechat} <span class="cond-hint">{texts.hintWechat}</span></label>
-          <input type="text" id={`${id}-wechat`} name="wechat" placeholder={texts.wechatPlaceholder} />
+          <label for={`${id}-wechat`}>{texts.wechat} <span class="req">*</span> <span class="cond-hint">{texts.hintWechat}</span></label>
+          <input type="text" id={`${id}-wechat`} name="wechat" required placeholder={texts.wechatPlaceholder} />
           <span class="field-error" data-error-for="wechat"></span>
         </div>
       </div>
@@ -336,12 +335,15 @@ const phoneCodes = [
         <input type="text" id={`${id}-website`} name="website" tabindex="-1" autocomplete="off" />
       </div>
 
-      <!-- UTM hidden fields -->
+      <!-- UTM + Ads click ID hidden fields -->
       <input type="hidden" name="utm_source" />
       <input type="hidden" name="utm_medium" />
       <input type="hidden" name="utm_campaign" />
       <input type="hidden" name="utm_content" />
       <input type="hidden" name="utm_term" />
+      <input type="hidden" name="gclid" />
+      <input type="hidden" name="gbraid" />
+      <input type="hidden" name="wbraid" />
       <input type="hidden" name="landing_page" />
       <input type="hidden" name="referrer" />
       <input type="hidden" name="source_page" />
@@ -406,9 +408,17 @@ const phoneCodes = [
       <div class="form-grid form-grid-3">
         <div class="form-field">
           <label for={`${id}-phone-code`}>{texts.phoneCode} <span class="cond-hint">{texts.hintCode}</span></label>
-          <select id={`${id}-phone-code`} name="phone_code">
-            {phoneCodes.map(c => <option value={c.code}>{c.name}</option>)}
-          </select>
+          <div class="country-select" data-country-select>
+            <input type="hidden" name="phone_code" value="" data-country-value />
+            <button type="button" class="country-select-trigger" data-country-trigger aria-haspopup="listbox" aria-expanded="false">
+              <span class="country-select-label" data-country-label>{lang === 'zh' ? '请选择国家区号' : 'Select country code'}</span>
+              <svg class="country-select-caret" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg>
+            </button>
+            <div class="country-select-dropdown" data-country-dropdown hidden>
+              <input type="text" class="country-select-search" data-country-search placeholder={lang === 'zh' ? '搜索国家或区号' : 'Search country or code'} aria-label="Search" />
+              <ul class="country-select-list" data-country-list role="listbox"></ul>
+            </div>
+          </div>
           <span class="field-error" data-error-for="phone_code"></span>
         </div>
         <div class="form-field">
@@ -417,8 +427,8 @@ const phoneCodes = [
           <span class="field-error" data-error-for="phone"></span>
         </div>
         <div class="form-field">
-          <label for={`${id}-wechat`}>{texts.wechat} <span class="cond-hint">{texts.hintWechat}</span></label>
-          <input type="text" id={`${id}-wechat`} name="wechat" placeholder={texts.wechatPlaceholder} />
+          <label for={`${id}-wechat`}>{texts.wechat} <span class="req">*</span> <span class="cond-hint">{texts.hintWechat}</span></label>
+          <input type="text" id={`${id}-wechat`} name="wechat" required placeholder={texts.wechatPlaceholder} />
           <span class="field-error" data-error-for="wechat"></span>
         </div>
       </div>
@@ -547,44 +557,53 @@ const phoneCodes = [
 </section>
 )}
 
-<script>
+<script define:vars={{ COUNTRIES }}>
   // QuoteForm V2 - 双路径切换、前端验证、真实后端提交、UTM跨页面保持
   const MAX_FILE_SIZE = 25 * 1024 * 1024;
   const API_ENDPOINT = '/api/project-inquiry';
 
-  // UTM storage keys
+  // UTM + click ID storage. Use a first-party cookie (30 days) so ad click
+  // IDs survive across sessions (a user may click an ad today and submit an
+  // inquiry tomorrow on a new visit).
   const UTM_STORAGE_KEY = 'zs_utm_data';
   const UTM_FIELDS = ['utm_source', 'utm_medium', 'utm_campaign', 'utm_content', 'utm_term'];
+  const CLICK_ID_FIELDS = ['gclid', 'gbraid', 'wbraid', 'fbclid'];
+  const ALL_PERSIST_FIELDS = UTM_FIELDS.concat(CLICK_ID_FIELDS);
+  const COOKIE_MAX_AGE = 30 * 24 * 60 * 60; // 30 days
 
-  // Save UTM from URL to sessionStorage (cross-page persistence)
+  function readStoredUtm() {
+    try {
+      const m = document.cookie.match(/(?:^|;\s*)zs_utm_data=([^;]+)/);
+      if (!m) return {};
+      return JSON.parse(decodeURIComponent(m[1]));
+    } catch { return {}; }
+  }
+
+  function writeStoredUtm(data) {
+    try {
+      const v = encodeURIComponent(JSON.stringify(data));
+      // Host-only cookie, same-site lax, secure; readable by this JS only. No sensitive
+      // personal data — only ad click IDs and UTM parameters.
+      document.cookie = `zs_utm_data=${v}; path=/; max-age=${COOKIE_MAX_AGE}; SameSite=Lax; Secure`;
+    } catch { /* ignore */ }
+  }
+
   function saveUtmFromUrl() {
     try {
       const params = new URLSearchParams(window.location.search);
-      const utmData = {};
-      let hasUtm = false;
-      UTM_FIELDS.forEach(field => {
+      const utmData = readStoredUtm();
+      let hasNew = false;
+      ALL_PERSIST_FIELDS.forEach(field => {
         const val = params.get(field);
-        if (val) { utmData[field] = val; hasUtm = true; }
+        if (val) { utmData[field] = val; hasNew = true; }
       });
-      // Also save click IDs
-      ['gclid', 'gbraid', 'wbraid', 'fbclid'].forEach(field => {
-        const val = params.get(field);
-        if (val) { utmData[field] = val; hasUtm = true; }
-      });
-      if (hasUtm) {
+      if (hasNew) {
         utmData._landing = window.location.pathname;
         utmData._referrer = document.referrer || '';
         utmData._timestamp = Date.now();
-        sessionStorage.setItem(UTM_STORAGE_KEY, JSON.stringify(utmData));
+        writeStoredUtm(utmData);
       }
     } catch (e) { /* ignore */ }
-  }
-
-  function getStoredUtm() {
-    try {
-      const raw = sessionStorage.getItem(UTM_STORAGE_KEY);
-      return raw ? JSON.parse(raw) : {};
-    } catch { return {}; }
   }
 
   saveUtmFromUrl();
@@ -593,14 +612,14 @@ const phoneCodes = [
     const forms = document.querySelectorAll('.quote-form-v2');
     if (!forms.length) return;
 
-    const storedUtm = getStoredUtm();
+    const storedUtm = readStoredUtm();
 
     forms.forEach(form => {
       const lang = form.dataset.lang === 'zh' ? 'zh' : 'en';
       const isZh = lang === 'zh';
 
-      // Fill UTM from stored data
-      UTM_FIELDS.forEach(field => {
+      // Fill UTM + click IDs from stored cookie
+      ALL_PERSIST_FIELDS.forEach(field => {
         const input = form.querySelector(`input[name="${field}"]`);
         if (input && storedUtm[field]) input.value = storedUtm[field];
       });
@@ -610,6 +629,107 @@ const phoneCodes = [
       if (referrerInput) referrerInput.value = storedUtm._referrer || document.referrer || '';
       const sourceInput = form.querySelector('input[name="source_page"]');
       if (sourceInput) sourceInput.value = window.location.pathname;
+
+      // ---- Country / calling code searchable selector ----
+      const countrySelect = form.querySelector('[data-country-select]');
+      if (countrySelect) {
+        const hiddenInput = countrySelect.querySelector('[data-country-value]');
+        const trigger = countrySelect.querySelector('[data-country-trigger]');
+        const label = countrySelect.querySelector('[data-country-label]');
+        const dropdown = countrySelect.querySelector('[data-country-dropdown]');
+        const search = countrySelect.querySelector('[data-country-search]');
+        const list = countrySelect.querySelector('[data-country-list]');
+        const placeholder = lang === 'zh' ? '请选择国家区号' : 'Select country code';
+
+        const COUNTRIES_DATA = COUNTRIES; // available in page scope
+        let activeIdx = 0;
+
+        function renderList(filter) {
+          const q = (filter || '').trim().toLowerCase();
+          const items = COUNTRIES_DATA.filter(c => {
+            if (!q) return true;
+            return c.name_en.toLowerCase().includes(q) ||
+                   c.name_zh.toLowerCase().includes(q) ||
+                   c.calling_code.toLowerCase().includes(q) ||
+                   c.iso2.toLowerCase().includes(q);
+          });
+          list.innerHTML = '';
+          items.forEach((c, i) => {
+            const li = document.createElement('li');
+            li.className = 'country-select-option';
+            li.setAttribute('role', 'option');
+            li.setAttribute('data-value', c.calling_code);
+            li.setAttribute('data-name', lang === 'zh' ? c.name_zh : c.name_en);
+            li.tabIndex = -1;
+            li.innerHTML = `<span class="cs-name"></span><span class="cs-code">${c.calling_code}</span>`;
+            li.querySelector('.cs-name').textContent = (lang === 'zh' ? c.name_zh : c.name_en);
+            li.addEventListener('mousedown', (e) => {
+              e.preventDefault();
+              selectCountry(c);
+            });
+            list.appendChild(li);
+          });
+          activeIdx = 0;
+          highlightActive();
+        }
+
+        function highlightActive() {
+          const opts = list.querySelectorAll('.country-select-option');
+          opts.forEach((o, i) => o.classList.toggle('active', i === activeIdx));
+          if (opts[activeIdx]) opts[activeIdx].scrollIntoView({ block: 'nearest' });
+        }
+
+        function selectCountry(c) {
+          hiddenInput.value = c.calling_code;
+          label.textContent = (lang === 'zh' ? c.name_zh : c.name_en) + ' ' + c.calling_code;
+          trigger.classList.remove('open');
+          dropdown.hidden = true;
+          trigger.setAttribute('aria-expanded', 'false');
+          // Clear the phone_code error when a valid country is chosen.
+          const errSpan = form.querySelector('[data-error-for="phone_code"]');
+          if (errSpan) { errSpan.textContent = ''; errSpan.classList.remove('show'); }
+          const fieldWrap = countrySelect.closest('.form-field');
+          if (fieldWrap) fieldWrap.classList.remove('error');
+        }
+
+        function openDropdown() {
+          renderList(search.value);
+          dropdown.hidden = false;
+          trigger.classList.add('open');
+          trigger.setAttribute('aria-expanded', 'true');
+          setTimeout(() => search.focus(), 0);
+        }
+        function closeDropdown() {
+          dropdown.hidden = true;
+          trigger.classList.remove('open');
+          trigger.setAttribute('aria-expanded', 'false');
+        }
+
+        trigger.addEventListener('click', () => {
+          if (dropdown.hidden) openDropdown(); else closeDropdown();
+        });
+        search.addEventListener('input', () => renderList(search.value));
+        search.addEventListener('keydown', (e) => {
+          const opts = list.querySelectorAll('.country-select-option');
+          if (e.key === 'ArrowDown') { e.preventDefault(); activeIdx = Math.min(activeIdx + 1, opts.length - 1); highlightActive(); }
+          else if (e.key === 'ArrowUp') { e.preventDefault(); activeIdx = Math.max(activeIdx - 1, 0); highlightActive(); }
+          else if (e.key === 'Enter') { e.preventDefault(); if (opts[activeIdx]) opts[activeIdx].dispatchEvent(new Event('mousedown')); }
+          else if (e.key === 'Escape') { e.preventDefault(); closeDropdown(); trigger.focus(); }
+          else if (e.key === 'Tab') { closeDropdown(); }
+        });
+        document.addEventListener('click', (e) => {
+          if (!countrySelect.contains(e.target)) closeDropdown();
+        });
+
+        // Auto-select visitor's country from Cloudflare edge detection
+        const visitorCountry = window.__VISITOR_COUNTRY__ || '';
+        if (visitorCountry) {
+          const matched = COUNTRIES_DATA.find(c => c.iso2 === visitorCountry);
+          if (matched) {
+            selectCountry(matched);
+          }
+        }
+      }
 
       // Path switch
       const pathBtns = form.querySelectorAll('.form-path-btn');
@@ -737,24 +857,22 @@ const phoneCodes = [
           markField('country', isZh ? '请输入项目所在国家' : 'Please enter the project country');
         }
 
-        // Contact rule: WeChat OR phone — at least one
+        // Contact rule: WeChat is REQUIRED. Phone/WhatsApp is optional.
         const wechatVal = form.querySelector('[name="wechat"]').value.trim();
         const phoneVal = form.querySelector('[name="phone"]').value.trim();
         const codeVal = form.querySelector('[name="phone_code"]').value.trim();
 
-        if (!wechatVal && !phoneVal) {
+        if (!wechatVal) {
           isValid = false;
-          const contactMsg = isZh
-            ? '请至少填写微信或电话号码，方便我们联系您。'
-            : 'Please provide either a WeChat ID or phone number so we can contact you.';
-          markField('wechat', contactMsg);
-          markField('phone', contactMsg);
+          markField('wechat', isZh
+            ? '请填写微信号，方便我们联系您。'
+            : 'Please provide your WeChat ID so we can contact you.');
         }
 
         // Phone provided without a country / calling code
         if (phoneVal && !codeVal) {
           isValid = false;
-          markField('phone_code', isZh ? '请输入国家/地区区号。' : 'Please select a country/region code.');
+          markField('phone_code', isZh ? '填写电话时请选择国家/地区区号。' : 'Please select a country/region code when entering a phone number.');
         }
 
         // Email optional — validate format only if filled
@@ -804,7 +922,23 @@ const phoneCodes = [
         if (errorEl) { errorEl.textContent = ''; errorEl.classList.remove('show'); }
         if (successEl) { successEl.textContent = ''; successEl.classList.remove('show'); }
 
-        if (!validate()) return;
+        if (!validate()) {
+          // Client-side validation blocked the submit. Emit form_error so we
+          // can measure how often users hit required-field errors before
+          // reaching the network. No PII — only stage/reason.
+          if (typeof window.trackEvent === 'function') {
+            try {
+              window.trackEvent('form_error', {
+                stage: 'validation',
+                reason: 'client_side_required',
+                language: lang,
+                form_variant: form.querySelector('input[name="active_path"]')?.value || 'unknown',
+                page_path: window.location.pathname,
+              });
+            } catch { /* ignore */ }
+          }
+          return;
+        }
 
         // Check file sizes
         if (fileInput && fileInput.files.length) {
@@ -897,20 +1031,36 @@ const phoneCodes = [
               isZh ? '感谢您的提交。' : 'Thank you.'
             );
           } else {
-            // Failure
+            // Failure. Emit a non-conversion GA4 event so we can measure form
+            // drop-off. Never include PII (name/wechat/email/phone).
+            const reportFormError = (stage, reason) => {
+              if (typeof window.trackEvent !== 'function') return;
+              try {
+                window.trackEvent('form_error', {
+                  stage: stage,           // validation | turnstile | server | network
+                  reason: reason,         // short code, not user-entered text
+                  language: lang,
+                  form_variant: form.querySelector('input[name="active_path"]')?.value || 'unknown',
+                  page_path: window.location.pathname,
+                });
+              } catch { /* never break submission flow */ }
+            };
+
             let msg = isZh ? '提交失败，请稍后重试。' : 'Submission failed. Please try again.';
             if (result.code === 'TURNSTILE_FAILED') {
               msg = isZh ? '验证失败，请重新提交。' : 'Verification failed. Please try again.';
               showError(msg);
+              reportFormError('turnstile', result.code || 'turnstile_failed');
             } else if (result.code === 'VALIDATION_ERROR') {
               // Map server-side field errors onto the correct fields (localized)
               const serverFieldText = {
                 name: isZh ? '请输入姓名' : 'Please enter your name',
                 project_country: isZh ? '请输入项目所在国家' : 'Please enter the project country',
-                calling_code: isZh ? '请输入国家/地区区号。' : 'Please select a country/region code.',
+                wechat: isZh ? '请填写微信号，方便我们联系您。' : 'Please provide your WeChat ID so we can contact you.',
+                calling_code: isZh ? '填写电话时请选择国家/地区区号。' : 'Please select a country/region code when entering a phone number.',
                 email: isZh ? '请输入有效邮箱' : 'Please enter a valid email',
               };
-              const fieldToInput = { name: 'name', project_country: 'country', calling_code: 'phone_code', email: 'email' };
+              const fieldToInput = { name: 'name', project_country: 'country', wechat: 'wechat', calling_code: 'phone_code', email: 'email' };
 
               function markServerField(inputName, text) {
                 const errSpan = form.querySelector(`[data-error-for="${inputName}"]`);
@@ -921,14 +1071,7 @@ const phoneCodes = [
 
               let hasFieldError = false;
               Object.keys(result.errors || {}).forEach(k => {
-                if (k === 'contact') {
-                  const contactMsg = isZh
-                    ? '请至少填写微信或电话号码，方便我们联系您。'
-                    : 'Please provide either a WeChat ID or phone number so we can contact you.';
-                  markServerField('wechat', contactMsg);
-                  markServerField('phone', contactMsg);
-                  hasFieldError = true;
-                } else if (serverFieldText[k]) {
+                if (serverFieldText[k]) {
                   markServerField(fieldToInput[k], serverFieldText[k]);
                   hasFieldError = true;
                 }
@@ -936,13 +1079,17 @@ const phoneCodes = [
 
               if (hasFieldError) {
                 form.querySelector('.form-field.error')?.scrollIntoView({ behavior: 'smooth', block: 'center' });
+                reportFormError('validation', 'field_error');
               } else {
                 showError(isZh ? '请检查必填字段。' : 'Please check required fields.');
+                reportFormError('validation', 'required_fields');
               }
             } else if (result.message) {
               showError(result.message);
+              reportFormError('server', result.code || 'unknown');
             } else {
               showError(msg);
+              reportFormError('server', result.code || 'unknown');
             }
 
             // Reset Turnstile
@@ -952,6 +1099,17 @@ const phoneCodes = [
           }
         } catch (err) {
           showError(isZh ? '网络错误，请稍后重试。' : 'Network error. Please try again.');
+          if (typeof window.trackEvent === 'function') {
+            try {
+              window.trackEvent('form_error', {
+                stage: 'network',
+                reason: err && err.name ? err.name : 'network_error',
+                language: lang,
+                form_variant: form.querySelector('input[name="active_path"]')?.value || 'unknown',
+                page_path: window.location.pathname,
+              });
+            } catch { /* ignore */ }
+          }
         } finally {
           delete form.dataset.submitting;
           submitBtn.disabled = false;
@@ -1124,5 +1282,43 @@ const phoneCodes = [
   margin: 12px 0;
   font-style: italic;
 }
+
+/* ---- Searchable country selector ---- */
+.country-select { position: relative; }
+.country-select-trigger {
+  width: 100%;
+  display: flex; align-items: center; justify-content: space-between;
+  padding: 10px 12px;
+  border: 1px solid #d0d5dd; border-radius: 8px;
+  background: #fff; cursor: pointer;
+  font-size: 15px; color: #1f2937;
+  min-height: 44px;
+}
+.country-select-trigger:hover { border-color: #9ca3af; }
+.country-select-trigger.open { border-color: #2563eb; box-shadow: 0 0 0 3px rgba(37,99,235,0.15); }
+.country-select-caret { flex-shrink: 0; transition: transform 0.15s; color: #6b7280; }
+.country-select-trigger.open .country-select-caret { transform: rotate(180deg); }
+.country-select-dropdown {
+  position: absolute; top: calc(100% + 4px); left: 0; right: 0;
+  background: #fff; border: 1px solid #e5e7eb; border-radius: 8px;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.12);
+  z-index: 50; overflow: hidden;
+}
+.country-select-search {
+  width: 100%; padding: 10px 12px;
+  border: 0; border-bottom: 1px solid #f0f0f0;
+  font-size: 15px; outline: none;
+}
+.country-select-list {
+  list-style: none; margin: 0; padding: 4px 0;
+  max-height: 260px; overflow-y: auto;
+}
+.country-select-option {
+  display: flex; justify-content: space-between; align-items: center;
+  padding: 9px 12px; cursor: pointer; font-size: 14px;
+}
+.country-select-option:hover, .country-select-option.active { background: #f3f6fb; }
+.country-select-option .cs-code { color: #6b7280; font-variant-numeric: tabular-nums; margin-left: 12px; }
+.form-field.error .country-select-trigger { border-color: #dc2626; }
 
 </style>

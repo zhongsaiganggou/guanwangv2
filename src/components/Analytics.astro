@@ -2,9 +2,13 @@
 // Analytics.astro - GA4 + Meta Pixel
 const measurementId = import.meta.env.PUBLIC_GA_MEASUREMENT_ID || '';
 const enabled = !!measurementId;
+// Preview builds set PUBLIC_IS_PREVIEW=true in Cloudflare Pages dashboard.
+// When true, no GA4 / Meta Pixel scripts are rendered and all track calls
+// become no-ops, so Preview traffic never pollutes production analytics.
+const isPreview = import.meta.env.PUBLIC_IS_PREVIEW === 'true';
 ---
 
-{enabled && (
+{enabled && !isPreview && (
   <>
     <!-- Google tag (gtag.js) -->
     <script async src={`https://www.googletagmanager.com/gtag/js?id=${measurementId}`}></script>
@@ -20,6 +24,8 @@ const enabled = !!measurementId;
   </>
 )}
 
+{!isPreview && (
+  <>
 <!-- Meta Pixel Code -->
 <script is:inline>
   !function(f,b,e,v,n,t,s)
@@ -37,18 +43,25 @@ const enabled = !!measurementId;
 src="https://www.facebook.com/tr?id=1268080202055777&ev=PageView&noscript=1"
 /></noscript>
 <!-- End Meta Pixel Code -->
+  </>
+)}
 
-<script>
-  // Unified GA4 event helper — no PII
+<script is:inline define:vars={{ isPreview }}>
+  // Flag available to other scripts for runtime checks
+  window.__IS_PREVIEW__ = isPreview === true;
+
+  // Unified GA4 event helper — no PII. No-op in Preview builds.
   window.trackEvent = function(name, params) {
+    if (window.__IS_PREVIEW__) return;
     if (typeof gtag !== 'function') return;
     const p = params || {};
     p.page_path = p.page_path || location.pathname;
     gtag('event', name, p);
   };
 
-  // GA4 generate_lead conversion helper
+  // GA4 generate_lead conversion helper. No-op in Preview builds.
   window.trackLeadConversion = function(params) {
+    if (window.__IS_PREVIEW__) return;
     if (typeof gtag !== 'function') return;
     if (!params || !params.lead_id) return;
 
@@ -85,55 +98,54 @@ src="https://www.facebook.com/tr?id=1268080202055777&ev=PageView&noscript=1"
     }
   };
 
-  // Global outbound click tracking — WhatsApp (contact_whatsapp_click), WeChat
-  // (contact_wechat_click), Email (contact_email_click), Phone. One event per
-  // click; source/medium is left to GA4 session attribution (never fabricated
-  // client-side).
-  document.addEventListener('click', function(e) {
-    const link = e.target.closest('a');
-    if (!link || !link.href) return;
-    const href = link.href;
+  // Global outbound click tracking — no-op in Preview builds.
+  if (!window.__IS_PREVIEW__) {
+    document.addEventListener('click', function(e) {
+      const link = e.target.closest('a');
+      if (!link || !link.href) return;
+      const href = link.href;
 
-    const isWA = href.indexOf('wa.me/') !== -1 || href.indexOf('whatsapp:') === 0 || href.indexOf('api.whatsapp.com') !== -1;
-    const isWX = href.indexOf('weixin.qq.com') !== -1 || href.indexOf('weixin://') === 0 || href.indexOf('wechat') !== -1;
+      const isWA = href.indexOf('wa.me/') !== -1 || href.indexOf('whatsapp:') === 0 || href.indexOf('api.whatsapp.com') !== -1;
+      const isWX = href.indexOf('weixin.qq.com') !== -1 || href.indexOf('weixin://') === 0 || href.indexOf('wechat') !== -1;
 
-    // Resolve where the click happened from actual DOM context.
-    let ctaLocation = 'other';
-    if (link.closest('footer')) ctaLocation = 'footer';
-    else if (link.closest('.floating-social') || link.closest('.floating-buttons') || link.closest('[class*="floating"]')) ctaLocation = 'floating';
-    else if (link.closest('.contact-card')) ctaLocation = 'contact_card';
-    else if (link.closest('.hero') || link.closest('.hub-hero') || link.closest('.page-hero')) ctaLocation = 'hero';
-    else if (link.closest('.related-card') || link.closest('.related-grid') || link.closest('.legacy-related')) ctaLocation = 'related';
-    else if (link.closest('.trust-item') || link.closest('.contact-method')) ctaLocation = 'trust';
-    else if (location.pathname.indexOf('thank-you') !== -1) ctaLocation = 'thank_you';
-    else if (link.closest('.contact-cards') || link.closest('.contact-page')) ctaLocation = 'contact_page';
+      // Resolve where the click happened from actual DOM context.
+      let ctaLocation = 'other';
+      if (link.closest('footer')) ctaLocation = 'footer';
+      else if (link.closest('.floating-social') || link.closest('.floating-buttons') || link.closest('[class*="floating"]')) ctaLocation = 'floating';
+      else if (link.closest('.contact-card')) ctaLocation = 'contact_card';
+      else if (link.closest('.hero') || link.closest('.hub-hero') || link.closest('.page-hero')) ctaLocation = 'hero';
+      else if (link.closest('.related-card') || link.closest('.related-grid') || link.closest('.legacy-related')) ctaLocation = 'related';
+      else if (link.closest('.trust-item') || link.closest('.contact-method')) ctaLocation = 'trust';
+      else if (location.pathname.indexOf('thank-you') !== -1) ctaLocation = 'thank_you';
+      else if (link.closest('.contact-cards') || link.closest('.contact-page')) ctaLocation = 'contact_page';
 
-    const base = {
-      cta_location: ctaLocation,
-      page_language: document.documentElement.lang || 'en',
-      page_location: location.href,
-    };
+      const base = {
+        cta_location: ctaLocation,
+        page_language: document.documentElement.lang || 'en',
+        page_location: location.href,
+      };
 
-    if (isWA) {
-      window.trackEvent('contact_whatsapp_click', Object.assign({}, base, {
-        cta_text: (link.textContent || '').trim().replace(/\s+/g, ' ').slice(0, 80) || 'WhatsApp',
-        destination: href.indexOf('api.whatsapp.com') !== -1 ? 'api.whatsapp.com' : 'wa.me',
-      }));
-    } else if (isWX) {
-      window.trackEvent('contact_wechat_click', Object.assign({}, base, {
-        cta_text: (link.textContent || '').trim().replace(/\s+/g, ' ').slice(0, 80) || 'WeChat',
-        destination: 'weixin',
-      }));
-    } else if (href.indexOf('mailto:') === 0) {
-      window.trackEvent('contact_email_click', Object.assign({}, base, {
-        cta_text: (link.textContent || '').trim().replace(/\s+/g, ' ').slice(0, 80) || 'Email',
-        destination: 'mailto',
-      }));
-    } else if (href.indexOf('tel:') === 0) {
-      window.trackEvent('phone_click', Object.assign({}, base, {
-        cta_text: (link.textContent || '').trim().replace(/\s+/g, ' ').slice(0, 80) || 'Phone',
-        destination: 'tel',
-      }));
-    }
-  }, true);
+      if (isWA) {
+        window.trackEvent('contact_whatsapp_click', Object.assign({}, base, {
+          cta_text: (link.textContent || '').trim().replace(/\s+/g, ' ').slice(0, 80) || 'WhatsApp',
+          destination: href.indexOf('api.whatsapp.com') !== -1 ? 'api.whatsapp.com' : 'wa.me',
+        }));
+      } else if (isWX) {
+        window.trackEvent('contact_wechat_click', Object.assign({}, base, {
+          cta_text: (link.textContent || '').trim().replace(/\s+/g, ' ').slice(0, 80) || 'WeChat',
+          destination: 'weixin',
+        }));
+      } else if (href.indexOf('mailto:') === 0) {
+        window.trackEvent('contact_email_click', Object.assign({}, base, {
+          cta_text: (link.textContent || '').trim().replace(/\s+/g, ' ').slice(0, 80) || 'Email',
+          destination: 'mailto',
+        }));
+      } else if (href.indexOf('tel:') === 0) {
+        window.trackEvent('phone_click', Object.assign({}, base, {
+          cta_text: (link.textContent || '').trim().replace(/\s+/g, ' ').slice(0, 80) || 'Phone',
+          destination: 'tel',
+        }));
+      }
+    }, true);
+  }
 </script>

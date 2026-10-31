@@ -38,3 +38,43 @@ migrations_dir = "migrations"
 [[r2_buckets]]
 binding = "LEAD_FILES"
 bucket_name = "zhongsai-lead-files"
+
+# ============================================================
+# PREVIEW ENVIRONMENT (separate D1 / R2 / env vars)
+# ============================================================
+# In Cloudflare Pages Dashboard → Settings → Functions → Bindings:
+#   Preview environment must point to:
+#     D1: zhongsai-leads-preview   (separate database_id)
+#     R2: zhongsai-lead-files-preview
+#
+#   Preview environment variables (set ONLY in Preview environment):
+#     PREVIEW_MODE = "true"          (backend: forces isTest=1, skips webhook/wecom/CAPI)
+#     PUBLIC_IS_PREVIEW = "true"     (frontend: no GA4/Meta Pixel scripts at all)
+#
+#   These variables must NOT exist in Production:
+#     PREVIEW_MODE
+#     PUBLIC_IS_PREVIEW
+#
+#   Even if LEAD_WEBHOOK_URL / WECHAT_WORK_WEBHOOK_URL / FB_CAPI_ACCESS_TOKEN
+#   are accidentally set in Preview, the backend checks !isPreviewEnv first
+#   and skips them. This is defense-in-depth.
+#
+# The blocks below are documentation; actual bindings are configured
+# in the Cloudflare Pages dashboard, not here.
+
+[env.preview]
+name = "zhongsai-website-v2-preview"
+
+[env.preview.vars]
+PREVIEW_MODE = "true"
+PUBLIC_IS_PREVIEW = "true"
+
+[[env.preview.d1_databases]]
+binding = "LEADS_DB"
+database_name = "zhongsai-leads-preview"
+database_id = "631b29f3-1bf3-47fa-9573-2a6e29ad75e1"
+migrations_dir = "migrations"
+
+[[env.preview.r2_buckets]]
+binding = "LEAD_FILES"
+bucket_name = "zhongsai-lead-files-preview"

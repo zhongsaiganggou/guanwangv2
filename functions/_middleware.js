@@ -289,7 +289,8 @@ export async function onRequest(context) {
 }
 
 // Preview hosts must not be indexed. Production custom domain is unaffected.
-function addPreviewHeader(request, response) {
+// Also inject visitor country code for auto-selecting phone country code.
+async function addPreviewHeader(request, response) {
   const host = request.headers.get('host') || '';
   const isPreviewHost = host.endsWith('.pages.dev');
   const path = new URL(request.url).pathname;
@@ -297,6 +298,32 @@ function addPreviewHeader(request, response) {
     request.method === 'GET' &&
     !path.startsWith('/api/') &&
     !path.includes('.');
+
+  // Get visitor country from Cloudflare edge
+  const visitorCountry = request.cf?.country || '';
+
+  // Clone response and inject country script into <head>
+  if (isHtmlNavigation && visitorCountry) {
+    const contentType = response.headers.get('content-type') || '';
+    if (contentType.includes('text/html')) {
+      const originalBody = await response.text();
+      const scriptTag = `<script>window.__VISITOR_COUNTRY__="${visitorCountry}";</script>`;
+      // Insert right after <head>
+      const modifiedBody = originalBody.replace(/<head[^>]*>/i, (match) => `${match}${scriptTag}`);
+      const newHeaders = new Headers(response.headers);
+      newHeaders.set('Content-Length', new TextEncoder().encode(modifiedBody).length.toString());
+      const newResponse = new Response(modifiedBody, {
+        status: response.status,
+        statusText: response.statusText,
+        headers: newHeaders,
+      });
+      if (isPreviewHost) {
+        newResponse.headers.set('X-Robots-Tag', 'noindex, nofollow');
+      }
+      return newResponse;
+    }
+  }
+
   if (isPreviewHost && isHtmlNavigation) {
     const previewResponse = new Response(response.body, response);
     previewResponse.headers.set('X-Robots-Tag', 'noindex, nofollow');
