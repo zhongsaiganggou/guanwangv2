@@ -73,22 +73,10 @@ function validateLead(data) {
   const hasDrawings = data.has_drawings === true || data.has_drawings === 'true' || data.has_drawings === '1' || data.active_path === 'drawings';
 
   const wechat = (data.wechat || '').trim();
-  const phone = (data.phone || '').trim();
-  const callingCode = (data.calling_code || '').trim();
 
-  // Required fields
-  if (!(data.name || '').trim()) errors.name = 'Name is required';
-  if (!(data.project_country || '').trim()) errors.project_country = 'Project country is required';
-
-  // Contact rule: WeChat is REQUIRED. Phone/WhatsApp is optional.
-  // If phone is provided, calling code is required.
+  // Required: WeChat only. Name, country, phone are all optional.
   if (!wechat) {
     errors.wechat = 'WeChat ID is required';
-  }
-
-  // If a phone number is provided, the country / calling code is required
-  if (phone && !callingCode) {
-    errors.calling_code = 'Country / calling code is required when a phone number is provided';
   }
 
   // Email optional but validate format if provided
