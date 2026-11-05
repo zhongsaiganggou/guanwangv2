@@ -1,0 +1,161 @@
+---
+// ShipmentCard.astro — reusable shipment record display
+// Used by: Shipment Hub, Homepage module, Export Delivery module
+import type { ShipmentRecord } from '../data/shipments';
+
+interface Props {
+  shipment: ShipmentRecord;
+  lang: 'en' | 'zh';
+  variant?: 'full' | 'compact';
+}
+
+const { shipment, lang, variant = 'full' } = Astro.props;
+const t = (en: string, zh: string) => (lang === 'en' ? en : zh);
+
+const destination = shipment.destinationCountry || shipment.destinationRegion || '';
+const mainImage = shipment.images[0];
+const scopeText = shipment.scope.join(' · ');
+const dateFormatted = new Date(shipment.date).toLocaleDateString(
+  lang === 'en' ? 'en-US' : 'zh-CN',
+  { year: 'numeric', month: 'short', day: 'numeric' }
+);
+---
+
+<article class={`shipment-card shipment-card--${variant}`}>
+  {variant === 'full' && mainImage && (
+    <div class="shipment-card__media">
+      <img src={mainImage.src} alt={mainImage.alt[lang]} loading="lazy" width="800" height="500">
+      {shipment.isSample && (
+        <span class="shipment-card__badge">{t('Sample Data', '示例数据')}</span>
+      )}
+    </div>
+  )}
+
+  {variant === 'compact' && mainImage && (
+    <a href={`/${lang}/export-delivery/shipments/`} class="shipment-card__media">
+      <img src={mainImage.src} alt={mainImage.alt[lang]} loading="lazy" width="400" height="300">
+    </a>
+  )}
+
+  <div class="shipment-card__body">
+    <div class="shipment-card__meta">
+      <time datetime={shipment.date}>{dateFormatted}</time>
+      {destination && <span class="shipment-card__dest">{destination}</span>}
+      {shipment.application && <span class="shipment-card__app">{shipment.application}</span>}
+    </div>
+
+    <h3 class="shipment-card__title">
+      {lang === 'en' ? shipment.enTitle : shipment.zhTitle}
+    </h3>
+
+    {variant === 'full' && (
+      <p class="shipment-card__desc">
+        {lang === 'en' ? shipment.enDescription : shipment.zhDescription}
+      </p>
+    )}
+
+    <div class="shipment-card__tags">
+      {shipment.containerType && <span>{shipment.containerType}</span>}
+      {shipment.shipmentType && <span>{shipment.shipmentType}</span>}
+    </div>
+
+    {variant === 'full' && shipment.images.length > 1 && (
+      <div class="shipment-card__gallery">
+        {shipment.images.slice(1, 4).map((img) => (
+          <img src={img.src} alt={img.alt[lang]} loading="lazy" width="200" height="150">
+        ))}
+      </div>
+    )}
+  </div>
+</article>
+
+<style>
+  .shipment-card {
+    background: #fff;
+    border: 1px solid #e5e7eb;
+    overflow: hidden;
+  }
+  .shipment-card__media {
+    position: relative;
+    display: block;
+    aspect-ratio: 16 / 10;
+    overflow: hidden;
+  }
+  .shipment-card__media img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+  .shipment-card__badge {
+    position: absolute;
+    top: 12px;
+    left: 12px;
+    background: #f59e0b;
+    color: #fff;
+    font-size: 11px;
+    font-weight: 600;
+    padding: 3px 8px;
+    letter-spacing: 0.5px;
+  }
+  .shipment-card__body {
+    padding: 20px;
+  }
+  .shipment-card__meta {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    font-size: 12px;
+    color: #6b7280;
+    margin-bottom: 8px;
+  }
+  .shipment-card__meta span {
+    color: #1f2937;
+    font-weight: 500;
+  }
+  .shipment-card__title {
+    font-size: 17px;
+    font-weight: 600;
+    margin: 0 0 8px;
+    line-height: 1.35;
+    color: #111827;
+  }
+  .shipment-card__desc {
+    font-size: 14px;
+    line-height: 1.6;
+    color: #4b5563;
+    margin: 0 0 12px;
+  }
+  .shipment-card__tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px;
+  }
+  .shipment-card__tags span {
+    font-size: 11px;
+    background: #f3f4f6;
+    color: #374151;
+    padding: 2px 8px;
+  }
+  .shipment-card__gallery {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 6px;
+    margin-top: 14px;
+  }
+  .shipment-card__gallery img {
+    width: 100%;
+    aspect-ratio: 4 / 3;
+    object-fit: cover;
+  }
+  .shipment-card--compact .shipment-card__body {
+    padding: 14px;
+  }
+  .shipment-card--compact .shipment-card__title {
+    font-size: 14px;
+  }
+  @media (max-width: 640px) {
+    .shipment-card__gallery {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+</style>

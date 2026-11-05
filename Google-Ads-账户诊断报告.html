@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Google Ads 账户诊断报告 - 中赛钢构</title>
+<style>
+  * { margin:0; padding:0; box-sizing:border-box; }
+  body { font-family:-apple-system,'Segoe UI','Microsoft YaHei',sans-serif; background:#f1f5f9; color:#1e293b; line-height:1.6; padding:20px; }
+  .container { max-width:960px; margin:0 auto; }
+  .header { background:linear-gradient(135deg,#1e3a8a,#2563eb); color:#fff; padding:28px 30px; border-radius:12px; margin-bottom:20px; }
+  .header h1 { font-size:24px; margin-bottom:6px; }
+  .header .meta { font-size:13px; opacity:0.85; }
+  .score-bar { display:flex; gap:14px; margin-bottom:20px; flex-wrap:wrap; }
+  .score-card { flex:1; min-width:150px; background:#fff; border-radius:10px; padding:16px; text-align:center; box-shadow:0 1px 3px rgba(0,0,0,0.08); }
+  .score-card .num { font-size:30px; font-weight:700; }
+  .score-card .label { font-size:12px; color:#64748b; margin-top:3px; }
+  .red { color:#dc2626; } .orange { color:#ea580c; } .green { color:#16a34a; } .blue { color:#2563eb; }
+  .section { background:#fff; border-radius:10px; padding:20px 24px; margin-bottom:16px; box-shadow:0 1px 3px rgba(0,0,0,0.08); }
+  .section h2 { font-size:17px; margin-bottom:14px; padding-bottom:10px; border-bottom:2px solid #e2e8f0; display:flex; align-items:center; gap:8px; }
+  .badge { display:inline-block; font-size:11px; padding:2px 9px; border-radius:20px; font-weight:600; }
+  .badge-block { background:#fee2e2; color:#dc2626; }
+  .badge-warn { background:#ffedd5; color:#ea580c; }
+  .badge-ok { background:#dcfce7; color:#16a34a; }
+  table { width:100%; border-collapse:collapse; font-size:13px; margin:8px 0; }
+  th { background:#f8fafc; text-align:left; padding:9px 11px; font-weight:600; color:#475569; font-size:12px; border-bottom:2px solid #e2e8f0; }
+  td { padding:9px 11px; border-bottom:1px solid #e2e8f0; vertical-align:top; }
+  .issue { border-left:3px solid #dc2626; background:#fef2f2; padding:12px 15px; border-radius:0 8px 8px 0; margin-bottom:10px; }
+  .issue-warn { border-left:3px solid #ea580c; background:#fff7ed; padding:12px 15px; border-radius:0 8px 8px 0; margin-bottom:10px; }
+  .issue-ok { border-left:3px solid #16a34a; background:#f0fdf4; padding:12px 15px; border-radius:0 8px 8px 0; margin-bottom:10px; }
+  .issue b { display:block; margin-bottom:3px; }
+  .issue .fix { font-size:12px; color:#7f1d1d; margin-top:5px; }
+  .issue-warn .fix { color:#7c2d12; }
+  .issue-ok .fix { color:#14532d; }
+  .step-flow { counter-reset:step; }
+  .step-item { position:relative; padding:12px 14px 12px 48px; background:#f8fafc; border-radius:8px; margin-bottom:8px; font-size:13px; }
+  .step-item::before { counter-increment:step; content:counter(step); position:absolute; left:14px; top:12px; width:24px; height:24px; background:#2563eb; color:#fff; border-radius:50%; display:flex; align-items:center; justify-content:center; font-size:12px; font-weight:700; }
+  .step-item.done::before { background:#16a34a; }
+  .step-item.pending::before { background:#94a3b8; }
+  .tag { display:inline-block; background:#eff6ff; color:#2563eb; padding:2px 8px; border-radius:4px; font-size:11px; margin:2px; }
+  .tag.bad { background:#fee2e2; color:#dc2626; }
+  .tag.good { background:#dcfce7; color:#16a34a; }
+  .summary-box { background:linear-gradient(135deg,#fef2f2,#fff7ed); border:1px solid #fecaca; border-radius:10px; padding:18px 22px; margin-bottom:20px; }
+  .summary-box h3 { color:#dc2626; font-size:15px; margin-bottom:8px; }
+  ul { padding-left:20px; font-size:13px; }
+  ul li { margin-bottom:5px; }
+  @media (max-width:600px) {
+    body { padding:12px; }
+    .header { padding:20px; } .header h1 { font-size:19px; }
+    .section { padding:16px 17px; }
+    .score-card .num { font-size:24px; }
+  }
+</style>
+</head>
+<body>
+<div class="container">
+
+  <div class="header">
+    <h1>Google Ads 账户诊断报告</h1>
+    <div class="meta">账户：中赛钢构（zhongsaiganggou@gmail.com）｜ 诊断日期：2026-10-29 ｜ 目标市场：东南亚 + 拉美/非洲/其他</div>
+  </div>
+
+  <div class="summary-box">
+    <h3>总体结论：账户当前不具备投放条件，建议先不要启用任何广告系列</h3>
+    <div style="font-size:13px;color:#7f1d1d;">
+      账户存在 <b>4 个阻断性问题</b>（无结算/无支付资料、无转化操作、GA4 未关联、账户结构混乱）和 <b>多个配置质量问题</b>。
+      在当前状态下直接投放，广告可能无法展示，或即使展示也无法统计线索，预算会处于"盲跑"状态。
+    </div>
+  </div>
+
+  <div class="score-bar">
+    <div class="score-card"><div class="num red">0</div><div class="label">广告系列数量</div></div>
+    <div class="score-card"><div class="num red">0</div><div class="label">转化操作数量</div></div>
+    <div class="score-card"><div class="num red">无</div><div class="label">结算/支付资料</div></div>
+    <div class="score-card"><div class="num orange">2</div><div class="label">账户（结构混乱）</div></div>
+  </div>
+
+  <!-- 一、账户结构 -->
+  <div class="section">
+    <h2>一、账户结构问题 <span class="badge badge-block">阻断</span></h2>
+    <div class="issue">
+      <b>问题 1：同一 Google 账号下存在两个职责不清的 Ads 账户</b>
+      <table>
+        <tr><th>账户名称</th><th>客户 ID</th><th>类型</th><th>状态</th></tr>
+        <tr><td>中赛钢结构SteelStructure</td><td>412-901-3905</td><td>标准账户</td><td>正在设置（PMax 向导中途）</td></tr>
+        <tr><td>中赛钢构经理账号</td><td>840-084-6162</td><td>MCC 经理账号</td><td>已建立，但<b>下面没有任何子账号</b></td></tr>
+      </table>
+      <div class="fix">风险：MCC 是用来管理多个子账号的，但当前 MCC 是空的，标准账户也没有挂到 MCC 下。后续如果要在不同国家/业务线分账号投放，会无法统一管理。</div>
+    </div>
+    <div class="issue">
+      <b>问题 2：PMax 广告系列创建中途停滞，未完成</b>
+      <div class="fix">412-901-3905 账户停留在效果最大化广告系列创建向导，缺少必填的横向图片和方形图片，无法提交。</div>
+    </div>
+    <div class="issue-warn">
+      <b>建议结构</b>
+      <div class="fix">
+        保留 MCC（840-084-6162）作为管理顶层 → 将标准账户（412-901-3905）作为子账号关联到 MCC 下 → 所有投放、结算、转化都在子账号层面操作。
+        如果预算有限（&lt;$1000/月），也可以暂时不用 MCC，直接用一个标准账户即可，但需要决定用哪个。
+      </div>
+    </div>
+  </div>
+
+  <!-- 二、结算 -->
+  <div class="section">
+    <h2>二、结算与付款问题 <span class="badge badge-block">阻断</span></h2>
+    <div class="issue">
+      <b>问题 3：没有结算设置，没有支付资料</b>
+      <div class="fix">
+        后台明确提示"您需要有结算设置才能展示广告"。当前：<br>
+        · 结算设置：无（账单设置为空）<br>
+        · 支付资料：0 份（未绑定信用卡/银行账户）<br>
+        这意味着即使广告系列建好，也无法投放。
+      </div>
+    </div>
+    <div class="issue-warn">
+      <b>需要您准备的材料</b>
+      <div class="fix">
+        · 可支付美元的信用卡（Visa/Mastercard，建议用企业信用卡，法人个人双币卡也可）<br>
+        · 或中国大陆对公银行账户（支持自动扣款，但需要企业资质）<br>
+        · 账单地址（与信用卡账单地址一致）<br>
+        注意：账户币种在创建时已确定为人民币（¥），但实际扣款会按实时汇率折算美元广告费。
+      </div>
+    </div>
+  </div>
+
+  <!-- 三、转化追踪 -->
+  <div class="section">
+    <h2>三、转化追踪问题 <span class="badge badge-block">阻断</span></h2>
+    <div class="issue">
+      <b>问题 4：Google Ads 中没有任何转化操作</b>
+      <div class="fix">
+        转化页面显示"设置转化跟踪 / 新建转化操作"，Google 代码 24 小时命中数为 0。
+        没有转化追踪，系统无法判断哪些关键词带来了客户，PMax 的 AI 出价也无法学习，广告费等于盲目投放。
+      </div>
+    </div>
+    <div class="issue-warn">
+      <b>问题 5：GA4 未在 Google Ads 中确认关联</b>
+      <div class="fix">
+        网站已安装 GA4（衡量 ID：G-KHMJM1QRCT），且 GA4 中已配置完整的事件，但在 Google Ads 数据管理器中未显示已关联。
+        必须在 Google Ads 后台完成 GA4 关联，才能导入 GA4 的转化事件。
+      </div>
+    </div>
+    <div class="issue-ok">
+      <b>网站端已具备的追踪基础（这部分是好的）</b>
+      <div class="fix">
+        GA4 已埋点的事件：
+        <span class="tag good">generate_lead（表单提交）</span>
+        <span class="tag good">project_form_submit</span>
+        <span class="tag good">drawing_upload（图纸上传）</span>
+        <span class="tag good">contact_whatsapp_click</span>
+        <span class="tag good">contact_email_click</span>
+        <span class="tag good">contact_wechat_click</span>
+        <span class="tag good">phone_click</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- 四、PMax配置质量 -->
+  <div class="section">
+    <h2>四、PMax 草稿配置质量问题 <span class="badge badge-warn">需优化</span></h2>
+    <div style="font-size:13px;margin-bottom:10px;">412-901-3905 账户中已填写的 8 个搜索主题，存在意图偏差：</div>
+    <table>
+      <tr><th>搜索主题</th><th>问题</th><th>判断</th></tr>
+      <tr><td>commercial construction</td><td>过于宽泛，搜索者可能是找施工队、找工作、看行业新闻</td><td><span class="tag bad">建议删除或收紧</span></td></tr>
+      <tr><td>warehouse design</td><td>偏"设计"意图，不是采购建材，可能是设计师/学生</td><td><span class="tag bad">建议改为 warehouse manufacturer</span></td></tr>
+      <tr><td>prefabricated structures</td><td>过于宽泛，没有限定 steel，可能是预制混凝土/木结构</td><td><span class="tag bad">建议改为 prefab steel structure</span></td></tr>
+      <tr><td>engineering company</td><td>完全不是采购意图，可能是找工作/找合作</td><td><span class="tag bad">建议删除</span></td></tr>
+      <tr><td>industrial building design</td><td>偏设计意图</td><td><span class="tag bad">建议改为 industrial building supplier</span></td></tr>
+      <tr><td>industrial fabrication services</td><td>意图相对接近采购</td><td><span class="tag good">可保留</span></td></tr>
+      <tr><td>pre engineered metal building design</td><td>偏设计，但 PEB 是行业核心词</td><td><span class="tag bad">改为 PEB metal building manufacturer</span></td></tr>
+      <tr><td>steel solutions steel buildings</td><td>语义重复、不自然，不像真实搜索词</td><td><span class="tag bad">建议删除</span></td></tr>
+    </table>
+
+    <div class="issue-warn" style="margin-top:12px;">
+      <b>问题 6：地理位置只设了马来西亚，与目标市场不符</b>
+      <div class="fix">
+        您的目标是东南亚 + 拉美/非洲，但草稿只选了马来西亚一个国家。需要按市场分组添加，建议：<br>
+        · 东南亚：马来西亚、印尼、泰国、越南、菲律宾、新加坡、老挝、柬埔寨<br>
+        · 拉美：墨西哥、巴西、厄瓜多尔、巴拿马、哥伦比亚、秘鲁、智利、阿根廷<br>
+        · 非洲：南非、尼日利亚、肯尼亚、加纳、摩洛哥、阿尔及利亚<br>
+        · 其他：阿联酋、格鲁吉亚、斐济等<br>
+        <b>必须排除：中国大陆、香港、台湾（防止同行和供应商点击）</b>
+      </div>
+    </div>
+    <div class="issue-warn">
+      <b>问题 7：缺少全部图片素材</b>
+      <div class="fix">
+        PMax 强制要求至少 1 张横向图片（1200×628）和 1 张方形图片（1200×1200），建议各准备 3-5 张：
+        厂房成品、钢结构车间、出口装柜、已完工项目（不同国家）、团队/工厂全景。
+        还需要方形 Logo（1200×1200，透明底）。
+      </div>
+    </div>
+  </div>
+
+  <!-- 五、语言策略 -->
+  <div class="section">
+    <h2>五、搜索语言策略（针对海外华人客户）</h2>
+    <div style="font-size:13px;margin-bottom:10px;">
+      <b>结论：英文为主（80%），中文为辅（10%），当地语可选（10%）。</b>
+    </div>
+    <table>
+      <tr><th>语言</th><th>定位</th><th>覆盖客户</th><th>注意事项</th></tr>
+      <tr><td><b>英文</b></td><td>主力</td><td>所有华人工程总包（图纸/报价/规范都是英文）+ 本地承包商</td><td>关键词加国家名收紧，如 "steel structure supplier Malaysia"</td></tr>
+      <tr><td><b>中文</b></td><td>补充</td><td>个人华人业主、老一代华人、非洲新移民</td><td>必须排除中国大陆 IP；单独广告组；落地到中文页面；小预算测试</td></tr>
+      <tr><td><b>西语/葡语</b></td><td>可选</td><td>拉美本地业主、终端客户</td><td>预算充足时再开，需要西语/葡语落地页和客服能力</td></tr>
+    </table>
+  </div>
+
+  <!-- 六、执行清单 -->
+  <div class="section">
+    <h2>六、修复执行清单（按顺序）</h2>
+    <div class="step-flow">
+      <div class="step-item pending"><b>决定账户结构</b>：确定用哪个账户投放，是否需要 MCC，将标准账户挂到 MCC 下</div>
+      <div class="step-item pending"><b>配置结算和付款</b>：绑定信用卡/银行账户，完成账单设置，确认国家/地址</div>
+      <div class="step-item pending"><b>关联 GA4</b>：在 Google Ads 数据管理器中关联 GA4（G-KHMJM1QRCT），开启数据共享</div>
+      <div class="step-item pending"><b>导入/创建转化操作</b>：从 GA4 导入 generate_lead 作为主要转化，whatsapp/email 点击作为次级转化</div>
+      <div class="step-item pending"><b>准备广告素材</b>：横向/方形图片各 3-5 张、方形 Logo、英文标题（最多 5 个）、描述（最多 5 条）、视频（可选）</div>
+      <div class="step-item pending"><b>重写搜索主题</b>：按采购意图重新整理，加入国家名，删除泛词/设计词</div>
+      <div class="step-item pending"><b>设置地理位置</b>：按目标市场分组添加，排除中国大陆/港澳台</div>
+      <div class="step-item pending"><b>设置日预算和出价</b>：建议初期 $20-50/天测试，出价用"最大化转化"（有转化数据后再切 tCPA）</div>
+      <div class="step-item pending"><b>发布后监控</b>：前 7 天每天看搜索词报告，及时否定不相关词；2 周后评估线索质量</div>
+    </div>
+  </div>
+
+  <!-- 七、预算建议 -->
+  <div class="section">
+    <h2>七、初期预算建议</h2>
+    <table>
+      <tr><th>阶段</th><th>时间</th><th>日预算</th><th>目标</th></tr>
+      <tr><td>测试期</td><td>第 1-2 周</td><td>$20-30/天（约 ¥145-215）</td><td>积累搜索词和展示数据，验证素材</td></tr>
+      <tr><td>学习期</td><td>第 3-4 周</td><td>$30-50/天（约 ¥215-360）</td><td>积累至少 20-30 个转化，完成 AI 出价学习</td></tr>
+      <tr><td>优化期</td><td>第 2 个月起</td><td>根据线索成本调整，有效则加预算</td><td>稳定获客，目标单条线索成本 $15-40</td></tr>
+    </table>
+    <div style="font-size:12px;color:#64748b;margin-top:8px;">
+      注：钢结构 B2B 单条有效询盘的合理成本通常在 $15-50（取决于国家），如果连续 2 周超过 $60 且无有效询盘，需要暂停优化。
+    </div>
+  </div>
+
+  <div style="text-align:center;font-size:12px;color:#94a3b8;padding:10px 0 20px;">
+    本报告基于 2026-10-29 账户实际状态生成，数据和配置可能随账户操作变化
+  </div>
+
+</div>
+</body>
+</html>

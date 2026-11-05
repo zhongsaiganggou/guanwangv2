@@ -1,0 +1,9 @@
+﻿=== 仓库内最近2天修改的 csv/xlsx ===
+
+LastWriteTime       FullName                                                               
+-------------       --------                                                               
+2026/10/12 19:14:00 D:\zhongsai-website-v2\docs\gsc-history\2026-10-12-ai-exposure.csv     
+2026/10/12 19:14:28 D:\zhongsai-website-v2\docs\seo-geo-data\SEO_GEO_MASTER_OPPORTUNITY.csv
+
+
+=== 常见导出位置 ===

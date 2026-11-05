@@ -6,7 +6,7 @@ interface Props {
   id?: string;
 }
 const { id = 'cf-turnstile' } = Astro.props;
-const siteKey = import.meta.env.PUBLIC_TURNSTILE_SITE_KEY || '';
+const siteKey = import.meta.env.PUBLIC_TURNSTILE_SITE_KEY || '0x4AAAAAAEqsUE0gIcgV1fbT';
 ---
 
 <div class="turnstile-wrapper" id={id} data-sitekey={siteKey}>
