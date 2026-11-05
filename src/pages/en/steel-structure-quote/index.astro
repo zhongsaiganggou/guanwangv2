@@ -1,0 +1,334 @@
+---
+// Steel Structure Project Quote Landing Page (Google Ads)
+import BaseLayout from '../../../layouts/BaseLayout.astro';
+import QuoteFormLight from '../../../components/QuoteFormLight.astro';
+import '../../../styles/hub.css';
+
+const lang = 'en';
+const title = 'Steel Structure Project Quote | Get Factory-Direct Pricing in 24h';
+const description = 'Get a detailed steel structure project quote from a China factory-direct manufacturer. Send your drawings or dimensions — we reply within 24 hours with transparent pricing.';
+
+const priceFactors = [
+  {
+    title: 'Building Dimensions',
+    desc: 'Span, length, and eave height directly determine steel weight and cost. Larger spans require heavier columns and beams.',
+    icon: '📐'
+  },
+  {
+    title: 'Steel Grade & Quantity',
+    desc: 'Q235B vs Q355B, wall/roof cladding thickness, and required galvanization or paint system affect material costs.',
+    icon: '🏗️'
+  },
+  {
+    title: 'Crane Requirements',
+    desc: 'Overhead cranes (5T, 10T, 20T+) require reinforced columns, crane beams, and bracing — adding significant cost.',
+    icon: '🏭'
+  },
+  {
+    title: 'Wind / Snow / Seismic Loads',
+    desc: 'Project location determines design loads. Hurricane zones, heavy snow areas, or seismic zones require heavier structures.',
+    icon: '🌪️'
+  },
+  {
+    title: 'Finishing & Accessories',
+    desc: 'Skylights, ventilation systems, insulation, mezzanines, canopies, and doors/windows all add to the total project cost.',
+    icon: '✨'
+  },
+  {
+    title: 'Export Destination & Shipping',
+    desc: 'FOB, CIF, or DDP terms, container loading efficiency, and destination port charges affect your landed cost.',
+    icon: '🚢'
+  }
+];
+
+const quoteIncludes = [
+  'Structural steel fabrication per approved drawings',
+  'CNC cutting, welding, and quality inspection',
+  'Anti-rust priming + final paint (or galvanization)',
+  'Standard export packing and container loading',
+  'Detailed shop drawings for fabrication',
+  'Export documentation (packing list, commercial invoice)'
+];
+
+const processSteps = [
+  { step: '01', title: 'Send Your Requirements', desc: 'Upload drawings or share dimensions, location, and intended use. No drawings? Tell us what you need.' },
+  { step: '02', title: 'Engineering Review', desc: 'Our in-house engineers review your project within 4-8 hours and confirm design feasibility.' },
+  { step: '03', title: 'Receive Detailed Quote', desc: 'You get a transparent line-item quote with steel weight, unit price, and delivery terms within 24 hours.' },
+  { step: '04', title: 'Confirm & Start Production', desc: 'Once approved, we start fabrication. Production takes 25-45 days depending on project size.' }
+];
+
+const faqs = [
+  {
+    q: 'How fast can I get a quote?',
+    a: 'Most projects get a detailed quote within 24 hours. If you have complete drawings and specifications, we can often reply the same day.'
+  },
+  {
+    q: 'Do I need drawings to get a price?',
+    a: 'No. If you only have rough dimensions (length × width × height), we can give you an estimated budget range. Final pricing requires approved drawings.'
+  },
+  {
+    q: 'What is included in your quote?',
+    a: 'Our factory quote includes steel fabrication, surface treatment, export packing, and container loading. Shipping and local installation are quoted separately based on your destination.'
+  },
+  {
+    q: 'Can you quote per square meter?',
+    a: 'We can give you a rough per-square-meter estimate for budgeting, but every project is different. Final pricing is based on your actual drawings and specifications.'
+  },
+  {
+    q: 'Do you provide design services?',
+    a: 'Yes. Our in-house engineering team can design the steel structure based on your local building codes and load requirements.'
+  }
+];
+---
+
+<BaseLayout title={title} description={description} lang={lang}>
+  <!-- Hero -->
+  <section class="quote-hero">
+    <div class="container">
+      <div class="hub-breadcrumb">
+        <a href="/en/">Home</a><span>/</span><span>Steel Structure Quote</span>
+      </div>
+      <h1>Get Your Steel Structure Project Quote in 24 Hours</h1>
+      <p class="quote-hero-sub">Factory-direct pricing from a China manufacturer with 15+ years of export experience. No middlemen, no hidden fees.</p>
+      <div class="quote-hero-badges">
+        <span class="badge">✅ 24h Quote Turnaround</span>
+        <span class="badge">✅ Factory Direct</span>
+        <span class="badge">✅ 15+ Years Export</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- Form -->
+  <section class="hub-section hub-section-dark" id="quote-form">
+    <div class="container">
+      <QuoteFormLight lang="en" />
+    </div>
+  </section>
+
+  <!-- Price Factors -->
+  <section class="hub-section">
+    <div class="container">
+      <div class="hub-section-head">
+        <h2>What Affects Your Steel Structure Price?</h2>
+        <p>Six key factors determine your project cost. Understanding them helps you budget accurately and compare quotes.</p>
+      </div>
+      <div class="factors-grid">
+        {priceFactors.map(f => (
+          <div class="factor-card">
+            <div class="factor-icon">{f.icon}</div>
+            <h3>{f.title}</h3>
+            <p>{f.desc}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- What's Included -->
+  <section class="hub-section hub-section-alt">
+    <div class="container">
+      <div class="hub-section-head">
+        <h2>What's Included in Our Factory Quote</h2>
+        <p>Transparent pricing — you know exactly what you're paying for.</p>
+      </div>
+      <div class="included-grid">
+        {quoteIncludes.map(item => (
+          <div class="included-item">
+            <span class="check-icon">✓</span>
+            <span>{item}</span>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- Process -->
+  <section class="hub-section">
+    <div class="container">
+      <div class="hub-section-head">
+        <h2>Our 4-Step Quoting Process</h2>
+        <p>Simple, fast, and transparent.</p>
+      </div>
+      <div class="process-grid">
+        {processSteps.map(s => (
+          <div class="process-step">
+            <div class="step-number">{s.step}</div>
+            <h3>{s.title}</h3>
+            <p>{s.desc}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section class="hub-section hub-section-alt">
+    <div class="container">
+      <div class="hub-section-head">
+        <h2>Frequently Asked Questions</h2>
+      </div>
+      <div class="faq-list">
+        {faqs.map(faq => (
+          <details class="faq-item">
+            <summary>{faq.q}</summary>
+            <p>{faq.a}</p>
+          </details>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="hub-section hub-section-dark">
+    <div class="container center">
+      <h2>Ready to Get Your Project Quote?</h2>
+      <p>Send your drawings or dimensions today — we'll reply within 24 hours.</p>
+      <a href="#quote-form" class="btn btn-primary btn-large">Get My Quote Now</a>
+    </div>
+  </section>
+
+  <style>
+    .quote-hero {
+      padding: 60px 0 40px;
+      text-align: center;
+    }
+    .quote-hero h1 {
+      font-size: 2.5rem;
+      margin: 20px 0 16px;
+      line-height: 1.2;
+    }
+    .quote-hero-sub {
+      font-size: 1.15rem;
+      color: #666;
+      max-width: 600px;
+      margin: 0 auto 24px;
+    }
+    .quote-hero-badges {
+      display: flex;
+      gap: 16px;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+    .badge {
+      background: #e8f4e8;
+      color: #2d7d2d;
+      padding: 6px 14px;
+      border-radius: 20px;
+      font-size: 0.9rem;
+      font-weight: 500;
+    }
+    .factors-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 24px;
+      margin-top: 40px;
+    }
+    .factor-card {
+      padding: 24px;
+      border: 1px solid #e5e5e5;
+      border-radius: 8px;
+      background: #fff;
+    }
+    .factor-icon {
+      font-size: 2rem;
+      margin-bottom: 12px;
+    }
+    .factor-card h3 {
+      font-size: 1.1rem;
+      margin-bottom: 8px;
+    }
+    .factor-card p {
+      font-size: 0.95rem;
+      color: #666;
+      line-height: 1.6;
+    }
+    .included-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 16px;
+      margin-top: 40px;
+      max-width: 800px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+    .included-item {
+      display: flex;
+      align-items: flex-start;
+      gap: 12px;
+      padding: 12px;
+    }
+    .check-icon {
+      color: #2d7d2d;
+      font-weight: bold;
+      font-size: 1.2rem;
+    }
+    .process-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 24px;
+      margin-top: 40px;
+    }
+    .process-step {
+      text-align: center;
+      padding: 24px 16px;
+    }
+    .step-number {
+      font-size: 2.5rem;
+      font-weight: bold;
+      color: #e0e0e0;
+      margin-bottom: 12px;
+    }
+    .process-step h3 {
+      font-size: 1.05rem;
+      margin-bottom: 8px;
+    }
+    .process-step p {
+      font-size: 0.9rem;
+      color: #666;
+      line-height: 1.6;
+    }
+    .faq-list {
+      max-width: 800px;
+      margin: 40px auto 0;
+    }
+    .faq-item {
+      border: 1px solid #e5e5e5;
+      border-radius: 8px;
+      margin-bottom: 12px;
+      overflow: hidden;
+    }
+    .faq-item summary {
+      padding: 16px 20px;
+      cursor: pointer;
+      font-weight: 500;
+      background: #fafafa;
+    }
+    .faq-item p {
+      padding: 16px 20px;
+      margin: 0;
+      color: #666;
+      line-height: 1.6;
+    }
+    .center {
+      text-align: center;
+    }
+    .center p {
+      margin: 16px 0 24px;
+      color: #ccc;
+    }
+    @media (max-width: 768px) {
+      .quote-hero h1 {
+        font-size: 1.8rem;
+      }
+      .factors-grid {
+        grid-template-columns: 1fr;
+      }
+      .included-grid {
+        grid-template-columns: 1fr;
+      }
+      .process-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+  </style>
+</BaseLayout>

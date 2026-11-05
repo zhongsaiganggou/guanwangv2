@@ -1,0 +1,334 @@
+---
+// 钢结构项目报价落地页（Google Ads）
+import BaseLayout from '../../../layouts/BaseLayout.astro';
+import QuoteFormLight from '../../../components/QuoteFormLight.astro';
+import '../../../styles/hub.css';
+
+const lang = 'zh';
+const title = '钢结构项目报价 | 24小时内工厂直供报价';
+const description = '从中国工厂直供获取详细的钢结构项目报价。发送您的图纸或尺寸——我们24小时内回复透明报价。';
+
+const priceFactors = [
+  {
+    title: '建筑尺寸',
+    desc: '跨度、长度、檐口高度直接决定用钢量和成本。跨度越大，梁柱越重。',
+    icon: '📐'
+  },
+  {
+    title: '钢材材质与用量',
+    desc: 'Q235B vs Q355B、墙板/屋面板厚度、是否需要镀锌或特殊涂装，都会影响材料成本。',
+    icon: '🏗️'
+  },
+  {
+    title: '吊车要求',
+    desc: '桥式吊车（5吨、10吨、20吨以上）需要加固柱子、吊车梁和支撑——成本显著增加。',
+    icon: '🏭'
+  },
+  {
+    title: '风/雪/抗震荷载',
+    desc: '项目所在地决定设计荷载。台风区、大雪区或地震区需要更重的结构。',
+    icon: '🌪️'
+  },
+  {
+    title: '装修与配件',
+    desc: '天窗、通风系统、保温层、夹层、雨棚、门窗等都会增加项目总成本。',
+    icon: '✨'
+  },
+  {
+    title: '出口目的地与运费',
+    desc: 'FOB、CIF或DDP条款、集装箱装载效率、目的港费用都会影响您的到岸成本。',
+    icon: '🚢'
+  }
+];
+
+const quoteIncludes = [
+  '按批准图纸加工制作钢结构',
+  '数控切割、焊接及质量检验',
+  '防锈底漆 + 面漆（或镀锌）',
+  '标准出口包装及集装箱装柜',
+  '详细加工图纸',
+  '出口单证（装箱单、商业发票）'
+];
+
+const processSteps = [
+  { step: '01', title: '发送您的需求', desc: '上传图纸或告知尺寸、所在地和用途。没有图纸？告诉我们您需要什么。' },
+  { step: '02', title: '工程审核', desc: '我们的内部工程师在4-8小时内审核您的项目，确认设计可行性。' },
+  { step: '03', title: '收到详细报价', desc: '24小时内您将收到透明的分项报价，包含用钢量、单价和交货条款。' },
+  { step: '04', title: '确认并开始生产', desc: '确认后我们开始加工。生产周期25-45天，视项目大小而定。' }
+];
+
+const faqs = [
+  {
+    q: '多久能拿到报价？',
+    a: '大多数项目24小时内收到详细报价。如果您有完整的图纸和技术要求，我们通常当天就能回复。'
+  },
+  {
+    q: '没有图纸能报价吗？',
+    a: '可以。如果您只有大概尺寸（长×宽×高），我们可以给您一个预算估算范围。最终价格需要根据批准的图纸确定。'
+  },
+  {
+    q: '你们的报价包含什么？',
+    a: '我们的工厂报价包含钢结构加工、表面处理、出口包装和集装箱装柜。运费和当地安装根据您的目的地单独报价。'
+  },
+  {
+    q: '能按平方米报价吗？',
+    a: '我们可以给您一个粗略的每平方米估算用于预算参考，但每个项目都不同。最终价格基于您的实际图纸和技术要求。'
+  },
+  {
+    q: '你们提供设计服务吗？',
+    a: '是的。我们的内部工程团队可以根据您当地的建筑规范和荷载要求设计钢结构。'
+  }
+];
+---
+
+<BaseLayout title={title} description={description} lang={lang}>
+  <!-- Hero -->
+  <section class="quote-hero">
+    <div class="container">
+      <div class="hub-breadcrumb">
+        <a href="/zh/">首页</a><span>/</span><span>钢结构报价</span>
+      </div>
+      <h1>24小时内获取您的钢结构项目报价</h1>
+      <p class="quote-hero-sub">中国工厂直供，15年以上出口经验。无中间商，无隐藏费用。</p>
+      <div class="quote-hero-badges">
+        <span class="badge">✅ 24小时报价</span>
+        <span class="badge">✅ 工厂直供</span>
+        <span class="badge">✅ 15年+出口经验</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- Form -->
+  <section class="hub-section hub-section-dark" id="quote-form">
+    <div class="container">
+      <QuoteFormLight lang="zh" />
+    </div>
+  </section>
+
+  <!-- Price Factors -->
+  <section class="hub-section">
+    <div class="container">
+      <div class="hub-section-head">
+        <h2>影响钢结构价格的六大因素</h2>
+        <p>了解这些因素，帮助您准确预算并比较报价。</p>
+      </div>
+      <div class="factors-grid">
+        {priceFactors.map(f => (
+          <div class="factor-card">
+            <div class="factor-icon">{f.icon}</div>
+            <h3>{f.title}</h3>
+            <p>{f.desc}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- What's Included -->
+  <section class="hub-section hub-section-alt">
+    <div class="container">
+      <div class="hub-section-head">
+        <h2>我们的工厂报价包含什么</h2>
+        <p>透明定价——您清楚知道每一分钱花在哪里。</p>
+      </div>
+      <div class="included-grid">
+        {quoteIncludes.map(item => (
+          <div class="included-item">
+            <span class="check-icon">✓</span>
+            <span>{item}</span>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- Process -->
+  <section class="hub-section">
+    <div class="container">
+      <div class="hub-section-head">
+        <h2>我们的四步报价流程</h2>
+        <p>简单、快速、透明。</p>
+      </div>
+      <div class="process-grid">
+        {processSteps.map(s => (
+          <div class="process-step">
+            <div class="step-number">{s.step}</div>
+            <h3>{s.title}</h3>
+            <p>{s.desc}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section class="hub-section hub-section-alt">
+    <div class="container">
+      <div class="hub-section-head">
+        <h2>常见问题</h2>
+      </div>
+      <div class="faq-list">
+        {faqs.map(faq => (
+          <details class="faq-item">
+            <summary>{faq.q}</summary>
+            <p>{faq.a}</p>
+          </details>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="hub-section hub-section-dark">
+    <div class="container center">
+      <h2>准备好获取您的项目报价了吗？</h2>
+      <p>今天发送您的图纸或尺寸——我们24小时内回复。</p>
+      <a href="#quote-form" class="btn btn-primary btn-large">立即获取报价</a>
+    </div>
+  </section>
+
+  <style>
+    .quote-hero {
+      padding: 60px 0 40px;
+      text-align: center;
+    }
+    .quote-hero h1 {
+      font-size: 2.5rem;
+      margin: 20px 0 16px;
+      line-height: 1.2;
+    }
+    .quote-hero-sub {
+      font-size: 1.15rem;
+      color: #666;
+      max-width: 600px;
+      margin: 0 auto 24px;
+    }
+    .quote-hero-badges {
+      display: flex;
+      gap: 16px;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+    .badge {
+      background: #e8f4e8;
+      color: #2d7d2d;
+      padding: 6px 14px;
+      border-radius: 20px;
+      font-size: 0.9rem;
+      font-weight: 500;
+    }
+    .factors-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 24px;
+      margin-top: 40px;
+    }
+    .factor-card {
+      padding: 24px;
+      border: 1px solid #e5e5e5;
+      border-radius: 8px;
+      background: #fff;
+    }
+    .factor-icon {
+      font-size: 2rem;
+      margin-bottom: 12px;
+    }
+    .factor-card h3 {
+      font-size: 1.1rem;
+      margin-bottom: 8px;
+    }
+    .factor-card p {
+      font-size: 0.95rem;
+      color: #666;
+      line-height: 1.6;
+    }
+    .included-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 16px;
+      margin-top: 40px;
+      max-width: 800px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+    .included-item {
+      display: flex;
+      align-items: flex-start;
+      gap: 12px;
+      padding: 12px;
+    }
+    .check-icon {
+      color: #2d7d2d;
+      font-weight: bold;
+      font-size: 1.2rem;
+    }
+    .process-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 24px;
+      margin-top: 40px;
+    }
+    .process-step {
+      text-align: center;
+      padding: 24px 16px;
+    }
+    .step-number {
+      font-size: 2.5rem;
+      font-weight: bold;
+      color: #e0e0e0;
+      margin-bottom: 12px;
+    }
+    .process-step h3 {
+      font-size: 1.05rem;
+      margin-bottom: 8px;
+    }
+    .process-step p {
+      font-size: 0.9rem;
+      color: #666;
+      line-height: 1.6;
+    }
+    .faq-list {
+      max-width: 800px;
+      margin: 40px auto 0;
+    }
+    .faq-item {
+      border: 1px solid #e5e5e5;
+      border-radius: 8px;
+      margin-bottom: 12px;
+      overflow: hidden;
+    }
+    .faq-item summary {
+      padding: 16px 20px;
+      cursor: pointer;
+      font-weight: 500;
+      background: #fafafa;
+    }
+    .faq-item p {
+      padding: 16px 20px;
+      margin: 0;
+      color: #666;
+      line-height: 1.6;
+    }
+    .center {
+      text-align: center;
+    }
+    .center p {
+      margin: 16px 0 24px;
+      color: #ccc;
+    }
+    @media (max-width: 768px) {
+      .quote-hero h1 {
+        font-size: 1.8rem;
+      }
+      .factors-grid {
+        grid-template-columns: 1fr;
+      }
+      .included-grid {
+        grid-template-columns: 1fr;
+      }
+      .process-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+  </style>
+</BaseLayout>

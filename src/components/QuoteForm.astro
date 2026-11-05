@@ -15,11 +15,12 @@ const texts = lang === 'zh' ? {
   subtitle: '已有图纸可直接上传；暂无完整图纸，也可以提交项目基本需求。尚未确定的信息可留待后续沟通。',
   tabDrawings: '已有图纸 / BOQ',
   tabNoDrawings: '暂无完整图纸',
-  name: '姓名 / 称呼',
+  name: '姓名 / 称呼（可选）',
   email: '邮箱（可选）',
-  phone: 'WhatsApp / 电话',
-  phoneCode: '国家区号',
-  wechat: '微信',
+  emailPlaceholder: 'your@email.com',
+  phone: 'WhatsApp / 电话（可选）',
+  phonePlaceholder: '+86 138 0000 0000',
+  wechat: '微信 *',
   wechatPlaceholder: '微信号',
   country: '项目所在国家',
   drawingUpload: '上传图纸 / BOQ',
@@ -77,11 +78,12 @@ const texts = lang === 'zh' ? {
   subtitle: 'Upload drawings if you have them; or submit basic project requirements if not. Leave any uncertain details for later discussion.',
   tabDrawings: 'Have Drawings / BOQ',
   tabNoDrawings: 'No Complete Drawings Yet',
-  name: 'Name',
-  email: 'Email (Optional)',
-  phone: 'WhatsApp / Phone',
-  phoneCode: 'Country / Calling Code',
-  wechat: 'WeChat ID',
+  name: 'Name (optional)',
+  email: 'Email (optional)',
+  emailPlaceholder: 'your@email.com',
+  phone: 'WhatsApp / Phone (optional)',
+  phonePlaceholder: '+86 138 0000 0000',
+  wechat: 'WeChat ID *',
   wechatPlaceholder: 'WeChat ID',
   country: 'Project Country',
   drawingUpload: 'Upload Drawings / BOQ',
@@ -194,48 +196,44 @@ const COUNTRIES = COUNTRY_CODES.filter(([iso]) => {
 
       <div class="form-grid form-grid-2">
         <div class="form-field">
-          <label for={`${id}-name`}>{texts.name} <span class="req">*</span></label>
-          <input type="text" id={`${id}-name`} name="name" required autocomplete="name" />
+          <label for={`${id}-name`}>{texts.name}</label>
+          <input type="text" id={`${id}-name`} name="name" autocomplete="name" />
           <span class="field-error" data-error-for="name"></span>
         </div>
         <div class="form-field">
           <label for={`${id}-email`}>{texts.email}</label>
-          <input type="email" id={`${id}-email`} name="email" autocomplete="email" />
+          <input type="email" id={`${id}-email`} name="email" autocomplete="email" placeholder={texts.emailPlaceholder} />
           <span class="field-error" data-error-for="email"></span>
         </div>
       </div>
 
-      <div class="form-grid form-grid-3">
+      <div class="form-grid form-grid-2">
         <div class="form-field">
-          <label for={`${id}-phone-code`}>{texts.phoneCode} <span class="cond-hint">{texts.hintCode}</span></label>
-          <div class="country-select" data-country-select>
-            <input type="hidden" name="phone_code" value="" data-country-value />
-            <button type="button" class="country-select-trigger" data-country-trigger aria-haspopup="listbox" aria-expanded="false">
-              <span class="country-select-label" data-country-label>{lang === 'zh' ? '请选择国家区号' : 'Select country code'}</span>
-              <svg class="country-select-caret" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg>
-            </button>
-            <div class="country-select-dropdown" data-country-dropdown hidden>
-              <input type="text" class="country-select-search" data-country-search placeholder={lang === 'zh' ? '搜索国家或区号' : 'Search country or code'} aria-label="Search" />
-              <ul class="country-select-list" data-country-list role="listbox"></ul>
-            </div>
-          </div>
-          <span class="field-error" data-error-for="phone_code"></span>
-        </div>
-        <div class="form-field">
-          <label for={`${id}-phone`}>{texts.phone} <span class="cond-hint">{texts.hintPhone}</span></label>
-          <input type="tel" id={`${id}-phone`} name="phone" autocomplete="tel" />
+          <label for={`${id}-phone`}>{texts.phone}</label>
+          <input type="tel" id={`${id}-phone`} name="phone" autocomplete="tel" placeholder={texts.phonePlaceholder} />
           <span class="field-error" data-error-for="phone"></span>
         </div>
         <div class="form-field">
-          <label for={`${id}-wechat`}>{texts.wechat} <span class="req">*</span> <span class="cond-hint">{texts.hintWechat}</span></label>
+          <label for={`${id}-wechat`}>{texts.wechat} <span class="req">*</span></label>
           <input type="text" id={`${id}-wechat`} name="wechat" required placeholder={texts.wechatPlaceholder} />
           <span class="field-error" data-error-for="wechat"></span>
         </div>
       </div>
 
       <div class="form-field">
-        <label for={`${id}-country`}>{texts.country} <span class="req">*</span></label>
-        <input type="text" id={`${id}-country`} name="country" required />
+        <label for={`${id}-country`}>{texts.country}</label>
+        <select id={`${id}-country`} name="country">
+          <option value="">{lang === 'zh' ? '请选择国家' : 'Select country'}</option>
+          {COUNTRIES.slice().sort((a, b) => {
+            const aName = lang === 'zh' ? a.name_zh : a.name_en;
+            const bName = lang === 'zh' ? b.name_zh : b.name_en;
+            return aName.localeCompare(bName);
+          }).map(c => (
+            <option value={lang === 'zh' ? c.name_zh : c.name_en}>
+              {lang === 'zh' ? c.name_zh : c.name_en}
+            </option>
+          ))}
+        </select>
         <span class="field-error" data-error-for="country"></span>
       </div>
 
@@ -394,48 +392,44 @@ const COUNTRIES = COUNTRY_CODES.filter(([iso]) => {
 
       <div class="form-grid form-grid-2">
         <div class="form-field">
-          <label for={`${id}-name`}>{texts.name} <span class="req">*</span></label>
-          <input type="text" id={`${id}-name`} name="name" required autocomplete="name" />
+          <label for={`${id}-name`}>{texts.name}</label>
+          <input type="text" id={`${id}-name`} name="name" autocomplete="name" />
           <span class="field-error" data-error-for="name"></span>
         </div>
         <div class="form-field">
           <label for={`${id}-email`}>{texts.email}</label>
-          <input type="email" id={`${id}-email`} name="email" autocomplete="email" />
+          <input type="email" id={`${id}-email`} name="email" autocomplete="email" placeholder={texts.emailPlaceholder} />
           <span class="field-error" data-error-for="email"></span>
         </div>
       </div>
 
-      <div class="form-grid form-grid-3">
+      <div class="form-grid form-grid-2">
         <div class="form-field">
-          <label for={`${id}-phone-code`}>{texts.phoneCode} <span class="cond-hint">{texts.hintCode}</span></label>
-          <div class="country-select" data-country-select>
-            <input type="hidden" name="phone_code" value="" data-country-value />
-            <button type="button" class="country-select-trigger" data-country-trigger aria-haspopup="listbox" aria-expanded="false">
-              <span class="country-select-label" data-country-label>{lang === 'zh' ? '请选择国家区号' : 'Select country code'}</span>
-              <svg class="country-select-caret" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg>
-            </button>
-            <div class="country-select-dropdown" data-country-dropdown hidden>
-              <input type="text" class="country-select-search" data-country-search placeholder={lang === 'zh' ? '搜索国家或区号' : 'Search country or code'} aria-label="Search" />
-              <ul class="country-select-list" data-country-list role="listbox"></ul>
-            </div>
-          </div>
-          <span class="field-error" data-error-for="phone_code"></span>
-        </div>
-        <div class="form-field">
-          <label for={`${id}-phone`}>{texts.phone} <span class="cond-hint">{texts.hintPhone}</span></label>
-          <input type="tel" id={`${id}-phone`} name="phone" autocomplete="tel" />
+          <label for={`${id}-phone`}>{texts.phone}</label>
+          <input type="tel" id={`${id}-phone`} name="phone" autocomplete="tel" placeholder={texts.phonePlaceholder} />
           <span class="field-error" data-error-for="phone"></span>
         </div>
         <div class="form-field">
-          <label for={`${id}-wechat`}>{texts.wechat} <span class="req">*</span> <span class="cond-hint">{texts.hintWechat}</span></label>
+          <label for={`${id}-wechat`}>{texts.wechat} <span class="req">*</span></label>
           <input type="text" id={`${id}-wechat`} name="wechat" required placeholder={texts.wechatPlaceholder} />
           <span class="field-error" data-error-for="wechat"></span>
         </div>
       </div>
 
       <div class="form-field">
-        <label for={`${id}-country`}>{texts.country} <span class="req">*</span></label>
-        <input type="text" id={`${id}-country`} name="country" required />
+        <label for={`${id}-country`}>{texts.country}</label>
+        <select id={`${id}-country`} name="country">
+          <option value="">{lang === 'zh' ? '请选择国家' : 'Select country'}</option>
+          {COUNTRIES.slice().sort((a, b) => {
+            const aName = lang === 'zh' ? a.name_zh : a.name_en;
+            const bName = lang === 'zh' ? b.name_zh : b.name_en;
+            return aName.localeCompare(bName);
+          }).map(c => (
+            <option value={lang === 'zh' ? c.name_zh : c.name_en}>
+              {lang === 'zh' ? c.name_zh : c.name_en}
+            </option>
+          ))}
+        </select>
         <span class="field-error" data-error-for="country"></span>
       </div>
 
@@ -847,32 +841,14 @@ const COUNTRIES = COUNTRY_CODES.filter(([iso]) => {
           input?.closest('.form-field')?.classList.add('error');
         }
 
-        // Unconditional required: name + project country
-        if (!form.querySelector('[name="name"]').value.trim()) {
-          isValid = false;
-          markField('name', isZh ? '请输入姓名' : 'Please enter your name');
-        }
-        if (!form.querySelector('[name="country"]').value.trim()) {
-          isValid = false;
-          markField('country', isZh ? '请输入项目所在国家' : 'Please enter the project country');
-        }
-
-        // Contact rule: WeChat is REQUIRED. Phone/WhatsApp is optional.
+        // Required: WeChat only. Name, country, phone are all optional.
         const wechatVal = form.querySelector('[name="wechat"]').value.trim();
-        const phoneVal = form.querySelector('[name="phone"]').value.trim();
-        const codeVal = form.querySelector('[name="phone_code"]').value.trim();
 
         if (!wechatVal) {
           isValid = false;
           markField('wechat', isZh
             ? '请填写微信号，方便我们联系您。'
             : 'Please provide your WeChat ID so we can contact you.');
-        }
-
-        // Phone provided without a country / calling code
-        if (phoneVal && !codeVal) {
-          isValid = false;
-          markField('phone_code', isZh ? '填写电话时请选择国家/地区区号。' : 'Please select a country/region code when entering a phone number.');
         }
 
         // Email optional — validate format only if filled
