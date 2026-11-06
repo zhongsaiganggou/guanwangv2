@@ -8,7 +8,7 @@ export async function onRequestGet(context) {
 
   try {
     const { results } = await env.LEADS_DB.prepare(
-      `SELECT COUNT(*) as count FROM leads WHERE created_at > datetime('now', '-48 hours') AND isTest = 0`
+      `SELECT COUNT(*) as count FROM leads WHERE created_at > datetime('now', '-48 hours') AND test_record = 0`
     ).all();
 
     const count = results[0]?.count || 0;
