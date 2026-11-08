@@ -23,13 +23,13 @@ A cleanroom steel structure is not a factory shed with a better wall panel. The 
 
 A cleanroom project is two buildings in one envelope. The steel shell is the base building: columns, roof framing, purlins, cladding, roof plant supports and the structural interface to the raised floor and partitions. The cleanroom is the fit-out: wall and ceiling panels, fan filter units, ducts, raised floor, tool hook-ups and validation.
 
-Problems start when those two buildings are designed separately. A shell designed as a warehouse gives the cleanroom contractor a roof that deflects too much for a ceiling grid, a slab that cannot take a raised floor pedestal grid, and penetrations that were never sealed in the cladding detail. Fixing that after erection costs far more than sizing the frame correctly at tender stage. The shell does not need to be complex; it needs to be predictable — loads known, deflection limits stated, envelope details drawn, every interface owned.
+Problems start when the two are designed separately. A shell designed as a warehouse gives the cleanroom contractor a roof that deflects too much for a ceiling grid, a slab that cannot take a raised floor pedestal grid, and penetrations that were never sealed in the cladding detail. Fixing that after erection costs far more than sizing the frame correctly at tender stage. The shell only needs to be predictable: loads known, limits stated, details drawn, interfaces owned.
 
-![Cleanroom corridor with white wall panels, ceiling fan filter units and raised floor tiles (illustrative concept image)](/images/blog/cleanroom-steel-structure-guide/cleanroom-interior.jpg)
+![Cleanroom interior with white wall panels, ceiling FFUs and raised floor (illustrative concept image)](/images/blog/cleanroom-steel-structure-guide/cleanroom-interior.jpg)
 
 ## Part 2: The load list the steel frame must be sized for
 
-Cleanroom loads are rarely spread evenly. They arrive as a tool schedule with point loads, a raised floor on a pedestal grid, a ceiling system hung from the roof and a plant deck on top. The structural team needs numbers and locations, not a description.
+Cleanroom loads are rarely uniform. They arrive as a tool schedule with point loads, a raised floor on a pedestal grid, a ceiling hung from the roof and a plant deck. The structural team needs numbers and locations, not a description.
 
 | Load source | What the steel team needs | Who normally defines it |
 |---|---|---|
@@ -41,7 +41,7 @@ Cleanroom loads are rarely spread evenly. They arrive as a tool schedule with po
 | Fire-rated separation and doors | Compartment lines, rating, door and damper positions | Local fire engineer |
 | Future expansion | Where the next tool bay or cleanroom module goes | Owner's master plan |
 
-Two items on that list are almost always late: the tool schedule and the final MEP route. Both change member sizes, and a roof beam sized before the air-handling units are selected is usually re-sized after the MEP tender — a re-design that lands mid-fabrication unless the sequence is planned.
+Two items are almost always late: the tool schedule and final MEP route. Both change member sizes, and a roof beam sized before the air-handling units are selected is usually re-sized after the MEP tender — a re-design that lands mid-fabrication unless the sequence is planned.
 
 ### What loads does a cleanroom steel structure carry?
 
@@ -67,19 +67,19 @@ The tool vendor publishes it, the owner's engineer adopts it for the project, an
 
 ## Part 4: Air tightness and envelope continuity
 
-A cleanroom envelope has to hold pressure, and that is met by the cladding, the penetration details and the joints — not by the steel frame alone. But the frame decides whether those details are buildable. Three things matter structurally: a cladding support grid whose purlin spacing matches the panel module so joints land on framing; a framed, sealed opening for every duct, pipe, tray and exhaust route crossing the envelope; and continuous junctions where vapour and air barriers run past the steel. A food plant fights washdown water, a cleanroom fights air leakage and particle ingress, so a cladding specification written for one should not be copied to the other without review.
+A cleanroom envelope holds pressure through cladding, penetration details and joints — not the frame alone. But the frame decides whether those details are buildable. Three things matter structurally: a cladding support grid whose purlin spacing matches the panel module so joints land on framing; a framed, sealed opening for every duct, pipe, tray and exhaust route crossing the envelope; and continuous junctions where vapour and air barriers run past the steel. A food plant fights washdown water, a cleanroom fights air leakage and particle ingress, so a cladding specification written for one should not be copied to the other without review.
 
 ## Part 5: Roof plant, interstitial space and service routes
 
-High-tech plants carry far more roof plant than a warehouse of the same footprint: make-up air units, exhaust fans, chillers, scrubbers and sometimes a full air-handling deck. It needs a structural deck or curb system, maintenance access that avoids the cleanroom, and routes that reach the ceiling grid without cutting a classification boundary.
+High-tech plants carry far more roof plant than a warehouse: make-up air units, exhaust fans, chillers, scrubbers and sometimes a full air-handling deck. It needs a structural deck or curb system, maintenance access that avoids the cleanroom, and routes that reach the ceiling grid without cutting a classification boundary.
 
-Interstitial space — the volume between ceiling and roof — is the pressure valve of the design. Too little leaves no room for ducts, valves, sprinklers or maintenance; too much pays for height the building does not use. Workable height is set by duct depth, sprinkler and service clearances, ceiling grid depth and access strategy, normally fixed by the MEP designer with the steel team checking framing depth.
+Interstitial space — the volume between ceiling and roof — is the pressure valve of the design. Too little leaves no room for ducts, valves, sprinklers or maintenance; too much pays for height the building does not use. Workable height is set by duct depth, service clearances, ceiling grid depth and access strategy, fixed by the MEP designer with the steel team checking framing depth.
 
 ### How much interstitial space does a cleanroom need?
 
 No universal figure exists. It is calculated from duct depth, sprinkler and service clearances, ceiling grid construction, access strategy and local code, then rounded up for future tool changes. The steel team's input is the structural depth available and the cost of carrying that height across the whole roof.
 
-![Services above a cleanroom ceiling: ductwork, cable trays and sprinkler piping supported from steel framing (illustrative concept image)](/images/blog/cleanroom-steel-structure-guide/interstitial-services.jpg)
+![Ductwork and services above a cleanroom ceiling supported from steel framing (illustrative concept image)](/images/blog/cleanroom-steel-structure-guide/interstitial-services.jpg)
 
 ## Part 6: Fire strategy and compartment interfaces
 
@@ -106,7 +106,7 @@ Usually yes, if the expansion was designed in advance: a column grid that contin
 
 ## Part 9: Erection sequence and keeping the envelope clean
 
-Cleanroom construction does not begin clean; it begins with a steel frame, a slab and dust, so the sequence has to protect surfaces that will later sit inside the classified area. Erect and align the frame before partitions arrive, complete the envelope and roof drainage before fit-out, seal ducts and openings temporarily, and set out the raised floor grid from a surveyed datum rather than the steel line. Trial assembly at the manufacturing base reduces site cutting and painting, a major source of contamination and damage.
+Cleanroom construction starts with a steel frame, a slab and dust, so the sequence must protect surfaces that will later sit inside the classified area. Erect and align the frame before partitions arrive, complete the envelope and roof drainage before fit-out, seal ducts and openings temporarily, and set out the raised floor grid from a surveyed datum rather than the steel line. Trial assembly at the manufacturing base reduces site cutting and painting, a major source of contamination and damage.
 
 ![Steel members staged for pre-assembly at a ZhongSai manufacturing base (site photograph)](/images/blog/cleanroom-steel-structure-guide/trial-assembly.jpg)
 
@@ -134,7 +134,7 @@ Cleanroom construction does not begin clean; it begins with a steel frame, a sla
 | Site works | Installation technical guidance | Foundations, civil works, local labour, physical erection |
 | Handover | As-built steel documentation | Cleanroom validation, authority submissions, commissioning |
 
-This split is the default and changes only where the contract says so. The cleanroom vendor, MEP and shell scopes belong in one interface matrix: failures here are almost always ownership failures, not steel failures.
+This split is the default and changes only where the contract says so. Cleanroom vendor, MEP and shell scopes belong in one interface matrix: failures here are ownership failures, not steel failures.
 
 ### Where does the steel fabricator's scope end on a cleanroom project?
 
@@ -143,7 +143,7 @@ It ends at the structural and envelope interface: the frame, the cladding suppor
 ## Part 12: Common mistakes buyers make
 
 1. Quoting the shell before the tool list exists, then treating the frame as fixed.
-2. Copying a warehouse cladding specification, penetration details included, into a cleanroom.
+2. Copying a warehouse cladding specification into a cleanroom.
 3. Leaving the raised floor grid out of the structural set-out, so pedestals land off-grid.
 4. Sizing roof beams before the air-handling units are selected.
 5. Assuming the steel contractor will seal cleanroom penetrations.
@@ -156,7 +156,7 @@ It ends at the structural and envelope interface: the frame, the cladding suppor
 The principles are the same, but the governing criteria change. Stiffness, floor flatness, envelope continuity and penetration control usually matter more than strength, and loads are concentrated rather than uniform.
 
 **Can an existing steel workshop be converted into a cleanroom?**
-Sometimes, but it depends on the existing frame's stiffness, the slab, the envelope and the space available for interstitial services. A conversion needs a survey and a vibration assessment before anyone commits to a cleanliness class.
+Sometimes, but it depends on existing frame stiffness, the slab, the envelope and space for interstitial services. A conversion needs a survey and vibration assessment before committing to a cleanliness class.
 
 **Who provides the raised floor, partitions and ceiling?**
 Normally the cleanroom fit-out contractor. The steel scope provides the structural support, the set-out datum and the framed openings those systems connect to.
@@ -175,6 +175,6 @@ It depends on drawing approval, material availability, tonnage, coating system, 
 
 ## Part 14: Send the inputs, not just the footprint
 
-A cleanroom shell can be fabricated quickly once the inputs are stable: tool loads, vibration criterion, roof plant, penetrations, compartment lines and the expansion plan. Without them, every week of fabrication is a week of potential re-work. Send the tool schedule, cleanroom layout, roof plant list and local code requirements with your enquiry. If the drawings are not complete, the process description, cleanliness class and target tool list are enough to start the structural conversation — far cheaper than fixing a frame sized for the wrong building.
+A cleanroom shell can be fabricated quickly once the inputs are stable: tool loads, vibration criterion, roof plant, penetrations, compartment lines and the expansion plan. Without them, every week of fabrication is a week of potential re-work. Send the tool schedule, cleanroom layout, roof plant list and local code requirements with your enquiry. If the drawings are not complete, the process description, cleanliness class and target tool list are enough to start the structural conversation — far less costly than reworking a frame sized for the wrong building.
 
 [Send Project Drawings](/en/contact/#quote-form) or review our [steel workshop solutions](/en/steel-workshop/), [engineering design support](/en/engineering-design/) and [manufacturing quality control](/en/manufacturing-quality/). Related reading: [steel structure for food processing plants](/en/blog/steel-structure-food-processing-plant-guide/) and [roof and wall cladding systems](/en/blog/steel-building-roof-wall-cladding-systems-guide/).
