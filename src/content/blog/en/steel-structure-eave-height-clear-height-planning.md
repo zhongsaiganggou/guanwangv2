@@ -15,13 +15,10 @@ ctaType: "send-project-requirements"
 noindex: false
 author: "ZhongSai Steel Structure Editorial Team"
 translationKey: "steel-structure-eave-height-clear-height-planning"
----
-
-A steel building should be as high as the process requires, not automatically as tall as possible. Eave height is the wall-top level; clear height is the usable headroom below the lowest obstruction. Equipment, forklifts, overhead cranes, mezzanines, storage and services all set the height you need, and taller buildings use more columns, wall area and foundation and attract more wind load. Define the equipment and logistics heights first, then let a structural engineer confirm the eave height. ZhongSai can coordinate and detail the frame for the agreed height.
+---A steel building should be as high as the process requires, not automatically as tall as possible. Eave height is the wall-top level; clear height is the usable headroom below the lowest obstruction. Equipment, forklifts, overhead cranes, mezzanines, storage and services all set the height you need, and taller buildings use more columns, wall area and foundation and attract more wind load. Define the equipment and logistics heights first, then let a structural engineer confirm the eave height. ZhongSai can coordinate and detail the frame for the agreed height.
 
 This guide explains the height terms, what drives the height you need, how height affects the structure and cost, and how to confirm it before fabrication.
 
-![Interior of a single-storey steel structure workshop showing tall clear height from the concrete floor to the portal frames (illustrative concept image)](/images/blog/steel-structure-eave-height-clear-height-planning/cover.jpg)
 
 ## Height terms to know
 

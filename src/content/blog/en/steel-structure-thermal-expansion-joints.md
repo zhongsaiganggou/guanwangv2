@@ -15,13 +15,10 @@ ctaType: "send-project-requirements"
 noindex: false
 author: "ZhongSai Steel Structure Editorial Team"
 translationKey: "steel-structure-thermal-expansion-joints"
----
-
-Steel buildings expand and contract with temperature. When a building is long, or the temperature range is wide, expansion joints or temperature zones are used to avoid thermal stress. The spacing depends on the structure, local temperature range and code, so there is no fixed length. Joints are commonly formed with double columns or a sliding connection, and roof, wall and purlin connections also need room to move. Coordinating this in the design stage avoids later leaks and damage.
+---Steel buildings expand and contract with temperature. When a building is long, or the temperature range is wide, expansion joints or temperature zones are used to avoid thermal stress. The spacing depends on the structure, local temperature range and code, so there is no fixed length. Joints are commonly formed with double columns or a sliding connection, and roof, wall and purlin connections also need room to move. Coordinating this in the design stage avoids later leaks and damage.
 
 This guide explains when joints are needed, how they are formed, and how the cladding moves.
 
-![A long steel-framed industrial building, where temperature movement must be planned (illustrative concept image)](/images/blog/steel-structure-thermal-expansion-joints/cover.jpg)
 
 ## Why temperature matters
 

@@ -15,13 +15,10 @@ ctaType: "send-project-requirements"
 noindex: false
 author: "ZhongSai Steel Structure Editorial Team"
 translationKey: "snow-load-steel-building-guide"
----
-
-Snow load is a location-specific design value set by the local code and snow map; it changes rafter sizes, purlin spacing and the amount of steel in the roof. Confirm the design snow load with a registered local engineer before the quotation, because the geometry and loading assumptions directly drive the steel tonnage. ZhongSai has built steel structures for 20 years and focused on exports for 15, coordinating engineering with the design team for each project.
+---Snow load is a location-specific design value set by the local code and snow map; it changes rafter sizes, purlin spacing and the amount of steel in the roof. Confirm the design snow load with a registered local engineer before the quotation, because the geometry and loading assumptions directly drive the steel tonnage. ZhongSai has built steel structures for 20 years and focused on exports for 15, coordinating engineering with the design team for each project.
 
 This guide explains where the value comes from and what to confirm.
 
-![Steel building under snow in winter (illustrative concept image)](/images/blog/snow-load-steel-building-guide/cover.jpg)
 
 ## Part 1: Where the snow load value comes from
 

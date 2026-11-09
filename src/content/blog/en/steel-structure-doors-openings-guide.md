@@ -15,13 +15,10 @@ ctaType: "send-project-requirements"
 noindex: false
 author: "ZhongSai Steel Structure Editorial Team"
 translationKey: "steel-structure-doors-openings-guide"
----
-
-Doors and openings in a steel building must be decided before fabrication. Every door or window opening changes the frame, the wall sheeting and the edge trim, because an opening breaks the wall panel and the cladding around it needs support. The opening size depends on what passes through it — vehicles, forklifts, conveyors, or people — and the surrounding frame is reinforced as designed. The door type (roller, sliding, personnel, or windows) and its size are confirmed on the approved drawings, and the supply scope (door frames, lintels, trim) should be agreed in the contract. Buyers should give opening sizes and positions before detailing, because changing them after fabrication is costly.
+---Doors and openings in a steel building must be decided before fabrication. Every door or window opening changes the frame, the wall sheeting and the edge trim, because an opening breaks the wall panel and the cladding around it needs support. The opening size depends on what passes through it — vehicles, forklifts, conveyors, or people — and the surrounding frame is reinforced as designed. The door type (roller, sliding, personnel, or windows) and its size are confirmed on the approved drawings, and the supply scope (door frames, lintels, trim) should be agreed in the contract. Buyers should give opening sizes and positions before detailing, because changing them after fabrication is costly.
 
 This guide explains door and opening types, how openings affect the structure, how sizes are decided, framing and reinforcement basics, and the buyer checklist.
 
-![Steel warehouse with large roller door opening framed by columns and a lintel (illustrative concept image)](/images/blog/steel-structure-doors-openings-guide/cover.jpg)
 
 ## Part 1: Why openings matter
 

@@ -15,13 +15,10 @@ ctaType: "send-project-requirements"
 noindex: false
 author: "ZhongSai Steel Structure Editorial Team"
 translationKey: "steel-structure-cargo-insurance-import-guide"
----
-
-海运保险保货物在运输途中的意外损失或损坏。谁来买取决于贸易术语：FOB/FCA 下通常由买方自行投保，CIF/CIP 下由卖方安排最低限度保险，但风险往往已在装船时转移。钢结构货值高、运输环节多，保额通常按 CIF 货值加一定比例约定；费率因险种、货值、航程和保险公司而异，没有固定值。到货若有损坏，要当场检查、拍照留证、书面向承运人和保险公司报案并保留全部单据。
+---海运保险保货物在运输途中的意外损失或损坏。谁来买取决于贸易术语：FOB/FCA 下通常由买方自行投保，CIF/CIP 下由卖方安排最低限度保险，但风险往往已在装船时转移。钢结构货值高、运输环节多，保额通常按 CIF 货值加一定比例约定；费率因险种、货值、航程和保险公司而异，没有固定值。到货若有损坏，要当场检查、拍照留证、书面向承运人和保险公司报案并保留全部单据。
 
 本文说明保险保什么、谁来买、保额怎么定，以及出险怎么索赔。
 
-![远洋货轮载着集装箱在海上航行，代表货物在海运途中承担的风险（概念示意图）](/images/blog/steel-structure-cargo-insurance-import-guide/cover.jpg)
 
 ## 为什么要买保险
 

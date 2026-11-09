@@ -15,13 +15,10 @@ ctaType: "send-project-requirements"
 noindex: false
 author: "ZhongSai Steel Structure Editorial Team"
 translationKey: "purlin-selection-c-vs-z"
----
-
-C-section and Z-section purlins are both cold-formed steel roof and wall members. Z purlins support longer spans with lapped connections and suit continuous multi-span roofs; C purlins are simpler for shorter spans and are often used as girts. The right choice depends on span, load, roof slope and connection design. ZhongSai supplies purlins with the roof and wall cladding package, coordinated with the structural drawings.
+---C-section and Z-section purlins are both cold-formed steel roof and wall members. Z purlins support longer spans with lapped connections and suit continuous multi-span roofs; C purlins are simpler for shorter spans and are often used as girts. The right choice depends on span, load, roof slope and connection design. ZhongSai supplies purlins with the roof and wall cladding package, coordinated with the structural drawings.
 
 This guide compares the two profiles and explains how to specify them.
 
-![Rows of steel purlins fixed across roof rafters (illustrative concept image)](/images/blog/purlin-selection-c-vs-z/cover.jpg)
 
 ## Part 1: C-section vs Z-section compared
 

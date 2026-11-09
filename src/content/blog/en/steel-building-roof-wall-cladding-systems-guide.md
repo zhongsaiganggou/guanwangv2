@@ -15,9 +15,7 @@ ctaType: "send-project-requirements"
 noindex: false
 author: "ZhongSai Steel Structure Editorial Team"
 translationKey: "steel-building-roof-wall-cladding-systems-guide"
----
-
-There is no single "best" roof or wall system for a steel building. The right choice depends on the building use, local climate, insulation and condensation requirements, budget, and the applicable local code. In practice, most steel buildings are enclosed with one of three approaches: factory-insulated metal sandwich panels, single-skin metal sheeting with site-installed insulation, or standing seam metal roofing for long-span and high-sealing requirements, often combined with a separate wall cladding strategy. The structural frame, purlins and girts must be coordinated with the selected cladding, its openings, insulation, ventilation and drainage from the very first design stage.
+---There is no single "best" roof or wall system for a steel building. The right choice depends on the building use, local climate, insulation and condensation requirements, budget, and the applicable local code. In practice, most steel buildings are enclosed with one of three approaches: factory-insulated metal sandwich panels, single-skin metal sheeting with site-installed insulation, or standing seam metal roofing for long-span and high-sealing requirements, often combined with a separate wall cladding strategy. The structural frame, purlins and girts must be coordinated with the selected cladding, its openings, insulation, ventilation and drainage from the very first design stage.
 
 This guide explains what a roof and wall enclosure system must do, how the common systems compare, how insulation, vapour control, ventilation and drainage are coordinated, and where the responsibility sits between the steel supplier and the local design and installation team.
 
@@ -33,7 +31,6 @@ The roof and wall cladding of a steel building is not just a cover. It performs 
 
 Because these functions interact, the cladding decision cannot be made in isolation from the structural design. A heavier roof system, for example, adds load to the frame; a required thermal performance changes the wall build-up and therefore the girt spacing and depth.
 
-![Completed steel building with vertical metal wall cladding, glazing and stone base](/images/blog/steel-building-roof-wall-cladding-systems-guide/cover.jpg)
 
 *First-party reference: a completed building with vertical metal wall cladding, glazing and a stone plinth. The enclosure defines the final appearance of the building as much as the frame defines its structure.*
 

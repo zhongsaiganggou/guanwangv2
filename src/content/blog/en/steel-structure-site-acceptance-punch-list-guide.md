@@ -15,13 +15,10 @@ ctaType: "send-project-requirements"
 noindex: false
 author: "ZhongSai Steel Structure Editorial Team"
 translationKey: "steel-structure-site-acceptance-punch-list-guide"
----
-
-Accepting an erected steel structure is not signing off because it looks complete. It is a staged check against the contract and drawings — foundations and anchor bolts, frame verticality and alignment, high-strength bolt final tightening, welding, cladding and roof closure, doors, drainage, corrosion and fire protection — with defects recorded on a punch list, re-inspected and closed before handover. ZhongSai can provide installation technical guidance, documentation and remote support; the local registered engineer, civil contractor and site labour handle permits, physical erection, authority submissions and the final sign-off. Acceptance criteria depend on the drawings, loads and local code, not fixed global numbers.
+---Accepting an erected steel structure is not signing off because it looks complete. It is a staged check against the contract and drawings — foundations and anchor bolts, frame verticality and alignment, high-strength bolt final tightening, welding, cladding and roof closure, doors, drainage, corrosion and fire protection — with defects recorded on a punch list, re-inspected and closed before handover. ZhongSai can provide installation technical guidance, documentation and remote support; the local registered engineer, civil contractor and site labour handle permits, physical erection, authority submissions and the final sign-off. Acceptance criteria depend on the drawings, loads and local code, not fixed global numbers.
 
 This guide explains how site acceptance works, what to check at each stage, and how to run a punch list so the building is handed over properly.
 
-![Owner and engineer inspecting an erected steel portal frame with drawings in a completed workshop (illustrative concept image)](/images/blog/steel-structure-site-acceptance-punch-list-guide/cover.jpg)
 
 ## What is site acceptance and a punch list?
 

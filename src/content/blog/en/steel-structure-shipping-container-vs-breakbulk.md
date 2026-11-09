@@ -15,13 +15,10 @@ ctaType: "send-project-requirements"
 noindex: false
 author: "ZhongSai Steel Structure Editorial Team"
 translationKey: "steel-structure-shipping-container-vs-breakbulk"
----
-
-Both containers and breakbulk ships can carry steel structures, and the choice depends on member sizes, total tonnage, port facilities, packing and delivery requirements. Conventional columns, beams and purlins usually fit 40HQ containers when dismantled, while very long, tall or heavy members — long-span beams, assembled trusses, heavy equipment supports — often move as breakbulk cargo. There is no globally better option; the decision depends on the drawings, the member dimensions, the port's crane capacity and the schedule. ZhongSai has built steel structures for 20 years and focused on exports for 15, and coordinates packing, container loading and export for the buildings we fabricate.
+---Both containers and breakbulk ships can carry steel structures, and the choice depends on member sizes, total tonnage, port facilities, packing and delivery requirements. Conventional columns, beams and purlins usually fit 40HQ containers when dismantled, while very long, tall or heavy members — long-span beams, assembled trusses, heavy equipment supports — often move as breakbulk cargo. There is no globally better option; the decision depends on the drawings, the member dimensions, the port's crane capacity and the schedule. ZhongSai has built steel structures for 20 years and focused on exports for 15, and coordinates packing, container loading and export for the buildings we fabricate.
 
 This guide explains how buyers decide between the two transport modes before the quotation stage.
 
-![Container terminal with gantry cranes handling steel cargo (illustrative concept image)](/images/blog/steel-structure-shipping-container-vs-breakbulk/cover.jpg)
 
 ## What the two modes mean
 

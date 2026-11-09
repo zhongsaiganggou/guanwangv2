@@ -15,11 +15,8 @@ ctaType: "send-project-requirements"
 noindex: false
 author: "ZhongSai Steel Structure Editorial Team"
 translationKey: "steel-structure-detailing-shop-drawings-guide"
----
+---钢结构深化设计（steel detailing）是把已获批的结构设计转化为可直接生产的加工图：每一个构件和节点先在三维模型里建好，再出带尺寸、材料、焊缝和螺栓信息的加工图，并附带安装（吊装）信息。深化设计不是结构设计——结构设计仍由项目注册结构工程师负责并符合当地规范；深化设计方与工程师协调，产出制造文件。下面讲深化设计包含什么、你需要提供什么、以及开工前要核对什么。
 
-钢结构深化设计（steel detailing）是把已获批的结构设计转化为可直接生产的加工图：每一个构件和节点先在三维模型里建好，再出带尺寸、材料、焊缝和螺栓信息的加工图，并附带安装（吊装）信息。深化设计不是结构设计——结构设计仍由项目注册结构工程师负责并符合当地规范；深化设计方与工程师协调，产出制造文件。下面讲深化设计包含什么、你需要提供什么、以及开工前要核对什么。
-
-![深化设计工程师在电脑前查看钢结构三维模型（示意图）](/images/blog/steel-structure-detailing-shop-drawings-guide/cover.jpg)
 
 ## 钢结构深化设计是什么——以及不是什么
 

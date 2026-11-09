@@ -15,13 +15,10 @@ ctaType: "send-project-requirements"
 noindex: false
 author: "ZhongSai Steel Structure Editorial Team"
 translationKey: "snow-load-steel-building-guide"
----
-
-雪荷载是当地规范与雪压图给出的地点特定设计值；它决定屋面檩条、刚架梁柱的尺寸与屋面用钢量。报价前请由当地注册工程师确认设计雪荷载，因为几何与荷载假定直接决定钢材吨位。中赛做钢结构20年、专注出口15年，随每个项目与设计团队协调工程。
+---雪荷载是当地规范与雪压图给出的地点特定设计值；它决定屋面檩条、刚架梁柱的尺寸与屋面用钢量。报价前请由当地注册工程师确认设计雪荷载，因为几何与荷载假定直接决定钢材吨位。中赛做钢结构20年、专注出口15年，随每个项目与设计团队协调工程。
 
 本文说明数值从哪来、影响什么、报价前确认什么。
 
-![冬季积雪中的钢结构厂房（概念示意图）](/images/blog/snow-load-steel-building-guide/cover.jpg)
 
 ## 一、雪荷载数值从哪来
 

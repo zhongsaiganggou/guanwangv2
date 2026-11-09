@@ -1,4 +1,4 @@
-﻿---
+---
 title: "Bolted Connections vs Site Welding: Which Is Better for Export Steel Buildings?"
 language: en
 category: Installation & Technical
@@ -29,7 +29,6 @@ In domestic steel construction, site welding is common and crews are experienced
 
 This is why most export steel structures use bolted main frame connections, with shop welding in the factory and minimum field welding.
 
-![Bolted steel beam-to-column connection with high-strength bolts](/images/blog/bolted-vs-welded-connections/cover.jpg)
 
 ## Bolted Connections
 

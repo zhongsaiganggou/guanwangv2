@@ -15,13 +15,10 @@ ctaType: "send-project-requirements"
 noindex: false
 author: "ZhongSai Steel Structure Editorial Team"
 translationKey: "crane-runway-beam-guide"
----
-
-A crane runway beam carries the crane wheel loads, impacts and braking forces to the building columns; the beam type and section depend on the crane capacity, span, wheel loads and fatigue class — not fixed global values. ZhongSai fabricates the runway beams and co-ordinates them with the crane supplier data and structural drawings.
+---A crane runway beam carries the crane wheel loads, impacts and braking forces to the building columns; the beam type and section depend on the crane capacity, span, wheel loads and fatigue class — not fixed global values. ZhongSai fabricates the runway beams and co-ordinates them with the crane supplier data and structural drawings.
 
 This guide explains the beam types, the design inputs, and who does what.
 
-![Overhead crane and runway beam in a steel building (illustrative concept image)](/images/blog/crane-runway-beam-guide/cover.jpg)
 
 ## Part 1: What a crane runway beam does
 

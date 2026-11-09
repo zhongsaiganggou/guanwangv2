@@ -15,13 +15,10 @@ ctaType: "send-project-requirements"
 noindex: false
 author: "ZhongSai Steel Structure Editorial Team"
 translationKey: "steel-structure-partition-walls"
----
-
-钢结构建筑的内隔墙通常用单层彩钢板或夹芯板配钢框架，需要防火或隔声时用砌体墙。选择取决于房间用途、防火等级、当地规范与批准设计。中赛在钢结构范围内供应隔墙板与框架，详图在图纸上协调；现场安装由当地团队按技术指导完成。
+---钢结构建筑的内隔墙通常用单层彩钢板或夹芯板配钢框架，需要防火或隔声时用砌体墙。选择取决于房间用途、防火等级、当地规范与批准设计。中赛在钢结构范围内供应隔墙板与框架，详图在图纸上协调；现场安装由当地团队按技术指导完成。
 
 本文讲清隔墙类型、材料、设计要点与采购清单。
 
-![钢结构厂房内用夹芯板隔出的办公室（概念示意图）](/images/blog/steel-structure-partition-walls/cover.jpg)
 
 ## 一、为什么内隔墙随钢结构一起规划
 

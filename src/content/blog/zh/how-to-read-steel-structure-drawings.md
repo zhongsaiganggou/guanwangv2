@@ -15,13 +15,10 @@ ctaType: "send-project-requirements"
 noindex: false
 author: "ZhongSai Steel Structure Editorial Team"
 translationKey: "how-to-read-steel-structure-drawings"
----
-
-钢结构图纸分三层：总布置图（GA）显示整体建筑，深化图（车间图）显示每个构件的尺寸与连接，安装图显示拼装顺序与构件编号。读图就是核对图签、尺寸、材料表、焊缝符号与构件编号。中赛按批准设计出深化图与安装图；当地团队在工地按图施工。
+---钢结构图纸分三层：总布置图（GA）显示整体建筑，深化图（车间图）显示每个构件的尺寸与连接，安装图显示拼装顺序与构件编号。读图就是核对图签、尺寸、材料表、焊缝符号与构件编号。中赛按批准设计出深化图与安装图；当地团队在工地按图施工。
 
 本文讲清图纸类型、需要核对的关键要素，以及一步步的读图方法。
 
-![工程师在施工现场查看钢结构图纸（概念示意图）](/images/blog/how-to-read-steel-structure-drawings/cover.jpg)
 
 ## 一、为什么读对图纸重要
 

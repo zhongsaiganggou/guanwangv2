@@ -15,13 +15,10 @@ ctaType: "send-project-requirements"
 noindex: false
 author: "ZhongSai Steel Structure Editorial Team"
 translationKey: "steel-structure-receiving-unloading-guide"
----
-
-接收钢结构货物，是买方开始对货物负责的时刻。卸货前，先核对装箱单与实到货物、检查损坏，再签收。用按每根构件尺寸选定的吊装设备卸货——吊车、叉车或随车吊，取决于构件尺寸——绝不在地面拖拽钢构件。货损索赔取决于交付时留存的证据，因此逐一拍照记录。所需设备与人员取决于构件尺寸、重量与现场布局。
+---接收钢结构货物，是买方开始对货物负责的时刻。卸货前，先核对装箱单与实到货物、检查损坏，再签收。用按每根构件尺寸选定的吊装设备卸货——吊车、叉车或随车吊，取决于构件尺寸——绝不在地面拖拽钢构件。货损索赔取决于交付时留存的证据，因此逐一拍照记录。所需设备与人员取决于构件尺寸、重量与现场布局。
 
 本文讲清如何准备、卸货、检查、索赔和存储一批钢结构货物。
 
-![集装箱卸钢构件，移动吊车与工人配合（概念示意图）](/images/blog/steel-structure-receiving-unloading-guide/cover.jpg)
 
 ## 一、为什么到货检查重要
 

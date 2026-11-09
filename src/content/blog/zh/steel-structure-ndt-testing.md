@@ -15,13 +15,10 @@ ctaType: "send-project-requirements"
 noindex: false
 author: "ZhongSai Steel Structure Editorial Team"
 translationKey: "steel-structure-ndt-testing"
----
-
-无损检测（NDT）在不损伤构件的前提下检查焊缝与钢材的内部或表面缺陷。常用方法为目视检测（VT）、超声波检测（UT）与磁粉检测（MT）；规范要求时用射线检测（RT）。方法与验收标准遵循项目规范与买方要求。中赛质检按约定实施 NDT，并随钢结构出具报告与证书。
+---无损检测（NDT）在不损伤构件的前提下检查焊缝与钢材的内部或表面缺陷。常用方法为目视检测（VT）、超声波检测（UT）与磁粉检测（MT）；规范要求时用射线检测（RT）。方法与验收标准遵循项目规范与买方要求。中赛质检按约定实施 NDT，并随钢结构出具报告与证书。
 
 本文讲清检测方法、时机与买方如何要求并验收。
 
-![质检员对钢构件焊缝进行超声波检测（概念示意图）](/images/blog/steel-structure-ndt-testing/cover.jpg)
 
 ## 一、为什么钢结构需要 NDT
 

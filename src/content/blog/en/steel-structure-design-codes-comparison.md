@@ -14,9 +14,7 @@ ctaType: "send-project-requirements"
 noindex: false
 author: "ZhongSai Steel Structure Editorial Team"
 translationKey: "steel-structure-design-codes-comparison"
----
-
-When you order a steel structure from an overseas manufacturer, the design code is not a paperwork detail. It determines how the structure is calculated, which steel grades are specified, how connections are designed, and which welding and inspection standards apply. A building designed under GB 50017 cannot simply be relabelled as AISC or Eurocode compliant — the calculation assumptions, load combinations, and detailing requirements differ.
+---When you order a steel structure from an overseas manufacturer, the design code is not a paperwork detail. It determines how the structure is calculated, which steel grades are specified, how connections are designed, and which welding and inspection standards apply. A building designed under GB 50017 cannot simply be relabelled as AISC or Eurocode compliant — the calculation assumptions, load combinations, and detailing requirements differ.
 
 This guide explains the three most common steel structure design codes, where they align and where they diverge, and what buyers should confirm before placing an order.
 
@@ -36,7 +34,6 @@ There is no universally "best" steel structure design code. **GB 50017** is the 
 
 Code selection should be confirmed at the quotation stage, not after fabrication begins.
 
-![Structural engineering drawings and blueprints on a drafting table](/images/blog/steel-structure-design-codes-comparison/cover.jpg)
 
 ## Why the Design Code Matters
 

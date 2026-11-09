@@ -15,13 +15,10 @@ ctaType: "send-project-requirements"
 noindex: false
 author: "ZhongSai Steel Structure Editorial Team"
 translationKey: "purlin-selection-c-vs-z"
----
-
-C 型钢与 Z 型钢檩条都是冷弯薄壁的屋面与墙面构件。Z 型檩条通过搭接实现连续多跨、适合更长跨度；C 型檩条结构简单、适合较短跨度，也常用作墙梁。选型取决于跨度、荷载、屋面坡度与连接设计。中赛将檩条与屋面围护系统一并供货，并按结构图纸协调规格。
+---C 型钢与 Z 型钢檩条都是冷弯薄壁的屋面与墙面构件。Z 型檩条通过搭接实现连续多跨、适合更长跨度；C 型檩条结构简单、适合较短跨度，也常用作墙梁。选型取决于跨度、荷载、屋面坡度与连接设计。中赛将檩条与屋面围护系统一并供货，并按结构图纸协调规格。
 
 本文对比两种截面，并说明如何写进采购规格。
 
-![屋面檩条成排固定在屋面梁上（概念示意图）](/images/blog/purlin-selection-c-vs-z/cover.jpg)
 
 ## 一、C 型与 Z 型对比
 

@@ -15,13 +15,10 @@ ctaType: "send-project-requirements"
 noindex: false
 author: "ZhongSai Steel Structure Editorial Team"
 translationKey: "steel-structure-fire-protection-guide"
----
-
-Bare structural steel loses a large part of its load capacity at temperatures reached in a typical building fire, so most local building codes require fire protection on columns, beams and trusses. The protection can be passive — intumescent coating, board, blanket or concrete encasement — or active, such as a sprinkler system. The required fire rating (commonly R30, R60, R90 or R120, i.e. minutes of standard fire resistance) depends on the building type, occupancy, height, fire compartment size, local code and insurance requirements, not on a fixed global value. Fire protection is normally specified, applied and approved by the local design and construction team, but it must be coordinated with the steel fabricator from the first design stage so coatings are compatible, thicknesses are realistic, and site touch-up is planned.
+---Bare structural steel loses a large part of its load capacity at temperatures reached in a typical building fire, so most local building codes require fire protection on columns, beams and trusses. The protection can be passive — intumescent coating, board, blanket or concrete encasement — or active, such as a sprinkler system. The required fire rating (commonly R30, R60, R90 or R120, i.e. minutes of standard fire resistance) depends on the building type, occupancy, height, fire compartment size, local code and insurance requirements, not on a fixed global value. Fire protection is normally specified, applied and approved by the local design and construction team, but it must be coordinated with the steel fabricator from the first design stage so coatings are compatible, thicknesses are realistic, and site touch-up is planned.
 
 This guide explains what fire protection does, how the common methods compare, what a fire rating means, what determines the rating, and how buyers can coordinate fire protection with a steel structure supplier.
 
-![Workers applying intumescent fire-protection coating to steel beams in a steel building under construction (illustrative concept image)](/images/blog/steel-structure-fire-protection-guide/cover.jpg)
 
 ## Part 1: Why bare steel needs fire protection
 

@@ -15,13 +15,10 @@ ctaType: "send-project-requirements"
 noindex: false
 author: "ZhongSai Steel Structure Editorial Team"
 translationKey: "steel-structure-quotation-validity-price-changes"
----
-
-A steel structure quotation is not a permanent price. It is based on the steel price, exchange rate, freight rate and available capacity at the time the offer is made, and these move over time, so suppliers set a validity period. Confirming and placing the order within the validity period, and arranging the agreed deposit to reserve material, reduces exposure to price changes. Whether a price is fixed or adjustable should be clear in the contract. ZhongSai states its assumptions and validity in every quotation.
+---A steel structure quotation is not a permanent price. It is based on the steel price, exchange rate, freight rate and available capacity at the time the offer is made, and these move over time, so suppliers set a validity period. Confirming and placing the order within the validity period, and arranging the agreed deposit to reserve material, reduces exposure to price changes. Whether a price is fixed or adjustable should be clear in the contract. ZhongSai states its assumptions and validity in every quotation.
 
 This guide explains what makes up a quotation, why prices change, what a validity period means, and how to manage price movement as a buyer.
 
-![Steel mill yard with stacked H-section steel beams and steel coils, representing the material behind a steel structure price (illustrative concept image)](/images/blog/steel-structure-quotation-validity-price-changes/cover.jpg)
 
 ## What a steel structure quotation includes
 

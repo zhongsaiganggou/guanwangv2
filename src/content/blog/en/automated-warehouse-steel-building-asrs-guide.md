@@ -15,13 +15,10 @@ ctaType: "send-project-requirements"
 noindex: false
 author: "ZhongSai Steel Structure Editorial Team"
 translationKey: "automated-warehouse-steel-building-asrs-guide"
----
-
-An automated warehouse is not a taller version of a normal warehouse. Once stacker cranes and shuttles are in the aisles, the building must meet tolerances and deflection limits a general shed never sees, the column grid must follow the rack bay rather than the other way round, and the fire strategy must be agreed before the frame is detailed. The costliest mistake is ordering steel before racking supplier, automation vendor and steel designer have exchanged interface data.
+---An automated warehouse is not a taller version of a normal warehouse. Once stacker cranes and shuttles are in the aisles, the building must meet tolerances and deflection limits a general shed never sees, the column grid must follow the rack bay rather than the other way round, and the fire strategy must be agreed before the frame is detailed. The costliest mistake is ordering steel before racking supplier, automation vendor and steel designer have exchanged interface data.
 
 This guide sets out what actually changes, which decisions belong to whom, and the inputs a buyer must assemble before an AS/RS building can be engineered and priced.
 
-![High-clear-height steel warehouse interior with tall columns and roof structure above (illustrative concept image)](/images/blog/automated-warehouse-steel-building-asrs-guide/cover.jpg)
 
 ## First decision: does the racking carry the building, or does the building carry the racking?
 

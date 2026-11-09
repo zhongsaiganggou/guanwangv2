@@ -15,13 +15,10 @@ ctaType: "send-project-requirements"
 noindex: false
 author: "ZhongSai Steel Structure Editorial Team"
 translationKey: "steel-structure-sustainability-recyclability"
----
-
-钢结构可以是一种可持续的选择，因为钢材能反复回收而不损失性能，构件可以设计为可拆卸、再利用，工厂预制也能减少现场浪费。但可持续性仍取决于材料来源、涂层、设计寿命、生产能耗和当地规范，并非只靠材料本身就能保证。
+---钢结构可以是一种可持续的选择，因为钢材能反复回收而不损失性能，构件可以设计为可拆卸、再利用，工厂预制也能减少现场浪费。但可持续性仍取决于材料来源、涂层、设计寿命、生产能耗和当地规范，并非只靠材料本身就能保证。
 
 本文说明回收、再利用、再生成分和可拆卸设计。
 
-![蓝天白云下一座现代钢结构厂房，周围有绿化（概念示意图）](/images/blog/steel-structure-sustainability-recyclability/cover.jpg)
 
 ## 回收与再利用不同
 

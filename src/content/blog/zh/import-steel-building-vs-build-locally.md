@@ -15,13 +15,10 @@ ctaType: "send-project-requirements"
 noindex: false
 author: "ZhongSai Steel Structure Editorial Team"
 translationKey: "import-steel-building-vs-build-locally"
----
-
-没有统一答案，进口还是本地建取决于当地钢结构产能、成本、交期、质量要求、项目规模、海运、清关和安装能力。应先比较完整到岸成本和本地方案，再做决定。
+---没有统一答案，进口还是本地建取决于当地钢结构产能、成本、交期、质量要求、项目规模、海运、清关和安装能力。应先比较完整到岸成本和本地方案，再做决定。
 
 本文给出决策框架，而不是固定的节省说法。
 
-![集装箱港口，岸桥和堆放的集装箱，体现进口钢结构（概念示意图）](/images/blog/import-steel-building-vs-build-locally/cover.jpg)
 
 ## 什么时候进口常见
 

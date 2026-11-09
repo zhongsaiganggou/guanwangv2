@@ -15,13 +15,10 @@ ctaType: "send-project-requirements"
 noindex: false
 author: "ZhongSai Steel Structure Editorial Team"
 translationKey: "steel-structure-column-grid-bay-spacing-guide"
----
-
-柱网是柱距（开间）、跨度与柱列的重复排列，没有统一的最优间距。开间越大，柱子和基础越少，但吊车梁、檩条、墙梁截面更大；开间越小，构件越小，但柱子越多。合理柱网要结合生产布置、吊车能力、未来扩建、荷载与当地规范，最终由注册结构工程师按图纸确认。中赛可按约定柱网配合布局与深化。
+---柱网是柱距（开间）、跨度与柱列的重复排列，没有统一的最优间距。开间越大，柱子和基础越少，但吊车梁、檩条、墙梁截面更大；开间越小，构件越小，但柱子越多。合理柱网要结合生产布置、吊车能力、未来扩建、荷载与当地规范，最终由注册结构工程师按图纸确认。中赛可按约定柱网配合布局与深化。
 
 本文说明柱距、开间、跨度与柱列如何相互作用，柱网如何影响成本与工艺动线，以及设计开始前要确认什么。
 
-![沿一条贯通柱列看钢结构厂房内部，可见重复的柱网与屋盖框架（概念示意图）](/images/blog/steel-structure-column-grid-bay-spacing-guide/cover.jpg)
 
 ## 什么是柱网
 

@@ -15,13 +15,10 @@ ctaType: "send-project-requirements"
 noindex: false
 author: "ZhongSai Steel Structure Editorial Team"
 translationKey: "steel-structure-import-payment-terms-milestones"
----
-
-Steel structure imports are normally paid against project milestones such as contract signing, production, pre-shipment and arrival, using telegraphic transfer (T/T) or a letter of credit (L/C). Payments should be tied to drawing approval, inspection and shipping documents; the percentage at each milestone is agreed in the contract and depends on order size, so a fixed split should not be assumed. Incoterms define where cost and risk transfer, but do not by themselves define the payment method. ZhongSai can provide a payment schedule aligned to the agreed milestones and documents.
+---Steel structure imports are normally paid against project milestones such as contract signing, production, pre-shipment and arrival, using telegraphic transfer (T/T) or a letter of credit (L/C). Payments should be tied to drawing approval, inspection and shipping documents; the percentage at each milestone is agreed in the contract and depends on order size, so a fixed split should not be assumed. Incoterms define where cost and risk transfer, but do not by themselves define the payment method. ZhongSai can provide a payment schedule aligned to the agreed milestones and documents.
 
 This guide explains how a typical milestone payment schedule is structured, how T/T and L/C differ, and how to protect both sides by linking money to verifiable documents.
 
-![Two business people signing a steel structure supply contract over drawings at a meeting table (illustrative concept image)](/images/blog/steel-structure-import-payment-terms-milestones/cover.jpg)
 
 ## Why payment structure matters
 

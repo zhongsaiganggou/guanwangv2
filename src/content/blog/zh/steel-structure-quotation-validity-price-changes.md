@@ -15,13 +15,10 @@ ctaType: "send-project-requirements"
 noindex: false
 author: "ZhongSai Steel Structure Editorial Team"
 translationKey: "steel-structure-quotation-validity-price-changes"
----
-
-钢结构报价不是永久价。它基于报价当时的钢材价、汇率、海运费和产能，这些因素都会变动，所以供应商会设有效期。在有效期内确认下单、并按约定付定金锁料，可以降低价格变动风险。价格是固定还是可调，应在合同里写清楚。中赛的每份报价都会注明假设与有效期。
+---钢结构报价不是永久价。它基于报价当时的钢材价、汇率、海运费和产能，这些因素都会变动，所以供应商会设有效期。在有效期内确认下单、并按约定付定金锁料，可以降低价格变动风险。价格是固定还是可调，应在合同里写清楚。中赛的每份报价都会注明假设与有效期。
 
 本文说明报价包含什么、价格为什么会变、有效期意味着什么，以及采购方如何管理价格变动。
 
-![钢厂堆场整齐堆放的H型钢与钢卷，代表钢结构报价背后的材料（概念示意图）](/images/blog/steel-structure-quotation-validity-price-changes/cover.jpg)
 
 ## 钢结构报价包含哪些内容
 

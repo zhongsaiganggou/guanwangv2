@@ -15,13 +15,10 @@ ctaType: "send-project-requirements"
 noindex: false
 author: "ZhongSai Steel Structure Editorial Team"
 translationKey: "steel-material-substitution-equivalent-approval"
----
-
-指定的钢材牌号或规格有时可以代用，但绝不能在车间现场自行决定。任何替代都必须在强度、韧性、可焊性和截面性能上不低于原设计，经设计工程师或客户书面批准，并留下代用记录和更新后的 MTC。是否可接受取决于规范、合同和原设计。
+---指定的钢材牌号或规格有时可以代用，但绝不能在车间现场自行决定。任何替代都必须在强度、韧性、可焊性和截面性能上不低于原设计，经设计工程师或客户书面批准，并留下代用记录和更新后的 MTC。是否可接受取决于规范、合同和原设计。
 
 本文讲清楚一个受控的代用是怎么进行的，而不是给出哪些牌号可以互换。
 
-![钢结构制造车间里堆放的型钢和钢梁（概念示意图）](/images/blog/steel-material-substitution-equivalent-approval/cover.jpg)
 
 ## 什么是材料代用
 

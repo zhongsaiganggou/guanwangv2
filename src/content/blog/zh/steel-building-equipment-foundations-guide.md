@@ -15,13 +15,10 @@ ctaType: "send-project-requirements"
 noindex: false
 author: "ZhongSai Steel Structure Editorial Team"
 translationKey: "steel-building-equipment-foundations-guide"
----
-
-设备基础通常由当地结构工程师设计，但设备荷载、锚栓位置与基坑布置必须在加工前与厂房结构协调。重型设备不应直接放在混凝土楼板上，除非当地注册工程师确认楼板与地基可承载。中赛做钢结构20年、专注出口15年，可为所供构件协调框架与锚固界面。
+---设备基础通常由当地结构工程师设计，但设备荷载、锚栓位置与基坑布置必须在加工前与厂房结构协调。重型设备不应直接放在混凝土楼板上，除非当地注册工程师确认楼板与地基可承载。中赛做钢结构20年、专注出口15年，可为所供构件协调框架与锚固界面。
 
 本文说明由谁设计什么、需要哪些信息、协调通常在哪里出问题。
 
-![钢结构厂房内设备基础（概念示意图）](/images/blog/steel-building-equipment-foundations-guide/cover.jpg)
 
 ## 一、设备基础与建筑基础的区别
 

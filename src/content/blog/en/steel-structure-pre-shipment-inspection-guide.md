@@ -15,13 +15,10 @@ ctaType: "send-project-requirements"
 noindex: false
 author: "ZhongSai Steel Structure Editorial Team"
 translationKey: "steel-structure-pre-shipment-inspection-guide"
----
-
-Pre-shipment inspection is the final quality check performed on steel structure components before they are packed and loaded for export. It verifies that fabricated members match the approved shop drawings — dimensions, weld quality, surface treatment, bolt holes, markings and quantities — against the agreed standard, usually GB 50205, AISC or EN 1090-2. The inspection is normally witnessed by the buyer's engineer or a third-party inspector at the fabricator's workshop, and it ends with a written inspection report. It is the last point where a deviation can be corrected before freight, customs clearance and site erection make rework expensive.
+---Pre-shipment inspection is the final quality check performed on steel structure components before they are packed and loaded for export. It verifies that fabricated members match the approved shop drawings — dimensions, weld quality, surface treatment, bolt holes, markings and quantities — against the agreed standard, usually GB 50205, AISC or EN 1090-2. The inspection is normally witnessed by the buyer's engineer or a third-party inspector at the fabricator's workshop, and it ends with a written inspection report. It is the last point where a deviation can be corrected before freight, customs clearance and site erection make rework expensive.
 
 This guide explains what a pre-shipment inspection covers, who performs it, how it relates to earlier quality control, what documents you receive, and how to use the inspection result to protect your project.
 
-![QC inspector measuring a steel member with a tape measure in a fabrication workshop (illustrative concept image)](/images/blog/steel-structure-pre-shipment-inspection-guide/cover.jpg)
 
 ## Part 1: What pre-shipment inspection is and why it matters
 

@@ -15,13 +15,10 @@ ctaType: "send-project-requirements"
 noindex: false
 author: "ZhongSai Steel Structure Editorial Team"
 translationKey: "steel-structure-steel-sections-guide"
----
-
-结构钢材按标准化系列生产：IPE、HEA/HEB（欧标）、UB/UC（英标）、H 型钢（日标/国标），以及角钢、槽钢与方管等。每个系列有固定的尺寸与性能表，构件选用多大截面取决于荷载、跨度与设计。询价时写对系列与规格，可避免报价错误与交货延误。中赛按批准图纸加工；截面由设计团队确认，我们提供工程协调。
+---结构钢材按标准化系列生产：IPE、HEA/HEB（欧标）、UB/UC（英标）、H 型钢（日标/国标），以及角钢、槽钢与方管等。每个系列有固定的尺寸与性能表，构件选用多大截面取决于荷载、跨度与设计。询价时写对系列与规格，可避免报价错误与交货延误。中赛按批准图纸加工；截面由设计团队确认，我们提供工程协调。
 
 本文讲清常用截面系列、怎么看截面表，以及询价时如何准确描述钢材。
 
-![钢材堆场中的 H 型钢、槽钢与角钢料堆（概念示意图）](/images/blog/steel-structure-steel-sections-guide/cover.jpg)
 
 ## 一、为什么截面名称重要
 

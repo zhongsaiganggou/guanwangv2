@@ -15,13 +15,10 @@ ctaType: "send-project-requirements"
 noindex: false
 author: "ZhongSai Steel Structure Editorial Team"
 translationKey: "steel-structure-anchor-bolt-installation-guide"
----
-
-柱脚通过浇筑在混凝土中的锚栓把建筑荷载传给基础。安装分三个阶段：浇筑前装好锚栓笼与定位模板，浇筑后核对位置、标高与丝扣外露长度，然后吊装柱脚并灌浆。锚栓直径、埋深与间距取决于荷载、土质与批准图纸。基础混凝土由当地团队浇筑；中赛随钢结构提供锚栓布置与安装技术指导。
+---柱脚通过浇筑在混凝土中的锚栓把建筑荷载传给基础。安装分三个阶段：浇筑前装好锚栓笼与定位模板，浇筑后核对位置、标高与丝扣外露长度，然后吊装柱脚并灌浆。锚栓直径、埋深与间距取决于荷载、土质与批准图纸。基础混凝土由当地团队浇筑；中赛随钢结构提供锚栓布置与安装技术指导。
 
 本文讲清钢结构柱脚锚栓的安装顺序、检查要点与公差处理。
 
-![浇筑混凝土前的锚栓笼与定位模板（概念示意图）](/images/blog/steel-structure-anchor-bolt-installation-guide/cover.jpg)
 
 ## 一、为什么锚栓定位重要
 

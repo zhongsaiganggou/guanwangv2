@@ -1,4 +1,4 @@
-﻿---
+---
 title: 钢结构风荷载设计指南
 language: zh
 category: Installation & Technical

@@ -15,13 +15,10 @@ ctaType: "send-project-requirements"
 noindex: false
 author: "ZhongSai Steel Structure Editorial Team"
 translationKey: "steel-structure-fire-protection-coating-guide"
----
-
-防火涂料施工质量决定钢结构耐火等级是否真正成立。结果取决于基面处理、涂料类型（膨胀型与水泥基）、施工环境与干膜厚度检验；厚度是验收核心，必须按所选体系的认证数据，针对图纸要求的耐火时限、构件截面与截面系数确定。中赛做钢结构20年、专注出口15年，可为所供建筑协调防火涂料技术指导。
+---防火涂料施工质量决定钢结构耐火等级是否真正成立。结果取决于基面处理、涂料类型（膨胀型与水泥基）、施工环境与干膜厚度检验；厚度是验收核心，必须按所选体系的认证数据，针对图纸要求的耐火时限、构件截面与截面系数确定。中赛做钢结构20年、专注出口15年，可为所供建筑协调防火涂料技术指导。
 
 本文说明采购方、现场工程师与检验方在防火涂料施工时应检查什么。
 
-![工人穿防护服喷涂膨胀型防火涂料（概念示意图）](/images/blog/steel-structure-fire-protection-coating-guide/cover.jpg)
 
 ## 两类主流涂料
 

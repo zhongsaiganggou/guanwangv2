@@ -15,13 +15,10 @@ ctaType: "send-project-requirements"
 noindex: false
 author: "ZhongSai Steel Structure Editorial Team"
 translationKey: "steel-structure-erection-crane-selection"
----
-
-Steel structure erection lifts and places members with cranes in a planned sequence. Common methods are piece-by-piece erection and modular lifting; the crane size depends on member weight, reach and site conditions. The erection method, crane selection and sequence are planned by the steel supplier's engineering and the local contractor before the first lift. ZhongSai coordinates the drawings, marking and lifting guidance with your erection team.
+---Steel structure erection lifts and places members with cranes in a planned sequence. Common methods are piece-by-piece erection and modular lifting; the crane size depends on member weight, reach and site conditions. The erection method, crane selection and sequence are planned by the steel supplier's engineering and the local contractor before the first lift. ZhongSai coordinates the drawings, marking and lifting guidance with your erection team.
 
 This guide covers lifting methods, crane selection and the site preparation checklist.
 
-![Crawler crane lifting a steel beam into position (illustrative concept image)](/images/blog/steel-structure-erection-crane-selection/cover.jpg)
 
 ## Part 1: Erection methods compared
 

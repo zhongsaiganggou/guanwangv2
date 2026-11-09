@@ -15,13 +15,10 @@ ctaType: "send-project-requirements"
 noindex: false
 author: "ZhongSai Steel Structure Editorial Team"
 translationKey: "steel-structure-roof-solar-panel-structural-load"
----
-
-A steel roof can support solar panels only if its purlins, roof frames, columns and connections were designed for the extra loads. Solar adds self-weight, wind uplift or pressure and maintenance loads, and on snowy sites snow and panel loads combine. Adding panels to a new building is straightforward when the load is included from the start; retrofitting an existing roof requires a structural engineer to check the load path. ZhongSai can coordinate and detail the structure for the agreed solar loads.
+---A steel roof can support solar panels only if its purlins, roof frames, columns and connections were designed for the extra loads. Solar adds self-weight, wind uplift or pressure and maintenance loads, and on snowy sites snow and panel loads combine. Adding panels to a new building is straightforward when the load is included from the start; retrofitting an existing roof requires a structural engineer to check the load path. ZhongSai can coordinate and detail the structure for the agreed solar loads.
 
 This guide explains what loads solar panels add, how they travel through the structure, and what to confirm for a new building or an existing roof.
 
-![Aerial view of a steel structure industrial building with rows of solar panels mounted on the sloped metal roof (illustrative concept image)](/images/blog/steel-structure-roof-solar-panel-structural-load/cover.jpg)
 
 ## What loads solar panels add
 

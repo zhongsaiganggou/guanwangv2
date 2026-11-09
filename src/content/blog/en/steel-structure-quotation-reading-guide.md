@@ -15,13 +15,10 @@ ctaType: "send-project-requirements"
 noindex: false
 author: "ZhongSai Steel Structure Editorial Team"
 translationKey: "steel-structure-quotation-reading-guide"
----
-
-A steel structure quotation is only comparable when three things match: the scope of supply, the weight basis, and the trade term. Read it in that order — what is supplied, how it is measured, what is excluded — before you look at the total. Two offers for the same building can differ widely without either supplier being dishonest, because one may be supply-only at theoretical weight with a primer, and the other FOB with packing, accessories and a full coating system.
+---A steel structure quotation is only comparable when three things match: the scope of supply, the weight basis, and the trade term. Read it in that order — what is supplied, how it is measured, what is excluded — before you look at the total. Two offers for the same building can differ widely without either supplier being dishonest, because one may be supply-only at theoretical weight with a primer, and the other FOB with packing, accessories and a full coating system.
 
 This guide is about the document you already received. It walks through the ten lines a quotation should contain, the items most often left out, and a method for putting two suppliers on the same basis.
 
-![Engineer comparing a printed steel structure quotation with drawings and steel section samples on a desk (illustrative concept image)](/images/blog/steel-structure-quotation-reading-guide/cover.jpg)
 
 ## Why the same building gets different totals
 

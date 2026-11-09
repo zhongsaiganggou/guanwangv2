@@ -15,13 +15,10 @@ ctaType: "send-project-requirements"
 noindex: false
 author: "ZhongSai Steel Structure Editorial Team"
 translationKey: "steel-structure-port-demurrage-detention"
----
-
-滞港费、滞箱费和堆存费是货物到港后未在免费期内清关、提货或还箱而产生的费用，按天累计；在约定贸易术语下通常由买方承担，若因卖方单据问题导致则可按合同追偿。最有效的避免方式是单据齐全、提前清关、及时提货并尽快还箱。免费天数和费率因港口和船公司而异，不能想当然。
+---滞港费、滞箱费和堆存费是货物到港后未在免费期内清关、提货或还箱而产生的费用，按天累计；在约定贸易术语下通常由买方承担，若因卖方单据问题导致则可按合同追偿。最有效的避免方式是单据齐全、提前清关、及时提货并尽快还箱。免费天数和费率因港口和船公司而异，不能想当然。
 
 本文说明这三类费用、如何产生、通常由谁承担，以及如何避免。
 
-![港口集装箱堆场，堆叠的集装箱和龙门吊，代表货物到达目的港（概念示意图）](/images/blog/steel-structure-port-demurrage-detention/cover.jpg)
 
 ## 三类费用
 

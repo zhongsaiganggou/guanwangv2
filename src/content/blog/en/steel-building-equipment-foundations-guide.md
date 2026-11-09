@@ -15,13 +15,10 @@ ctaType: "send-project-requirements"
 noindex: false
 author: "ZhongSai Steel Structure Editorial Team"
 translationKey: "steel-building-equipment-foundations-guide"
----
-
-Equipment foundations are usually designed by a local structural engineer, but the machine loads, anchor positions and pit locations must be coordinated with the building frame before fabrication. Heavy machines should not sit directly on a concrete floor slab unless a registered local engineer confirms the slab and the ground can carry the load. ZhongSai has built steel structures for 20 years and focused on exports for 15, and coordinates the frame and anchor interfaces for the items we fabricate.
+---Equipment foundations are usually designed by a local structural engineer, but the machine loads, anchor positions and pit locations must be coordinated with the building frame before fabrication. Heavy machines should not sit directly on a concrete floor slab unless a registered local engineer confirms the slab and the ground can carry the load. ZhongSai has built steel structures for 20 years and focused on exports for 15, and coordinates the frame and anchor interfaces for the items we fabricate.
 
 This guide explains who designs what, what information is needed, and where coordination usually fails.
 
-![Equipment foundation in a steel building (illustrative concept image)](/images/blog/steel-building-equipment-foundations-guide/cover.jpg)
 
 ## Part 1: Equipment foundation vs building foundation
 

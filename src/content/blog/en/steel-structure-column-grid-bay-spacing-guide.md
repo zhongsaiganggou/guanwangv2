@@ -15,13 +15,10 @@ ctaType: "send-project-requirements"
 noindex: false
 author: "ZhongSai Steel Structure Editorial Team"
 translationKey: "steel-structure-column-grid-bay-spacing-guide"
----
-
-A column grid is the repeating pattern of bay spacing, span and column lines, and there is no single universal spacing. Wider bays mean fewer columns and foundations but larger crane beams, purlins and cladding rails; more bays mean smaller members but more columns. The right grid follows your production layout, crane capacity, future expansion, loads and local code, and must be confirmed by a registered structural engineer against drawings. ZhongSai supports layout coordination and detailing for the agreed grid.
+---A column grid is the repeating pattern of bay spacing, span and column lines, and there is no single universal spacing. Wider bays mean fewer columns and foundations but larger crane beams, purlins and cladding rails; more bays mean smaller members but more columns. The right grid follows your production layout, crane capacity, future expansion, loads and local code, and must be confirmed by a registered structural engineer against drawings. ZhongSai supports layout coordination and detailing for the agreed grid.
 
 This guide explains how bay spacing, span and column lines interact, how the grid affects cost and workflow, and what to confirm before design starts.
 
-![Interior of a steel structure workshop looking down a clear column line, showing the repeating column grid and roof frame (illustrative concept image)](/images/blog/steel-structure-column-grid-bay-spacing-guide/cover.jpg)
 
 ## What a column grid is
 

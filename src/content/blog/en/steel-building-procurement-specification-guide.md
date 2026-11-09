@@ -15,13 +15,10 @@ ctaType: "send-project-requirements"
 noindex: false
 author: "ZhongSai Steel Structure Editorial Team"
 translationKey: "steel-building-procurement-specification-guide"
----
-
-A technical specification turns design intent into a file that can be quoted, fabricated and accepted. It is not a substitute for drawings; it is the summary of drawings, acceptance criteria and responsibility boundaries. The content depends on the project size, the local code and the acceptance requirements, so there is no single template, but every spec should cover design loads, materials, coatings, tolerances, acceptance and supplier duties. ZhongSai has built steel structures for 20 years and focused on exports for 15, and coordinates engineering and detailing on the buildings we fabricate.
+---A technical specification turns design intent into a file that can be quoted, fabricated and accepted. It is not a substitute for drawings; it is the summary of drawings, acceptance criteria and responsibility boundaries. The content depends on the project size, the local code and the acceptance requirements, so there is no single template, but every spec should cover design loads, materials, coatings, tolerances, acceptance and supplier duties. ZhongSai has built steel structures for 20 years and focused on exports for 15, and coordinates engineering and detailing on the buildings we fabricate.
 
 This guide lists the sections a buyer can put into the spec so the fabricator quotes the same building the designer intended.
 
-![Engineer reviewing a steel building technical specification and drawings (illustrative concept image)](/images/blog/steel-building-procurement-specification-guide/cover.jpg)
 
 ## Part 1: What a specification is in the procurement flow
 

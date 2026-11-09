@@ -15,11 +15,8 @@ ctaType: "send-project-requirements"
 noindex: false
 author: "ZhongSai Steel Structure Editorial Team"
 translationKey: "steel-structure-detailing-shop-drawings-guide"
----
+---Steel structural detailing (also called steel detailing) turns the approved structural design into fabrication-ready shop drawings: every member and connection is modelled in 3D, then detailed shop drawings are produced with dimensions, materials, weld and bolt details, and erection information. Detailing is not structural design — the registered structural engineer stays responsible for the design and the applicable local code; the detailer coordinates with that engineer and produces the manufacturing documents. Below is what detailing includes, what you must provide, and what to check before fabrication starts.
 
-Steel structural detailing (also called steel detailing) turns the approved structural design into fabrication-ready shop drawings: every member and connection is modelled in 3D, then detailed shop drawings are produced with dimensions, materials, weld and bolt details, and erection information. Detailing is not structural design — the registered structural engineer stays responsible for the design and the applicable local code; the detailer coordinates with that engineer and produces the manufacturing documents. Below is what detailing includes, what you must provide, and what to check before fabrication starts.
-
-![Structural engineer reviewing a 3D steel model on screen (illustrative concept image)](/images/blog/steel-structure-detailing-shop-drawings-guide/cover.jpg)
 
 ## What steel structural detailing is — and what it is not
 

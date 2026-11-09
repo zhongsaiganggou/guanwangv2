@@ -15,13 +15,10 @@ ctaType: "send-project-requirements"
 noindex: false
 author: "ZhongSai Steel Structure Editorial Team"
 translationKey: "steel-structure-erection-crane-selection"
----
-
-钢结构吊装是用吊车按既定顺序将构件吊起并就位。常见方法为分件吊装与模块化吊装；吊车吨位取决于构件重量、幅度与现场条件。吊装方法、吊车选择与顺序由钢供应商工程与当地承包商在首次吊装前共同规划。中赛与你的安装团队协调图纸、编号与吊装指引。
+---钢结构吊装是用吊车按既定顺序将构件吊起并就位。常见方法为分件吊装与模块化吊装；吊车吨位取决于构件重量、幅度与现场条件。吊装方法、吊车选择与顺序由钢供应商工程与当地承包商在首次吊装前共同规划。中赛与你的安装团队协调图纸、编号与吊装指引。
 
 本文讲清吊装方法、吊车选择与现场准备清单。
 
-![履带吊将钢梁吊装就位（概念示意图）](/images/blog/steel-structure-erection-crane-selection/cover.jpg)
 
 ## 一、吊装方法对比
 

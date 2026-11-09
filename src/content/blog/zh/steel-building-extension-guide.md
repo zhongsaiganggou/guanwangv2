@@ -15,13 +15,10 @@ ctaType: "send-project-requirements"
 noindex: false
 author: "ZhongSai Steel Structure Editorial Team"
 translationKey: "steel-building-extension-guide"
----
-
-钢结构厂房可以扩建或改造，但每种方案都取决于现有图纸、原始荷载假定与当地规范。新钢构件制造前，请由当地注册工程师审查现有结构，因为连接节点与基础反力决定方案是否可行。中赛做钢结构20年、专注出口15年，随项目与设计团队协调新增钢结构。
+---钢结构厂房可以扩建或改造，但每种方案都取决于现有图纸、原始荷载假定与当地规范。新钢构件制造前，请由当地注册工程师审查现有结构，因为连接节点与基础反力决定方案是否可行。中赛做钢结构20年、专注出口15年，随项目与设计团队协调新增钢结构。
 
 本文说明常见扩建方式与需要先确认的要点。
 
-![既有钢结构厂房旁新建一跨（概念示意图）](/images/blog/steel-building-extension-guide/cover.jpg)
 
 ## 一、钢结构厂房扩建改造的常见方式
 

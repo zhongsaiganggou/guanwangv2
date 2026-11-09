@@ -15,13 +15,10 @@ ctaType: "send-project-requirements"
 noindex: false
 author: "ZhongSai Steel Structure Editorial Team"
 translationKey: "steel-structure-cargo-insurance-import-guide"
----
-
-Marine cargo insurance covers accidental loss or damage while goods are in transit. Who buys it depends on the Incoterms: under FOB or FCA the buyer usually arranges cover, while under CIF or CIP the seller arranges minimum cover even though risk has already transferred. Steel shipments are high-value and pass through many handovers, so cover is normally based on the CIF value plus an agreed percentage. Rates depend on the cover, cargo value, route and insurer, and there is no fixed figure. If cargo arrives damaged, inspect on the spot, record evidence, notify the carrier and insurer in writing, and keep all documents.
+---Marine cargo insurance covers accidental loss or damage while goods are in transit. Who buys it depends on the Incoterms: under FOB or FCA the buyer usually arranges cover, while under CIF or CIP the seller arranges minimum cover even though risk has already transferred. Steel shipments are high-value and pass through many handovers, so cover is normally based on the CIF value plus an agreed percentage. Rates depend on the cover, cargo value, route and insurer, and there is no fixed figure. If cargo arrives damaged, inspect on the spot, record evidence, notify the carrier and insurer in writing, and keep all documents.
 
 This guide explains what cover is, who buys it, how the value is set, and how to claim.
 
-![A container vessel sailing on open water, representing goods exposed during the sea leg (illustrative concept image)](/images/blog/steel-structure-cargo-insurance-import-guide/cover.jpg)
 
 ## Why insurance matters
 

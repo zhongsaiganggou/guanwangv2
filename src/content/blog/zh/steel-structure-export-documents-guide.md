@@ -15,13 +15,10 @@ ctaType: "send-project-requirements"
 noindex: false
 author: "ZhongSai Steel Structure Editorial Team"
 translationKey: "steel-structure-export-documents-guide"
----
-
-钢结构出口的核心单据是商业发票、装箱单、提单、原产地证与报关单。具体文件、格式与认证要求取决于目的国、贸易条款、船公司与清关代理。中赛做钢结构20年、专注出口15年，随整套钢结构协调出口单据。
+---钢结构出口的核心单据是商业发票、装箱单、提单、原产地证与报关单。具体文件、格式与认证要求取决于目的国、贸易条款、船公司与清关代理。中赛做钢结构20年、专注出口15年，随整套钢结构协调出口单据。
 
 本文说明常用单据及其由谁准备。
 
-![集装箱码头：吊车与集装箱（概念示意图）](/images/blog/steel-structure-export-documents-guide/cover.jpg)
 
 ## 一、钢结构出口常用单据
 

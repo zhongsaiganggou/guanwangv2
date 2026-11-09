@@ -15,11 +15,7 @@ ctaType: "send-project-requirements"
 noindex: false
 author: "ZhongSai Steel Structure Editorial Team"
 translationKey: "steel-structure-fabrication-process-guide"
----
-
-![Steel structure fabrication workshop with workers and overhead cranes across multiple work stations (illustrative concept image)](/images/blog/steel-structure-fabrication-process-guide/cover.jpg)
-
-The steel structure fabrication process turns approved fabrication drawings into marked, packed components ready for export through a fixed sequence: material receiving and verification, cutting and preparation, drilling and punching, assembly and welding, surface treatment, dimensional and weld inspection, and finally marking and packing. Quality is not a single final test — it is controlled at each stage, from the mill certificate of the raw steel to the paint thickness measured before packing. For a buyer, understanding the process matters because it tells you what to check at the factory, which documents to ask for, and how much of the work belongs to the fabricator compared to the local site team.
+---The steel structure fabrication process turns approved fabrication drawings into marked, packed components ready for export through a fixed sequence: material receiving and verification, cutting and preparation, drilling and punching, assembly and welding, surface treatment, dimensional and weld inspection, and finally marking and packing. Quality is not a single final test — it is controlled at each stage, from the mill certificate of the raw steel to the paint thickness measured before packing. For a buyer, understanding the process matters because it tells you what to check at the factory, which documents to ask for, and how much of the work belongs to the fabricator compared to the local site team.
 
 ## The fabrication process at a glance
 

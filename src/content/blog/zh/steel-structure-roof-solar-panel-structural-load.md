@@ -15,13 +15,10 @@ ctaType: "send-project-requirements"
 noindex: false
 author: "ZhongSai Steel Structure Editorial Team"
 translationKey: "steel-structure-roof-solar-panel-structural-load"
----
-
-钢结构屋面只有在檩条、屋架、柱和连接节点按附加荷载设计的前提下才能装光伏。光伏会带来自重、风吸或风压以及检修荷载，有雪地区雪荷载还要与光伏叠加。新建时一开始就把光伏荷载纳入设计最省事；既有屋面后加，必须由结构工程师复核传力路径。中赛可按约定光伏荷载做结构协调与深化。
+---钢结构屋面只有在檩条、屋架、柱和连接节点按附加荷载设计的前提下才能装光伏。光伏会带来自重、风吸或风压以及检修荷载，有雪地区雪荷载还要与光伏叠加。新建时一开始就把光伏荷载纳入设计最省事；既有屋面后加，必须由结构工程师复核传力路径。中赛可按约定光伏荷载做结构协调与深化。
 
 本文说明光伏会带来哪些荷载、荷载如何沿结构传递，以及新建和既有屋面分别要确认什么。
 
-![航拍一座钢结构工业厂房，坡屋面金属板上铺设整齐的光伏板（概念示意图）](/images/blog/steel-structure-roof-solar-panel-structural-load/cover.jpg)
 
 ## 光伏会带来哪些荷载
 

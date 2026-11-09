@@ -15,13 +15,10 @@ ctaType: "send-project-requirements"
 noindex: false
 author: "ZhongSai Steel Structure Editorial Team"
 translationKey: "steel-structure-port-demurrage-detention"
----
-
-Demurrage, detention and port storage charges arise when cargo is not cleared, collected or the container returned within the free time at the destination port. They accrue daily and are usually the buyer's responsibility under the agreed Incoterms, unless caused by the supplier's documents. The most effective way to avoid them is complete documents, early clearance, prompt pickup and fast container return. Free days and rates vary by port and carrier, so confirm them rather than assume fixed values.
+---Demurrage, detention and port storage charges arise when cargo is not cleared, collected or the container returned within the free time at the destination port. They accrue daily and are usually the buyer's responsibility under the agreed Incoterms, unless caused by the supplier's documents. The most effective way to avoid them is complete documents, early clearance, prompt pickup and fast container return. Free days and rates vary by port and carrier, so confirm them rather than assume fixed values.
 
 This guide explains the three charges, how they are triggered, who usually pays, and how to avoid them.
 
-![Container terminal yard with stacked containers and a gantry crane, representing cargo arriving at the destination port (illustrative concept image)](/images/blog/steel-structure-port-demurrage-detention/cover.jpg)
 
 ## The three charges
 

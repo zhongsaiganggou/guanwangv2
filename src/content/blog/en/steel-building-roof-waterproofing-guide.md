@@ -15,13 +15,10 @@ ctaType: "send-project-requirements"
 noindex: false
 author: "ZhongSai Steel Structure Editorial Team"
 translationKey: "steel-building-roof-waterproofing-guide"
----
-
-Metal roof leaks rarely come from the panel itself. They start at the details: the ridge, the eaves, the gable flashings, the sheet laps and the penetrations. The right waterproofing depends on the roof slope, the local climate and the building code, so there is no single global solution; the fix is to detail these points correctly. ZhongSai has built steel structures for 20 years and focused on exports for 15, and coordinates flashing and trim on the buildings we fabricate.
+---Metal roof leaks rarely come from the panel itself. They start at the details: the ridge, the eaves, the gable flashings, the sheet laps and the penetrations. The right waterproofing depends on the roof slope, the local climate and the building code, so there is no single global solution; the fix is to detail these points correctly. ZhongSai has built steel structures for 20 years and focused on exports for 15, and coordinates flashing and trim on the buildings we fabricate.
 
 This guide maps the points where water gets in and the checks buyers can run before the roof ships.
 
-![Roof ridge and flashing details on a steel building (illustrative concept image)](/images/blog/steel-building-roof-waterproofing-guide/cover.jpg)
 
 ## Part 1: Where metal roofs leak most often
 

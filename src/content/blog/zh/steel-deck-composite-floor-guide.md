@@ -15,13 +15,10 @@ ctaType: "send-project-requirements"
 noindex: false
 author: "ZhongSai Steel Structure Editorial Team"
 translationKey: "steel-deck-composite-floor-guide"
----
-
-组合楼板＝楼承板＋栓钉＋现浇混凝土，让楼承板与楼板共同工作；板型与板厚取决于跨度、荷载、防火等级与当地规范——没有固定全球值。中赛按结构图纸协调供货楼承板与组合楼板细节。
+---组合楼板＝楼承板＋栓钉＋现浇混凝土，让楼承板与楼板共同工作；板型与板厚取决于跨度、荷载、防火等级与当地规范——没有固定全球值。中赛按结构图纸协调供货楼承板与组合楼板细节。
 
 本文说明常见楼承板系统、询价要写什么，以及谁负责什么。
 
-![组合楼板施工现场（概念示意图）](/images/blog/steel-deck-composite-floor-guide/cover.jpg)
 
 ## 一、组合楼板怎么工作
 

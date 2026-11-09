@@ -15,13 +15,10 @@ ctaType: "send-project-requirements"
 noindex: false
 author: "ZhongSai Steel Structure Editorial Team"
 translationKey: "steel-structure-erection-marks-guide"
----
-
-Erection marks are the identification codes painted or fixed onto each steel member so that the site team can find it on the erection drawings and place it in the correct position. A typical mark combines a part identifier (for example a column, beam or purlin code), a sequence number, and sometimes a mirror/side indicator, and it must match the mark shown on the shop drawings and erection drawings. Without a consistent marking system, even a perfectly fabricated structure becomes slow and error-prone to erect: members are searched for by trial, lifted into the wrong position, or re-cut on site. Marking is part of the steel supplier's fabrication and packing scope, but its usefulness depends on drawings that the local team can read and on a loading sequence that matches the erection sequence.
+---Erection marks are the identification codes painted or fixed onto each steel member so that the site team can find it on the erection drawings and place it in the correct position. A typical mark combines a part identifier (for example a column, beam or purlin code), a sequence number, and sometimes a mirror/side indicator, and it must match the mark shown on the shop drawings and erection drawings. Without a consistent marking system, even a perfectly fabricated structure becomes slow and error-prone to erect: members are searched for by trial, lifted into the wrong position, or re-cut on site. Marking is part of the steel supplier's fabrication and packing scope, but its usefulness depends on drawings that the local team can read and on a loading sequence that matches the erection sequence.
 
 This guide explains how steel members are numbered, how marking methods compare, how erection drawings and shop drawings differ, how marking ties to packing and container loading, and what buyers should check before shipment.
 
-![Worker marking a steel beam with a paint stencil in a fabrication shop (illustrative concept image)](/images/blog/steel-structure-erection-marks-guide/cover.jpg)
 
 ## Part 1: What erection marks are and why they matter
 

@@ -15,13 +15,10 @@ ctaType: "send-project-requirements"
 noindex: false
 author: "ZhongSai Steel Structure Editorial Team"
 translationKey: "steel-pipe-rack-structure"
----
-
-钢管廊是一种敞开式多层钢框架，用于石化、化工、电力等工厂支撑工艺管道、电缆桥架，有时也支撑设备。它由横向刚架、纵向支撑、多层梁、走道和护栏组成。
+---钢管廊是一种敞开式多层钢框架，用于石化、化工、电力等工厂支撑工艺管道、电缆桥架，有时也支撑设备。它由横向刚架、纵向支撑、多层梁、走道和护栏组成。
 
 本文讲清楚管廊怎么构成、要协调什么，而不是给固定尺寸。
 
-![真实石化工地正在施工的多层钢管廊框架，旁边有履带吊](/images/projects/cnooc-pr6-pipe-rack-frame-aerial-rendering.jpg)
 
 ## 什么是钢管廊
 

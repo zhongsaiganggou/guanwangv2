@@ -1,4 +1,4 @@
-﻿---
+---
 title: 门式刚架与桁架厂房怎么选？对比与选型指南
 language: zh
 category: Installation & Technical
@@ -62,7 +62,6 @@ author: 中赛钢构工程团队
 | 安装速度 | 快 | 较慢、螺栓多 |
 | 最适合 | 仓库、厂房、物流 | 机库、体育馆、展厅、夹层仓库 |
 
-![钢结构厂区鸟瞰](/images/blog/portal-frame-vs-truss-steel-building/cover.jpg)
 
 ## 4. 吊车荷载如何影响选择
 

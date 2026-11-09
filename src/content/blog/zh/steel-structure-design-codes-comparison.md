@@ -14,9 +14,7 @@ ctaType: "send-project-requirements"
 noindex: false
 author: "中赛钢构编辑团队"
 translationKey: "steel-structure-design-codes-comparison"
----
-
-从中国制造商采购钢结构时，设计规范不是一份可以忽略的文件。它决定了结构如何计算、用什么钢材、节点如何设计、焊接和检验按什么标准执行。一套按 GB 50017 设计的建筑，不能简单地"贴上"AISC 或 Eurocode 合规标签——计算假定、荷载组合和构造要求存在实质差异。
+---从中国制造商采购钢结构时，设计规范不是一份可以忽略的文件。它决定了结构如何计算、用什么钢材、节点如何设计、焊接和检验按什么标准执行。一套按 GB 50017 设计的建筑，不能简单地"贴上"AISC 或 Eurocode 合规标签——计算假定、荷载组合和构造要求存在实质差异。
 
 本文对比三种最常用的钢结构设计规范，说明它们的异同，以及采购方在下单前应该确认什么。
 
@@ -36,7 +34,6 @@ translationKey: "steel-structure-design-codes-comparison"
 
 规范选择应在报价阶段确认，而不是在开始加工后才讨论。
 
-![钢结构工程设计图纸与蓝图](/images/blog/steel-structure-design-codes-comparison/cover.jpg)
 
 ## 为什么设计规范很重要
 

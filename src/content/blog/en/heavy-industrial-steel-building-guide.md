@@ -15,13 +15,10 @@ ctaType: "send-project-requirements"
 noindex: false
 author: "ZhongSai Steel Structure Editorial Team"
 translationKey: "heavy-industrial-steel-building-guide"
----
-
-A heavy industrial steel building carries crane loads, heavy equipment, wide spans and demanding environments; every design decision depends on the drawings, loads, local code, use, crane, corrosion, fire and transport — not fixed global values. ZhongSai has built steel structures for 20 years and focused on exports for 15, fabricating the package from your drawings.
+---A heavy industrial steel building carries crane loads, heavy equipment, wide spans and demanding environments; every design decision depends on the drawings, loads, local code, use, crane, corrosion, fire and transport — not fixed global values. ZhongSai has built steel structures for 20 years and focused on exports for 15, fabricating the package from your drawings.
 
 This guide covers the key design considerations and who does what.
 
-![Heavy industrial steel building with crane and equipment (illustrative concept image)](/images/blog/heavy-industrial-steel-building-guide/cover.jpg)
 
 ## Part 1: What makes a building "heavy industrial"
 

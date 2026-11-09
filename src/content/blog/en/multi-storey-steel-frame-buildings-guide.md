@@ -15,13 +15,10 @@ ctaType: "send-project-requirements"
 noindex: false
 author: "ZhongSai Steel Structure Editorial Team"
 translationKey: "multi-storey-steel-frame-buildings-guide"
----
-
-A multi-storey steel frame is not a single-storey portal frame stacked twice. Once a second floor is added, wind and seismic loads are no longer carried mainly by roof bracing and frame action: they travel through floor diaphragms into a lateral system, column bases stop being simple pinned supports, and drift, floor vibration, fire protection and egress start to drive member sizes. The building also becomes a sequencing problem — you cannot erect floors before the frame below is plumb and stable.
+---A multi-storey steel frame is not a single-storey portal frame stacked twice. Once a second floor is added, wind and seismic loads are no longer carried mainly by roof bracing and frame action: they travel through floor diaphragms into a lateral system, column bases stop being simple pinned supports, and drift, floor vibration, fire protection and egress start to drive member sizes. The building also becomes a sequencing problem — you cannot erect floors before the frame below is plumb and stable.
 
 This guide explains what changes, which structural and floor systems are used, and what a buyer must supply before a multi-storey frame can be engineered and priced.
 
-![Steel frame of a multi-storey building under erection, with floor beams in place and workers on the structure (illustrative concept image)](/images/blog/multi-storey-steel-frame-buildings-guide/cover.jpg)
 
 ## What actually governs the design once there is a second floor
 

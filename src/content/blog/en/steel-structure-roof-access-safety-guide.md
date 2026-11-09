@@ -15,13 +15,10 @@ ctaType: "send-project-requirements"
 noindex: false
 author: "ZhongSai Steel Structure Editorial Team"
 translationKey: "steel-structure-roof-access-safety-guide"
----
-
-Roof access on a steel building is planned for maintenance, not added later. Safe access means a roof ladder with a safety cage or a walkway, guardrails at edges, hatches for internal access, and certified anchor points for fall protection. The layout, spacing and fall-protection requirements depend on the roof design, the maintenance tasks and the applicable safety code. Access items can be fabricated and supplied with the steel scope, with installation technical guidance, or installed locally by the buyer's team.
+---Roof access on a steel building is planned for maintenance, not added later. Safe access means a roof ladder with a safety cage or a walkway, guardrails at edges, hatches for internal access, and certified anchor points for fall protection. The layout, spacing and fall-protection requirements depend on the roof design, the maintenance tasks and the applicable safety code. Access items can be fabricated and supplied with the steel scope, with installation technical guidance, or installed locally by the buyer's team.
 
 This guide explains roof access options, safety requirements, design points to confirm, and the buyer checklist.
 
-![Roof access ladder with safety cage reaching a steel building roof (illustrative concept image)](/images/blog/steel-structure-roof-access-safety-guide/cover.jpg)
 
 ## Part 1: Why roof access and safety matter
 

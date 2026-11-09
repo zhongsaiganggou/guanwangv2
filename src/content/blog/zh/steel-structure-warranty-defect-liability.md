@@ -15,13 +15,10 @@ ctaType: "send-project-requirements"
 noindex: false
 author: "ZhongSai Steel Structure Editorial Team"
 translationKey: "steel-structure-warranty-defect-liability"
----
-
-钢结构质保通常覆盖合同约定的制造和材料缺陷，如焊接、加工或构件不符，质保期限和范围以合同为准；一般不覆盖运输损坏、安装不当、现场存放不当、后期改设计、超载或缺乏维护。买家应在合同里写明质保范围、期限、缺陷通知、证据和补救方式，到货及时验收并保留记录。中赛把质保条款写进合同，而不是做口头承诺。
+---钢结构质保通常覆盖合同约定的制造和材料缺陷，如焊接、加工或构件不符，质保期限和范围以合同为准；一般不覆盖运输损坏、安装不当、现场存放不当、后期改设计、超载或缺乏维护。买家应在合同里写明质保范围、期限、缺陷通知、证据和补救方式，到货及时验收并保留记录。中赛把质保条款写进合同，而不是做口头承诺。
 
 本文说明质保覆盖什么、不覆盖什么，缺陷责任期如何界定，如何提出缺陷，以及如何保留权利。
 
-![质检员在厂区手持记录板检查成品钢构件，代表质量与质保验收（概念示意图）](/images/blog/steel-structure-warranty-defect-liability/cover.jpg)
 
 ## 质保是什么、不是什么
 

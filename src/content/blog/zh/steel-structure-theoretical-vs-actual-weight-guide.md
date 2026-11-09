@@ -15,13 +15,10 @@ ctaType: "send-project-requirements"
 noindex: false
 author: "ZhongSai Steel Structure Editorial Team"
 translationKey: "steel-structure-theoretical-vs-actual-weight-guide"
----
-
-钢材按重量计价时，理论重量（按截面尺寸与理论密度计算）与过磅重量（地磅实际称）通常不会完全一致，差异来自制造公差、壁厚正负偏差、焊缝与加劲板、涂层与表面状态。合同必须写清按哪种口径结算、磅差如何处理、是否允许负公差；中赛在报价与发货单中明确重量口径与过磅记录。磅差没有固定全球值，取决于标准、规格与公差，不能套用固定数字。
+---钢材按重量计价时，理论重量（按截面尺寸与理论密度计算）与过磅重量（地磅实际称）通常不会完全一致，差异来自制造公差、壁厚正负偏差、焊缝与加劲板、涂层与表面状态。合同必须写清按哪种口径结算、磅差如何处理、是否允许负公差；中赛在报价与发货单中明确重量口径与过磅记录。磅差没有固定全球值，取决于标准、规格与公差，不能套用固定数字。
 
 本文说明两种重量口径、差异原因，以及如何约定，避免按吨位结算时扯皮。
 
-![满载钢材的货车停在地磅平台上，工作人员查看称重仪表（概念示意图）](/images/blog/steel-structure-theoretical-vs-actual-weight-guide/cover.jpg)
 
 ## 钢材重量的两种口径
 

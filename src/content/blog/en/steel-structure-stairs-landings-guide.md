@@ -15,13 +15,10 @@ ctaType: "send-project-requirements"
 noindex: false
 author: "ZhongSai Steel Structure Editorial Team"
 translationKey: "steel-structure-stairs-landings-guide"
----
-
-Steel stairs connect the levels of a building, mezzanine or platform. Stair type, tread material, width, rise and run, headroom and handrail height depend on the building use, the people and equipment using them, and the local safety code — there is no single standard stair that fits every project. A stair is fabricated from stringers, treads, landings and handrails, welded or bolted together, and supplied as part of the steel scope. Buyers should confirm the stair layout, dimensions and finish on the approved drawings before fabrication, because changing a stair after cutting means re-fabricating it.
+---Steel stairs connect the levels of a building, mezzanine or platform. Stair type, tread material, width, rise and run, headroom and handrail height depend on the building use, the people and equipment using them, and the local safety code — there is no single standard stair that fits every project. A stair is fabricated from stringers, treads, landings and handrails, welded or bolted together, and supplied as part of the steel scope. Buyers should confirm the stair layout, dimensions and finish on the approved drawings before fabrication, because changing a stair after cutting means re-fabricating it.
 
 This guide explains the main stair types, tread options, the design requirements to confirm, and the buyer checklist.
 
-![Steel staircase with grating treads and handrails connecting mezzanine levels (illustrative concept image)](/images/blog/steel-structure-stairs-landings-guide/cover.jpg)
 
 ## Part 1: Why stair design matters
 

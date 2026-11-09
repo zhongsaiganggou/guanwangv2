@@ -1,4 +1,4 @@
-﻿---
+---
 title: How to Audit a Steel Structure Factory in China? Practical Checklist
 language: en
 category: Supplier Selection
@@ -37,7 +37,6 @@ Ask for real equipment lists and, where possible, verify them visually:
 - **Lifting capacity**: bridge cranes rated capacity — this tells you the heaviest member they can handle
 - **Annual output range**: ask for tonnage and compare with your project size; a factory vastly smaller or vastly larger than your needs can both be risky
 
-![Steel structure factory workshop](/images/blog/steel-structure-factory-audit-checklist/cover.jpg)
 
 ## 3. Welding Quality Control
 

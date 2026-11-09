@@ -15,13 +15,10 @@ ctaType: "send-project-requirements"
 noindex: false
 author: "ZhongSai Steel Structure Editorial Team"
 translationKey: "steel-building-roof-waterproofing-guide"
----
-
-金属屋面漏水很少来自面板本身，多数来自节点——屋脊、檐口、山墙泛水、板与板搭接、天窗与设备开孔。防水做法取决于屋面坡度、当地气候与建筑规范，没有放之四海皆准的单一方案，关键在于把这些节点做对。中赛做钢结构20年、专注出口15年，可为所供建筑协调泛水与收边。
+---金属屋面漏水很少来自面板本身，多数来自节点——屋脊、檐口、山墙泛水、板与板搭接、天窗与设备开孔。防水做法取决于屋面坡度、当地气候与建筑规范，没有放之四海皆准的单一方案，关键在于把这些节点做对。中赛做钢结构20年、专注出口15年，可为所供建筑协调泛水与收边。
 
 本文标出雨水最容易进入的位置，以及采购方在屋面发货前可以检查的事项。
 
-![钢结构厂房屋脊与泛水节点（概念示意图）](/images/blog/steel-building-roof-waterproofing-guide/cover.jpg)
 
 ## 一、金属屋面最常漏水的部位
 

@@ -1,4 +1,4 @@
-﻿---
+---
 title: "Portal Frame vs Truss Steel Buildings: Which to Choose?"
 language: en
 category: Installation & Technical
@@ -62,7 +62,6 @@ A truss roof uses triangulated steel members that carry loads mainly as axial fo
 | Erection speed | fast | slower, more bolts |
 | Best for | warehouse, workshop, logistics | hangar, stadium, hall, mezzanine warehouse |
 
-![Campus of steel buildings](/images/blog/portal-frame-vs-truss-steel-building/cover.jpg)
 
 ## 4. How Crane Loads Change the Choice
 

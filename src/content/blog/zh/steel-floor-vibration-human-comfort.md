@@ -15,13 +15,10 @@ ctaType: "send-project-requirements"
 noindex: false
 author: "ZhongSai Steel Structure Editorial Team"
 translationKey: "steel-floor-vibration-human-comfort"
----
-
-钢结构楼盖，尤其是大跨度、轻质的组合楼板，在人行或设备下可能产生可感知的振动，但可感知不等于不安全。舒适度通常通过刚度、自振频率和加速度来控制，是否需要调整由结构工程师按规范和用途判断，没有统一限值。
+---钢结构楼盖，尤其是大跨度、轻质的组合楼板，在人行或设备下可能产生可感知的振动，但可感知不等于不安全。舒适度通常通过刚度、自振频率和加速度来控制，是否需要调整由结构工程师按规范和用途判断，没有统一限值。
 
 本文讲清楚为什么会振动、怎么控制，而不是给固定值。
 
-![多层钢结构建筑内部的组合楼板（概念示意图）](/images/blog/steel-floor-vibration-human-comfort/cover.jpg)
 
 ## 钢结构楼盖为什么会振动
 

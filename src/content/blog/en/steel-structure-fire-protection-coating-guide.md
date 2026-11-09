@@ -15,13 +15,10 @@ ctaType: "send-project-requirements"
 noindex: false
 author: "ZhongSai Steel Structure Editorial Team"
 translationKey: "steel-structure-fire-protection-coating-guide"
----
-
-The quality of fire protection coating application decides whether a steel structure's fire rating actually holds. The result depends on surface preparation, the coating type (intumescent or cementitious), application conditions and dry-film thickness verification; thickness is the core of acceptance and must follow the certified data of the chosen system for the required fire rating, member profile and section factor. ZhongSai has built steel structures for 20 years and focused on exports for 15, and can coordinate fire protection coating technical guidance for the buildings we fabricate.
+---The quality of fire protection coating application decides whether a steel structure's fire rating actually holds. The result depends on surface preparation, the coating type (intumescent or cementitious), application conditions and dry-film thickness verification; thickness is the core of acceptance and must follow the certified data of the chosen system for the required fire rating, member profile and section factor. ZhongSai has built steel structures for 20 years and focused on exports for 15, and can coordinate fire protection coating technical guidance for the buildings we fabricate.
 
 This guide covers what buyers, site engineers and inspectors should check when fire protection coating is applied on a steel building.
 
-![Worker in protective suit spray-applying intumescent fire protection coating on steel members (illustrative concept image)](/images/blog/steel-structure-fire-protection-coating-guide/cover.jpg)
 
 ## Two mainstream coating types
 

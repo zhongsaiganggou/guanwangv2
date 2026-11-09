@@ -15,13 +15,10 @@ ctaType: "send-project-requirements"
 noindex: false
 author: "ZhongSai Steel Structure Editorial Team"
 translationKey: "steel-structure-ndt-testing"
----
-
-Non-destructive testing (NDT) checks welds and steel members for internal or surface flaws without damaging them. The common methods are visual testing (VT), ultrasonic testing (UT) and magnetic particle testing (MT); radiography (RT) is used where the specification requires it. The methods and acceptance criteria follow the project specification and the buyer's requirements. ZhongSai's QC performs the agreed NDT and issues reports and certificates with the steel.
+---Non-destructive testing (NDT) checks welds and steel members for internal or surface flaws without damaging them. The common methods are visual testing (VT), ultrasonic testing (UT) and magnetic particle testing (MT); radiography (RT) is used where the specification requires it. The methods and acceptance criteria follow the project specification and the buyer's requirements. ZhongSai's QC performs the agreed NDT and issues reports and certificates with the steel.
 
 This guide explains the methods, when testing happens, and how buyers can specify and check it.
 
-![QC inspector performing ultrasonic testing on a steel weld (illustrative concept image)](/images/blog/steel-structure-ndt-testing/cover.jpg)
 
 ## Part 1: Why NDT matters for steel structures
 

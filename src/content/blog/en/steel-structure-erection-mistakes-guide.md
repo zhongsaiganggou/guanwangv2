@@ -15,13 +15,10 @@ ctaType: "send-project-requirements"
 noindex: false
 author: "ZhongSai Steel Structure Editorial Team"
 translationKey: "steel-structure-erection-mistakes-guide"
----
-
-The most common steel structure erection mistakes are anchor bolt misalignment, wrong lifting sequence, missing temporary bracing, undertightened bolts and mismarked members. Each fix depends on the site conditions and the drawings — not fixed global values. ZhongSai has built steel structures for 20 years and focused on exports for 15, providing installation technical guidance with the package.
+---The most common steel structure erection mistakes are anchor bolt misalignment, wrong lifting sequence, missing temporary bracing, undertightened bolts and mismarked members. Each fix depends on the site conditions and the drawings — not fixed global values. ZhongSai has built steel structures for 20 years and focused on exports for 15, providing installation technical guidance with the package.
 
 This guide lists the mistakes, the consequences and the prevention.
 
-![Steel structure erection site with crane and workers (illustrative concept image)](/images/blog/steel-structure-erection-mistakes-guide/cover.jpg)
 
 ## Part 1: The five mistakes that cause most site problems
 

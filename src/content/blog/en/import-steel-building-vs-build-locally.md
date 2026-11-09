@@ -15,13 +15,10 @@ ctaType: "send-project-requirements"
 noindex: false
 author: "ZhongSai Steel Structure Editorial Team"
 translationKey: "import-steel-building-vs-build-locally"
----
-
-There is no universal answer; importing versus building locally depends on local steel capacity, cost, lead time, quality needs, project size, shipping, customs and the ability to install. Compare the full landed cost and the local option before deciding.
+---There is no universal answer; importing versus building locally depends on local steel capacity, cost, lead time, quality needs, project size, shipping, customs and the ability to install. Compare the full landed cost and the local option before deciding.
 
 This guide gives a decision framework rather than a fixed saving claim.
 
-![A container port with quay cranes and stacked containers, representing imported steel (illustrative concept image)](/images/blog/import-steel-building-vs-build-locally/cover.jpg)
 
 ## When importing is common
 

@@ -15,13 +15,10 @@ ctaType: "send-project-requirements"
 noindex: false
 author: "ZhongSai Steel Structure Editorial Team"
 translationKey: "steel-structure-design-change-order-management"
----
-
-设计变更可以做，但要走书面变更单。变更越早提出，影响越小；一旦材料已采购或构件已加工，变更可能增加费用和工期。变更单应写清改什么、费用、工期变化和双方确认。尽早冻结图纸、在加工前确认要求，可以减少变更。中赛在执行任何变更前都会书面确认。
+---设计变更可以做，但要走书面变更单。变更越早提出，影响越小；一旦材料已采购或构件已加工，变更可能增加费用和工期。变更单应写清改什么、费用、工期变化和双方确认。尽早冻结图纸、在加工前确认要求，可以减少变更。中赛在执行任何变更前都会书面确认。
 
 本文说明什么是变更单、变更时机如何决定费用、变更单应包含哪些内容，以及如何控制变更。
 
-![工程师在项目会议上一起审阅蓝图，代表设计确认与修改（概念示意图）](/images/blog/steel-structure-design-change-order-management/cover.jpg)
 
 ## 什么是设计变更和变更单
 

@@ -15,13 +15,10 @@ ctaType: "send-project-requirements"
 noindex: false
 author: "ZhongSai Steel Structure Editorial Team"
 translationKey: "steel-structure-theoretical-vs-actual-weight-guide"
----
-
-When steel is priced by weight, the theoretical weight (calculated from section size and nominal density) and the actual weighbridge weight rarely match exactly. The difference comes from mill tolerances, positive or negative section deviation, welds and stiffeners, coating and surface condition. The contract must state which weight basis is used for settlement, how any weight difference is handled, and whether negative tolerance is allowed; ZhongSai states the weight basis and weighing records on the quotation and packing list. There is no fixed global figure for the weight difference — it depends on the standard, section size and tolerance, so a fixed number cannot be applied.
+---When steel is priced by weight, the theoretical weight (calculated from section size and nominal density) and the actual weighbridge weight rarely match exactly. The difference comes from mill tolerances, positive or negative section deviation, welds and stiffeners, coating and surface condition. The contract must state which weight basis is used for settlement, how any weight difference is handled, and whether negative tolerance is allowed; ZhongSai states the weight basis and weighing records on the quotation and packing list. There is no fixed global figure for the weight difference — it depends on the standard, section size and tolerance, so a fixed number cannot be applied.
 
 This guide explains the two weight bases, why they differ, and how to agree them so the tonnage invoice is not disputed.
 
-![Loaded steel truck on a weighbridge platform while a worker checks the weighing indicator (illustrative concept image)](/images/blog/steel-structure-theoretical-vs-actual-weight-guide/cover.jpg)
 
 ## Two ways to state steel weight
 

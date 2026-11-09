@@ -15,13 +15,10 @@ ctaType: "send-project-requirements"
 noindex: false
 author: "ZhongSai Steel Structure Editorial Team"
 translationKey: "steel-structure-shipping-container-vs-breakbulk"
----
-
-集装箱和散货船都能运钢结构，选择取决于构件尺寸、总吨位、港口条件、包装与交期。常规柱、梁、檩条拆散后可装 40HQ 集装箱，而超长、超高、超重构件——长跨梁、整榀桁架、重型设备基础件——通常走散货船。没有绝对更优的方式，取决于图纸、构件尺寸、港口吊装能力与交期。中赛做钢结构20年、专注出口15年，可为所供建筑协调包装、装柜与出口。
+---集装箱和散货船都能运钢结构，选择取决于构件尺寸、总吨位、港口条件、包装与交期。常规柱、梁、檩条拆散后可装 40HQ 集装箱，而超长、超高、超重构件——长跨梁、整榀桁架、重型设备基础件——通常走散货船。没有绝对更优的方式，取决于图纸、构件尺寸、港口吊装能力与交期。中赛做钢结构20年、专注出口15年，可为所供建筑协调包装、装柜与出口。
 
 本文说明采购方在报价阶段之前如何决定两种运输方式。
 
-![集装箱码头与龙门吊装卸钢货（概念示意图）](/images/blog/steel-structure-shipping-container-vs-breakbulk/cover.jpg)
 
 ## 两种方式是什么
 

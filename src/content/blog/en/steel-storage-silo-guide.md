@@ -15,13 +15,10 @@ ctaType: "send-project-requirements"
 noindex: false
 author: "ZhongSai Steel Structure Editorial Team"
 translationKey: "steel-storage-silo-guide"
----
-
-A steel storage silo is a cylindrical bulk-storage structure that holds granular or powdery materials such as cement, fly ash, grain, feed, ore and plastic pellets. Silo design is driven by stored material properties, capacity, discharge method and local loads — wall thickness, hopper angle and foundation all depend on these inputs, not on a universal size table. Bolted corrugated steel silos are the most common export option because they ship flat and assemble on site.
+---A steel storage silo is a cylindrical bulk-storage structure that holds granular or powdery materials such as cement, fly ash, grain, feed, ore and plastic pellets. Silo design is driven by stored material properties, capacity, discharge method and local loads — wall thickness, hopper angle and foundation all depend on these inputs, not on a universal size table. Bolted corrugated steel silos are the most common export option because they ship flat and assemble on site.
 
 This guide covers the main silo types, the design inputs a fabricator needs, and what buyers should specify before requesting a quotation.
 
-![Battery of galvanised steel storage silos with conveying structures at a bulk material facility (illustrative concept image)](/images/blog/steel-storage-silo-guide/cover.jpg)
 
 ## What a steel storage silo is and when to choose one
 

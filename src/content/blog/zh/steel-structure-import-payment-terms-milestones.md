@@ -15,13 +15,10 @@ ctaType: "send-project-requirements"
 noindex: false
 author: "ZhongSai Steel Structure Editorial Team"
 translationKey: "steel-structure-import-payment-terms-milestones"
----
-
-进口钢结构通常按签约、投产、发货前、到港等项目里程碑分阶段付款，常见电汇（TT）与信用证（LC）。付款应与图纸确认、验货、发货单据挂钩；各节点比例由合同约定，取决于订单规模，不能套用固定比例。贸易术语（Incoterms）决定费用与风险转移点，但不决定付款方式。中赛可提供与里程碑和单据一致的付款计划。
+---进口钢结构通常按签约、投产、发货前、到港等项目里程碑分阶段付款，常见电汇（TT）与信用证（LC）。付款应与图纸确认、验货、发货单据挂钩；各节点比例由合同约定，取决于订单规模，不能套用固定比例。贸易术语（Incoterms）决定费用与风险转移点，但不决定付款方式。中赛可提供与里程碑和单据一致的付款计划。
 
 本文说明里程碑付款如何设置、TT 与 LC 的区别，以及如何把每笔钱与可核验的凭证挂钩，保护买卖双方。
 
-![两位商务人士在会议桌钢结构图纸上签署供货合同（概念示意图）](/images/blog/steel-structure-import-payment-terms-milestones/cover.jpg)
 
 ## 为什么付款结构很重要
 

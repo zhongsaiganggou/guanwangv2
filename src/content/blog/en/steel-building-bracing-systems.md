@@ -15,13 +15,10 @@ ctaType: "send-project-requirements"
 noindex: false
 author: "ZhongSai Steel Structure Editorial Team"
 translationKey: "steel-building-bracing-systems"
----
-
-Steel buildings are braced against lateral loads by roof bracing, wall cross bracing, portal frames or column bracing, depending on the spans, loads and approved design. Bracing members are part of the steel scope: ZhongSai details, fabricates and marks them with the frame, and provides erection guidance; the local team installs them in the sequence shown on the erection drawings.
+---Steel buildings are braced against lateral loads by roof bracing, wall cross bracing, portal frames or column bracing, depending on the spans, loads and approved design. Bracing members are part of the steel scope: ZhongSai details, fabricates and marks them with the frame, and provides erection guidance; the local team installs them in the sequence shown on the erection drawings.
 
 This guide explains the bracing types, design points and installation order.
 
-![Cross bracing on the walls of a steel building under construction (illustrative concept image)](/images/blog/steel-building-bracing-systems/cover.jpg)
 
 ## Part 1: Why steel buildings need bracing
 

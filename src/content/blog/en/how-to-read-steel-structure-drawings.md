@@ -15,13 +15,10 @@ ctaType: "send-project-requirements"
 noindex: false
 author: "ZhongSai Steel Structure Editorial Team"
 translationKey: "how-to-read-steel-structure-drawings"
----
-
-Steel structure drawings come in three levels: general arrangement (GA) drawings show the whole building, shop or detail drawings show each member with dimensions and connections, and erection drawings show assembly sequence and member marks. Reading them means checking the title block, dimensions, material schedule, weld symbols and member marks against the project. ZhongSai issues fabrication and erection drawings from the approved design; the local team reads and follows them on site.
+---Steel structure drawings come in three levels: general arrangement (GA) drawings show the whole building, shop or detail drawings show each member with dimensions and connections, and erection drawings show assembly sequence and member marks. Reading them means checking the title block, dimensions, material schedule, weld symbols and member marks against the project. ZhongSai issues fabrication and erection drawings from the approved design; the local team reads and follows them on site.
 
 This guide explains the drawing types, the key elements to check, and a step-by-step way to read them.
 
-![Engineer reviewing steel structure drawings at a construction site (illustrative concept image)](/images/blog/how-to-read-steel-structure-drawings/cover.jpg)
 
 ## Part 1: Why reading drawings correctly matters
 

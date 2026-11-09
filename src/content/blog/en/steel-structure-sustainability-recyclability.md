@@ -15,13 +15,10 @@ ctaType: "send-project-requirements"
 noindex: false
 author: "ZhongSai Steel Structure Editorial Team"
 translationKey: "steel-structure-sustainability-recyclability"
----
-
-Steel buildings can be a sustainable choice because steel can be recycled repeatedly without loss of properties, components can be designed for dismantling and reuse, and factory fabrication produces less site waste. Sustainability still depends on the material source, coating, design life, production energy and local code, so it is not guaranteed by the material alone.
+---Steel buildings can be a sustainable choice because steel can be recycled repeatedly without loss of properties, components can be designed for dismantling and reuse, and factory fabrication produces less site waste. Sustainability still depends on the material source, coating, design life, production energy and local code, so it is not guaranteed by the material alone.
 
 This guide explains recycling, reuse, recycled content and design for dismantling.
 
-![A modern steel-framed building under a clear sky with surrounding greenery (illustrative concept image)](/images/blog/steel-structure-sustainability-recyclability/cover.jpg)
 
 ## Recycling and reuse are different
 

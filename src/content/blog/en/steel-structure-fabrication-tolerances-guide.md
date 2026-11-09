@@ -15,13 +15,10 @@ ctaType: "send-project-requirements"
 noindex: false
 author: "ZhongSai Steel Structure Editorial Team"
 translationKey: "steel-structure-fabrication-tolerances-guide"
----
-
-Fabrication tolerances are the permitted deviations between a finished steel member and the dimensions, positions and shapes shown on the approved drawings. No steel member is fabricated exactly to the drawing dimension; every cut, weld and assembly carries a small deviation, and the tolerance defines how large that deviation may be while the structure still fits and performs as designed. Tolerances cover member length and straightness, cross-section dimensions, squareness, hole positions, weld distortion and overall frame geometry, and they are set by the applicable standard — commonly GB 50205 in China, the AISC Code of Standard Practice in North America, or EN 1090-2 in Europe. If tolerances are not controlled, small deviations accumulate across members and show up on site as misaligned holes, members that do not meet, or forced connections. Tolerance control is part of the fabricator's quality scope; the buyer's engineer confirms the applicable standard and acceptance criteria before fabrication.
+---Fabrication tolerances are the permitted deviations between a finished steel member and the dimensions, positions and shapes shown on the approved drawings. No steel member is fabricated exactly to the drawing dimension; every cut, weld and assembly carries a small deviation, and the tolerance defines how large that deviation may be while the structure still fits and performs as designed. Tolerances cover member length and straightness, cross-section dimensions, squareness, hole positions, weld distortion and overall frame geometry, and they are set by the applicable standard — commonly GB 50205 in China, the AISC Code of Standard Practice in North America, or EN 1090-2 in Europe. If tolerances are not controlled, small deviations accumulate across members and show up on site as misaligned holes, members that do not meet, or forced connections. Tolerance control is part of the fabricator's quality scope; the buyer's engineer confirms the applicable standard and acceptance criteria before fabrication.
 
 This guide explains what fabrication tolerances cover, how the main standards compare, how accuracy is controlled during fabrication, how tolerances affect site erection, and what buyers should check at acceptance.
 
-![QC inspector measuring a steel member with a tape measure in a fabrication shop (illustrative concept image)](/images/blog/steel-structure-fabrication-tolerances-guide/cover.jpg)
 
 ## Part 1: What fabrication tolerances are and why they matter
 

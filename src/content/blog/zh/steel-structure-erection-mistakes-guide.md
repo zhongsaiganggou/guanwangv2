@@ -15,13 +15,10 @@ ctaType: "send-project-requirements"
 noindex: false
 author: "ZhongSai Steel Structure Editorial Team"
 translationKey: "steel-structure-erection-mistakes-guide"
----
-
-钢结构现场安装最常见的错误是锚栓偏差、吊装顺序错误、缺少临时支撑、螺栓未按扭矩终拧和构件编号错位。每一项预防措施都取决于现场条件与图纸——没有固定全球值。中赛做钢结构20年、专注出口15年，随整套钢结构提供安装技术指引。
+---钢结构现场安装最常见的错误是锚栓偏差、吊装顺序错误、缺少临时支撑、螺栓未按扭矩终拧和构件编号错位。每一项预防措施都取决于现场条件与图纸——没有固定全球值。中赛做钢结构20年、专注出口15年，随整套钢结构提供安装技术指引。
 
 本文列出常见错误、后果与预防方法。
 
-![钢结构吊装现场：吊车与工人（概念示意图）](/images/blog/steel-structure-erection-mistakes-guide/cover.jpg)
 
 ## 一、最容易出问题的五种错误
 

@@ -13,11 +13,8 @@ updatedAt: "2026-09-19"
 ctaType: send-project-requirements
 noindex: false
 author: ZhongSai Engineering Team
----
+---A steel workshop with an overhead crane is not the same building as a crane-free workshop. The crane capacity, lifting height, span, duty class and number of cranes directly change column sizes, bracket details, roof bracing and foundation loads. If these parameters are not agreed before design, a quotation is only a rough guess and the finished building may fail site acceptance. To get a reliable price, you need a clear crane specification plus site design loads.
 
-A steel workshop with an overhead crane is not the same building as a crane-free workshop. The crane capacity, lifting height, span, duty class and number of cranes directly change column sizes, bracket details, roof bracing and foundation loads. If these parameters are not agreed before design, a quotation is only a rough guess and the finished building may fail site acceptance. To get a reliable price, you need a clear crane specification plus site design loads.
-
-![Overhead bridge crane running inside a steel workshop](/images/blog/overhead-crane-workshop-design/cover.jpg)
 
 ## Why Crane Data Changes the Whole Structure
 

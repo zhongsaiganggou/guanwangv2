@@ -15,13 +15,10 @@ ctaType: "send-project-requirements"
 noindex: false
 author: "ZhongSai Steel Structure Editorial Team"
 translationKey: "steel-structure-temporary-bracing-guide"
----
-
-A steel frame becomes stable only when it is fully connected and the permanent bracing is in place. Until then, temporary bracing — guy wires, rigid braces, temporary struts or temporary bolted connections — holds columns plumb and prevents the frame from collapsing under its own weight or wind during erection. What type to use, where to place it, and when to remove it depend on the structure, wind loads and the approved erection sequence, so the plan should be set before the first member is lifted. Buyers should confirm who supplies and installs temporary bracing, and that the erection team follows the drawings and the fabricator's guidance.
+---A steel frame becomes stable only when it is fully connected and the permanent bracing is in place. Until then, temporary bracing — guy wires, rigid braces, temporary struts or temporary bolted connections — holds columns plumb and prevents the frame from collapsing under its own weight or wind during erection. What type to use, where to place it, and when to remove it depend on the structure, wind loads and the approved erection sequence, so the plan should be set before the first member is lifted. Buyers should confirm who supplies and installs temporary bracing, and that the erection team follows the drawings and the fabricator's guidance.
 
 This guide explains why temporary bracing matters, the main bracing types, when to install and remove it, layout and anchorage basics, and the site responsibility checklist.
 
-![Steel columns held upright by temporary guy wires and braces during erection (illustrative concept image)](/images/blog/steel-structure-temporary-bracing-guide/cover.jpg)
 
 ## Part 1: Why temporary bracing matters
 

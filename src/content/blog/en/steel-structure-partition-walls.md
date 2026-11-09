@@ -15,13 +15,10 @@ ctaType: "send-project-requirements"
 noindex: false
 author: "ZhongSai Steel Structure Editorial Team"
 translationKey: "steel-structure-partition-walls"
----
-
-Interior partition walls in steel buildings are usually single-skin or sandwich panels on steel frames, sometimes blockwork where fire or sound separation is required. The choice depends on the room use, fire rating, local code and approved design. ZhongSai supplies partition wall panels and frames within the steel scope, with details coordinated in the drawings; installation on site is done by the local team with technical guidance.
+---Interior partition walls in steel buildings are usually single-skin or sandwich panels on steel frames, sometimes blockwork where fire or sound separation is required. The choice depends on the room use, fire rating, local code and approved design. ZhongSai supplies partition wall panels and frames within the steel scope, with details coordinated in the drawings; installation on site is done by the local team with technical guidance.
 
 This guide covers the wall types, materials, design points and a procurement checklist.
 
-![Office partition walls built with sandwich panels inside a steel building (illustrative concept image)](/images/blog/steel-structure-partition-walls/cover.jpg)
 
 ## Part 1: Why interior walls are planned with the steel
 

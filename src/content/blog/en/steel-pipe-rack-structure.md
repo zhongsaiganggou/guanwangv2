@@ -15,13 +15,10 @@ ctaType: "send-project-requirements"
 noindex: false
 author: "ZhongSai Steel Structure Editorial Team"
 translationKey: "steel-pipe-rack-structure"
----
-
-A steel pipe rack is an open, multi-level steel frame that supports process pipes, cable trays and sometimes equipment in petrochemical, chemical and power plants. It is formed by transverse bents, longitudinal bracing, multiple levels of beams, walkways and guardrails.
+---A steel pipe rack is an open, multi-level steel frame that supports process pipes, cable trays and sometimes equipment in petrochemical, chemical and power plants. It is formed by transverse bents, longitudinal bracing, multiple levels of beams, walkways and guardrails.
 
 This guide explains how a pipe rack is structured and what to coordinate, rather than giving fixed dimensions.
 
-![A real multi-level steel pipe rack frame under construction at a petrochemical site, with a crawler crane](/images/projects/cnooc-pr6-pipe-rack-frame-aerial-rendering.jpg)
 
 ## What is a steel pipe rack
 

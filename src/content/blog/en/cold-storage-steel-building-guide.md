@@ -15,13 +15,10 @@ ctaType: "send-project-requirements"
 noindex: false
 author: "ZhongSai Steel Structure Editorial Team"
 translationKey: "cold-storage-steel-building-guide"
----
-
-A cold storage steel building is a steel frame wrapped in a high-performance insulated envelope with a continuous vapour barrier, cold-bridge control and fire compartments. Insulation type and thickness depend on the target temperature, local climate and code requirements — they are not fixed global values. ZhongSai supplies the frame and insulated cladding package, coordinated with the structural drawings.
+---A cold storage steel building is a steel frame wrapped in a high-performance insulated envelope with a continuous vapour barrier, cold-bridge control and fire compartments. Insulation type and thickness depend on the target temperature, local climate and code requirements — they are not fixed global values. ZhongSai supplies the frame and insulated cladding package, coordinated with the structural drawings.
 
 This guide explains how the building envelope works and what to specify before ordering.
 
-![Cold storage steel building exterior with insulated panels (illustrative concept image)](/images/blog/cold-storage-steel-building-guide/cover.jpg)
 
 ## Part 1: What makes a cold store different
 

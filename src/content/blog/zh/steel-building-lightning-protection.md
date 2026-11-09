@@ -15,13 +15,10 @@ ctaType: "send-project-requirements"
 noindex: false
 author: "ZhongSai Steel Structure Editorial Team"
 translationKey: "steel-building-lightning-protection"
----
-
-钢结构厂房通常需要防雷，但钢结构本身可参与防雷系统：符合条件的金属屋面可作接闪器，钢柱可作引下线，基础或接地极作接地。防雷类别、接地电阻和浪涌保护器由当地电气工程师按规范确定。
+---钢结构厂房通常需要防雷，但钢结构本身可参与防雷系统：符合条件的金属屋面可作接闪器，钢柱可作引下线，基础或接地极作接地。防雷类别、接地电阻和浪涌保护器由当地电气工程师按规范确定。
 
 本文讲清楚钢结构怎么参与防雷，而不是给固定值。
 
-![远处雷暴云下的钢结构厂房，地平线上有闪电（概念示意图）](/images/blog/steel-building-lightning-protection/cover.jpg)
 
 ## 钢结构厂房打雷安全吗
 

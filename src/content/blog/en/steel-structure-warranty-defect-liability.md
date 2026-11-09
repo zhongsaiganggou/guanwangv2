@@ -15,13 +15,10 @@ ctaType: "send-project-requirements"
 noindex: false
 author: "ZhongSai Steel Structure Editorial Team"
 translationKey: "steel-structure-warranty-defect-liability"
----
-
-A steel structure warranty usually covers agreed manufacturing and material defects, such as welding, fabrication or non-conforming members; the period and scope are set by the contract. It generally does not cover shipping damage, improper erection, poor site storage, later design changes, overload or lack of maintenance. Buyers should state the warranty scope, period, defect notice, evidence and remedy in the contract, inspect on arrival and keep records. ZhongSai confirms warranty terms in the contract rather than making open promises.
+---A steel structure warranty usually covers agreed manufacturing and material defects, such as welding, fabrication or non-conforming members; the period and scope are set by the contract. It generally does not cover shipping damage, improper erection, poor site storage, later design changes, overload or lack of maintenance. Buyers should state the warranty scope, period, defect notice, evidence and remedy in the contract, inspect on arrival and keep records. ZhongSai confirms warranty terms in the contract rather than making open promises.
 
 This guide explains what a warranty does and does not cover, how the defect liability period works, how to raise a defect, and how to protect your rights.
 
-![Inspector checking finished steel members in a works yard with a clipboard, representing quality and warranty inspection (illustrative concept image)](/images/blog/steel-structure-warranty-defect-liability/cover.jpg)
 
 ## What a warranty is and is not
 

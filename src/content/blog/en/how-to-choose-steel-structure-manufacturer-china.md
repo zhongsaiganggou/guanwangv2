@@ -13,11 +13,8 @@ updatedAt: "2026-09-16"
 ctaType: send-project-requirements
 noindex: false
 author: ZhongSai Engineering Team
----
+---Choosing a steel structure manufacturer in China is one of the most important decisions for an overseas project. The market is large, and quality, delivery, and communication vary widely. This guide focuses on practical criteria you can verify yourself, not marketing claims.
 
-Choosing a steel structure manufacturer in China is one of the most important decisions for an overseas project. The market is large, and quality, delivery, and communication vary widely. This guide focuses on practical criteria you can verify yourself, not marketing claims.
-
-![Steel structure fabrication workshop in China](/images/blog/choose-steel-manufacturer-china/cover.jpg)
 
 ## 1. Engineering and Detailing Capability
 

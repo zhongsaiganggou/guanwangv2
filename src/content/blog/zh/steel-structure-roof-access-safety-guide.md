@@ -15,13 +15,10 @@ ctaType: "send-project-requirements"
 noindex: false
 author: "ZhongSai Steel Structure Editorial Team"
 translationKey: "steel-structure-roof-access-safety-guide"
----
-
-钢结构建筑的屋面检修通道是规划出来的，不是事后补的。安全通道包括带安全护笼的屋面爬梯或检修马道、边缘护栏、内部检修口，以及经认证的防坠落安全锚点。布置、间距与防坠落要求取决于屋面设计、检修任务与适用安全规范。通道件可随钢结构范围制造供应并附安装指导，也可由买方当地团队安装。
+---钢结构建筑的屋面检修通道是规划出来的，不是事后补的。安全通道包括带安全护笼的屋面爬梯或检修马道、边缘护栏、内部检修口，以及经认证的防坠落安全锚点。布置、间距与防坠落要求取决于屋面设计、检修任务与适用安全规范。通道件可随钢结构范围制造供应并附安装指导，也可由买方当地团队安装。
 
 本文讲清屋面通道方式、安全要求、需要确认的设计要素，以及采购检查清单。
 
-![带安全护笼的屋面检修爬梯通往钢结构屋面（概念示意图）](/images/blog/steel-structure-roof-access-safety-guide/cover.jpg)
 
 ## 一、为什么屋面检修通道与安全重要
 

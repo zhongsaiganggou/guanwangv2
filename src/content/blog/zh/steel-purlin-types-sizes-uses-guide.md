@@ -15,13 +15,10 @@ ctaType: "send-project-requirements"
 noindex: false
 author: "ZhongSai Steel Structure Editorial Team"
 translationKey: "steel-purlin-types-sizes-uses-guide"
----
-
-钢檩条是一种冷弯成型的次结构构件，在钢结构建筑中承担屋面与墙面围护的支承，把荷载传递给主框架。Z 型檩条因可搭接、适合连续多跨屋面，通常是屋面的首选；C 型檩条更常用于短跨和墙梁。檩条的尺寸、间距和钢号始终取决于跨度、设计荷载、屋面坡度和当地规范——不存在一套放之四海皆准的尺寸表。
+---钢檩条是一种冷弯成型的次结构构件，在钢结构建筑中承担屋面与墙面围护的支承，把荷载传递给主框架。Z 型檩条因可搭接、适合连续多跨屋面，通常是屋面的首选；C 型檩条更常用于短跨和墙梁。檩条的尺寸、间距和钢号始终取决于跨度、设计荷载、屋面坡度和当地规范——不存在一套放之四海皆准的尺寸表。
 
 本文讲清楚檩条的类型、尺寸逻辑和用途，帮助你在下一个项目里正确提资和选型。
 
-![钢结构厂房屋面檩条沿主梁排列安装（示意图）](/images/blog/steel-purlin-types-sizes-uses-guide/cover.jpg)
 
 ## 什么是钢檩条，用在哪里
 

@@ -15,13 +15,10 @@ ctaType: "send-project-requirements"
 noindex: false
 author: "ZhongSai Steel Structure Editorial Team"
 translationKey: "steel-building-maintenance-guide"
----
-
-钢结构厂房需要定期检查，频率取决于环境、用途与当地规范：沿海或工业腐蚀环境、地震区、带吊车使用与保险要求都会改变检查周期。重点检查涂层、紧固件、屋面与墙面板、排水、门窗及任何可见变形。中赛做钢结构20年、专注出口15年，可为所供构件提供配套修补材料与技术指引。
+---钢结构厂房需要定期检查，频率取决于环境、用途与当地规范：沿海或工业腐蚀环境、地震区、带吊车使用与保险要求都会改变检查周期。重点检查涂层、紧固件、屋面与墙面板、排水、门窗及任何可见变形。中赛做钢结构20年、专注出口15年，可为所供构件提供配套修补材料与技术指引。
 
 本文说明检查频率、检查重点与早期预警信号。
 
-![钢结构厂房外部检查（概念示意图）](/images/blog/steel-building-maintenance-guide/cover.jpg)
 
 ## 一、钢结构厂房多久检查一次
 

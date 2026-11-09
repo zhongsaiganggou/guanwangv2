@@ -15,13 +15,10 @@ ctaType: "send-project-requirements"
 noindex: false
 author: "ZhongSai Steel Structure Editorial Team"
 translationKey: "steel-building-maintenance-guide"
----
-
-A steel building needs periodic inspection, and the interval depends on the environment, the use and the local code: coastal or industrial corrosion, seismic zones, crane operation and insurance requirements all change the schedule. Focus on the coating, fasteners, roof and wall sheets, drainage, doors and any visible deformation. ZhongSai has built steel structures for 20 years and focused on exports for 15, and can supply matching repair materials and technical guidance for the items we fabricate.
+---A steel building needs periodic inspection, and the interval depends on the environment, the use and the local code: coastal or industrial corrosion, seismic zones, crane operation and insurance requirements all change the schedule. Focus on the coating, fasteners, roof and wall sheets, drainage, doors and any visible deformation. ZhongSai has built steel structures for 20 years and focused on exports for 15, and can supply matching repair materials and technical guidance for the items we fabricate.
 
 This guide covers inspection frequency, what to check and early warning signs.
 
-![Inspection of a steel building exterior (illustrative concept image)](/images/blog/steel-building-maintenance-guide/cover.jpg)
 
 ## Part 1: How often should a steel building be inspected?
 

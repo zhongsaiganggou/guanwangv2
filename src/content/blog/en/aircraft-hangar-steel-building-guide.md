@@ -15,11 +15,8 @@ ctaType: "send-project-requirements"
 noindex: false
 author: "ZhongSai Steel Structure Editorial Team"
 translationKey: "aircraft-hangar-steel-building-guide"
----
+---A steel aircraft hangar is a large clear-span steel building used to park, maintain or store aircraft. Its span, height and door opening are set by the aircraft types it must serve, and every structural parameter — loads, fire rating, corrosion protection, foundations — depends on the project drawings, local code and site conditions rather than a fixed global value. Because the interior must stay column-free and the doors must open across most of the façade, a hangar is designed around the interaction of the main frame, the roof system and the door structure, then fabricated as marked, pre-drilled components for containerized export and site bolting. What you should provide before a quotation is a defined aircraft envelope, site and load information, and door and functional requirements — not a guess at tonnage.
 
-A steel aircraft hangar is a large clear-span steel building used to park, maintain or store aircraft. Its span, height and door opening are set by the aircraft types it must serve, and every structural parameter — loads, fire rating, corrosion protection, foundations — depends on the project drawings, local code and site conditions rather than a fixed global value. Because the interior must stay column-free and the doors must open across most of the façade, a hangar is designed around the interaction of the main frame, the roof system and the door structure, then fabricated as marked, pre-drilled components for containerized export and site bolting. What you should provide before a quotation is a defined aircraft envelope, site and load information, and door and functional requirements — not a guess at tonnage.
-
-![Wide-span steel hangar roof trusses being erected with a mobile crane (illustrative concept image)](/images/blog/aircraft-hangar-steel-building-guide/cover.jpg)
 
 ## Why steel is the default material for hangars and aviation buildings
 

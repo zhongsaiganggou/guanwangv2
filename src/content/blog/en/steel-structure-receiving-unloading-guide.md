@@ -15,13 +15,10 @@ ctaType: "send-project-requirements"
 noindex: false
 author: "ZhongSai Steel Structure Editorial Team"
 translationKey: "steel-structure-receiving-unloading-guide"
----
-
-Receiving a steel structure shipment is the moment the buyer takes responsibility for the goods. Before unloading, check the packing list against what arrived, inspect for damage, and only then sign the delivery note. Unload with lifting equipment sized for each member — a crane, forklift or boom truck, depending on member sizes — and never drag steel members across the ground. Damage claims depend on documented proof at delivery, so photograph and record everything. The equipment and crew needed depend on the member sizes, weights and the site layout.
+---Receiving a steel structure shipment is the moment the buyer takes responsibility for the goods. Before unloading, check the packing list against what arrived, inspect for damage, and only then sign the delivery note. Unload with lifting equipment sized for each member — a crane, forklift or boom truck, depending on member sizes — and never drag steel members across the ground. Damage claims depend on documented proof at delivery, so photograph and record everything. The equipment and crew needed depend on the member sizes, weights and the site layout.
 
 This guide explains how to prepare, unload, inspect, claim and store a steel structure delivery.
 
-![Container unloading steel members with a mobile crane and workers guiding (illustrative concept image)](/images/blog/steel-structure-receiving-unloading-guide/cover.jpg)
 
 ## Part 1: Why the receiving check matters
 

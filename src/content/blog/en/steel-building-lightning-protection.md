@@ -15,13 +15,10 @@ ctaType: "send-project-requirements"
 noindex: false
 author: "ZhongSai Steel Structure Editorial Team"
 translationKey: "steel-building-lightning-protection"
----
-
-Steel buildings generally need lightning protection, but the steel itself can form part of the system: a qualifying metal roof can act as an air terminal, steel columns as down conductors, and foundations or ground electrodes as the earth. The lightning protection level, grounding resistance and surge protective devices are set by a local electrical engineer to the local code.
+---Steel buildings generally need lightning protection, but the steel itself can form part of the system: a qualifying metal roof can act as an air terminal, steel columns as down conductors, and foundations or ground electrodes as the earth. The lightning protection level, grounding resistance and surge protective devices are set by a local electrical engineer to the local code.
 
 This guide explains how the steel structure participates, rather than giving fixed values.
 
-![A steel structure building under a distant storm cloud with lightning on the horizon (illustrative concept image)](/images/blog/steel-building-lightning-protection/cover.jpg)
 
 ## Is a steel building safe in a lightning storm
 

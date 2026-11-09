@@ -13,11 +13,8 @@ updatedAt: "2026-09-16"
 ctaType: send-project-requirements
 noindex: false
 author: 中赛工程团队
----
+---选择中国钢结构制造商，是海外项目最重要的决策之一。中国钢结构产能大，但质量、交付和沟通水平差异明显。本文提供可以自行核实的实用标准，而不是营销话术。
 
-选择中国钢结构制造商，是海外项目最重要的决策之一。中国钢结构产能大，但质量、交付和沟通水平差异明显。本文提供可以自行核实的实用标准，而不是营销话术。
-
-![中国钢结构制造车间](/images/blog/choose-steel-manufacturer-china/cover.jpg)
 
 ## 1. 工程与深化设计能力
 

@@ -15,13 +15,10 @@ ctaType: "send-project-requirements"
 noindex: false
 author: "ZhongSai Steel Structure Editorial Team"
 translationKey: "steel-purlin-types-sizes-uses-guide"
----
-
-A steel purlin is a cold-formed secondary member that supports roof and wall cladding across the main frames of a steel building. Z purlins are the usual choice for roof spans because they lap and suit continuous multi-span roofs; C purlins are common for shorter spans and as wall girts. The size, spacing and steel grade always depend on the span, design loads, roof slope and local code — there is no single universal purlin size.
+---A steel purlin is a cold-formed secondary member that supports roof and wall cladding across the main frames of a steel building. Z purlins are the usual choice for roof spans because they lap and suit continuous multi-span roofs; C purlins are common for shorter spans and as wall girts. The size, spacing and steel grade always depend on the span, design loads, roof slope and local code — there is no single universal purlin size.
 
 This guide explains the types, sizes and uses so you can specify purlins correctly on your next project.
 
-![Rows of steel purlins fixed across roof rafters of a steel building (illustrative concept image)](/images/blog/steel-purlin-types-sizes-uses-guide/cover.jpg)
 
 ## What a steel purlin is and where it is used
 

@@ -1,4 +1,4 @@
-﻿---
+---
 title: 如何审核中国钢结构工厂？实用验厂清单
 language: zh
 category: Supplier Selection
@@ -37,7 +37,6 @@ author: 中赛钢构工程团队
 - **起重能力**：桥式吊车额定吨位，决定它能处理多重的构件
 - **年产量区间**：问吨数，和你的项目体量对比；太小接不住、太大不重视都可能有风险
 
-![钢结构工厂车间](/images/blog/steel-structure-factory-audit-checklist/cover.jpg)
 
 ## 3. 焊接质量控制
 

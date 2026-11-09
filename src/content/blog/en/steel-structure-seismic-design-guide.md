@@ -15,13 +15,10 @@ ctaType: "send-project-requirements"
 noindex: false
 author: "ZhongSai Steel Structure Editorial Team"
 translationKey: "steel-structure-seismic-design-guide"
----
-
-Steel buildings resist earthquakes mainly through ductility and light self-weight, not through simply making members thicker. Under an earthquake, a steel frame is designed to absorb and dissipate energy by controlled inelastic deformation at selected locations, while the light weight of steel means the seismic force the structure must carry is relatively small. The seismic performance of a specific building depends on the local seismic zone and code, the structure's height and regularity, the lateral system chosen, and the quality of connections and detailing. There is no single "earthquake-proof" rating; the design must follow the code applicable at the project location, commonly GB 50011 in China, the IBC in North America, or Eurocode 8 in Europe, with the site's soil and importance factor included. Buyers in seismic regions should provide the seismic zone, site soil conditions, building importance, and any local code requirements before fabrication.
+---Steel buildings resist earthquakes mainly through ductility and light self-weight, not through simply making members thicker. Under an earthquake, a steel frame is designed to absorb and dissipate energy by controlled inelastic deformation at selected locations, while the light weight of steel means the seismic force the structure must carry is relatively small. The seismic performance of a specific building depends on the local seismic zone and code, the structure's height and regularity, the lateral system chosen, and the quality of connections and detailing. There is no single "earthquake-proof" rating; the design must follow the code applicable at the project location, commonly GB 50011 in China, the IBC in North America, or Eurocode 8 in Europe, with the site's soil and importance factor included. Buyers in seismic regions should provide the seismic zone, site soil conditions, building importance, and any local code requirements before fabrication.
 
 This guide explains how steel structures resist earthquakes, the main lateral systems, the design factors that matter, how seismic loads differ from wind, and what buyers should prepare for a seismic design project.
 
-![Steel braced frame with diagonal bracing under construction (illustrative concept image)](/images/blog/steel-structure-seismic-design-guide/cover.jpg)
 
 ## Part 1: Why steel structures perform well in earthquakes
 

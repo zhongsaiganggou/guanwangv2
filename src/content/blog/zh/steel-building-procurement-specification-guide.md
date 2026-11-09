@@ -15,13 +15,10 @@ ctaType: "send-project-requirements"
 noindex: false
 author: "ZhongSai Steel Structure Editorial Team"
 translationKey: "steel-building-procurement-specification-guide"
----
-
-技术规格书把设计意图变成可报价、可验收的采购文件。它不是图纸的替代品，而是图纸、验收标准与责任边界的汇总。内容取决于项目规模、当地规范与验收要求，没有固定模板，但每份规格书都应覆盖设计荷载、材料、涂层、公差、验收与供方职责。中赛做钢结构20年、专注出口15年，可为所供建筑协调工程与深化。
+---技术规格书把设计意图变成可报价、可验收的采购文件。它不是图纸的替代品，而是图纸、验收标准与责任边界的汇总。内容取决于项目规模、当地规范与验收要求，没有固定模板，但每份规格书都应覆盖设计荷载、材料、涂层、公差、验收与供方职责。中赛做钢结构20年、专注出口15年，可为所供建筑协调工程与深化。
 
 本文列出采购方可以在规格书中写清的章节，让厂家按设计师意图报价与生产。
 
-![工程师审阅钢结构技术规格书与图纸（概念示意图）](/images/blog/steel-building-procurement-specification-guide/cover.jpg)
 
 ## 一、规格书在采购流程中的位置
 

@@ -15,13 +15,10 @@ ctaType: "send-project-requirements"
 noindex: false
 author: "ZhongSai Steel Structure Editorial Team"
 translationKey: "steel-building-bracing-systems"
----
-
-钢结构靠屋面支撑、墙面交叉支撑、门式支撑或柱间支撑抵抗水平荷载，取决于跨度、荷载与批准设计。支撑构件属于钢结构范围：中赛随框架一并深化、加工与编号，并提供安装指导；当地团队按安装图顺序安装。
+---钢结构靠屋面支撑、墙面交叉支撑、门式支撑或柱间支撑抵抗水平荷载，取决于跨度、荷载与批准设计。支撑构件属于钢结构范围：中赛随框架一并深化、加工与编号，并提供安装指导；当地团队按安装图顺序安装。
 
 本文讲清支撑类型、设计要点与安装顺序。
 
-![在建钢结构厂房墙面的交叉支撑（概念示意图）](/images/blog/steel-building-bracing-systems/cover.jpg)
 
 ## 一、为什么钢结构需要支撑
 

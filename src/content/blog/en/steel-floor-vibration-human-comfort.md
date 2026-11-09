@@ -15,13 +15,10 @@ ctaType: "send-project-requirements"
 noindex: false
 author: "ZhongSai Steel Structure Editorial Team"
 translationKey: "steel-floor-vibration-human-comfort"
----
-
-Steel floors, especially long-span or lightweight composite floors, can show perceptible movement under people or equipment, but perceptible is not the same as unsafe. Comfort is usually handled through stiffness, natural frequency and acceleration, and whether adjustment is needed is judged by a structural engineer to the code and use; there is no universal limit.
+---Steel floors, especially long-span or lightweight composite floors, can show perceptible movement under people or equipment, but perceptible is not the same as unsafe. Comfort is usually handled through stiffness, natural frequency and acceleration, and whether adjustment is needed is judged by a structural engineer to the code and use; there is no universal limit.
 
 This guide explains why it happens and how it is controlled, rather than giving fixed values.
 
-![Interior of a multi-level steel structure building with a composite floor (illustrative concept image)](/images/blog/steel-floor-vibration-human-comfort/cover.jpg)
 
 ## Why steel floors vibrate
 

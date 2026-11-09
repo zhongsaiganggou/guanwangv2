@@ -1,4 +1,4 @@
-﻿---
+---
 title: Steel Structure Wind Load Design Guide
 language: en
 category: Installation & Technical

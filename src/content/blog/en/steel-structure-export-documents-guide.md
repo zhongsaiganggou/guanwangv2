@@ -15,13 +15,10 @@ ctaType: "send-project-requirements"
 noindex: false
 author: "ZhongSai Steel Structure Editorial Team"
 translationKey: "steel-structure-export-documents-guide"
----
-
-The core steel structure export documents are the commercial invoice, packing list, bill of lading, certificate of origin and customs declaration. The exact files, formats and certifications depend on the destination country, the trade terms, the shipping line and the customs broker. ZhongSai has built steel structures for 20 years and focused on exports for 15, coordinating export documentation for the steel package.
+---The core steel structure export documents are the commercial invoice, packing list, bill of lading, certificate of origin and customs declaration. The exact files, formats and certifications depend on the destination country, the trade terms, the shipping line and the customs broker. ZhongSai has built steel structures for 20 years and focused on exports for 15, coordinating export documentation for the steel package.
 
 This guide explains the common documents and who prepares them.
 
-![Container terminal with crane and containers (illustrative concept image)](/images/blog/steel-structure-export-documents-guide/cover.jpg)
 
 ## Part 1: The common documents in a steel structure export
 

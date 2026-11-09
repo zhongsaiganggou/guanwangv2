@@ -15,13 +15,10 @@ ctaType: "send-project-requirements"
 noindex: false
 author: "ZhongSai Steel Structure Editorial Team"
 translationKey: "steel-structure-ventilation-daylighting-guide"
----
-
-Steel buildings are ventilated and lit with ridge ventilators, turbo vents, side-wall louvers or mechanical fans for airflow, and daylighting panels, skylights or side-wall windows for natural light. The ventilation rate and daylight area depend on the building use, climate, local code and the approved design. Ventilation and daylighting openings are coordinated with the steel design and confirmed on the drawings. ZhongSai details the openings and supply items with the steel scope; installation of roof items is typically done by the local team with technical guidance.
+---Steel buildings are ventilated and lit with ridge ventilators, turbo vents, side-wall louvers or mechanical fans for airflow, and daylighting panels, skylights or side-wall windows for natural light. The ventilation rate and daylight area depend on the building use, climate, local code and the approved design. Ventilation and daylighting openings are coordinated with the steel design and confirmed on the drawings. ZhongSai details the openings and supply items with the steel scope; installation of roof items is typically done by the local team with technical guidance.
 
 This guide explains the main options, design points and the buyer checklist for ventilation and daylighting in steel buildings.
 
-![Ridge ventilators and daylighting panels on a steel building roof (illustrative concept image)](/images/blog/steel-structure-ventilation-daylighting-guide/cover.jpg)
 
 ## Part 1: Why ventilation and daylighting are planned with the structure
 

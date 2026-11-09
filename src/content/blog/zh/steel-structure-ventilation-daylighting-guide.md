@@ -15,13 +15,10 @@ ctaType: "send-project-requirements"
 noindex: false
 author: "ZhongSai Steel Structure Editorial Team"
 translationKey: "steel-structure-ventilation-daylighting-guide"
----
-
-钢结构建筑通过屋脊通风器、涡轮通风器、侧墙百叶或机械风机解决通风，通过采光板、天窗或侧墙采光窗解决自然采光。通风量与采光面积取决于建筑用途、气候、当地规范与批准设计。通风与采光开口随钢结构设计协调，在图纸上确认。中赛负责开口详图与范围内含的供货件；屋面构件的安装通常由当地团队按技术指导完成。
+---钢结构建筑通过屋脊通风器、涡轮通风器、侧墙百叶或机械风机解决通风，通过采光板、天窗或侧墙采光窗解决自然采光。通风量与采光面积取决于建筑用途、气候、当地规范与批准设计。通风与采光开口随钢结构设计协调，在图纸上确认。中赛负责开口详图与范围内含的供货件；屋面构件的安装通常由当地团队按技术指导完成。
 
 本文讲清主要方式、设计要点与钢结构通风采光的采购清单。
 
-![钢结构屋面上的屋脊通风器与采光板（概念示意图）](/images/blog/steel-structure-ventilation-daylighting-guide/cover.jpg)
 
 ## 一、为什么通风采光要随结构一起规划
 

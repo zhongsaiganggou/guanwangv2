@@ -15,13 +15,10 @@ ctaType: "send-project-requirements"
 noindex: false
 author: "ZhongSai Steel Structure Editorial Team"
 translationKey: "cold-storage-steel-building-guide"
----
-
-冷库钢结构厂房＝钢框架＋高性能保温围护，配合连续的防潮层、冷桥控制与防火分区。保温芯材与厚度取决于目标库温、当地气候与规范要求——没有固定全球值。中赛按结构图纸协调供货钢框架与保温围护系统。
+---冷库钢结构厂房＝钢框架＋高性能保温围护，配合连续的防潮层、冷桥控制与防火分区。保温芯材与厚度取决于目标库温、当地气候与规范要求——没有固定全球值。中赛按结构图纸协调供货钢框架与保温围护系统。
 
 本文说明保温围护如何工作，以及订货前要写进询价单的内容。
 
-![冷库钢结构厂房外观与保温夹芯板（概念示意图）](/images/blog/cold-storage-steel-building-guide/cover.jpg)
 
 ## 一、冷库与普通仓库的区别
 

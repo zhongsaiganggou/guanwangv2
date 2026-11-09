@@ -15,13 +15,10 @@ ctaType: "send-project-requirements"
 noindex: false
 author: "ZhongSai Steel Structure Editorial Team"
 translationKey: "steel-structure-thermal-expansion-joints"
----
-
-钢结构会随温度热胀冷缩。当厂房较长、或当地温差较大时，需要设置伸缩缝或温度区段，以避免温度应力。伸缩缝间距取决于结构形式、当地温差和规范，没有固定长度。伸缩缝通常用双柱或滑动连接形成，屋面、墙面和檩条的连接也要留出滑动余地。在设计阶段就把这些协调好，可避免后期漏水和损坏。
+---钢结构会随温度热胀冷缩。当厂房较长、或当地温差较大时，需要设置伸缩缝或温度区段，以避免温度应力。伸缩缝间距取决于结构形式、当地温差和规范，没有固定长度。伸缩缝通常用双柱或滑动连接形成，屋面、墙面和檩条的连接也要留出滑动余地。在设计阶段就把这些协调好，可避免后期漏水和损坏。
 
 本文说明什么时候需要伸缩缝、伸缩缝怎么形成，以及围护系统如何滑动。
 
-![一座长钢结构厂房，需要提前规划温度变形（概念示意图）](/images/blog/steel-structure-thermal-expansion-joints/cover.jpg)
 
 ## 为什么温度很重要
 

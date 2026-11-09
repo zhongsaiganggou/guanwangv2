@@ -15,13 +15,10 @@ ctaType: "send-project-requirements"
 noindex: false
 author: "ZhongSai Steel Structure Editorial Team"
 translationKey: "steel-material-substitution-equivalent-approval"
----
-
-A specified steel grade or section can sometimes be substituted, but it is never decided on the shop floor. Any substitute must meet or exceed the original design in strength, toughness, weldability and section performance, be approved in writing by the design engineer or buyer, and be recorded with an updated MTC. Whether it is acceptable depends on the code, contract and original design.
+---A specified steel grade or section can sometimes be substituted, but it is never decided on the shop floor. Any substitute must meet or exceed the original design in strength, toughness, weldability and section performance, be approved in writing by the design engineer or buyer, and be recorded with an updated MTC. Whether it is acceptable depends on the code, contract and original design.
 
 This guide explains how a controlled substitution works, rather than naming which grades are interchangeable.
 
-![Steel sections and beams stored in a steel fabrication workshop (illustrative concept image)](/images/blog/steel-material-substitution-equivalent-approval/cover.jpg)
 
 ## What material substitution means
 

@@ -15,13 +15,10 @@ ctaType: "send-project-requirements"
 noindex: false
 author: "ZhongSai Steel Structure Editorial Team"
 translationKey: "steel-structure-bolt-installation-guide"
----
-
-High-strength bolts are tightened to a defined bolt tension, not merely to a snug fit. The installation method — snug-tight or preloaded — and the tightening procedure (torque method, turn-of-nut, or tension-control bolts) are specified by the design and the applicable code, and they determine whether the connection carries load by friction or by bearing. Correct installation matters because under-tightened bolts can loosen and slip, while over-tightening can damage the bolt or the connection. The procedure depends on the bolt grade, connection type and local code, so the site team must follow the approved drawings and the fabricator's guidance. Buyers should confirm the bolt specification and tightening method before fabrication and verify installation on site.
+---High-strength bolts are tightened to a defined bolt tension, not merely to a snug fit. The installation method — snug-tight or preloaded — and the tightening procedure (torque method, turn-of-nut, or tension-control bolts) are specified by the design and the applicable code, and they determine whether the connection carries load by friction or by bearing. Correct installation matters because under-tightened bolts can loosen and slip, while over-tightening can damage the bolt or the connection. The procedure depends on the bolt grade, connection type and local code, so the site team must follow the approved drawings and the fabricator's guidance. Buyers should confirm the bolt specification and tightening method before fabrication and verify installation on site.
 
 This guide explains bolt grades, the difference between snug-tight and preloaded connections, the main tightening methods, common installation errors, and what to check after bolting.
 
-![Worker tightening high-strength bolts on a steel connection with a torque wrench (illustrative concept image)](/images/blog/steel-structure-bolt-installation-guide/cover.jpg)
 
 ## Part 1: Why bolt tension matters
 

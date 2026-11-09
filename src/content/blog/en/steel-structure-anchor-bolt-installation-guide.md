@@ -15,13 +15,10 @@ ctaType: "send-project-requirements"
 noindex: false
 author: "ZhongSai Steel Structure Editorial Team"
 translationKey: "steel-structure-anchor-bolt-installation-guide"
----
-
-Column bases transfer the building load into the foundation through anchor bolts cast into concrete. Installation works in three stages: set the anchor bolt cage and template before the pour, verify position and level after the pour, then place the column and grout the base plate. Anchor bolt size, embedment and spacing depend on the loads, the soil and the approved drawings. Foundation concrete is poured by the local team; ZhongSai provides anchor bolt layouts and installation technical guidance with the steel scope.
+---Column bases transfer the building load into the foundation through anchor bolts cast into concrete. Installation works in three stages: set the anchor bolt cage and template before the pour, verify position and level after the pour, then place the column and grout the base plate. Anchor bolt size, embedment and spacing depend on the loads, the soil and the approved drawings. Foundation concrete is poured by the local team; ZhongSai provides anchor bolt layouts and installation technical guidance with the steel scope.
 
 This guide explains the anchor bolt installation sequence, checks and tolerance handling for steel buildings.
 
-![Anchor bolt cage with setting template before concrete pour (illustrative concept image)](/images/blog/steel-structure-anchor-bolt-installation-guide/cover.jpg)
 
 ## Part 1: Why anchor bolt setting matters
 

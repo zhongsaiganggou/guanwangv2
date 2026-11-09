@@ -15,13 +15,10 @@ ctaType: "send-project-requirements"
 noindex: false
 author: "ZhongSai Steel Structure Editorial Team"
 translationKey: "steel-structure-steel-sections-guide"
----
-
-Structural steel comes in standardized section series: IPE and HEA/HEB (European), UB and UC (British), H-shapes (Japanese/Chinese), plus angles, channels and hollow sections. Each series has a fixed table of dimensions and properties, and the right size for a member depends on the loads, spans and design. Specifying the correct series and size in your RFQ avoids quoting errors and delivery delays. ZhongSai fabricates structures from approved drawings; the section sizes are confirmed by your design team with our engineering coordination.
+---Structural steel comes in standardized section series: IPE and HEA/HEB (European), UB and UC (British), H-shapes (Japanese/Chinese), plus angles, channels and hollow sections. Each series has a fixed table of dimensions and properties, and the right size for a member depends on the loads, spans and design. Specifying the correct series and size in your RFQ avoids quoting errors and delivery delays. ZhongSai fabricates structures from approved drawings; the section sizes are confirmed by your design team with our engineering coordination.
 
 This guide explains the main section series, how to read a section table, and how to specify steel in a purchase request.
 
-![Stockyard of steel sections: H-beams, channels and angles stacked (illustrative concept image)](/images/blog/steel-structure-steel-sections-guide/cover.jpg)
 
 ## Part 1: Why section names matter
 

@@ -15,13 +15,10 @@ ctaType: "send-project-requirements"
 noindex: false
 author: "ZhongSai Steel Structure Editorial Team"
 translationKey: "steel-structure-roof-drainage-guide"
----
-
-Roof drainage on a steel building moves rainwater off the roof through gutters and downpipes. Gutter type, gutter size, downpipe spacing and overflow provision depend on the roof area being drained, the local rainfall intensity and the applicable building code — there is no one-size-fits-all size. Poor drainage causes leaks, corrosion of edge trim and flashing, and long-term damage to the structure and interior. The drainage layout should be confirmed at the design stage, before the roof cladding is ordered, and the installation should follow the approved details. Buyers should check that gutters and downpipes are specified in the scope of supply, and who is responsible for installation.
+---Roof drainage on a steel building moves rainwater off the roof through gutters and downpipes. Gutter type, gutter size, downpipe spacing and overflow provision depend on the roof area being drained, the local rainfall intensity and the applicable building code — there is no one-size-fits-all size. Poor drainage causes leaks, corrosion of edge trim and flashing, and long-term damage to the structure and interior. The drainage layout should be confirmed at the design stage, before the roof cladding is ordered, and the installation should follow the approved details. Buyers should check that gutters and downpipes are specified in the scope of supply, and who is responsible for installation.
 
 This guide explains the main gutter types, how gutter and downpipe sizing works, installation points, common leak causes, and the responsibility boundary.
 
-![Steel building roof with eaves gutter and downpipe draining rainwater (illustrative concept image)](/images/blog/steel-structure-roof-drainage-guide/cover.jpg)
 
 ## Part 1: Why roof drainage matters
 

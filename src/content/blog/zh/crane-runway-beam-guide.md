@@ -15,13 +15,10 @@ ctaType: "send-project-requirements"
 noindex: false
 author: "ZhongSai Steel Structure Editorial Team"
 translationKey: "crane-runway-beam-guide"
----
-
-吊车梁把吊车轮压、冲击与制动荷载传给厂房柱；梁型与截面取决于吊车吨位、跨度、轮压与疲劳等级——没有固定全球值。中赛按图纸制作吊车梁，并与吊车厂商数据和结构图纸协调。
+---吊车梁把吊车轮压、冲击与制动荷载传给厂房柱；梁型与截面取决于吊车吨位、跨度、轮压与疲劳等级——没有固定全球值。中赛按图纸制作吊车梁，并与吊车厂商数据和结构图纸协调。
 
 本文说明吊车梁类型、报价前要收集的设计输入，以及谁负责什么。
 
-![厂房内桥式吊车与吊车梁（概念示意图）](/images/blog/crane-runway-beam-guide/cover.jpg)
 
 ## 一、吊车梁的作用
 

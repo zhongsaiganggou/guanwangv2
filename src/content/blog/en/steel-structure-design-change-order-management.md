@@ -15,13 +15,10 @@ ctaType: "send-project-requirements"
 noindex: false
 author: "ZhongSai Steel Structure Editorial Team"
 translationKey: "steel-structure-design-change-order-management"
----
-
-A design change is possible, but it should be handled through a written change order. The earlier a change is raised, the smaller its impact; once material is ordered or members are fabricated, changes can add cost and time. A change order should state what changes, the cost, the schedule effect and both parties' confirmation. Freezing the drawings early and confirming requirements before fabrication reduces the need for change orders. ZhongSai confirms every change in writing before acting.
+---A design change is possible, but it should be handled through a written change order. The earlier a change is raised, the smaller its impact; once material is ordered or members are fabricated, changes can add cost and time. A change order should state what changes, the cost, the schedule effect and both parties' confirmation. Freezing the drawings early and confirming requirements before fabrication reduces the need for change orders. ZhongSai confirms every change in writing before acting.
 
 This guide explains what a change order is, how the timing of a change drives its cost, what the document should include, and how to keep changes under control.
 
-![Engineers reviewing blueprints together at a project meeting, representing design confirmation and revisions (illustrative concept image)](/images/blog/steel-structure-design-change-order-management/cover.jpg)
 
 ## What a design change and change order are
 

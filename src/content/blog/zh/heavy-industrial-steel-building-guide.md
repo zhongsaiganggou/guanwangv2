@@ -15,13 +15,10 @@ ctaType: "send-project-requirements"
 noindex: false
 author: "ZhongSai Steel Structure Editorial Team"
 translationKey: "heavy-industrial-steel-building-guide"
----
-
-重型工业厂房承担吊车荷载、重型设备、大跨度与苛刻环境；每一项设计都取决于图纸、荷载、当地规范、用途、吊车、腐蚀、防火与运输——没有固定全球值。中赛做钢结构20年、专注出口15年，按你的图纸制作整套钢结构。
+---重型工业厂房承担吊车荷载、重型设备、大跨度与苛刻环境；每一项设计都取决于图纸、荷载、当地规范、用途、吊车、腐蚀、防火与运输——没有固定全球值。中赛做钢结构20年、专注出口15年，按你的图纸制作整套钢结构。
 
 本文说明重型厂房的关键设计考虑与责任边界。
 
-![带吊车与设备的重型工业厂房（概念示意图）](/images/blog/heavy-industrial-steel-building-guide/cover.jpg)
 
 ## 一、什么算"重型工业"厂房
 

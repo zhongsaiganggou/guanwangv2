@@ -15,13 +15,10 @@ ctaType: "send-project-requirements"
 noindex: false
 author: "ZhongSai Steel Structure Editorial Team"
 translationKey: "steel-structure-mill-test-certificate-guide"
----
-
-材质证明书（MTC，通常按 EN 10204 出具）是证明钢材牌号、化学成分与力学性能符合订单与标准的文件。3.1 由厂家独立质量部门出具，3.2 增加第三方见证检验。验收关键是把证书上的炉号追溯到实物、核对牌号与订单图纸一致、按标准核对化学成分与力学性能——这些值取决于所用钢种与标准，不是固定全球值。中赛做钢结构20年、专注出口15年，为所供钢结构协调 MTC 材质文件。
+---材质证明书（MTC，通常按 EN 10204 出具）是证明钢材牌号、化学成分与力学性能符合订单与标准的文件。3.1 由厂家独立质量部门出具，3.2 增加第三方见证检验。验收关键是把证书上的炉号追溯到实物、核对牌号与订单图纸一致、按标准核对化学成分与力学性能——这些值取决于所用钢种与标准，不是固定全球值。中赛做钢结构20年、专注出口15年，为所供钢结构协调 MTC 材质文件。
 
 本文说明 MTC 是什么、EN 10204 3.1 与 3.2 的区别、要读哪些字段，以及如何把证书与到货钢材核对。
 
-![质检员在钢结构成品堆场核对构件标签与文件（概念示意图）](/images/blog/steel-structure-mill-test-certificate-guide/cover.jpg)
 
 ## 什么是材质证明书
 

@@ -15,13 +15,10 @@ ctaType: "send-project-requirements"
 noindex: false
 author: "ZhongSai Steel Structure Editorial Team"
 translationKey: "steel-deck-composite-floor-guide"
----
-
-A composite floor combines steel decking, shear studs and a concrete topping so the deck and slab work together; the profile and slab depth depend on the span, loads, fire rating and local code — not fixed global values. ZhongSai supplies the decking and co-ordinates the composite floor details with the structural drawings.
+---A composite floor combines steel decking, shear studs and a concrete topping so the deck and slab work together; the profile and slab depth depend on the span, loads, fire rating and local code — not fixed global values. ZhongSai supplies the decking and co-ordinates the composite floor details with the structural drawings.
 
 This guide explains the common deck systems, what to specify, and who does what.
 
-![Steel deck and composite floor under construction (illustrative concept image)](/images/blog/steel-deck-composite-floor-guide/cover.jpg)
 
 ## Part 1: How a composite floor works
 

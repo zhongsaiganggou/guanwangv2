@@ -15,13 +15,10 @@ ctaType: "send-project-requirements"
 noindex: false
 author: "ZhongSai Steel Structure Editorial Team"
 translationKey: "steel-structure-eave-height-clear-height-planning"
----
-
-厂房高度按工艺需要来定，不是越高越好。檐高是墙顶标高，净高是室内地面到最低障碍物的可用净空。设备、叉车、桥式吊车、夹层、堆垛和管线都会决定你需要的高度；厂房越高，柱子、墙板、基础越大，风荷载也越大。先定设备与物流高度，再由结构工程师确认檐高。中赛可按约定高度协调与深化刚架。
+---厂房高度按工艺需要来定，不是越高越好。檐高是墙顶标高，净高是室内地面到最低障碍物的可用净空。设备、叉车、桥式吊车、夹层、堆垛和管线都会决定你需要的高度；厂房越高，柱子、墙板、基础越大，风荷载也越大。先定设备与物流高度，再由结构工程师确认檐高。中赛可按约定高度协调与深化刚架。
 
 本文说明几个高度术语、什么决定所需高度、高度如何影响结构与造价，以及加工前如何确认。
 
-![单层钢结构厂房内部，从混凝土地面到门式刚架的开阔净高（概念示意图）](/images/blog/steel-structure-eave-height-clear-height-planning/cover.jpg)
 
 ## 要先分清的高度术语
 

@@ -15,13 +15,10 @@ ctaType: "send-project-requirements"
 noindex: false
 author: "ZhongSai Steel Structure Editorial Team"
 translationKey: "steel-building-extension-guide"
----
-
-A steel building can be extended or retrofitted, but every option depends on the existing drawings, the original loading assumptions and the local code. Have a registered local engineer review the existing structure before the new steel is fabricated, because the connection details and foundation reactions decide what is feasible. ZhongSai has built steel structures for 20 years and focused on exports for 15, coordinating the new steel package with the design team.
+---A steel building can be extended or retrofitted, but every option depends on the existing drawings, the original loading assumptions and the local code. Have a registered local engineer review the existing structure before the new steel is fabricated, because the connection details and foundation reactions decide what is feasible. ZhongSai has built steel structures for 20 years and focused on exports for 15, coordinating the new steel package with the design team.
 
 This guide covers the common extension options and the points to confirm first.
 
-![New steel bay added next to an existing steel building (illustrative concept image)](/images/blog/steel-building-extension-guide/cover.jpg)
 
 ## Part 1: Common ways to extend or retrofit a steel building
 

@@ -15,13 +15,10 @@ ctaType: "send-project-requirements"
 noindex: false
 author: "ZhongSai Steel Structure Editorial Team"
 translationKey: "steel-structure-mill-test-certificate-guide"
----
-
-A mill test certificate (MTC), usually issued under EN 10204, is the document that proves the steel grade, chemical composition and mechanical properties of the material match the order and the standard. Type 3.1 is issued independently by the manufacturer; Type 3.2 adds third-party witnessed inspection. Acceptance hinges on tracing the heat number on the certificate to the physical steel, confirming the grade against the order and drawings, and checking the chemical and mechanical values against the standard — those values are specific to the steel grade and standard, not fixed global numbers. ZhongSai has built steel structures for 20 years and focused on exports for 15, and coordinates MTC documentation for the steel structures it fabricates.
+---A mill test certificate (MTC), usually issued under EN 10204, is the document that proves the steel grade, chemical composition and mechanical properties of the material match the order and the standard. Type 3.1 is issued independently by the manufacturer; Type 3.2 adds third-party witnessed inspection. Acceptance hinges on tracing the heat number on the certificate to the physical steel, confirming the grade against the order and drawings, and checking the chemical and mechanical values against the standard — those values are specific to the steel grade and standard, not fixed global numbers. ZhongSai has built steel structures for 20 years and focused on exports for 15, and coordinates MTC documentation for the steel structures it fabricates.
 
 This guide explains what an MTC is, the difference between EN 10204 3.1 and 3.2, the fields to read, and how to verify certificates against the steel you receive.
 
-![Quality inspector checking member labels against documents in a steel fabrication yard (illustrative concept image)](/images/blog/steel-structure-mill-test-certificate-guide/cover.jpg)
 
 ## What is a mill test certificate?
 

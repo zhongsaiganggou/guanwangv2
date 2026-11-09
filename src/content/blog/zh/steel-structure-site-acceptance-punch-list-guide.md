@@ -15,13 +15,10 @@ ctaType: "send-project-requirements"
 noindex: false
 author: "ZhongSai Steel Structure Editorial Team"
 translationKey: "steel-structure-site-acceptance-punch-list-guide"
----
-
-钢结构安装完成后，完工验收不是看着差不多就签字，而是按合同与图纸分阶段检查：基础与锚栓、主结构垂直度与对中、高强螺栓终拧、现场焊缝、围护与屋面收口、门窗、排水、防腐与防火，把缺陷登记成 punch list，整改复验关闭后再移交。中赛可提供安装技术指导、资料与远程支持；当地注册工程师、土建方与现场劳务负责报验、实体安装、主管报验与最终签字。合格标准取决于图纸、荷载与当地规范，不是固定全球值。
+---钢结构安装完成后，完工验收不是看着差不多就签字，而是按合同与图纸分阶段检查：基础与锚栓、主结构垂直度与对中、高强螺栓终拧、现场焊缝、围护与屋面收口、门窗、排水、防腐与防火，把缺陷登记成 punch list，整改复验关闭后再移交。中赛可提供安装技术指导、资料与远程支持；当地注册工程师、土建方与现场劳务负责报验、实体安装、主管报验与最终签字。合格标准取决于图纸、荷载与当地规范，不是固定全球值。
 
 本文说明完工验收怎么做、每个阶段查什么，以及如何用 punch list 让建筑规范移交。
 
-![业主与工程师在已完工厂房内持图纸检查已安装钢框架（概念示意图）](/images/blog/steel-structure-site-acceptance-punch-list-guide/cover.jpg)
 
 ## 什么是完工验收与 punch list
 
