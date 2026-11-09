@@ -22,7 +22,7 @@ This guide explains what an MTC is, the difference between EN 10204 3.1 and 3.2,
 
 ## What is a mill test certificate?
 
-A mill test certificate is a material document issued by the steel mill that reports the actual tested results of a heat (a single production batch of steel). It links the delivered material to a heat number, the applicable standard, the grade, the dimensions, and the tested chemical and mechanical properties. Fabricators typically collect the mill certificates for the steel they buy and pass them on in the project's material documentation pack.
+A mill test certificate is a material document issued by the steel mill that reports the actual tested results of a heat (a single production batch of steel). It links the delivered material to a heat number, the applicable standard, the grade, the dimensions, and the tested chemical and mechanical properties. Fabricators typically collect the mill certificates for the steel they buy and pass them on in the project's material documentation pack. At ZhongSai, heat-number traceability and certificate collection are coordinated as part of [our manufacturing and quality process](/en/manufacturing-quality/).
 
 MTCs are referenced under different names in different standards: mill test report (MTR), mill certificate, or inspection certificate. For European projects, EN 10204 defines the inspection document types.
 
@@ -127,6 +127,6 @@ ZhongSai coordinates MTC documentation for the steel structures it fabricates an
 
 ## Sending a steel structure overseas?
 
-Send the project drawings and the required material standard; ZhongSai can confirm the steel grade, certificate type and documentation pack before quotation.
+Tell us your required steel grade and whether your project specifies EN 10204 3.1 or 3.2 documentation. Our team can review your project requirements and discuss the appropriate material documentation as part of the quotation process.
 
 [Send Project Drawings](/en/contact/#quote-form)
