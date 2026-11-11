@@ -6,6 +6,7 @@ const facebookWebUrl = 'https://www.facebook.com/ZhongSaiSteelStructure/';
 const facebookAppUrl = 'fb://page/ZhongSaiSteelStructure';
 const phoneUrl = 'tel:+8613192007378';
 const emailUrl = 'mailto:zhongsaiganggou@gmail.com?subject=Steel%20Structure%20Inquiry';
+const kfUrl = 'https://work.weixin.qq.com/kfid/kfc0e249308343e2ace';
 const wecomUrl = 'https://work.weixin.qq.com/ca/cawcdecda02ad29b5c';
 ---
 
@@ -16,30 +17,16 @@ const wecomUrl = 'https://work.weixin.qq.com/ca/cawcdecda02ad29b5c';
     </svg>
     <span class="float-label">WeCom</span>
   </a>
-  <div class="float-wechat-wrap">
-    <button type="button" id="float-wechat-btn" class="float-btn float-wechat" aria-label="微信扫码联系中赛钢构" title="WeChat / 微信">
-      <svg viewBox="0 0 24 24" fill="currentColor" width="22" height="22" aria-hidden="true">
-        <path d="M8.691 2.188C3.891 2.188 0 5.476 0 9.53c0 2.212 1.17 4.203 3.002 5.55a.59.59 0 0 1 .213.665l-.39 1.48c-.019.07-.048.141-.048.213 0 .163.13.295.29.295a.326.326 0 0 0 .167-.054l1.903-1.114a.864.864 0 0 1 .717-.098 10.16 10.16 0 0 0 2.837.403c.276 0 .543-.027.811-.05-.857-2.578.157-4.972 1.932-6.446 1.703-1.415 3.882-1.98 5.853-1.838-.576-3.583-4.196-6.348-8.596-6.348zM5.785 5.991c.642 0 1.162.529 1.162 1.18a1.17 1.17 0 0 1-1.162 1.178A1.17 1.17 0 0 1 4.623 7.17c0-.651.52-1.18 1.162-1.18zm5.813 0c.642 0 1.162.529 1.162 1.18a1.17 1.17 0 0 1-1.162 1.178 1.17 1.17 0 0 1-1.162-1.178c0-.651.52-1.18 1.162-1.18zm5.34 2.867c-1.797-.052-3.746.512-5.28 1.786-1.72 1.428-2.687 3.72-1.78 6.22.942 2.453 3.666 4.229 6.884 4.229.826 0 1.622-.12 2.361-.336a.722.722 0 0 1 .598.082l1.584.926a.272.272 0 0 0 .14.047c.134 0 .24-.111.24-.247 0-.06-.023-.12-.038-.177l-.327-1.233a.582.582 0 0 1-.023-.156.49.49 0 0 1 .201-.398C23.024 18.185 24 16.635 24 14.7c0-3.37-2.97-6.127-6.743-6.288v-.054zm-2.03 2.66c.535 0 .969.434.969.97a.97.97 0 0 1-.969.97.97.97 0 0 1-.969-.97c0-.536.434-.97.97-.97zm4.085 0c.535 0 .969.434.969.97a.97.97 0 0 1-.97.97.97.97 0 0 1-.969-.97c0-.536.434-.97.97-.97z"/>
-      </svg>
-      <span class="float-label">WeChat</span>
-    </button>
-    <div id="wx-popover" class="wx-popover" role="dialog" aria-label="中赛钢构微信二维码">
-      <div class="wx-title">微信咨询 / WeChat</div>
-      <div class="wx-grid">
-        <figure class="wx-card">
-          <img src="/images/wechat-qr-company.png" alt="中赛钢构微信二维码" width="150" height="191" loading="lazy" />
-        </figure>
-        <figure class="wx-card">
-          <img src="/images/wechat-qr-iris.png" alt="中赛钢构微信二维码" width="150" height="223" loading="lazy" />
-        </figure>
-      </div>
-      <div class="wx-hint">扫码 / 长按识别添加</div>
-    </div>
-  </div>
+  <a href={kfUrl} target="_blank" rel="noopener noreferrer" class="float-btn float-kf" aria-label="在线客服 / WeChat Customer Service" title="在线客服 / Support">
+    <svg viewBox="0 0 24 24" fill="currentColor" width="22" height="22" aria-hidden="true">
+      <path fill-rule="evenodd" clip-rule="evenodd" d="M12 2.25c-5.385 0-9.75 3.58-9.75 8 0 4.01 3.17 7.31 7.37 7.76.45.05.79.43.79.88 0 .12-.01.24-.03.36-.07.53-.26 1.02-.55 1.45-.2.3-.12.69.15.91.38.31.92.22 1.23-.2 1.36-1.8 2.09-4.02 2.09-6.3 0-.13 0-.25-.01-.38 4.2-.45 7.36-3.75 7.36-7.76 0-4.42-4.365-8-9.75-8ZM9 12a1 1 0 1 1-2 0 1 1 0 0 1 2 0Zm4 0a1 1 0 1 1-2 0 1 1 0 0 1 2 0Zm4 0a1 1 0 1 1-2 0 1 1 0 0 1 2 0Z"/>
+    </svg>
+    <span class="float-label">Support</span>
+  </a>
   <div class="float-phone-wrap">
     <a id="float-phone-link" href={phoneUrl} class="float-btn float-phone" aria-label="直接拨打电话联系中赛钢构" title="Phone / 电话">
       <svg viewBox="0 0 24 24" fill="currentColor" width="22" height="22" aria-hidden="true">
-        <path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/>
+        <path d="M2.25 6.75c0 8.284 6.716 15 15 15h2.25a2.25 2.25 0 0 0 2.25-2.25v-1.372c0-.516-.351-.966-.852-1.091l-4.423-1.106c-.44-.11-.902.055-1.173.417l-.97 1.293c-.282.376-.769.542-1.21.38a12.035 12.035 0 0 1-7.143-7.143c-.162-.441.004-.928.38-1.21l1.293-.97c.363-.271.527-.734.417-1.173L6.963 3.102a1.125 1.125 0 0 0-1.091-.852H4.5A2.25 2.25 0 0 0 2.25 4.5v2.25Z"/>
       </svg>
       <span class="float-label">Call</span>
     </a>
@@ -213,113 +200,26 @@ const wecomUrl = 'https://work.weixin.qq.com/ca/cawcdecda02ad29b5c';
   background: #1877F2;
 }
 
-/* WeCom floating button */
+.float-kf {
+  background: #06B6D4;
+}
+
+.float-kf:hover {
+  background: #0891B2;
+}
+
+/* WeCom (获客助手) floating button: desktop only — mobile uses bottom CTA */
 .float-wecom {
-  background: #0082EF;
+  display: none;
 }
 
-.float-wecom:hover {
-  background: #006FDB;
-}
-
-/* WeChat floating button + QR popover */
-.float-wechat {
-  background: #07C160;
-  border: none;
-  cursor: pointer;
-  font-family: inherit;
-}
-
-.float-wechat:hover {
-  background: #06AD56;
-}
-
-.float-wechat-wrap {
-  position: relative;
-  display: flex;
-}
-
-.wx-popover {
-  position: absolute;
-  right: calc(100% + 14px);
-  top: 50%;
-  width: 288px;
-  padding: 14px 16px 12px;
-  background: #ffffff;
-  color: #1f2937;
-  border-radius: 12px;
-  box-shadow: 0 10px 32px rgba(15, 23, 42, 0.22);
-  opacity: 0;
-  visibility: hidden;
-  transform: translateY(-50%) translateX(10px);
-  transition: opacity 0.18s ease, transform 0.18s ease, visibility 0.18s;
-  z-index: 95;
-}
-
-/* Desktop: reveal on hover/focus */
-@media (min-width: 1025px) {
-  .float-wechat-wrap:hover .wx-popover,
-  .float-wechat-wrap:focus-within .wx-popover {
-    opacity: 1;
-    visibility: visible;
-    transform: translateY(-50%) translateX(0);
+@media (min-width: 769px) {
+  .float-wecom {
+    display: flex;
+    background: #0082EF;
   }
-}
-
-/* Mobile tap toggle (works at any width) */
-.wx-popover.show {
-  opacity: 1;
-  visibility: visible;
-  transform: translateY(-50%) translateX(0);
-}
-
-.wx-title {
-  font-size: 13px;
-  font-weight: 700;
-  color: #111827;
-  margin-bottom: 10px;
-}
-
-.wx-grid {
-  display: flex;
-  gap: 12px;
-}
-
-.wx-card {
-  flex: 1;
-  margin: 0;
-  text-align: center;
-}
-
-.wx-card img {
-  width: 100%;
-  max-width: 128px;
-  height: auto;
-  display: block;
-  margin: 0 auto;
-  border-radius: 8px;
-}
-
-.wx-card figcaption {
-  margin-top: 6px;
-  font-size: 12px;
-  font-weight: 600;
-  color: #374151;
-}
-
-.wx-hint {
-  margin-top: 10px;
-  font-size: 11.5px;
-  color: #6b7280;
-  text-align: center;
-}
-
-@media (max-width: 768px) {
-  .wx-popover {
-    width: 252px;
-  }
-  .wx-card img {
-    max-width: 112px;
+  .float-wecom:hover {
+    background: #006FDB;
   }
 }
 
@@ -426,18 +326,5 @@ const wecomUrl = 'https://work.weixin.qq.com/ca/cawcdecda02ad29b5c';
         }
       });
     }
-  }
-
-  // WeChat QR popover: tap toggle (mobile) + click outside to close
-  const wxBtn = document.getElementById('float-wechat-btn');
-  const wxPop = document.getElementById('wx-popover');
-  if (wxBtn && wxPop) {
-    wxBtn.addEventListener('click', (e) => {
-      e.stopPropagation();
-      wxPop.classList.toggle('show');
-    });
-    wxPop.addEventListener('click', (e) => e.stopPropagation());
-    document.addEventListener('click', () => wxPop.classList.remove('show'));
-    window.addEventListener('scroll', () => wxPop.classList.remove('show'), { passive: true });
   }
 </script>
