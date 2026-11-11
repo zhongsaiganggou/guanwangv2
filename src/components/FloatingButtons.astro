@@ -6,9 +6,16 @@ const facebookWebUrl = 'https://www.facebook.com/ZhongSaiSteelStructure/';
 const facebookAppUrl = 'fb://page/ZhongSaiSteelStructure';
 const phoneUrl = 'tel:+8613192007378';
 const emailUrl = 'mailto:zhongsaiganggou@gmail.com?subject=Steel%20Structure%20Inquiry';
+const wecomUrl = 'https://work.weixin.qq.com/ca/cawcdecda02ad29b5c';
 ---
 
 <div class="floating-social" aria-label="快速联系渠道">
+  <a href={wecomUrl} target="_blank" rel="noopener noreferrer" class="float-btn float-wecom" aria-label="通过企业微信联系中赛钢构" title="企业微信 / WeCom">
+    <svg viewBox="0 0 24 24" fill="currentColor" width="22" height="22" aria-hidden="true">
+      <path d="M8.691 2.188C3.891 2.188 0 5.476 0 9.53c0 2.212 1.17 4.203 3.002 5.55a.59.59 0 0 1 .213.665l-.39 1.48c-.019.07-.048.141-.048.213 0 .163.13.295.29.295a.326.326 0 0 0 .167-.054l1.903-1.114a.864.864 0 0 1 .717-.098 10.16 10.16 0 0 0 2.837.403c.276 0 .543-.027.811-.05-.857-2.578.157-4.972 1.932-6.446 1.703-1.415 3.882-1.98 5.853-1.838-.576-3.583-4.196-6.348-8.596-6.348zM5.785 5.991c.642 0 1.162.529 1.162 1.18a1.17 1.17 0 0 1-1.162 1.178A1.17 1.17 0 0 1 4.623 7.17c0-.651.52-1.18 1.162-1.18zm5.813 0c.642 0 1.162.529 1.162 1.18a1.17 1.17 0 0 1-1.162 1.178 1.17 1.17 0 0 1-1.162-1.178c0-.651.52-1.18 1.162-1.18zm5.34 2.867c-1.797-.052-3.746.512-5.28 1.786-1.72 1.428-2.687 3.72-1.78 6.22.942 2.453 3.666 4.229 6.884 4.229.826 0 1.622-.12 2.361-.336a.722.722 0 0 1 .598.082l1.584.926a.272.272 0 0 0 .14.047c.134 0 .24-.111.24-.247 0-.06-.023-.12-.038-.177l-.327-1.233a.582.582 0 0 1-.023-.156.49.49 0 0 1 .201-.398C23.024 18.185 24 16.635 24 14.7c0-3.37-2.97-6.127-6.743-6.288v-.054zm-2.03 2.66c.535 0 .969.434.969.97a.97.97 0 0 1-.969.97.97.97 0 0 1-.969-.97c0-.536.434-.97.97-.97zm4.085 0c.535 0 .969.434.969.97a.97.97 0 0 1-.97.97.97.97 0 0 1-.969-.97c0-.536.434-.97.97-.97z"/>
+    </svg>
+    <span class="float-label">WeCom</span>
+  </a>
   <div class="float-wechat-wrap">
     <button type="button" id="float-wechat-btn" class="float-btn float-wechat" aria-label="微信扫码联系中赛钢构" title="WeChat / 微信">
       <svg viewBox="0 0 24 24" fill="currentColor" width="22" height="22" aria-hidden="true">
@@ -204,6 +211,15 @@ const emailUrl = 'mailto:zhongsaiganggou@gmail.com?subject=Steel%20Structure%20I
 
 .float-facebook {
   background: #1877F2;
+}
+
+/* WeCom floating button */
+.float-wecom {
+  background: #0082EF;
+}
+
+.float-wecom:hover {
+  background: #006FDB;
 }
 
 /* WeChat floating button + QR popover */
