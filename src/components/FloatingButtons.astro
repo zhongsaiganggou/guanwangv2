@@ -8,27 +8,31 @@ const phoneUrl = 'tel:+8613192007378';
 const emailUrl = 'mailto:zhongsaiganggou@gmail.com?subject=Steel%20Structure%20Inquiry';
 const kfUrl = 'https://work.weixin.qq.com/kfid/kfc0e249308343e2ace';
 const wecomUrl = 'https://work.weixin.qq.com/ca/cawcdecda02ad29b5c';
+const { lang = 'zh' } = Astro.props;
+const t = lang === 'zh'
+  ? { wecom: '企业微信', support: '在线客服', call: '电话', wa: 'WhatsApp', email: '邮件', fb: 'Facebook' }
+  : { wecom: 'WeCom', support: 'Support', call: 'Call', wa: 'WhatsApp', email: 'Email', fb: 'Facebook' };
 ---
 
 <div class="floating-social" aria-label="快速联系渠道">
-  <a href={wecomUrl} target="_blank" rel="noopener noreferrer" class="float-btn float-wecom" aria-label="通过企业微信联系中赛钢构" title="企业微信 / WeCom">
+  <a href={wecomUrl} target="_blank" rel="noopener noreferrer" class="float-btn float-wecom" aria-label="通过企业微信联系中赛钢构" title={t.wecom}>
     <svg viewBox="0 0 24 24" fill="currentColor" width="22" height="22" aria-hidden="true">
       <path d="M8.691 2.188C3.891 2.188 0 5.476 0 9.53c0 2.212 1.17 4.203 3.002 5.55a.59.59 0 0 1 .213.665l-.39 1.48c-.019.07-.048.141-.048.213 0 .163.13.295.29.295a.326.326 0 0 0 .167-.054l1.903-1.114a.864.864 0 0 1 .717-.098 10.16 10.16 0 0 0 2.837.403c.276 0 .543-.027.811-.05-.857-2.578.157-4.972 1.932-6.446 1.703-1.415 3.882-1.98 5.853-1.838-.576-3.583-4.196-6.348-8.596-6.348zM5.785 5.991c.642 0 1.162.529 1.162 1.18a1.17 1.17 0 0 1-1.162 1.178A1.17 1.17 0 0 1 4.623 7.17c0-.651.52-1.18 1.162-1.18zm5.813 0c.642 0 1.162.529 1.162 1.18a1.17 1.17 0 0 1-1.162 1.178 1.17 1.17 0 0 1-1.162-1.178c0-.651.52-1.18 1.162-1.18zm5.34 2.867c-1.797-.052-3.746.512-5.28 1.786-1.72 1.428-2.687 3.72-1.78 6.22.942 2.453 3.666 4.229 6.884 4.229.826 0 1.622-.12 2.361-.336a.722.722 0 0 1 .598.082l1.584.926a.272.272 0 0 0 .14.047c.134 0 .24-.111.24-.247 0-.06-.023-.12-.038-.177l-.327-1.233a.582.582 0 0 1-.023-.156.49.49 0 0 1 .201-.398C23.024 18.185 24 16.635 24 14.7c0-3.37-2.97-6.127-6.743-6.288v-.054zm-2.03 2.66c.535 0 .969.434.969.97a.97.97 0 0 1-.969.97.97.97 0 0 1-.969-.97c0-.536.434-.97.97-.97zm4.085 0c.535 0 .969.434.969.97a.97.97 0 0 1-.97.97.97.97 0 0 1-.969-.97c0-.536.434-.97.97-.97z"/>
     </svg>
-    <span class="float-label">WeCom</span>
+    <span class="float-label">{t.wecom}</span>
   </a>
-  <a href={kfUrl} target="_blank" rel="noopener noreferrer" class="float-btn float-kf" aria-label="在线客服 / WeChat Customer Service" title="在线客服 / Support">
+  <a href={kfUrl} target="_blank" rel="noopener noreferrer" class="float-btn float-kf" aria-label="在线客服 / WeChat Customer Service" title={t.support}>
     <svg viewBox="0 0 24 24" fill="currentColor" width="22" height="22" aria-hidden="true">
       <path fill-rule="evenodd" clip-rule="evenodd" d="M12 2.25c-5.385 0-9.75 3.58-9.75 8 0 4.01 3.17 7.31 7.37 7.76.45.05.79.43.79.88 0 .12-.01.24-.03.36-.07.53-.26 1.02-.55 1.45-.2.3-.12.69.15.91.38.31.92.22 1.23-.2 1.36-1.8 2.09-4.02 2.09-6.3 0-.13 0-.25-.01-.38 4.2-.45 7.36-3.75 7.36-7.76 0-4.42-4.365-8-9.75-8ZM9 12a1 1 0 1 1-2 0 1 1 0 0 1 2 0Zm4 0a1 1 0 1 1-2 0 1 1 0 0 1 2 0Zm4 0a1 1 0 1 1-2 0 1 1 0 0 1 2 0Z"/>
     </svg>
-    <span class="float-label">Support</span>
+    <span class="float-label">{t.support}</span>
   </a>
   <div class="float-phone-wrap">
-    <a id="float-phone-link" href={phoneUrl} class="float-btn float-phone" aria-label="直接拨打电话联系中赛钢构" title="Phone / 电话">
+    <a id="float-phone-link" href={phoneUrl} class="float-btn float-phone" aria-label="直接拨打电话联系中赛钢构" title={t.call}>
       <svg viewBox="0 0 24 24" fill="currentColor" width="22" height="22" aria-hidden="true">
         <path d="M2.25 6.75c0 8.284 6.716 15 15 15h2.25a2.25 2.25 0 0 0 2.25-2.25v-1.372c0-.516-.351-.966-.852-1.091l-4.423-1.106c-.44-.11-.902.055-1.173.417l-.97 1.293c-.282.376-.769.542-1.21.38a12.035 12.035 0 0 1-7.143-7.143c-.162-.441.004-.928.38-1.21l1.293-.97c.363-.271.527-.734.417-1.173L6.963 3.102a1.125 1.125 0 0 0-1.091-.852H4.5A2.25 2.25 0 0 0 2.25 4.5v2.25Z"/>
       </svg>
-      <span class="float-label">Call</span>
+      <span class="float-label">{t.call}</span>
     </a>
     <div id="phone-popover" class="phone-popover" role="dialog" aria-label="中赛钢构电话号码">
       <div class="pp-title">电话联系 / Call us</div>
