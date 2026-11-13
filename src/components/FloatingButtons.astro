@@ -87,10 +87,22 @@ const t = lang === 'zh'
 .float-btn:hover {
   transform: scale(1.08);
   box-shadow: 0 6px 16px rgba(0, 0, 0, 0.3);
-  width: auto;
-  padding: 0 18px;
-  border-radius: 24px;
-  gap: 8px;
+}
+
+/* Hover-to-expand pill with a text label: real mouse/trackpad only.
+   Touch screens fire :hover on tap, which used to stretch the 48x48 button
+   into a wide pill (the phone <img> became an ellipse) and pushed the whole
+   right-anchored column leftwards. */
+@media (hover: hover) and (pointer: fine) {
+  .float-btn:hover {
+    width: auto;
+    padding: 0 18px;
+    border-radius: 24px;
+    gap: 8px;
+  }
+  .float-btn:hover .float-label {
+    display: inline;
+  }
 }
 
 .float-btn:active {
@@ -269,10 +281,6 @@ const t = lang === 'zh'
   white-space: nowrap;
 }
 
-.float-btn:hover .float-label {
-  display: inline;
-}
-
 /* Mobile: smaller buttons, still visible */
 @media (max-width: 768px) {
   .floating-social {
@@ -287,27 +295,18 @@ const t = lang === 'zh'
     width: 20px;
     height: 20px;
   }
-  .float-btn:hover {
-    padding: 0 14px;
-    width: 42px;
-  }
   .float-label {
     font-size: 13px;
   }
 }
 
-/* Touch devices: tap must not trigger the desktop hover-expand pill,
-   otherwise the phone img stretches into an ellipse and the whole column
-   jumps left. */
-@media (hover: none), (pointer: coarse) {
+/* Desktop pointer on a narrow window: keep the pill padding tighter */
+@media (max-width: 768px) and (hover: hover) and (pointer: fine) {
   .float-btn:hover {
-    width: 48px;
-    padding: 0;
-    border-radius: 50%;
-    gap: 0;
+    padding: 0 14px;
   }
   .float-btn:hover .float-label {
-    display: none;
+    font-size: 13px;
   }
 }
 
