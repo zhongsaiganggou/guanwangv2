@@ -289,9 +289,25 @@ const t = lang === 'zh'
   }
   .float-btn:hover {
     padding: 0 14px;
+    width: 42px;
   }
   .float-label {
     font-size: 13px;
+  }
+}
+
+/* Touch devices: tap must not trigger the desktop hover-expand pill,
+   otherwise the phone img stretches into an ellipse and the whole column
+   jumps left. */
+@media (hover: none), (pointer: coarse) {
+  .float-btn:hover {
+    width: 48px;
+    padding: 0;
+    border-radius: 50%;
+    gap: 0;
+  }
+  .float-btn:hover .float-label {
+    display: none;
   }
 }
 
