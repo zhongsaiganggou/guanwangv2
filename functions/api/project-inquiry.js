@@ -73,10 +73,13 @@ function validateLead(data) {
   const hasDrawings = data.has_drawings === true || data.has_drawings === 'true' || data.has_drawings === '1' || data.active_path === 'drawings';
 
   const wechat = (data.wechat || '').trim();
+  const phone = (data.phone || '').trim();
+  const email = (data.email || '').trim();
 
-  // Required: WeChat only. Name, country, phone are all optional.
-  if (!wechat) {
-    errors.wechat = 'WeChat ID is required';
+  // Contact rule: at least one reachable channel (WhatsApp/phone, WeChat, or email).
+  // WeChat must NOT be mandatory — overseas buyers mostly use WhatsApp.
+  if (!wechat && !phone && !email) {
+    errors.contact = 'Please provide at least one contact method (WhatsApp/phone, WeChat, or email)';
   }
 
   // Email optional but validate format if provided
@@ -118,7 +121,7 @@ export async function onRequestPost(context) {
     // Normalize browser field names to the API/database schema.
     fields.project_country = fields.project_country || fields.country || '';
     fields.calling_code = fields.calling_code || fields.phone_code || '';
-    fields.project_type = fields.project_type || fields.projectType || '';
+    fields.project_type = fields.project_type || fields.projectType || fields.building_type || '';
     fields.intended_use = fields.intended_use || fields.intendedUse || '';
     fields.crane_requirement = fields.crane_requirement || fields.hasCrane || '';
     fields.form_path = fields.form_path || fields.active_path || '';
@@ -331,8 +334,8 @@ export async function onRequestPost(context) {
           ? '项目需求已收到，但附件未能完整保存。我们将通过您填写的联系方式跟进。'
           : 'Project inquiry received, but the attachments could not be fully saved. We will follow up using your contact details.')
         : (language === 'zh'
-          ? '项目需求已提交。感谢您的提交。中赛钢构将根据您提供的项目资料进行审核，并通过您填写的联系方式进行后续沟通。如需补充资料，工程团队会通过微信或邮件与您联系确认。'
-          : 'Project inquiry received. Thank you. ZhongSai will review the project information and follow up using the contact details you provided. We will reach out via WeChat or email if any further details are needed.'),
+          ? '项目需求已提交。感谢您的提交。中赛钢构将根据您提供的项目资料进行审核，并通过您填写的联系方式进行后续沟通。如需补充资料，工程团队会通过 WhatsApp、微信或邮件与您联系确认。'
+          : 'Project inquiry received. Thank you. ZhongSai will review the project information and follow up using the contact details you provided. We will reach out via WhatsApp, WeChat or email if any further details are needed.'),
     }, 201);
 
     // Background: send webhook + WeCom notification

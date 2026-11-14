@@ -18,9 +18,9 @@ const texts = lang === 'zh' ? {
   name: '姓名 / 称呼（可选）',
   email: '邮箱（可选）',
   emailPlaceholder: 'your@email.com',
-  phone: 'WhatsApp / 电话（可选）',
-  phonePlaceholder: '+86 138 0000 0000',
-  wechat: '微信 *',
+  phone: 'WhatsApp / 电话',
+  phonePlaceholder: '含国家区号，如 +60 12 345 6789',
+  wechat: '微信（可选）',
   wechatPlaceholder: '微信号',
   country: '项目所在国家',
   drawingUpload: '上传图纸 / BOQ',
@@ -40,7 +40,7 @@ const texts = lang === 'zh' ? {
   submitNoDrawings: '提交项目需求',
   submitting: '提交中...',
   successTitle: '项目需求已提交',
-  successMsg: '感谢您的提交。中赛钢构将根据您提供的项目资料进行审核，并通过您填写的联系方式进行后续沟通。如需补充资料，工程团队会通过微信或邮件与您联系确认。',
+  successMsg: '感谢您的提交。中赛钢构将根据您提供的项目资料进行审核，并通过您填写的联系方式进行后续沟通。如需补充资料，工程团队会通过 WhatsApp、微信或邮件与您联系确认。',
   errorTurnstile: '验证失败，请重新提交。',
   errorValidation: '请检查必填字段。',
   errorNetwork: '网络错误，请稍后重试。',
@@ -54,10 +54,10 @@ const texts = lang === 'zh' ? {
   requiredIntendedUse: '请输入项目用途',
   requiredWeChat: '请输入微信号',
   requiredPhoneCode: '请选择国家区号',
-  requiredContact: '请至少填写微信或电话号码，方便我们联系您。',
+  requiredContact: '请至少留一种联系方式（WhatsApp/电话、微信或邮箱），否则我们无法回复您。',
   requiredCodeWithPhone: '请输入国家/地区区号。',
-  hintWechat: '推荐填写，方便工程团队沟通',
-  hintPhone: '与微信至少填一项',
+  hintWechat: '没有也能提交',
+  hintPhone: '推荐 · 回复最快',
   hintCode: '填电话时必填',
   privacyNote: '提交即表示您同意我们的隐私政策，我们不会分享您的信息。',
   optionalLabel: '可选',
@@ -81,9 +81,9 @@ const texts = lang === 'zh' ? {
   name: 'Name (optional)',
   email: 'Email (optional)',
   emailPlaceholder: 'your@email.com',
-  phone: 'WhatsApp / Phone (optional)',
-  phonePlaceholder: '+86 138 0000 0000',
-  wechat: 'WeChat ID *',
+  phone: 'WhatsApp / Phone',
+  phonePlaceholder: 'with country code, e.g. +60 12 345 6789',
+  wechat: 'WeChat ID (optional)',
   wechatPlaceholder: 'WeChat ID',
   country: 'Project Country',
   drawingUpload: 'Upload Drawings / BOQ',
@@ -103,7 +103,7 @@ const texts = lang === 'zh' ? {
   submitNoDrawings: 'Submit Project Requirements',
   submitting: 'Submitting...',
   successTitle: 'Project inquiry received',
-  successMsg: 'Thank you. ZhongSai will review the project information and follow up using the contact details you provided. We will reach out via WeChat or email if any further details are needed.',
+  successMsg: 'Thank you. ZhongSai will review the project information and follow up using the contact details you provided. We will reach out via WhatsApp, WeChat or email if any further details are needed.',
   errorTurnstile: 'Verification failed. Please try again.',
   errorValidation: 'Please check required fields.',
   errorNetwork: 'Network error. Please try again.',
@@ -117,10 +117,10 @@ const texts = lang === 'zh' ? {
   requiredIntendedUse: 'Please enter intended use',
   requiredWeChat: 'Please enter WeChat ID',
   requiredPhoneCode: 'Please select country / calling code',
-  requiredContact: 'Please provide either a WeChat ID or phone number so we can contact you.',
+  requiredContact: 'Please leave at least one way to reach you: WhatsApp/phone, WeChat, or email.',
   requiredCodeWithPhone: 'Please select a country/region code.',
-  hintWechat: 'Recommended — our team follows up here',
-  hintPhone: 'phone or WeChat required',
+  hintWechat: 'not required to submit',
+  hintPhone: 'recommended · fastest reply',
   hintCode: 'required with phone',
   privacyNote: 'By submitting, you agree to our privacy policy. We will not share your information.',
   optionalLabel: 'Optional',
@@ -209,13 +209,13 @@ const COUNTRIES = COUNTRY_CODES.filter(([iso]) => {
 
       <div class="form-grid form-grid-2">
         <div class="form-field">
-          <label for={`${id}-phone`}>{texts.phone}</label>
+          <label for={`${id}-phone`}>{texts.phone} <span class="cond-hint">{texts.hintPhone}</span></label>
           <input type="tel" id={`${id}-phone`} name="phone" autocomplete="tel" placeholder={texts.phonePlaceholder} />
           <span class="field-error" data-error-for="phone"></span>
         </div>
         <div class="form-field">
-          <label for={`${id}-wechat`}>{texts.wechat} <span class="req">*</span></label>
-          <input type="text" id={`${id}-wechat`} name="wechat" required placeholder={texts.wechatPlaceholder} />
+          <label for={`${id}-wechat`}>{texts.wechat} <span class="cond-hint">{texts.hintWechat}</span></label>
+          <input type="text" id={`${id}-wechat`} name="wechat" placeholder={texts.wechatPlaceholder} />
           <span class="field-error" data-error-for="wechat"></span>
         </div>
       </div>
@@ -405,13 +405,13 @@ const COUNTRIES = COUNTRY_CODES.filter(([iso]) => {
 
       <div class="form-grid form-grid-2">
         <div class="form-field">
-          <label for={`${id}-phone`}>{texts.phone}</label>
+          <label for={`${id}-phone`}>{texts.phone} <span class="cond-hint">{texts.hintPhone}</span></label>
           <input type="tel" id={`${id}-phone`} name="phone" autocomplete="tel" placeholder={texts.phonePlaceholder} />
           <span class="field-error" data-error-for="phone"></span>
         </div>
         <div class="form-field">
-          <label for={`${id}-wechat`}>{texts.wechat} <span class="req">*</span></label>
-          <input type="text" id={`${id}-wechat`} name="wechat" required placeholder={texts.wechatPlaceholder} />
+          <label for={`${id}-wechat`}>{texts.wechat} <span class="cond-hint">{texts.hintWechat}</span></label>
+          <input type="text" id={`${id}-wechat`} name="wechat" placeholder={texts.wechatPlaceholder} />
           <span class="field-error" data-error-for="wechat"></span>
         </div>
       </div>
@@ -841,19 +841,24 @@ const COUNTRIES = COUNTRY_CODES.filter(([iso]) => {
           input?.closest('.form-field')?.classList.add('error');
         }
 
-        // Required: WeChat only. Name, country, phone are all optional.
+        // Contact rule: at least one reachable channel — WhatsApp/phone, WeChat, or email.
+        const phoneVal = form.querySelector('[name="phone"]').value.trim();
         const wechatVal = form.querySelector('[name="wechat"]').value.trim();
+        const emailInput = form.querySelector('[name="email"]');
+        const emailVal = emailInput.value.trim();
 
-        if (!wechatVal) {
+        if (!phoneVal && !wechatVal && !emailVal) {
           isValid = false;
-          markField('wechat', isZh
-            ? '请填写微信号，方便我们联系您。'
-            : 'Please provide your WeChat ID so we can contact you.');
+          const contactMsg = isZh
+            ? '请至少留一种联系方式（WhatsApp/电话、微信或邮箱）。'
+            : 'Please leave at least one way to reach you (WhatsApp/phone, WeChat or email).';
+          markField('phone', contactMsg);
+          markField('wechat', contactMsg);
+          markField('email', contactMsg);
         }
 
-        // Email optional — validate format only if filled
-        const emailInput = form.querySelector('[name="email"]');
-        if (emailInput.value.trim() && !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(emailInput.value)) {
+        // Email format is validated only when the field is filled.
+        if (emailVal && !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(emailVal)) {
           isValid = false;
           markField('email', isZh ? '请输入有效邮箱' : 'Please enter a valid email');
         }
@@ -1047,6 +1052,17 @@ const COUNTRIES = COUNTRY_CODES.filter(([iso]) => {
 
               let hasFieldError = false;
               Object.keys(result.errors || {}).forEach(k => {
+                if (k === 'contact') {
+                  // "no contact method" applies to all three contact fields
+                  const contactText = isZh
+                    ? '请至少留一种联系方式（WhatsApp/电话、微信或邮箱）。'
+                    : 'Please leave at least one way to reach you (WhatsApp/phone, WeChat or email).';
+                  markServerField('phone', contactText);
+                  markServerField('wechat', '');
+                  markServerField('email', '');
+                  hasFieldError = true;
+                  return;
+                }
                 if (serverFieldText[k]) {
                   markServerField(fieldToInput[k], serverFieldText[k]);
                   hasFieldError = true;

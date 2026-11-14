@@ -12,8 +12,8 @@ const { lang = 'zh', id = 'quote-form-light' } = Astro.props;
 
 const texts = lang === 'zh' ? {
   title: '获取项目报价',
-  subtitle: '留下微信，我们24小时内联系您出报价。其他信息可选填。',
-  wechat: '微信号 *',
+  subtitle: '留下 WhatsApp / 电话或微信，我们24小时内联系您出报价。其他信息可选填。',
+  wechat: '微信号（可选）',
   wechatPlaceholder: '请输入您的微信号',
   buildingType: '项目类型 *',
   buildingTypeOptions: ['请选择', '工业厂房与车间', '仓库与物流', '矿业与能源设施', '商业与公共建筑', '农业与特种设施', '其他'],
@@ -21,8 +21,8 @@ const texts = lang === 'zh' ? {
   namePlaceholder: '怎么称呼您？',
   email: '邮箱（可选）',
   emailPlaceholder: 'your@email.com',
-  phone: 'WhatsApp / 电话（可选）',
-  phonePlaceholder: '+86 138 0000 0000',
+  phone: 'WhatsApp / 电话',
+  phonePlaceholder: '含国家区号，如 +60 12 345 6789',
   country: '项目所在国家（可选）',
   countryPlaceholder: '请选择国家',
   message: '简单描述您的项目（可选）',
@@ -30,18 +30,19 @@ const texts = lang === 'zh' ? {
   submit: '提交获取报价',
   submitting: '提交中...',
   successTitle: '提交成功！',
-  successMsg: '感谢您的提交！我们的工程师会在24小时内通过微信联系您。',
+  successMsg: '感谢您的提交！我们的工程师会在24小时内通过 WhatsApp、微信或邮件联系您。',
   errorTurnstile: '验证失败，请重新提交。',
   errorValidation: '请填写必填项。',
   errorNetwork: '网络错误，请稍后重试。',
   errorServer: '提交失败，请稍后重试。',
   requiredWeChat: '请输入微信号',
+  requiredContact: '请至少留一种联系方式（WhatsApp/电话、微信或邮箱）。',
   requiredBuildingType: '请选择项目类型',
   privacyNote: '提交即表示您同意我们的隐私政策，我们不会分享您的信息。',
 } : {
   title: 'Get Your Project Quote',
-  subtitle: 'Leave your WeChat, we will contact you within 24 hours with a quote. Other fields are optional.',
-  wechat: 'WeChat ID *',
+  subtitle: 'Leave your WhatsApp / phone or WeChat — we will contact you within 24 hours with a quote. Other fields are optional.',
+  wechat: 'WeChat ID (optional)',
   wechatPlaceholder: 'Enter your WeChat ID',
   buildingType: 'Project Type *',
   buildingTypeOptions: ['Please select', 'Industrial Factory & Workshop', 'Warehouse & Logistics', 'Mining & Energy', 'Commercial & Public', 'Agriculture & Special', 'Other'],
@@ -49,8 +50,8 @@ const texts = lang === 'zh' ? {
   namePlaceholder: 'How should we call you?',
   email: 'Email (optional)',
   emailPlaceholder: 'your@email.com',
-  phone: 'WhatsApp / Phone (optional)',
-  phonePlaceholder: '+86 138 0000 0000',
+  phone: 'WhatsApp / Phone',
+  phonePlaceholder: 'with country code, e.g. +60 12 345 6789',
   country: 'Project Country (optional)',
   countryPlaceholder: 'Select country',
   message: 'Briefly describe your project (optional)',
@@ -58,12 +59,13 @@ const texts = lang === 'zh' ? {
   submit: 'Get My Quote',
   submitting: 'Submitting...',
   successTitle: 'Submitted Successfully!',
-  successMsg: 'Thank you! Our engineers will contact you via WeChat within 24 hours.',
+  successMsg: 'Thank you! Our engineers will contact you via WhatsApp, WeChat or email within 24 hours.',
   errorTurnstile: 'Verification failed. Please try again.',
   errorValidation: 'Please fill in required fields.',
   errorNetwork: 'Network error. Please try again later.',
   errorServer: 'Submission failed. Please try again later.',
   requiredWeChat: 'Please enter your WeChat ID',
+  requiredContact: 'Please leave at least one way to reach you (WhatsApp/phone, WeChat or email).',
   requiredBuildingType: 'Please select project type',
   privacyNote: 'By submitting, you agree to our privacy policy. We will not share your information.',
 };
@@ -121,13 +123,12 @@ const COUNTRIES_ZH = [
   <p class="form-subtitle">{texts.subtitle}</p>
 
   <div class="form-group">
-    <label for={`${id}-wechat`}>{texts.wechat}</label>
+    <label for={`${id}-phone`}>{texts.phone}</label>
     <input
-      type="text"
-      id={`${id}-wechat`}
-      name="wechat"
-      placeholder={texts.wechatPlaceholder}
-      required
+      type="tel"
+      id={`${id}-phone`}
+      name="phone"
+      placeholder={texts.phonePlaceholder}
     />
   </div>
 
@@ -171,12 +172,12 @@ const COUNTRIES_ZH = [
 
   <div class="form-row">
     <div class="form-group">
-      <label for={`${id}-phone`}>{texts.phone}</label>
+      <label for={`${id}-wechat`}>{texts.wechat}</label>
       <input
-        type="tel"
-        id={`${id}-phone`}
-        name="phone"
-        placeholder={texts.phonePlaceholder}
+        type="text"
+        id={`${id}-wechat`}
+        name="wechat"
+        placeholder={texts.wechatPlaceholder}
       />
     </div>
 
@@ -231,6 +232,18 @@ const COUNTRIES_ZH = [
     form.addEventListener('submit', async (e) => {
       e.preventDefault();
       errorDiv.style.display = 'none';
+
+      // At least one contact channel is required: WhatsApp/phone, WeChat, or email.
+      const phoneVal = (form.querySelector('[name="phone"]') as HTMLInputElement).value.trim();
+      const wechatVal = (form.querySelector('[name="wechat"]') as HTMLInputElement).value.trim();
+      const emailVal = (form.querySelector('[name="email"]') as HTMLInputElement).value.trim();
+      if (!phoneVal && !wechatVal && !emailVal) {
+        errorDiv.textContent = '{texts.requiredContact}';
+        errorDiv.style.display = 'block';
+        errorDiv.scrollIntoView({ behavior: 'smooth', block: 'center' });
+        return;
+      }
+
       submitBtn.disabled = true;
       submitBtn.textContent = '{texts.submitting}';
 

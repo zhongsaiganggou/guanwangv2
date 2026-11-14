@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>授权回调 · 中赛钢构</title>
+<style>
+  :root { --ink:#111827; --muted:#6b7280; --line:#e5e7eb; --brand:#1e3a8a; }
+  * { box-sizing: border-box; }
+  body {
+    margin:0; min-height:100vh; display:flex; align-items:center; justify-content:center;
+    padding:24px; background:#f8fafc; color:var(--ink);
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC", "Microsoft YaHei", sans-serif;
+  }
+  .card {
+    width:100%; max-width:560px; background:#fff; border:1px solid var(--line);
+    border-radius:14px; padding:28px 24px; box-shadow:0 6px 24px rgba(15,23,42,.06);
+  }
+  h1 { font-size:18px; margin:0 0 6px; letter-spacing:.2px; }
+  .sub { font-size:13px; color:var(--muted); margin:0 0 20px; line-height:1.6; }
+  .label { font-size:12px; color:var(--muted); margin-bottom:6px; }
+  .code {
+    font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+    font-size:14px; line-height:1.5; word-break:break-all;
+    background:#f1f5f9; border:1px solid var(--line); border-radius:10px;
+    padding:14px; user-select:all; -webkit-user-select:all;
+  }
+  .row { display:flex; gap:10px; margin-top:12px; }
+  button {
+    flex:1; appearance:none; border:0; border-radius:10px; padding:12px 14px;
+    font-size:14px; font-weight:600; cursor:pointer; background:var(--brand); color:#fff;
+  }
+  button.ghost { background:#fff; color:var(--ink); border:1px solid var(--line); }
+  button:active { transform:translateY(1px); }
+  .ok { color:#047857; } .bad { color:#b91c1c; }
+  .state { font-size:12px; color:var(--muted); margin-top:14px; word-break:break-all; }
+  .hint { font-size:12.5px; color:var(--muted); margin-top:18px; line-height:1.7; border-top:1px dashed var(--line); padding-top:14px; }
+  .hidden { display:none; }
+</style>
+</head>
+<body>
+  <div class="card">
+    <h1 id="title">授权结果</h1>
+    <p class="sub" id="sub">正在读取授权信息…</p>
+
+    <div id="codeWrap" class="hidden">
+      <div class="label">authorization_code</div>
+      <div class="code" id="code"></div>
+      <div class="row">
+        <button id="copy">复制</button>
+        <button class="ghost" id="mailto">发邮件</button>
+      </div>
+      <p class="state" id="stateLine"></p>
+    </div>
+
+    <p class="hint" id="hint">
+      这串 code 有效期很短（几分钟），拿到后请立刻交给后台换取 access_token。
+      本页面不上传、不存储任何数据。
+    </p>
+  </div>
+
+<script>
+(function () {
+  var p = new URLSearchParams(window.location.search);
+  var code = p.get('authorization_code') || p.get('code') || '';
+  var state = p.get('state') || '';
+  var errDesc = p.get('error_description') || p.get('error') || '';
+
+  var title = document.getElementById('title');
+  var sub = document.getElementById('sub');
+  var codeWrap = document.getElementById('codeWrap');
+  var codeEl = document.getElementById('code');
+  var stateLine = document.getElementById('stateLine');
+  var hint = document.getElementById('hint');
+
+  if (code) {
+    title.textContent = '授权成功';
+    title.className = 'ok';
+    sub.textContent = '下面是本次授权拿到的 authorization_code，复制后交给负责换 token 的人。';
+    codeEl.textContent = code;
+    codeWrap.classList.remove('hidden');
+    stateLine.textContent = state ? ('state: ' + state) : '';
+  } else if (errDesc) {
+    title.textContent = '授权失败';
+    title.className = 'bad';
+    sub.textContent = errDesc;
+    hint.classList.add('hidden');
+  } else {
+    title.textContent = '没有拿到授权码';
+    title.className = 'bad';
+    sub.textContent = '地址里没有 authorization_code。可能是链接已失效，或者授权被取消，请重新发起授权。';
+    hint.classList.add('hidden');
+  }
+
+  var copyBtn = document.getElementById('copy');
+  if (copyBtn) {
+    copyBtn.addEventListener('click', function () {
+      var text = codeEl.textContent || '';
+      if (!text) return;
+      var done = function () { copyBtn.textContent = '已复制'; };
+      if (navigator.clipboard && navigator.clipboard.writeText) {
+        navigator.clipboard.writeText(text).then(done, function () {
+          window.prompt('请手动复制：', text);
+        });
+      } else {
+        window.prompt('请手动复制：', text);
+      }
+    });
+  }
+
+  var mailBtn = document.getElementById('mailto');
+  if (mailBtn) {
+    mailBtn.addEventListener('click', function () {
+      var text = codeEl.textContent || '';
+      if (!text) return;
+      var subject = encodeURIComponent('腾讯广告 OAuth 授权码');
+      var body = encodeURIComponent('authorization_code: ' + text + '\nstate: ' + state);
+      window.location.href = 'mailto:zhongsaiganggou@gmail.com?subject=' + subject + '&body=' + body;
+    });
+  }
+})();
+</script>
+</body>
+</html>
