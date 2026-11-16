@@ -3,8 +3,8 @@ title: What Information Is Needed for a Steel Structure Quotation?
 language: en
 category: Cost & Planning
 status: published
-seoTitle: What Information Is Needed for a Steel Structure Quotation? | ZhongSai
-metaDescription: "Complete RFQ checklist for steel structure projects: project location, building use, dimensions, drawings, loads, crane, cladding, shipping requirements. The more complete your information, the more accurate the quotation."
+seoTitle: "What Info Is Needed for a Steel Structure Quote?"
+metaDescription: "RFQ checklist for steel projects: location, building use, dimensions, drawings, loads, crane, cladding and shipping needs. More data means a more accurate price."
 h1: What Information Is Needed for a Steel Structure Quotation? Complete RFQ Checklist
 excerpt: What do you need to provide to get an accurate steel structure quotation? This complete RFQ checklist covers project location, dimensions, drawings, loads, crane, cladding, shipping and more.
 coverImage: /images/blog/steel-structure-rfq-checklist/cover.jpg

@@ -3,7 +3,7 @@ title: "How Long Do Steel Structure Buildings Last? Durability, Maintenance & Li
 language: "en"
 category: "Manufacturing & Quality"
 status: "published"
-seoTitle: "How Long Do Steel Structure Buildings Last? Lifespan Guide | ZhongSai"
+seoTitle: "How Long Do Steel Structure Buildings Last? | ZhongSai"
 metaDescription: "Discover the real lifespan of steel structure buildings. Learn about durability factors, maintenance requirements, corrosion protection, and how to..."
 h1: "How Long Do Steel Structure Buildings Last? Durability, Maintenance & Lifespan Guide"
 excerpt: "A comprehensive guide to steel structure building lifespan, covering durability factors, corrosion protection, maintenance requirements, and practical tips to extend your building's life."

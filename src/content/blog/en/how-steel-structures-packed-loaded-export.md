@@ -3,8 +3,8 @@ title: "How Steel Structures Are Packed and Loaded for Export"
 language: en
 category: Import & Shipping
 status: published
-seoTitle: How Steel Structures Are Packed & Loaded for Export | ZhongSai
-metaDescription: "How steel structure components are packed, marked, crated and loaded into containers for export. What buyers should expect from a Chinese manufacturer before shipment."
+seoTitle: "How Steel Structures Are Packed & Loaded for Export"
+metaDescription: "How steel components are packed, marked, crated and loaded into containers for export, and what buyers should expect before shipment."
 h1: How Steel Structures Are Packed and Loaded for Export
 excerpt: "How fabricated steel components are packed, marked, crated and loaded for ocean export. What buyers should check before shipment."
 coverImage: /images/blog/packing-loading-steel-export/cover.jpg

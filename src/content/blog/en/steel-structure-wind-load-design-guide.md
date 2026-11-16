@@ -3,8 +3,8 @@ title: Steel Structure Wind Load Design Guide
 language: en
 category: Installation & Technical
 status: published
-seoTitle: Steel Structure Wind Load Design Guide | ZhongSai Steel Structure
-metaDescription: "Practical guide to wind load design for steel structure projects: basic wind speed, pressure coefficients, gust factors, wind-induced vibration, and how to align with local codes for overseas projects."
+seoTitle: "Steel Structure Wind Load Design Guide | ZhongSai"
+metaDescription: "Wind load design for steel projects: basic wind speed, pressure coefficients, gust factors, vibration, and how to align with local codes overseas."
 h1: Steel Structure Wind Load Design Guide
 excerpt: Wind load is one of the most critical horizontal loads in steel structure design. This guide explains what information is needed, how different structures respond to wind, and how overseas projects align with local building codes.
 coverImage: /images/blog/steel-structure-installation-guide/cover.jpg

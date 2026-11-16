@@ -3,8 +3,8 @@ title: How to Audit a Steel Structure Factory in China? Practical Checklist
 language: en
 category: Supplier Selection
 status: published
-seoTitle: How to Audit a Steel Structure Factory in China? Practical Checklist | ZhongSai
-metaDescription: "How to audit a Chinese steel structure manufacturer before ordering? This factory audit checklist covers capacity, equipment, welding, QC, packing, export experience and red flags for overseas buyers."
+seoTitle: "Steel Factory Audit Checklist for Overseas Buyers"
+metaDescription: "A practical factory audit checklist for overseas buyers: capacity, equipment, welding, QC, packing, export experience and the red flags to check."
 h1: How to Audit a Steel Structure Factory in China? Practical Checklist
 excerpt: "Visiting or remotely auditing a Chinese steel structure factory? This practical checklist covers capacity, equipment, welding quality control, testing, packing, export experience and red flags to watch for."
 coverImage: /images/blog/steel-structure-factory-audit-checklist/cover.jpg

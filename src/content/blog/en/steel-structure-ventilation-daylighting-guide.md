@@ -3,7 +3,7 @@ title: "Ventilation & Daylighting for Steel Buildings: Options and Design Points
 language: "en"
 category: "Installation & Technical"
 status: "published"
-seoTitle: "Ventilation & Daylighting for Steel Buildings: Options & Design Points | ZhongSai"
+seoTitle: "Ventilation & Daylighting for Steel Buildings | ZhongSai"
 metaDescription: "How steel buildings are ventilated and lit: ridge ventilators, turbo vents, side-wall louvers, daylighting panels and skylights, with the buyer checklist."
 h1: "Ventilation & Daylighting for Steel Buildings: Options and Design Points"
 excerpt: "Steel buildings are ventilated and lit with ridge ventilators, turbo vents, side-wall louvers or mechanical fans for airflow, and daylighting panels, skylights or side-wall windows for natural light. The ventilation rate and daylight area depend on the building use, climate, local code and the approved design. Ventilation and daylighting openings are coordinated with the steel design and confirmed on the drawings."

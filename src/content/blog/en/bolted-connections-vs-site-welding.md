@@ -3,7 +3,7 @@ title: "Bolted Connections vs Site Welding: Which Is Better for Export Steel Bui
 language: en
 category: Installation & Technical
 status: published
-seoTitle: Bolted Connections vs Site Welding | ZhongSai Steel Structure
+seoTitle: "Bolted Connections vs Site Welding | ZhongSai"
 metaDescription: "Bolted vs welded steel connections on site. Compare erection speed, quality control, cost, site conditions and when export projects should use each."
 h1: "Bolted Connections vs Site Welding: How to Choose"
 excerpt: "Bolted vs welded steel connections on site 鈥?compare erection speed, quality, cost, site conditions and export project considerations."

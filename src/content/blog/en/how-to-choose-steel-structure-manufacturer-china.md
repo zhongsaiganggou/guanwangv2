@@ -3,8 +3,8 @@ title: "How to Choose a Steel Structure Manufacturer in China: A Practical Guide
 language: en
 category: Supplier Selection
 status: published
-seoTitle: How to Choose a Steel Structure Manufacturer in China (2026 Guide) | ZhongSai
-metaDescription: "How to evaluate Chinese steel structure manufacturers: factory audit checklist, welding & QC capabilities, export experience, delivery reliability, pricing transparency, and red flags to avoid."
+seoTitle: "How to Choose a Steel Structure Manufacturer in China"
+metaDescription: "How to evaluate Chinese steel manufacturers: factory audit checklist, welding and QC, export experience, delivery reliability, pricing transparency and red flags."
 h1: How to Choose a Steel Structure Manufacturer in China
 excerpt: "Practical criteria for evaluating Chinese steel structure manufacturers: engineering capability, welding and QC, export experience, delivery reliability, pricing transparency, and red flags."
 coverImage: /images/blog/choose-steel-manufacturer-china/cover.jpg

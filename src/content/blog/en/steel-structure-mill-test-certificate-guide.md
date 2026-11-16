@@ -3,7 +3,7 @@ title: "How to Read a Mill Test Certificate for Steel Structures (EN 10204 3.1 v
 language: "en"
 category: "Manufacturing & Quality"
 status: "published"
-seoTitle: "Steel Mill Test Certificate (MTC) & EN 10204 3.1/3.2 Guide | ZhongSai"
+seoTitle: "Steel Mill Test Certificate (MTC) & EN 10204 3.1/3.2 Guide"
 metaDescription: "How to read and verify a steel mill test certificate: EN 10204 3.1 vs 3.2, heat number traceability, chemical and mechanical values, and the buyer checklist."
 h1: "How to Read a Mill Test Certificate for Steel Structures"
 excerpt: "A mill test certificate (MTC), usually issued under EN 10204, is the document that proves the steel grade, chemical composition and mechanical properties of the material match the order and the standard. Type 3.1 is issued independently by the manufacturer; Type 3.2 adds third-party witnessed inspection. Acceptance hinges on tracing the heat number on the certificate to the physical steel, confirming the grade against the order and drawings, and checking the chemical and mechanical values against the standard — those values are specific to the steel grade and standard, not fixed global numbers. ZhongSai has built steel structures for 20 years and focused on exports for 15, and coordinates MTC documentation for the steel structures it fabricates."

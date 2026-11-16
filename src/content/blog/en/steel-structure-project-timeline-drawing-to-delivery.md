@@ -3,8 +3,8 @@ title: "Steel Structure Project Timeline: From Drawing to Delivery"
 language: en
 category: "Cost & Planning"
 status: published
-seoTitle: "Steel Structure Project Timeline: From Drawing to Delivery | ZhongSai"
-metaDescription: "Typical timeline for a steel structure project from initial drawings to export delivery: design review, detailing, fabrication, QC, packing and shipping. Plan your schedule realistically."
+seoTitle: "Steel Structure Project Timeline: Drawing to Delivery"
+metaDescription: "Typical steel project timeline from first drawings to export delivery: design review, detailing, fabrication, QC, packing and shipping."
 h1: "Steel Structure Project Timeline: From Drawing to Delivery"
 excerpt: "A realistic breakdown of the steel structure project timeline — from drawing review and engineering detailing through fabrication, QC, container loading and export delivery — to help you plan your schedule."
 coverImage: /images/manufacturing/real/cnc-cutting.jpg

@@ -4,7 +4,7 @@ language: en
 category: Installation & Technical
 status: published
 seoTitle: Steel Workshop with Overhead Crane Design Guide | ZhongSai
-metaDescription: "Planning a steel workshop with an overhead crane? Learn which crane parameters, column brackets, runway girders and foundation loads you must specify before asking for a quote."
+metaDescription: "Planning a workshop with an overhead crane? The crane parameters, column brackets, runway girders and foundation loads to fix before asking for a quote."
 h1: "Overhead Crane Workshop Design: What Determines the Structure"
 excerpt: "What you must know before building a steel workshop with an overhead crane: crane capacity, span, lift height, duty class, runway beams, columns and foundations."
 coverImage: /images/blog/overhead-crane-workshop-design/cover.jpg

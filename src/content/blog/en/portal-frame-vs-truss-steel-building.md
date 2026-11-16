@@ -3,8 +3,8 @@ title: "Portal Frame vs Truss Steel Buildings: Which to Choose?"
 language: en
 category: Installation & Technical
 status: published
-seoTitle: "Portal Frame vs Truss Steel Buildings: Which to Choose? | ZhongSai"
-metaDescription: "Portal frame vs truss steel building: which structural system suits your project? Compare span, height, crane loads, cost, construction speed and typical applications for warehouses, workshops and long-span halls."
+seoTitle: "Portal Frame vs Truss Steel Buildings: Which to Choose"
+metaDescription: "Portal frame vs truss steel building: compare span, height, crane loads, cost, build speed and typical use for warehouses, workshops and halls."
 h1: "Portal Frame vs Truss Steel Buildings: Which One Suits Your Project?"
 excerpt: "Choosing between a portal frame and a truss steel building? Compare span, eaves height, crane loads, material use, construction speed and typical applications before you finalize your design."
 coverImage: /images/blog/portal-frame-vs-truss-steel-building/cover.jpg
