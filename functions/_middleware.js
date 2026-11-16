@@ -15,13 +15,16 @@
 import { ROUTES } from './_routes.js';
 
 // Paths that are permanently removed with no redirect target.
-const GONE_URLS = new Set([
-  '/en/blog/how-much-does-steel-structure-warehouse-cost/',
-  '/zh/blog/gangjiegou-cangku-zaojia-2026/',
-  '/zh/projects/china-cnooc-pipe-rack/',
-  '/zh/projects/china-huarun-center/',
-  '/zh/projects/china-qianhai-dreamfactory/',
-]);
+// Empty as of 2026-11-16: every previously "gone" URL now has a live
+// same-language equivalent and 301s from EXACT instead. The branch is kept so a
+// genuinely retired page can still be marked 410 here without new code.
+//   retired from this list:
+//     /en/blog/how-much-does-steel-structure-warehouse-cost/   -> EN cost guide
+//     /zh/blog/gangjiegou-cangku-zaojia-2026/                  -> ZH cost guide
+//     /zh/projects/china-huarun-center/                        -> /zh/projects/dongguan-huarun-center/
+//     /zh/projects/china-qianhai-dreamfactory/                 -> /zh/projects/qianhai-dreamfactory/
+//     /zh/projects/china-cnooc-pipe-rack/                      -> /zh/projects/cnooc-pr6-pipe-rack/
+const GONE_URLS = new Set([]);
 
 // URLs that must stay a real 404 (no generic /zh/blog/ -> /zh/resources/ fallback,
 // no weak hub redirect). Revisit only when an approved same-language equivalent
@@ -44,6 +47,11 @@ const EXACT = new Map([
   ['/terms/', '/en/terms/'],
   ['/projects/', '/en/projects/'],
   ['/solutions/', '/en/solutions/'],
+  // Legacy root-level hub pages (old HTML site) that were falling through to 404.
+  // Added 2026-11-16 after GSC coverage audit (`/products.html`, `/shipments.html`
+  // both returned 404 with recorded impressions).
+  ['/products/', '/en/products/'],
+  ['/shipments/', '/en/export-delivery/'],
   ['/blog/how-to-choose-steel-structure-manufacturer-china/',
     '/en/blog/how-to-choose-steel-structure-manufacturer-china/'],
   ['/steel-buildings/', '/en/solutions/'],
@@ -65,6 +73,9 @@ const EXACT = new Map([
   ['/en/blog/steel-structure-design-standards-guide/',
     '/en/blog/steel-structure-design-codes-comparison/'],
   ['/en/blog/prefab-steel-factory-building-cost-guide/',
+    '/en/blog/steel-warehouse-cost-guide/'],
+  // Retired cost article (was 410) — live same-intent guide exists, recover the equity.
+  ['/en/blog/how-much-does-steel-structure-warehouse-cost/',
     '/en/blog/steel-warehouse-cost-guide/'],
   ['/en/countries/indonesia/', '/en/markets/indonesia/'],
   ['/en/projects/tanzania-grain-storage-warehouse/', '/en/markets/tanzania/'],
@@ -91,6 +102,8 @@ const EXACT = new Map([
     '/zh/blog/gangjiegou-changfang-zaojia-zhinan/'],
   ['/zh/blog/gangjiegou-cangku-zaojia-duoshaoqian/',
     '/zh/blog/steel-warehouse-cost-guide/'],
+  ['/zh/blog/gangjiegou-cangku-zaojia-2026/',
+    '/zh/blog/steel-warehouse-cost-guide/'],
   ['/zh/blog/gangjiegou-vs-hunningtu-chengben-duibi/',
     '/zh/blog/gangjiegou-changfang-zaojia-zhinan/'],
   ['/zh/blog/steel-structure-vs-concrete-comparison/',
@@ -101,6 +114,15 @@ const EXACT = new Map([
   // page (mirrors static _redirects intent; EXACT outranks the /zh/blog/ pattern
   // fallback so users land on real packing/loading content, not the generic hub).
   ['/zh/blog/steel-structure-container-loading-guide/', '/zh/export-delivery/'],
+  // Retired ZH project slugs (old `china-` prefix). Live ZH pages exist under the
+  // new slugs, so these 301 instead of 410 — 410 was throwing away what little
+  // ranking signal the old URLs still carried (2026-11-16 GSC 404/410 audit).
+  ['/zh/projects/china-huarun-center/', '/zh/projects/dongguan-huarun-center/'],
+  ['/zh/projects/china-qianhai-dreamfactory/', '/zh/projects/qianhai-dreamfactory/'],
+  ['/zh/projects/china-cnooc-pipe-rack/', '/zh/projects/cnooc-pr6-pipe-rack/'],
+  // Saudi Arabia market page only exists in EN; send ZH visitors to the ZH hub
+  // rather than a dead 404 (the old ZH URL had no recorded impressions).
+  ['/zh/markets/saudi-arabia/', '/zh/markets/'],
   ['/zh/products/materials/fasteners/', '/zh/components/'],
   // P1 Lead Stop-Loss — high-value exact redirects (audit §19, 2026-10)
   ['/zh/blog/steel-structure-corrosion-protection-guide/',
