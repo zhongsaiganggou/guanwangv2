@@ -121,7 +121,7 @@ An automated warehouse does not cost more per square metre only because it is ta
 - **Floor slab** — flatness over long aisles is a concrete cost, but it is triggered by the automation decision.
 - **Survey and interface management** — coordination is a real cost item, and the cheapest to fund properly.
 
-Steel tonnage is one line in that list, which is why an AS/RS project should be quoted from rack layout, crane data and fire strategy — not floor area. Ordinary warehouse cost structure: [warehouse cost guide](/en/blog/steel-warehouse-cost-guide/).
+Steel tonnage is one line in that list, which is why an AS/RS project should be quoted from rack layout, crane data and fire strategy — not floor area. Ordinary warehouse cost structure: [warehouse cost guide](/en/blog/steel-warehouse-cost-complete-guide/).
 
 ## Responsibility boundary
 

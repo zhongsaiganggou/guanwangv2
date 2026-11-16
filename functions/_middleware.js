@@ -73,10 +73,15 @@ const EXACT = new Map([
   ['/en/blog/steel-structure-design-standards-guide/',
     '/en/blog/steel-structure-design-codes-comparison/'],
   ['/en/blog/prefab-steel-factory-building-cost-guide/',
-    '/en/blog/steel-warehouse-cost-guide/'],
+    '/en/blog/steel-warehouse-cost-complete-guide/'],
   // Retired cost article (was 410) — live same-intent guide exists, recover the equity.
   ['/en/blog/how-much-does-steel-structure-warehouse-cost/',
-    '/en/blog/steel-warehouse-cost-guide/'],
+    '/en/blog/steel-warehouse-cost-complete-guide/'],
+  // Cost cluster consolidation (2026-11-16): the shorter EN cost page was retired
+  // and its unique sections (cost-share table, kg/m2 benchmarks, responsibility
+  // matrix, quotation checklist) were merged into the complete guide.
+  ['/en/blog/steel-warehouse-cost-guide/',
+    '/en/blog/steel-warehouse-cost-complete-guide/'],
   ['/en/countries/indonesia/', '/en/markets/indonesia/'],
   ['/en/projects/tanzania-grain-storage-warehouse/', '/en/markets/tanzania/'],
   ['/en/steel-hospital-building/', '/en/commercial-public-steel-buildings/'],

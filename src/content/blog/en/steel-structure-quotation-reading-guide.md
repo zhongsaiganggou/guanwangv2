@@ -24,7 +24,7 @@ This guide is about the document you already received. It walks through the ten 
 
 Steel is priced by weight, not by floor area. A quotation built on "price per square metre" hides the tonnage, the cladding allowance and the accessories, so two suppliers can quote the same footprint and mean different buildings. The total also shifts with steel grade, coating system, panel construction, packing, container count, freight validity and payment terms.
 
-If you want the cost logic behind those variables, read [what actually drives steel building cost](/en/blog/steel-warehouse-cost-guide/) first. This article assumes you already have a number and need to know whether it is the right number.
+If you want the cost logic behind those variables, read [what actually drives steel building cost](/en/blog/steel-warehouse-cost-complete-guide/) first. This article assumes you already have a number and need to know whether it is the right number.
 
 ## The ten lines every quotation should contain
 

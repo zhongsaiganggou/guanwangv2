@@ -114,7 +114,7 @@ Two consequences for the buyer: the erection plan must be agreed before shipping
 
 ## Where the cost actually moves
 
-Multi-storey frames cost more per square metre of floor than single-storey sheds, and the reason is structural: drift control forces heavier lateral members, every floor level multiplies beams, plates and bolts, protection and deck are added, and tighter tolerances mean more survey time. None of this can be judged from a price per square metre, which is why a multi-storey enquiry should be priced from a drawing set and a floor schedule. The cost drivers themselves are covered in [what actually drives steel building cost](/en/blog/steel-warehouse-cost-guide/).
+Multi-storey frames cost more per square metre of floor than single-storey sheds, and the reason is structural: drift control forces heavier lateral members, every floor level multiplies beams, plates and bolts, protection and deck are added, and tighter tolerances mean more survey time. None of this can be judged from a price per square metre, which is why a multi-storey enquiry should be priced from a drawing set and a floor schedule. The cost drivers themselves are covered in [what actually drives steel building cost](/en/blog/steel-warehouse-cost-complete-guide/).
 
 ## Responsibility boundary
 
