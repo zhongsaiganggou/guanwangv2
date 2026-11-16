@@ -1,6 +1,7 @@
 ---
 import { getCollection } from 'astro:content';
 import BaseLayout from '../../../../layouts/BaseLayout.astro';
+import { getBlogCover } from '../../../../data/blogCovers';
 
 export async function getStaticPaths() {
   const posts = await getCollection('blog', ({ data }) => {
@@ -18,6 +19,12 @@ export async function getStaticPaths() {
 
 const { post } = Astro.props;
 const { Content } = await post.render();
+
+// PHASE 18 / S1: responsive cover variants + reserved space (CLS).
+// The cover sits inside the first viewport on every sampled article
+// (max measured top offset 696px vs 844px viewport at 390px), and it is
+// the LCP element on the heavy articles, so it is eager + high priority.
+const cover = getBlogCover(post.data.coverImage);
 
 // 从post.id中提取slug，格式为 en/slug.md 或 zh/slug.md
 const slug = post.id.replace(/^en\//, '').replace(/\.md$/, '');
@@ -113,7 +120,30 @@ const articleJsonLd = {
 
         {post.data.coverImage && (
           <div class="article-cover">
-            <img src={post.data.coverImage} alt={post.data.coverImageAlt || post.data.title} loading="lazy" />
+            {cover ? (
+              <picture>
+                <source type="image/avif" srcset={cover.avifSrcset} sizes={cover.sizes} />
+                <source type="image/webp" srcset={cover.webpSrcset} sizes={cover.sizes} />
+                <img
+                  src={post.data.coverImage}
+                  alt={post.data.coverImageAlt || post.data.title}
+                  width={cover.width}
+                  height={cover.height}
+                  loading="eager"
+                  fetchpriority="high"
+                  decoding="async"
+                  sizes={cover.sizes}
+                />
+              </picture>
+            ) : (
+              <img
+                src={post.data.coverImage}
+                alt={post.data.coverImageAlt || post.data.title}
+                loading="eager"
+                fetchpriority="high"
+                decoding="async"
+              />
+            )}
           </div>
         )}
 

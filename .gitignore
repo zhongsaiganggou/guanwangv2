@@ -32,6 +32,9 @@ tools/image-audit/source-thumbs/
 # Build-time generated responsive homepage images (recreated on every build)
 /public/images/optimized/
 
+# Build-time generated blog cover variants + their manifest (recreated on every build)
+/src/data/blog-cover-manifest.json
+
 # Old website snapshots & scrape artifacts (local reference only)
 old_project_html/
 old_projects_page.html
