@@ -6,7 +6,7 @@ metaDescription: "详解中国结构钢常用牌号Q235与Q345的屈服强度、
 h1: "钢材等级详解：Q235与Q345结构钢选型指南"
 excerpt: "实用指南，帮助采购商理解中国结构钢牌号Q235和Q345的区别，包括屈服强度、化学成分、焊接性能和项目选型标准。"
 category: "Materials & Components"
-coverImage: "/images/blog/steel-grades-guide/cover.jpg"
+coverImage: "/images/manufacturing/real/cutting-prep-9809.jpg"
 author: "中赛钢结构编辑团队"
 publishedAt: "2026-09-09"
 updatedAt: "2026-09-09"

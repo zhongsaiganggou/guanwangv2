@@ -451,6 +451,99 @@ const STATIC_BREADCRUMBS: Record<string, { en: Crumb[]; zh: Crumb[] }> = {
       { name: '商业与公共建筑' },
     ],
   },
+  // 2026-11-16 全站体检补充：以下页面此前缺 BreadcrumbList 结构化数据
+  markets: {
+    en: [{ name: 'Home', href: '/en/' }, { name: 'Markets' }],
+    zh: [{ name: '首页', href: '/zh/' }, { name: '市场' }],
+  },
+  'markets/indonesia': {
+    en: [
+      { name: 'Home', href: '/en/' },
+      { name: 'Markets', href: '/en/markets/' },
+      { name: 'Indonesia' },
+    ],
+    zh: [
+      { name: '首页', href: '/zh/' },
+      { name: '市场', href: '/zh/markets/' },
+      { name: '印尼' },
+    ],
+  },
+  'markets/malaysia': {
+    en: [
+      { name: 'Home', href: '/en/' },
+      { name: 'Markets', href: '/en/markets/' },
+      { name: 'Malaysia' },
+    ],
+    zh: [
+      { name: '首页', href: '/zh/' },
+      { name: '市场', href: '/zh/markets/' },
+      { name: '马来西亚' },
+    ],
+  },
+  'markets/singapore': {
+    en: [
+      { name: 'Home', href: '/en/' },
+      { name: 'Markets', href: '/en/markets/' },
+      { name: 'Singapore' },
+    ],
+    zh: [
+      { name: '首页', href: '/zh/' },
+      { name: '市场', href: '/zh/markets/' },
+      { name: '新加坡' },
+    ],
+  },
+  'markets/tanzania': {
+    en: [
+      { name: 'Home', href: '/en/' },
+      { name: 'Markets', href: '/en/markets/' },
+      { name: 'Tanzania' },
+    ],
+    zh: [
+      { name: '首页', href: '/zh/' },
+      { name: '市场', href: '/zh/markets/' },
+      { name: '坦桑尼亚' },
+    ],
+  },
+  'markets/thailand': {
+    en: [
+      { name: 'Home', href: '/en/' },
+      { name: 'Markets', href: '/en/markets/' },
+      { name: 'Thailand' },
+    ],
+    zh: [
+      { name: '首页', href: '/zh/' },
+      { name: '市场', href: '/zh/markets/' },
+      { name: '泰国' },
+    ],
+  },
+  'markets/saudi-arabia': {
+    en: [
+      { name: 'Home', href: '/en/' },
+      { name: 'Markets', href: '/en/markets/' },
+      { name: 'Saudi Arabia' },
+    ],
+    zh: [
+      { name: '首页', href: '/zh/' },
+      { name: '市场', href: '/zh/markets/' },
+      { name: '沙特阿拉伯' },
+    ],
+  },
+  'projects/singapore': {
+    en: [
+      { name: 'Home', href: '/en/' },
+      { name: 'Projects', href: '/en/projects/' },
+      { name: 'Singapore' },
+    ],
+    zh: [
+      { name: '首页', href: '/zh/' },
+      { name: '项目案例', href: '/zh/projects/' },
+      { name: '新加坡' },
+    ],
+  },
+  'steel-structure-quote': {
+    en: [{ name: 'Home', href: '/en/' }, { name: 'Get a Quote' }],
+    zh: [{ name: '首页', href: '/zh/' }, { name: '获取报价' }],
+  },
 };
 
 // 根据当前路径返回面包屑（与可见面包屑一致）；首页/未知页返回 null
@@ -549,10 +642,16 @@ const SITEMAP_SECTIONS = [
   'about',
   'contact',
   'resources',
-  'blog',
+  // 不再列 'blog'：/en/blog/ 与 /zh/blog/ 没有实际页面，线上 301 到 resources，旧 sitemap 因此含 2 条跳转 URL
   'privacy',
   'terms',
   'projects',
+  // 2026-11-16 全站体检补充：以下为可索引正式页面，此前漏出 sitemap
+  'faq',
+  'solutions',
+  'steel-structure-quote',
+  'steel-supermarket-mall',
+  'services/structural-steel-detailing',
 ];
 
 // 仅英文的 Legacy Blog 页面（无对应中文版本）
@@ -564,17 +663,30 @@ const SITEMAP_EN_ONLY = [
   'blog/steel-warehouse-cost-complete-guide',
   'blog/steel-workshop-cost-factory-building-price',
   'blog/how-to-choose-steel-structure-supplier',
+  // 2026-11-16 全站体检补充
+  'blog/steel-structure-installation-mistakes',
+  'blog/steel-structure-installation-process-guide',
+  'markets/saudi-arabia',
 ];
 
 // 仅中文的 Blog 页面（无对应英文版本）
 const SITEMAP_ZH_ONLY = [
   'blog/gangjiegou-changfang-zaojia-zhinan',
   'blog/gangjiegou-gongchang-xuanze-zhinan',
+  // 2026-11-16 全站体检补充
+  'blog/steel-structure-installation-mistakes',
+  'blog/steel-structure-installation-process-guide',
 ];
 
-// 双语市场页：仅当 EN + ZH 页面同时存在时才加入（其他 market 页暂不进 sitemap）
+// 双语市场页与市场总览页（EN + ZH 页面同时存在）
 const SITEMAP_MARKETS_BILINGUAL = [
+  'markets',
   'markets/uae',
+  'markets/indonesia',
+  'markets/malaysia',
+  'markets/singapore',
+  'markets/tanzania',
+  'markets/thailand',
 ];
 
 export function buildSitemapPaths(): string[] {

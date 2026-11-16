@@ -201,4 +201,4 @@ translationKey: "steel-building-extension-expansion-joints"
 
 如果二期是真实的可能性，询价时就直接讲。我们会把端榀、缝和基础接口按"以后能接"来详图，让下一跨加进来时不必开屋面；也会把竣工资料留全，让后来的扩建可以报价，而不是靠猜。
 
-[提交项目图纸](/zh/contact/#quote-form) — 也可以先看[柱距与柱网](/zh/blog/steel-structure-column-grid-bay-spacing-guide/)怎么影响扩建方式、[基础怎么设计](/zh/blog/steel-structure-foundation-design-guide/)端部那一线、[屋面防水](/zh/blog/steel-building-roof-waterproofing-guide/)怎么收口，以及[吊车梁](/zh/blog/steel-structure-crane-runway-beam-guide/)要延长时会发生什么。
+[提交项目图纸](/zh/contact/#quote-form) — 也可以先看[柱距与柱网](/zh/blog/steel-structure-column-grid-bay-spacing-guide/)怎么影响扩建方式、[基础怎么设计](/zh/blog/steel-structure-foundation-design-guide/)端部那一线、[屋面防水](/zh/blog/steel-building-roof-waterproofing-guide/)怎么收口，以及[吊车梁](/zh/blog/crane-runway-beam-guide/)要延长时会发生什么。

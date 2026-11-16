@@ -7,7 +7,7 @@ seoTitle: "钢结构项目时间线：从图纸到交付 | 中赛钢构"
 metaDescription: "海外钢结构项目从图纸确认到出口交付的典型周期：设计评审、深化、制造、质检、装柜和海运。帮助你合理规划项目进度。"
 h1: "钢结构项目时间线：从图纸到交付"
 excerpt: "钢结构出口项目从图纸评审到交付的真实周期分解——设计深化、材料采购、工厂制造、质检、装柜和海运，帮助你合理安排项目进度。"
-coverImage: /images/manufacturing/cnc-cutting.jpg
+coverImage: /images/manufacturing/real/cnc-cutting.jpg
 coverImageAlt: CNC切割设备正在加工钢构件
 publishedAt: "2026-09-16"
 updatedAt: "2026-09-16"

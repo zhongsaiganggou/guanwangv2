@@ -7,7 +7,7 @@ seoTitle: "Steel Structure Project Timeline: From Drawing to Delivery | ZhongSai
 metaDescription: "Typical timeline for a steel structure project from initial drawings to export delivery: design review, detailing, fabrication, QC, packing and shipping. Plan your schedule realistically."
 h1: "Steel Structure Project Timeline: From Drawing to Delivery"
 excerpt: "A realistic breakdown of the steel structure project timeline — from drawing review and engineering detailing through fabrication, QC, container loading and export delivery — to help you plan your schedule."
-coverImage: /images/manufacturing/cnc-cutting.jpg
+coverImage: /images/manufacturing/real/cnc-cutting.jpg
 coverImageAlt: CNC cutting machine processing steel structure components
 publishedAt: "2026-09-16"
 updatedAt: "2026-09-16"

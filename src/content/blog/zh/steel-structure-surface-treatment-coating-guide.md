@@ -6,7 +6,7 @@ metaDescription: "详解钢结构表面处理、底漆选择、涂层体系、�
 h1: "钢结构表面处理与防腐涂层指南：出口项目防腐保护"
 excerpt: "实用指南，介绍预制钢结构的表面处理、底漆体系、面漆、热镀锌和防腐保护规格。"
 category: "Manufacturing & Quality"
-coverImage: "/images/blog/surface-treatment-coating-guide/cover.jpg"
+coverImage: "/images/manufacturing/real/coating-thickness.jpg"
 author: "中赛钢结构编辑团队"
 publishedAt: "2026-09-09"
 updatedAt: "2026-09-09"

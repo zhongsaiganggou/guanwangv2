@@ -6,7 +6,7 @@ metaDescription: "Complete guide to steel structure surface preparation, primer 
 h1: "Steel Structure Surface Treatment & Coating Guide: Corrosion Protection for Export Projects"
 excerpt: "A practical guide to surface preparation, primer systems, topcoats, galvanizing, and corrosion protection specifications for prefabricated steel structures."
 category: "Manufacturing & Quality"
-coverImage: "/images/blog/surface-treatment-coating-guide/cover.jpg"
+coverImage: "/images/manufacturing/real/coating-thickness.jpg"
 author: "ZhongSai Steel Structure Editorial Team"
 publishedAt: "2026-09-09"
 updatedAt: "2026-09-09"

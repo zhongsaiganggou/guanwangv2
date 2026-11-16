@@ -173,4 +173,4 @@ translationKey: "mining-equipment-steel-structure-guide"
 
 如果设备还在选型，可以先把工艺布置图和已有的设备资料发过来。中赛可以按一套明确的假设条件报钢结构价格，同时列出还缺哪些数据，并把制作图压到工程师确认之后再出。这比模块做完才发现少了一个载荷工况要便宜得多。
 
-图纸齐了，可以直接走[报价表单](/zh/contact/#quote-form)，我们会回一份接口清单和制作顺序。想看重型工业钢结构的制作与检验流程，可以看[制造与质量](/zh/manufacturing-quality/)；想看这类项目的整体范围，看[矿山与重型工业钢结构](/zh/steel-mining-factory/)。模块怎么包装装柜，见[装柜指南](/zh/blog/steel-structure-container-loading-guide/)；防护体系怎么选，见[防腐涂装指南](/zh/blog/steel-structure-corrosion-protection-coating-guide/)。
+图纸齐了，可以直接走[报价表单](/zh/contact/#quote-form)，我们会回一份接口清单和制作顺序。想看重型工业钢结构的制作与检验流程，可以看[制造与质量](/zh/manufacturing-quality/)；想看这类项目的整体范围，看[矿山与重型工业钢结构](/zh/steel-mining-factory/)。模块怎么包装装柜，见[装柜指南](/zh/blog/steel-structure-packing-list-container-loading-plan-guide/)；防护体系怎么选，见[防腐涂装指南](/zh/blog/steel-structure-corrosion-protection-coating-guide/)。

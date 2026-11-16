@@ -51,10 +51,43 @@ const breadcrumbJsonLd = {
     },
   ],
 };
+
+// Article JSON-LD：2026-11-16 全站体检补上，此前 markdown 文章只有 Breadcrumb + Organization
+const SITE = 'https://zhongsai-steelstructure.com';
+const articleImage = post.data.coverImage
+  ? `${SITE}${post.data.coverImage}`
+  : `${SITE}/images/og-default.jpg`;
+const articleJsonLd = {
+  '@context': 'https://schema.org',
+  '@type': 'BlogPosting',
+  mainEntityOfPage: { '@type': 'WebPage', '@id': canonical },
+  headline: h1,
+  description: metaDescription,
+  image: [articleImage],
+  datePublished: post.data.publishedAt,
+  dateModified: post.data.updatedAt || post.data.publishedAt,
+  author: {
+    '@type': 'Organization',
+    name: post.data.author || 'ZhongSai Steel Structure',
+    url: `${SITE}/zh/about/`,
+  },
+  publisher: {
+    '@type': 'Organization',
+    name: 'ZhongSai Steel Structure',
+    logo: {
+      '@type': 'ImageObject',
+      url: `${SITE}/images/logo-official-transparent-cropped.png`,
+    },
+  },
+  articleSection: post.data.category || '文章',
+  inLanguage: 'zh-CN',
+  url: canonical,
+};
 ---
 
 
 <script type="application/ld+json" set:html={JSON.stringify(breadcrumbJsonLd)} />
+<script type="application/ld+json" set:html={JSON.stringify(articleJsonLd)} />
 <BaseLayout
   title={seoTitle}
   description={metaDescription}
