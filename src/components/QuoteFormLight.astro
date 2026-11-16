@@ -12,8 +12,8 @@ const { lang = 'zh', id = 'quote-form-light' } = Astro.props;
 
 const texts = lang === 'zh' ? {
   title: '获取项目报价',
-  subtitle: '留下 WhatsApp / 电话或微信，我们24小时内联系您出报价。其他信息可选填。',
-  wechat: '微信号（可选）',
+  subtitle: '请留下微信号，我们24小时内联系您出报价。其他信息可选填。',
+  wechat: '微信号 *',
   wechatPlaceholder: '请输入您的微信号',
   buildingType: '项目类型 *',
   buildingTypeOptions: ['请选择', '工业厂房与车间', '仓库与物流', '矿业与能源设施', '商业与公共建筑', '农业与特种设施', '其他'],
@@ -21,7 +21,7 @@ const texts = lang === 'zh' ? {
   namePlaceholder: '怎么称呼您？',
   email: '邮箱（可选）',
   emailPlaceholder: 'your@email.com',
-  phone: 'WhatsApp / 电话',
+  phone: 'WhatsApp / 电话（可选）',
   phonePlaceholder: '含国家区号，如 +60 12 345 6789',
   country: '项目所在国家（可选）',
   countryPlaceholder: '请选择国家',
@@ -41,8 +41,8 @@ const texts = lang === 'zh' ? {
   privacyNote: '提交即表示您同意我们的隐私政策，我们不会分享您的信息。',
 } : {
   title: 'Get Your Project Quote',
-  subtitle: 'Leave your WhatsApp / phone or WeChat — we will contact you within 24 hours with a quote. Other fields are optional.',
-  wechat: 'WeChat ID (optional)',
+  subtitle: 'Please leave your WeChat ID — we will contact you within 24 hours with a quote. Other fields are optional.',
+  wechat: 'WeChat ID *',
   wechatPlaceholder: 'Enter your WeChat ID',
   buildingType: 'Project Type *',
   buildingTypeOptions: ['Please select', 'Industrial Factory & Workshop', 'Warehouse & Logistics', 'Mining & Energy', 'Commercial & Public', 'Agriculture & Special', 'Other'],
@@ -50,7 +50,7 @@ const texts = lang === 'zh' ? {
   namePlaceholder: 'How should we call you?',
   email: 'Email (optional)',
   emailPlaceholder: 'your@email.com',
-  phone: 'WhatsApp / Phone',
+  phone: 'WhatsApp / Phone (optional)',
   phonePlaceholder: 'with country code, e.g. +60 12 345 6789',
   country: 'Project Country (optional)',
   countryPlaceholder: 'Select country',
@@ -177,6 +177,7 @@ const COUNTRIES_ZH = [
         type="text"
         id={`${id}-wechat`}
         name="wechat"
+        required
         placeholder={texts.wechatPlaceholder}
       />
     </div>
@@ -205,6 +206,19 @@ const COUNTRIES_ZH = [
     ></textarea>
   </div>
 
+  <!-- UTM + Google Ads click ID (populated by script from URL/cookie) -->
+  <input type="hidden" name="utm_source" />
+  <input type="hidden" name="utm_medium" />
+  <input type="hidden" name="utm_campaign" />
+  <input type="hidden" name="utm_content" />
+  <input type="hidden" name="utm_term" />
+  <input type="hidden" name="gclid" />
+  <input type="hidden" name="gbraid" />
+  <input type="hidden" name="wbraid" />
+  <input type="hidden" name="landing_page" />
+  <input type="hidden" name="referrer" />
+  <input type="hidden" name="source_page" />
+
   <TurnstileWidget id={`${id}-turnstile`} lang={lang} />
 
   <div class="form-error" id={`${id}-error`} style="display: none;"></div>
@@ -229,16 +243,53 @@ const COUNTRIES_ZH = [
   const submitBtn = document.getElementById('{id}-submit') as HTMLButtonElement;
 
   if (form) {
+    // ---- UTM + Google Ads click ID persistence (30-day first-party cookie) ----
+    const ZS_PERSIST = ['utm_source','utm_medium','utm_campaign','utm_content','utm_term','gclid','gbraid','wbraid'];
+    function zsReadUtm() {
+      try {
+        const m = document.cookie.match(/(?:^|;\s*)zs_utm_data=([^;]+)/);
+        return m ? JSON.parse(decodeURIComponent(m[1])) : {};
+      } catch { return {}; }
+    }
+    function zsWriteUtm(d) {
+      try {
+        document.cookie = 'zs_utm_data=' + encodeURIComponent(JSON.stringify(d)) +
+          '; path=/; max-age=' + (30*24*60*60) + '; SameSite=Lax; Secure';
+      } catch {}
+    }
+    (function zsSaveFromUrl() {
+      try {
+        const p = new URLSearchParams(window.location.search);
+        const d = zsReadUtm(); let has = false;
+        ZS_PERSIST.forEach(f => { const v = p.get(f); if (v) { d[f] = v; has = true; } });
+        if (has) {
+          d._landing = window.location.pathname;
+          d._referrer = document.referrer || '';
+          d._ts = Date.now();
+          zsWriteUtm(d);
+        }
+      } catch {}
+    })();
+    // Fill hidden fields from stored cookie so the lead carries original click attribution
+    (function zsFillFields() {
+      const d = zsReadUtm();
+      ZS_PERSIST.forEach(f => {
+        const i = form.querySelector('[name="' + f + '"]');
+        if (i && d[f]) i.value = d[f];
+      });
+      const lp = form.querySelector('[name="landing_page"]'); if (lp) lp.value = d._landing || window.location.pathname;
+      const rf = form.querySelector('[name="referrer"]'); if (rf) rf.value = d._referrer || document.referrer || '';
+      const sp = form.querySelector('[name="source_page"]'); if (sp) sp.value = window.location.pathname;
+    })();
+
     form.addEventListener('submit', async (e) => {
       e.preventDefault();
       errorDiv.style.display = 'none';
 
-      // At least one contact channel is required: WhatsApp/phone, WeChat, or email.
-      const phoneVal = (form.querySelector('[name="phone"]') as HTMLInputElement).value.trim();
+      // WeChat is the required contact channel (project communication runs on WeChat).
       const wechatVal = (form.querySelector('[name="wechat"]') as HTMLInputElement).value.trim();
-      const emailVal = (form.querySelector('[name="email"]') as HTMLInputElement).value.trim();
-      if (!phoneVal && !wechatVal && !emailVal) {
-        errorDiv.textContent = '{texts.requiredContact}';
+      if (!wechatVal) {
+        errorDiv.textContent = '{texts.requiredWeChat}';
         errorDiv.style.display = 'block';
         errorDiv.scrollIntoView({ behavior: 'smooth', block: 'center' });
         return;
