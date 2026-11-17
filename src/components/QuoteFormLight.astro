@@ -39,7 +39,7 @@ const texts = lang === 'zh' ? {
   submit: '提交获取报价',
   submitting: '提交中...',
   successTitle: '提交成功！',
-  successMsg: '感谢您的提交！我们的工程师会在24小时内通过 WhatsApp、微信或邮件联系您。',
+  successMsg: '感谢您的提交！我们的工程师会在24小时内通过微信、WhatsApp、或邮件联系您。',
   errorTurnstile: '验证失败，请重新提交。',
   errorValidation: '请填写必填项。',
   errorNetwork: '网络错误，请稍后重试。',
@@ -213,6 +213,7 @@ const COUNTRIES_ZH = [
         required
         placeholder={texts.wechatPlaceholder}
       />
+      <p class="field-hint">{lang === 'zh' ? '重要的沟通方式' : 'Our primary communication channel'}</p>
     </div>
 
     {showCountry && (
@@ -268,7 +269,7 @@ const COUNTRIES_ZH = [
 <div class="form-success" id={`${id}-success`} style="display: none;">
   <div class="success-icon">✓</div>
   <h3>{texts.successTitle}</h3>
-  <p>{simplified ? '感谢提交！工程师会在24小时内通过微信联系您。' : texts.successMsg}</p>
+  <p>{simplified ? '感谢您的提交！我们的工程师会在24小时内通过微信、WhatsApp、或邮件联系您。' : texts.successMsg}</p>
 </div>
 
 <script is:inline define:vars={{ id, texts, lang }}>
@@ -457,6 +458,11 @@ const COUNTRIES_ZH = [
     outline: none;
     border-color: #2563eb;
     box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.1);
+  }
+  .field-hint {
+    margin: 4px 0 0;
+    font-size: 0.78rem;
+    color: #64748b;
   }
   .form-error {
     background: #fee;

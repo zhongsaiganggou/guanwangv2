@@ -1,0 +1,11 @@
+export_date,period_code,period_start,period_end,dimension,filename,source_resource,notes
+2026-11-07,A,2026-10-10,2026-11-06,queries,gsc-A-queries.csv,sc-domain:zhongsai-steelstructure.com,总点击104 总展示8840 CTR1.2% 平均排名18
+2026-11-07,A,2026-10-10,2026-11-06,pages,gsc-A-pages.csv,sc-domain:zhongsai-steelstructure.com,
+2026-11-07,A,2026-10-10,2026-11-06,countries,gsc-A-countries.csv,sc-domain:zhongsai-steelstructure.com,
+2026-11-07,A,2026-10-10,2026-11-06,devices,gsc-A-devices.csv,sc-domain:zhongsai-steelstructure.com,桌面80点击/7156展示 移动24/1659
+2026-11-07,A,2026-10-10,2026-11-06,daily,gsc-A-summary.csv,sc-domain:zhongsai-steelstructure.com,逐日图表合计
+2026-11-07,B,2026-09-12,2026-10-09,queries,gsc-B-queries.csv,sc-domain:zhongsai-steelstructure.com,总点击37 总展示2720 CTR1.4% 平均排名17.1
+2026-11-07,B,2026-09-12,2026-10-09,pages,gsc-B-pages.csv,sc-domain:zhongsai-steelstructure.com,
+2026-11-07,B,2026-09-12,2026-10-09,countries,gsc-B-countries.csv,sc-domain:zhongsai-steelstructure.com,
+2026-11-07,B,2026-09-12,2026-10-09,devices,gsc-B-devices.csv,sc-domain:zhongsai-steelstructure.com,桌面31/2380 移动5/338
+2026-11-07,B,2026-09-12,2026-10-09,daily,gsc-B-summary.csv,sc-domain:zhongsai-steelstructure.com,逐日图表合计

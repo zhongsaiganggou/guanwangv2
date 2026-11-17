@@ -1,0 +1,417 @@
+{
+ "/images/company/factory-aerial-panorama.jpg": {
+  "width": 1920,
+  "height": 1084,
+  "dir": "/images/optimized/hero",
+  "variants": [
+   {
+    "width": 800,
+    "avif": "factory-aerial-panorama-a29dfcdf-800.avif",
+    "webp": "factory-aerial-panorama-a29dfcdf-800.webp"
+   },
+   {
+    "width": 1200,
+    "avif": "factory-aerial-panorama-a29dfcdf-1200.avif",
+    "webp": "factory-aerial-panorama-a29dfcdf-1200.webp"
+   },
+   {
+    "width": 1920,
+    "avif": "factory-aerial-panorama-a29dfcdf-1920.avif",
+    "webp": "factory-aerial-panorama-a29dfcdf-1920.webp"
+   }
+  ]
+ },
+ "/images/company/factory-steel-beam-fabrication.jpg": {
+  "width": 1138,
+  "height": 640,
+  "dir": "/images/optimized/hero",
+  "variants": [
+   {
+    "width": 800,
+    "avif": "factory-steel-beam-fabrication-4bc2be83-800.avif",
+    "webp": "factory-steel-beam-fabrication-4bc2be83-800.webp"
+   }
+  ]
+ },
+ "/images/components/finished-steel-beams-columns.jpg": {
+  "width": 1600,
+  "height": 2133,
+  "dir": "/images/optimized/hero",
+  "variants": [
+   {
+    "width": 800,
+    "avif": "finished-steel-beams-columns-bbbf315a-800.avif",
+    "webp": "finished-steel-beams-columns-bbbf315a-800.webp"
+   },
+   {
+    "width": 1200,
+    "avif": "finished-steel-beams-columns-bbbf315a-1200.avif",
+    "webp": "finished-steel-beams-columns-bbbf315a-1200.webp"
+   }
+  ]
+ },
+ "/images/components/finished-steel-members-stacked.jpg": {
+  "width": 1600,
+  "height": 1200,
+  "dir": "/images/optimized/hero",
+  "variants": [
+   {
+    "width": 800,
+    "avif": "finished-steel-members-stacked-cdc76cd7-800.avif",
+    "webp": "finished-steel-members-stacked-cdc76cd7-800.webp"
+   },
+   {
+    "width": 1200,
+    "avif": "finished-steel-members-stacked-cdc76cd7-1200.avif",
+    "webp": "finished-steel-members-stacked-cdc76cd7-1200.webp"
+   }
+  ]
+ },
+ "/images/components/steel-purlins-hero.jpg": {
+  "width": 2048,
+  "height": 1152,
+  "dir": "/images/optimized/hero",
+  "variants": [
+   {
+    "width": 800,
+    "avif": "steel-purlins-hero-46218b00-800.avif",
+    "webp": "steel-purlins-hero-46218b00-800.webp"
+   },
+   {
+    "width": 1200,
+    "avif": "steel-purlins-hero-46218b00-1200.avif",
+    "webp": "steel-purlins-hero-46218b00-1200.webp"
+   },
+   {
+    "width": 1920,
+    "avif": "steel-purlins-hero-46218b00-1920.avif",
+    "webp": "steel-purlins-hero-46218b00-1920.webp"
+   }
+  ]
+ },
+ "/images/components/steel-truss-hero.jpg": {
+  "width": 2048,
+  "height": 1152,
+  "dir": "/images/optimized/hero",
+  "variants": [
+   {
+    "width": 800,
+    "avif": "steel-truss-hero-e7a5c571-800.avif",
+    "webp": "steel-truss-hero-e7a5c571-800.webp"
+   },
+   {
+    "width": 1200,
+    "avif": "steel-truss-hero-e7a5c571-1200.avif",
+    "webp": "steel-truss-hero-e7a5c571-1200.webp"
+   },
+   {
+    "width": 1920,
+    "avif": "steel-truss-hero-e7a5c571-1920.avif",
+    "webp": "steel-truss-hero-e7a5c571-1920.webp"
+   }
+  ]
+ },
+ "/images/export/loading-truck_web.jpg": {
+  "width": 2048,
+  "height": 1542,
+  "dir": "/images/optimized/hero",
+  "variants": [
+   {
+    "width": 800,
+    "avif": "loading-truck-web-11aee6f0-800.avif",
+    "webp": "loading-truck-web-11aee6f0-800.webp"
+   },
+   {
+    "width": 1200,
+    "avif": "loading-truck-web-11aee6f0-1200.avif",
+    "webp": "loading-truck-web-11aee6f0-1200.webp"
+   },
+   {
+    "width": 1920,
+    "avif": "loading-truck-web-11aee6f0-1920.avif",
+    "webp": "loading-truck-web-11aee6f0-1920.webp"
+   }
+  ]
+ },
+ "/images/manufacturing/real/assembly-welding-9821.jpg": {
+  "width": 1920,
+  "height": 1440,
+  "dir": "/images/optimized/hero",
+  "variants": [
+   {
+    "width": 800,
+    "avif": "assembly-welding-9821-1098d1a1-800.avif",
+    "webp": "assembly-welding-9821-1098d1a1-800.webp"
+   },
+   {
+    "width": 1200,
+    "avif": "assembly-welding-9821-1098d1a1-1200.avif",
+    "webp": "assembly-welding-9821-1098d1a1-1200.webp"
+   },
+   {
+    "width": 1920,
+    "avif": "assembly-welding-9821-1098d1a1-1920.avif",
+    "webp": "assembly-welding-9821-1098d1a1-1920.webp"
+   }
+  ]
+ },
+ "/images/manufacturing/real/factory-aerial-panorama.jpg": {
+  "width": 1920,
+  "height": 1084,
+  "dir": "/images/optimized/hero",
+  "variants": [
+   {
+    "width": 800,
+    "avif": "factory-aerial-panorama-8f024464-800.avif",
+    "webp": "factory-aerial-panorama-8f024464-800.webp"
+   },
+   {
+    "width": 1200,
+    "avif": "factory-aerial-panorama-8f024464-1200.avif",
+    "webp": "factory-aerial-panorama-8f024464-1200.webp"
+   },
+   {
+    "width": 1920,
+    "avif": "factory-aerial-panorama-8f024464-1920.avif",
+    "webp": "factory-aerial-panorama-8f024464-1920.webp"
+   }
+  ]
+ },
+ "/images/manufacturing/real/factory-overview-9819.jpg": {
+  "width": 1920,
+  "height": 1440,
+  "dir": "/images/optimized/hero",
+  "variants": [
+   {
+    "width": 800,
+    "avif": "factory-overview-9819-a2526654-800.avif",
+    "webp": "factory-overview-9819-a2526654-800.webp"
+   },
+   {
+    "width": 1200,
+    "avif": "factory-overview-9819-a2526654-1200.avif",
+    "webp": "factory-overview-9819-a2526654-1200.webp"
+   },
+   {
+    "width": 1920,
+    "avif": "factory-overview-9819-a2526654-1920.avif",
+    "webp": "factory-overview-9819-a2526654-1920.webp"
+   }
+  ]
+ },
+ "/images/optimized/home/hero-1280.jpg": {
+  "width": 1280,
+  "height": 723,
+  "dir": "/images/optimized/hero",
+  "variants": [
+   {
+    "width": 800,
+    "avif": "hero-1280-0cc5486f-800.avif",
+    "webp": "hero-1280-0cc5486f-800.webp"
+   },
+   {
+    "width": 1200,
+    "avif": "hero-1280-0cc5486f-1200.avif",
+    "webp": "hero-1280-0cc5486f-1200.webp"
+   }
+  ]
+ },
+ "/images/products/03-commercial-public.jpg": {
+  "width": 2048,
+  "height": 2048,
+  "dir": "/images/optimized/hero",
+  "variants": [
+   {
+    "width": 800,
+    "avif": "03-commercial-public-beabfb48-800.avif",
+    "webp": "03-commercial-public-beabfb48-800.webp"
+   },
+   {
+    "width": 1200,
+    "avif": "03-commercial-public-beabfb48-1200.avif",
+    "webp": "03-commercial-public-beabfb48-1200.webp"
+   },
+   {
+    "width": 1920,
+    "avif": "03-commercial-public-beabfb48-1920.avif",
+    "webp": "03-commercial-public-beabfb48-1920.webp"
+   }
+  ]
+ },
+ "/images/products/agri/hero-complex.jpg": {
+  "width": 2048,
+  "height": 1152,
+  "dir": "/images/optimized/hero",
+  "variants": [
+   {
+    "width": 800,
+    "avif": "hero-complex-943b7546-800.avif",
+    "webp": "hero-complex-943b7546-800.webp"
+   },
+   {
+    "width": 1200,
+    "avif": "hero-complex-943b7546-1200.avif",
+    "webp": "hero-complex-943b7546-1200.webp"
+   },
+   {
+    "width": 1920,
+    "avif": "hero-complex-943b7546-1920.avif",
+    "webp": "hero-complex-943b7546-1920.webp"
+   }
+  ]
+ },
+ "/images/products/app-commercial-public-building.jpg": {
+  "width": 2730,
+  "height": 1536,
+  "dir": "/images/optimized/hero",
+  "variants": [
+   {
+    "width": 800,
+    "avif": "app-commercial-public-building-8844f5e4-800.avif",
+    "webp": "app-commercial-public-building-8844f5e4-800.webp"
+   },
+   {
+    "width": 1200,
+    "avif": "app-commercial-public-building-8844f5e4-1200.avif",
+    "webp": "app-commercial-public-building-8844f5e4-1200.webp"
+   },
+   {
+    "width": 1920,
+    "avif": "app-commercial-public-building-8844f5e4-1920.avif",
+    "webp": "app-commercial-public-building-8844f5e4-1920.webp"
+   }
+  ]
+ },
+ "/images/products/app-industrial-workshop-hero.jpg": {
+  "width": 2048,
+  "height": 1152,
+  "dir": "/images/optimized/hero",
+  "variants": [
+   {
+    "width": 800,
+    "avif": "app-industrial-workshop-hero-59279b77-800.avif",
+    "webp": "app-industrial-workshop-hero-59279b77-800.webp"
+   },
+   {
+    "width": 1200,
+    "avif": "app-industrial-workshop-hero-59279b77-1200.avif",
+    "webp": "app-industrial-workshop-hero-59279b77-1200.webp"
+   },
+   {
+    "width": 1920,
+    "avif": "app-industrial-workshop-hero-59279b77-1920.avif",
+    "webp": "app-industrial-workshop-hero-59279b77-1920.webp"
+   }
+  ]
+ },
+ "/images/products/app-mining-energy-hero.jpg": {
+  "width": 2048,
+  "height": 1152,
+  "dir": "/images/optimized/hero",
+  "variants": [
+   {
+    "width": 800,
+    "avif": "app-mining-energy-hero-61502a66-800.avif",
+    "webp": "app-mining-energy-hero-61502a66-800.webp"
+   },
+   {
+    "width": 1200,
+    "avif": "app-mining-energy-hero-61502a66-1200.avif",
+    "webp": "app-mining-energy-hero-61502a66-1200.webp"
+   },
+   {
+    "width": 1920,
+    "avif": "app-mining-energy-hero-61502a66-1920.avif",
+    "webp": "app-mining-energy-hero-61502a66-1920.webp"
+   }
+  ]
+ },
+ "/images/products/app-transport-infrastructure.jpg": {
+  "width": 2048,
+  "height": 1152,
+  "dir": "/images/optimized/hero",
+  "variants": [
+   {
+    "width": 800,
+    "avif": "app-transport-infrastructure-3f122c68-800.avif",
+    "webp": "app-transport-infrastructure-3f122c68-800.webp"
+   },
+   {
+    "width": 1200,
+    "avif": "app-transport-infrastructure-3f122c68-1200.avif",
+    "webp": "app-transport-infrastructure-3f122c68-1200.webp"
+   },
+   {
+    "width": 1920,
+    "avif": "app-transport-infrastructure-3f122c68-1920.avif",
+    "webp": "app-transport-infrastructure-3f122c68-1920.webp"
+   }
+  ]
+ },
+ "/images/products/app-warehouse-logistics-hero.jpg": {
+  "width": 2048,
+  "height": 1152,
+  "dir": "/images/optimized/hero",
+  "variants": [
+   {
+    "width": 800,
+    "avif": "app-warehouse-logistics-hero-5fb58696-800.avif",
+    "webp": "app-warehouse-logistics-hero-5fb58696-800.webp"
+   },
+   {
+    "width": 1200,
+    "avif": "app-warehouse-logistics-hero-5fb58696-1200.avif",
+    "webp": "app-warehouse-logistics-hero-5fb58696-1200.webp"
+   },
+   {
+    "width": 1920,
+    "avif": "app-warehouse-logistics-hero-5fb58696-1920.avif",
+    "webp": "app-warehouse-logistics-hero-5fb58696-1920.webp"
+   }
+  ]
+ },
+ "/images/products/special/hero-twisted-structure.jpg": {
+  "width": 2048,
+  "height": 1152,
+  "dir": "/images/optimized/hero",
+  "variants": [
+   {
+    "width": 800,
+    "avif": "hero-twisted-structure-3d24941f-800.avif",
+    "webp": "hero-twisted-structure-3d24941f-800.webp"
+   },
+   {
+    "width": 1200,
+    "avif": "hero-twisted-structure-3d24941f-1200.avif",
+    "webp": "hero-twisted-structure-3d24941f-1200.webp"
+   },
+   {
+    "width": 1920,
+    "avif": "hero-twisted-structure-3d24941f-1920.avif",
+    "webp": "hero-twisted-structure-3d24941f-1920.webp"
+   }
+  ]
+ },
+ "/images/projects/overseas/singapore-cr101-depot.jpg": {
+  "width": 1920,
+  "height": 1191,
+  "dir": "/images/optimized/hero",
+  "variants": [
+   {
+    "width": 800,
+    "avif": "singapore-cr101-depot-531f23d7-800.avif",
+    "webp": "singapore-cr101-depot-531f23d7-800.webp"
+   },
+   {
+    "width": 1200,
+    "avif": "singapore-cr101-depot-531f23d7-1200.avif",
+    "webp": "singapore-cr101-depot-531f23d7-1200.webp"
+   },
+   {
+    "width": 1920,
+    "avif": "singapore-cr101-depot-531f23d7-1920.avif",
+    "webp": "singapore-cr101-depot-531f23d7-1920.webp"
+   }
+  ]
+ }
+}

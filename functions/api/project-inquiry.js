@@ -363,6 +363,7 @@ export async function onRequestPost(context) {
           crane_requirement: sanitizeText(fields.crane_requirement, 50),
           customer_type: sanitizeText(fields.customerType || fields.customer_type, 100),
           project_stage: sanitizeText(fields.projectStage || fields.project_stage, 100),
+          area_range: sanitizeText(fields.areaRange || fields.area_range, 100),
           wind_load: sanitizeText(fields.wind_load, 100),
           snow_load: sanitizeText(fields.snow_load, 100),
           seismic_requirement: sanitizeText(fields.seismic_requirement, 100),
@@ -428,6 +429,7 @@ export async function onRequestPost(context) {
         const craneInfo = fields.crane_requirement ? sanitizeText(fields.crane_requirement, 30) : '';
         const customerTypeInfo = sanitizeText(fields.customer_type, 60) || '';
         const projectStageInfo = sanitizeText(fields.project_stage, 60) || '';
+        const areaRangeInfo = sanitizeText(fields.area_range, 60) || '';
         const msgPreview = fields.message ? sanitizeText(fields.message, 200) : '';
 
         // Advanced options
@@ -452,6 +454,7 @@ export async function onRequestPost(context) {
         mdLines.push('路径: ' + hasDrawingsText + ' | 类型: ' + projectInfo);
         if (customerTypeInfo) mdLines.push('身份: ' + customerTypeInfo);
         if (projectStageInfo) mdLines.push('阶段: ' + projectStageInfo);
+        if (areaRangeInfo) mdLines.push('面积: ' + areaRangeInfo);
         if (useInfo) mdLines.push('简述: ' + useInfo);
         if (dimsInfo) mdLines.push('尺寸: ' + dimsInfo);
         if (craneInfo) mdLines.push('吊车: ' + craneInfo);

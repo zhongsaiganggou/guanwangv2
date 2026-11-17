@@ -1,0 +1,21 @@
+---
+// src/components/HeroBg.astro
+// PHASE 18 / S2 — full-bleed hero background as a real <img> (LCP-able,
+// priority) instead of a CSS-discovered background-image div.
+// `variant="hub"` keeps the legacy scale(1.05) treatment; "detail" is flat.
+import { getHeroBg } from '../data/heroBg';
+
+const { src, variant = 'detail' } = Astro.props as { src: string; variant?: 'detail' | 'hub' };
+const cls = variant === 'hub' ? 'hub-hero-bg' : 'detail-hero-bg';
+const h = getHeroBg(src);
+---
+
+{h ? (
+<picture>
+  <source srcset={h.avifSrcset} type="image/avif" sizes={h.sizes} />
+  <source srcset={h.webpSrcset} type="image/webp" sizes={h.sizes} />
+  <img src={src} alt="" width={h.width} height={h.height} class={cls} fetchpriority="high" loading="eager" decoding="async" />
+</picture>
+) : (
+<img src={src} alt="" class={cls} fetchpriority="high" loading="eager" decoding="async" />
+)}
