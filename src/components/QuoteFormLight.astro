@@ -271,11 +271,11 @@ const COUNTRIES_ZH = [
   <p>{simplified ? '感谢提交！工程师会在24小时内通过微信联系您。' : texts.successMsg}</p>
 </div>
 
-<script>
-  const form = document.getElementById('{id}') as HTMLFormElement;
-  const successDiv = document.getElementById('{id}-success') as HTMLElement;
-  const errorDiv = document.getElementById('{id}-error') as HTMLElement;
-  const submitBtn = document.getElementById('{id}-submit') as HTMLButtonElement;
+<script is:inline define:vars={{ id, texts, lang }}>
+  const form = document.getElementById(id);
+  const successDiv = document.getElementById(id + '-success');
+  const errorDiv = document.getElementById(id + '-error');
+  const submitBtn = document.getElementById(id + '-submit');
 
   if (form) {
     // ---- UTM + Google Ads click ID persistence (30-day first-party cookie) ----
@@ -317,36 +317,53 @@ const COUNTRIES_ZH = [
       const sp = form.querySelector('[name="source_page"]'); if (sp) sp.value = window.location.pathname;
     })();
 
+    // Helper: get Turnstile token, executing the challenge if needed
+    function getTurnstileToken() {
+      return new Promise((resolve) => {
+        const existing = form.querySelector('[name="cf-turnstile-response"]');
+        if (existing && existing.value) return resolve(existing.value);
+        // No token yet — trigger Turnstile to solve interactively
+        const widgetEl = form.querySelector('.cf-turnstile[data-widget-id]');
+        if (window.turnstile && widgetEl) {
+          try {
+            const wid = widgetEl.getAttribute('data-widget-id');
+            window.turnstile.execute(wid, {
+              callback: (token) => resolve(token),
+              'error-callback': () => resolve(''),
+              'expired-callback': () => resolve('')
+            });
+          } catch { resolve(''); }
+        } else {
+          resolve('');
+        }
+      });
+    }
+
     form.addEventListener('submit', async (e) => {
       e.preventDefault();
       errorDiv.style.display = 'none';
 
       // WeChat is the required contact channel (project communication runs on WeChat).
-      const wechatVal = (form.querySelector('[name="wechat"]') as HTMLInputElement).value.trim();
+      const wechatVal = form.querySelector('[name="wechat"]').value.trim();
       if (!wechatVal) {
-        errorDiv.textContent = '{texts.requiredWeChat}';
+        errorDiv.textContent = texts.requiredWeChat;
         errorDiv.style.display = 'block';
         errorDiv.scrollIntoView({ behavior: 'smooth', block: 'center' });
         return;
       }
 
       submitBtn.disabled = true;
-      submitBtn.textContent = '{texts.submitting}';
+      submitBtn.textContent = texts.submitting;
+
+      // Ensure Turnstile token (may pop challenge on first submit)
+      const turnstileToken = await getTurnstileToken();
 
       const formData = new FormData(form);
-      const data: Record<string, string> = {};
-      formData.forEach((value, key) => {
-        data[key] = value.toString();
-      });
+      const data = {};
+      formData.forEach((value, key) => { data[key] = value.toString(); });
 
-      // Add language
-      data.language = '{lang}';
-
-      // Get Turnstile token
-      const turnstileResponse = form.querySelector('[name="cf-turnstile-response"]') as HTMLInputElement;
-      if (turnstileResponse) {
-        data['cf-turnstile-response'] = turnstileResponse.value;
-      }
+      data.language = lang;
+      if (turnstileToken) data['cf-turnstile-response'] = turnstileToken;
 
       try {
         const response = await fetch('/api/project-inquiry', {
@@ -360,17 +377,18 @@ const COUNTRIES_ZH = [
         if (result.success) {
           form.style.display = 'none';
           successDiv.style.display = 'block';
+          successDiv.scrollIntoView({ behavior: 'smooth', block: 'center' });
         } else {
-          errorDiv.textContent = result.message || '{texts.errorServer}';
+          errorDiv.textContent = result.message || texts.errorServer;
           errorDiv.style.display = 'block';
           submitBtn.disabled = false;
-          submitBtn.textContent = '{texts.submit}';
+          submitBtn.textContent = texts.submit;
         }
       } catch (err) {
-        errorDiv.textContent = '{texts.errorNetwork}';
+        errorDiv.textContent = texts.errorNetwork;
         errorDiv.style.display = 'block';
         submitBtn.disabled = false;
-        submitBtn.textContent = '{texts.submit}';
+        submitBtn.textContent = texts.submit;
       }
     });
   }
