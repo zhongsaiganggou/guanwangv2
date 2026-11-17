@@ -364,8 +364,8 @@ const COUNTRIES_ZH = [
         if (result.success) {
           form.style.display = 'none';
           successDiv.style.display = 'block';
-          // 腾讯广告转化回传（广点通 SDK）
-          try { if (window.gdt && typeof window.gdt === 'function') window.gdt('track'); } catch (e) {}
+          // 腾讯广告转化回传（广点通 gdevent SDK）
+          try { if (window.gdt && typeof window.gdt === 'function') window.gdt('track', 'FORM_SUBMIT', {}); } catch (e) {}
         } else {
           errorDiv.textContent = result.message || '{texts.errorServer}';
           errorDiv.style.display = 'block';
