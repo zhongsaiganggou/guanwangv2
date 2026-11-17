@@ -7,9 +7,13 @@ interface Props {
   lang?: 'zh' | 'en';
   id?: string;
   showCountry?: boolean;
+  simplified?: boolean;
 }
 
-const { lang = 'zh', id = 'quote-form-light', showCountry = true } = Astro.props;
+const { lang = 'zh', id = 'quote-form-light', showCountry = true, simplified = false } = Astro.props;
+
+const areaOptions = ['500㎡以下', '500-1000㎡', '1000-3000㎡', '3000-5000㎡', '5000㎡以上'];
+const stageOptions = ['前期了解/做预算', '已有图纸找报价', '近期准备下单', '先了解对比一下'];
 
 const texts = lang === 'zh' ? {
   title: '获取项目报价',
@@ -123,15 +127,17 @@ const COUNTRIES_ZH = [
   <h2 class="form-title">{texts.title}</h2>
   <p class="form-subtitle">{texts.subtitle}</p>
 
-  <div class="form-group">
-    <label for={`${id}-phone`}>{texts.phone}</label>
-    <input
-      type="tel"
-      id={`${id}-phone`}
-      name="phone"
-      placeholder={texts.phonePlaceholder}
-    />
-  </div>
+  {!simplified && (
+    <div class="form-group">
+      <label for={`${id}-phone`}>{texts.phone}</label>
+      <input
+        type="tel"
+        id={`${id}-phone`}
+        name="phone"
+        placeholder={texts.phonePlaceholder}
+      />
+    </div>
+  )}
 
   <div class="form-group">
     <label for={`${id}-buildingType`}>{texts.buildingType}</label>
@@ -149,6 +155,34 @@ const COUNTRIES_ZH = [
     </select>
   </div>
 
+  {simplified && (
+    <>
+      <div class="form-group">
+        <label>项目面积（单选）</label>
+        <div class="radio-grid">
+          {areaOptions.map(o => (
+            <label class="radio-item">
+              <input type="radio" name="area_range" value={o} />
+              <span>{o}</span>
+            </label>
+          ))}
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label>项目阶段（单选）</label>
+        <div class="radio-grid">
+          {stageOptions.map(o => (
+            <label class="radio-item">
+              <input type="radio" name="project_stage" value={o} />
+              <span>{o}</span>
+            </label>
+          ))}
+        </div>
+      </div>
+    </>
+  )}
+
   <div class="form-row">
     <div class="form-group">
       <label for={`${id}-name`}>{texts.name}</label>
@@ -160,15 +194,17 @@ const COUNTRIES_ZH = [
       />
     </div>
 
-    <div class="form-group">
-      <label for={`${id}-email`}>{texts.email}</label>
-      <input
-        type="email"
-        id={`${id}-email`}
-        name="email"
-        placeholder={texts.emailPlaceholder}
-      />
-    </div>
+    {!simplified && (
+      <div class="form-group">
+        <label for={`${id}-email`}>{texts.email}</label>
+        <input
+          type="email"
+          id={`${id}-email`}
+          name="email"
+          placeholder={texts.emailPlaceholder}
+        />
+      </div>
+    )}
   </div>
 
   <div class="form-row">
@@ -236,7 +272,7 @@ const COUNTRIES_ZH = [
 <div class="form-success" id={`${id}-success`} style="display: none;">
   <div class="success-icon">✓</div>
   <h3>{texts.successTitle}</h3>
-  <p>{texts.successMsg}</p>
+  <p>{simplified ? '感谢提交！工程师会在24小时内通过微信联系您。' : texts.successMsg}</p>
 </div>
 
 <script>
@@ -444,5 +480,30 @@ const COUNTRIES_ZH = [
       grid-template-columns: 1fr;
       gap: 0;
     }
+  }
+  .radio-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 8px 12px;
+  }
+  .radio-item {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 9px 12px;
+    border: 1px solid #ddd;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 0.92rem;
+    font-weight: 400;
+    color: #333;
+    margin: 0;
+  }
+  .radio-item:has(input:checked) {
+    border-color: #2563eb;
+    background: #eff6ff;
+  }
+  .radio-item input {
+    margin: 0;
   }
 </style>
