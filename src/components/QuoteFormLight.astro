@@ -317,24 +317,30 @@ const COUNTRIES_ZH = [
       const sp = form.querySelector('[name="source_page"]'); if (sp) sp.value = window.location.pathname;
     })();
 
-    // Helper: get Turnstile token, executing the challenge if needed
+    // Helper: get Turnstile token, executing the challenge if needed (with 10s hard timeout)
     function getTurnstileToken() {
       return new Promise((resolve) => {
         const existing = form.querySelector('[name="cf-turnstile-response"]');
         if (existing && existing.value) return resolve(existing.value);
-        // No token yet — trigger Turnstile to solve interactively
+
+        let settled = false;
+        const done = (v) => { if (!settled) { settled = true; resolve(v); } };
+
+        // Hard timeout — never hang the submit button
+        setTimeout(() => done(''), 10000);
+
         const widgetEl = form.querySelector('.cf-turnstile[data-widget-id]');
         if (window.turnstile && widgetEl) {
           try {
             const wid = widgetEl.getAttribute('data-widget-id');
             window.turnstile.execute(wid, {
-              callback: (token) => resolve(token),
-              'error-callback': () => resolve(''),
-              'expired-callback': () => resolve('')
+              callback: (token) => done(token),
+              'error-callback': () => done(''),
+              'expired-callback': () => done('')
             });
-          } catch { resolve(''); }
+          } catch { done(''); }
         } else {
-          resolve('');
+          done('');
         }
       });
     }
@@ -366,11 +372,15 @@ const COUNTRIES_ZH = [
       if (turnstileToken) data['cf-turnstile-response'] = turnstileToken;
 
       try {
+        const controller = new AbortController();
+        const timeout = setTimeout(() => controller.abort(), 15000);
         const response = await fetch('/api/project-inquiry', {
           method: 'POST',
           headers: { 'Content-Type': 'application/json' },
           body: JSON.stringify(data),
+          signal: controller.signal,
         });
+        clearTimeout(timeout);
 
         const result = await response.json();
 
@@ -385,7 +395,9 @@ const COUNTRIES_ZH = [
           submitBtn.textContent = texts.submit;
         }
       } catch (err) {
-        errorDiv.textContent = texts.errorNetwork;
+        errorDiv.textContent = (err && err.name === 'AbortError')
+          ? (lang === 'zh' ? '请求超时，请检查网络后重试。' : 'Request timed out. Please check your network and try again.')
+          : texts.errorNetwork;
         errorDiv.style.display = 'block';
         submitBtn.disabled = false;
         submitBtn.textContent = texts.submit;

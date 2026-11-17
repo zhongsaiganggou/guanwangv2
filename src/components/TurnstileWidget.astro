@@ -55,8 +55,6 @@ const siteKey = import.meta.env.PUBLIC_TURNSTILE_SITE_KEY || '0x4AAAAAAEqsUE0gIc
         });
         widget.setAttribute('data-rendered', 'true');
         widget.setAttribute('data-widget-id', String(widgetId));
-        // Kick off managed challenge immediately so token is ready by submit time
-        try { window.turnstile.execute(widgetId); } catch (e) {}
       } catch (e) {
         console.error('Turnstile render error:', e);
       }
