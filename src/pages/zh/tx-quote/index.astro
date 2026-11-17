@@ -1,0 +1,189 @@
+---
+// 腾讯广告专用简化落地页（无国家字段，转化优先）
+import BaseLayout from '../../../layouts/BaseLayout.astro';
+import QuoteFormLight from '../../../components/QuoteFormLight.astro';
+import '../../../styles/hub.css';
+
+const lang = 'zh';
+const title = '钢结构厂房报价 | 24小时工厂直供';
+const description = '钢结构厂房、仓库、车间报价。留下微信号，工程师24小时内联系您出详细报价。';
+
+const trustPoints = [
+  { icon: '🏭', title: '20年工厂直供', desc: '自有加工车间，无中间商赚差价' },
+  { icon: '⚡', title: '24小时出报价', desc: '收到图纸或尺寸当天审核，次日回复' },
+  { icon: '✅', title: '透明分项报价', desc: '用钢量、单价、工期写清楚，无隐藏费用' },
+];
+
+const faqs = [
+  {
+    q: '没有图纸能报价吗？',
+    a: '可以。告诉我们大概尺寸（长×宽×高）和用途，先给预算估算；有图纸后出正式分项报价。'
+  },
+  {
+    q: '报价包含哪些内容？',
+    a: '钢结构加工、防锈底漆面漆、包装运输。安装按项目另算，报价单里会逐项列明。'
+  },
+  {
+    q: '生产周期多久？',
+    a: '常规厂房25-45天，视面积和用钢量而定，下单前写进合同。'
+  },
+];
+---
+
+<BaseLayout title={title} description={description} lang={lang} noindex={true}>
+  <!-- Hero + Form 同屏 -->
+  <section class="tx-hero">
+    <div class="container">
+      <h1>钢结构厂房/仓库<br/>24小时内拿到报价</h1>
+      <p class="tx-sub">留下微信号，工程师直接对接，不用来回打电话。</p>
+      <div class="tx-badges">
+        <span>✅ 工厂直供</span>
+        <span>✅ 20年经验</span>
+        <span>✅ 报价透明</span>
+      </div>
+    </div>
+  </section>
+
+  <section class="tx-form-section" id="quote-form">
+    <div class="container">
+      <QuoteFormLight lang="zh" id="tx-quote-form" showCountry={false} />
+    </div>
+  </section>
+
+  <!-- 信任点 -->
+  <section class="tx-trust">
+    <div class="container">
+      <div class="tx-trust-grid">
+        {trustPoints.map(t => (
+          <div class="tx-trust-card">
+            <div class="tx-trust-icon">{t.icon}</div>
+            <h3>{t.title}</h3>
+            <p>{t.desc}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- 精简 FAQ -->
+  <section class="tx-faq">
+    <div class="container">
+      <h2>常见问题</h2>
+      <div class="tx-faq-list">
+        {faqs.map(faq => (
+          <details class="tx-faq-item">
+            <summary>{faq.q}</summary>
+            <p>{faq.a}</p>
+          </details>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <section class="tx-cta">
+    <div class="container center">
+      <h2>现在留微信，明天拿报价</h2>
+      <a href="#quote-form" class="btn btn-primary btn-large">免费获取报价</a>
+    </div>
+  </section>
+
+  <style>
+    .tx-hero {
+      padding: 48px 0 28px;
+      text-align: center;
+    }
+    .tx-hero h1 {
+      font-size: 2.1rem;
+      line-height: 1.25;
+      margin: 0 0 14px;
+    }
+    .tx-sub {
+      font-size: 1.05rem;
+      color: #555;
+      margin: 0 0 18px;
+    }
+    .tx-badges {
+      display: flex;
+      gap: 14px;
+      justify-content: center;
+      flex-wrap: wrap;
+      font-size: 0.9rem;
+      color: #2d7d2d;
+    }
+    .tx-form-section {
+      padding: 12px 0 40px;
+    }
+    .tx-trust {
+      padding: 36px 0;
+      background: #f7f8fa;
+    }
+    .tx-trust-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 20px;
+    }
+    .tx-trust-card {
+      background: #fff;
+      border: 1px solid #e5e5e5;
+      border-radius: 10px;
+      padding: 22px;
+      text-align: center;
+    }
+    .tx-trust-icon {
+      font-size: 1.8rem;
+      margin-bottom: 10px;
+    }
+    .tx-trust-card h3 {
+      font-size: 1.05rem;
+      margin-bottom: 6px;
+    }
+    .tx-trust-card p {
+      font-size: 0.9rem;
+      color: #666;
+      line-height: 1.5;
+    }
+    .tx-faq {
+      padding: 40px 0;
+    }
+    .tx-faq h2 {
+      text-align: center;
+      margin-bottom: 24px;
+    }
+    .tx-faq-list {
+      max-width: 720px;
+      margin: 0 auto;
+    }
+    .tx-faq-item {
+      border: 1px solid #e5e5e5;
+      border-radius: 8px;
+      margin-bottom: 10px;
+      overflow: hidden;
+    }
+    .tx-faq-item summary {
+      padding: 14px 18px;
+      cursor: pointer;
+      font-weight: 500;
+      background: #fafafa;
+    }
+    .tx-faq-item p {
+      padding: 14px 18px;
+      margin: 0;
+      color: #666;
+      line-height: 1.6;
+      font-size: 0.95rem;
+    }
+    .tx-cta {
+      padding: 44px 0 56px;
+      background: #1f2937;
+      text-align: center;
+    }
+    .tx-cta h2 {
+      color: #fff;
+      margin: 0 0 20px;
+    }
+    @media (max-width: 768px) {
+      .tx-hero h1 { font-size: 1.6rem; }
+      .tx-trust-grid { grid-template-columns: 1fr; }
+    }
+  </style>
+</BaseLayout>

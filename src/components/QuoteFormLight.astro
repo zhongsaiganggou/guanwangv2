@@ -6,9 +6,10 @@ import TurnstileWidget from './TurnstileWidget.astro';
 interface Props {
   lang?: 'zh' | 'en';
   id?: string;
+  showCountry?: boolean;
 }
 
-const { lang = 'zh', id = 'quote-form-light' } = Astro.props;
+const { lang = 'zh', id = 'quote-form-light', showCountry = true } = Astro.props;
 
 const texts = lang === 'zh' ? {
   title: '获取项目报价',
@@ -182,18 +183,20 @@ const COUNTRIES_ZH = [
       />
     </div>
 
-    <div class="form-group">
-      <label for={`${id}-country`}>{texts.country}</label>
-      <select
-        id={`${id}-country`}
-        name="country"
-      >
-        <option value="">{texts.countryPlaceholder}</option>
-        {(lang === 'zh' ? COUNTRIES_ZH : COUNTRIES).map(c => (
-          <option value={c}>{c}</option>
-        ))}
-      </select>
-    </div>
+    {showCountry && (
+      <div class="form-group">
+        <label for={`${id}-country`}>{texts.country}</label>
+        <select
+          id={`${id}-country`}
+          name="country"
+        >
+          <option value="">{texts.countryPlaceholder}</option>
+          {(lang === 'zh' ? COUNTRIES_ZH : COUNTRIES).map(c => (
+            <option value={c}>{c}</option>
+          ))}
+        </select>
+      </div>
+    )}
   </div>
 
   <div class="form-group">
@@ -325,6 +328,8 @@ const COUNTRIES_ZH = [
         if (result.success) {
           form.style.display = 'none';
           successDiv.style.display = 'block';
+          // 腾讯广告转化回传（广点通 SDK）
+          try { if (window.gdt && typeof window.gdt === 'function') window.gdt('track'); } catch (e) {}
         } else {
           errorDiv.textContent = result.message || '{texts.errorServer}';
           errorDiv.style.display = 'block';
