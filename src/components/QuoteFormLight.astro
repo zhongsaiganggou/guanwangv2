@@ -12,8 +12,12 @@ interface Props {
 
 const { lang = 'zh', id = 'quote-form-light', showCountry = true, simplified = false } = Astro.props;
 
-const areaOptions = ['500㎡以下', '500-1000㎡', '1000-3000㎡', '3000-5000㎡', '5000㎡以上'];
-const stageOptions = ['前期了解/做预算', '已有图纸找报价', '近期准备下单', '先了解对比一下'];
+const areaOptions = lang === 'zh'
+  ? ['1000㎡以下', '1000-3000㎡', '3000-8000㎡', '8000-15000㎡', '15000-20000㎡', '20000㎡以上']
+  : ['Under 1,000 sqm', '1,000–3,000 sqm', '3,000–8,000 sqm', '8,000–15,000 sqm', '15,000–20,000 sqm', '20,000+ sqm'];
+const stageOptions = lang === 'zh'
+  ? ['前期了解/做预算', '已有图纸找报价', '近期准备下单', '先了解对比一下']
+  : ['Early research / budgeting', 'Have drawings, need quote', 'Ready to order soon', 'Just comparing options'];
 
 const texts = lang === 'zh' ? {
   title: '获取项目报价',
@@ -155,33 +159,25 @@ const COUNTRIES_ZH = [
     </select>
   </div>
 
-  {simplified && (
-    <>
-      <div class="form-group">
-        <label>项目面积（单选）</label>
-        <div class="radio-grid">
-          {areaOptions.map(o => (
-            <label class="radio-item">
-              <input type="radio" name="area_range" value={o} />
-              <span>{o}</span>
-            </label>
-          ))}
-        </div>
-      </div>
+  <div class="form-group">
+    <label for={`${id}-area`}>{lang === 'zh' ? '项目面积（可选）' : 'Project Size (optional)'}</label>
+    <select id={`${id}-area`} name="area_range">
+      <option value="">{lang === 'zh' ? '请选择面积范围' : 'Select size range'}</option>
+      {areaOptions.map(o => (
+        <option value={o}>{o}</option>
+      ))}
+    </select>
+  </div>
 
-      <div class="form-group">
-        <label>项目阶段（单选）</label>
-        <div class="radio-grid">
-          {stageOptions.map(o => (
-            <label class="radio-item">
-              <input type="radio" name="project_stage" value={o} />
-              <span>{o}</span>
-            </label>
-          ))}
-        </div>
-      </div>
-    </>
-  )}
+  <div class="form-group">
+    <label for={`${id}-stage`}>{lang === 'zh' ? '项目阶段（可选）' : 'Project Stage (optional)'}</label>
+    <select id={`${id}-stage`} name="project_stage">
+      <option value="">{lang === 'zh' ? '请选择项目阶段' : 'Select project stage'}</option>
+      {stageOptions.map(o => (
+        <option value={o}>{o}</option>
+      ))}
+    </select>
+  </div>
 
   <div class="form-row">
     <div class="form-group">

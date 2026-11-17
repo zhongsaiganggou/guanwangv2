@@ -6,7 +6,7 @@ import '../../../styles/hub.css';
 
 const lang = 'en';
 const title = 'Steel Structure Quote | Factory-Direct in 24h';
-const description = 'Get a detailed steel structure quote from a China factory-direct manufacturer. Send drawings or dimensions, we reply within 24 hours with clear pricing.';
+const description = 'Get a detailed steel structure quote from a China factory-direct manufacturer. Send drawings or dimensions, we reply within 24 hours with clear line-item pricing.';
 
 const priceFactors = [
   {
@@ -41,6 +41,22 @@ const priceFactors = [
   }
 ];
 
+const priceTable = [
+  { type: 'Warehouse / Logistics Center', spec: 'No crane, single span ≤ 24m', price: 'USD 40–70 /sqm' },
+  { type: 'Industrial Workshop', spec: 'With 5–20T overhead crane', price: 'USD 55–90 /sqm' },
+  { type: 'Multi-Story Office', spec: '2–3 story frame structure', price: 'USD 80–120 /sqm' },
+  { type: 'Agricultural / Poultry Shed', spec: 'Lightweight steel structure', price: 'USD 35–60 /sqm' },
+  { type: 'Silo / Pipe Rack / Special', spec: 'Priced per drawing', price: 'On request' }
+];
+
+const prepChecklist = [
+  'Building dimensions: L × W × eave height (meters)',
+  'Project country/city (for wind/snow/seismic design loads)',
+  'Crane requirements: tonnage and quantity, if any',
+  'Wall/roof cladding preference: sandwich panel / single skin / rockwool insulated',
+  'Upload drawings if you have them; otherwise just tell us your use case'
+];
+
 const quoteIncludes = [
   'Structural steel fabrication per approved drawings',
   'CNC cutting, welding, and quality inspection',
@@ -71,17 +87,49 @@ const faqs = [
     a: 'Our factory quote includes steel fabrication, surface treatment, export packing, and container loading. Shipping and local installation are quoted separately based on your destination.'
   },
   {
-    q: 'Can you quote per square meter?',
-    a: 'We can give you a rough per-square-meter estimate for budgeting, but every project is different. Final pricing is based on your actual drawings and specifications.'
+    q: 'How were the reference prices above calculated?',
+    a: 'The reference prices are FOB China port ex-factory prices for basic structures in Q235B steel with standard sandwich panels. They exclude ocean freight, destination taxes, on-site installation, and foundation works. Final pricing is based on your drawings.'
+  },
+  {
+    q: 'What is your minimum order quantity?',
+    a: 'There is no hard MOQ. Even a small workshop or warehouse project is welcome. One 20ft container can carry roughly 200–300 sqm of steel structure.'
+  },
+  {
+    q: 'How long is production, and where do you ship?',
+    a: 'Typical production lead time is 25–45 days. We have been exporting for 15+ years to 30+ countries across Southeast Asia, the Middle East, Africa, and Latin America, and are familiar with export packing and documentation.'
+  },
+  {
+    q: 'What are your payment terms?',
+    a: 'Standard terms are 30% T/T deposit + 70% before shipment. L/C is negotiable for larger projects. First-time buyers can pay via Alibaba Trade Assurance.'
   },
   {
     q: 'Do you provide design services?',
-    a: 'Yes. Our in-house engineering team can design the steel structure based on your local building codes and load requirements.'
+    a: 'Yes. Our in-house engineering team can design the steel structure to your local building codes and load requirements, and produce Tekla shop drawings.'
   }
+];
+
+// FAQPage JSON-LD
+const faqLd = {
+  '@context': 'https://schema.org',
+  '@type': 'FAQPage',
+  mainEntity: faqs.map(f => ({
+    '@type': 'Question',
+    name: f.q,
+    acceptedAnswer: { '@type': 'Answer', text: f.a }
+  }))
+};
+
+const stats = [
+  { num: '20+', label: 'Years of steel manufacturing' },
+  { num: '1000+', label: 'Projects delivered' },
+  { num: '30+', label: 'Countries exported' },
+  { num: 'EN 1090 / CWB', label: 'International certified' }
 ];
 ---
 
 <BaseLayout title={title} description={description} lang={lang}>
+  <script type="application/ld+json" set:html={JSON.stringify(faqLd)} />
+
   <!-- Hero -->
   <section class="quote-hero">
     <div class="container">
@@ -98,10 +146,73 @@ const faqs = [
     </div>
   </section>
 
+  <!-- Trust Stats -->
+  <section class="trust-strip">
+    <div class="container">
+      <div class="trust-grid">
+        {stats.map(s => (
+          <div class="trust-item">
+            <div class="trust-num">{s.num}</div>
+            <div class="trust-label">{s.label}</div>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
   <!-- Form -->
   <section class="hub-section hub-section-dark" id="quote-form">
     <div class="container">
       <QuoteFormLight lang="en" />
+    </div>
+  </section>
+
+  <!-- Price Anchor -->
+  <section class="hub-section">
+    <div class="container">
+      <div class="hub-section-head">
+        <h2>Reference Steel Structure Prices (FOB China)</h2>
+        <p>Typical budget ranges to size your project quickly. Final pricing is based on your drawings.</p>
+      </div>
+      <div class="price-table-wrap">
+        <table class="price-table">
+          <thead>
+            <tr>
+              <th>Building Type</th>
+              <th>Typical Spec</th>
+              <th>Reference Price</th>
+            </tr>
+          </thead>
+          <tbody>
+            {priceTable.map(r => (
+              <tr>
+                <td class="pt-type">{r.type}</td>
+                <td>{r.spec}</td>
+                <td class="pt-price">{r.price}</td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
+        <p class="price-note">* Ex-factory prices for Q235B steel with standard sandwich panels. Exclude ocean freight, destination duties, on-site installation, and foundation works.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- What to prepare -->
+  <section class="hub-section hub-section-alt">
+    <div class="container">
+      <div class="hub-section-head">
+        <h2>5 Things to Prepare Before You Ask</h2>
+        <p>The more complete your info, the faster and more accurate your quote.</p>
+      </div>
+      <div class="prep-list">
+        {prepChecklist.map((item, i) => (
+          <div class="prep-item">
+            <span class="prep-num">{i + 1}</span>
+            <span>{item}</span>
+          </div>
+        ))}
+      </div>
     </div>
   </section>
 
@@ -217,6 +328,99 @@ const faqs = [
       border-radius: 20px;
       font-size: 0.9rem;
       font-weight: 500;
+    }
+    .trust-strip {
+      background: #f8f9fb;
+      padding: 28px 0;
+      border-top: 1px solid #eee;
+      border-bottom: 1px solid #eee;
+    }
+    .trust-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 20px;
+      text-align: center;
+    }
+    .trust-num {
+      font-size: 1.8rem;
+      font-weight: 700;
+      color: #1a5fb4;
+      line-height: 1.1;
+    }
+    .trust-label {
+      font-size: 0.88rem;
+      color: #666;
+      margin-top: 4px;
+    }
+    .price-table-wrap {
+      margin-top: 40px;
+      overflow-x: auto;
+    }
+    .price-table {
+      width: 100%;
+      max-width: 860px;
+      margin: 0 auto;
+      border-collapse: collapse;
+      background: #fff;
+      border-radius: 8px;
+      overflow: hidden;
+      box-shadow: 0 1px 3px rgba(0,0,0,0.06);
+    }
+    .price-table th,
+    .price-table td {
+      padding: 14px 18px;
+      text-align: left;
+      border-bottom: 1px solid #eee;
+      font-size: 0.95rem;
+    }
+    .price-table thead th {
+      background: #1a5fb4;
+      color: #fff;
+      font-weight: 600;
+    }
+    .price-table .pt-type {
+      font-weight: 600;
+    }
+    .price-table .pt-price {
+      color: #c0392b;
+      font-weight: 700;
+      white-space: nowrap;
+    }
+    .price-note {
+      max-width: 860px;
+      margin: 12px auto 0;
+      font-size: 0.82rem;
+      color: #888;
+      text-align: center;
+    }
+    .prep-list {
+      max-width: 760px;
+      margin: 40px auto 0;
+      display: grid;
+      gap: 12px;
+    }
+    .prep-item {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      padding: 14px 18px;
+      background: #fff;
+      border: 1px solid #e5e5e5;
+      border-radius: 8px;
+      font-size: 0.95rem;
+    }
+    .prep-num {
+      flex-shrink: 0;
+      width: 28px;
+      height: 28px;
+      border-radius: 50%;
+      background: #1a5fb4;
+      color: #fff;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 700;
+      font-size: 0.85rem;
     }
     .factors-grid {
       display: grid;
@@ -334,6 +538,13 @@ const faqs = [
       .quote-hero h1 {
         font-size: 1.8rem;
       }
+      .trust-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 16px;
+      }
+      .trust-num {
+        font-size: 1.4rem;
+      }
       .factors-grid {
         grid-template-columns: 1fr;
       }
@@ -342,6 +553,11 @@ const faqs = [
       }
       .process-grid {
         grid-template-columns: repeat(2, 1fr);
+      }
+      .price-table th,
+      .price-table td {
+        padding: 10px 12px;
+        font-size: 0.88rem;
       }
     }
   </style>

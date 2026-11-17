@@ -6,7 +6,7 @@ import '../../../styles/hub.css';
 
 const lang = 'zh';
 const title = '钢结构项目报价 | 24小时内工厂直供报价';
-const description = '从中国工厂直供获取详细的钢结构项目报价。发送您的图纸或尺寸——我们24小时内回复透明报价。';
+const description = '从中国工厂直供获取详细的钢结构项目报价。发送您的图纸或尺寸——我们24小时内回复透明报价，含参考单价、用钢量和交货条款。';
 
 const priceFactors = [
   {
@@ -41,6 +41,22 @@ const priceFactors = [
   }
 ];
 
+const priceTable = [
+  { type: '仓库 / 物流中心', spec: '无吊车，单跨 ≤ 24m', price: 'USD 40–70 /㎡' },
+  { type: '工业车间', spec: '含 5–20 吨桥式吊车', price: 'USD 55–90 /㎡' },
+  { type: '多层办公楼', spec: '2–3 层框架结构', price: 'USD 80–120 /㎡' },
+  { type: '农业温室 / 养殖棚', spec: '轻型钢结构', price: 'USD 35–60 /㎡' },
+  { type: '料仓 / 管廊 / 特殊结构', spec: '按图纸核算', price: '询价' }
+];
+
+const prepChecklist = [
+  '建筑尺寸：长 × 宽 × 檐口高度（米）',
+  '项目所在国家/城市（用于风/雪/抗震荷载设计）',
+  '是否需要吊车？吨位和数量',
+  '墙面板/屋面板偏好：夹芯板 / 单层彩钢 / 岩棉保温',
+  '有图纸直接上传；没有图纸告诉我们用途即可'
+];
+
 const quoteIncludes = [
   '按批准图纸加工制作钢结构',
   '数控切割、焊接及质量检验',
@@ -71,17 +87,49 @@ const faqs = [
     a: '我们的工厂报价包含钢结构加工、表面处理、出口包装和集装箱装柜。运费和当地安装根据您的目的地单独报价。'
   },
   {
-    q: '能按平方米报价吗？',
-    a: '我们可以给您一个粗略的每平方米估算用于预算参考，但每个项目都不同。最终价格基于您的实际图纸和技术要求。'
+    q: '上面的参考单价是怎么算的？',
+    a: '参考价为 FOB 中国港口的基本钢结构出厂价（Q235B + 普通夹芯板），不含海运费、目的港税费和现场安装。实际价格以您的图纸和技术要求为准。'
+  },
+  {
+    q: '最小起订量是多少？',
+    a: '没有硬性起订量。即使是一个小型车间或仓库项目，我们也接单。一个 20 尺集装箱约可装 200–300㎡ 的钢结构。'
+  },
+  {
+    q: '生产周期多久？能发往哪些国家？',
+    a: '常规项目生产周期 25–45 天。我们已出口 15 年，覆盖东南亚、中东、非洲、拉美 30 多个国家和地区，熟悉出口包装和单证流程。'
+  },
+  {
+    q: '付款方式是什么？',
+    a: '常规条款为 30% 预付款 + 70% 发货前付清（T/T）。大额项目可协商信用证 L/C。新客户首单支持 Alibaba 信保订单。'
   },
   {
     q: '你们提供设计服务吗？',
-    a: '是的。我们的内部工程团队可以根据您当地的建筑规范和荷载要求设计钢结构。'
+    a: '是的。我们的内部工程团队可以根据您当地的建筑规范和荷载要求设计钢结构，并出 Tekla 深化加工图。'
   }
+];
+
+// FAQPage JSON-LD
+const faqLd = {
+  '@context': 'https://schema.org',
+  '@type': 'FAQPage',
+  mainEntity: faqs.map(f => ({
+    '@type': 'Question',
+    name: f.q,
+    acceptedAnswer: { '@type': 'Answer', text: f.a }
+  }))
+};
+
+const stats = [
+  { num: '20+', label: '年钢结构制造经验' },
+  { num: '1000+', label: '已交付项目' },
+  { num: '30+', label: '出口国家和地区' },
+  { num: 'EN 1090 / CWB', label: '国际认证' }
 ];
 ---
 
 <BaseLayout title={title} description={description} lang={lang}>
+  <script type="application/ld+json" set:html={JSON.stringify(faqLd)} />
+
   <!-- Hero -->
   <section class="quote-hero">
     <div class="container">
@@ -98,10 +146,73 @@ const faqs = [
     </div>
   </section>
 
+  <!-- Trust Stats -->
+  <section class="trust-strip">
+    <div class="container">
+      <div class="trust-grid">
+        {stats.map(s => (
+          <div class="trust-item">
+            <div class="trust-num">{s.num}</div>
+            <div class="trust-label">{s.label}</div>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
   <!-- Form -->
   <section class="hub-section hub-section-dark" id="quote-form">
     <div class="container">
       <QuoteFormLight lang="zh" />
+    </div>
+  </section>
+
+  <!-- Price Anchor -->
+  <section class="hub-section">
+    <div class="container">
+      <div class="hub-section-head">
+        <h2>钢结构参考单价（FOB 中国港口）</h2>
+        <p>以下为典型项目的预算参考，帮您快速判断项目量级。最终价格以图纸为准。</p>
+      </div>
+      <div class="price-table-wrap">
+        <table class="price-table">
+          <thead>
+            <tr>
+              <th>建筑类型</th>
+              <th>典型规格</th>
+              <th>参考单价</th>
+            </tr>
+          </thead>
+          <tbody>
+            {priceTable.map(r => (
+              <tr>
+                <td class="pt-type">{r.type}</td>
+                <td>{r.spec}</td>
+                <td class="pt-price">{r.price}</td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
+        <p class="price-note">* 以上为 Q235B 主材 + 普通夹芯板的基本出厂价，不含海运费、目的港税费、现场安装和基础工程。</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- What to prepare -->
+  <section class="hub-section hub-section-alt">
+    <div class="container">
+      <div class="hub-section-head">
+        <h2>报价前请准备这 5 项信息</h2>
+        <p>提供越完整，报价越准、回复越快。</p>
+      </div>
+      <div class="prep-list">
+        {prepChecklist.map((item, i) => (
+          <div class="prep-item">
+            <span class="prep-num">{i + 1}</span>
+            <span>{item}</span>
+          </div>
+        ))}
+      </div>
     </div>
   </section>
 
@@ -217,6 +328,99 @@ const faqs = [
       border-radius: 20px;
       font-size: 0.9rem;
       font-weight: 500;
+    }
+    .trust-strip {
+      background: #f8f9fb;
+      padding: 28px 0;
+      border-top: 1px solid #eee;
+      border-bottom: 1px solid #eee;
+    }
+    .trust-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 20px;
+      text-align: center;
+    }
+    .trust-num {
+      font-size: 1.8rem;
+      font-weight: 700;
+      color: #1a5fb4;
+      line-height: 1.1;
+    }
+    .trust-label {
+      font-size: 0.88rem;
+      color: #666;
+      margin-top: 4px;
+    }
+    .price-table-wrap {
+      margin-top: 40px;
+      overflow-x: auto;
+    }
+    .price-table {
+      width: 100%;
+      max-width: 860px;
+      margin: 0 auto;
+      border-collapse: collapse;
+      background: #fff;
+      border-radius: 8px;
+      overflow: hidden;
+      box-shadow: 0 1px 3px rgba(0,0,0,0.06);
+    }
+    .price-table th,
+    .price-table td {
+      padding: 14px 18px;
+      text-align: left;
+      border-bottom: 1px solid #eee;
+      font-size: 0.95rem;
+    }
+    .price-table thead th {
+      background: #1a5fb4;
+      color: #fff;
+      font-weight: 600;
+    }
+    .price-table .pt-type {
+      font-weight: 600;
+    }
+    .price-table .pt-price {
+      color: #c0392b;
+      font-weight: 700;
+      white-space: nowrap;
+    }
+    .price-note {
+      max-width: 860px;
+      margin: 12px auto 0;
+      font-size: 0.82rem;
+      color: #888;
+      text-align: center;
+    }
+    .prep-list {
+      max-width: 760px;
+      margin: 40px auto 0;
+      display: grid;
+      gap: 12px;
+    }
+    .prep-item {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      padding: 14px 18px;
+      background: #fff;
+      border: 1px solid #e5e5e5;
+      border-radius: 8px;
+      font-size: 0.95rem;
+    }
+    .prep-num {
+      flex-shrink: 0;
+      width: 28px;
+      height: 28px;
+      border-radius: 50%;
+      background: #1a5fb4;
+      color: #fff;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 700;
+      font-size: 0.85rem;
     }
     .factors-grid {
       display: grid;
@@ -334,6 +538,13 @@ const faqs = [
       .quote-hero h1 {
         font-size: 1.8rem;
       }
+      .trust-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 16px;
+      }
+      .trust-num {
+        font-size: 1.4rem;
+      }
       .factors-grid {
         grid-template-columns: 1fr;
       }
@@ -342,6 +553,11 @@ const faqs = [
       }
       .process-grid {
         grid-template-columns: repeat(2, 1fr);
+      }
+      .price-table th,
+      .price-table td {
+        padding: 10px 12px;
+        font-size: 0.88rem;
       }
     }
   </style>
