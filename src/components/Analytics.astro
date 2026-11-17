@@ -28,19 +28,6 @@ const isPreview = import.meta.env.PUBLIC_IS_PREVIEW === 'true';
   </>
 )}
 
-{/* 腾讯广告转化追踪（广点通 gdevent SDK，域名验证 + FORM_SUBMIT 转化回传） */}
-{!isPreview && (
-  <>
-    <script is:inline>
-      !function(g,d,t,e,v,n,s){if(g.gdt)return;v=g.gdt=function(){v.tk?v.tk.apply(v,arguments):v.queue.push(arguments)};v.sv='1.0';v.bt=0;v.queue=[];n=d.createElement('script');n.async=!0;n.src=e;s=d.getElementsByTagName(t)[0];s.parentNode.insertBefore(n,s)}(window,document,'script','//mp.zhls.qq.com/sdk/dmp-sdk-js/gdevent.min.js');
-      gdt('init','1225702596');
-    </script>
-    <noscript>
-      <img height="1" width="1" style="display:none" src="https://api.datanexus.qq.com/data-nexus-cgi/pixel?user_action_set_id=1225702596&action_type=&noscript=1" />
-    </noscript>
-  </>
-)}
-
 <script is:inline define:vars={{ isPreview }}>
   // Flag available to other scripts for runtime checks
   window.__IS_PREVIEW__ = isPreview === true;
