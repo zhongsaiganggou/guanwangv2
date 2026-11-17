@@ -51,10 +51,10 @@ const quoteIncludes = [
 ];
 
 const processSteps = [
-  { step: '01', title: '发送您的需求', desc: '上传图纸或告知尺寸、所在地和用途。没有图纸？告诉我们您需要什么。' },
-  { step: '02', title: '工程审核', desc: '我们的内部工程师在4-8小时内审核您的项目，确认设计可行性。' },
-  { step: '03', title: '收到详细报价', desc: '24小时内您将收到透明的分项报价，包含用钢量、单价和交货条款。' },
-  { step: '04', title: '确认并开始生产', desc: '确认后我们开始加工。生产周期25-45天，视项目大小而定。' }
+  { step: '01', title: '发送您的需求', desc: '上传图纸或告知尺寸、所在地和用途。没有图纸？告诉我们您需要什么。', img: '/images/quote-process/step1-send.jpg' },
+  { step: '02', title: '工程审核', desc: '我们的内部工程师在4-8小时内审核您的项目，确认设计可行性。', img: '/images/engineering/tekla-model.jpg' },
+  { step: '03', title: '收到详细报价', desc: '24小时内您将收到透明的分项报价，包含用钢量、单价和交货条款。', img: '/images/quote-process/step3-quote.jpg' },
+  { step: '04', title: '确认并开始生产', desc: '确认后我们开始加工。生产周期25-45天，视项目大小而定。', img: '/images/quote-process/step4-production.jpg' }
 ];
 
 const faqs = [
@@ -152,6 +152,7 @@ const faqs = [
       <div class="process-grid">
         {processSteps.map(s => (
           <div class="process-step">
+            <div class="step-img"><img src={s.img} alt={s.title} loading="lazy" /></div>
             <div class="step-number">{s.step}</div>
             <h3>{s.title}</h3>
             <p>{s.desc}</p>
@@ -270,13 +271,26 @@ const faqs = [
     }
     .process-step {
       text-align: center;
-      padding: 24px 16px;
+      padding: 0 0 24px;
+    }
+    .step-img {
+      margin-bottom: 16px;
+      border-radius: 8px;
+      overflow: hidden;
+      aspect-ratio: 4 / 3;
+    }
+    .step-img img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
     }
     .step-number {
-      font-size: 2.5rem;
-      font-weight: bold;
-      color: #e0e0e0;
-      margin-bottom: 12px;
+      font-size: 1.1rem;
+      font-weight: 700;
+      color: #1a5fb4;
+      margin-bottom: 6px;
+      letter-spacing: 1px;
     }
     .process-step h3 {
       font-size: 1.05rem;

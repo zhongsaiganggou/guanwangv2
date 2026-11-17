@@ -51,10 +51,10 @@ const quoteIncludes = [
 ];
 
 const processSteps = [
-  { step: '01', title: 'Send Your Requirements', desc: 'Upload drawings or share dimensions, location, and intended use. No drawings? Tell us what you need.' },
-  { step: '02', title: 'Engineering Review', desc: 'Our in-house engineers review your project within 4-8 hours and confirm design feasibility.' },
-  { step: '03', title: 'Receive Detailed Quote', desc: 'You get a transparent line-item quote with steel weight, unit price, and delivery terms within 24 hours.' },
-  { step: '04', title: 'Confirm & Start Production', desc: 'Once approved, we start fabrication. Production takes 25-45 days depending on project size.' }
+  { step: '01', title: 'Send Your Requirements', desc: 'Upload drawings or share dimensions, location, and intended use. No drawings? Tell us what you need.', img: '/images/quote-process/step1-send.jpg' },
+  { step: '02', title: 'Engineering Review', desc: 'Our in-house engineers review your project within 4-8 hours and confirm design feasibility.', img: '/images/engineering/tekla-model.jpg' },
+  { step: '03', title: 'Receive Detailed Quote', desc: 'You get a transparent line-item quote with steel weight, unit price, and delivery terms within 24 hours.', img: '/images/quote-process/step3-quote.jpg' },
+  { step: '04', title: 'Confirm & Start Production', desc: 'Once approved, we start fabrication. Production takes 25-45 days depending on project size.', img: '/images/quote-process/step4-production.jpg' }
 ];
 
 const faqs = [
@@ -152,6 +152,7 @@ const faqs = [
       <div class="process-grid">
         {processSteps.map(s => (
           <div class="process-step">
+            <div class="step-img"><img src={s.img} alt={s.title} loading="lazy" /></div>
             <div class="step-number">{s.step}</div>
             <h3>{s.title}</h3>
             <p>{s.desc}</p>
@@ -270,13 +271,26 @@ const faqs = [
     }
     .process-step {
       text-align: center;
-      padding: 24px 16px;
+      padding: 0 0 24px;
+    }
+    .step-img {
+      margin-bottom: 16px;
+      border-radius: 8px;
+      overflow: hidden;
+      aspect-ratio: 4 / 3;
+    }
+    .step-img img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
     }
     .step-number {
-      font-size: 2.5rem;
-      font-weight: bold;
-      color: #e0e0e0;
-      margin-bottom: 12px;
+      font-size: 1.1rem;
+      font-weight: 700;
+      color: #1a5fb4;
+      margin-bottom: 6px;
+      letter-spacing: 1px;
     }
     .process-step h3 {
       font-size: 1.05rem;
