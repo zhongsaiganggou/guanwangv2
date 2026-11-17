@@ -41,14 +41,6 @@ const priceFactors = [
   }
 ];
 
-const priceTable = [
-  { type: '仓库 / 物流中心', spec: '无吊车，单跨 ≤ 24m', price: 'USD 40–70 /㎡' },
-  { type: '工业车间', spec: '含 5–20 吨桥式吊车', price: 'USD 55–90 /㎡' },
-  { type: '多层办公楼', spec: '2–3 层框架结构', price: 'USD 80–120 /㎡' },
-  { type: '农业温室 / 养殖棚', spec: '轻型钢结构', price: 'USD 35–60 /㎡' },
-  { type: '料仓 / 管廊 / 特殊结构', spec: '按图纸核算', price: '询价' }
-];
-
 const prepChecklist = [
   '建筑尺寸：长 × 宽 × 檐口高度（米）',
   '项目所在国家/城市（用于风/雪/抗震荷载设计）',
@@ -85,10 +77,6 @@ const faqs = [
   {
     q: '你们的报价包含什么？',
     a: '我们的工厂报价包含钢结构加工、表面处理、出口包装和集装箱装柜。运费和当地安装根据您的目的地单独报价。'
-  },
-  {
-    q: '上面的参考单价是怎么算的？',
-    a: '参考价为 FOB 中国港口的基本钢结构出厂价（Q235B + 普通夹芯板），不含海运费、目的港税费和现场安装。实际价格以您的图纸和技术要求为准。'
   },
   {
     q: '最小起订量是多少？',
@@ -164,37 +152,6 @@ const stats = [
   <section class="hub-section hub-section-dark" id="quote-form">
     <div class="container">
       <QuoteFormLight lang="zh" />
-    </div>
-  </section>
-
-  <!-- Price Anchor -->
-  <section class="hub-section">
-    <div class="container">
-      <div class="hub-section-head">
-        <h2>钢结构参考单价（FOB 中国港口）</h2>
-        <p>以下为典型项目的预算参考，帮您快速判断项目量级。最终价格以图纸为准。</p>
-      </div>
-      <div class="price-table-wrap">
-        <table class="price-table">
-          <thead>
-            <tr>
-              <th>建筑类型</th>
-              <th>典型规格</th>
-              <th>参考单价</th>
-            </tr>
-          </thead>
-          <tbody>
-            {priceTable.map(r => (
-              <tr>
-                <td class="pt-type">{r.type}</td>
-                <td>{r.spec}</td>
-                <td class="pt-price">{r.price}</td>
-              </tr>
-            ))}
-          </tbody>
-        </table>
-        <p class="price-note">* 以上为 Q235B 主材 + 普通夹芯板的基本出厂价，不含海运费、目的港税费、现场安装和基础工程。</p>
-      </div>
     </div>
   </section>
 

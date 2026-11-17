@@ -41,14 +41,6 @@ const priceFactors = [
   }
 ];
 
-const priceTable = [
-  { type: 'Warehouse / Logistics Center', spec: 'No crane, single span ≤ 24m', price: 'USD 40–70 /sqm' },
-  { type: 'Industrial Workshop', spec: 'With 5–20T overhead crane', price: 'USD 55–90 /sqm' },
-  { type: 'Multi-Story Office', spec: '2–3 story frame structure', price: 'USD 80–120 /sqm' },
-  { type: 'Agricultural / Poultry Shed', spec: 'Lightweight steel structure', price: 'USD 35–60 /sqm' },
-  { type: 'Silo / Pipe Rack / Special', spec: 'Priced per drawing', price: 'On request' }
-];
-
 const prepChecklist = [
   'Building dimensions: L × W × eave height (meters)',
   'Project country/city (for wind/snow/seismic design loads)',
@@ -85,10 +77,6 @@ const faqs = [
   {
     q: 'What is included in your quote?',
     a: 'Our factory quote includes steel fabrication, surface treatment, export packing, and container loading. Shipping and local installation are quoted separately based on your destination.'
-  },
-  {
-    q: 'How were the reference prices above calculated?',
-    a: 'The reference prices are FOB China port ex-factory prices for basic structures in Q235B steel with standard sandwich panels. They exclude ocean freight, destination taxes, on-site installation, and foundation works. Final pricing is based on your drawings.'
   },
   {
     q: 'What is your minimum order quantity?',
@@ -164,37 +152,6 @@ const stats = [
   <section class="hub-section hub-section-dark" id="quote-form">
     <div class="container">
       <QuoteFormLight lang="en" />
-    </div>
-  </section>
-
-  <!-- Price Anchor -->
-  <section class="hub-section">
-    <div class="container">
-      <div class="hub-section-head">
-        <h2>Reference Steel Structure Prices (FOB China)</h2>
-        <p>Typical budget ranges to size your project quickly. Final pricing is based on your drawings.</p>
-      </div>
-      <div class="price-table-wrap">
-        <table class="price-table">
-          <thead>
-            <tr>
-              <th>Building Type</th>
-              <th>Typical Spec</th>
-              <th>Reference Price</th>
-            </tr>
-          </thead>
-          <tbody>
-            {priceTable.map(r => (
-              <tr>
-                <td class="pt-type">{r.type}</td>
-                <td>{r.spec}</td>
-                <td class="pt-price">{r.price}</td>
-              </tr>
-            ))}
-          </tbody>
-        </table>
-        <p class="price-note">* Ex-factory prices for Q235B steel with standard sandwich panels. Exclude ocean freight, destination duties, on-site installation, and foundation works.</p>
-      </div>
     </div>
   </section>
 
