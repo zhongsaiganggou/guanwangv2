@@ -6,16 +6,16 @@
 
 | 项 | 值 | 更新时间 | 备注 |
 |---|---|---|---|
-| build 页数 | 363 | 2026-11-18 | 新建轮 `mezzanine-in-existing-steel-building-guide` +2 页，符合 v3 相对值校验 |
-| sitemap `<loc>` | 356 | 2026-11-18 | 新建轮 +2，dangling 0 |
-| paired en/zh | 307 | 2026-11-18 | 新建轮 +2 |
-| benign SAME_TARGET | 2 | 2026-11-18 | 既有 `/countries`，允许存在 |
-| SHADOWED_WRONG_TARGET | 0 | 2026-11-18 | 必须恒为 0 |
-| blog EN 篇数 | 114 | 2026-11-18 | |
-| blog ZH 篇数 | 113 | 2026-11-18 | |
-| 最近发布时间 | 2026-11-18 | 2026-11-18 | `mezzanine-in-existing-steel-building-guide`（新建，EN/ZH 双语） |
-| 最近部署别名 | `https://250ecd01.zhongsai-website-v2.pages.dev` | 2026-11-18 | |
-| 最近 commit | 见 `git log -1`（本轮 content: add mezzanine 提交） | 2026-11-18 | 上一轮基线 commit `9d1231b` |
+| build 页数 | 365 | 2026-11-19 | 新建轮 `water-treatment-plant-steel-structure-guide` +2 页，相对值校验通过 |
+| sitemap `<loc>` | 358 | 2026-11-19 | 新建轮 +2，dangling 0 |
+| paired en/zh | 309 | 2026-11-19 | 新建轮 +2（seo:check:sitemap 实测 309） |
+| benign SAME_TARGET | 2 | 2026-11-19 | 既有 `/countries`，允许存在；另有 acknowledged shadow 1（`/zh/steel-building-solutions/blog`） |
+| SHADOWED_WRONG_TARGET | 0 | 2026-11-19 | 必须恒为 0 |
+| blog EN 篇数 | 115 | 2026-11-19 | |
+| blog ZH 篇数 | 114 | 2026-11-19 | |
+| 最近发布时间 | 2026-11-19 | 2026-11-19 | `water-treatment-plant-steel-structure-guide`（新建，EN/ZH 双语） |
+| 最近部署别名 | `https://ac5c60fb.zhongsai-website-v2.pages.dev` | 2026-11-19 | |
+| 最近 commit | 见 `git log -1`（本轮 content: add water-treatment 提交） | 2026-11-19 | 上一轮基线 commit `1c2be1b` |
 
 ## 未索引观察名单（v3 §7A）
 

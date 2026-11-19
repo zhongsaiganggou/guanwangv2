@@ -118,3 +118,4 @@
 | 2026-11-16 | petrol-station-steel-canopy-design-guide | Petrol Station Steel Canopy: What Drives the Design | petrol station steel canopy: layout & clearance |
 | 2026-11-17 | palm-oil-mill-steel-structure-design-guide | Palm Oil Mill Steel Structure: The Loads Behind the Building | palm oil mill steel structure |
 | 2026-11-18 | mezzanine-in-existing-steel-building-guide | Mezzanine in an Existing Steel Building: Load Path, Connections and Sequence | mezzanine in existing steel building / 既有厂房加建二层平台 |
+| 2026-11-19 | water-treatment-plant-steel-structure-guide | Steel Structures for Water and Wastewater Treatment Plants: What Decides the Design | water treatment plant steel structure / 水处理厂钢结构 |
