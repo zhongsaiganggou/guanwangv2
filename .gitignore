@@ -57,3 +57,6 @@ npm-debug.log*
 
 # Auto-publisher local config (contains secrets, never commit)
 tools/auto-publisher/config.local.json
+
+# Link-building account ledger (plaintext passwords, never commit)
+docs/link-building/accounts.md

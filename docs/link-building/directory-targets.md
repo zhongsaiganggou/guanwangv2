@@ -8,10 +8,29 @@
 | 平台 | 结论 | 详情 |
 |---|---|---|
 | Kompass | ❌ 收费 | 个人账号可免费用，但公司主页 USD $40/12 个月 起，免费档建不了公司页 |
-| Europages | ⏸ 未测 | 同属 Visable 体系，历史上基础 listing 免费，现多推付费，需实测 |
+| Europages | ❌ 限欧洲主体 | 用户账号可注册并邮箱验证，但公司资料「注册国家」下拉只列欧洲及欧洲属地，无 China；中国工厂无法自助建档，需联系客服（同 Kompass/Visable 体系） |
 | Brownbook | ❌ 表单故障 | 填完点提交无反应，收件箱也收不到验证信；换注册页同样卡住 |
 | Go4WorldBusiness | ⏳ 审核中 | Google 登录建号成功，公司资料已提交待审核；账号国家被默认成 United States，需改回 China |
 | EC21 | ⏳ 卡人机验证 | 资料全填完，差 reCAPTCHA 那一下；邮件验证码机制正常 |
+| TradeBoss | ❌ 表单故障 | 遗留 CGI 注册页，国家字段提交后被服务端判空（字段被表格挤出 `<form>`），无法进入第二步 |
+| Cylex（南非 cylex.net.za） | ❌ 本地 IP 限制 | 自助登记仅允许目标国境内 IP；境外 IP 打开 `/register-company` 被跳付费 Bulk Upload/API，与本地黄页同一结构性门槛 |
+| Dial4Trade（dial4trade.com，印度系全球 B2B） | ❌ KYC 证件卡点 | 账号已建、邮箱已验证、公司/联系资料已保存；但卖家工具与公开主页被 `verify-business.php` 拦截，强制上传护照、政府带照证件、公司注册证书、税务登记证明扫描件；公开搜索暂未列出，主页 URL 待 KYC 通过 |
+| TradeFord（tradeford.com） | ❌ reCAPTCHA 卡点 | Cloudflare 自动放行；注册表单已填（Seller、China Mainland、官网字段在），卡在 v2 reCAPTCHA，后台无法过复选框/图片挑战，未提交 |
+| eWorldTrade（eworldtrade.com） | ❌ 域名查封 | 注册页标题「Domain Seized by Law Enforcement」，站点不可用 |
+| EC Plaza（ecplaza.net） | ❌ 连接失败 | 首页导航即连接报错，站点不可达 |
+| DIYTrade（my.diytrade.com） | ❌ 点击式验证码 | 注册第一步支持 China，官网字段在注册后；卡在 RealPerson 字符矩阵点击验证码，字符未在 DOM 暴露，后台不可解 |
+| Global Trade Plaza（globaltradeplaza.com） | ❌ 资料保存未持久化 | 账号已建、邮箱 OTP 已验证、Seller 可登录；条款已接受；但分 Tab 公司资料填写后点 Save 刷新仍全空（前端校验/状态卡点，无可见报错）；全站无独立官网字段，URL 只能写简介纯文本；产品未发布 |
+| ExportersIndia（exportersindia.com，印度系） | ❌ IEC 证件卡点 | 账号已建、邮箱 OTP 已验证、后台可登录；官网字段与 3 条产品已存后台；但 Statutory Details 强制印度 IEC Code + IEC 证书上传，中国主体无 IEC；产品 Approved 0、公开主页 URL 待 IEC 通过，公开站暂未索引 |
+| ECVV（ecvv.com） | ❌ 连接超时 | 浏览器导航与 HTTP GET 均 read timeout，站点不可达/过慢，未进入注册 |
+| Hotfrog（hotfrog.com，美国免费本地目录） | ⏳ 待审核 | 用户账号已建、邮箱已验证；商家条目已提交成功（分类 Building Materials & Equipment，官网/电话/邮箱/中国地址 516100 已填后台）；后台状态 Pending，公开公司页当前 404，待审核通过后生效；归类 Hotfrog US。条目 ID AaH23WvocA-rTJhVCwPfkg，待审核链接 https://www.hotfrog.com/company/AaH23WvocA-rTJhVCwPfkg |
+| Africa Business Pages（africabusinesspages.com） | ❌ 域名不可解析 | DNS getaddrinfo failed，浏览器导航与 HTTP GET 均无法解析，站点不存在/已下线 |
+| gulfio.com（Gulf Industry Online） | ❌ 域名停放待售 | 打开跳 GoDaddy 待售页「gulfio.com 正在出售」，非运营站点 |
+| BizVibe（bizvibe.com） | ❌ 买家侧 SaaS 不适用 | 注册为「Start Free Trial」买家情报试用（connect.bizvibe.com/signup），无供应商自助建档/官网字段；公司资料由平台 AI 抓取，不产出公开外链 |
+| SteelOrbis（steelorbis.com） | ❌ 读者试用会员不适用 | 免费试用为价格/新闻/行情读者会员（`/my-account/companyApplication.do`），表单仅公司名/联系人/邮箱/密码/电话，无官网字段、无公开供应商主页；公司库为付费/精选会员 |
+| tradeKorea（tradekorea.com，KITA） | ❌ 仅限韩国卖家或全球买家 | 入会类型仅「국내 셀러회원（韩国卖家，必填韩国 business registration number）」与「Global Buyer（从韩国采购）」，无海外卖家档，无法建供应商主页挂官网 |
+| TradeIndia（tradeindia.com，印度 B2B） | ❌ 印度本地城市/证件卡点 | 第一步国家可切 China +86、已填姓名/邮箱/手机/公司名；但城市下拉仅印度城市（搜 Guangzhou/China 无选项），点 Continue 不发请求、前端静默拦截；后续预计同 ExportersIndia 要印度 GST/IEC。未建成账号、未发 OTP |
+| yellowpages.co.za（南非） | ❌ 已转为电商商城 | 打开 301 跳 `mall.yep.co.za/home`（Yep Mall），无免费 B2B/供应商登记入口，与原黄页目录不同 |
+| 其余区域域名单次探测不可达 | ❌ 死路/不可达 | indotrading.com 403；directory.my、connect.ae、kenyabusinessdirectory.co.ke DNS 不可解析；yellowpages.ph、yellowpages.ae SSL 握手超时；nigeriayellowpages.com SSL EOF |
 
 ## 二、按市场国的目标（优先级从高到低）
 
