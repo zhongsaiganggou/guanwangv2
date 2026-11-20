@@ -153,6 +153,6 @@ coverImageAlt: 生物质电厂锅炉房钢框架、平台与相邻燃料棚、�
 
 把生物质项目拆成供货包时，把布置图与供货方图纸发来，我们回一份结构范围、接口清单与还缺的答案。
 
-[提交项目图纸](/zh/steel-structure-quote/)——有总平面、立面与供货方接口图即可开始。
+[获取项目报价](/zh/steel-structure-quote/)——有总平面、立面与供货方接口图即可开始。
 
 延伸阅读：[棕榈油厂钢结构](/zh/blog/palm-oil-mill-steel-structure-design-guide/)、[水处理厂钢结构](/zh/blog/water-treatment-plant-steel-structure-guide/)。
