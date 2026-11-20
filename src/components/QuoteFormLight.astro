@@ -68,7 +68,7 @@ const texts = lang === 'zh' ? {
   submit: 'Get My Quote',
   submitting: 'Submitting...',
   successTitle: 'Submitted Successfully!',
-  successMsg: 'Thank you! Our engineers will contact you via WhatsApp, WeChat or email within 24 hours.',
+  successMsg: 'Thank you! Our engineers will contact you via WeChat, WhatsApp or email within 24 hours.',
   errorTurnstile: 'Verification failed. Please try again.',
   errorValidation: 'Please fill in required fields.',
   errorNetwork: 'Network error. Please try again later.',
@@ -386,6 +386,35 @@ const COUNTRIES_ZH = [
         const result = await response.json();
 
         if (result.success) {
+          // Conversion reporting, aligned with the main QuoteForm:
+          // real leads fire GA4 generate_lead; QA/test records only fire qa_form_submit.
+          const leadId = result.lead_id;
+          if (leadId && leadId !== 'filtered') {
+            const isQa = result.test_record === true;
+            if (isQa) {
+              if (typeof window.trackEvent === 'function') {
+                window.trackEvent('qa_form_submit', {
+                  lead_id: leadId,
+                  language: lang,
+                  page_path: window.location.pathname,
+                });
+              }
+            } else if (typeof window.trackLeadConversion === 'function') {
+              const utmSource = form.querySelector('[name="utm_source"]')?.value || '';
+              const utmMedium = form.querySelector('[name="utm_medium"]')?.value || '';
+              const utmCampaign = form.querySelector('[name="utm_campaign"]')?.value || '';
+              window.trackLeadConversion({
+                lead_id: leadId,
+                language: lang,
+                form_variant: 'quote',
+                source_page: window.location.pathname,
+                utm_source: utmSource,
+                utm_medium: utmMedium,
+                utm_campaign: utmCampaign,
+                has_file: false,
+              });
+            }
+          }
           form.style.display = 'none';
           successDiv.style.display = 'block';
           successDiv.scrollIntoView({ behavior: 'smooth', block: 'center' });
