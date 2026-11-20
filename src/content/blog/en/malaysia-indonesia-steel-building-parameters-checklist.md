@@ -7,6 +7,8 @@ seoTitle: "Malaysia/Indonesia Steel Building: Parameter Checklist for Chinese Su
 metaDescription: "A checklist for buyers in Malaysia, Indonesia and Southeast Asia: building dimensions, loads and codes, steel materials, crane, cladding and export delivery parameters to confirm before asking a Chinese steel structure manufacturer for a quote."
 h1: "Steel Building in Malaysia or Indonesia: What Parameters to Confirm With a Chinese Supplier"
 excerpt: "When building overseas, unclear parameters lead to mismatched quotes and on-site rework. This checklist covers building use and dimensions, loads and codes, materials and corrosion protection, crane and equipment, cladding, and export delivery."
+coverImage: /images/blog/malaysia-indonesia-steel-building-parameters-checklist/cover.jpg
+coverImageAlt: "Steel members in the factory yard with gantry cranes"
 publishedAt: "2026-11-20"
 updatedAt: "2026-11-20"
 ctaType: send-project-requirements
@@ -31,6 +33,8 @@ The building's purpose determines the structural form, and its dimensions drive 
 - **Floor slab and equipment layout**: main equipment positions, floor loads, reserved foundation conditions
 
 The structural solution differs significantly by use; workshops and warehouses have different crane, door and ventilation requirements. You can review our [steel workshop](/en/steel-workshop/) and [steel warehouse](/en/steel-warehouse/) solutions first.
+
+![Multi-story steel frame: columns, beams, bracing and roof purlins assembled on site](/images/blog/malaysia-indonesia-steel-building-parameters-checklist/1-frame-structure.jpg)
 
 ## 2. Loads and Applicable Codes
 
@@ -57,6 +61,8 @@ Steel grade and anti-corrosion treatment directly affect building service life, 
 
 Do not compare only the price per ton of steel; confirm whether the quoted material grade, coating thickness and MTC are all included. For details on materials and inspection, see [manufacturing and quality control](/en/manufacturing-quality/).
 
+![Hot-dip galvanized beams and purlins stacked in layers with timber spacers and lashing](/images/blog/malaysia-indonesia-steel-building-parameters-checklist/2-galvanized-members.jpg)
+
 ## 4. Crane and Process Equipment
 
 If the workshop will carry a crane or house heavy equipment, these parameters must be frozen before detailing:
@@ -67,6 +73,8 @@ If the workshop will carry a crane or house heavy equipment, these parameters mu
 - **Reserved provisions**: bracket positions, cable festoon systems, maintenance access
 
 If crane information is uncertain, the crane girder and main structure cannot be designed accurately; adding a crane later often requires local reinforcement or rebuilding part of the frame.
+
+![Gantry crane lifting a bundled load of steel beams with a spreader beam and chain slings](/images/blog/malaysia-indonesia-steel-building-parameters-checklist/3-crane-lifting.jpg)
 
 ## 5. Cladding System and Accessories
 
@@ -91,6 +99,8 @@ For cross-border procurement, the division between fabrication, transport and on
 - **Payment milestones**: division of deposit, progress payments and pre-shipment payment
 
 For the full cross-border delivery process, see [export delivery](/en/export-delivery/); to understand how a quotation is itemized, see the [steel structure quotation guide](/en/steel-structure-quote/).
+
+![Steel members loaded into containers ready for export shipment](/images/blog/malaysia-indonesia-steel-building-parameters-checklist/4-container-loading.jpg)
 
 ## How Zhongsai Supports Your Project
 

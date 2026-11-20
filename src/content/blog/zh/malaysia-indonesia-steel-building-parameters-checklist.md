@@ -7,6 +7,8 @@ seoTitle: "马来西亚、印尼建厂房找中国厂家：参数确认清单 | 
 metaDescription: "面向马来西亚、印尼等东南亚采购商：建钢结构厂房前，找中国厂家需要先确认的建筑尺寸、荷载规范、主体材料、吊车、围护系统与出口交付参数清单。"
 h1: "在马来西亚、印尼建钢结构厂房，要先和中国厂家确认哪些参数"
 excerpt: "跨国建厂房，参数不清会导致报价各算各的、现场返工。本文按用途尺寸、荷载规范、材料防腐、吊车设备、围护配套、出口交付六部分，列出找中国钢结构厂家前应确认的参数。"
+coverImage: /images/blog/malaysia-indonesia-steel-building-parameters-checklist/cover.jpg
+coverImageAlt: "钢结构构件堆场与龙门吊作业现场"
 publishedAt: "2026-11-20"
 updatedAt: "2026-11-20"
 ctaType: send-project-requirements
@@ -31,6 +33,8 @@ translationKey: "malaysia-indonesia-steel-building-parameters-checklist"
 - **地坪与设备布置**：主要设备位置、地坪荷载、预留基础条件
 
 不同用途对应的结构方案差别很大，车间和仓库在吊车、门洞、通风上的要求并不相同。可先参考我们的[钢结构厂房](/zh/steel-workshop/)与[钢结构仓库](/zh/steel-warehouse/)方案。
+
+![多层钢框架主体：钢柱、钢梁、斜撑与屋面檩条现场拼装](/images/blog/malaysia-indonesia-steel-building-parameters-checklist/1-frame-structure.jpg)
 
 ## 2. 荷载与适用规范
 
@@ -57,6 +61,8 @@ translationKey: "malaysia-indonesia-steel-building-parameters-checklist"
 
 不要只比较每吨钢材价格，要确认报价包含的材料等级、涂层厚度和 MTC 是否齐全。材料与检验的具体做法可参考[制造质量控制](/zh/manufacturing-quality/)。
 
+![热镀锌钢梁与檩条分层堆放，层间以垫木间隔并绑扎固定](/images/blog/malaysia-indonesia-steel-building-parameters-checklist/2-galvanized-members.jpg)
+
 ## 4. 吊车与工艺设备
 
 如果厂房要配备吊车或安置重型设备，这部分参数必须在深化设计前冻结：
@@ -67,6 +73,8 @@ translationKey: "malaysia-indonesia-steel-building-parameters-checklist"
 - **配套预留**：牛腿位置、电缆滑触线、检修通道
 
 吊车资料不确定，吊车梁和主体结构就无法准确设计；后期再加吊车，往往要加固甚至重做局部框架。
+
+![龙门吊以吊具和链条索具整束吊装钢梁](/images/blog/malaysia-indonesia-steel-building-parameters-checklist/3-crane-lifting.jpg)
 
 ## 5. 围护系统与配套
 
@@ -91,6 +99,8 @@ translationKey: "malaysia-indonesia-steel-building-parameters-checklist"
 - **付款节点**：定金、生产进度款、发货前款项的划分
 
 完整的跨国交付流程见[出口交付说明](/zh/export-delivery/)；需要了解报价如何逐项构成，可查看[钢结构报价解读](/zh/steel-structure-quote/)。
+
+![钢构件装入集装箱，待出口发运](/images/blog/malaysia-indonesia-steel-building-parameters-checklist/4-container-loading.jpg)
 
 ## 中赛的配合方式
 
