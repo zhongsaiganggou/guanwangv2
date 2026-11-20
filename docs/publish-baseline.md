@@ -14,8 +14,8 @@
 | blog EN 篇数 | 116 | 2026-11-20 | |
 | blog ZH 篇数 | 115 | 2026-11-20 | |
 | 最近发布时间 | 2026-11-20 | 2026-11-20 | `biomass-power-plant-steel-structure-guide`（新建，EN/ZH 双语） |
-| 最近部署别名 | `https://8444e713.zhongsai-website-v2.pages.dev` | 2026-11-20 | |
-| 最近 commit | 见 `git log -1`（本轮 content: add biomass 提交） | 2026-11-20 | 上轮基线 commit `dc9e0fb`（期间他人提交 `5d260a6` quote form GA4 修复） |
+| 最近部署别名 | `https://3eda3af3.zhongsai-website-v2.pages.dev` | 2026-11-20 | 首轮 `8444e713`，修正中文 CTA 文案后重部署 |
+| 最近 commit | `f51890f`（content + CTA 对齐两次提交） | 2026-11-20 | 上轮基线 commit `dc9e0fb`；期间他人提交 `5d260a6`（quote form GA4 修复） |
 
 ## 未索引观察名单（v3 §7A）
 
