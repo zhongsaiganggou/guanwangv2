@@ -6,16 +6,16 @@
 
 | 项 | 值 | 更新时间 | 备注 |
 |---|---|---|---|
-| build 页数 | 365 | 2026-11-19 | 新建轮 `water-treatment-plant-steel-structure-guide` +2 页，相对值校验通过 |
-| sitemap `<loc>` | 358 | 2026-11-19 | 新建轮 +2，dangling 0 |
-| paired en/zh | 309 | 2026-11-19 | 新建轮 +2（seo:check:sitemap 实测 309） |
-| benign SAME_TARGET | 2 | 2026-11-19 | 既有 `/countries`，允许存在；另有 acknowledged shadow 1（`/zh/steel-building-solutions/blog`） |
-| SHADOWED_WRONG_TARGET | 0 | 2026-11-19 | 必须恒为 0 |
-| blog EN 篇数 | 115 | 2026-11-19 | |
-| blog ZH 篇数 | 114 | 2026-11-19 | |
-| 最近发布时间 | 2026-11-19 | 2026-11-19 | `water-treatment-plant-steel-structure-guide`（新建，EN/ZH 双语） |
-| 最近部署别名 | `https://ac5c60fb.zhongsai-website-v2.pages.dev` | 2026-11-19 | |
-| 最近 commit | 见 `git log -1`（本轮 content: add water-treatment 提交） | 2026-11-19 | 上一轮基线 commit `1c2be1b` |
+| build 页数 | 367 | 2026-11-20 | 新建轮 `biomass-power-plant-steel-structure-guide` +2 页（generate-routes 366，基线 364 +2） |
+| sitemap `<loc>` | 360 | 2026-11-20 | 新建轮 +2，dangling 0 |
+| paired en/zh | 311 | 2026-11-20 | 新建轮 +2（seo:check:sitemap 实测 311） |
+| benign SAME_TARGET | 2 | 2026-11-20 | 既有 `/countries`；另有 acknowledged shadow 1（`/zh/steel-building-solutions/blog`） |
+| SHADOWED_WRONG_TARGET | 0 | 2026-11-20 | 必须恒为 0 |
+| blog EN 篇数 | 116 | 2026-11-20 | |
+| blog ZH 篇数 | 115 | 2026-11-20 | |
+| 最近发布时间 | 2026-11-20 | 2026-11-20 | `biomass-power-plant-steel-structure-guide`（新建，EN/ZH 双语） |
+| 最近部署别名 | `https://8444e713.zhongsai-website-v2.pages.dev` | 2026-11-20 | |
+| 最近 commit | 见 `git log -1`（本轮 content: add biomass 提交） | 2026-11-20 | 上轮基线 commit `dc9e0fb`（期间他人提交 `5d260a6` quote form GA4 修复） |
 
 ## 未索引观察名单（v3 §7A）
 

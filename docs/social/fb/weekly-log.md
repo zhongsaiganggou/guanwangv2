@@ -7,3 +7,4 @@
 | 2026-11-18 | 存量优化 | 钢结构无损检测（NDT）：UT、MT 与焊缝检验怎么做 | https://zhongsai-steelstructure.com/zh/blog/steel-structure-ndt-testing/ |
 | 2026-11-18 | 新建 | 既有钢结构厂房加建二层平台：承载路径与连接做法 | https://zhongsai-steelstructure.com/zh/blog/mezzanine-in-existing-steel-building-guide/ |
 | 2026-11-19 | 新建 | 水处理厂钢结构：池盖、走道与小型设备房的设计要点 | https://zhongsai-steelstructure.com/zh/blog/water-treatment-plant-steel-structure-guide/ |
+| 2026-11-20 | 新建 | 生物质电厂钢结构：范围、荷载与接口划分 | https://zhongsai-steelstructure.com/zh/blog/biomass-power-plant-steel-structure-guide/ |
