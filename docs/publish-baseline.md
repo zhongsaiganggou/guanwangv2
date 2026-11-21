@@ -15,7 +15,7 @@
 | blog ZH 篇数 | 117 | 2026-11-21 | 同上 |
 | 最近发布时间 | 2026-11-21 | 2026-11-21 | `waste-to-energy-plant-steel-structure-guide`（新建，EN/ZH 双语） |
 | 最近部署别名 | `https://73285b1d.zhongsai-website-v2.pages.dev` | 2026-11-21 | 上轮 `3eda3af3` |
-| 最近 commit | 见 `git log -1`（本轮 content: add waste-to-energy 提交） | 2026-11-21 | 上轮基线 commit `8518c8a`；期间他人提交 `84bb414`/`1b1f97f`（马印参数清单 + 工厂照片） |
+| 最近 commit | `5b6c01c`（content: add waste-to-energy 提交） | 2026-11-21 | 上轮基线 commit `8518c8a`；期间他人提交 `84bb414`/`1b1f97f`（马印参数清单 + 工厂照片） |
 
 ## 未索引观察名单（v3 §7A）
 
