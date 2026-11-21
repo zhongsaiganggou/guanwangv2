@@ -120,3 +120,4 @@
 | 2026-11-18 | mezzanine-in-existing-steel-building-guide | Mezzanine in an Existing Steel Building: Load Path, Connections and Sequence | mezzanine in existing steel building / 既有厂房加建二层平台 |
 | 2026-11-19 | water-treatment-plant-steel-structure-guide | Steel Structures for Water and Wastewater Treatment Plants: What Decides the Design | water treatment plant steel structure / 水处理厂钢结构 |
 | 2026-11-20 | biomass-power-plant-steel-structure-guide | Steel Structure for a Biomass Power Plant: Scope, Loads and Interfaces | biomass power plant steel structure / 生物质电厂钢结构 |
+| 2026-11-21 | waste-to-energy-plant-steel-structure-guide | Steel Structure for a Waste-to-Energy Plant: Bunker, Boiler and Flue Gas Scope | waste-to-energy plant steel structure / 垃圾焚烧电厂钢结构 |

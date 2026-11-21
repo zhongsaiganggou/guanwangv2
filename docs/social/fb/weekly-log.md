@@ -8,3 +8,4 @@
 | 2026-11-18 | 新建 | 既有钢结构厂房加建二层平台：承载路径与连接做法 | https://zhongsai-steelstructure.com/zh/blog/mezzanine-in-existing-steel-building-guide/ |
 | 2026-11-19 | 新建 | 水处理厂钢结构：池盖、走道与小型设备房的设计要点 | https://zhongsai-steelstructure.com/zh/blog/water-treatment-plant-steel-structure-guide/ |
 | 2026-11-20 | 新建 | 生物质电厂钢结构：范围、荷载与接口划分 | https://zhongsai-steelstructure.com/zh/blog/biomass-power-plant-steel-structure-guide/ |
+| 2026-11-21 | 新建 | 垃圾焚烧电厂钢结构：料坑、锅炉与烟气系统的范围划分 | https://zhongsai-steelstructure.com/zh/blog/waste-to-energy-plant-steel-structure-guide/ |
