@@ -9,3 +9,4 @@
 | 2026-11-19 | 新建 | 水处理厂钢结构：池盖、走道与小型设备房的设计要点 | https://zhongsai-steelstructure.com/zh/blog/water-treatment-plant-steel-structure-guide/ |
 | 2026-11-20 | 新建 | 生物质电厂钢结构：范围、荷载与接口划分 | https://zhongsai-steelstructure.com/zh/blog/biomass-power-plant-steel-structure-guide/ |
 | 2026-11-21 | 新建 | 垃圾焚烧电厂钢结构：料坑、锅炉与烟气系统的范围划分 | https://zhongsai-steelstructure.com/zh/blog/waste-to-energy-plant-steel-structure-guide/ |
+| 2026-11-22 | 存量优化 | 钢结构材质证明书怎么看：MTC 与 EN 10204 3.1/3.2 核验（补文档分工表、发货时序表、FAQ） | https://zhongsai-steelstructure.com/zh/blog/steel-structure-mill-test-certificate-guide/ |
