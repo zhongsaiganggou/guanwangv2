@@ -606,7 +606,7 @@ export function buildOrganizationJsonLd() {
     logo: `${SITE_URL}/images/logo-official-transparent-cropped.png`,
     description:
       'A China-based steel structure manufacturer and export supplier providing detailing support, fabrication, structural steel component supply, packing, container loading, export coordination and overseas installation technical guidance.',
-    email: 'zhongsaiganggou@gmail.com',
+    email: 'zb@zhongsai-steelstructure.com',
     telephone: '+86 131 9200 7378',
     sameAs: [
       'https://www.facebook.com/ZhongSaiSteelStructure/reels/',
