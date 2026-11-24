@@ -14,8 +14,8 @@
 | blog EN 篇数 | 119 | 2026-11-24 | 新建 cement 篇 |
 | blog ZH 篇数 | 118 | 2026-11-24 | 新建 cement 篇（cms-publishing-test 无 ZH 配对） |
 | 最近发布时间 | 2026-11-24 | 2026-11-24 | `cement-plant-steel-structure-guide`（新建，EN/ZH 双语） |
-| 最近部署别名 | `https://d5e198fd.zhongsai-website-v2.pages.dev` | 2026-11-24 | 上轮 `87a379bb` |
-| 最近 commit | `37ac2cb`（content: add cement-plant EN/ZH 提交） | 2026-11-24 | 上轮 `a51b97a`/`705b08b`；期间他人提交 `7b3d975`（联系渠道改微信） |
+| 最近部署别名 | `https://2692a646.zhongsai-website-v2.pages.dev` | 2026-11-24 | 上轮 `d5e198fd`；本轮为联系邮箱统一（无新增 URL） |
+| 最近 commit | `d20d617`（chore(contact): unify contact email） | 2026-11-24 | 上轮 `37ac2cb`；本轮 12 文件 18 处邮箱替换，无新增/删 URL |
 
 ## 未索引观察名单（v3 §7A）
 
