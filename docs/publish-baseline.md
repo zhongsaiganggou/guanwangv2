@@ -6,16 +6,16 @@
 
 | 项 | 值 | 更新时间 | 备注 |
 |---|---|---|---|
-| build 页数 | 373 | 2026-11-24 | 新建轮 `cement-plant-steel-structure-guide` +2（起手 371，generate-routes 372） |
-| sitemap `<loc>` | 366 | 2026-11-24 | 起手 364 +2，dangling 0 |
-| paired en/zh | 317 | 2026-11-24 | 起手 315 +2（实测 317） |
-| benign SAME_TARGET | 2 | 2026-11-24 | 既有 `/countries`；另有 acknowledged shadow 1（`/zh/steel-building-solutions/blog`） |
-| SHADOWED_WRONG_TARGET | 0 | 2026-11-24 | 必须恒为 0 |
-| blog EN 篇数 | 119 | 2026-11-24 | 新建 cement 篇 |
-| blog ZH 篇数 | 118 | 2026-11-24 | 新建 cement 篇（cms-publishing-test 无 ZH 配对） |
-| 最近发布时间 | 2026-11-24 | 2026-11-24 | `cement-plant-steel-structure-guide`（新建，EN/ZH 双语） |
-| 最近部署别名 | `https://2692a646.zhongsai-website-v2.pages.dev` | 2026-11-24 | 上轮 `d5e198fd`；本轮为联系邮箱统一（无新增 URL） |
-| 最近 commit | `d20d617`（chore(contact): unify contact email） | 2026-11-24 | 上轮 `37ac2cb`；本轮 12 文件 18 处邮箱替换，无新增/删 URL |
+| build 页数 | 375 | 2026-11-25 | 新建轮 `textile-mill-steel-structure-guide` +2（起手 373，generate-routes 374） |
+| sitemap `<loc>` | 368 | 2026-11-25 | 起手 366 +2，dangling 0 |
+| paired en/zh | 319 | 2026-11-25 | 起手 317 +2（实测 319） |
+| benign SAME_TARGET | 2 | 2026-11-25 | 既有 `/countries`；另有 acknowledged shadow 1（`/zh/steel-building-solutions/blog`） |
+| SHADOWED_WRONG_TARGET | 0 | 2026-11-25 | 必须恒为 0 |
+| blog EN 篇数 | 120 | 2026-11-25 | 新建 textile 篇 |
+| blog ZH 篇数 | 119 | 2026-11-25 | 新建 textile 篇（cms-publishing-test 无 ZH 配对） |
+| 最近发布时间 | 2026-11-25 | 2026-11-25 | `textile-mill-steel-structure-guide`（新建，EN/ZH 双语） |
+| 最近部署别名 | `https://07b1f34d.zhongsai-website-v2.pages.dev` | 2026-11-25 | 上轮 `2692a646`；**该次部署的 dist 包含工作区中 24 个未提交的 WhatsApp 换号改动，见下方风险** |
+| 最近 commit | `43073c7`（content: add textile-mill EN/ZH） | 2026-11-25 | 上轮 `5fdcf94`；工作区另有 24 个未提交文件（WhatsApp 8613192007378 → 8613113270408），本轮未提交、未纳入 commit |
 
 ## 未索引观察名单（v3 §7A）
 
@@ -24,3 +24,7 @@
 | slug | 发布日期 | 观察天数 | 判定 |
 |---|---|---|---|
 | （暂无确认未索引的案例） | — | — | 2026-11-22 周日回检：GSC 导出窗口止于 2026-11-02，11-02 之后发布的 15 篇（11-02～11-08）在导出中均无展现，无法据此判定未索引；不写入名单，待新导出复核 |
+
+## 已知风险与待决
+
+- 2026-11-25 轮：工作区存在 24 个**未提交**文件把 WhatsApp 号从 `8613192007378` 改为 `8613113270408`（Footer、contact、markets、privacy/terms/thank-you 等）。本轮 build/部署的 dist 已包含该改动并已上线；本轮 commit 未包含这些文件。若该号码未经确认，需回退并重新部署；若确认有效，应由提交人单独 commit。
