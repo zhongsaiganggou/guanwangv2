@@ -14,8 +14,8 @@
 | blog EN 篇数 | 120 | 2026-11-25 | 新建 textile 篇 |
 | blog ZH 篇数 | 119 | 2026-11-25 | 新建 textile 篇（cms-publishing-test 无 ZH 配对） |
 | 最近发布时间 | 2026-11-25 | 2026-11-25 | `textile-mill-steel-structure-guide`（新建，EN/ZH 双语） |
-| 最近部署别名 | `https://07b1f34d.zhongsai-website-v2.pages.dev` | 2026-11-25 | 上轮 `2692a646`；**该次部署的 dist 包含工作区中 24 个未提交的 WhatsApp 换号改动，见下方风险** |
-| 最近 commit | `43073c7`（content: add textile-mill EN/ZH） | 2026-11-25 | 上轮 `5fdcf94`；工作区另有 24 个未提交文件（WhatsApp 8613192007378 → 8613113270408），本轮未提交、未纳入 commit |
+| 最近部署别名 | `https://bd3d1928.zhongsai-website-v2.pages.dev` | 2026-11-25 | 上轮 `07b1f34d`；本批 dist 含 WhatsApp 换号 + Meta 域名验证 meta |
+| 最近 commit | `8976842`（feat(contact): WhatsApp 换号 + Meta 域名验证） | 2026-11-25 | 上轮 `43073c7`；工作区已干净 |
 
 ## 未索引观察名单（v3 §7A）
 
@@ -27,4 +27,5 @@
 
 ## 已知风险与待决
 
-- 2026-11-25 轮：工作区存在 24 个**未提交**文件把 WhatsApp 号从 `8613192007378` 改为 `8613113270408`（Footer、contact、markets、privacy/terms/thank-you 等）。本轮 build/部署的 dist 已包含该改动并已上线；本轮 commit 未包含这些文件。若该号码未经确认，需回退并重新部署；若确认有效，应由提交人单独 commit。
+- 2026-11-25：WhatsApp 换号 24 文件已随 `8976842` 提交并部署 Production（`bd3d1928`）；WhatsApp 统一为 `+86 131 1327 0408`，电话接听保留 `+86 131 9200 7378`。风险关闭。
+- 2026-11-25：`src/components/SEOHead.astro` 已加入 Meta 域名验证 meta（`wojphitbtsg2idw1pp1hq7e7f706lb`），主域名 `/` 301→`/en/` 后 HTML 可见，待 Meta Business 后台点“验证网域”。
