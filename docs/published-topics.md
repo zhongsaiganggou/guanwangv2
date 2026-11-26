@@ -123,3 +123,4 @@
 | 2026-11-21 | waste-to-energy-plant-steel-structure-guide | Steel Structure for a Waste-to-Energy Plant: Bunker, Boiler and Flue Gas Scope | waste-to-energy plant steel structure / 垃圾焚烧电厂钢结构 |
 | 2026-11-24 | cement-plant-steel-structure-guide | Steel Structure for a Cement Plant: Kiln Line, Silos and Packing Plant | cement plant steel structure / 水泥厂钢结构 |
 | 2026-11-25 | textile-mill-steel-structure-guide | Textile Mill Steel Structure: Humidity, Dust and Bays | textile mill steel structure / 纺织厂钢结构 |
+| 2026-11-26 | labour-camp-steel-structure-guide | Labour Camp Steel Structure: Blocks, Heat and Phasing | labour camp steel structure / 劳务营地钢结构 |

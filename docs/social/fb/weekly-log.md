@@ -13,3 +13,4 @@
 | 2026-11-23 | 存量优化 | 钢结构柱脚锚栓安装：定位、浇筑检查、灌浆与公差控制（补预埋/后置对比表、公差来源表、出口编号包装、FAQ） | https://zhongsai-steelstructure.com/zh/blog/steel-structure-anchor-bolt-installation-guide/ |
 | 2026-11-24 | 新建 | 水泥厂钢结构：窑线、熟料库与包装车间（范围、荷载、供货边界） | https://zhongsai-steelstructure.com/zh/blog/cement-plant-steel-structure-guide/ |
 | 2026-11-25 | 新建 | 纺织厂钢结构：纺纱车间、湿度与设备荷载（范围、荷载、责任边界） | https://zhongsai-steelstructure.com/zh/blog/textile-mill-steel-structure-guide/ |
+| 2026-11-26 | 新建 | 劳务营地钢结构：住宿单元布局、高温沙尘与分期入住 | https://zhongsai-steelstructure.com/zh/blog/labour-camp-steel-structure-guide/ |
