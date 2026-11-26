@@ -3,9 +3,19 @@
 // Four channels: WhatsApp, WeCom, Email, Support.
 // On mobile (≤768px) the whole stack is hidden; the bottom MobileCTA bar
 // already provides WhatsApp + WeChat side by side.
-const whatsappWebUrl = 'https://wa.me/8613113270408?text=Hi%20ZhongSai%2C%20I%20have%20a%20steel%20structure%20project%20and%20would%20like%20to%20discuss%20the%20requirements.';
+// Two WhatsApp numbers and two mailboxes rotate per visitor (localStorage).
+// The first click uses index 0, the second index 1, and so on.
+const waText = 'Hi ZhongSai, I have a steel structure project and would like to discuss the requirements.';
+const waNumbers = ['8613113270408', '8613192007378'];
+const emailAddresses = ['iris@zhongsai-steelstructure.com', 'tangshuyu@zhongsai-steelstructure.com'];
+const waTextEncoded = encodeURIComponent(waText);
+const emailSubjectEncoded = encodeURIComponent('Steel Structure Inquiry');
+const buildWaHref = (n) => `https://wa.me/${n}?text=${waTextEncoded}`;
+const buildEmailHref = (a) => `mailto:${a}?subject=${emailSubjectEncoded}`;
+// Default (first in rotation) for the initial server-rendered href.
+const whatsappWebUrl = buildWaHref(waNumbers[0]);
 const wecomUrl = 'https://work.weixin.qq.com/ca/cawcdecda029b5c';
-const emailUrl = 'mailto:zb@zhongsai-steelstructure.com?subject=Steel%20Structure%20Inquiry';
+const emailUrl = buildEmailHref(emailAddresses[0]);
 const kfUrl = 'https://work.weixin.qq.com/kfid/kfc0e249308343e2ace';
 const { lang = 'zh' } = Astro.props;
 const t = lang === 'zh'
@@ -34,6 +44,44 @@ const t = lang === 'zh'
     <span class="float-label">{t.support}</span>
   </a>
 </div>
+
+<script is:inline define:vars={{ waNumbers, emailAddresses, waTextEncoded, emailSubjectEncoded }}>
+  (function () {
+    var WA_KEY = 'zs_wa_rotate';
+    var EMAIL_KEY = 'zs_email_rotate';
+
+    function getCount(key) {
+      try { return parseInt(localStorage.getItem(key) || '0', 10) || 0; }
+      catch (e) { return 0; }
+    }
+    function setCount(key, n) {
+      try { localStorage.setItem(key, String(n)); } catch (e) {}
+    }
+    function waHref(n) { return 'https://wa.me/' + n + '?text=' + waTextEncoded; }
+    function mailHref(a) { return 'mailto:' + a + '?subject=' + emailSubjectEncoded; }
+
+    var waLink = document.querySelector('.float-whatsapp');
+    var emailLink = document.querySelector('.float-email');
+
+    // Reflect the next destination before any click (also covers right-click / copy link).
+    function sync() {
+      if (waLink) waLink.setAttribute('href', waHref(waNumbers[getCount(WA_KEY) % 2]));
+      if (emailLink) emailLink.setAttribute('href', mailHref(emailAddresses[getCount(EMAIL_KEY) % 2]));
+    }
+    sync();
+
+    if (waLink) waLink.addEventListener('click', function () {
+      var i = getCount(WA_KEY) % 2;
+      waLink.setAttribute('href', waHref(waNumbers[i]));
+      setCount(WA_KEY, getCount(WA_KEY) + 1);
+    });
+    if (emailLink) emailLink.addEventListener('click', function () {
+      var i = getCount(EMAIL_KEY) % 2;
+      emailLink.setAttribute('href', mailHref(emailAddresses[i]));
+      setCount(EMAIL_KEY, getCount(EMAIL_KEY) + 1);
+    });
+  })();
+</script>
 
 <style>
 .floating-social {
