@@ -118,11 +118,11 @@ const footerCols = lang === 'zh' ? [
           <p><strong>{lang === 'zh' ? '法定公司：' : 'Legal Entity:'}</strong>{lang === 'zh' ? '深圳市中赛钢结构进出口有限公司' : 'Shenzhen ZhongSai Steel Structure Import & Export Co., Ltd.'}</p>
           <p><strong>{lang === 'zh' ? '地址：' : 'Location:'}</strong>{lang === 'zh' ? '中国广东省深圳市前海深港合作区南山街道恰海大道1167号海运中心主塔楼1310号-080A' : 'Room 1310-080A, Main Tower, Shipping Center, No. 1167 Qiahai Avenue, Nanshan Sub-district, Qianhai Shenzhen-Hong Kong Cooperation Zone, Shenzhen, Guangdong, China'}</p>
           <p><strong>Email:</strong> <a href="mailto:zb@zhongsai-steelstructure.com">zb@zhongsai-steelstructure.com</a></p>
-          <p><strong>WhatsApp:</strong> <a href={lang === 'zh' ? 'https://wa.me/8613113270408?text=您好中赛钢构，我有一个钢结构项目，想沟通项目需求。' : 'https://wa.me/8613113270408?text=Hi%20ZhongSai%2C%20I%20have%20a%20steel%20structure%20project%20and%20would%20like%20to%20discuss%20the%20requirements.'} target="_blank" rel="noopener">+86 131 1327 0408</a></p>
+          <p><strong>WhatsApp:</strong> <a href={lang === 'zh' ? 'https://wa.me/8613113270408?text=您好中赛钢构，我有一个钢结构项目，想沟通项目需求。' : 'https://wa.me/8613113270408?text=Hi%20ZhongSai%2C%20I%20have%20a%20steel%20structure%20project%20and%20would%20like%20to%20discuss%20the%20requirements.'} target="_blank" rel="noopener" data-ga-event="contact_phone_click">+86 131 1327 0408</a></p>
         </div>
         <div class="footer-social">
           {socialLinks.map(social => (
-            <a href={social.href} target="_blank" rel="noopener noreferrer" aria-label={social.name} class="footer-social-link">
+            <a href={social.href} target="_blank" rel="noopener noreferrer" aria-label={social.name} class="footer-social-link" data-ga-event={social.name === 'Facebook' ? 'contact_facebook_click' : undefined}>
               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" width="20" height="20">
                 <path d={social.icon} />
               </svg>

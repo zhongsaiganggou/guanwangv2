@@ -102,6 +102,18 @@ const isPreview = import.meta.env.PUBLIC_IS_PREVIEW === 'true';
         page_location: location.href,
       };
 
+      // Explicit per-link event override (e.g. footer phone / Facebook):
+      // fire the named event once and stop, so the link is not double-counted
+      // by the automatic channel classification below. No-op in Preview.
+      const explicitEvent = link.getAttribute('data-ga-event');
+      if (explicitEvent) {
+        window.trackEvent(explicitEvent, Object.assign({}, base, {
+          cta_text: (link.textContent || '').trim().replace(/\s+/g, ' ').slice(0, 80) || link.hostname,
+          destination: link.hostname,
+        }));
+        return;
+      }
+
       if (isWA) {
         window.trackEvent('contact_whatsapp_click', Object.assign({}, base, {
           cta_text: (link.textContent || '').trim().replace(/\s+/g, ' ').slice(0, 80) || 'WhatsApp',
