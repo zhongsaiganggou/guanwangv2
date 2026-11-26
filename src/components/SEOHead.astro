@@ -22,6 +22,8 @@ const otherLangPath = normalizedPath.replace(`/${lang}/`, `/${otherLang}/`);
 const enPath = lang === 'en' ? normalizedPath : otherLangPath;
 const enUrl = `${siteUrl}${enPath}`;
 const zhUrl = `${siteUrl}${lang === 'zh' ? normalizedPath : normalizedPath.replace('/en/', '/zh/')}`;
+// 单语言页面的自指 hreflang（中文页用 zh-CN，英文页用 en），不再硬编码 en
+const selfHreflang = lang === 'zh' ? 'zh-CN' : 'en';
 ---
 
 <title>{title}</title>
@@ -52,7 +54,7 @@ const zhUrl = `${siteUrl}${lang === 'zh' ? normalizedPath : normalizedPath.repla
 <!-- Hreflang（自指 + 另一语言 + x-default 指向英文；单语言页面只输出自指） -->
 {singleLanguage ? (
   <>
-    <link rel="alternate" hreflang="en" href={canonicalUrl} />
+    <link rel="alternate" hreflang={selfHreflang} href={canonicalUrl} />
     <link rel="alternate" hreflang="x-default" href={canonicalUrl} />
   </>
 ) : (

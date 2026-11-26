@@ -7,11 +7,11 @@
 
 ## 中文版（主用，整段复制）
 
-一个 4S 店其实是两件事装进同一个钢构外壳：一面要好看的玻璃展厅，一面要塞满举升机、工位和车辆的维修车间。柱网、净跨、地坪、防火分区和雨棚，哪一项定晚了都会返工。这篇把排布顺序和报价前该给的 12 项资料讲清楚：https://zhongsai-steelstructure.com/zh/blog/auto-showroom-service-centre-steel-building-guide/ 有项目图纸欢迎 WhatsApp 直发：https://wa.me/8613192007378 #钢结构 #钢结构厂房 #装配式建筑 #SteelStructure #AutoShowroom
+一个 4S 店其实是两件事装进同一个钢构外壳：一面要好看的玻璃展厅，一面要塞满举升机、工位和车辆的维修车间。柱网、净跨、地坪、防火分区和雨棚，哪一项定晚了都会返工。这篇把排布顺序和报价前该给的 12 项资料讲清楚：https://zhongsai-steelstructure.com/zh/blog/auto-showroom-service-centre-steel-building-guide/ 有项目图纸欢迎 WhatsApp 直发：https://wa.me/8613113270408 #钢结构 #钢结构厂房 #装配式建筑 #SteelStructure #AutoShowroom
 
 ## 英文版（备用，可选发）
 
-A car dealership is two projects inside one steel envelope: a glass-fronted showroom and a workshop full of lifts and vehicle bays. Bay module, clear span, floor slab, fire separation and canopy are all layout decisions that get expensive if they are made after fabrication. Here is the planning order and the 12-item brief to send before quotation: https://zhongsai-steelstructure.com/en/blog/auto-showroom-service-centre-steel-building-guide/ Send drawings on WhatsApp: https://wa.me/8613192007378 #SteelStructure #SteelBuilding #PrefabBuilding #AutoShowroom #钢结构
+A car dealership is two projects inside one steel envelope: a glass-fronted showroom and a workshop full of lifts and vehicle bays. Bay module, clear span, floor slab, fire separation and canopy are all layout decisions that get expensive if they are made after fabrication. Here is the planning order and the 12-item brief to send before quotation: https://zhongsai-steelstructure.com/en/blog/auto-showroom-service-centre-steel-building-guide/ Send drawings on WhatsApp: https://wa.me/8613113270408 #SteelStructure #SteelBuilding #PrefabBuilding #AutoShowroom #钢结构
 
 ## 配图建议
 

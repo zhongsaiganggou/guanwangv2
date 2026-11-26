@@ -79,7 +79,7 @@
 ## 4A. Facebook 公共主页素材（改为周汇总，不再每篇必出）
 
 - 周一至周六轮：**不产出 FB 素材**，只把当篇标题与链接追加到 `docs/social/fb/weekly-log.md` 备查。
-- 周日轮：产出 1 条**周汇总帖**，覆盖本周发布的全部文章（标题 + 链接，最多 5 篇）。区块标题「===== FACEBOOK 帖子・本周汇总・中文版・整段复制 =====」：一整段中文，3–5 句（本周内容主线 + 3 条买家结论 + 引导查看），附各篇中文链接 `https://zhongsai-steelstructure.com/zh/blog/[slug]/`，2–3 个标签（#钢结构 #钢结构厂房 #装配式建筑），联系统一 WhatsApp `https://wa.me/8613192007378`。英文版备用，同样 3–5 句 + `https://zhongsai-steelstructure.com/en/blog/[slug]/` + 标签（#SteelStructure #SteelBuilding #PrefabBuilding）。
+- 周日轮：产出 1 条**周汇总帖**，覆盖本周发布的全部文章（标题 + 链接，最多 5 篇）。区块标题「===== FACEBOOK 帖子・本周汇总・中文版・整段复制 =====」：一整段中文，3–5 句（本周内容主线 + 3 条买家结论 + 引导查看），附各篇中文链接 `https://zhongsai-steelstructure.com/zh/blog/[slug]/`，2–3 个标签（#钢结构 #钢结构厂房 #装配式建筑），联系统一 WhatsApp `https://wa.me/8613113270408`。英文版备用，同样 3–5 句 + `https://zhongsai-steelstructure.com/en/blog/[slug]/` + 标签（#SteelStructure #SteelBuilding #PrefabBuilding）。
 - 附 1 张封面图（16:9）。不搬全文、不调 Graph API、不自动发布；不写 world-class/leading/No.1，不编造数字。
 - 存档 `docs/social/fb/weekly-[YYYYMMDD].md`。
 

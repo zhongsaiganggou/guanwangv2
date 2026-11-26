@@ -34,7 +34,7 @@ With 20 years of steel structure manufacturing experience and 15 years of export
 - Projects delivered to 40+ countries
 
 **Website:** https://zhongsai-steelstructure.com
-**WhatsApp:** https://wa.me/8613192007378
+**WhatsApp:** https://wa.me/8613113270408
 **Email:** [企业邮箱]
 
 ---

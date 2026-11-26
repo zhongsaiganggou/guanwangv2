@@ -158,7 +158,7 @@ Q345 对应 GB/T 1591 低合金高强度结构钢，是主承重构件的常用�
 
 - 钢材等级选型完整指南（中赛钢构）：https://zhongsai-steelstructure.com/zh/blog/steel-grades-explained-q235-q345/
 - 中赛钢构官网（钢结构厂房 / 仓库 / 多层建筑出口）：https://zhongsai-steelstructure.com/zh/
-- WhatsApp 咨询：https://wa.me/8613192007378
+- WhatsApp 咨询：https://wa.me/8613113270408
 
 > 中赛钢构深耕钢结构制造 20 年、专注出口 15 年，年产 10 万吨、工人 300 余人，通过 CE EN 1090、CSA CWB 和马来西亚 CIDB 认证，构件已销往 40 多个国家。本文为一般选型参考，具体项目设计应基于适用规范、场地条件和工程要求，并咨询合格结构工程师。
 

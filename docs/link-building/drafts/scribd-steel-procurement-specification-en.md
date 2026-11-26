@@ -91,7 +91,7 @@ ZhongSai Steel Structure Co., Ltd. is a factory-direct prefabricated steel build
 
 - Website: https://zhongsai-steelstructure.com
 - EN guide: https://zhongsai-steelstructure.com/en/blog/steel-building-procurement-specification-guide/
-- WhatsApp: https://wa.me/8613192007378
+- WhatsApp: https://wa.me/8613113270408
 - Email: zhongsaiganggou@gmail.com
 - Address: Yuanzhou Town, Boluo County, Huizhou, Guangdong, China 516100
 

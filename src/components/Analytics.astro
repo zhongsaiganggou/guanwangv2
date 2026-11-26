@@ -88,6 +88,7 @@ const isPreview = import.meta.env.PUBLIC_IS_PREVIEW === 'true';
       let ctaLocation = 'other';
       if (link.closest('footer')) ctaLocation = 'footer';
       else if (link.closest('.floating-social') || link.closest('.floating-buttons') || link.closest('[class*="floating"]')) ctaLocation = 'floating';
+      else if (link.closest('.mobile-cta-bar')) ctaLocation = 'mobile_cta';
       else if (link.closest('.contact-card')) ctaLocation = 'contact_card';
       else if (link.closest('.hero') || link.closest('.hub-hero') || link.closest('.page-hero')) ctaLocation = 'hero';
       else if (link.closest('.related-card') || link.closest('.related-grid') || link.closest('.legacy-related')) ctaLocation = 'related';

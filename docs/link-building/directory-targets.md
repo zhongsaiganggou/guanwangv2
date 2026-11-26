@@ -31,6 +31,13 @@
 | TradeIndia（tradeindia.com，印度 B2B） | ❌ 印度本地城市/证件卡点 | 第一步国家可切 China +86、已填姓名/邮箱/手机/公司名；但城市下拉仅印度城市（搜 Guangzhou/China 无选项），点 Continue 不发请求、前端静默拦截；后续预计同 ExportersIndia 要印度 GST/IEC。未建成账号、未发 OTP |
 | yellowpages.co.za（南非） | ❌ 已转为电商商城 | 打开 301 跳 `mall.yep.co.za/home`（Yep Mall），无免费 B2B/供应商登记入口，与原黄页目录不同 |
 | 其余区域域名单次探测不可达 | ❌ 死路/不可达 | indotrading.com 403；directory.my、connect.ae、kenyabusinessdirectory.co.ke DNS 不可解析；yellowpages.ph、yellowpages.ae SSL 握手超时；nigeriayellowpages.com SSL EOF |
+| Exporthub（exporthub.com） | ❌ 验证码 + 手机 OTP 卡点（2026-11-23 实测） | 注册页 `/signup.html` 含 captcha_check 与手机区号/号码字段；官网字段在注册后资料内；卖家会员多为付费档 |
+| WholesaleCentral（wholesalecentral.com） | ❌ 付费目录 + 受众不匹配（2026-11-23） | 无自助 add-company 入口，供应商收录付费；受众为美国批发商，非整房出口买家 |
+| Buzzfile（buzzfile.com） | ❌ 买家侧 SaaS（2026-11-23） | 首屏兴趣选择门，无供应商自助建档；同 BizVibe 类别 |
+| Tradewheel / Manta / Yellowpages.com / Yell（英国） | ❌ 403 反爬墙（2026-11-23） | 站点拒绝非浏览器爬虫访问，未进入注册 |
+| IndiaMART | ❌ 429 限流 + 本地验证门槛（2026-11-23） | 印度站，本地主体/验证要求高 |
+| Made-in-China / Global Sources | ❌ 付费平台（2026-11-23） | 前者有验证墙；两者均为付费 B2B/展会模式，不产出免费目录外链 |
+| ghana-yellowpages.com / southafricayellowpages.co.za | ❌ SSL 握手失败（2026-11-23） | 站点不可达 |
 
 ## 二、按市场国的目标（优先级从高到低）
 
@@ -51,7 +58,7 @@
 
 - 平台：Yellow Pages UAE（https://www.yellowpages-uae.com/pages/list-your-business）
 - 状态：⏳ **已提交成功**，页面回「Thank you for your interest in listing your business」，等人工审核上线
-- 提交内容：公司名、业务（钢结构制作：预制仓库/车间/屋架/管廊）、地址 Yuanzhou Town, Boluo County / Huizhou / China、官网 https://zhongsai-steelstructure.com、电话 +86 13192007378
+- 提交内容：公司名、业务（钢结构制作：预制仓库/车间/屋架/管廊）、地址 Yuanzhou Town, Boluo County / Huizhou / China、官网 https://zhongsai-steelstructure.com、电话 +86 8613113270408
 - 备注：免费、无需邮箱验证、接受境外地址（Country 为自由文本）；审核后需回查条目页 URL
 
 ### 墨西哥 / 巴西 / 南非 / 加纳 / 埃塞俄比亚 / 阿尔巴尼亚
@@ -73,7 +80,7 @@
 
 ## 三、不靠目录的三条更稳的国别外链路径
 
-1. **当地行业媒体 guest post**：马来西亚/印尼/UAE 的建筑、钢结构、工程类博客与行业站，投 1 篇原创（带作者简介 + 官网链接）
+1. **当地行业媒体 guest post**：马来西亚/印尼/UAE 的建筑、钢结构、工程类博客与行业站，投 1 篇原创（带作者简介 + 官网链接）。2026-11-23 检索「write for us」开放入口：结果多为低质链接农场或无关行业（屋面/健身/房产租赁/能源），无可信目标市场工程媒体开放投稿；可信 guest post 只能走直接邮件触达行业媒体/商会，不向链接农场投稿。
 2. **当地商会/协会会员名录**：马来西亚中华总商会、UAE 华商会等，会员页通常有官网链接
 3. **客户/供应商互链**：已成交的海外客户、当地安装队、货代，在 case study 里互挂链接
 
@@ -98,7 +105,7 @@
 - 公司名：`Zhongsai Steel Structure Co., Ltd.`
 - 地址：`Yuanzhou Town, Boluo County, Huizhou, Guangdong, China`
 - 官网：`https://zhongsai-steelstructure.com`
-- 电话/WhatsApp：`+86 13192007378`
+- 电话/WhatsApp：`+86 8613113270408`
 - 邮箱：`zhongsaiganggou@gmail.com`
 - 简介：`company-profile-pack.md` 里的 EN 长描述
 - 分类：Fabricated Structural Metal Manufacturing；备选 Construction → Structural Steel Contractors

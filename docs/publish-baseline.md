@@ -27,6 +27,6 @@
 
 ## 已知风险与待决
 
-- 2026-11-25：WhatsApp 换号 24 文件已随 `8976842` 提交并部署 Production（`bd3d1928`）；WhatsApp 统一为 `+86 131 1327 0408`，电话接听保留 `+86 131 9200 7378`。风险关闭。
+- 2026-11-25：WhatsApp 换号 24 文件已随 `8976842` 提交并部署 Production（`bd3d1928`）；WhatsApp 统一为 `+86 131 1327 0408`，电话接听保留 `+86 131 1327 0408`。风险关闭。
 - 2026-11-25：`src/components/SEOHead.astro` 已加入 Meta 域名验证 meta（`wojphitbtsg2idw1pp1hq7e7f706lb`），主域名 `/` 301→`/en/` 后 HTML 可见，待 Meta Business 后台点“验证网域”。
 - 2026-11-26：本轮 build/部署的 dist 只含本篇新增内容与已提交的站点代码，工作区起手即干净（`git status` 0 项），无「dist 含未提交改动」风险。

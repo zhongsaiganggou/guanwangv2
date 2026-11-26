@@ -147,4 +147,4 @@
 
 - 如何选择中国钢结构制造商（完整评估指南）：https://zhongsai-steelstructure.com/zh/blog/how-to-choose-steel-structure-manufacturer-china/
 - 中赛钢构官网：https://zhongsai-steelstructure.com/zh/
-- WhatsApp 直达咨询：https://wa.me/8613192007378
+- WhatsApp 直达咨询：https://wa.me/8613113270408

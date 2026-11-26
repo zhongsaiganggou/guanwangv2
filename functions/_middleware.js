@@ -26,12 +26,13 @@ import { ROUTES } from './_routes.js';
 //     /zh/projects/china-cnooc-pipe-rack/                      -> /zh/projects/cnooc-pr6-pipe-rack/
 const GONE_URLS = new Set([]);
 
-// URLs that must stay a real 404 (no generic /zh/blog/ -> /zh/resources/ fallback,
-// no weak hub redirect). Revisit only when an approved same-language equivalent
-// page exists. Added 2026-10-07 (GSC 404 P1 recovery).
-const KEEP_404_URLS = new Set([
-  '/zh/blog/how-to-import-steel-structure-from-china-to-africa/',
-]);
+// 2b) Keep a real 404 for URLs with no approved same-language equivalent.
+// Explicit 404 (not next()) so the static _redirects weak fallback can never
+// catch these. Added 2026-10-07 (GSC 404 P1 recovery).
+// Empty as of 2026-11-26: the former entry
+//   /zh/blog/how-to-import-steel-structure-from-china-to-africa/
+// now 301s (via EXACT) to its live English equivalent instead of a hard 404.
+const KEEP_404_URLS = new Set([]);
 
 // Exact legacy redirects, keyed by NORMALIZED path (extensionless paths and
 // `.html` paths both resolve to a directory form ending with '/').
@@ -77,6 +78,9 @@ const EXACT = new Map([
   // Retired cost article (was 410) — live same-intent guide exists, recover the equity.
   ['/en/blog/how-much-does-steel-structure-warehouse-cost/',
     '/en/blog/steel-warehouse-cost-complete-guide/'],
+  // Root (no language prefix) variant of the same retired cost article -> EN guide.
+  ['/blog/how-much-does-steel-structure-warehouse-cost/',
+    '/en/blog/steel-warehouse-cost-complete-guide/'],
   // Cost cluster consolidation (2026-11-16): the shorter EN cost page was retired
   // and its unique sections (cost-share table, kg/m2 benchmarks, responsibility
   // matrix, quotation checklist) were merged into the complete guide.
@@ -97,6 +101,10 @@ const EXACT = new Map([
     '/zh/blog/steel-structure-installation-process-guide/'],
   ['/zh/blog/gangjiegou-chukou-feizhou-quanliucheng/',
     ['/zh/blog/how-to-import-steel-structure-from-china-to-africa/', '/zh/resources/']],
+  // This ZH Africa-import URL has no Chinese page; 301 to the live EN article
+  // (replaces the former hard 404 in KEEP_404_URLS).
+  ['/zh/blog/how-to-import-steel-structure-from-china-to-africa/',
+    '/en/blog/how-to-import-steel-structure-from-china-to-africa/'],
   ['/zh/blog/how-to-choose-steel-structure-supplier/', '/zh/resources/'],
   ['/zh/blog/steel-structure-building-installation-guide-overseas/',
     '/zh/blog/steel-structure-installation-process-guide/'],

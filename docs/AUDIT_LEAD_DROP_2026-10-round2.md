@@ -115,7 +115,7 @@ GA4 自由探索的维度选择器在自动化下**反复卡死/重置**（中�
 ## 9. 表单 EN/ZH E2E（Production，TEST 标记）
 
 - **ZH（第一轮）**：场景 A 填电话 → **HTTP 201 / complete**（lead `6c5ba4dc…`，test_record=1）；场景 B 只填微信、不填电话 → 前端放行、后端 **VALIDATION_ERROR**、前端笼统提示。
-- **EN（本轮新增）**：`/en/contact/` 填 name=`EN QA Test Record`、calling code=`China +86`、phone=`13192007378`、wechat=`entest123`、project country=`Malaysia` → Turnstile 自动通过 → 前端显示 **"Project inquiry received"**，D1 落库 **submission_status=complete**（rowid 27）。
+- **EN（本轮新增）**：`/en/contact/` 填 name=`EN QA Test Record`、calling code=`China +86`、phone=`8613113270408`、wechat=`entest123`、project country=`Malaysia` → Turnstile 自动通过 → 前端显示 **"Project inquiry received"**，D1 落库 **submission_status=complete**（rowid 27）。
 - **结论：EN/ZH 表单成功路径均能正常落库，表单不是 P0。** EN/ZH 共用同一 `QuoteForm` 组件与同一后端，技术路径一致。
 - **P1 缺陷（与语言无关）维持**：前端仅必填 name/wechat/country（phone、calling code、email 可选），后端 `validateLead` 额外强制 `calling_code + phone`；"只填微信、不填电话"（常见于华人客户）会被后端拒，且前端错误提示不指明电话字段。
 

@@ -317,7 +317,7 @@ FAQ 来源：
 - 不写 world-class / leading / No.1 / trusted supplier
 - **禁止编造**：客户、项目、面积、吨位、跨度、交期、认证（ISO/CIDB）、出口国家、节省比例、价格、案例、当地办公室、当地施工队、UAE 本地团队
 - CTA 统一：Send Project Drawings / 提交项目图纸 / Send Project Requirements
-- WhatsApp：`wa.me/8613192007378` 带预填文案
+- WhatsApp：`wa.me/8613113270408` 带预填文案
 
 如果源码和项目上下文存在冲突 → **STOP 并标记 FACT CHECK REQUIRED**，不要自己选一个数字。
 
