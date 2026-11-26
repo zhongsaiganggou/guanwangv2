@@ -222,5 +222,11 @@ const t = lang === 'zh'
     width: 42px;
     height: 42px;
   }
+  /* On phones the bottom MobileCTA bar already carries WhatsApp + WeChat, so
+     hide those two here to avoid duplicates. Email and Support stay visible. */
+  .float-whatsapp,
+  .float-wecom {
+    display: none;
+  }
 }
 </style>
