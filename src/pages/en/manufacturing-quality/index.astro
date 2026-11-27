@@ -17,7 +17,7 @@ const mfgSteps = [
   {
     num: '01',
     title: 'Material Preparation',
-    desc: 'Steel plates, sections and supporting materials are received, identified and prepared according to project specifications and material grade requirements.',
+    desc: 'Plates, sections and supporting materials are received, identified against grade requirements and supported by mill certificates where available; traceability records are maintained per project.',
     img: '/images/company/factory-yard-gantry-crane.jpg',
     alt: 'Factory yard with gantry crane for steel material storage'
   },
@@ -52,13 +52,14 @@ const mfgSteps = [
   {
     num: '06',
     title: 'Marking, Packing & Delivery Preparation',
-    desc: 'Components are marked and numbered based on shop drawings and installation sequence, grouped and packed for export, with packing lists included.',
+    desc: 'Each component is marked with its drawing reference and member ID; components are grouped by pack and container with packing lists, and over-length members may be segmented with bolted splices where required for export shipping.',
     img: '/images/manufacturing/real/component-marking.jpg',
     alt: 'Export component marking and identification'
   }
 ];
 
 const evidenceGallery = [
+  { src: '/images/manufacturing/real/workshop-overview-wide-9815.jpg', alt: 'Wide interior view of the steel structure fabrication workshop', caption: 'Workshop panorama' },
   { src: '/images/company/factory-steel-beam-fabrication.jpg', alt: 'Steel beam fabrication at ZhongSai production base', caption: 'Steel beam fabrication' },
   { src: '/images/components/finished-coated-components.jpg', alt: 'Finished and coated steel structure components', caption: 'Surface treated components' },
   { src: '/images/container-loading.jpg', alt: 'Steel structure components loaded into shipping container for export', caption: 'Container loading for export' }
@@ -155,7 +156,7 @@ const relatedLinks = [
     <div class="detail-hero-content">
       <span class="eyebrow">MANUFACTURING · From Drawings to Export Delivery</span>
       <h1>Steel Structure Manufacturing<br>and Quality Control for Overseas Projects</h1>
-      <p class="lead">Based on approved engineering and shop drawings, ZhongSai completes steel structure component cutting, fit-up, welding, inspection, surface treatment, marking and export delivery preparation at its Dongguan and Huizhou manufacturing bases.</p>
+      <p class="lead">Based on approved engineering and shop drawings, ZhongSai coordinates steel structure component cutting, fit-up, welding, inspection, surface treatment, marking and export delivery preparation through production resources in Dongguan and Huizhou.</p>
       <div class="detail-hero-actions">
         <a href="#quote" class="btn btn-primary">Send Drawings for Manufacturing Review</a>
         <a href="/en/export-delivery/" class="btn btn-outline">View Export Delivery</a>
@@ -199,10 +200,10 @@ const relatedLinks = [
         ))}
       </div>
       <div class="stats-row reveal">
-        <div class="stat-item"><span class="stat-number">~100,000 m²</span><span class="stat-label">Manufacturing Base</span></div>
-        <div class="stat-item"><span class="stat-number">~100,000 t</span><span class="stat-label">Annual Capacity</span></div>
-        <div class="stat-item"><span class="stat-number">300+</span><span class="stat-label">Frontline Workers</span></div>
-        <div class="stat-item"><span class="stat-number">Project-Based</span><span class="stat-label">Fabrication & Export</span></div>
+        <div class="stat-item"><span class="stat-number">Detailing</span><span class="stat-label">Shop Drawing Coordination</span></div>
+        <div class="stat-item"><span class="stat-number">Fabrication</span><span class="stat-label">Cutting, Fit-up & Welding</span></div>
+        <div class="stat-item"><span class="stat-number">QC & Packing</span><span class="stat-label">Inspection, Marking & Loading</span></div>
+        <div class="stat-item"><span class="stat-number">Export Supply</span><span class="stat-label">Overseas Delivery Preparation</span></div>
       </div>
     </div>
   </section>
@@ -238,7 +239,7 @@ const relatedLinks = [
       <div class="section-heading reveal">
         <p class="section-index">Evidence</p>
         <h2>Real Manufacturing Evidence</h2>
-        <p>The photos below are taken at ZhongSai manufacturing bases and production lines — real factory and production photos, not AI-generated renders.</p>
+        <p>The photos below show fabrication stages, quality control and export preparation within our production workflow — real production photos, not AI-generated renders.</p>
       </div>
       <div class="evidence-strip">
         {evidenceGallery.map((item, i) => (
@@ -359,13 +360,13 @@ const relatedLinks = [
     </div>
   </section>
 
-  <!-- 08 / Manufacturing Bases & Certifications -->
+  <!-- 08 / Production Network & Certifications -->
   <section class="detail-section">
     <div class="container">
       <div class="section-heading reveal">
         <p class="section-index">Bases</p>
-        <h2>Manufacturing Bases & Certifications</h2>
-        <p>ZhongSai operates manufacturing bases in Dongguan and Huizhou for steel structure component fabrication, inspection, surface treatment, marking, packing and export delivery preparation.</p>
+        <h2>Production Network & Certifications</h2>
+        <p>Key fabrication stages are supported through production resources in Dongguan and Huizhou, covering inspection, surface treatment, marking, packing and export delivery preparation.</p>
       </div>
       <div class="cert-grid">
         {certifications.map((cert, i) => (
@@ -467,7 +468,6 @@ const relatedLinks = [
             <span class="rpc-category">Industrial Manufacturing</span>
             <h4>Guangzhou High-End Equipment R&D Production Base</h4>
             <p class="rpc-location">Guangzhou, Guangdong</p>
-            <p class="rpc-data">60m span · ~9,800 t</p>
             <p class="rpc-scope"><span>ZhongSai Scope:</span> Steel structure fabrication & supply</p>
           </div>
         </a>
@@ -479,7 +479,6 @@ const relatedLinks = [
             <span class="rpc-category">Logistics & Warehousing</span>
             <h4>Zhanjiang Integrated Logistics Port</h4>
             <p class="rpc-location">Zhanjiang, Guangdong</p>
-            <p class="rpc-data">~100,000 m² · ~3,160 t</p>
             <p class="rpc-scope"><span>ZhongSai Scope:</span> Steel structure fabrication & supply</p>
           </div>
         </a>
@@ -661,7 +660,7 @@ const relatedLinks = [
 /* Evidence strip */
 .evidence-strip {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: repeat(4, 1fr);
   gap: 16px;
   margin-top: 28px;
 }
@@ -980,6 +979,7 @@ const relatedLinks = [
   .cert-grid { grid-template-columns: repeat(2, 1fr); }
   .weld-layout, .surf-layout, .mark-layout { grid-template-columns: 1fr; }
   .rp-grid { grid-template-columns: repeat(2, 1fr); }
+  .evidence-strip { grid-template-columns: repeat(2, 1fr); }
 }
 @media (max-width: 768px) {
   .mfg-grid, .cert-grid, .stats-row { grid-template-columns: 1fr; }

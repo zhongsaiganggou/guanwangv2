@@ -17,7 +17,7 @@ const mfgSteps = [
   {
     num: '01',
     title: '材料准备 / 下料',
-    desc: '钢板、型钢及配套材料按项目规格和材质要求进场、标识并准备，确保材料符合项目要求。',
+    desc: '钢板、型材及辅料按牌号要求进场标识，并在具备条件时配套材质证明；按项目留存追溯记录。',
     img: '/images/company/factory-yard-gantry-crane.jpg',
     alt: '工厂堆场龙门吊钢材存放区'
   },
@@ -52,13 +52,14 @@ const mfgSteps = [
   {
     num: '06',
     title: '编号、包装与交付准备',
-    desc: '构件按加工图和安装顺序编号标识，按类型与装柜顺序分组包装，附带装箱清单，为出口交付做准备。',
+    desc: '每件构件标注图纸编号与构件 ID；构件按包装单元和集装箱分组并附装箱清单；超长构件按需分段并以螺栓拼接，便于出口运输。',
     img: '/images/manufacturing/real/component-marking.jpg',
     alt: '出口构件编号与标识'
   }
 ];
 
 const evidenceGallery = [
+  { src: '/images/manufacturing/real/workshop-overview-wide-9815.jpg', alt: '钢结构制造车间内部宽幅全景', caption: '车间全景' },
   { src: '/images/company/factory-steel-beam-fabrication.jpg', alt: '中赛生产基地钢梁构件加工', caption: '钢梁构件工厂加工' },
   { src: '/images/components/finished-coated-components.jpg', alt: '成品表面处理后的钢结构构件', caption: '表面处理成品构件' },
   { src: '/images/container-loading.jpg', alt: '钢结构构件装入出口集装箱', caption: '出口装柜准备' }
@@ -155,7 +156,7 @@ const relatedLinks = [
     <div class="detail-hero-content">
       <span class="eyebrow">制造与质量 · 从图纸到出口交付</span>
       <h1>海外钢结构项目<br>制造与质量控制</h1>
-      <p class="lead">基于批准的工程图纸和加工图，中赛在东莞和惠州制造基地完成钢结构构件的下料、组立、焊接、检查、表面处理、编号及出口交付准备。</p>
+      <p class="lead">基于批准的工程图纸和加工图，中赛通过东莞、惠州的生产协作资源，配合完成钢结构构件的下料、组立、焊接、检查、表面处理、编号及出口交付准备。</p>
       <div class="detail-hero-actions">
         <a href="#quote" class="btn btn-primary">提交图纸进行制造评审</a>
         <a href="/zh/export-delivery/" class="btn btn-outline">查看出口交付能力</a>
@@ -199,10 +200,10 @@ const relatedLinks = [
         ))}
       </div>
       <div class="stats-row reveal">
-        <div class="stat-item"><span class="stat-number">约10万㎡</span><span class="stat-label">生产基地面积</span></div>
-        <div class="stat-item"><span class="stat-number">约10万吨</span><span class="stat-label">年产能</span></div>
-        <div class="stat-item"><span class="stat-number">300+</span><span class="stat-label">一线生产工人</span></div>
-        <div class="stat-item"><span class="stat-number">按项目</span><span class="stat-label">定制制造与出口</span></div>
+        <div class="stat-item"><span class="stat-number">图纸深化</span><span class="stat-label">加工图配合</span></div>
+        <div class="stat-item"><span class="stat-number">构件加工</span><span class="stat-label">下料、组立与焊接</span></div>
+        <div class="stat-item"><span class="stat-number">质检包装</span><span class="stat-label">检验、编号与装柜</span></div>
+        <div class="stat-item"><span class="stat-number">出口供货</span><span class="stat-label">海外交付准备</span></div>
       </div>
     </div>
   </section>
@@ -238,7 +239,7 @@ const relatedLinks = [
       <div class="section-heading reveal">
         <p class="section-index">证据</p>
         <h2>真实制造证据</h2>
-        <p>以下为中赛生产基地、生产工序、质量控制和出口准备的实拍照片，非AI生成效果图。</p>
+        <p>以下为我方生产流程中的加工工序、质量控制与出口准备实拍，非AI生成效果图。</p>
       </div>
       <div class="evidence-strip">
         {evidenceGallery.map((item, i) => (
@@ -359,13 +360,13 @@ const relatedLinks = [
     </div>
   </section>
 
-  <!-- 08 / 制造基地与认证 -->
+  <!-- 08 / 制造协作网络与认证 -->
   <section class="detail-section">
     <div class="container">
       <div class="section-heading reveal">
         <p class="section-index">基地</p>
-        <h2>制造基地与认证</h2>
-        <p>中赛钢构在东莞和惠州设有制造基地，用于钢结构构件的制造、检查、表面处理、编号、包装和出口交付准备。</p>
+        <h2>制造协作网络与认证</h2>
+        <p>关键制造环节由东莞、惠州的生产协作资源配合完成，涵盖检验、表面处理、编号、包装与出口交付准备。</p>
       </div>
       <div class="cert-grid">
         {certifications.map((cert, i) => (
@@ -467,7 +468,6 @@ const relatedLinks = [
             <span class="rpc-category">工业制造</span>
             <h4>广州高端装备研发生产基地</h4>
             <p class="rpc-location">广东广州</p>
-            <p class="rpc-data">60米跨度 · 约9,800吨</p>
             <p class="rpc-scope"><span>中赛范围:</span> 钢结构制造与加工供应</p>
           </div>
         </a>
@@ -479,7 +479,6 @@ const relatedLinks = [
             <span class="rpc-category">物流仓储</span>
             <h4>湛江综合物流港</h4>
             <p class="rpc-location">广东湛江</p>
-            <p class="rpc-data">约10万㎡ · 约3,160吨</p>
             <p class="rpc-scope"><span>中赛范围:</span> 钢结构制造与加工供应</p>
           </div>
         </a>
@@ -661,7 +660,7 @@ const relatedLinks = [
 /* Evidence strip */
 .evidence-strip {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: repeat(4, 1fr);
   gap: 16px;
   margin-top: 28px;
 }
@@ -980,6 +979,7 @@ const relatedLinks = [
   .cert-grid { grid-template-columns: repeat(2, 1fr); }
   .weld-layout, .surf-layout, .mark-layout { grid-template-columns: 1fr; }
   .rp-grid { grid-template-columns: repeat(2, 1fr); }
+  .evidence-strip { grid-template-columns: repeat(2, 1fr); }
 }
 @media (max-width: 768px) {
   .mfg-grid, .cert-grid, .stats-row { grid-template-columns: 1fr; }
