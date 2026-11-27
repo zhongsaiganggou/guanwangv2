@@ -14,3 +14,4 @@
 | 2026-11-24 | 新建 | 水泥厂钢结构：窑线、熟料库与包装车间（范围、荷载、供货边界） | https://zhongsai-steelstructure.com/zh/blog/cement-plant-steel-structure-guide/ |
 | 2026-11-25 | 新建 | 纺织厂钢结构：纺纱车间、湿度与设备荷载（范围、荷载、责任边界） | https://zhongsai-steelstructure.com/zh/blog/textile-mill-steel-structure-guide/ |
 | 2026-11-26 | 新建 | 劳务营地钢结构：住宿单元布局、高温沙尘与分期入住 | https://zhongsai-steelstructure.com/zh/blog/labour-camp-steel-structure-guide/ |
+| 2026-11-27 | 新建 | 学校钢结构：教室单元、厅堂跨度与按校历分期交付 | https://zhongsai-steelstructure.com/zh/blog/school-building-steel-structure-guide/ |
