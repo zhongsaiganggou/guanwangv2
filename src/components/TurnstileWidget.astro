@@ -40,7 +40,12 @@ const siteKey = import.meta.env.PUBLIC_TURNSTILE_SITE_KEY || '0x4AAAAAAEqsUE0gIc
         const widgetId = window.turnstile.render(widget, {
           sitekey,
           theme: 'light',
-          size: 'invisible',
+          // Visible Managed/Non-Interactive widget. Valid size values are
+          // normal/flexible/compact; 'invisible' is a widget mode (dashboard),
+          // not a size, and previously threw a console error. 'flexible' fills
+          // the 100%-width container and keeps the existing auto-challenge
+          // behavior (execution defaults to render, appearance to always).
+          size: 'flexible',
           callback: function(token: string) {
             widget.closest('form')?.setAttribute('data-turnstile-token', token);
             widget.setAttribute('data-token', token);

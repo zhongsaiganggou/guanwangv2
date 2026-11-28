@@ -4,47 +4,73 @@
 // longer wanted in the Meta dataset. Website form leads are still reported server
 // side via Conversions API in functions/api/project-inquiry.js.
 const measurementId = import.meta.env.PUBLIC_GA_MEASUREMENT_ID || '';
-const enabled = !!measurementId;
-// Preview builds set PUBLIC_IS_PREVIEW=true in Cloudflare Pages dashboard.
-// When true, no GA4 scripts are rendered and all track calls become no-ops,
-// so Preview traffic never pollutes production analytics.
 
-const isPreview = import.meta.env.PUBLIC_IS_PREVIEW === 'true';
+// 第一层：构建环境识别（构建期静态确定）
+const isDev = import.meta.env.DEV === true;
+const buildPreview = import.meta.env.PUBLIC_IS_PREVIEW === 'true';
+// CF_PAGES_BRANCH 无 PUBLIC_ 前缀，Vite 不会暴露给前端，故在 Node 构建期经 process.env 读取
+const cfBranch = process.env.CF_PAGES_BRANCH || '';
 ---
 
-{enabled && !isPreview && (
-  <>
-    <!-- Google tag (gtag.js) -->
-    <script async src={`https://www.googletagmanager.com/gtag/js?id=${measurementId}`}></script>
-    <script is:inline define:vars={{ measurementId }}>
-      window.dataLayer = window.dataLayer || [];
-      window.gtag = function(){window.dataLayer.push(arguments);};
-      gtag('js', new Date());
-      gtag('config', measurementId, {
-        anonymize_ip: true,
-        send_page_view: true,
-      });
-    </script>
-  </>
-)}
+{/* 构建期配置：由同步内联脚本最早写入，供后续模块读取（不依赖 gtag） */}
+<script is:inline define:vars={{ measurementId, isDev, buildPreview, cfBranch }}>
+  window.__GA_BUILD__ = {
+    measurementId: measurementId,
+    isDev: isDev === true,
+    isPreview: buildPreview === true,
+    cfBranch: cfBranch || '',
+  };
+</script>
 
-<script is:inline define:vars={{ isPreview }}>
-  // Flag available to other scripts for runtime checks
-  window.__IS_PREVIEW__ = isPreview === true;
+<script>
+  // 第二层：运行时判定。单一权威逻辑来自 ga4-env.js（与 Node 回归测试共用）。
+  import { shouldLoadGa4 } from '../scripts/ga4-env.js';
 
-  // Unified GA4 event helper — no PII. No-op in Preview builds.
-  window.trackEvent = function(name, params) {
-    if (window.__IS_PREVIEW__) return;
-    if (typeof gtag !== 'function') return;
+  const build = window.__GA_BUILD__ || { measurementId: '', isDev: false, isPreview: false, cfBranch: '' };
+  const hostname = window.location.hostname;
+
+  // DEFAULT DENY：仅当构建期无任何非生产信号、且 hostname 精确命中生产允许列表时才放行
+  const allow = shouldLoadGa4({
+    hostname: hostname,
+    isDev: build.isDev,
+    isPreview: build.isPreview,
+    cfBranch: build.cfBranch,
+  }) === true;
+
+  // 暴露标志，保持与历史 __IS_PREVIEW__ 语义兼容（非生产即为 true）
+  window.__GA4_ALLOWED__ = allow;
+  window.__IS_PREVIEW__ = !allow;
+
+  if (allow && build.measurementId) {
+    // 仅在确认生产环境后才初始化 gtag；非生产环境永远不会加载 gtag.js
+    window.dataLayer = window.dataLayer || [];
+    window.gtag = function () { window.dataLayer.push(arguments); };
+
+    const s = document.createElement('script');
+    s.async = true;
+    s.src = 'https://www.googletagmanager.com/gtag/js?id=' + build.measurementId;
+    document.head.appendChild(s);
+
+    gtag('js', new Date());
+    gtag('config', build.measurementId, {
+      anonymize_ip: true,
+      send_page_view: true,
+    });
+  }
+
+  // Unified GA4 event helper — no PII. 非生产或 gtag 不存在时安全 no-op，不抛错。
+  window.trackEvent = function (name, params) {
+    if (!window.__GA4_ALLOWED__) return;
+    if (typeof window.gtag !== 'function') return;
     const p = params || {};
     p.page_path = p.page_path || location.pathname;
-    gtag('event', name, p);
+    window.gtag('event', name, p);
   };
 
-  // GA4 generate_lead conversion helper. No-op in Preview builds.
-  window.trackLeadConversion = function(params) {
-    if (window.__IS_PREVIEW__) return;
-    if (typeof gtag !== 'function') return;
+  // GA4 generate_lead conversion helper. 非生产安全 no-op。
+  window.trackLeadConversion = function (params) {
+    if (!window.__GA4_ALLOWED__) return;
+    if (typeof window.gtag !== 'function') return;
     if (!params || !params.lead_id) return;
 
     if (window._trackedLeadIds && window._trackedLeadIds.has(params.lead_id)) return;
@@ -59,24 +85,23 @@ const isPreview = import.meta.env.PUBLIC_IS_PREVIEW === 'true';
     };
 
     // Standard GA4 recommended event (maps to Lead conversion)
-    gtag('event', 'generate_lead', Object.assign({
+    window.gtag('event', 'generate_lead', Object.assign({
       currency: 'USD',
       value: 0,
     }, baseParams));
 
     // Custom business event for funnel analysis
-    gtag('event', 'project_form_submit', baseParams);
+    window.gtag('event', 'project_form_submit', baseParams);
 
     // Drawing upload tracked as secondary event
     if (params.has_file === true) {
-      gtag('event', 'drawing_upload', baseParams);
+      window.gtag('event', 'drawing_upload', baseParams);
     }
-
   };
 
-  // Global outbound click tracking — no-op in Preview builds.
-  if (!window.__IS_PREVIEW__) {
-    document.addEventListener('click', function(e) {
+  // Global outbound click tracking — 仅生产环境注册，no PII。
+  if (window.__GA4_ALLOWED__) {
+    document.addEventListener('click', function (e) {
       const link = e.target.closest('a');
       if (!link || !link.href) return;
       const href = link.href;
@@ -104,7 +129,7 @@ const isPreview = import.meta.env.PUBLIC_IS_PREVIEW === 'true';
 
       // Explicit per-link event override (e.g. footer phone / Facebook):
       // fire the named event once and stop, so the link is not double-counted
-      // by the automatic channel classification below. No-op in Preview.
+      // by the automatic channel classification below.
       const explicitEvent = link.getAttribute('data-ga-event');
       if (explicitEvent) {
         window.trackEvent(explicitEvent, Object.assign({}, base, {

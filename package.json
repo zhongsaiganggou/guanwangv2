@@ -7,6 +7,7 @@
     "build": "node tools/optimize-blog-covers.mjs && node tools/optimize-home-images.mjs && astro build && node tools/generate-routes.mjs",
     "preview": "astro preview",
     "astro": "astro",
+  "test": "node --test tests/*.test.mjs",
     "images:blog-covers": "node tools/optimize-blog-covers.mjs",
     "seo:check:sitemap": "node tools/seo-audit/check_sitemap_hreflang.mjs",
     "seo:check:redirects": "node tools/seo-audit/check_redirect_shadows.mjs",
