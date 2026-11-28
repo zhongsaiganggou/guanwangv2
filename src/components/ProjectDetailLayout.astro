@@ -1,6 +1,8 @@
 ---
 // ProjectDetailLayout.astro - Project detail page layout with multi-image gallery
-import type { ProjectData } from '../data/projects-data';
+import type { ProjectData, EvidenceLevel } from '../data/projects-data';
+import ProjectCard from './ProjectCard.astro';
+import { projects } from '../data/projects-data';
 
 interface Props {
   project: ProjectData;
@@ -17,9 +19,40 @@ const heroTypeLabel = project.heroImageType === 'rendering'
   : project.heroImageType === 'component'
   ? (lang === 'zh' ? '钢结构细节' : 'Steel Structure Detail')
   : (lang === 'zh' ? '安装阶段' : 'Installation Stage');
+
+const evidenceLabel = (level?: EvidenceLevel): string => {
+  if (level === 'cr') return lang === 'zh' ? '公司记录' : 'Company record';
+  if (level === 'pending') return lang === 'zh' ? '待补' : 'Pending';
+  if (level === 'confirmed') return lang === 'zh' ? '已核实' : 'Verified';
+  return '';
+};
+
+const relatedProjects = (project.relatedProjectSlugs || [])
+  .map(slug => projects.find(p => p.slug === slug))
+  .filter((p): p is ProjectData => Boolean(p));
+
+// 项目型 JSON-LD：仅含定性、可证事实（名称、分类、地点、用途、语言），不写入未证实吨位数字
+const canonicalUrl = `https://zhongsai-steelstructure.com/${lang}/projects/${project.slug}/`;
+const projectSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'CreativeWork',
+  name: t(project.name),
+  about: t(project.category),
+  locationCreated: {
+    '@type': 'Place',
+    address: { '@type': 'PostalAddress', addressCountry: project.location.en },
+  },
+  inLanguage: lang === 'zh' ? 'zh-CN' : 'en',
+  description: lang === 'zh'
+    ? '为新加坡机场扩建工程制造并供应的钢结构连接构件。'
+    : 'Steel connection components fabricated and supplied for an airport expansion project in Singapore.',
+  publisher: { '@id': 'https://zhongsai-steelstructure.com/#organization' },
+  mainEntityOfPage: canonicalUrl,
+};
 ---
 
 <article class="project-detail">
+  <script type="application/ld+json" set:html={JSON.stringify(projectSchema)}></script>
   {/* Breadcrumb */}
   <div class="container">
     <div class="hub-breadcrumb project-breadcrumb">
@@ -112,7 +145,12 @@ const heroTypeLabel = project.heroImageType === 'rendering'
             {project.params.map(param => (
               <div class="data-row">
                 <dt>{t(param.label)}</dt>
-                <dd>{t(param.value)}</dd>
+                <dd>
+                  <span class="data-value">{t(param.value)}</span>
+                  {param.evidence && (
+                    <span class={`evidence-tag evidence-${param.evidence}`}>{evidenceLabel(param.evidence)}</span>
+                  )}
+                </dd>
               </div>
             ))}
           </dl>
@@ -120,6 +158,39 @@ const heroTypeLabel = project.heroImageType === 'rendering'
       </aside>
     </div>
   </section>
+
+  {/* Engineering Highlights - Challenge / Approach / Outcome */}
+  {project.engineeringHighlights && project.engineeringHighlights.length > 0 && (
+    <section class="project-section highlights-section">
+      <div class="container">
+        <h2>{lang === 'zh' ? '工程亮点' : 'Engineering Highlights'}</h2>
+        <p class="section-intro">
+          {lang === 'zh'
+            ? '基于该项目的实际构件与工艺，说明中赛在制造过程中面对的难点、应对方式与结果。'
+            : 'Based on the actual components and processes, the challenges ZhongSai addressed, the approach taken and the outcome.'}
+        </p>
+        <div class="highlights-grid">
+          {project.engineeringHighlights.map(h => (
+            <div class="highlight-card">
+              <h3>{t(h.title)}</h3>
+              <div class="highlight-row">
+                <span class="highlight-key">{lang === 'zh' ? '难点' : 'Challenge'}</span>
+                <p>{t(h.challenge)}</p>
+              </div>
+              <div class="highlight-row">
+                <span class="highlight-key">{lang === 'zh' ? '应对' : 'Approach'}</span>
+                <p>{t(h.approach)}</p>
+              </div>
+              <div class="highlight-row">
+                <span class="highlight-key">{lang === 'zh' ? '结果' : 'Outcome'}</span>
+                <p>{t(h.outcome)}</p>
+              </div>
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
+  )}
 
   {/* Project Evidence Gallery - Grouped by evidence type */}
   <section class="project-section project-gallery-section">
@@ -154,7 +225,7 @@ const heroTypeLabel = project.heroImageType === 'rendering'
           group.images.length > 0 ? (
             <div class="evidence-group">
               <h3 class="evidence-group-title">{group.title}</h3>
-              <div class="project-gallery-grid gallery-count-{Math.min(group.images.length, 3)}">
+              <div class={`project-gallery-grid gallery-count-${Math.min(group.images.length, 3)}`}>
                 {group.images.map((img) => (
                   <figure class={`gallery-item ${img.idx === 0 ? 'gallery-first' : ''}`}>
                     <div class="gallery-image-wrap">
@@ -191,6 +262,23 @@ const heroTypeLabel = project.heroImageType === 'rendering'
       </div>
     </div>
   </section>
+
+  {/* Related Projects - only real, existing pages */}
+  {relatedProjects.length > 0 && (
+    <section class="project-section related-projects-section">
+      <div class="container">
+        <h2>{lang === 'zh' ? '相关项目' : 'Related Projects'}</h2>
+        <p class="section-intro">
+          {lang === 'zh' ? '同地区、同类型的真实项目案例。' : 'Real projects in the same region and category.'}
+        </p>
+        <div class="related-projects-grid">
+          {relatedProjects.map(rp => (
+            <ProjectCard project={rp} lang={lang} />
+          ))}
+        </div>
+      </div>
+    </section>
+  )}
 
   {/* Quote CTA */}
   <section class="project-quote-cta">
@@ -394,8 +482,77 @@ const heroTypeLabel = project.heroImageType === 'rendering'
   color: #333;
   font-weight: 600;
   margin: 0;
-  text-align: right;
   flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 4px;
+}
+.data-value {
+  text-align: right;
+}
+.evidence-tag {
+  font-size: 0.66rem;
+  font-weight: 500;
+  padding: 2px 7px;
+  border-radius: 10px;
+  letter-spacing: 0.02em;
+  white-space: nowrap;
+}
+.evidence-cr { background: #fdf0d9; color: #9a6a1c; border: 1px solid #f0d9b0; }
+.evidence-pending { background: #eef0f3; color: #6b7280; border: 1px solid #e0e4e9; }
+.evidence-confirmed { background: #e3f2ea; color: #1f7a4d; border: 1px solid #c2e3d2; }
+.section-intro {
+  color: var(--color-gray-600);
+  max-width: 720px;
+  margin: 0 0 28px;
+  line-height: 1.7;
+}
+/* Engineering Highlights */
+.highlights-section { background: #f8f9fa; }
+.highlights-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 20px;
+}
+.highlight-card {
+  background: #fff;
+  border: 1px solid rgba(0,0,0,0.07);
+  border-radius: 12px;
+  padding: 24px;
+  box-shadow: 0 4px 16px rgba(0,0,0,0.04);
+  border-top: 3px solid #0a3d62;
+}
+.highlight-card h3 {
+  font-size: 1.08rem;
+  color: #0a3d62;
+  margin: 0 0 16px;
+}
+.highlight-row { margin-bottom: 12px; }
+.highlight-row:last-child { margin-bottom: 0; }
+.highlight-key {
+  display: inline-block;
+  font-size: 0.7rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: #0a3d62;
+  background: #eef4f9;
+  padding: 2px 8px;
+  border-radius: 4px;
+  margin-bottom: 6px;
+}
+.highlight-row p {
+  margin: 0;
+  font-size: 0.88rem;
+  color: #555;
+  line-height: 1.6;
+}
+/* Related Projects */
+.related-projects-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 20px;
 }
 
 /* Multi-image Gallery */
@@ -547,6 +704,9 @@ const heroTypeLabel = project.heroImageType === 'rendering'
   .scope-content h2 {
     font-size: 1.15rem;
   }
+  .related-projects-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
 }
 @media (max-width: 640px) {
   .project-hero-image {
@@ -571,6 +731,20 @@ const heroTypeLabel = project.heroImageType === 'rendering'
   }
   .quote-cta-content h2 {
     font-size: 1.4rem;
+  }
+  .highlights-grid {
+    grid-template-columns: 1fr;
+  }
+  .related-projects-grid {
+    display: flex;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    gap: 16px;
+    padding-bottom: 10px;
+  }
+  .related-projects-grid > * {
+    flex: 0 0 240px;
+    scroll-snap-align: start;
   }
 }
 </style>

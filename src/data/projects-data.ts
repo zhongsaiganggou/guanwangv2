@@ -9,6 +9,16 @@ export interface GalleryImage {
   label: { zh: string; en: string };
 }
 
+// Evidence level: confirmed = 第三方/合同单证；cr = Company Record（公司记录，缺独立单证）；pending = 待补占位
+export type EvidenceLevel = 'confirmed' | 'cr' | 'pending';
+
+export interface EngineeringHighlight {
+  title: { zh: string; en: string };
+  challenge: { zh: string; en: string };
+  approach: { zh: string; en: string };
+  outcome: { zh: string; en: string };
+}
+
 export interface ProjectData {
   slug: string;
   category: { zh: string; en: string };
@@ -21,11 +31,15 @@ export interface ProjectData {
   params: {
     label: { zh: string; en: string };
     value: { zh: string; en: string };
+    evidence?: EvidenceLevel;
   }[];
   // href 为语言根相对路径（不含 /en/ 或 /zh/ 前缀），由组件按当前 lang 拼接 `/${lang}/${href}`
   relatedLinks: { href: string; label: { zh: string; en: string } }[];
   capabilities: { zh: string; en: string }[];
   zhongSaiScope: { zh: string; en: string };
+  // PHASE 19.5-B：工程亮点（难点—应对—结果）与相关项目（仅链真实存在的 slug）
+  engineeringHighlights?: EngineeringHighlight[];
+  relatedProjectSlugs?: string[];
 }
 
 const P = '/images/projects/';
@@ -687,19 +701,23 @@ export const projects: ProjectData[] = [
     name: { zh: '新加坡樟宜机场T2连接', en: 'Singapore Changi Airport T2 Connect' },
     location: { zh: '新加坡', en: 'Singapore' },
     image: '/images/projects/overseas/singapore-airport-t2-connect.jpg',
-    heroImageType: 'site',
+    heroImageType: 'component',
     galleryImages: [
-      { src: '/images/projects/overseas/singapore-airport-t2-connect.jpg', type: 'site', label: { zh: '项目现场', en: 'Project Site' } },
+      { src: '/images/projects/overseas/singapore-airport-t2-connect.jpg', type: 'component', label: { zh: 'T2C-Kingpost构件制造与材料明细', en: 'T2C Kingpost Fabrication & Material Schedule' } },
     ],
     overview: {
-      zh: '新加坡樟宜机场T2连接(T2C)项目，T2C-Kingpost共209支，总用钢量约4600吨，采用CHS50*50mm、UB914*419*446.4等材料，共用11万颗D25*100的栓钉。项目属于机场扩建工程，结构复杂，精度要求高。',
-      en: 'Singapore Changi Airport Terminal 2 Connect (T2C) project. T2C-Kingpost consists of 209 units with total steel tonnage of approximately 4,600 tonnes. Utilizing CHS50*50mm, UB914*419*446.4 and other materials, with a total of 110,000 D25*100 shear studs. Airport expansion project with complex structure and high precision requirements.'
+      zh: '新加坡樟宜机场T2连接(T2C)项目，T2C-Kingpost共209支，该批次材料总重约4600吨，采用CHS950*50mm、UB914*419*446.4等材料，共用11万颗D25*100的栓钉。项目属于机场扩建工程，结构复杂，精度要求高。',
+      en: 'Singapore Changi Airport Terminal 2 Connect (T2C) project. The 209 T2C-Kingposts and associated materials total approximately 4,600 tonnes, utilizing CHS950*50mm, UB914*419*446.4 and other materials, with a total of 110,000 D25*100 shear studs. Airport expansion project with complex structure and high precision requirements.'
     },
     params: [
-      { label: { zh: '用钢量', en: 'Steel Tonnage' }, value: { zh: '约4600吨', en: 'Approx. 4,600 tonnes' } },
-      { label: { zh: '项目类型', en: 'Project Type' }, value: { zh: '机场扩建', en: 'Airport Expansion' } },
-      { label: { zh: '构件数量', en: 'Component Count' }, value: { zh: '209支Kingpost', en: '209 Kingpost Units' } },
-      { label: { zh: '工作范围', en: 'Scope of Work' }, value: { zh: '钢结构设计深化制作供应', en: 'Steel Structure Detailing, Fabrication & Supply' } },
+      { label: { zh: 'Kingpost批次材料重量', en: 'Kingpost Batch Material Weight' }, value: { zh: '约4600吨', en: 'Approx. 4,600 tonnes' }, evidence: 'cr' },
+      { label: { zh: '项目类型', en: 'Project Type' }, value: { zh: '机场扩建', en: 'Airport Expansion' }, evidence: 'cr' },
+      { label: { zh: 'Kingpost数量', en: 'Kingposts' }, value: { zh: '209支', en: '209 units' }, evidence: 'cr' },
+      { label: { zh: '通用梁规格', en: 'Universal Beams' }, value: { zh: 'UB914×419×446.4', en: 'UB914×419×446.4' }, evidence: 'cr' },
+      { label: { zh: '栓钉', en: 'Shear Studs' }, value: { zh: '约11万颗 D25×100', en: '~110,000 pcs D25×100' }, evidence: 'cr' },
+      { label: { zh: '结构形式', en: 'Structure Type' }, value: { zh: '钢结构连接/支撑框架', en: 'Steel connection / sub-frame' }, evidence: 'cr' },
+      { label: { zh: '材质', en: 'Material Grade' }, value: { zh: 'S355', en: 'S355' }, evidence: 'cr' },
+      { label: { zh: '工作范围', en: 'Scope of Work' }, value: { zh: '钢结构设计深化、制作与出口供应', en: 'Detailing, Fabrication & Export Supply' }, evidence: 'cr' },
     ],
     capabilities: [
       { zh: '重型钢结构加工', en: 'Heavy Structural Steel Fabrication' },
@@ -713,7 +731,39 @@ export const projects: ProjectData[] = [
     relatedLinks: [
       { href: 'manufacturing-quality/', label: { zh: '制造能力', en: 'Manufacturing' } },
       { href: 'components/fabricated-steel-beams-columns/', label: { zh: '钢梁钢柱', en: 'Beams & Columns' } },
-    ]
+    ],
+    engineeringHighlights: [
+      {
+        title: { zh: '大批量栓钉焊接', en: 'High-volume shear stud welding' },
+        challenge: { zh: '约11万颗栓钉，焊接量大、一致性要求高。', en: 'Around 110,000 studs with high volume and strict consistency requirements.' },
+        approach: { zh: '采用规范的栓钉焊接工艺与抽样检验，分段控制。', en: 'Controlled stud-welding procedure with sampling inspection across segments.' },
+        outcome: { zh: '各分段构件栓钉质量保持一致。', en: 'Consistent stud quality maintained across all segments.' },
+      },
+      {
+        title: { zh: '重型UB构件处理', en: 'Heavy universal beam handling' },
+        challenge: { zh: 'UB914×419×446.4 构件重、组对精度要求高。', en: 'UB914×419×446.4 sections are heavy and require tight fit-up accuracy.' },
+        approach: { zh: '配置专用吊装工装并加强尺寸控制。', en: 'Dedicated lifting and fixturing with strengthened dimensional control.' },
+        outcome: { zh: '组对精度得到保证。', en: 'Fit-up accuracy maintained.' },
+      },
+      {
+        title: { zh: 'Kingpost与CHS协同', en: 'Kingpost and CHS coordination' },
+        challenge: { zh: '209支Kingpost配合CHS构件，装配顺序复杂。', en: '209 kingposts coordinated with CHS sections create a complex assembly sequence.' },
+        approach: { zh: '通过三维深化与构件编号理顺关系。', en: '3D detailing and consistent component numbering.' },
+        outcome: { zh: '现场装配顺序正确。', en: 'Correct on-site assembly sequence.' },
+      },
+      {
+        title: { zh: '出口分段与防腐包装', en: 'Export segmenting & corrosion protection' },
+        challenge: { zh: '构件需按集装箱分段并在海运中防护。', en: 'Components must be segmented for container loading and protected during sea transit.' },
+        approach: { zh: '按集装箱分段并做防腐保护与出口装箱。', en: 'Container-based segmenting with anti-corrosion protection and export packing.' },
+        outcome: { zh: '按装箱清单完成防腐防护与出口装箱（具体装箱数以装箱清单为准）。', en: 'Anti-corrosion protection and export packing completed per packing list; exact container count per packing list.' },
+      },
+    ],
+    relatedProjectSlugs: [
+      'singapore-j102-mrt-station',
+      'singapore-j107-mrt-station',
+      'singapore-sats-bup-centre',
+      'singapore-mcc-innocentre',
+    ],
   },
 
 ];
