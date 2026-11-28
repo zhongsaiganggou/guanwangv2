@@ -15,7 +15,7 @@
 | blog ZH 篇数 | 121 | 2026-11-27 | 新建 school 篇（cms-publishing-test 无 ZH 配对） |
 | 最近活动 | 2026-11-28 | 2026-11-28 | 存量优化 `steel-structure-ndt-testing`（重写 Direct Answer、补 2 个 GEO 块、加 3 条内链）；最近新建仍为 2026-11-27 school 篇 |
 | 最近部署别名 | `https://89da2deb.zhongsai-website-v2.pages.dev` | 2026-11-28 | 上轮 `d6280ae6`；起手 pull 另带入 `1f2899e` 外链登记与 `724ed48` 制造证据/工厂表述修正两个他人提交，均未新增路由页 |
-| 最近 commit | 待本轮推送后回填 | 2026-11-28 | 存量轮：只含 NDT 两篇 md + weekly-log，无新增图片/路由 |
+| 最近 commit | `f94039a`（content: improve NDT EN/ZH）+ `3e4fa7c`（baseline） | 2026-11-28 | 存量轮：只含 NDT 两篇 md + weekly-log，无新增图片/路由 |
 
 ## 未索引观察名单（v3 §7A）
 
