@@ -10,13 +10,13 @@ excerpt: "Non-destructive testing (NDT) of steel structures is the inspection of
 coverImage: "/images/blog/steel-structure-ndt-testing/cover.jpg"
 coverImageAlt: "QC inspector performing ultrasonic testing on a steel weld (illustrative concept image)"
 publishedAt: "2026-10-13"
-updatedAt: "2026-11-18"
+updatedAt: "2026-11-28"
 ctaType: "send-project-requirements"
 noindex: false
 author: "ZhongSai Steel Structure Editorial Team"
 translationKey: "steel-structure-ndt-testing"
 ---
-Non-destructive testing (NDT) of steel structures is the inspection of welds and members for flaws without cutting or damaging them. The usual methods are visual testing (VT), ultrasonic testing (UT), magnetic particle testing (MT) and, where the specification requires it, radiographic testing (RT) or liquid penetrant testing (PT). Which method applies, how much welding is tested and what counts as acceptable are set by the project specification, the execution class and the buyer's requirements. ZhongSai performs the agreed scope and issues the reports with the steel.
+Non-destructive testing (NDT) for steel structures checks welds and members for hidden flaws without cutting or damaging the part. The standard methods are visual testing (VT) on every weld, plus ultrasonic testing (UT) for internal flaws, magnetic particle testing (MT) for surface cracks in ferromagnetic steel, liquid penetrant testing (PT) for non-magnetic grades, and radiographic testing (RT) where the specification calls for it. The method, the extent of testing and the acceptance criteria are set by the project specification, the execution class and the buyer's requirements — there is no universal percentage of welds that must be tested. ZhongSai performs the agreed workshop scope and issues the reports with the steel.
 
 This guide explains what each method proves, how testing fits the fabrication sequence, and what a buyer should write into the specification before the order is placed.
 
@@ -45,7 +45,7 @@ Two neighbouring documents are often confused with NDT. A mill test certificate 
 
 ![Magnetic particle testing of a steel weld with a yoke (illustrative concept image)](/images/blog/steel-structure-ndt-testing/mt.jpg)
 
-Two practical points decide whether the results are usable: the technician's qualification — certified to a recognised scheme such as ISO 9712 or ASNT Level II, in the method and sector concerned — and the timing. UT and MT are done on bare steel, before surface treatment, because paint and galvanising mask indications and change probe coupling. Testing after coating is a rework decision, not a shortcut.
+Two practical points decide whether the results are usable: the technician's qualification — certified to a recognised scheme such as ISO 9712 or ASNT Level II, in the method and sector concerned — and the timing. UT and MT are done on bare steel, before surface treatment, because paint and galvanising mask indications and change probe coupling. Testing after coating is a rework decision, not a shortcut. Coating systems and corrosion protection are covered in the [corrosion protection and coating guide](/en/blog/steel-structure-corrosion-protection-coating-guide/).
 
 ## Which method for which concern
 
@@ -67,7 +67,7 @@ If the specification names a method that does not address the actual concern —
 Testing has to be placed in the sequence deliberately, because each method has a window:
 
 1. **Material stage** — plate UT where lamellar tearing or thick sections are a concern, before cutting.
-2. **During fabrication** — weld NDT after welding and cooling, before surface preparation.
+2. **During fabrication** — weld NDT after welding and cooling, before surface preparation; the [welding quality control](/en/blog/steel-structure-welding-quality-control-guide/) record shows how the weld was made.
 3. **Final inspection** — visual testing on all welds plus the agreed UT, MT or RT scope.
 4. **Pre-shipment** — the buyer or an appointed inspector witnesses the agreed testing and reviews the reports.
 5. **On site** — the local team checks visible welds and connections, and reports anything that looks wrong with photos.
@@ -91,7 +91,7 @@ This is the part that decides whether the reports are accepted later. Nine items
 ## How buyers verify the reports
 
 1. Check that every member or weld listed in the inspection plan appears in the report — a report with missing IDs is an incomplete file.
-2. Confirm the method and the acceptance criteria on the report match your specification, not the supplier's default.
+2. Confirm the method and the acceptance criteria on the report match your specification, not the supplier's default, and that dimensional tolerances meet the [fabrication tolerances](/en/blog/steel-structure-fabrication-tolerances-guide/) agreed in the drawings.
 3. Confirm the operator's certification level and method are recorded and valid for the test date.
 4. Cross-check member IDs against the packing list and the erection drawings, so the tested piece is the piece that ships.
 5. Note repairs: a repair without a retest record is an open item.
@@ -112,6 +112,14 @@ The technician who performed the test signs the record, and the manufacturer's Q
 ### What does "acceptable" mean in weld NDT?
 
 Acceptable means the indication falls inside the limits of the agreed standard — for example a defined quality level of ISO 5817, or the acceptance criteria of AWS D1.1, or a project-specific criterion. "Acceptable" without a named standard is not a criterion, and a report that says only "passed" cannot be audited later.
+
+### What is the difference between UT and MT?
+
+UT (ultrasonic testing) looks for internal flaws inside the weld volume and thick plate — lack of fusion, lack of penetration, internal cracks and lamellar tears. MT (magnetic particle testing) finds surface and near-surface cracks in ferromagnetic steel only. UT does not replace MT for surface cracks, and MT cannot show an internal flaw; where both risks exist, the specification usually pairs the two methods.
+
+### Can NDT be done after painting or galvanizing?
+
+Weld NDT should be done on bare steel, before surface treatment. Paint, primer and galvanising mask indications and change probe coupling, so a test run after coating cannot be relied on for weld soundness. If testing is needed after coating, the area has to be stripped back to bare steel, tested and recoated — that is a repair decision, not a shortcut.
 
 ## FAQ
 
